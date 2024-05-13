@@ -2371,56 +2371,56 @@
             e.exports = [{
                 key: "fotiaoqiang",
                 name: "史莱姆果冻",
-                description: e => `力量、敏捷、智力、耐力分别增加${5 * e}点`,
-                Max_level: 2e3,
+                description: e => `力量、敏捷、智力、耐力分别增加${50 * e}点`,
+                Max_level: 2e4,
                 hooks: {
-                    str: (e, t) => t + 5 * Math.min(e, 2e3),
-                    dex: (e, t) => t + 5 * Math.min(e, 2e3),
-                    int: (e, t) => t + 5 * Math.min(e, 2e3),
-                    sta: (e, t) => t + 5 * Math.min(e, 2e3)
+                    str: (e, t) => t + 50 * Math.min(e, 2e4),
+                    dex: (e, t) => t + 50 * Math.min(e, 2e4),
+                    int: (e, t) => t + 50 * Math.min(e, 2e4),
+                    sta: (e, t) => t + 50 * Math.min(e, 2e4)
                 }
             }, {
                 key: "huangguajianzirou",
                 name: "艾尔秘制面包",
-                description: e => `物理防御增加${25 * e}点`,
+                description: e => `物理防御增加${100 * e}点`,
                 Max_level: 9999,
-                hooks: {defAdd: (e, t) => t + 25 * e}
+                hooks: {defAdd: (e, t) => t + 100 * e}
             }, {
                 key: "cuigualijisi",
                 name: "酒心巧克力",
-                description: e => `元素抗性增加${25 * e}点`,
+                description: e => `元素抗性增加${100 * e}点`,
                 Max_level: 9999,
-                hooks: {allResAdd: (e, t) => t + 25 * e}
+                hooks: {allResAdd: (e, t) => t + 100 * e}
             }, {
                 key: "tangcupaigu",
                 name: "小饼干",
-                description: e => `闪避增加${30 * e}点`,
+                description: e => `闪避增加${100 * e}点`,
                 Max_level: 9999,
-                hooks: {shanbizhiAdd: (e, t) => t + 30 * e}
+                hooks: {shanbizhiAdd: (e, t) => t + 100 * e}
             }, {
                 key: "suanxiangbairou",
                 name: "幻想森林果派",
-                description: e => `生命值恢复增加${e}点`,
+                description: e => `生命值恢复增加${10 * e}点`,
                 Max_level: 9999,
-                hooks: {hpRecovery: (e, t) => t + e}
+                hooks: {hpRecovery: (e, t) => t + 10 * e}
             }, {
                 key: "jintangsuancaiyu",
                 name: "金汤酸菜鱼",
-                description: e => `法力值恢复增加${e}点`,
+                description: e => `法力值恢复增加${10 * e}点`,
                 Max_level: 9999,
-                hooks: {mpRecovery: (e, t) => t + e}
+                hooks: {mpRecovery: (e, t) => t + 10 * e}
             }, {
                 key: "lianyushuizhuyu",
                 name: "炼狱海鲜烩",
-                description: e => `生命值上限${40 * e}点`,
+                description: e => `生命值上限${100 * e}点`,
                 Max_level: 9999,
-                hooks: {maxHpAdd: (e, t) => t + 40 * e}
+                hooks: {maxHpAdd: (e, t) => t + 100 * e}
             }, {
                 key: "bingzhenxiaolongxia",
                 name: "冰镇小龙虾",
-                description: e => `法力值上限${40 * e}点`,
+                description: e => `法力值上限${100 * e}点`,
                 Max_level: 9999,
-                hooks: {maxMpAdd: (e, t) => t + 40 * e}
+                hooks: {maxMpAdd: (e, t) => t + 100 * e}
             }]
         }, 5353: e => {
             e.exports = [{
