@@ -7444,27 +7444,27 @@
             e.exports = [{
                 key: "zhengqiwan",
                 name: "幸运药剂",
-                description: e => `运气增加${5 * e}点`,
+                description: e => `运气增加${50 * e}点`,
                 Max_level: 9999,
-                hooks: {gf: (e, t) => t + .05 * e, mf: (e, t) => t + .05 * e}
+                hooks: {gf: (e, t) => t + .5 * e, mf: (e, t) => t + .05 * e}
             }, {
                 key: "nayuandan",
                 name: "知识药剂",
-                description: e => `经验获得增加${5 * e}%`,
+                description: e => `经验获得增加${50 * e}%`,
                 Max_level: 9999,
-                hooks: {expInc: (e, t) => t + .05 * e}
+                hooks: {expInc: (e, t) => t + .5 * e}
             }, {
                 key: " xiaoyaosan",
                 name: "训练药剂",
-                description: e => `熟练度获得增加${5 * e}%`,
+                description: e => `熟练度获得增加${50 * e}%`,
                 Max_level: 9999,
-                hooks: {skillExpInc: (e, t) => t + .05 * e}
+                hooks: {skillExpInc: (e, t) => t + .5 * e}
             }, {
                 key: "fengshenlu",
                 name: "急速药剂",
-                description: e => `急速+${e}%`,
+                description: e => `急速+${2 * e}%`,
                 Max_level: 100,
-                hooks: {speedRateAdd: (e, t) => t + .01 * Math.min(e, 100)}
+                hooks: {speedRateAdd: (e, t) => t + .02 * Math.min(e, 100)}
             }]
         }, 8230: (e, t, n) => {
             const {define: r, extend: i} = n(6637);
