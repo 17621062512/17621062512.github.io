@@ -213,8 +213,8 @@
             }]
         }, 1484: e => {
             e.exports = {
-                version: "2024.5.14",
-                description: "永夜玩家交流QQ群：614658451，欢迎加入了解最新永夜资讯。\n请各路魔改版本/MOD作者保留上述群号，谢谢。\n\n保命声明：\n此魔改版本的作者为不务正业以及从未正经学过计算机的业余爱好者，烂尾、bug、瞎鸡儿改一切皆有可能，务必要有心理准备。\n根据老白大佬的指导意见，正式更名为“永夜之开局一把剑”。\n\n①网页版\n网页版传送门1（首选）\nhttps://cszwbirbwl.github.io\n网页版传送门2（首选不行再备胎）\nhttps://cszwbirbwl-github-io.pages.dev\n两者同步更新，但存档互相独立\n特色调整：\n1、经验圣殿人物经验提升为20倍，技能经验提升为200倍\n2、所有圣殿buff持续时间提升至100分钟\n3、精粹圣殿获得精粹随机1-1000\n4、欢愉圣殿获得红包随机1-100\n5、药剂效果提升10倍\n6、急速药剂效果提升2倍\n\n更新说明\n2024.5.14\n1.“帝国金库”已经恢复运营，听说在金库门口喊几声“没有蛀牙！”，马上就会有卫兵来揍你。\n\n2024.5.13\n1.调整了各系伤害的附魔词缀。\n2.新建文件夹，重命名为“打码-打码-打码-师”。\n\n2024.5.12\n1.提高了“火球”、“闪电”、“水箭术”的伤害。\n2.修复了龙盾特效触发不正确的bug，龙盾的最低等级要求调整为40级。\n\n2024.5.11\n1.现在可以选择打开红包的数量了。\n\n2024.5.10\n1.已经对我们亲爱的光明骑士莱特实施了制裁。\n2.为守护者精心打造了两把新武器。\n3.“炎龙吐息”的冷却时间减少至30秒。\n\n2024.5.9\n1.新增了特殊装备“火之高兴”、“冰之哀痛”。\n2.如果装备描述不能完全显示，尝试上下滚动/滑动一下看看。\n3.“魔法盾”的冷却时间增加至15秒。\n\n2024.5.8\n1.五一活动结束，该好好上班了。\n2.“威能圣殿”的效果调整为增加全属性伤害+25%。\n3.新增了“装备圣殿”，点击后有25%几率获得一件随机品质、品级的装备。\n4.新增了“精粹圣殿”，点击后获得少量精粹。\n5.新增了“欢愉圣殿”，拿到红包的你怎么不开心啊，是红包还不够多吗。\n6.现在特殊装备有独立的装备品级筛选了。\n7.等级低于80级的角色无法删除了。\n\n2024.5.6\n1.特殊装备不再受装备品级筛选的影响了。\n2.“盾击”回到了它该有的位置上。\n\n2024.5.5\n1.修改了负防、负抗性的效果，当防御、抗性小于0时，每减少250点防御、抗性，受到的伤害增加1%。\n2.调整了部分降防、减抗技能的效果。\n3.调整了时间戳的验证机制。\n\n2024.5.3\n1.迟来的五一节活动，意思意思。\n装备（不包括副本）、红包、钥石掉率×2，史莱姆刷起！\n获得的经验值、熟练度×2\n2.去除了一部分物品的“出售”按钮，新增了“拆解”按钮。\n3.修改了部分重复的技能名称。\n4.增加了特殊装备“信心”，种类为布甲下装。\n5.修复了“复仇”技能经验值错误的bug。\n6.删除了失效的烹饪。\n\n2024.4.25\n1.修改了“盾压”的技能效果，“盾击”暂时无变化。\n2.增强了“防御戒指”的效果。\n3.合并了部分烹饪的效果，失效的烹饪将再下一次更新时删除。\n4.调整了各职业的四维加成。\n\n2024.4.23\n1.降低了绝大多数敌对单位的生命值。\n\n2024.4.18\n1.增加了特殊装备“杰哥的眼镜”，来自大佬“你犯天条了知道吗？”。\n2.增加了特殊装备“兄弟的酒”，来自大佬“缺盐的咸鱼”。\n3.增加了特殊装备“舍友的丝袜”，来自大佬“无关风月”。\n4.“火球术”减少了0.5秒的施法时间。\n5.增加了新职业“水魄”、“冰魂”。\n6.现在每点力量可以为“魔剑”、“焚天”额外增加相应的火焰、寒冷伤害了。\n\n2024.4.16\n1.增加了最最基础的DPS统计功能，日后再优化。\n\n2024.4.12\n1.修复了反伤刺甲、攻速暴击腿甲目标不正确的bug。\n2.增加了新的特殊装备“幽影斗篷”。\n3.真实伤害不会再被护盾所吸收了，血魔警告。\n4.调整了元素法师个别技能的等级要求。\n5.新增了三转“电主”、“雷神”。\n\n2024.4.11\n1.修复了鱼人祭祀伤害过高的bug。\n2.调整了被动技能“坚韧”的效果。\n3.调整了主动技能“元素化”的效果,使其更像是一个爆发技能。\n4.经验圣殿的效果对技能熟练度也能起作用了。\n5.现在各类伤害属性将不会出现在装备品级100以下的装备上。\n6.根据风月无关大佬、无聊大佬的建议，增加了新的特殊装备“方向盘”。\n7.根据秃驴大佬的建议，增加了新的特殊装备“护身戒指”、“麻痹戒指”、“防御戒指”。\n\n2024.4.10\n1.默认的拾取规则更改为：普通-出售、优秀-出售、精良-分解、史诗-分解、传说-拾取。\n2.圣殿增益的持续时间延长到60秒。\n3.新增了三转“赤焰”、“青火”，待集齐法师三转后上传最终安装包。\n\n2024.4.9\n1.上调了通过后副本获得的经验值。\n2.增加了经验值补偿机制，未满级的角色将获得更多的经验值，鲱鱼干的效果将不再显示在面板上。\n\n2024.4.8\n1.降低了因等级差产生的经验值惩罚，获得的经验值将至少保留10%。\n2.提高了刷新圣殿的效率，增加了“经验圣殿”。\n\n2024.4.7\n1.掉落的低级副本钥石将直接转化为副本次数，已经掉落的钥石仍然可以使用，解放可怜的包包。\n2.现在野外的小怪秒刷了，难度明显提高，但掉落也更多了。\n3.加快了个别副本的进度。\n4.隐藏职业“黑暗君主”现在可以兼用“长剑”类武器，且“太刀”不会出现在200品级以下的装备中了。\n5.增加了两件新的特殊装备，详见EXCEL。\n\n2024.4.6\n1.现在通关副本（不包括噩梦、年兽）后将有5次掉落机会，包括武器2次，上衣1次，下装1次，首饰1次，但拆解装备获得的神力也减少了。\n2.重铸消耗再次减半，各类装备可重铸的属性详见EXCEL。\n3.降低了大部分副本的难度。\n4.感恩云轩大佬，现在转职将保留等级和装备了。\n\n2024.4.5\n1.现在可以体验“水之使徒”职业了。\n2.为刀客增加了新的三转职业。\n3.增加了几件新的特殊装备和专属掉落，且特殊装备的掉率×2.5。\n4.新建了“元素法师”三转的文件夹。\n\n2024.4.3\n1.提高了战士系列武器的基础攻击力。\n2.现在每点力量可以为艾尔额外增加1点物理伤害。\n3.削弱了“法力转化”的效果，提高了“和弦”和“魔力激化”的效果。\n4.修正了法师技能等级的错误加成，这一刀法师削大了。\n5.减少了“守护者之魂”的冷却时间，且不需要读条了。\n6.削弱了“昏迷”效果相关的所有技能，且“昏迷”期间可以正常触发技能(包括且不限于被动技能荆棘以及格挡、防御之后触发的技能)。\n7.现在装备上可以重铸出物理、火焰、寒冷、闪电、黑暗伤害的属性了。\n8.现在可以体验“雷之使徒”职业了。\n\n2024.4.2\n1.现在可以体验“火之使徒”职业了。\n\n2024.4.1\n1.守护者喜提加强，至少比以前强。\n2.旋风斩、重斩喜提加强。\n3.现在耐力会为艾尔提供额外的生命恢复了。\n4.修复了旧bug，并更新了新的bug们。\n\n2024.3.30\n1.钥石掉率×1.5，红包掉率×1.5。\n2.可怕的双前缀敌人遭到削弱，但是增加了增益前缀和减益前缀各两个。\n3.现在噩梦副本将掉落随机品质等级的装备了。\n4.添加了部分角色、职业的简介。\n\n2024.3.29\n1.现在可以正常掉落法杖类武器了，并且添加了一款特殊装备。\n2.现在可以体验“元素法师”职业了。\n3.现在角色如果不幸战败，将于20秒后在原地满状态归来。\n4.修复了旧bug，并更新了新的bug们。\n\n2024.3.27\n1.优化了一部分的技能描述。\n2.现在所有单位的物理防御和抗性属性最多只能减少75%的伤害，角色的吸收属性最多吸收75%的伤害。\n3.急速属性的上限调整为300%。\n4.“艾冯十世·普洛·麦克斯”大佬为大家定制了贼强贼强的隐藏职业，提示：庇护所773号的暗影法师奈布最近皮有点痒。\n5.这一波强化的是谁？是魔剑的“炎铠”。\n6.噩梦地图的敌人以及年兽再次遭到削弱。\n7.现在只有200品质以上的防具、首饰才可以重铸出吸收属性了。\n8.“报纸壳壳”一众七兄弟大大加强。\n9.年兽装备的款式增加了。\n\n2024.3.24\n1.现在可以支持负值的防御和抗性了，负值越大则受到的伤害越高；但因为受到了创世神艾尔的庇佑，你的防御和抗性最多减少到0。\n2.现在部分敌人将拥有负值的防御或者抗性，不过苟有所长（短）也必有所短（长），请尽量选择合适的属性伤害。\n3.减少了附魔、重铸的材料、神力消耗。\n4.感谢“云轩”大佬的指导，现在的背包更大了。\n\n2024.3.22\n1.噩梦、年兽的敌人全都惨遭削弱。\n\n2024.3.21\n1.幽暗的货仓、睡美人湖、噩梦巨人国度的敌人惨遭削弱。\n2.因为生存环境遭到破坏，你在副本（洞窟深处-森林深处）中遇到的敌人数量减少了很多。\n3.你被强化了，现在每1点耐力可以提供物理防御及所有抗性各1点，快上！\n4.“守护者”的被动技能“荆棘”效果调整。\n5.感谢“艾冯十世·普洛·麦克斯”大佬的支持，“无敌斩”正式更名为“吴迪斩”，并添加了防打断效果（但并不知道是否有效）。\n\n2024.3.20\n1.混乱元素之塔的敌人惨遭削弱。\n\n2024.3.18\n1.红包现在最高只能开出200品质等级的装备了。\n2.蓝装（优秀）现在不能拆解了，而且“不提示拆解高品质物品”将默认勾选，装备且拆且珍惜。\n3.森林三兄弟也有专属装备了。\n4.长剑和双刀的基础属性调整，相信不再刮痧。\n5.可以体验魔法学徒的部分技能了，但仍然不会掉落任何相关的装备。\n\n2024.3.17\n1.修复了“守护者”技能学习等级错误的bug，但不影响已经携带的技能。\n2.“剑斗士”已经太强了，我们来削弱一下“守护者”吧。\n\n2024.3.16更新说明\n1.意外建立的“亚莲娜”角色可以（必须）删除了，让她再多学一点新技能再加入战斗。\n2.主动、被动技能的携带数量调整，以便于低级角色练级。\n3.武器、首饰的附魔增加“生命汲取”属性。\n4.增加了“刀客”职业，以及相应的武器“双刀”。\n5.技能经验值调整为原版标准，先练技能的兄弟有福了。\n6.现在每一种非boss召唤的小怪都能掉落钥石了，掉率均为0.001。\n7.红包掉率翻倍，小怪为0.0002，BOSS为0.2。\n8.红包可以正常开出年兽巢穴钥石和年兽的心脏了。\n9.附魔属性“生命值”下调为每品质等级1-2点生命值，但不影响已经掉落的装备。\n10.卡卡列夫也有专属装备了。\n11.微调了“重斩”、“炎龙吐息”的技能效果。\n12.修复旧bug，并更新了新的bug们，实在不行就回滚一个版本。\n\n\n2024.3.13 更新说明\n1.为“艾尔”设定了全新的职业、技能：\n  ①当等级达到15级且任意角色完成“迷雾森林”首通时，开启第一次转职；\n  ②当等级达到35级且任意角色完成“庇护所773号”首通时，开启第二次转职；\n  ③部分职业在等级达到80级且任意角色完成“未知暗殿”首通时，开启第三次转职；\n  ④暂时禁用“刺客”、“圣骑士”职业。\n  ⑤在转职时请务必要完整阅读提示，以避免不必要的损失。\n2.暂时禁用角色“亚莲娜”。\n3.角色等级、携带技能数量调整。\n4.拆解装备获得的各种碎片整合为“奇怪的精粹”。\n5.调整附魔功能：新的附魔不会让装备的属性下降，但随数值的提高，附魔的成功率会降低。\n6.暴击几率的上限调整为100%。\n7.基础生命值恢复调整为1/s，再也不会被史莱姆们暴捶了。\n8.所有伤害技能的基础命中率调整为100%。\n9.主动技能的等级上限调整为50级。\n10.装备的基本类型调整：\n  ①武器：长剑、剑盾；\n  ②上衣：锁子甲（重甲）、骨甲（轻甲）；\n  ③下装：锁链靴（重甲）、骨靴（轻甲）；\n  ④首饰：秘银指环。\n11.四维加成调整：\n\t每1点力量增加：物理伤害+1，物理防御+1；\n    每1点敏捷增加：暴击等级+1，暴伤等级+1，闪避值+1；\n\t每1点智力增加：元素伤害+1，元素抗性+1；    \n    每1点耐力增加：生命值+5，物理防御+0.5，元素抗性+0.5；\n\t因为重做了数值，所以睡几天仍然打不过一个BOSS是件很正常的事情。\n12.原“炼金”功能拆分为“厨艺”和“炼金”。\n"
+                version: "2024.5.15",
+                description: "永夜玩家交流QQ群：614658451，欢迎加入了解最新永夜资讯。\n请各路魔改版本/MOD作者保留上述群号，谢谢。\n\n保命声明：\n此魔改版本的作者为不务正业以及从未正经学过计算机的业余爱好者，烂尾、bug、瞎鸡儿改一切皆有可能，务必要有心理准备。\n根据老白大佬的指导意见，正式更名为“永夜之开局一把剑”。\n\n①网页版\n网页版传送门1（首选）\nhttps://cszwbirbwl.github.io\n网页版传送门2（除非打不开1，否则不不不不不不不不不不要选2）\nhttps://cszwbirbwl-github-io.pages.dev\n两者同步更新，但存档互相独立\n\n特色调整：\n1、经验圣殿人物经验提升为20倍，技能经验提升为200倍\n2、所有圣殿buff持续时间提升至100分钟\n3、精粹圣殿获得精粹随机1-1000\n4、欢愉圣殿获得红包随机1-100\n5、药剂效果提升10倍\n6、急速药剂效果提升2倍\n7、删除生命圣殿和装备圣殿\n更新说明\n2024.5.15\n1.启用了口令“我是萌新”、“浙江泽商律师事务所”。\n\n2024.5.14\n1.“帝国金库”已经恢复运营，听说在金库门口喊几声“没有蛀牙！”，马上就会有卫兵来揍你。\n2.减少了购买角色栏位的神力需求。\n\n2024.5.13\n1.调整了各系伤害的附魔词缀。\n2.新建文件夹，重命名为“打码-打码-打码-师”。\n\n2024.5.12\n1.提高了“火球”、“闪电”、“水箭术”的伤害。\n2.修复了龙盾特效触发不正确的bug，龙盾的最低等级要求调整为40级。\n\n2024.5.11\n1.现在可以选择打开红包的数量了。\n\n2024.5.10\n1.已经对我们亲爱的光明骑士莱特实施了制裁。\n2.为守护者精心打造了两把新武器。\n3.“炎龙吐息”的冷却时间减少至30秒。\n\n2024.5.9\n1.新增了特殊装备“火之高兴”、“冰之哀痛”。\n2.如果装备描述不能完全显示，尝试上下滚动/滑动一下看看。\n3.“魔法盾”的冷却时间增加至15秒。\n\n2024.5.8\n1.五一活动结束，该好好上班了。\n2.“威能圣殿”的效果调整为增加全属性伤害+25%。\n3.新增了“装备圣殿”，点击后有25%几率获得一件随机品质、品级的装备。\n4.新增了“精粹圣殿”，点击后获得少量精粹。\n5.新增了“欢愉圣殿”，拿到红包的你怎么不开心啊，是红包还不够多吗。\n6.现在特殊装备有独立的装备品级筛选了。\n7.等级低于80级的角色无法删除了。\n\n2024.5.6\n1.特殊装备不再受装备品级筛选的影响了。\n2.“盾击”回到了它该有的位置上。\n\n2024.5.5\n1.修改了负防、负抗性的效果，当防御、抗性小于0时，每减少250点防御、抗性，受到的伤害增加1%。\n2.调整了部分降防、减抗技能的效果。\n3.调整了时间戳的验证机制。\n\n2024.5.3\n1.迟来的五一节活动，意思意思。\n装备（不包括副本）、红包、钥石掉率×2，史莱姆刷起！\n获得的经验值、熟练度×2\n2.去除了一部分物品的“出售”按钮，新增了“拆解”按钮。\n3.修改了部分重复的技能名称。\n4.增加了特殊装备“信心”，种类为布甲下装。\n5.修复了“复仇”技能经验值错误的bug。\n6.删除了失效的烹饪。\n\n2024.4.25\n1.修改了“盾压”的技能效果，“盾击”暂时无变化。\n2.增强了“防御戒指”的效果。\n3.合并了部分烹饪的效果，失效的烹饪将再下一次更新时删除。\n4.调整了各职业的四维加成。\n\n2024.4.23\n1.降低了绝大多数敌对单位的生命值。\n\n2024.4.18\n1.增加了特殊装备“杰哥的眼镜”，来自大佬“你犯天条了知道吗？”。\n2.增加了特殊装备“兄弟的酒”，来自大佬“缺盐的咸鱼”。\n3.增加了特殊装备“舍友的丝袜”，来自大佬“无关风月”。\n4.“火球术”减少了0.5秒的施法时间。\n5.增加了新职业“水魄”、“冰魂”。\n6.现在每点力量可以为“魔剑”、“焚天”额外增加相应的火焰、寒冷伤害了。\n\n2024.4.16\n1.增加了最最基础的DPS统计功能，日后再优化。\n\n2024.4.12\n1.修复了反伤刺甲、攻速暴击腿甲目标不正确的bug。\n2.增加了新的特殊装备“幽影斗篷”。\n3.真实伤害不会再被护盾所吸收了，血魔警告。\n4.调整了元素法师个别技能的等级要求。\n5.新增了三转“电主”、“雷神”。\n\n2024.4.11\n1.修复了鱼人祭祀伤害过高的bug。\n2.调整了被动技能“坚韧”的效果。\n3.调整了主动技能“元素化”的效果,使其更像是一个爆发技能。\n4.经验圣殿的效果对技能熟练度也能起作用了。\n5.现在各类伤害属性将不会出现在装备品级100以下的装备上。\n6.根据风月无关大佬、无聊大佬的建议，增加了新的特殊装备“方向盘”。\n7.根据秃驴大佬的建议，增加了新的特殊装备“护身戒指”、“麻痹戒指”、“防御戒指”。\n\n2024.4.10\n1.默认的拾取规则更改为：普通-出售、优秀-出售、精良-分解、史诗-分解、传说-拾取。\n2.圣殿增益的持续时间延长到60秒。\n3.新增了三转“赤焰”、“青火”，待集齐法师三转后上传最终安装包。\n\n2024.4.9\n1.上调了通过后副本获得的经验值。\n2.增加了经验值补偿机制，未满级的角色将获得更多的经验值，鲱鱼干的效果将不再显示在面板上。\n\n2024.4.8\n1.降低了因等级差产生的经验值惩罚，获得的经验值将至少保留10%。\n2.提高了刷新圣殿的效率，增加了“经验圣殿”。\n\n2024.4.7\n1.掉落的低级副本钥石将直接转化为副本次数，已经掉落的钥石仍然可以使用，解放可怜的包包。\n2.现在野外的小怪秒刷了，难度明显提高，但掉落也更多了。\n3.加快了个别副本的进度。\n4.隐藏职业“黑暗君主”现在可以兼用“长剑”类武器，且“太刀”不会出现在200品级以下的装备中了。\n5.增加了两件新的特殊装备，详见EXCEL。\n\n2024.4.6\n1.现在通关副本（不包括噩梦、年兽）后将有5次掉落机会，包括武器2次，上衣1次，下装1次，首饰1次，但拆解装备获得的神力也减少了。\n2.重铸消耗再次减半，各类装备可重铸的属性详见EXCEL。\n3.降低了大部分副本的难度。\n4.感恩云轩大佬，现在转职将保留等级和装备了。\n\n2024.4.5\n1.现在可以体验“水之使徒”职业了。\n2.为刀客增加了新的三转职业。\n3.增加了几件新的特殊装备和专属掉落，且特殊装备的掉率×2.5。\n4.新建了“元素法师”三转的文件夹。\n\n2024.4.3\n1.提高了战士系列武器的基础攻击力。\n2.现在每点力量可以为艾尔额外增加1点物理伤害。\n3.削弱了“法力转化”的效果，提高了“和弦”和“魔力激化”的效果。\n4.修正了法师技能等级的错误加成，这一刀法师削大了。\n5.减少了“守护者之魂”的冷却时间，且不需要读条了。\n6.削弱了“昏迷”效果相关的所有技能，且“昏迷”期间可以正常触发技能(包括且不限于被动技能荆棘以及格挡、防御之后触发的技能)。\n7.现在装备上可以重铸出物理、火焰、寒冷、闪电、黑暗伤害的属性了。\n8.现在可以体验“雷之使徒”职业了。\n\n2024.4.2\n1.现在可以体验“火之使徒”职业了。\n\n2024.4.1\n1.守护者喜提加强，至少比以前强。\n2.旋风斩、重斩喜提加强。\n3.现在耐力会为艾尔提供额外的生命恢复了。\n4.修复了旧bug，并更新了新的bug们。\n\n2024.3.30\n1.钥石掉率×1.5，红包掉率×1.5。\n2.可怕的双前缀敌人遭到削弱，但是增加了增益前缀和减益前缀各两个。\n3.现在噩梦副本将掉落随机品质等级的装备了。\n4.添加了部分角色、职业的简介。\n\n2024.3.29\n1.现在可以正常掉落法杖类武器了，并且添加了一款特殊装备。\n2.现在可以体验“元素法师”职业了。\n3.现在角色如果不幸战败，将于20秒后在原地满状态归来。\n4.修复了旧bug，并更新了新的bug们。\n\n2024.3.27\n1.优化了一部分的技能描述。\n2.现在所有单位的物理防御和抗性属性最多只能减少75%的伤害，角色的吸收属性最多吸收75%的伤害。\n3.急速属性的上限调整为300%。\n4.“艾冯十世·普洛·麦克斯”大佬为大家定制了贼强贼强的隐藏职业，提示：庇护所773号的暗影法师奈布最近皮有点痒。\n5.这一波强化的是谁？是魔剑的“炎铠”。\n6.噩梦地图的敌人以及年兽再次遭到削弱。\n7.现在只有200品质以上的防具、首饰才可以重铸出吸收属性了。\n8.“报纸壳壳”一众七兄弟大大加强。\n9.年兽装备的款式增加了。\n\n2024.3.24\n1.现在可以支持负值的防御和抗性了，负值越大则受到的伤害越高；但因为受到了创世神艾尔的庇佑，你的防御和抗性最多减少到0。\n2.现在部分敌人将拥有负值的防御或者抗性，不过苟有所长（短）也必有所短（长），请尽量选择合适的属性伤害。\n3.减少了附魔、重铸的材料、神力消耗。\n4.感谢“云轩”大佬的指导，现在的背包更大了。\n\n2024.3.22\n1.噩梦、年兽的敌人全都惨遭削弱。\n\n2024.3.21\n1.幽暗的货仓、睡美人湖、噩梦巨人国度的敌人惨遭削弱。\n2.因为生存环境遭到破坏，你在副本（洞窟深处-森林深处）中遇到的敌人数量减少了很多。\n3.你被强化了，现在每1点耐力可以提供物理防御及所有抗性各1点，快上！\n4.“守护者”的被动技能“荆棘”效果调整。\n5.感谢“艾冯十世·普洛·麦克斯”大佬的支持，“无敌斩”正式更名为“吴迪斩”，并添加了防打断效果（但并不知道是否有效）。\n\n2024.3.20\n1.混乱元素之塔的敌人惨遭削弱。\n\n2024.3.18\n1.红包现在最高只能开出200品质等级的装备了。\n2.蓝装（优秀）现在不能拆解了，而且“不提示拆解高品质物品”将默认勾选，装备且拆且珍惜。\n3.森林三兄弟也有专属装备了。\n4.长剑和双刀的基础属性调整，相信不再刮痧。\n5.可以体验魔法学徒的部分技能了，但仍然不会掉落任何相关的装备。\n\n2024.3.17\n1.修复了“守护者”技能学习等级错误的bug，但不影响已经携带的技能。\n2.“剑斗士”已经太强了，我们来削弱一下“守护者”吧。\n\n2024.3.16更新说明\n1.意外建立的“亚莲娜”角色可以（必须）删除了，让她再多学一点新技能再加入战斗。\n2.主动、被动技能的携带数量调整，以便于低级角色练级。\n3.武器、首饰的附魔增加“生命汲取”属性。\n4.增加了“刀客”职业，以及相应的武器“双刀”。\n5.技能经验值调整为原版标准，先练技能的兄弟有福了。\n6.现在每一种非boss召唤的小怪都能掉落钥石了，掉率均为0.001。\n7.红包掉率翻倍，小怪为0.0002，BOSS为0.2。\n8.红包可以正常开出年兽巢穴钥石和年兽的心脏了。\n9.附魔属性“生命值”下调为每品质等级1-2点生命值，但不影响已经掉落的装备。\n10.卡卡列夫也有专属装备了。\n11.微调了“重斩”、“炎龙吐息”的技能效果。\n12.修复旧bug，并更新了新的bug们，实在不行就回滚一个版本。\n\n\n2024.3.13 更新说明\n1.为“艾尔”设定了全新的职业、技能：\n  ①当等级达到15级且任意角色完成“迷雾森林”首通时，开启第一次转职；\n  ②当等级达到35级且任意角色完成“庇护所773号”首通时，开启第二次转职；\n  ③部分职业在等级达到80级且任意角色完成“未知暗殿”首通时，开启第三次转职；\n  ④暂时禁用“刺客”、“圣骑士”职业。\n  ⑤在转职时请务必要完整阅读提示，以避免不必要的损失。\n2.暂时禁用角色“亚莲娜”。\n3.角色等级、携带技能数量调整。\n4.拆解装备获得的各种碎片整合为“奇怪的精粹”。\n5.调整附魔功能：新的附魔不会让装备的属性下降，但随数值的提高，附魔的成功率会降低。\n6.暴击几率的上限调整为100%。\n7.基础生命值恢复调整为1/s，再也不会被史莱姆们暴捶了。\n8.所有伤害技能的基础命中率调整为100%。\n9.主动技能的等级上限调整为50级。\n10.装备的基本类型调整：\n  ①武器：长剑、剑盾；\n  ②上衣：锁子甲（重甲）、骨甲（轻甲）；\n  ③下装：锁链靴（重甲）、骨靴（轻甲）；\n  ④首饰：秘银指环。\n11.四维加成调整：\n\t每1点力量增加：物理伤害+1，物理防御+1；\n    每1点敏捷增加：暴击等级+1，暴伤等级+1，闪避值+1；\n\t每1点智力增加：元素伤害+1，元素抗性+1；    \n    每1点耐力增加：生命值+5，物理防御+0.5，元素抗性+0.5；\n\t因为重做了数值，所以睡几天仍然打不过一个BOSS是件很正常的事情。\n12.原“炼金”功能拆分为“厨艺”和“炼金”。\n"
             }
         }, 4130: (e, t, n) => {
             function r(e) {
@@ -391,7 +391,7 @@
                 }
             }]
         }, 1990: (e, t, n) => {
-            e.exports = [...n(6107), ...n(6986), ...n(7877), ...n(7258), ...n(5677), ...n(5244), ...n(4770), ...n(1240), ...n(2129), ...n(8215)]
+            e.exports = [...n(6107), ...n(6986), ...n(7877), ...n(7258), ...n(5677), ...n(5244), ...n(4770), ...n(1240), ...n(2129), ...n(5954), ...n(8215)]
         }, 5677: e => {
             e.exports = [{
                 key: "knight.holySign",
@@ -1209,6 +1209,38 @@
                     }
                 }
             }]
+        }, 5954: e => {
+            e.exports = [{
+                key: "vbsk1bf1", hidden: !0, hooks: {
+                    speedRateAdd(e) {
+                        return this.arg + e
+                    }
+                }
+            }, {
+                key: "vbsk1bf2", hidden: !0, hooks: {
+                    atk_self_Add(e) {
+                        return e * this.arg
+                    }
+                }
+            }, {
+                key: "vbsk1bf3", hidden: !0, didRemove() {
+                    this.unit.timeline.resume()
+                }, didAppear() {
+                    this.unit.timeline.pause()
+                }, hooks: {stunned: e => !0}
+            }, {
+                key: "vbsk2bf1", hidden: !0, hooks: {
+                    willDamaged(e, t) {
+                        return e * this.arg
+                    }
+                }
+            }, {
+                key: "vbsk2bf2", hidden: !0, hooks: {
+                    speedRateAdd(e) {
+                        return .5 * this.arg
+                    }
+                }
+            }]
         }, 6107: e => {
             function t(e, t, n) {
                 const r = t.buffs.find((e => "fire_buff" === e.group));
@@ -1495,7 +1527,7 @@
                 }
             }]
         }, 8627: (e, t, n) => {
-            e.exports = [...n(9414), ...n(5727), n(1329), n(4348)]
+            e.exports = [...n(9414), ...n(5727), ...n(328), n(1329), n(4348)]
         }, 4348: e => {
             e.exports = {
                 key: "paladin",
@@ -1993,6 +2025,22 @@
                 availableClasses: {base: !0, sword: !0, longsword: !0, cloth: !0, ornament: !0},
                 attrGrow: {str: 1.5, dex: .5, int: 1.5, sta: .5}
             }
+        }, 328: (e, t, n) => {
+            e.exports = [n(6559)]
+        }, 6559: e => {
+            e.exports = {
+                key: "villagelv1",
+                name: "拳师",
+                description: "1",
+                requirement: {role: "villageH", level: 101},
+                equipments: {},
+                expFormula: [2, 10, -4, 2, .3],
+                skills: {vbsk1: 1, vbsk2: 2},
+                passives: {vbps1: 1},
+                enhances: {},
+                availableClasses: {base: !0, armor: !0, cloth: !0, ornament: !0},
+                attrGrow: {str: 2, dex: .5, int: 0, sta: 1.5}
+            }
         }, 9414: (e, t, n) => {
             e.exports = [n(9224), n(5929), n(8247), n(2923), n(5822), n(6975), n(1235), n(7766), n(3977), n(6340)]
         }, 5929: e => {
@@ -2469,7 +2517,7 @@
                 maxHp: 15e3,
                 exp: 800,
                 def: 100,
-                allResist: -500,
+                allResist: -5e3,
                 atk: 80,
                 level: 90,
                 skills: [{key: "simba.thumpHead", level: 0}, {key: "melee", level: 0}],
@@ -2485,7 +2533,7 @@
                 boss: !0,
                 maxHp: 7e3,
                 def: 50,
-                allResist: -500,
+                allResist: -5e3,
                 exp: 800,
                 atk: 130,
                 level: 90,
@@ -2502,7 +2550,7 @@
                 boss: !0,
                 maxHp: 8e3,
                 atk: 70,
-                def: -500,
+                def: -5e3,
                 exp: 800,
                 level: 90,
                 skills: [{key: "simba.heal", level: 0}, {key: "melee", level: 0}],
@@ -2596,8 +2644,8 @@
                 stunResist: 3e3,
                 boss: !0,
                 maxHp: 2e5,
-                coldResist: -2e3,
-                fireResist: 4e3,
+                coldResist: -2e4,
+                fireResist: 2e3,
                 def: -500,
                 atk: 550,
                 exp: 7e3,
@@ -2619,8 +2667,8 @@
                 maxHp: 2e5,
                 def: -500,
                 atk: 400,
-                coldResist: 4e3,
-                fireResist: -2e3,
+                coldResist: 2e3,
+                fireResist: -2e4,
                 exp: 8e3,
                 level: 120,
                 loots: [{key: "gold", count: [250, 500], rate: 1}]
@@ -2634,7 +2682,7 @@
                 skills: [{key: "azathoth.transformDark", level: 0}, {key: "melee", level: 0}],
                 boss: !0,
                 maxHp: 2e5,
-                def: 4e3,
+                def: 2e3,
                 allResist: -2e4,
                 atk: 500,
                 exp: 8e3,
@@ -2694,6 +2742,8 @@
                 career: "melee",
                 maxHp: 4e3,
                 atk: 200,
+                coldResist: 1e3,
+                fireResist: -1e4,
                 exp: 100,
                 level: 110,
                 skills: [{key: "melee", level: 0}],
@@ -2711,8 +2761,8 @@
                 exp: 5e3,
                 atk: 600,
                 def: 400,
-                allResist: -1e3,
-                coldResist: 3e3,
+                allResist: -1e4,
+                coldResist: 2e3,
                 level: 110,
                 skills: [{key: "fishzilla.summonSlaves", level: 0}, {key: "fishzilla.bomb", level: 12}, {
                     key: "melee",
@@ -2868,10 +2918,10 @@
                 hpRecovery: 15,
                 exp: 1800,
                 atk: 150,
-                def: -500,
+                def: -5e3,
                 allResist: 200,
-                darkResist: 1e3,
-                lightResist: -2e3,
+                darkResist: 2e3,
+                lightResist: -2e4,
                 level: 80,
                 skills: [{key: "melee", level: 0}, {key: "shaman.darkball", level: 0}, {
                     key: "necromancer.ghostShield",
@@ -2953,8 +3003,8 @@
                 stunResist: 3e3,
                 boss: !0,
                 maxHp: 3e5,
-                coldResist: 4e3,
-                fireResist: -2e3,
+                coldResist: 2e3,
+                fireResist: -2e4,
                 atk: 750,
                 exp: 1e4,
                 level: 130,
@@ -3030,7 +3080,7 @@
                 exp: 1500,
                 atk: 1e3,
                 darkResist: 2e3,
-                lightResist: -2e3,
+                lightResist: -2e4,
                 def: 500,
                 level: 150,
                 skills: [{key: "melee", level: 0}, {
@@ -3068,7 +3118,7 @@
                 exp: 1500,
                 atk: 1e3,
                 darkResist: 2e3,
-                lightResist: -2e3,
+                lightResist: -2e4,
                 def: 500,
                 level: 150,
                 skills: [{key: "melee", level: 0}, {
@@ -3462,10 +3512,10 @@
                 maxHp: 1e6,
                 exp: 1800,
                 atk: 2500,
-                def: -1e3,
-                allResist: -1e3,
+                def: -1e4,
+                allResist: -1e4,
                 darkResist: 8e3,
-                lightResist: -8e3,
+                lightResist: -8e4,
                 level: 170,
                 skills: [{key: "melee", level: 0}, {key: "shaman.darkball", level: 0}, {
                     key: "enemy.evil.reading1",
@@ -3698,7 +3748,7 @@
                 boss: !0,
                 maxHp: 2e6,
                 darkResist: 1e3,
-                lightResist: -1e3,
+                lightResist: -1e4,
                 exp: 3e3,
                 atk: 4e3,
                 level: 200,
@@ -3765,7 +3815,7 @@
                 exp: 1800,
                 atk: 2500,
                 darkResist: 2e3,
-                lightResist: -5e3,
+                lightResist: -5e4,
                 level: 180,
                 skills: [{key: "melee", level: 0}, {
                     key: "shaman.darkball",
@@ -3906,8 +3956,8 @@
                 career: "melee",
                 boss: !0,
                 maxHp: 5e3,
-                fireResist: 6e3,
-                coldResist: -6e3,
+                fireResist: 2e3,
+                coldResist: -6e4,
                 hpRecovery: 20,
                 exp: 1200,
                 atk: 40,
@@ -4086,7 +4136,7 @@
                 race: "unknown",
                 career: "melee",
                 onPress(e) {
-                    for (const t of e.units.filter((e => "player" === e.camp || "alien" === e.camp))) t.addBuff("shrine.energy", 6e6);
+                    for (const t of e.units.filter((e => "player" === e.camp || "alien" === e.camp))) t.addBuff("shrine.energy", 6e4);
                     return this.kill(), !1
                 }
             }, {
@@ -4097,7 +4147,7 @@
                 race: "unknown",
                 career: "melee",
                 onPress(e) {
-                    for (const t of e.units.filter((e => "player" === e.camp || "alien" === e.camp))) t.addBuff("shrine.power", 6e6);
+                    for (const t of e.units.filter((e => "player" === e.camp || "alien" === e.camp))) t.addBuff("shrine.power", 6e4);
                     return this.kill(), !1
                 }
             }, {
@@ -4108,7 +4158,7 @@
                 race: "unknown",
                 career: "melee",
                 onPress(e) {
-                    for (const t of e.units.filter((e => "player" === e.camp || "alien" === e.camp))) t.addBuff("shrine.experience", 6e6);
+                    for (const t of e.units.filter((e => "player" === e.camp || "alien" === e.camp))) t.addBuff("shrine.experience", 6e4);
                     return this.kill(), !1
                 }
             }, {
@@ -4129,7 +4179,7 @@
                 camp: "shrine",
                 race: "unknown",
                 career: "melee",
-                loots: [{key: "wuxingshi", rate: 1, count: [1, 1000]}],
+                loots: [{key: "wuxingshi", rate: 1, count: [3, 5]}],
                 onPress(e) {
                     return this.kill(), !1
                 }
@@ -4140,7 +4190,7 @@
                 camp: "shrine",
                 race: "unknown",
                 career: "melee",
-                loots: [{key: "year2018.redbag", rate: 1, count: [1, 100]}],
+                loots: [{key: "year2018.redbag", rate: 1, count: [1, 1]}],
                 onPress(e) {
                     return this.kill(), !1
                 }
@@ -6017,11 +6067,9 @@
                     quality: [49, 7, 1]
                 }, {
                     types: {
-                        "shrine.heal": 1,
                         "shrine.energy": 1,
                         "shrine.power": 1,
                         "shrine.experience": 1,
-                        "shrine.equip": 1,
                         "shrine.wuxingshi": 1,
                         "shrine.redbag": 1
                     }, warmup: 6e4, delay: 6e4, max: 1
@@ -6135,11 +6183,9 @@
                     quality: [25, 5, 1]
                 }, {type: "chapter3.waterElement.giants", warmup: 1e3, delay: 3e3, max: 1}, {
                     types: {
-                        "shrine.heal": 1,
                         "shrine.energy": 1,
                         "shrine.power": 1,
                         "shrine.experience": 1,
-                        "shrine.equip": 1,
                         "shrine.wuxingshi": 1,
                         "shrine.redbag": 1
                     }, warmup: 6e4, delay: 6e4, max: 1
@@ -6220,11 +6266,9 @@
                     quality: [49, 7, 1]
                 }, {
                     types: {
-                        "shrine.heal": 1,
                         "shrine.energy": 1,
                         "shrine.power": 1,
                         "shrine.experience": 1,
-                        "shrine.equip": 1,
                         "shrine.wuxingshi": 1,
                         "shrine.redbag": 1
                     }, warmup: 6e4, delay: 6e4, max: 1
@@ -6307,11 +6351,9 @@
                     quality: [25, 5, 1]
                 }, {
                     types: {
-                        "shrine.heal": 1,
                         "shrine.energy": 1,
                         "shrine.power": 1,
                         "shrine.experience": 1,
-                        "shrine.equip": 1,
                         "shrine.wuxingshi": 1,
                         "shrine.redbag": 1
                     }, warmup: 6e4, delay: 6e4, max: 1
@@ -6385,11 +6427,9 @@
                     quality: [49, 7, 1]
                 }, {
                     types: {
-                        "shrine.heal": 1,
                         "shrine.energy": 1,
                         "shrine.power": 1,
                         "shrine.experience": 1,
-                        "shrine.equip": 1,
                         "shrine.wuxingshi": 1,
                         "shrine.redbag": 1
                     }, warmup: 6e4, delay: 6e4, max: 1
@@ -6466,11 +6506,9 @@
                     quality: [49, 7, 1]
                 }, {
                     types: {
-                        "shrine.heal": 1,
                         "shrine.energy": 1,
                         "shrine.power": 1,
                         "shrine.experience": 1,
-                        "shrine.equip": 1,
                         "shrine.wuxingshi": 1,
                         "shrine.redbag": 1
                     }, warmup: 6e4, delay: 6e4, max: 1
@@ -6664,11 +6702,9 @@
                     quality: [49, 7, 1]
                 }, {
                     types: {
-                        "shrine.heal": 1,
                         "shrine.energy": 1,
                         "shrine.power": 1,
                         "shrine.experience": 1,
-                        "shrine.equip": 1,
                         "shrine.wuxingshi": 1,
                         "shrine.redbag": 1
                     }, warmup: 6e4, delay: 6e4, max: 1
@@ -6813,11 +6849,9 @@
                     quality: [49, 7, 1]
                 }, {
                     types: {
-                        "shrine.heal": 1,
                         "shrine.energy": 1,
                         "shrine.power": 1,
                         "shrine.experience": 1,
-                        "shrine.equip": 1,
                         "shrine.wuxingshi": 1,
                         "shrine.redbag": 1
                     }, warmup: 6e4, delay: 6e4, max: 1
@@ -6890,11 +6924,9 @@
                     quality: [49, 7, 1]
                 }, {
                     types: {
-                        "shrine.heal": 1,
                         "shrine.energy": 1,
                         "shrine.power": 1,
                         "shrine.experience": 1,
-                        "shrine.equip": 1,
                         "shrine.wuxingshi": 1,
                         "shrine.redbag": 1
                     }, warmup: 6e4, delay: 6e4, max: 1
@@ -6976,11 +7008,9 @@
                     }, warmup: 1e3, delay: 1e3, max: 5, quality: [49, 7, 1]
                 }, {
                     types: {
-                        "shrine.heal": 1,
                         "shrine.energy": 1,
                         "shrine.power": 1,
                         "shrine.experience": 1,
-                        "shrine.equip": 1,
                         "shrine.wuxingshi": 1,
                         "shrine.redbag": 1
                     }, warmup: 6e4, delay: 6e4, max: 1
@@ -7082,11 +7112,9 @@
                     quality: [49, 7, 1]
                 }, {
                     types: {
-                        "shrine.heal": 1,
                         "shrine.energy": 1,
                         "shrine.power": 1,
                         "shrine.experience": 1,
-                        "shrine.equip": 1,
                         "shrine.wuxingshi": 1,
                         "shrine.redbag": 1
                     }, warmup: 6e4, delay: 6e4, max: 1
@@ -7151,11 +7179,9 @@
                     quality: [100, 10]
                 }, {
                     types: {
-                        "shrine.heal": 1,
                         "shrine.energy": 1,
                         "shrine.power": 1,
                         "shrine.experience": 1,
-                        "shrine.equip": 1,
                         "shrine.wuxingshi": 1,
                         "shrine.redbag": 1
                     }, warmup: 6e4, delay: 6e4, max: 1
@@ -7359,11 +7385,9 @@
                     quality: [100, 10]
                 }, {
                     types: {
-                        "shrine.heal": 1,
                         "shrine.energy": 1,
                         "shrine.power": 1,
                         "shrine.experience": 1,
-                        "shrine.equip": 1,
                         "shrine.wuxingshi": 1,
                         "shrine.redbag": 1
                     }, warmup: 6e4, delay: 6e4, max: 1
@@ -7389,11 +7413,9 @@
                     quality: [49, 7, 1]
                 }, {
                     types: {
-                        "shrine.heal": 1,
                         "shrine.energy": 1,
                         "shrine.power": 1,
                         "shrine.experience": 1,
-                        "shrine.equip": 1,
                         "shrine.wuxingshi": 1,
                         "shrine.redbag": 1
                     }, warmup: 6e4, delay: 6e4, max: 1
@@ -7413,11 +7435,9 @@
                     quality: [49, 7, 1]
                 }, {type: "wolf.giant", warmup: 1e3, delay: 3e3, max: 1, quality: [100, 10]}, {
                     types: {
-                        "shrine.heal": 1,
                         "shrine.energy": 1,
                         "shrine.power": 1,
                         "shrine.experience": 1,
-                        "shrine.equip": 1,
                         "shrine.wuxingshi": 1,
                         "shrine.redbag": 1
                     }, warmup: 6e4, delay: 6e4, max: 1
@@ -7594,6 +7614,8 @@
                 race: "unknown",
                 career: "melee",
                 maxHp: 1e6,
+                fireResist: 2e3,
+                coldResist: -15e3,
                 exp: 2400,
                 atk: 1500,
                 level: 300,
@@ -7606,6 +7628,8 @@
                 race: "unknown",
                 career: "melee",
                 maxHp: 1e6,
+                fireResist: 2e3,
+                coldResist: -15e3,
                 exp: 2400,
                 atk: 1500,
                 level: 300,
@@ -7620,7 +7644,7 @@
                 boss: !0,
                 maxHp: 5e6,
                 fireResist: 2e3,
-                coldResist: -8e3,
+                coldResist: -15e3,
                 exp: 2400,
                 atk: 6e3,
                 level: 300,
@@ -7732,7 +7756,7 @@
                 def: 2e3,
                 allResist: -5e3,
                 darkResist: -5e3,
-                lightResist: -2e3,
+                lightResist: -2500,
                 exp: 2400,
                 atk: 6e3,
                 level: 300,
@@ -7869,7 +7893,7 @@
                 boss: !0,
                 maxHp: 4e6,
                 fireResist: 1e3,
-                coldResist: -5e3,
+                coldResist: -7500,
                 exp: 2400,
                 atk: 5e3,
                 level: 250,
@@ -8033,8 +8057,8 @@
                 maxHp: 4e6,
                 def: 2e3,
                 allResist: -5e3,
-                darkResist: -2e3,
-                lightResist: -2e3,
+                darkResist: -2500,
+                lightResist: -2500,
                 exp: 2400,
                 atk: 5e3,
                 level: 250,
@@ -8143,7 +8167,7 @@
                 def: -5e3,
                 allResist: 500,
                 darkResist: 2e3,
-                lightResist: -5e3,
+                lightResist: -25e3,
                 exp: 2400,
                 atk: 5e3,
                 level: 250,
@@ -8225,6 +8249,9 @@
                 race: "unknown",
                 career: "melee",
                 maxHp: 8e5,
+                def: 500,
+                allResist: -5e3,
+                fireResist: -5e3,
                 exp: 2400,
                 atk: 1e3,
                 level: 250,
@@ -8237,6 +8264,9 @@
                 race: "unknown",
                 career: "melee",
                 maxHp: 8e5,
+                def: 500,
+                allResist: -5e3,
+                fireResist: -5e3,
                 exp: 2400,
                 atk: 1e3,
                 level: 250,
@@ -8269,9 +8299,9 @@
                 career: "melee",
                 boss: !0,
                 maxHp: 4e6,
-                def: 500,
-                allResist: -500,
-                fireResist: -1500,
+                def: 1e3,
+                allResist: -5e3,
+                fireResist: -5e3,
                 exp: 2400,
                 atk: 5e3,
                 level: 250,
@@ -8722,7 +8752,7 @@
                 hooks: {maxEp: (e, t) => t + 100, epRecovery: (e, t) => t + 5}
             }]
         }, 5034: (e, t, n) => {
-            e.exports = [...n(3236), ...n(8441), ...n(9497), ...n(436), ...n(6133)]
+            e.exports = [...n(3236), ...n(8441), ...n(9497), ...n(436), ...n(6133), ...n(5974)]
         }, 6133: e => {
             e.exports = [{
                 key: "pla_passive1", name: "神圣力量", description: "", hooks: {
@@ -8804,6 +8834,26 @@
                         return t + .5 * this.sta
                     }, maxHp_Add(e, t) {
                         return t + 2.5 * this.sta
+                    }
+                }
+            }]
+        }, 5974: e => {
+            e.exports = [{
+                key: "vbps1", name: "拳师", description: "", hooks: {
+                    atk_self_Add(e, t) {
+                        return t + .5 * this.str
+                    }, dmgLAdd(e, t) {
+                        return t + .45 * this.str
+                    }, defselfAdd(e, t) {
+                        return t + .5 * this.str + .8 * this.sta
+                    }, allResselfAdd(e, t) {
+                        return t + .6 * this.sta
+                    }, speResAdd(e, t) {
+                        return t + .45 * this.sta
+                    }, maxHp_Add(e, t) {
+                        return t + 3.5 * this.sta
+                    }, maxMpMul: (e, t) => 0, hpRecovery(e, t) {
+                        return t + .08 * this.sta
                     }
                 }
             }]
@@ -8936,7 +8986,18 @@
                 attrBase: {str: 10, dex: 8, int: 10, sta: 8}
             }
         }, 1725: (e, t, n) => {
-            e.exports = [n(4564), n(1675), n(2334), n(662)]
+            e.exports = [n(4564), n(1675), n(2334), n(662), n(3597)]
+        }, 3597: e => {
+            e.exports = {
+                key: "villageH",
+                name: "村长",
+                description: "边境之村的村长，没有人能知道他的姓名\n\t如果没有这场灾难，他可能永远过着悠哉游哉看黄色书籍、调戏中年熟妇的生活\n   \n\t职业： 拳师\n\t职业特性： \n\t①每点力量+0.2攻击力\n   \n\t可以使用的武器： 无\n\t可以穿戴的防具： 重甲、布甲\n\t\t\n\t可以习得的主动技能： 直拳、推掌\n\t可以习得的被动技能： 赤手空拳",
+                defaultCareer: "villagelv1",
+                atk: 0,
+                atkSpeed: 1,
+                requirement: {stories: ["villageboss-ceshi"]},
+                attrBase: {str: 10, dex: 4, int: 4, sta: 8}
+            }
         }, 5969: e => {
             e.exports = [{
                 key: "summon.puppet.comeToMe",
@@ -9960,7 +10021,7 @@
                 }
             }]
         }, 5218: (e, t, n) => {
-            e.exports = [...n(7249), ...n(4012), ...n(8417), ...n(5969), ...n(5665), ...n(5422), ...n(192), ...n(9937), ...n(4586), ...n(7148), ...n(8265), ...n(4781)]
+            e.exports = [...n(7249), ...n(4012), ...n(8417), ...n(5969), ...n(5665), ...n(5422), ...n(192), ...n(9937), ...n(4586), ...n(7148), ...n(8265), ...n(4781), ...n(3246)]
         }, 8265: e => {
             e.exports = [{
                 key: "karon_tombstone",
@@ -11872,6 +11933,42 @@
                         e.sendDamage("dark", t, n, this, t.getCritBonus(i) * r, i)
                     }
                     r.rp += r.rpOnAttacked, r.runAttrHooks(t, "attacked")
+                }
+            }]
+        }, 3246: e => {
+            function t(e) {
+                let t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 1;
+                const n = e.runAttrHooks(5, "maxComboPoint");
+                e.runAttrHooks(t, "fistCombo"), e.comboPoint = Math.min(n, e.comboPoint + t)
+            }
+
+            e.exports = [{
+                key: "vbsk1",
+                name: "直拳",
+                coolDown: 3e3,
+                castTime: 500,
+                description: (e, t) => `平平无奇的一拳，臻至化境或许有特殊的效果。\n\t\t\t根据自身攻击力，对目标造成${Math.round((60 + 4 * e) / 100 * t.atk)}-${Math.round((100 + 4 * e) / 100 * t.atk)}点物理伤害，获得1格拳意。\n\t\t\t明奇：自身急速+${10 + Math.round(4 * e) / 10}%，持续1秒。\n\t\t\t行偶：自身攻击力+${10 + Math.round(4 * e) / 10}%，持续1秒。\n\t\t\t臻至化境：技能达到50级时，每次命中使目标昏迷，持续0.1秒。`,
+                maxExp: e => e ** 2 * 1e3 + 3e3 * e + 2e3,
+                canUse: (e, t) => !!t.target,
+                effect(e, n, r) {
+                    const {target: i, leech: o = 0, atk: a} = n;
+                    if (e.testDodge(n, i, this)) return;
+                    const s = a * (.6 + .04 * r + .4 * Math.random()) * n.dmgAdd, l = n.testCrit();
+                    e.sendDamage("melee", n, i, this, n.getCritBonus(l) * s, l), t(n), (e.player.careerInfo.selectedSkills.findIndex((e => e === this.type)) + 1) % 2 != 0 ? n.addBuff("vbsk1bf1", 1005, .1 + .04 * r, "vbsk1bf1") : n.addBuff("vbsk1bf2", 1005, 1.1 + .04 * r, "vbsk1bf2"), r >= 50 && i.addBuff("vbsk1bf3", 100, null, "vbsk1bf3"), o && (n.hp += o), i.runAttrHooks(n, "attacked")
+                }
+            }, {
+                key: "vbsk2",
+                name: "推掌",
+                coolDown: 3e3,
+                castTime: 500,
+                description: (e, t) => `平平无奇的一拳，臻至化境或许有特殊的效果。\n\t\t\t根据自身攻击力，对目标造成${Math.round((60 + 4 * e) / 100 * t.atk)}-${Math.round((100 + 4 * e) / 100 * t.atk)}点物理伤害，获得1格拳意。\n\t\t\t明奇：使目标受到的伤害提高${10 + Math.round(4 * e) / 10}%，持续1秒。\n\t\t\t行偶：使自身受到的伤害降低${10 + Math.round(4 * e) / 10}%，持续1秒。\n\t\t\t臻至化境：技能达到50级时，每次命中使目标减速50%，持续1秒。`,
+                maxExp: e => e ** 2 * 1e3 + 3e3 * e + 2e3,
+                canUse: (e, t) => !!t.target,
+                effect(e, n, r) {
+                    const {target: i, leech: o = 0, atk: a} = n;
+                    if (e.testDodge(n, i, this)) return;
+                    const s = a * (.6 + .04 * r + .4 * Math.random()) * n.dmgAdd, l = n.testCrit();
+                    e.sendDamage("melee", n, i, this, n.getCritBonus(l) * s, l), t(n), (e.player.careerInfo.selectedSkills.findIndex((e => e === this.type)) + 1) % 2 != 0 ? i.addBuff("vbsk2bf1", 1005, 1.1 + .04 * r, "vbsk2bf1") : n.addBuff("vbsk2bf1", 1005, .9 - .04 * r, "vbsk2bf1"), r >= 50 && i.addBuff("vbsk2bf2", 1e3, null, "vbsk2bf2"), o && (n.hp += o), i.runAttrHooks(n, "attacked")
                 }
             }]
         }, 4012: e => {
@@ -14234,7 +14331,7 @@
                     _doReset: function () {
                         this._hash = new i.init([new r.init(1779033703, 4089235720), new r.init(3144134277, 2227873595), new r.init(1013904242, 4271175723), new r.init(2773480762, 1595750129), new r.init(1359893119, 2917565137), new r.init(2600822924, 725511199), new r.init(528734635, 4215389547), new r.init(1541459225, 327033209)])
                     }, _doProcessBlock: function (e, t) {
-                        for (var n = (h = this._hash.words)[0], r = h[1], i = h[2], o = h[3], l = h[4], u = h[5], c = h[6], h = h[7], p = n.high, d = n.low, f = r.high, m = r.low, g = i.high, y = i.low, v = o.high, b = o.low, k = l.high, w = l.low, x = u.high, _ = u.low, A = c.high, E = c.low, S = h.high, D = h.low, C = p, P = d, R = f, O = m, M = g, T = y, B = v, F = b, N = k, I = w, H = x, j = _, L = A, q = E, z = S, U = D, V = 0; 80 > V; V++) {
+                        for (var n = (h = this._hash.words)[0], r = h[1], i = h[2], o = h[3], l = h[4], u = h[5], c = h[6], h = h[7], p = n.high, d = n.low, f = r.high, m = r.low, g = i.high, y = i.low, v = o.high, b = o.low, k = l.high, w = l.low, x = u.high, _ = u.low, A = c.high, E = c.low, S = h.high, D = h.low, C = p, R = d, P = f, O = m, M = g, T = y, B = v, F = b, N = k, I = w, H = x, j = _, L = A, q = E, z = S, U = D, V = 0; 80 > V; V++) {
                             var K = s[V];
                             if (16 > V) var Y = K.high = 0 | e[t + 2 * V], $ = K.low = 0 | e[t + 2 * V + 1]; else {
                                 Y = (($ = (Y = s[V - 15]).high) >>> 1 | (W = Y.low) << 31) ^ ($ >>> 8 | W << 24) ^ $ >>> 7;
@@ -14244,13 +14341,13 @@
                                     X = ($ = s[V - 7]).high, Q = (Z = s[V - 16]).high, Z = Z.low;
                                 Y = (Y = (Y = Y + X + (($ = W + $.low) >>> 0 < W >>> 0 ? 1 : 0)) + G + (($ += J) >>> 0 < J >>> 0 ? 1 : 0)) + Q + (($ += Z) >>> 0 < Z >>> 0 ? 1 : 0), K.high = Y, K.low = $
                             }
-                            X = N & H ^ ~N & L, Z = I & j ^ ~I & q, K = C & R ^ C & M ^ R & M;
-                            var ee = P & O ^ P & T ^ O & T,
-                                te = (W = (C >>> 28 | P << 4) ^ (C << 30 | P >>> 2) ^ (C << 25 | P >>> 7), G = (P >>> 28 | C << 4) ^ (P << 30 | C >>> 2) ^ (P << 25 | C >>> 7), (J = a[V]).high),
+                            X = N & H ^ ~N & L, Z = I & j ^ ~I & q, K = C & P ^ C & M ^ P & M;
+                            var ee = R & O ^ R & T ^ O & T,
+                                te = (W = (C >>> 28 | R << 4) ^ (C << 30 | R >>> 2) ^ (C << 25 | R >>> 7), G = (R >>> 28 | C << 4) ^ (R << 30 | C >>> 2) ^ (R << 25 | C >>> 7), (J = a[V]).high),
                                 ne = J.low;
-                            Q = z + ((N >>> 14 | I << 18) ^ (N >>> 18 | I << 14) ^ (N << 23 | I >>> 9)) + ((J = U + ((I >>> 14 | N << 18) ^ (I >>> 18 | N << 14) ^ (I << 23 | N >>> 9))) >>> 0 < U >>> 0 ? 1 : 0), z = L, U = q, L = H, q = j, H = N, j = I, N = B + (Q = (Q = (Q = Q + X + ((J += Z) >>> 0 < Z >>> 0 ? 1 : 0)) + te + ((J += ne) >>> 0 < ne >>> 0 ? 1 : 0)) + Y + ((J += $) >>> 0 < $ >>> 0 ? 1 : 0)) + ((I = F + J | 0) >>> 0 < F >>> 0 ? 1 : 0) | 0, B = M, F = T, M = R, T = O, R = C, O = P, C = Q + (K = W + K + (($ = G + ee) >>> 0 < G >>> 0 ? 1 : 0)) + ((P = J + $ | 0) >>> 0 < J >>> 0 ? 1 : 0) | 0
+                            Q = z + ((N >>> 14 | I << 18) ^ (N >>> 18 | I << 14) ^ (N << 23 | I >>> 9)) + ((J = U + ((I >>> 14 | N << 18) ^ (I >>> 18 | N << 14) ^ (I << 23 | N >>> 9))) >>> 0 < U >>> 0 ? 1 : 0), z = L, U = q, L = H, q = j, H = N, j = I, N = B + (Q = (Q = (Q = Q + X + ((J += Z) >>> 0 < Z >>> 0 ? 1 : 0)) + te + ((J += ne) >>> 0 < ne >>> 0 ? 1 : 0)) + Y + ((J += $) >>> 0 < $ >>> 0 ? 1 : 0)) + ((I = F + J | 0) >>> 0 < F >>> 0 ? 1 : 0) | 0, B = M, F = T, M = P, T = O, P = C, O = R, C = Q + (K = W + K + (($ = G + ee) >>> 0 < G >>> 0 ? 1 : 0)) + ((R = J + $ | 0) >>> 0 < J >>> 0 ? 1 : 0) | 0
                         }
-                        d = n.low = d + P, n.high = p + C + (d >>> 0 < P >>> 0 ? 1 : 0), m = r.low = m + O, r.high = f + R + (m >>> 0 < O >>> 0 ? 1 : 0), y = i.low = y + T, i.high = g + M + (y >>> 0 < T >>> 0 ? 1 : 0), b = o.low = b + F, o.high = v + B + (b >>> 0 < F >>> 0 ? 1 : 0), w = l.low = w + I, l.high = k + N + (w >>> 0 < I >>> 0 ? 1 : 0), _ = u.low = _ + j, u.high = x + H + (_ >>> 0 < j >>> 0 ? 1 : 0), E = c.low = E + q, c.high = A + L + (E >>> 0 < q >>> 0 ? 1 : 0), D = h.low = D + U, h.high = S + z + (D >>> 0 < U >>> 0 ? 1 : 0)
+                        d = n.low = d + R, n.high = p + C + (d >>> 0 < R >>> 0 ? 1 : 0), m = r.low = m + O, r.high = f + P + (m >>> 0 < O >>> 0 ? 1 : 0), y = i.low = y + T, i.high = g + M + (y >>> 0 < T >>> 0 ? 1 : 0), b = o.low = b + F, o.high = v + B + (b >>> 0 < F >>> 0 ? 1 : 0), w = l.low = w + I, l.high = k + N + (w >>> 0 < I >>> 0 ? 1 : 0), _ = u.low = _ + j, u.high = x + H + (_ >>> 0 < j >>> 0 ? 1 : 0), E = c.low = E + q, c.high = A + L + (E >>> 0 < q >>> 0 ? 1 : 0), D = h.low = D + U, h.high = S + z + (D >>> 0 < U >>> 0 ? 1 : 0)
                     }, _doFinalize: function () {
                         var e = this._data, t = e.words, n = 8 * this._nDataBytes, r = 8 * e.sigBytes;
                         return t[r >>> 5] |= 128 << 24 - r % 32, t[30 + (r + 128 >>> 10 << 5)] = Math.floor(n / 4294967296), t[31 + (r + 128 >>> 10 << 5)] = n, e.sigBytes = 4 * t.length, this._process(), this._hash.toX32()
@@ -14398,12 +14495,12 @@
                 return null == n ? -1 : n
             }
 
-            function P(e) {
+            function R(e) {
                 var t = x();
                 return t.fromInt(e), t
             }
 
-            function R(e) {
+            function P(e) {
                 var t, n = 1;
                 return 0 != (t = e >>> 16) && (e = t, n += 16), 0 != (t = e >> 8) && (e = t, n += 8), 0 != (t = e >> 4) && (e = t, n += 4), 0 != (t = e >> 2) && (e = t, n += 2), 0 != (t = e >> 1) && (e = t, n += 1), n
             }
@@ -14552,7 +14649,7 @@
                     var i = this.abs();
                     if (i.t < r.t) return null != t && t.fromInt(0), void (null != n && this.copyTo(n));
                     null == n && (n = x());
-                    var o = x(), a = this.s, s = e.s, l = this.DB - R(r[r.t - 1]);
+                    var o = x(), a = this.s, s = e.s, l = this.DB - P(r[r.t - 1]);
                     l > 0 ? (r.lShiftTo(l, o), i.lShiftTo(l, n)) : (r.copyTo(o), i.copyTo(n));
                     var u = o.t, c = o[u - 1];
                     if (0 != c) {
@@ -14576,7 +14673,7 @@
                 return 0 == (this.t > 0 ? 1 & this[0] : this.s)
             }, w.prototype.exp = function (e, t) {
                 if (e > 4294967295 || e < 1) return w.ONE;
-                var n = x(), r = x(), i = t.convert(this), o = R(e) - 1;
+                var n = x(), r = x(), i = t.convert(this), o = P(e) - 1;
                 for (i.copyTo(n); --o >= 0;) if (t.sqrTo(n, r), (e & 1 << o) > 0) t.mulTo(r, i, n); else {
                     var a = n;
                     n = r, r = a
@@ -14605,14 +14702,14 @@
                 for (; --n >= 0;) if (0 != (t = this[n] - e[n])) return t;
                 return 0
             }, w.prototype.bitLength = function () {
-                return this.t <= 0 ? 0 : this.DB * (this.t - 1) + R(this[this.t - 1] ^ this.s & this.DM)
+                return this.t <= 0 ? 0 : this.DB * (this.t - 1) + P(this[this.t - 1] ^ this.s & this.DM)
             }, w.prototype.mod = function (e) {
                 var t = x();
                 return this.abs().divRemTo(e, null, t), this.s < 0 && t.compareTo(w.ZERO) > 0 && e.subTo(t, t), t
             }, w.prototype.modPowInt = function (e, t) {
                 var n;
                 return n = e < 256 || t.isEven() ? new O(t) : new M(t), this.exp(e, n)
-            }, w.ZERO = P(0), w.ONE = P(1), j.prototype.convert = L, j.prototype.revert = L, j.prototype.mulTo = function (e, t, n) {
+            }, w.ZERO = R(0), w.ONE = R(1), j.prototype.convert = L, j.prototype.revert = L, j.prototype.mulTo = function (e, t, n) {
                 e.multiplyTo(t, n)
             }, j.prototype.sqrTo = function (e, t) {
                 e.squareTo(t)
@@ -14642,7 +14739,7 @@
                 return Math.floor(Math.LN2 * this.DB / Math.log(e))
             }, w.prototype.toRadix = function (e) {
                 if (null == e && (e = 10), 0 == this.signum() || e < 2 || e > 36) return "0";
-                var t = this.chunkSize(e), n = Math.pow(e, t), r = P(n), i = x(), o = x(), a = "";
+                var t = this.chunkSize(e), n = Math.pow(e, t), r = R(n), i = x(), o = x(), a = "";
                 for (this.divRemTo(r, i, o); i.signum() > 0;) a = (n + o.intValue()).toString(e).substr(1) + a, i.divRemTo(r, i, o);
                 return o.intValue().toString(e) + a
             }, w.prototype.fromRadix = function (e, t) {
@@ -14804,7 +14901,7 @@
                 var t = x(), n = x();
                 return this.divRemTo(e, t, n), new Array(t, n)
             }, w.prototype.modPow = function (e, t) {
-                var n, r, i = e.bitLength(), o = P(1);
+                var n, r, i = e.bitLength(), o = R(1);
                 if (i <= 0) return o;
                 n = i < 18 ? 1 : i < 48 ? 3 : i < 144 ? 4 : i < 768 ? 5 : 6, r = i < 8 ? new O(t) : t.isEven() ? new q(t) : new M(t);
                 var a = new Array, s = 3, l = n - 1, u = (1 << n) - 1;
@@ -14813,7 +14910,7 @@
                     for (r.sqrTo(a[1], c); s <= u;) a[s] = x(), r.mulTo(c, a[s - 2], a[s]), s += 2
                 }
                 var h, p, d = e.t - 1, f = !0, m = x();
-                for (i = R(e[d]) - 1; d >= 0;) {
+                for (i = P(e[d]) - 1; d >= 0;) {
                     for (i >= l ? h = e[d] >> i - l & u : (h = (e[d] & (1 << i + 1) - 1) << l - i, d > 0 && (h |= e[d - 1] >> this.DB + i - l)), s = n; !(1 & h);) h >>= 1, --s;
                     if ((i -= s) < 0 && (i += this.DB, --d), f) a[h].copyTo(o), f = !1; else {
                         for (; s > 1;) r.sqrTo(o, m), r.sqrTo(m, o), s -= 2;
@@ -14825,7 +14922,7 @@
             }, w.prototype.modInverse = function (e) {
                 var t = e.isEven();
                 if (this.isEven() && t || 0 == e.signum()) return w.ZERO;
-                for (var n = e.clone(), r = this.clone(), i = P(1), o = P(0), a = P(0), s = P(1); 0 != n.signum();) {
+                for (var n = e.clone(), r = this.clone(), i = R(1), o = R(0), a = R(0), s = R(1); 0 != n.signum();) {
                     for (; n.isEven();) n.rShiftTo(1, n), t ? (i.isEven() && o.isEven() || (i.addTo(this, i), o.subTo(e, o)), i.rShiftTo(1, i)) : o.isEven() || o.subTo(e, o), o.rShiftTo(1, o);
                     for (; r.isEven();) r.rShiftTo(1, r), t ? (a.isEven() && s.isEven() || (a.addTo(this, a), s.subTo(e, s)), a.rShiftTo(1, a)) : s.isEven() || s.subTo(e, s), s.rShiftTo(1, s);
                     n.compareTo(r) >= 0 ? (n.subTo(r, n), t && i.subTo(a, i), o.subTo(s, o)) : (r.subTo(n, r), t && a.subTo(i, a), s.subTo(o, s))
@@ -15339,12 +15436,12 @@
                         return new k({array: S})
                     }
                     if ("tag" == A) {
-                        var P = e[A];
-                        if ("[object Array]" === Object.prototype.toString.call(P) && 3 == P.length) {
-                            var R = x(P[2]);
-                            return new w({tag: P[0], explicit: P[1], obj: R})
+                        var R = e[A];
+                        if ("[object Array]" === Object.prototype.toString.call(R) && 3 == R.length) {
+                            var P = x(R[2]);
+                            return new w({tag: R[0], explicit: R[1], obj: P})
                         }
-                        return new w(P)
+                        return new w(R)
                     }
                 }, this.jsonToASN1HEX = function (e) {
                     return this.newObject(e).tohex()
@@ -15656,12 +15753,12 @@
             }
 
             function ke(e) {
-                return Pe(He(e)).toLowerCase()
+                return Re(He(e)).toLowerCase()
             }
 
             function we(e) {
                 try {
-                    return decodeURIComponent(Re(e))
+                    return decodeURIComponent(Pe(e))
                 } catch (e) {
                     return null
                 }
@@ -15713,11 +15810,11 @@
                 }(e) / 1e3)
             }
 
-            function Pe(e) {
+            function Re(e) {
                 return e.replace(/%/g, "")
             }
 
-            function Re(e) {
+            function Pe(e) {
                 return e.replace(/(..)/g, "%$1")
             }
 
@@ -18593,9 +18690,9 @@
             }, pe = function (e) {
                 return Buffer.from(ye(e), "base64").toString("utf8")
             }) : (he = function (e) {
-                return ve(Pe(He(e)))
+                return ve(Re(He(e)))
             }, pe = function (e) {
-                return decodeURIComponent(Re(be(e)))
+                return decodeURIComponent(Pe(be(e)))
             }),ce.lang.String.isInteger = function (e) {
                 return !!e.match(/^[0-9]+$/) || !!e.match(/^-[0-9]+$/)
             },ce.lang.String.isHex = function (e) {
@@ -20039,14 +20136,14 @@
                 if (void 0 !== l && e instanceof l) return e;
                 if (void 0 !== e.curve && void 0 !== e.xy && void 0 === e.d) return new s({pub: e.xy, curve: e.curve});
                 if (void 0 !== e.curve && void 0 !== e.d) return new s({prv: e.d, curve: e.curve});
-                if (void 0 === e.kty && void 0 !== e.n && void 0 !== e.e && void 0 === e.d) return (P = new u).setPublic(e.n, e.e), P;
-                if (void 0 === e.kty && void 0 !== e.n && void 0 !== e.e && void 0 !== e.d && void 0 !== e.p && void 0 !== e.q && void 0 !== e.dp && void 0 !== e.dq && void 0 !== e.co && void 0 === e.qi) return (P = new u).setPrivateEx(e.n, e.e, e.d, e.p, e.q, e.dp, e.dq, e.co), P;
-                if (void 0 === e.kty && void 0 !== e.n && void 0 !== e.e && void 0 !== e.d && void 0 === e.p) return (P = new u).setPrivate(e.n, e.e, e.d), P;
-                if (void 0 !== e.p && void 0 !== e.q && void 0 !== e.g && void 0 !== e.y && void 0 === e.x) return (P = new l).setPublic(e.p, e.q, e.g, e.y), P;
-                if (void 0 !== e.p && void 0 !== e.q && void 0 !== e.g && void 0 !== e.y && void 0 !== e.x) return (P = new l).setPrivate(e.p, e.q, e.g, e.y, e.x), P;
-                if ("RSA" === e.kty && void 0 !== e.n && void 0 !== e.e && void 0 === e.d) return (P = new u).setPublic(be(e.n), be(e.e)), P;
-                if ("RSA" === e.kty && void 0 !== e.n && void 0 !== e.e && void 0 !== e.d && void 0 !== e.p && void 0 !== e.q && void 0 !== e.dp && void 0 !== e.dq && void 0 !== e.qi) return (P = new u).setPrivateEx(be(e.n), be(e.e), be(e.d), be(e.p), be(e.q), be(e.dp), be(e.dq), be(e.qi)), P;
-                if ("RSA" === e.kty && void 0 !== e.n && void 0 !== e.e && void 0 !== e.d) return (P = new u).setPrivate(be(e.n), be(e.e), be(e.d)), P;
+                if (void 0 === e.kty && void 0 !== e.n && void 0 !== e.e && void 0 === e.d) return (R = new u).setPublic(e.n, e.e), R;
+                if (void 0 === e.kty && void 0 !== e.n && void 0 !== e.e && void 0 !== e.d && void 0 !== e.p && void 0 !== e.q && void 0 !== e.dp && void 0 !== e.dq && void 0 !== e.co && void 0 === e.qi) return (R = new u).setPrivateEx(e.n, e.e, e.d, e.p, e.q, e.dp, e.dq, e.co), R;
+                if (void 0 === e.kty && void 0 !== e.n && void 0 !== e.e && void 0 !== e.d && void 0 === e.p) return (R = new u).setPrivate(e.n, e.e, e.d), R;
+                if (void 0 !== e.p && void 0 !== e.q && void 0 !== e.g && void 0 !== e.y && void 0 === e.x) return (R = new l).setPublic(e.p, e.q, e.g, e.y), R;
+                if (void 0 !== e.p && void 0 !== e.q && void 0 !== e.g && void 0 !== e.y && void 0 !== e.x) return (R = new l).setPrivate(e.p, e.q, e.g, e.y, e.x), R;
+                if ("RSA" === e.kty && void 0 !== e.n && void 0 !== e.e && void 0 === e.d) return (R = new u).setPublic(be(e.n), be(e.e)), R;
+                if ("RSA" === e.kty && void 0 !== e.n && void 0 !== e.e && void 0 !== e.d && void 0 !== e.p && void 0 !== e.q && void 0 !== e.dp && void 0 !== e.dq && void 0 !== e.qi) return (R = new u).setPrivateEx(be(e.n), be(e.e), be(e.d), be(e.p), be(e.q), be(e.dp), be(e.dq), be(e.qi)), R;
+                if ("RSA" === e.kty && void 0 !== e.n && void 0 !== e.e && void 0 !== e.d) return (R = new u).setPrivate(be(e.n), be(e.e), be(e.d)), R;
                 if ("EC" === e.kty && void 0 !== e.crv && void 0 !== e.x && void 0 !== e.y && void 0 === e.d) {
                     var p = (C = new s({curve: e.crv})).ecparams.keycharlen,
                         d = "04" + ("0000000000" + be(e.x)).slice(-p) + ("0000000000" + be(e.y)).slice(-p);
@@ -20059,11 +20156,11 @@
                 }
                 if ("pkcs5prv" === n) {
                     var m, g = e, y = de;
-                    if (9 === (m = i(g, 0)).length) (P = new u).readPKCS5PrvKeyHex(g); else if (6 === m.length) (P = new l).readPKCS5PrvKeyHex(g); else {
+                    if (9 === (m = i(g, 0)).length) (R = new u).readPKCS5PrvKeyHex(g); else if (6 === m.length) (R = new l).readPKCS5PrvKeyHex(g); else {
                         if (!(m.length > 2 && "04" === g.substr(m[1], 2))) throw new Error("unsupported PKCS#1/5 hexadecimal key");
-                        (P = new s).readPKCS5PrvKeyHex(g)
+                        (R = new s).readPKCS5PrvKeyHex(g)
                     }
-                    return P
+                    return R
                 }
                 if ("pkcs8prv" === n) return h.getKeyFromPlainPrivatePKCS8Hex(e);
                 if ("pkcs8pub" === n) return h._getKeyFromPublicPKCS8Hex(e);
@@ -20080,7 +20177,7 @@
                 if (-1 != e.indexOf("-END DSA PRIVATE KEY-") && -1 == e.indexOf("4,ENCRYPTED")) {
                     var k = o(r = c(e, "DSA PRIVATE KEY"), 0, [1], "02"), x = o(r, 0, [2], "02"),
                         _ = o(r, 0, [3], "02"), A = o(r, 0, [4], "02"), E = o(r, 0, [5], "02");
-                    return (P = new l).setPrivate(new w(k, 16), new w(x, 16), new w(_, 16), new w(A, 16), new w(E, 16)), P
+                    return (R = new l).setPrivate(new w(k, 16), new w(x, 16), new w(_, 16), new w(A, 16), new w(E, 16)), R
                 }
                 if (-1 != e.indexOf("-END EC PRIVATE KEY-") && -1 == e.indexOf("4,ENCRYPTED")) return b = c(e, "EC PRIVATE KEY"), h.getKey(b, null, "pkcs5prv");
                 if (-1 != e.indexOf("-END PRIVATE KEY-")) return h.getKeyFromPlainPrivatePKCS8PEM(e);
@@ -20089,12 +20186,12 @@
                     return D.readPKCS5PrvKeyHex(S), D
                 }
                 if (-1 != e.indexOf("-END EC PRIVATE KEY-") && -1 != e.indexOf("4,ENCRYPTED")) {
-                    var C, P = o(r = h.getDecryptedKeyHex(e, t), 0, [1], "04"), R = o(r, 0, [2, 0], "06"),
+                    var C, R = o(r = h.getDecryptedKeyHex(e, t), 0, [1], "04"), P = o(r, 0, [2, 0], "06"),
                         O = o(r, 0, [3, 0], "03").substr(2);
-                    if (void 0 === ce.crypto.OID.oidhex2name[R]) throw new Error("undefined OID(hex) in KJUR.crypto.OID: " + R);
-                    return (C = new s({curve: ce.crypto.OID.oidhex2name[R]})).setPublicKeyHex(O), C.setPrivateKeyHex(P), C.isPublic = !1, C
+                    if (void 0 === ce.crypto.OID.oidhex2name[P]) throw new Error("undefined OID(hex) in KJUR.crypto.OID: " + P);
+                    return (C = new s({curve: ce.crypto.OID.oidhex2name[P]})).setPublicKeyHex(O), C.setPrivateKeyHex(R), C.isPublic = !1, C
                 }
-                if (-1 != e.indexOf("-END DSA PRIVATE KEY-") && -1 != e.indexOf("4,ENCRYPTED")) return k = o(r = h.getDecryptedKeyHex(e, t), 0, [1], "02"), x = o(r, 0, [2], "02"), _ = o(r, 0, [3], "02"), A = o(r, 0, [4], "02"), E = o(r, 0, [5], "02"), (P = new l).setPrivate(new w(k, 16), new w(x, 16), new w(_, 16), new w(A, 16), new w(E, 16)), P;
+                if (-1 != e.indexOf("-END DSA PRIVATE KEY-") && -1 != e.indexOf("4,ENCRYPTED")) return k = o(r = h.getDecryptedKeyHex(e, t), 0, [1], "02"), x = o(r, 0, [2], "02"), _ = o(r, 0, [3], "02"), A = o(r, 0, [4], "02"), E = o(r, 0, [5], "02"), (R = new l).setPrivate(new w(k, 16), new w(x, 16), new w(_, 16), new w(A, 16), new w(E, 16)), R;
                 if (-1 != e.indexOf("-END ENCRYPTED PRIVATE KEY-")) return h.getKeyFromEncryptedPKCS8PEM(e, t);
                 throw new Error("not supported argument")
             }, Ye.generateKeypair = function (e, t) {
@@ -20726,11 +20823,11 @@
                 y[e] = new g(e, 1, !1, e.toLowerCase(), null, !0, !0)
             }));
             var w = r.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED, x = 60103, _ = 60106, A = 60107, E = 60108,
-                S = 60114, D = 60109, C = 60110, P = 60112, R = 60113, O = 60120, M = 60115, T = 60116, B = 60121,
+                S = 60114, D = 60109, C = 60110, R = 60112, P = 60113, O = 60120, M = 60115, T = 60116, B = 60121,
                 F = 60128, N = 60129, I = 60130, H = 60131;
             if ("function" == typeof Symbol && Symbol.for) {
                 var j = Symbol.for;
-                x = j("react.element"), _ = j("react.portal"), A = j("react.fragment"), E = j("react.strict_mode"), S = j("react.profiler"), D = j("react.provider"), C = j("react.context"), P = j("react.forward_ref"), R = j("react.suspense"), O = j("react.suspense_list"), M = j("react.memo"), T = j("react.lazy"), B = j("react.block"), j("react.scope"), F = j("react.opaque.id"), N = j("react.debug_trace_mode"), I = j("react.offscreen"), H = j("react.legacy_hidden")
+                x = j("react.element"), _ = j("react.portal"), A = j("react.fragment"), E = j("react.strict_mode"), S = j("react.profiler"), D = j("react.provider"), C = j("react.context"), R = j("react.forward_ref"), P = j("react.suspense"), O = j("react.suspense_list"), M = j("react.memo"), T = j("react.lazy"), B = j("react.block"), j("react.scope"), F = j("react.opaque.id"), N = j("react.debug_trace_mode"), I = j("react.offscreen"), H = j("react.legacy_hidden")
             }
             var L, q = "function" == typeof Symbol && Symbol.iterator;
 
@@ -20838,7 +20935,7 @@
                         return "Profiler";
                     case E:
                         return "StrictMode";
-                    case R:
+                    case P:
                         return "Suspense";
                     case O:
                         return "SuspenseList"
@@ -20848,7 +20945,7 @@
                         return (e.displayName || "Context") + ".Consumer";
                     case D:
                         return (e._context.displayName || "Context") + ".Provider";
-                    case P:
+                    case R:
                         var t = e.render;
                         return t = t.displayName || t.name || "", e.displayName || ("" !== t ? "ForwardRef(" + t + ")" : "ForwardRef");
                     case M:
@@ -21176,7 +21273,7 @@
 
             var Se = null, De = null, Ce = null;
 
-            function Pe(e) {
+            function Re(e) {
                 if (e = ti(e)) {
                     if ("function" != typeof Se) throw Error(a(280));
                     var t = e.stateNode;
@@ -21184,14 +21281,14 @@
                 }
             }
 
-            function Re(e) {
+            function Pe(e) {
                 De ? Ce ? Ce.push(e) : Ce = [e] : De = e
             }
 
             function Oe() {
                 if (De) {
                     var e = De, t = Ce;
-                    if (Ce = De = null, Pe(e), t) for (e = 0; e < t.length; e++) Pe(t[e])
+                    if (Ce = De = null, Re(e), t) for (e = 0; e < t.length; e++) Re(t[e])
                 }
             }
 
@@ -21428,13 +21525,13 @@
 
             h && (At = document.createElement("div").style, "AnimationEvent" in window || (delete xt.animationend.animation, delete xt.animationiteration.animation, delete xt.animationstart.animation), "TransitionEvent" in window || delete xt.transitionend.transition);
             var St = Et("animationend"), Dt = Et("animationiteration"), Ct = Et("animationstart"),
-                Pt = Et("transitionend"), Rt = new Map, Ot = new Map,
-                Mt = ["abort", "abort", St, "animationEnd", Dt, "animationIteration", Ct, "animationStart", "canplay", "canPlay", "canplaythrough", "canPlayThrough", "durationchange", "durationChange", "emptied", "emptied", "encrypted", "encrypted", "ended", "ended", "error", "error", "gotpointercapture", "gotPointerCapture", "load", "load", "loadeddata", "loadedData", "loadedmetadata", "loadedMetadata", "loadstart", "loadStart", "lostpointercapture", "lostPointerCapture", "playing", "playing", "progress", "progress", "seeking", "seeking", "stalled", "stalled", "suspend", "suspend", "timeupdate", "timeUpdate", Pt, "transitionEnd", "waiting", "waiting"];
+                Rt = Et("transitionend"), Pt = new Map, Ot = new Map,
+                Mt = ["abort", "abort", St, "animationEnd", Dt, "animationIteration", Ct, "animationStart", "canplay", "canPlay", "canplaythrough", "canPlayThrough", "durationchange", "durationChange", "emptied", "emptied", "encrypted", "encrypted", "ended", "ended", "error", "error", "gotpointercapture", "gotPointerCapture", "load", "load", "loadeddata", "loadedData", "loadedmetadata", "loadedMetadata", "loadstart", "loadStart", "lostpointercapture", "lostPointerCapture", "playing", "playing", "progress", "progress", "seeking", "seeking", "stalled", "stalled", "suspend", "suspend", "timeupdate", "timeUpdate", Rt, "transitionEnd", "waiting", "waiting"];
 
             function Tt(e, t) {
                 for (var n = 0; n < e.length; n += 2) {
                     var r = e[n], i = e[n + 1];
-                    i = "on" + (i[0].toUpperCase() + i.slice(1)), Ot.set(r, t), Rt.set(r, i), u(i, [r])
+                    i = "on" + (i[0].toUpperCase() + i.slice(1)), Ot.set(r, t), Pt.set(r, i), u(i, [r])
                 }
             }
 
@@ -21733,7 +21830,7 @@
                 which: function (e) {
                     return "keypress" === e.type ? nn(e) : "keydown" === e.type || "keyup" === e.type ? e.keyCode : 0
                 }
-            }), Cn = an(Dn), Pn = an(i({}, fn, {
+            }), Cn = an(Dn), Rn = an(i({}, fn, {
                 pointerId: 0,
                 width: 0,
                 height: 0,
@@ -21744,7 +21841,7 @@
                 twist: 0,
                 pointerType: 0,
                 isPrimary: 0
-            })), Rn = an(i({}, pn, {
+            })), Pn = an(i({}, pn, {
                 touches: 0,
                 targetTouches: 0,
                 changedTouches: 0,
@@ -21807,7 +21904,7 @@
             }
 
             function Yn(e, t, n, r) {
-                Re(r), 0 < (t = Fr(t, "onChange")).length && (n = new hn("onChange", "change", null, n, r), e.push({
+                Pe(r), 0 < (t = Fr(t, "onChange")).length && (n = new hn("onChange", "change", null, n, r), e.push({
                     event: n,
                     listeners: t
                 }))
@@ -21997,10 +22094,10 @@
                 n.has(r) || (Mr(t, e, 2, !1), n.add(r))
             }
 
-            var Pr = "_reactListening" + Math.random().toString(36).slice(2);
+            var Rr = "_reactListening" + Math.random().toString(36).slice(2);
 
-            function Rr(e) {
-                e[Pr] || (e[Pr] = !0, s.forEach((function (t) {
+            function Pr(e) {
+                e[Rr] || (e[Rr] = !0, s.forEach((function (t) {
                     Er.has(t) || Or(t, !1, e, null), Or(t, !0, e, null)
                 })))
             }
@@ -22068,7 +22165,7 @@
                 }((function () {
                     var r = o, i = Ee(n), a = [];
                     e:{
-                        var s = Rt.get(e);
+                        var s = Pt.get(e);
                         if (void 0 !== s) {
                             var l = hn, u = e;
                             switch (e) {
@@ -22114,14 +22211,14 @@
                                 case"touchend":
                                 case"touchmove":
                                 case"touchstart":
-                                    l = Rn;
+                                    l = Pn;
                                     break;
                                 case St:
                                 case Dt:
                                 case Ct:
                                     l = vn;
                                     break;
-                                case Pt:
+                                case Rt:
                                     l = On;
                                     break;
                                 case"scroll":
@@ -22143,7 +22240,7 @@
                                 case"pointerout":
                                 case"pointerover":
                                 case"pointerup":
-                                    l = Pn
+                                    l = Rn
                             }
                             var c = !!(4 & t), h = !c && "scroll" === e, p = c ? null !== s ? s + "Capture" : null : s;
                             c = [];
@@ -22157,7 +22254,7 @@
                     }
                     if (!(7 & t)) {
                         if (l = "mouseout" === e || "pointerout" === e, (!(s = "mouseover" === e || "pointerover" === e) || 16 & t || !(u = n.relatedTarget || n.fromElement) || !ei(u) && !u[Qr]) && (l || s) && (s = i.window === i ? i : (s = i.ownerDocument) ? s.defaultView || s.parentWindow : window, l ? (l = r, null !== (u = (u = n.relatedTarget || n.toElement) ? ei(u) : null) && (u !== (h = Ge(u)) || 5 !== u.tag && 6 !== u.tag) && (u = null)) : (l = null, u = r), l !== u)) {
-                            if (c = mn, m = "onMouseLeave", p = "onMouseEnter", f = "mouse", "pointerout" !== e && "pointerover" !== e || (c = Pn, m = "onPointerLeave", p = "onPointerEnter", f = "pointer"), h = null == l ? s : ni(l), d = null == u ? s : ni(u), (s = new c(m, f + "leave", l, n, i)).target = h, s.relatedTarget = d, m = null, ei(i) === r && ((c = new c(p, f + "enter", u, n, i)).target = d, c.relatedTarget = h, m = c), h = m, l && u) e:{
+                            if (c = mn, m = "onMouseLeave", p = "onMouseEnter", f = "mouse", "pointerout" !== e && "pointerover" !== e || (c = Rn, m = "onPointerLeave", p = "onPointerEnter", f = "pointer"), h = null == l ? s : ni(l), d = null == u ? s : ni(u), (s = new c(m, f + "leave", l, n, i)).target = h, s.relatedTarget = d, m = null, ei(i) === r && ((c = new c(p, f + "enter", u, n, i)).target = d, c.relatedTarget = h, m = c), h = m, l && u) e:{
                                 for (p = u, f = 0, d = c = l; d; d = Nr(d)) f++;
                                 for (d = 0, m = p; m; m = Nr(m)) d++;
                                 for (; 0 < f - d;) c = Nr(c), f--;
@@ -22422,7 +22519,7 @@
 
             var wi = null, xi = null, _i = o.unstable_runWithPriority, Ai = o.unstable_scheduleCallback,
                 Ei = o.unstable_cancelCallback, Si = o.unstable_shouldYield, Di = o.unstable_requestPaint,
-                Ci = o.unstable_now, Pi = o.unstable_getCurrentPriorityLevel, Ri = o.unstable_ImmediatePriority,
+                Ci = o.unstable_now, Ri = o.unstable_getCurrentPriorityLevel, Pi = o.unstable_ImmediatePriority,
                 Oi = o.unstable_UserBlockingPriority, Mi = o.unstable_NormalPriority, Ti = o.unstable_LowPriority,
                 Bi = o.unstable_IdlePriority, Fi = {}, Ni = void 0 !== Di ? Di : function () {
                 }, Ii = null, Hi = null, ji = !1, Li = Ci(), qi = 1e4 > Li ? Ci : function () {
@@ -22430,8 +22527,8 @@
                 };
 
             function zi() {
-                switch (Pi()) {
-                    case Ri:
+                switch (Ri()) {
+                    case Pi:
                         return 99;
                     case Oi:
                         return 98;
@@ -22449,7 +22546,7 @@
             function Ui(e) {
                 switch (e) {
                     case 99:
-                        return Ri;
+                        return Pi;
                     case 98:
                         return Oi;
                     case 97:
@@ -22494,7 +22591,7 @@
                             }
                         })), Ii = null
                     } catch (t) {
-                        throw null !== Ii && (Ii = Ii.slice(e + 1)), Ai(Ri, Yi), t
+                        throw null !== Ii && (Ii = Ii.slice(e + 1)), Ai(Pi, Yi), t
                     } finally {
                         ji = !1
                     }
@@ -22952,7 +23049,7 @@
                 }
             }
 
-            var Eo = Ao(!0), So = Ao(!1), Do = {}, Co = si(Do), Po = si(Do), Ro = si(Do);
+            var Eo = Ao(!0), So = Ao(!1), Do = {}, Co = si(Do), Ro = si(Do), Po = si(Do);
 
             function Oo(e) {
                 if (e === Do) throw Error(a(174));
@@ -22960,7 +23057,7 @@
             }
 
             function Mo(e, t) {
-                switch (ui(Ro, t), ui(Po, e), ui(Co, Do), e = t.nodeType) {
+                switch (ui(Po, t), ui(Ro, e), ui(Co, Do), e = t.nodeType) {
                     case 9:
                     case 11:
                         t = (t = t.documentElement) ? t.namespaceURI : de(null, "");
@@ -22972,17 +23069,17 @@
             }
 
             function To() {
-                li(Co), li(Po), li(Ro)
+                li(Co), li(Ro), li(Po)
             }
 
             function Bo(e) {
-                Oo(Ro.current);
+                Oo(Po.current);
                 var t = Oo(Co.current), n = de(t, e.type);
-                t !== n && (ui(Po, e), ui(Co, n))
+                t !== n && (ui(Ro, e), ui(Co, n))
             }
 
             function Fo(e) {
-                Po.current === e && (li(Co), li(Po))
+                Ro.current === e && (li(Co), li(Ro))
             }
 
             var No = si(0);
@@ -23105,7 +23202,7 @@
                         o += 1, ea = Zo = null, t.updateQueue = null, Go.current = Ta, e = n(r, i)
                     } while (na)
                 }
-                if (Go.current = Ra, t = null !== Zo && null !== Zo.next, Xo = 0, ea = Zo = Qo = null, ta = !1, t) throw Error(a(300));
+                if (Go.current = Pa, t = null !== Zo && null !== Zo.next, Xo = 0, ea = Zo = Qo = null, ta = !1, t) throw Error(a(300));
                 return e
             }
 
@@ -23202,7 +23299,7 @@
             }
 
             function pa(e, t, n, r) {
-                var i = Rs;
+                var i = Ps;
                 if (null === i) throw Error(a(349));
                 var o = t._getVersion, s = o(t._source), l = Go.current, u = l.useState((function () {
                     return ha(i, t, n)
@@ -23239,7 +23336,7 @@
                     dispatch: null,
                     lastRenderedReducer: la,
                     lastRenderedState: h
-                }).dispatch = c = Pa.bind(null, Qo, e), u.queue = e, u.baseQueue = null, h = ha(i, t, n), u.memoizedState = u.baseState = h), h
+                }).dispatch = c = Ra.bind(null, Qo, e), u.queue = e, u.baseQueue = null, h = ha(i, t, n), u.memoizedState = u.baseState = h), h
             }
 
             function da(e, t, n) {
@@ -23253,7 +23350,7 @@
                     dispatch: null,
                     lastRenderedReducer: la,
                     lastRenderedState: e
-                }).dispatch = Pa.bind(null, Qo, e), [t.memoizedState, e]
+                }).dispatch = Ra.bind(null, Qo, e), [t.memoizedState, e]
             }
 
             function ma(e, t, n, r) {
@@ -23346,7 +23443,7 @@
                 }))
             }
 
-            function Pa(e, t, n) {
+            function Ra(e, t, n) {
                 var r = ul(), i = cl(e), o = {lane: i, action: n, eagerReducer: null, eagerState: null, next: null},
                     a = t.pending;
                 if (null === a ? o.next = o : (o.next = a.next, a.next = o), t.pending = o, a = e.alternate, e === Qo || null !== a && a === Qo) na = ta = !0; else {
@@ -23359,7 +23456,7 @@
                 }
             }
 
-            var Ra = {
+            var Pa = {
                 readContext: io,
                 useCallback: ra,
                 useContext: ra,
@@ -23393,7 +23490,7 @@
                         dispatch: null,
                         lastRenderedReducer: e,
                         lastRenderedState: t
-                    }).dispatch = Pa.bind(null, Qo, e), [r.memoizedState, e]
+                    }).dispatch = Ra.bind(null, Qo, e), [r.memoizedState, e]
                 }, useRef: ga, useState: fa, useDebugValue: Ea, useDeferredValue: function (e) {
                     var t = fa(e), n = t[0], r = t[1];
                     return ka((function () {
@@ -23720,7 +23817,7 @@
                         return To(), li(pi), li(hi), Wo(), (r = t.stateNode).pendingContext && (r.context = r.pendingContext, r.pendingContext = null), null !== e && null !== e.child || (Ko(t) ? t.flags |= 4 : r.hydrate || (t.flags |= 256)), $a(t), null;
                     case 5:
                         Fo(t);
-                        var o = Oo(Ro.current);
+                        var o = Oo(Po.current);
                         if (n = t.type, null !== e && null != t.stateNode) Wa(e, t, n, r, o), e.ref !== t.ref && (t.flags |= 128); else {
                             if (!r) {
                                 if (null === t.stateNode) throw Error(a(166));
@@ -23848,13 +23945,13 @@
                     case 6:
                         if (e && null != t.stateNode) Ga(e, t, e.memoizedProps, r); else {
                             if ("string" != typeof r && null === t.stateNode) throw Error(a(166));
-                            n = Oo(Ro.current), Oo(Co.current), Ko(t) ? (r = t.stateNode, n = t.memoizedProps, r[Jr] = t, r.nodeValue !== n && (t.flags |= 4)) : ((r = (9 === n.nodeType ? n : n.ownerDocument).createTextNode(r))[Jr] = t, t.stateNode = r)
+                            n = Oo(Po.current), Oo(Co.current), Ko(t) ? (r = t.stateNode, n = t.memoizedProps, r[Jr] = t, r.nodeValue !== n && (t.flags |= 4)) : ((r = (9 === n.nodeType ? n : n.ownerDocument).createTextNode(r))[Jr] = t, t.stateNode = r)
                         }
                         return null;
                     case 13:
-                        return li(No), r = t.memoizedState, 64 & t.flags ? (t.lanes = n, t) : (r = null !== r, n = !1, null === e ? void 0 !== t.memoizedProps.fallback && Ko(t) : n = null !== e.memoizedState, r && !n && 2 & t.mode && (null === e && !0 !== t.memoizedProps.unstable_avoidThisFallback || 1 & No.current ? 0 === Fs && (Fs = 3) : (0 !== Fs && 3 !== Fs || (Fs = 4), null === Rs || !(134217727 & Hs) && !(134217727 & js) || ml(Rs, Ms))), (r || n) && (t.flags |= 4), null);
+                        return li(No), r = t.memoizedState, 64 & t.flags ? (t.lanes = n, t) : (r = null !== r, n = !1, null === e ? void 0 !== t.memoizedProps.fallback && Ko(t) : n = null !== e.memoizedState, r && !n && 2 & t.mode && (null === e && !0 !== t.memoizedProps.unstable_avoidThisFallback || 1 & No.current ? 0 === Fs && (Fs = 3) : (0 !== Fs && 3 !== Fs || (Fs = 4), null === Ps || !(134217727 & Hs) && !(134217727 & js) || ml(Ps, Ms))), (r || n) && (t.flags |= 4), null);
                     case 4:
-                        return To(), $a(t), null === e && Rr(t.stateNode.containerInfo), null;
+                        return To(), $a(t), null === e && Pr(t.stateNode.containerInfo), null;
                     case 10:
                         return to(t), null;
                     case 19:
@@ -24349,7 +24446,7 @@
                 return null !== e && (null === (e = e.memoizedState) || null !== e.dehydrated) && null !== (t = t.memoizedState) && null === t.dehydrated
             }
 
-            var Ss = Math.ceil, Ds = w.ReactCurrentDispatcher, Cs = w.ReactCurrentOwner, Ps = 0, Rs = null, Os = null,
+            var Ss = Math.ceil, Ds = w.ReactCurrentDispatcher, Cs = w.ReactCurrentOwner, Rs = 0, Ps = null, Os = null,
                 Ms = 0, Ts = 0, Bs = si(0), Fs = 0, Ns = null, Is = 0, Hs = 0, js = 0, Ls = 0, qs = null, zs = 0,
                 Us = 1 / 0;
 
@@ -24361,7 +24458,7 @@
                 nl = 0, rl = null, il = -1, ol = 0, al = 0, sl = null, ll = !1;
 
             function ul() {
-                return 48 & Ps ? qi() : -1 !== il ? il : il = qi()
+                return 48 & Rs ? qi() : -1 !== il ? il : il = qi()
             }
 
             function cl(e) {
@@ -24372,7 +24469,7 @@
                     var t = 4186112 & ~al;
                     return 0 == (t &= -t) && 0 == (t = (e = 4186112 & ~e) & -e) && (t = 8192), t
                 }
-                return e = zi(), e = Ht(4 & Ps && 98 === e ? 12 : e = function (e) {
+                return e = zi(), e = Ht(4 & Rs && 98 === e ? 12 : e = function (e) {
                     switch (e) {
                         case 99:
                             return 15;
@@ -24392,9 +24489,9 @@
             function hl(e, t, n) {
                 if (50 < nl) throw nl = 0, rl = null, Error(a(185));
                 if (null === (e = pl(e, t))) return null;
-                qt(e, t, n), e === Rs && (js |= t, 4 === Fs && ml(e, Ms));
+                qt(e, t, n), e === Ps && (js |= t, 4 === Fs && ml(e, Ms));
                 var r = zi();
-                1 === t ? 8 & Ps && !(48 & Ps) ? gl(e) : (dl(e, n), 0 === Ps && (Vs(), Yi())) : (!(4 & Ps) || 98 !== r && 99 !== r || (null === tl ? tl = new Set([e]) : tl.add(e)), dl(e, n)), qs = e
+                1 === t ? 8 & Rs && !(48 & Rs) ? gl(e) : (dl(e, n), 0 === Rs && (Vs(), Yi())) : (!(4 & Rs) || 98 !== r && 99 !== r || (null === tl ? tl = new Set([e]) : tl.add(e)), dl(e, n)), qs = e
             }
 
             function pl(e, t) {
@@ -24416,12 +24513,12 @@
                     } else c <= t && (e.expiredLanes |= u);
                     s &= ~u
                 }
-                if (r = Nt(e, e === Rs ? Ms : 0), t = Bt, 0 === r) null !== n && (n !== Fi && Ei(n), e.callbackNode = null, e.callbackPriority = 0); else {
+                if (r = Nt(e, e === Ps ? Ms : 0), t = Bt, 0 === r) null !== n && (n !== Fi && Ei(n), e.callbackNode = null, e.callbackPriority = 0); else {
                     if (null !== n) {
                         if (e.callbackPriority === t) return;
                         n !== Fi && Ei(n)
                     }
-                    15 === t ? (n = gl.bind(null, e), null === Ii ? (Ii = [n], Hi = Ai(Ri, $i)) : Ii.push(n), n = Fi) : 14 === t ? n = Ki(99, gl.bind(null, e)) : (n = function (e) {
+                    15 === t ? (n = gl.bind(null, e), null === Ii ? (Ii = [n], Hi = Ai(Pi, $i)) : Ii.push(n), n = Fi) : 14 === t ? n = Ki(99, gl.bind(null, e)) : (n = function (e) {
                         switch (e) {
                             case 15:
                             case 14:
@@ -24452,29 +24549,29 @@
             }
 
             function fl(e) {
-                if (il = -1, al = ol = 0, 48 & Ps) throw Error(a(327));
+                if (il = -1, al = ol = 0, 48 & Rs) throw Error(a(327));
                 var t = e.callbackNode;
                 if (Ml() && e.callbackNode !== t) return null;
-                var n = Nt(e, e === Rs ? Ms : 0);
+                var n = Nt(e, e === Ps ? Ms : 0);
                 if (0 === n) return null;
-                var r = n, i = Ps;
-                Ps |= 16;
+                var r = n, i = Rs;
+                Rs |= 16;
                 var o = _l();
-                for (Rs === e && Ms === r || (Vs(), wl(e, r)); ;) try {
+                for (Ps === e && Ms === r || (Vs(), wl(e, r)); ;) try {
                     Sl();
                     break
                 } catch (t) {
                     xl(e, t)
                 }
-                if (eo(), Ds.current = o, Ps = i, null !== Os ? r = 0 : (Rs = null, Ms = 0, r = Fs), Is & js) wl(e, 0); else if (0 !== r) {
-                    if (2 === r && (Ps |= 64, e.hydrate && (e.hydrate = !1, Kr(e.containerInfo)), 0 !== (n = It(e)) && (r = Al(e, n))), 1 === r) throw t = Ns, wl(e, 0), ml(e, n), dl(e, qi()), t;
+                if (eo(), Ds.current = o, Rs = i, null !== Os ? r = 0 : (Ps = null, Ms = 0, r = Fs), Is & js) wl(e, 0); else if (0 !== r) {
+                    if (2 === r && (Rs |= 64, e.hydrate && (e.hydrate = !1, Kr(e.containerInfo)), 0 !== (n = It(e)) && (r = Al(e, n))), 1 === r) throw t = Ns, wl(e, 0), ml(e, n), dl(e, qi()), t;
                     switch (e.finishedWork = e.current.alternate, e.finishedLanes = n, r) {
                         case 0:
                         case 1:
                             throw Error(a(345));
                         case 2:
                         case 5:
-                            Pl(e);
+                            Rl(e);
                             break;
                         case 3:
                             if (ml(e, n), (62914560 & n) === n && 10 < (r = zs + 500 - qi())) {
@@ -24483,10 +24580,10 @@
                                     ul(), e.pingedLanes |= e.suspendedLanes & i;
                                     break
                                 }
-                                e.timeoutHandle = Ur(Pl.bind(null, e), r);
+                                e.timeoutHandle = Ur(Rl.bind(null, e), r);
                                 break
                             }
-                            Pl(e);
+                            Rl(e);
                             break;
                         case 4:
                             if (ml(e, n), (4186112 & n) === n) break;
@@ -24495,10 +24592,10 @@
                                 o = 1 << s, (s = r[s]) > i && (i = s), n &= ~o
                             }
                             if (n = i, 10 < (n = (120 > (n = qi() - n) ? 120 : 480 > n ? 480 : 1080 > n ? 1080 : 1920 > n ? 1920 : 3e3 > n ? 3e3 : 4320 > n ? 4320 : 1960 * Ss(n / 1960)) - n)) {
-                                e.timeoutHandle = Ur(Pl.bind(null, e), n);
+                                e.timeoutHandle = Ur(Rl.bind(null, e), n);
                                 break
                             }
-                            Pl(e);
+                            Rl(e);
                             break;
                         default:
                             throw Error(a(329))
@@ -24515,32 +24612,32 @@
             }
 
             function gl(e) {
-                if (48 & Ps) throw Error(a(327));
-                if (Ml(), e === Rs && e.expiredLanes & Ms) {
+                if (48 & Rs) throw Error(a(327));
+                if (Ml(), e === Ps && e.expiredLanes & Ms) {
                     var t = Ms, n = Al(e, t);
                     Is & js && (n = Al(e, t = Nt(e, t)))
                 } else n = Al(e, t = Nt(e, 0));
-                if (0 !== e.tag && 2 === n && (Ps |= 64, e.hydrate && (e.hydrate = !1, Kr(e.containerInfo)), 0 !== (t = It(e)) && (n = Al(e, t))), 1 === n) throw n = Ns, wl(e, 0), ml(e, t), dl(e, qi()), n;
-                return e.finishedWork = e.current.alternate, e.finishedLanes = t, Pl(e), dl(e, qi()), null
+                if (0 !== e.tag && 2 === n && (Rs |= 64, e.hydrate && (e.hydrate = !1, Kr(e.containerInfo)), 0 !== (t = It(e)) && (n = Al(e, t))), 1 === n) throw n = Ns, wl(e, 0), ml(e, t), dl(e, qi()), n;
+                return e.finishedWork = e.current.alternate, e.finishedLanes = t, Rl(e), dl(e, qi()), null
             }
 
             function yl(e, t) {
-                var n = Ps;
-                Ps |= 1;
+                var n = Rs;
+                Rs |= 1;
                 try {
                     return e(t)
                 } finally {
-                    0 === (Ps = n) && (Vs(), Yi())
+                    0 === (Rs = n) && (Vs(), Yi())
                 }
             }
 
             function vl(e, t) {
-                var n = Ps;
-                Ps &= -2, Ps |= 8;
+                var n = Rs;
+                Rs &= -2, Rs |= 8;
                 try {
                     return e(t)
                 } finally {
-                    0 === (Ps = n) && (Vs(), Yi())
+                    0 === (Rs = n) && (Vs(), Yi())
                 }
             }
 
@@ -24583,14 +24680,14 @@
                     }
                     n = n.return
                 }
-                Rs = e, Os = Ul(e.current, null), Ms = Ts = Is = t, Fs = 0, Ns = null, Ls = js = Hs = 0
+                Ps = e, Os = Ul(e.current, null), Ms = Ts = Is = t, Fs = 0, Ns = null, Ls = js = Hs = 0
             }
 
             function xl(e, t) {
                 for (; ;) {
                     var n = Os;
                     try {
-                        if (eo(), Go.current = Ra, ta) {
+                        if (eo(), Go.current = Pa, ta) {
                             for (var r = Qo.memoizedState; null !== r;) {
                                 var i = r.queue;
                                 null !== i && (i.pending = null), r = r.next
@@ -24675,21 +24772,21 @@
 
             function _l() {
                 var e = Ds.current;
-                return Ds.current = Ra, null === e ? Ra : e
+                return Ds.current = Pa, null === e ? Pa : e
             }
 
             function Al(e, t) {
-                var n = Ps;
-                Ps |= 16;
+                var n = Rs;
+                Rs |= 16;
                 var r = _l();
-                for (Rs === e && Ms === t || wl(e, t); ;) try {
+                for (Ps === e && Ms === t || wl(e, t); ;) try {
                     El();
                     break
                 } catch (t) {
                     xl(e, t)
                 }
-                if (eo(), Ps = n, Ds.current = r, null !== Os) throw Error(a(261));
-                return Rs = null, Ms = 0, Fs
+                if (eo(), Rs = n, Ds.current = r, null !== Os) throw Error(a(261));
+                return Ps = null, Ms = 0, Fs
             }
 
             function El() {
@@ -24726,16 +24823,16 @@
                 0 === Fs && (Fs = 5)
             }
 
-            function Pl(e) {
+            function Rl(e) {
                 var t = zi();
-                return Vi(99, Rl.bind(null, e, t)), null
+                return Vi(99, Pl.bind(null, e, t)), null
             }
 
-            function Rl(e, t) {
+            function Pl(e, t) {
                 do {
                     Ml()
                 } while (null !== Xs);
-                if (48 & Ps) throw Error(a(327));
+                if (48 & Rs) throw Error(a(327));
                 var n = e.finishedWork;
                 if (null === n) return null;
                 if (e.finishedWork = null, e.finishedLanes = 0, n === e.current) throw Error(a(177));
@@ -24746,8 +24843,8 @@
                     var u = 31 - zt(o), c = 1 << u;
                     i[u] = 0, s[u] = -1, l[u] = -1, o &= ~c
                 }
-                if (null !== tl && !(24 & r) && tl.has(e) && tl.delete(e), e === Rs && (Os = Rs = null, Ms = 0), 1 < n.flags ? null !== n.lastEffect ? (n.lastEffect.nextEffect = n, r = n.firstEffect) : r = n : r = n.firstEffect, null !== r) {
-                    if (i = Ps, Ps |= 32, Cs.current = null, jr = $t, mr(s = fr())) {
+                if (null !== tl && !(24 & r) && tl.has(e) && tl.delete(e), e === Ps && (Os = Ps = null, Ms = 0), 1 < n.flags ? null !== n.lastEffect ? (n.lastEffect.nextEffect = n, r = n.firstEffect) : r = n : r = n.firstEffect, null !== r) {
+                    if (i = Rs, Rs |= 32, Cs.current = null, jr = $t, mr(s = fr())) {
                         if ("selectionStart" in s) l = {
                             start: s.selectionStart,
                             end: s.selectionEnd
@@ -24851,7 +24948,7 @@
                             Il(Ys, e), Ys = Ys.nextEffect
                         }
                     } while (null !== Ys);
-                    Ys = null, Ni(), Ps = i
+                    Ys = null, Ni(), Rs = i
                 } else e.current = n;
                 if (Js) Js = !1, Xs = e, Qs = t; else for (Ys = r; null !== Ys;) t = Ys.nextEffect, Ys.nextEffect = null, 8 & Ys.flags && ((_ = Ys).sibling = null, _.stateNode = null), Ys = t;
                 if (0 === (r = e.pendingLanes) && (Gs = null), 1 === r ? e === rl ? nl++ : (nl = 0, rl = e) : nl = 0, n = n.stateNode, xi && "function" == typeof xi.onCommitFiberRoot) try {
@@ -24859,7 +24956,7 @@
                 } catch (e) {
                 }
                 if (dl(e, qi()), $s) throw $s = !1, e = Ws, Ws = null, e;
-                return 8 & Ps || Yi(), null
+                return 8 & Rs || Yi(), null
             }
 
             function Ol() {
@@ -24896,9 +24993,9 @@
             function Fl() {
                 if (null === Xs) return !1;
                 var e = Xs;
-                if (Xs = null, 48 & Ps) throw Error(a(331));
-                var t = Ps;
-                Ps |= 32;
+                if (Xs = null, 48 & Rs) throw Error(a(331));
+                var t = Rs;
+                Rs |= 32;
                 var n = el;
                 el = [];
                 for (var r = 0; r < n.length; r += 2) {
@@ -24921,7 +25018,7 @@
                     }
                 }
                 for (l = e.current.firstEffect; null !== l;) e = l.nextEffect, l.nextEffect = null, 8 & l.flags && (l.sibling = null, l.stateNode = null), l = e;
-                return Ps = t, Yi(), !0
+                return Rs = t, Yi(), !0
             }
 
             function Nl(e, t, n) {
@@ -24951,7 +25048,7 @@
 
             function Hl(e, t, n) {
                 var r = e.pingCache;
-                null !== r && r.delete(t), t = ul(), e.pingedLanes |= e.suspendedLanes & n, Rs === e && (Ms & n) === n && (4 === Fs || 3 === Fs && (62914560 & Ms) === Ms && 500 > qi() - zs ? wl(e, 0) : Ls |= n), dl(e, t)
+                null !== r && r.delete(t), t = ul(), e.pingedLanes |= e.suspendedLanes & n, Ps === e && (Ms & n) === n && (4 === Fs || 3 === Fs && (62914560 & Ms) === Ms && 500 > qi() - zs ? wl(e, 0) : Ls |= n), dl(e, t)
             }
 
             function jl(e, t) {
@@ -24992,8 +25089,8 @@
                         break;
                     case S:
                         return (e = ql(12, n, t, 8 | i)).elementType = S, e.type = S, e.lanes = o, e;
-                    case R:
-                        return (e = ql(13, n, t, i)).type = R, e.elementType = R, e.lanes = o, e;
+                    case P:
+                        return (e = ql(13, n, t, i)).type = P, e.elementType = P, e.lanes = o, e;
                     case O:
                         return (e = ql(19, n, t, i)).elementType = O, e.lanes = o, e;
                     case I:
@@ -25008,7 +25105,7 @@
                             case C:
                                 s = 9;
                                 break e;
-                            case P:
+                            case R:
                                 s = 11;
                                 break e;
                             case M:
@@ -25100,7 +25197,7 @@
 
             function eu(e, t, n) {
                 var r = null != n && null != n.hydrationOptions && n.hydrationOptions.mutableSources || null;
-                if (n = new Gl(e, t, null != n && !0 === n.hydrate), t = ql(3, null, null, 2 === t ? 7 : 1 === t ? 3 : 0), n.current = t, t.stateNode = n, ao(t), e[Qr] = n.current, Rr(8 === e.nodeType ? e.parentNode : e), r) for (e = 0; e < r.length; e++) {
+                if (n = new Gl(e, t, null != n && !0 === n.hydrate), t = ql(3, null, null, 2 === t ? 7 : 1 === t ? 3 : 0), n.current = t, t.stateNode = n, ao(t), e[Qr] = n.current, Pr(8 === e.nodeType ? e.parentNode : e), r) for (e = 0; e < r.length; e++) {
                     var i = (t = r[e])._getVersion;
                     i = i(t._source), null == n.mutableSourceEagerHydrationData ? n.mutableSourceEagerHydrationData = [t, i] : n.mutableSourceEagerHydrationData.push(t, i)
                 }
@@ -25200,7 +25297,7 @@
                             switch (null !== e && (e.alternate = null, t.alternate = null, t.flags |= 2), e = t.pendingProps, i = (o = i._init)(i._payload), t.type = i, o = t.tag = function (e) {
                                 if ("function" == typeof e) return zl(e) ? 1 : 0;
                                 if (null != e) {
-                                    if ((e = e.$$typeof) === P) return 11;
+                                    if ((e = e.$$typeof) === R) return 11;
                                     if (e === M) return 14
                                 }
                                 return 2
@@ -25342,15 +25439,15 @@
                         null != (t = n.value) && ae(e, !!n.multiple, t, !1)
                 }
             }, Me = yl, Te = function (e, t, n, r, i) {
-                var o = Ps;
-                Ps |= 4;
+                var o = Rs;
+                Rs |= 4;
                 try {
                     return Vi(98, e.bind(null, t, n, r, i))
                 } finally {
-                    0 === (Ps = o) && (Vs(), Yi())
+                    0 === (Rs = o) && (Vs(), Yi())
                 }
             }, Be = function () {
-                !(49 & Ps) && (function () {
+                !(49 & Rs) && (function () {
                     if (null !== tl) {
                         var e = tl;
                         tl = null, e.forEach((function (e) {
@@ -25360,12 +25457,12 @@
                     Yi()
                 }(), Ml())
             }, Fe = function (e, t) {
-                var n = Ps;
-                Ps |= 2;
+                var n = Rs;
+                Rs |= 2;
                 try {
                     return e(t)
                 } finally {
-                    0 === (Ps = n) && (Vs(), Yi())
+                    0 === (Rs = n) && (Vs(), Yi())
                 }
             };
             var ru = {findFiberByHostInstance: ei, bundleType: 0, version: "17.0.2", rendererPackageName: "react-dom"},
@@ -25606,7 +25703,7 @@
                 })), r
             }
 
-            function P(e) {
+            function R(e) {
                 if (-1 === e._status) {
                     var t = e._result;
                     t = t(), e._status = 0, e._result = t, t.then((function (t) {
@@ -25619,16 +25716,16 @@
                 throw e._result
             }
 
-            var R = {current: null};
+            var P = {current: null};
 
             function O() {
-                var e = R.current;
+                var e = P.current;
                 if (null === e) throw Error(d(321));
                 return e
             }
 
             var M = {
-                ReactCurrentDispatcher: R,
+                ReactCurrentDispatcher: P,
                 ReactCurrentBatchConfig: {transition: 0},
                 ReactCurrentOwner: k,
                 IsSomeRendererActing: {current: !1},
@@ -25684,7 +25781,7 @@
             }, t.forwardRef = function (e) {
                 return {$$typeof: l, render: e}
             }, t.isValidElement = A, t.lazy = function (e) {
-                return {$$typeof: c, _payload: {_status: -1, _result: e}, _init: P}
+                return {$$typeof: c, _payload: {_status: -1, _result: e}, _init: R}
             }, t.memo = function (e, t) {
                 return {$$typeof: u, type: e, compare: void 0 === t ? null : t}
             }, t.useCallback = function (e, t) {
@@ -25816,7 +25913,7 @@
                 return 0 !== n ? n : e.id - t.id
             }
 
-            var S = [], D = [], C = 1, P = null, R = 3, O = !1, M = !1, T = !1;
+            var S = [], D = [], C = 1, R = null, P = 3, O = !1, M = !1, T = !1;
 
             function B(e) {
                 for (var t = _(D); null !== t;) {
@@ -25837,24 +25934,24 @@
 
             function N(e, n) {
                 M = !1, T && (T = !1, i()), O = !0;
-                var o = R;
+                var o = P;
                 try {
-                    for (B(n), P = _(S); null !== P && (!(P.expirationTime > n) || e && !t.unstable_shouldYield());) {
-                        var a = P.callback;
+                    for (B(n), R = _(S); null !== R && (!(R.expirationTime > n) || e && !t.unstable_shouldYield());) {
+                        var a = R.callback;
                         if ("function" == typeof a) {
-                            P.callback = null, R = P.priorityLevel;
-                            var s = a(P.expirationTime <= n);
-                            n = t.unstable_now(), "function" == typeof s ? P.callback = s : P === _(S) && A(S), B(n)
+                            R.callback = null, P = R.priorityLevel;
+                            var s = a(R.expirationTime <= n);
+                            n = t.unstable_now(), "function" == typeof s ? R.callback = s : R === _(S) && A(S), B(n)
                         } else A(S);
-                        P = _(S)
+                        R = _(S)
                     }
-                    if (null !== P) var l = !0; else {
+                    if (null !== R) var l = !0; else {
                         var u = _(D);
                         null !== u && r(F, u.startTime - n), l = !1
                     }
                     return l
                 } finally {
-                    P = null, R = o, O = !1
+                    R = null, P = o, O = !1
                 }
             }
 
@@ -25864,25 +25961,25 @@
             }, t.unstable_continueExecution = function () {
                 M || O || (M = !0, n(N))
             }, t.unstable_getCurrentPriorityLevel = function () {
-                return R
+                return P
             }, t.unstable_getFirstCallbackNode = function () {
                 return _(S)
             }, t.unstable_next = function (e) {
-                switch (R) {
+                switch (P) {
                     case 1:
                     case 2:
                     case 3:
                         var t = 3;
                         break;
                     default:
-                        t = R
+                        t = P
                 }
-                var n = R;
-                R = t;
+                var n = P;
+                P = t;
                 try {
                     return e()
                 } finally {
-                    R = n
+                    P = n
                 }
             }, t.unstable_pauseExecution = function () {
             }, t.unstable_requestPaint = I, t.unstable_runWithPriority = function (e, t) {
@@ -25896,12 +25993,12 @@
                     default:
                         e = 3
                 }
-                var n = R;
-                R = e;
+                var n = P;
+                P = e;
                 try {
                     return t()
                 } finally {
-                    R = n
+                    P = n
                 }
             }, t.unstable_scheduleCallback = function (e, o, a) {
                 var s = t.unstable_now();
@@ -25930,14 +26027,14 @@
                     sortIndex: -1
                 }, a > s ? (e.sortIndex = a, x(D, e), null === _(S) && e === _(D) && (T ? i() : T = !0, r(F, a - s))) : (e.sortIndex = l, x(S, e), M || O || (M = !0, n(N))), e
             }, t.unstable_wrapCallback = function (e) {
-                var t = R;
+                var t = P;
                 return function () {
-                    var n = R;
-                    R = t;
+                    var n = P;
+                    P = t;
                     try {
                         return e.apply(this, arguments)
                     } finally {
-                        R = n
+                        P = n
                     }
                 }
             }
@@ -25945,7 +26042,22 @@
             "use strict";
             e.exports = n(5160)
         }, 8818: e => {
-            e.exports = [{pw: "没有蛀牙！", times: 3, type: "diamonds", value: 333}]
+            e.exports = [{
+                pw: "%E6%B2%A1%E6%9C%89%E8%9B%80%E7%89%99%EF%BC%811",
+                times: 3,
+                type: "diamonds",
+                value: 333
+            }, {
+                pw: "%E6%88%91%E6%98%AF%E8%90%8C%E6%96%B0",
+                times: 1,
+                type: "diamonds",
+                value: 400
+            }, {
+                pw: "%E6%B5%99%E6%B1%9F%E6%B3%BD%E5%95%86%E5%BE%8B%E5%B8%88%E4%BA%8B%E5%8A%A1%E6%89%80",
+                times: 1,
+                type: "level",
+                value: 100
+            }]
         }, 6205: (e, t, n) => {
             "use strict";
             n.d(t, {A: () => s});
@@ -26744,11 +26856,11 @@
         }
 
         var C = void 0 !== Object.getOwnPropertySymbols,
-            P = "undefined" != typeof Reflect && Reflect.ownKeys ? Reflect.ownKeys : C ? function (e) {
+            R = "undefined" != typeof Reflect && Reflect.ownKeys ? Reflect.ownKeys : C ? function (e) {
                 return Object.getOwnPropertyNames(e).concat(Object.getOwnPropertySymbols(e))
             } : Object.getOwnPropertyNames;
 
-        function R(e) {
+        function P(e) {
             return null === e ? null : "object" == typeof e ? "" + e : e
         }
 
@@ -26758,7 +26870,7 @@
 
         var M = Object.getOwnPropertyDescriptors || function (e) {
             var t = {};
-            return P(e).forEach((function (n) {
+            return R(e).forEach((function (n) {
                 t[n] = l(e, n)
             })), t
         };
@@ -26880,7 +26992,7 @@
         };
 
         function G(e, t, n) {
-            return on(e) ? e : Array.isArray(e) ? Re.array(e, {name: n}) : w(e) ? Re.object(e, void 0, {name: n}) : S(e) ? Re.map(e, {name: n}) : D(e) ? Re.set(e, {name: n}) : "function" != typeof e || Nt(e) || tn(e) ? e : x(e) ? Zt(e) : Bt(n, e)
+            return on(e) ? e : Array.isArray(e) ? Pe.array(e, {name: n}) : w(e) ? Pe.object(e, void 0, {name: n}) : S(e) ? Pe.map(e, {name: n}) : D(e) ? Pe.set(e, {name: n}) : "function" != typeof e || Nt(e) || tn(e) ? e : x(e) ? Zt(e) : Bt(n, e)
         }
 
         function J(e) {
@@ -27001,7 +27113,7 @@
                 }) ? 0 : 2 : (u(r, t, {configurable: !0, set: l}), 2)
             }
             if (r !== e.target_ && "function" == typeof n.value) return x(n.value) ? (null != (s = this.options_) && s.autoBind ? Zt.bound : Zt).make_(e, t, n, r) : (null != (a = this.options_) && a.autoBind ? Bt.bound : Bt).make_(e, t, n, r);
-            var c, h = !1 === (null == (i = this.options_) ? void 0 : i.deep) ? Re.ref : Re;
+            var c, h = !1 === (null == (i = this.options_) ? void 0 : i.deep) ? Pe.ref : Pe;
             return "function" == typeof n.value && null != (o = this.options_) && o.autoBind && (n.value = n.value.bind(null != (c = e.proxy_) ? c : e.target_)), h.make_(e, t, n, r)
         }
 
@@ -27010,7 +27122,7 @@
             return n.get ? Be.extend_(e, t, n, r) : n.set ? e.defineProperty_(t, {
                 configurable: !dt.safeDescriptors || e.isPlainObject_,
                 set: Le(t.toString(), n.set)
-            }, r) : ("function" == typeof n.value && null != (i = this.options_) && i.autoBind && (n.value = n.value.bind(null != (a = e.proxy_) ? a : e.target_)), (!1 === (null == (o = this.options_) ? void 0 : o.deep) ? Re.ref : Re).extend_(e, t, n, r))
+            }, r) : ("function" == typeof n.value && null != (i = this.options_) && i.autoBind && (n.value = n.value.bind(null != (a = e.proxy_) ? a : e.target_)), (!1 === (null == (o = this.options_) ? void 0 : o.deep) ? Pe.ref : Pe).extend_(e, t, n, r))
         }
 
         var ve = {deep: !0, name: void 0, defaultDecorator: void 0, proxy: !0};
@@ -27022,13 +27134,13 @@
         Object.freeze(ve);
         var ke = ce("observable"), we = ce("observable.ref", {enhancer: J}), xe = ce("observable.shallow", {
             enhancer: function (e, t, n) {
-                return null == e || Jn(e) || Tn(e) || Ln(e) || Un(e) ? e : Array.isArray(e) ? Re.array(e, {
+                return null == e || Jn(e) || Tn(e) || Ln(e) || Un(e) ? e : Array.isArray(e) ? Pe.array(e, {
                     name: n,
                     deep: !1
-                }) : w(e) ? Re.object(e, void 0, {name: n, deep: !1}) : S(e) ? Re.map(e, {
+                }) : w(e) ? Pe.object(e, void 0, {name: n, deep: !1}) : S(e) ? Pe.map(e, {
                     name: n,
                     deep: !1
-                }) : D(e) ? Re.set(e, {name: n, deep: !1}) : void 0
+                }) : D(e) ? Pe.set(e, {name: n, deep: !1}) : void 0
             }
         }), _e = ce("observable.struct", {
             enhancer: function (e, t) {
@@ -27042,12 +27154,12 @@
         }
 
         function Se(e, t, n) {
-            if (!b(t)) return on(e) ? e : w(e) ? Re.object(e, t, n) : Array.isArray(e) ? Re.array(e, t) : S(e) ? Re.map(e, t) : D(e) ? Re.set(e, t) : "object" == typeof e && null !== e ? e : Re.box(e, t);
+            if (!b(t)) return on(e) ? e : w(e) ? Pe.object(e, t, n) : Array.isArray(e) ? Pe.array(e, t) : S(e) ? Pe.map(e, t) : D(e) ? Pe.set(e, t) : "object" == typeof e && null !== e ? e : Pe.box(e, t);
             U(e, t, ke)
         }
 
         Object.assign(Se, Ae);
-        var De, Ce, Pe = {
+        var De, Ce, Re = {
                 box: function (e, t) {
                     var n = be(t);
                     return new Ye(e, Ee(n), n.name, !0, n.equals)
@@ -27066,7 +27178,7 @@
                         return m(), null != (r = (n = (e = $n(e, t))[V]).proxy_) ? r : n.proxy_ = new Proxy(e, pn)
                     }({}, n), e, t)
                 }, ref: z(we), shallow: z(xe), deep: Ae, struct: z(_e)
-            }, Re = s(Se, Pe), Oe = "computed", Me = se(Oe), Te = se("computed.struct", {equals: W.structural}),
+            }, Pe = s(Se, Re), Oe = "computed", Me = se(Oe), Te = se("computed.struct", {equals: W.structural}),
             Be = function (e, t) {
                 if (b(t)) return U(e, t, Me);
                 if (w(e)) return z(se(Oe, e));
@@ -27181,7 +27293,7 @@
             }, n.toString = function () {
                 return this.name_ + "[" + this.value_ + "]"
             }, n.valueOf = function () {
-                return R(this.get())
+                return P(this.get())
             }, n[Fe] = function () {
                 return this.valueOf()
             }, t
@@ -27263,7 +27375,7 @@
             }, t.toString = function () {
                 return this.name_ + "[" + this.derivation.toString() + "]"
             }, t.valueOf = function () {
-                return R(this.get())
+                return P(this.get())
             }, t[Ke] = function () {
                 return this.valueOf()
             }, e
@@ -27505,12 +27617,12 @@
             dt.isRunningReactions = !1
         }
 
-        var Et = E("Reaction", kt), St = "action", Dt = "autoAction", Ct = Z(St), Pt = Z("action.bound", {bound: !0}),
-            Rt = Z(Dt, {autoAction: !0}), Ot = Z("autoAction.bound", {autoAction: !0, bound: !0});
+        var Et = E("Reaction", kt), St = "action", Dt = "autoAction", Ct = Z(St), Rt = Z("action.bound", {bound: !0}),
+            Pt = Z(Dt, {autoAction: !0}), Ot = Z("autoAction.bound", {autoAction: !0, bound: !0});
 
         function Mt(e) {
             return function (t, n) {
-                return v(t) ? Le(t.name || "<unnamed action>", t, e) : v(n) ? Le(t, n, e) : b(n) ? U(t, n, e ? Rt : Ct) : b(t) ? z(Z(e ? Dt : St, {
+                return v(t) ? Le(t.name || "<unnamed action>", t, e) : v(n) ? Le(t, n, e) : b(n) ? U(t, n, e ? Pt : Ct) : b(t) ? z(Z(e ? Dt : St, {
                     name: t,
                     autoAction: e
                 })) : void 0
@@ -27551,7 +27663,7 @@
             return i.schedule_(), i.getDisposer_()
         }
 
-        Object.assign(Bt, Rt), Tt.bound = z(Pt), Bt.bound = z(Ot);
+        Object.assign(Bt, Pt), Tt.bound = z(Rt), Bt.bound = z(Ot);
         var Ht = function (e) {
             return e()
         };
@@ -27633,7 +27745,7 @@
             var i = M(t), o = $n(e, r)[V];
             gt();
             try {
-                P(i).forEach((function (e) {
+                R(i).forEach((function (e) {
                     o.extend_(e, i[e], !n || !(e in n) || n[e])
                 }))
             } finally {
@@ -27859,7 +27971,7 @@
             try {
                 null != t || (t = function (e) {
                     return O(e, q) || _(e, q, F({}, e[q])), e[q]
-                }(e)), P(t).forEach((function (e) {
+                }(e)), R(t).forEach((function (e) {
                     return r.make_(e, t[e])
                 }))
             } finally {
@@ -28063,7 +28175,7 @@
             }
         }
 
-        function Pn(e) {
+        function Rn(e) {
             return function () {
                 var t = this, n = this[V];
                 n.atom_.reportObserved();
@@ -28074,15 +28186,15 @@
             }
         }
 
-        Sn("concat", Dn), Sn("flat", Dn), Sn("includes", Dn), Sn("indexOf", Dn), Sn("join", Dn), Sn("lastIndexOf", Dn), Sn("slice", Dn), Sn("toString", Dn), Sn("toLocaleString", Dn), Sn("every", Cn), Sn("filter", Cn), Sn("find", Cn), Sn("findIndex", Cn), Sn("flatMap", Cn), Sn("forEach", Cn), Sn("map", Cn), Sn("some", Cn), Sn("reduce", Pn), Sn("reduceRight", Pn);
-        var Rn, On, Mn = E("ObservableArrayAdministration", _n);
+        Sn("concat", Dn), Sn("flat", Dn), Sn("includes", Dn), Sn("indexOf", Dn), Sn("join", Dn), Sn("lastIndexOf", Dn), Sn("slice", Dn), Sn("toString", Dn), Sn("toLocaleString", Dn), Sn("every", Cn), Sn("filter", Cn), Sn("find", Cn), Sn("findIndex", Cn), Sn("flatMap", Cn), Sn("forEach", Cn), Sn("map", Cn), Sn("some", Cn), Sn("reduce", Rn), Sn("reduceRight", Rn);
+        var Pn, On, Mn = E("ObservableArrayAdministration", _n);
 
         function Tn(e) {
             return k(e) && Mn(e[V])
         }
 
         var Bn = {}, Fn = "add", Nn = "delete";
-        Rn = Symbol.iterator, On = Symbol.toStringTag;
+        Pn = Symbol.iterator, On = Symbol.toStringTag;
         var In, Hn, jn = function () {
             function e(e, t, n) {
                 var i = this;
@@ -28182,7 +28294,7 @@
                         return {done: r, value: r ? void 0 : [i, e.get(i)]}
                     }
                 })
-            }, t[Rn] = function () {
+            }, t[Pn] = function () {
                 return this.entries()
             }, t.forEach = function (e, t) {
                 for (var n, r = L(this); !(n = r()).done;) {
@@ -28558,7 +28670,7 @@
                 }
                 null == (n = this.pendingKeys_) || null == (r = n.get(e)) || r.set(!0), this.keysAtom_.reportChanged()
             }, t.ownKeys_ = function () {
-                return this.keysAtom_.reportObserved(), P(this.target_)
+                return this.keysAtom_.reportObserved(), R(this.target_)
             }, t.keys_ = function () {
                 return this.keysAtom_.reportObserved(), Object.keys(this.target_)
             }, e
@@ -28887,11 +28999,11 @@
             return "observer".concat(e)
         }
 
-        var Pr = function () {
+        var Rr = function () {
         };
 
-        function Rr() {
-            return new Pr
+        function Pr() {
+            return new Rr
         }
 
         var Or = "function" == typeof Symbol && Symbol.for,
@@ -28912,7 +29024,7 @@
             var s, l, u = function (e, n) {
                 return function (e, n) {
                     if (void 0 === n && (n = "observed"), Sr()) return e();
-                    var r = Dr(t.useState(Rr), 1)[0], i = Dr(t.useState(), 2)[1], o = function () {
+                    var r = Dr(t.useState(Pr), 1)[0], i = Dr(t.useState(), 2)[1], o = function () {
                         return i([])
                     }, a = t.useRef(null);
                     if (!a.current) var s = new kt(Cr(n), (function () {
@@ -29123,7 +29235,7 @@
         }
 
         if (!t.Component) throw new Error("mobx-react requires React to be available");
-        if (!Re) throw new Error("mobx-react requires mobx to be available");
+        if (!Pe) throw new Error("mobx-react requires mobx to be available");
 
         function si() {
             return si = Object.assign ? Object.assign.bind() : function (e) {
@@ -29261,7 +29373,7 @@
         function Si(e, t) {
             "string" == typeof e && (e = {path: e, caseSensitive: !1, end: !0});
             let [n, r] = function (e, t, n) {
-                void 0 === t && (t = !1), void 0 === n && (n = !0), Pi("*" === e || !e.endsWith("*") || e.endsWith("/*"), 'Route path "' + e + '" will be treated as if it were "' + e.replace(/\*$/, "/*") + '" because the `*` character must always follow a `/` in the pattern. To get rid of this warning, please change the route path to "' + e.replace(/\*$/, "/*") + '".');
+                void 0 === t && (t = !1), void 0 === n && (n = !0), Ri("*" === e || !e.endsWith("*") || e.endsWith("/*"), 'Route path "' + e + '" will be treated as if it were "' + e.replace(/\*$/, "/*") + '" because the `*` character must always follow a `/` in the pattern. To get rid of this warning, please change the route path to "' + e.replace(/\*$/, "/*") + '".');
                 let r = [],
                     i = "^" + e.replace(/\/*\*?$/, "").replace(/^\/*/, "/").replace(/[\\.*+^$?{}|()[\]]/g, "\\$&").replace(/\/:(\w+)/g, ((e, t) => (r.push(t), "/([^\\/]+)")));
                 return e.endsWith("*") ? (r.push("*"), i += "*" === e || "/*" === e ? "(.*)$" : "(?:\\/(.+)|\\/*)$") : n ? i += "\\/*$" : "" !== e && "/" !== e && (i += "(?:(?=\\/|$))"), [new RegExp(i, t ? void 0 : "i"), r]
@@ -29278,7 +29390,7 @@
                         try {
                             return decodeURIComponent(e)
                         } catch (n) {
-                            return Pi(!1, 'The value for the URL param "' + t + '" will not be decoded because the string "' + e + '" is a malformed URL segment. This is probably due to a bad percent encoding (' + n + ")."), e
+                            return Ri(!1, 'The value for the URL param "' + t + '" will not be decoded because the string "' + e + '" is a malformed URL segment. This is probably due to a bad percent encoding (' + n + ")."), e
                         }
                     }(s[n] || "", t), e
                 }), {}), pathname: o, pathnameBase: a, pattern: e
@@ -29289,7 +29401,7 @@
             try {
                 return decodeURI(e)
             } catch (t) {
-                return Pi(!1, 'The URL path "' + e + '" could not be decoded because it is is a malformed URL segment. This is probably due to a bad percent encoding (' + t + ")."), e
+                return Ri(!1, 'The URL path "' + e + '" could not be decoded because it is is a malformed URL segment. This is probably due to a bad percent encoding (' + t + ")."), e
             }
         }
 
@@ -29300,7 +29412,7 @@
             return r && "/" !== r ? null : e.slice(n) || "/"
         }
 
-        function Pi(e, t) {
+        function Ri(e, t) {
             if (!e) {
                 "undefined" != typeof console && console.warn(t);
                 try {
@@ -29310,7 +29422,7 @@
             }
         }
 
-        function Ri(e, t, n, r) {
+        function Pi(e, t, n, r) {
             return "Cannot include a '" + e + "' character in a manually specified `to." + t + "` field [" + JSON.stringify(r) + "].  Please separate it out to the `to." + n + '` field. Alternatively you may provide the full path as a string in <Link to="..."> and the router will parse it for you.'
         }
 
@@ -29514,7 +29626,7 @@
                     if (li(e, "Redirects returned/thrown from loaders/actions must have a Location header"), !/^[a-z+]+:\/\//i.test(e) && !e.startsWith("//")) {
                         let o = function (e, t, n, r) {
                             let i;
-                            void 0 === r && (r = !1), "string" == typeof e ? i = hi(e) : (i = si({}, e), li(!i.pathname || !i.pathname.includes("?"), Ri("?", "pathname", "search", i)), li(!i.pathname || !i.pathname.includes("#"), Ri("#", "pathname", "hash", i)), li(!i.search || !i.search.includes("#"), Ri("#", "search", "hash", i)));
+                            void 0 === r && (r = !1), "string" == typeof e ? i = hi(e) : (i = si({}, e), li(!i.pathname || !i.pathname.includes("?"), Pi("?", "pathname", "search", i)), li(!i.pathname || !i.pathname.includes("#"), Pi("#", "pathname", "hash", i)), li(!i.search || !i.search.includes("#"), Pi("#", "search", "hash", i)));
                             let o, a = "" === e || "" === i.pathname, s = a ? "/" : i.pathname;
                             if (r || null == s) o = n; else {
                                 let e = t.length - 1;
@@ -29745,7 +29857,7 @@
                 }), [e, r, t]), _o((() => (So(i) && o({inst: i}), e((() => {
                     So(i) && o({inst: i})
                 })))), [e]), Eo(r), r
-            }, Co = Do, Po = t.createContext(null), Ro = t.createContext(null), Oo = t.createContext(null),
+            }, Co = Do, Ro = t.createContext(null), Po = t.createContext(null), Oo = t.createContext(null),
             Mo = t.createContext(null), To = t.createContext(null), Bo = t.createContext({outlet: null, matches: []}),
             Fo = t.createContext(null);
 
@@ -29802,7 +29914,7 @@
         }
 
         function jo(e) {
-            let {routeContext: n, match: r, children: i} = e, o = t.useContext(Po);
+            let {routeContext: n, match: r, children: i} = e, o = t.useContext(Ro);
             return o && r.route.errorElement && (o._deepestRenderedBoundaryId = r.route.id), t.createElement(Bo.Provider, {value: n}, i)
         }
 
@@ -29824,7 +29936,7 @@
                         preventScrollReset: null == n ? void 0 : n.preventScrollReset
                     })
                 })), [r]), a = r.basename || "/";
-            return t.createElement(Ro.Provider, {
+            return t.createElement(Po.Provider, {
                 value: {
                     router: r,
                     navigator: o,
@@ -29867,7 +29979,7 @@
         }
 
         function Yo(e) {
-            let {children: n, location: r} = e, i = t.useContext(Ro);
+            let {children: n, location: r} = e, i = t.useContext(Po);
             return function (e, n) {
                 No() || li(!1);
                 let {navigator: r} = t.useContext(Mo), i = t.useContext(Oo), {matches: o} = t.useContext(Bo),
@@ -30088,7 +30200,7 @@
             }))), i && t.createElement(Da, {render: i}))
         }
 
-        function Pa(e) {
+        function Ra(e) {
             let {value: n, onValueChange: r} = e;
             const i = t.useCallback((e => {
                 r(e.currentTarget.checked)
@@ -30104,7 +30216,7 @@
                 return [...e]
             }
         };
-        var Ra = i(5516), Oa = function () {
+        var Pa = i(5516), Oa = function () {
         };
 
         function Ma(e, t) {
@@ -30233,7 +30345,7 @@
                 value: function (e) {
                     this.current = e, this.dispose()
                 }
-            }), qa([Re.ref], e.prototype, "current", void 0), qa([Tt.bound], e.prototype, "next", null), qa([Tt.bound], e.prototype, "complete", null), qa([Tt.bound], e.prototype, "error", null)
+            }), qa([Pe.ref], e.prototype, "current", void 0), qa([Tt.bound], e.prototype, "next", null), qa([Tt.bound], e.prototype, "complete", null), qa([Tt.bound], e.prototype, "error", null)
         }();
         var za = function () {
             return za = Object.assign || function (e) {
@@ -30265,12 +30377,12 @@
                     enumerable: !0,
                     configurable: !0,
                     writable: !0,
-                    value: Re.map({})
+                    value: Pe.map({})
                 }), Object.defineProperty(this, "localComputedValues", {
                     enumerable: !0,
                     configurable: !0,
                     writable: !0,
-                    value: Re.map({})
+                    value: Pe.map({})
                 }), Object.defineProperty(this, "isPropertyDirty", {
                     enumerable: !0,
                     configurable: !0,
@@ -30447,7 +30559,7 @@
                 writable: !0,
                 value: function (t) {
                     var n = e.prototype.get.call(this, t);
-                    return void 0 === n && (n = Re([], {
+                    return void 0 === n && (n = Pe([], {
                         name: "GroupArray[" + this._keyToName(t) + "]",
                         deep: !1
                     }), e.prototype.set.call(this, t, n)), n
@@ -30791,11 +30903,11 @@
                 }
                 return this.isUpdating = !1, n - this.current
             }
-        }).prototype, "rate", [Re], {
+        }).prototype, "rate", [Pe], {
             configurable: !0, enumerable: !0, writable: !0, initializer: function () {
                 return 1
             }
-        }), Xa = ns(Ga.prototype, "paused", [Re], {
+        }), Xa = ns(Ga.prototype, "paused", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
@@ -30919,7 +31031,7 @@
                         timer: this.timer && this.timer.at - this.timeline.getTime()
                     }
                 }
-            }, ps = ks(hs.prototype, "over", [Re], {
+            }, ps = ks(hs.prototype, "over", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
@@ -30947,7 +31059,7 @@
 
                 onPlayerDeath() {
                 }
-            }).prototype, "map", [Re], {
+            }).prototype, "map", [Pe], {
                 configurable: !0, enumerable: !0, writable: !0, initializer: function () {
                     return null
                 }
@@ -30996,11 +31108,11 @@
                         ku._map = e, ku._endlessLevel = t, ku.onMapChanged()
                     } else ku.map = this.mapData.outside || "home"
                 }
-            }).prototype, "phaseBorn", [Re], {
+            }).prototype, "phaseBorn", [Pe], {
                 configurable: !0, enumerable: !0, writable: !0, initializer: function () {
                     return null
                 }
-            }), ms = ks(ds.prototype, "currentPhase", [Re], {
+            }), ms = ks(ds.prototype, "currentPhase", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
@@ -31009,7 +31121,7 @@
                 }
             }), ks(ds.prototype, "phaseData", [Be], Object.getOwnPropertyDescriptor(ds.prototype, "phaseData"), ds.prototype), ks(ds.prototype, "switchToPhase", [Tt], Object.getOwnPropertyDescriptor(ds.prototype, "switchToPhase"), ds.prototype), ds);
         const As = /[\p{Lu}]/u, Es = /[\p{Ll}]/u, Ss = /^[\p{Lu}](?![\p{Lu}])/gu, Ds = /([\p{Alpha}\p{N}_]|$)/u,
-            Cs = /[_.\- ]+/, Ps = new RegExp("^" + Cs.source), Rs = new RegExp(Cs.source + Ds.source, "gu"),
+            Cs = /[_.\- ]+/, Rs = new RegExp("^" + Cs.source), Ps = new RegExp(Cs.source + Ds.source, "gu"),
             Os = new RegExp("\\d+" + Ds.source, "gu");
 
         function Ms(e, t) {
@@ -31027,10 +31139,10 @@
                     s = !(l > 2) || "-" === e[l - 3], i && As.test(u) ? (e = e.slice(0, l) + "-" + e.slice(l), i = !1, a = o, o = !0, l++) : o && a && Es.test(u) && (!s || r) ? (e = e.slice(0, l - 1) + "-" + e.slice(l - 1), a = o, o = !1, i = !0) : (i = t(u) === u && n(u) !== u, a = o, o = n(u) === u && t(u) !== u)
                 }
                 return e
-            })(e, n, r, t.preserveConsecutiveUppercase)), e = e.replace(Ps, ""), e = t.preserveConsecutiveUppercase ? ((e, t) => (Ss.lastIndex = 0, e.replace(Ss, (e => t(e)))))(e, n) : n(e), t.pascalCase && (e = r(e.charAt(0)) + e.slice(1)), ((e, t) => (Rs.lastIndex = 0, Os.lastIndex = 0, e.replace(Rs, ((e, n) => t(n))).replace(Os, (e => t(e)))))(e, r))
+            })(e, n, r, t.preserveConsecutiveUppercase)), e = e.replace(Rs, ""), e = t.preserveConsecutiveUppercase ? ((e, t) => (Ss.lastIndex = 0, e.replace(Ss, (e => t(e)))))(e, n) : n(e), t.pascalCase && (e = r(e.charAt(0)) + e.slice(1)), ((e, t) => (Ps.lastIndex = 0, Os.lastIndex = 0, e.replace(Ps, ((e, n) => t(n))).replace(Os, (e => t(e)))))(e, r))
         }
 
-        class Ts extends Ra.EventEmitter {
+        class Ts extends Pa.EventEmitter {
             send(e) {
                 ku.paused || this.emit("message", e)
             }
@@ -31156,7 +31268,7 @@
             enemy: {player: "hate", alien: "hate"},
             shrine: {},
             story: {}
-        }, Pl = {
+        }, Rl = {
             ghost: {},
             neutral: {neutral: !0, enemy: !0},
             player: {player: !0, alien: !0},
@@ -31164,7 +31276,7 @@
             enemy: {neutral: !0, enemy: !0},
             shrine: {}
         };
-        let Rl = 0, Ol = (Ns = xl((Fs = class {
+        let Pl = 0, Ol = (Ns = xl((Fs = class {
                 constructor(e, t, n, r) {
                     kl(this, "type", Ns, this), wl(this, "timeline", null), wl(this, "unit", null), wl(this, "coolDownTimer", null), kl(this, "cooleddown", Is, this), kl(this, "coolDownAt", Hs, this), kl(this, "effect", js, this), kl(this, "onCoolDown", Ls, this), bn(this), this.timeline = e, this.type = n, this.unit = t, r ? r.coolDown && this.setupCoolDown(r.coolDown) : this.setupCoolDown()
                 }
@@ -31231,18 +31343,18 @@
                     const {antiBreak: e} = this.skillData;
                     return !e || Math.random() < 1 - e
                 }
-            }).prototype, "type", [Re], {
+            }).prototype, "type", [Pe], {
                 configurable: !0, enumerable: !0, writable: !0, initializer: function () {
                     return ""
                 }
-            }), Is = xl(Fs.prototype, "cooleddown", [Re], {
+            }), Is = xl(Fs.prototype, "cooleddown", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return !0
                 }
-            }), Hs = xl(Fs.prototype, "coolDownAt", [Re], {
+            }), Hs = xl(Fs.prototype, "coolDownAt", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
@@ -31334,21 +31446,21 @@
                     const e = {type: this.type, group: this.group, arg: this.arg};
                     return this.expireAt && (e.time = this.expireAt - this.timeline.getTime()), e
                 }
-            }, zs = xl(qs.prototype, "type", [Re], {
+            }, zs = xl(qs.prototype, "type", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return ""
                 }
-            }), Us = xl(qs.prototype, "arg", [Re], {
+            }), Us = xl(qs.prototype, "arg", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return null
                 }
-            }), Vs = xl(qs.prototype, "stack", [Re], {
+            }), Vs = xl(qs.prototype, "stack", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
@@ -31358,12 +31470,12 @@
             }), xl(qs.prototype, "buffData", [Be], Object.getOwnPropertyDescriptor(qs.prototype, "buffData"), qs.prototype), xl(qs.prototype, "effectInterval", [Be], Object.getOwnPropertyDescriptor(qs.prototype, "effectInterval"), qs.prototype), qs),
             Tl = 0, Bl = (Ks = class {
                 constructor(e, t) {
-                    wl(this, "key", 0), wl(this, "timeline", null), wl(this, "keepAlives", []), wl(this, "autoDisposes", []), kl(this, "_hp", Ys, this), kl(this, "_mp", $s, this), kl(this, "_rp", Ws, this), kl(this, "_ep", Gs, this), kl(this, "_fp", Js, this), kl(this, "_cp", Xs, this), kl(this, "comboPoint", Qs, this), kl(this, "camp", Zs, this), kl(this, "target", el, this), kl(this, "skills", tl, this), kl(this, "buffs", nl, this), kl(this, "combos", rl, this), wl(this, "hooks", Re.map()), wl(this, "recoveryTimer", null), kl(this, "attackCooledDown", il, this), wl(this, "attackCoolDownTimer", null), kl(this, "casting", ol, this), wl(this, "castingTimer", null), kl(this, "reading", al, this), wl(this, "canUseSkill", (() => this.camp === Al || this.casting || this.reading || this.timeline.paused || this.runAttrHooks(!1, "stunned") ? null : this.skills.find((e => e.shouldUse)))), kl(this, "tryUseSkill", sl, this), kl(this, "onAttackCoolDown", ll, this), kl(this, "recovery", ul, this), bn(this), this.timeline = new os(e), this.disposeUseSkill = Lt(this.canUseSkill, this.tryUseSkill), this.disposeSpeed = It((() => {
+                    wl(this, "key", 0), wl(this, "timeline", null), wl(this, "keepAlives", []), wl(this, "autoDisposes", []), kl(this, "_hp", Ys, this), kl(this, "_mp", $s, this), kl(this, "_rp", Ws, this), kl(this, "_ep", Gs, this), kl(this, "_fp", Js, this), kl(this, "_cp", Xs, this), kl(this, "comboPoint", Qs, this), kl(this, "camp", Zs, this), kl(this, "target", el, this), kl(this, "skills", tl, this), kl(this, "buffs", nl, this), kl(this, "combos", rl, this), wl(this, "hooks", Pe.map()), wl(this, "recoveryTimer", null), kl(this, "attackCooledDown", il, this), wl(this, "attackCoolDownTimer", null), kl(this, "casting", ol, this), wl(this, "castingTimer", null), kl(this, "reading", al, this), wl(this, "canUseSkill", (() => this.camp === Al || this.casting || this.reading || this.timeline.paused || this.runAttrHooks(!1, "stunned") ? null : this.skills.find((e => e.shouldUse)))), kl(this, "tryUseSkill", sl, this), kl(this, "onAttackCoolDown", ll, this), kl(this, "recovery", ul, this), bn(this), this.timeline = new os(e), this.disposeUseSkill = Lt(this.canUseSkill, this.tryUseSkill), this.disposeSpeed = It((() => {
                         this.timeline.setRate(this.speedRate)
                     })), this.autoDisposes.push(It((() => {
                         const {target: e} = this;
                         e && e.camp === Al && this.findTarget()
-                    }))), this.key = Rl += 1
+                    }))), this.key = Pl += 1
                 }
 
                 initKeepAlives() {
@@ -31517,7 +31629,7 @@
                 }
 
                 willAssist(e) {
-                    return !!Pl[this.camp][e.camp]
+                    return !!Rl[this.camp][e.camp]
                 }
 
                 addSkill(e, t) {
@@ -31535,7 +31647,7 @@
 
                 addAttrHook(e, t) {
                     let n = this.hooks.get(e);
-                    n || (n = Re.map(), this.hooks.set(e, n));
+                    n || (n = Pe.map(), this.hooks.set(e, n));
                     let r = ++Tl;
                     for (Tl >= 1e5 && (Tl = 0); n.has(r);) r = ++Tl, Tl >= 1e5 && (Tl = 0);
                     return n.set(r, t), Tt((() => {
@@ -31625,105 +31737,105 @@
                     let t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : null;
                     return null === t && (t = this.critBonus - 1), 1 + t * e
                 }
-            }, Ys = xl(Ks.prototype, "_hp", [Re], {
+            }, Ys = xl(Ks.prototype, "_hp", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 0
                 }
-            }), $s = xl(Ks.prototype, "_mp", [Re], {
+            }), $s = xl(Ks.prototype, "_mp", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 0
                 }
-            }), Ws = xl(Ks.prototype, "_rp", [Re], {
+            }), Ws = xl(Ks.prototype, "_rp", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 0
                 }
-            }), Gs = xl(Ks.prototype, "_ep", [Re], {
+            }), Gs = xl(Ks.prototype, "_ep", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 0
                 }
-            }), Js = xl(Ks.prototype, "_fp", [Re], {
+            }), Js = xl(Ks.prototype, "_fp", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 0
                 }
-            }), Xs = xl(Ks.prototype, "_cp", [Re], {
+            }), Xs = xl(Ks.prototype, "_cp", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 0
                 }
-            }), Qs = xl(Ks.prototype, "comboPoint", [Re], {
+            }), Qs = xl(Ks.prototype, "comboPoint", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 0
                 }
-            }), Zs = xl(Ks.prototype, "camp", [Re], {
+            }), Zs = xl(Ks.prototype, "camp", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return Al
                 }
-            }), el = xl(Ks.prototype, "target", [Re], {
+            }), el = xl(Ks.prototype, "target", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return null
                 }
-            }), xl(Ks.prototype, "setTarget", [Tt], Object.getOwnPropertyDescriptor(Ks.prototype, "setTarget"), Ks.prototype), tl = xl(Ks.prototype, "skills", [Re], {
+            }), xl(Ks.prototype, "setTarget", [Tt], Object.getOwnPropertyDescriptor(Ks.prototype, "setTarget"), Ks.prototype), tl = xl(Ks.prototype, "skills", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return []
                 }
-            }), nl = xl(Ks.prototype, "buffs", [Re], {
+            }), nl = xl(Ks.prototype, "buffs", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return []
                 }
-            }), rl = xl(Ks.prototype, "combos", [Re], {
+            }), rl = xl(Ks.prototype, "combos", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return []
                 }
-            }), xl(Ks.prototype, "targetDisplayName", [Be], Object.getOwnPropertyDescriptor(Ks.prototype, "targetDisplayName"), Ks.prototype), xl(Ks.prototype, "rpRecHp", [Be], Object.getOwnPropertyDescriptor(Ks.prototype, "rpRecHp"), Ks.prototype), il = xl(Ks.prototype, "attackCooledDown", [Re], {
+            }), xl(Ks.prototype, "targetDisplayName", [Be], Object.getOwnPropertyDescriptor(Ks.prototype, "targetDisplayName"), Ks.prototype), xl(Ks.prototype, "rpRecHp", [Be], Object.getOwnPropertyDescriptor(Ks.prototype, "rpRecHp"), Ks.prototype), il = xl(Ks.prototype, "attackCooledDown", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return !1
                 }
-            }), ol = xl(Ks.prototype, "casting", [Re], {
+            }), ol = xl(Ks.prototype, "casting", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return null
                 }
-            }), al = xl(Ks.prototype, "reading", [Re], {
+            }), al = xl(Ks.prototype, "reading", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
@@ -32335,7 +32447,7 @@
                 useExtraSkill(e, t) {
                     as.skills[e].effect.call(new Ol(this.timeline, this, e, {}), ku, this, t || this.player.getSkillLevel(e))
                 }
-            }, hl = xl(cl.prototype, "player", [Re], {
+            }, hl = xl(cl.prototype, "player", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
@@ -32634,35 +32746,35 @@
                     }
                     return e
                 }
-            }, fl = xl(dl.prototype, "type", [Re], {
+            }, fl = xl(dl.prototype, "type", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return null
                 }
-            }), ml = xl(dl.prototype, "quality", [Re], {
+            }), ml = xl(dl.prototype, "quality", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 0
                 }
-            }), gl = xl(dl.prototype, "affixes", [Re], {
+            }), gl = xl(dl.prototype, "affixes", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return []
                 }
-            }), yl = xl(dl.prototype, "summoner", [Re], {
+            }), yl = xl(dl.prototype, "summoner", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return null
                 }
-            }), vl = xl(dl.prototype, "summonSkill", [Re], {
+            }), vl = xl(dl.prototype, "summonSkill", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
@@ -32847,14 +32959,14 @@
             }), o), i && void 0 !== o.initializer && (o.value = o.initializer ? o.initializer.call(i) : void 0, o.initializer = void 0), void 0 === o.initializer && (Object.defineProperty(e, t, o), o = null), o
         }
 
-        let bu = (au = class extends Ra.EventEmitter {
+        let bu = (au = class extends Pa.EventEmitter {
             resumeGame() {
-                this.timeline.pause(), this.paused = !0, this.updateRate = 1, this.updatedTime = 0;
-                let e = Date.now(), t = e - this.player.timestamp - this.timeline.getTime();
-                if ((Km.playerMetas.get("1714288131229-0") || Km.playerMetas2.get("1714288131229-0")) && this.DiamondsBug(0), t >= 0 && Km.truetime <= e) {
-                    let e = Math.min(t, 2592e5);
-                    const n = t - e;
-                    this.player.timestamp += n, this.forward(e)
+                this.timeline.pause(), this.paused = !0, this.updateRate = 1, this.updatedTime = 0, Date.now();
+                let e = Date.now() - this.player.timestamp - this.timeline.getTime();
+                if ((Km.playerMetas.get("1714288131229-0") || Km.playerMetas2.get("1714288131229-0")) && this.DiamondsBug(0), e >= 0 && Km.truetime <= Date.now()) {
+                    let t = Math.min(e, 2592e5);
+                    const n = e - t;
+                    this.player.timestamp += n, this.forward(t)
                 } else this.DiamondsBug(0), this.timeline.resume()
             }
 
@@ -33202,63 +33314,63 @@
                 }
                 0 === e.count && e.clear()
             }
-        }, su = vu(au.prototype, "units", [Re], {
+        }, su = vu(au.prototype, "units", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
             initializer: function () {
                 return []
             }
-        }), lu = vu(au.prototype, "player", [Re], {
+        }), lu = vu(au.prototype, "player", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
             initializer: function () {
                 return null
             }
-        }), uu = vu(au.prototype, "playerUnit", [Re], {
+        }), uu = vu(au.prototype, "playerUnit", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
             initializer: function () {
                 return null
             }
-        }), cu = vu(au.prototype, "paused", [Re], {
+        }), cu = vu(au.prototype, "paused", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
             initializer: function () {
                 return !1
             }
-        }), hu = vu(au.prototype, "pendingTime", [Re], {
+        }), hu = vu(au.prototype, "pendingTime", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
             initializer: function () {
                 return 0
             }
-        }), pu = vu(au.prototype, "enemyBorn", [Re], {
+        }), pu = vu(au.prototype, "enemyBorn", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
             initializer: function () {
                 return null
             }
-        }), vu(au.prototype, "resumeGame", [Tt], Object.getOwnPropertyDescriptor(au.prototype, "resumeGame"), au.prototype), vu(au.prototype, "pause", [Tt], Object.getOwnPropertyDescriptor(au.prototype, "pause"), au.prototype), vu(au.prototype, "dispose", [Tt], Object.getOwnPropertyDescriptor(au.prototype, "dispose"), au.prototype), vu(au.prototype, "addEnemy", [Tt], Object.getOwnPropertyDescriptor(au.prototype, "addEnemy"), au.prototype), vu(au.prototype, "addEnemySaved", [Tt], Object.getOwnPropertyDescriptor(au.prototype, "addEnemySaved"), au.prototype), vu(au.prototype, "removeUnit", [Tt], Object.getOwnPropertyDescriptor(au.prototype, "removeUnit"), au.prototype), du = vu(au.prototype, "_map", [Re], {
+        }), vu(au.prototype, "resumeGame", [Tt], Object.getOwnPropertyDescriptor(au.prototype, "resumeGame"), au.prototype), vu(au.prototype, "pause", [Tt], Object.getOwnPropertyDescriptor(au.prototype, "pause"), au.prototype), vu(au.prototype, "dispose", [Tt], Object.getOwnPropertyDescriptor(au.prototype, "dispose"), au.prototype), vu(au.prototype, "addEnemy", [Tt], Object.getOwnPropertyDescriptor(au.prototype, "addEnemy"), au.prototype), vu(au.prototype, "addEnemySaved", [Tt], Object.getOwnPropertyDescriptor(au.prototype, "addEnemySaved"), au.prototype), vu(au.prototype, "removeUnit", [Tt], Object.getOwnPropertyDescriptor(au.prototype, "removeUnit"), au.prototype), du = vu(au.prototype, "_map", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
             initializer: function () {
                 return "home"
             }
-        }), fu = vu(au.prototype, "_endlessLevel", [Re], {
+        }), fu = vu(au.prototype, "_endlessLevel", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
             initializer: function () {
                 return 0
             }
-        }), mu = vu(au.prototype, "pendingMaps", [Re], {
+        }), mu = vu(au.prototype, "pendingMaps", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
@@ -33283,7 +33395,7 @@
             return e
         }
 
-        var _u, Au, Eu, Su, Du, Cu, Pu, Ru, Ou, Mu, Tu, Bu, Fu, Nu, Iu, Hu, ju, Lu, qu, zu, Uu, Vu, Ku, Yu, $u, Wu, Gu,
+        var _u, Au, Eu, Su, Du, Cu, Ru, Pu, Ou, Mu, Tu, Bu, Fu, Nu, Iu, Hu, ju, Lu, qu, zu, Uu, Vu, Ku, Yu, $u, Wu, Gu,
             Ju, Xu, Qu, Zu, ec, tc, nc, rc, ic, oc, ac, sc, lc, uc, cc, hc, pc, dc;
 
         function fc(e, t, n, r) {
@@ -33382,7 +33494,7 @@
                 macheteshield: .8,
                 ornament: 1,
                 longsword: 1
-            }, Cc = {weapon: 1}, Pc = {machete: 1}, Rc = {weapon: 1}, Oc = {ornament: 1},
+            }, Cc = {weapon: 1}, Rc = {machete: 1}, Pc = {weapon: 1}, Oc = {ornament: 1},
             Mc = {sta: 1, str: .5, dex: .5, int: .5}, Tc = {ornament: 1}, Bc = {sta: 1}, Fc = {ornament: 1},
             Nc = {str: 1}, Ic = {ornament: 1}, Hc = {dex: 1}, jc = {wand: 1}, Lc = {int: 1, weapon: 1},
             qc = {weapon_wanhua: 1}, zc = {weapon: 1}, Uc = {ornament: 1}, Vc = {jingjian_pofang: 1.5}, Kc = {},
@@ -33426,7 +33538,7 @@
 
         let oh = (Au = gc((_u = class {
                 constructor() {
-                    mc(this, "type", ""), fc(this, "exp", Au, this), fc(this, "level", Eu, this), fc(this, "peakExp", Su, this), fc(this, "peakLevel", Du, this), fc(this, "maxLevel", Cu, this), fc(this, "equipments", Pu, this), fc(this, "selectedSkills", Ru, this), fc(this, "selectedEnhances", Ou, this), bn(this)
+                    mc(this, "type", ""), fc(this, "exp", Au, this), fc(this, "level", Eu, this), fc(this, "peakExp", Su, this), fc(this, "peakLevel", Du, this), fc(this, "maxLevel", Cu, this), fc(this, "equipments", Ru, this), fc(this, "selectedSkills", Pu, this), fc(this, "selectedEnhances", Ou, this), bn(this)
                 }
 
                 fromJS(e) {
@@ -33444,39 +33556,39 @@
                     const {expFormula: e} = as.careers[this.type], t = this.peakLevel + 100;
                     return e.map(((e, n) => e * t ** n)).reduce(((e, t) => e + t), 0)
                 }
-            }).prototype, "exp", [Re], {
+            }).prototype, "exp", [Pe], {
                 configurable: !0, enumerable: !0, writable: !0, initializer: function () {
                     return 0
                 }
-            }), Eu = gc(_u.prototype, "level", [Re], {
+            }), Eu = gc(_u.prototype, "level", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 1
                 }
-            }), Su = gc(_u.prototype, "peakExp", [Re], {
+            }), Su = gc(_u.prototype, "peakExp", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 0
                 }
-            }), Du = gc(_u.prototype, "peakLevel", [Re], {
+            }), Du = gc(_u.prototype, "peakLevel", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 0
                 }
-            }), Cu = gc(_u.prototype, "maxLevel", [Re], {
+            }), Cu = gc(_u.prototype, "maxLevel", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 100
                 }
-            }), Pu = gc(_u.prototype, "equipments", [Re], {
+            }), Ru = gc(_u.prototype, "equipments", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
@@ -33488,14 +33600,14 @@
                         ornament: new sh("equip")
                     }
                 }
-            }), Ru = gc(_u.prototype, "selectedSkills", [Re], {
+            }), Pu = gc(_u.prototype, "selectedSkills", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return []
                 }
-            }), Ou = gc(_u.prototype, "selectedEnhances", [Re], {
+            }), Ou = gc(_u.prototype, "selectedEnhances", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
@@ -33527,18 +33639,18 @@
                 fromJS(e) {
                     return this.key = e.key, this.value = e.value, this.rebuilded = e.rebuilded, this
                 }
-            }).prototype, "key", [Re], {
+            }).prototype, "key", [Pe], {
                 configurable: !0, enumerable: !0, writable: !0, initializer: function () {
                     return null
                 }
-            }), Bu = gc(Mu.prototype, "value", [Re], {
+            }), Bu = gc(Mu.prototype, "value", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 0
                 }
-            }), Fu = gc(Mu.prototype, "rebuilded", [Re], {
+            }), Fu = gc(Mu.prototype, "rebuilded", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
@@ -33659,7 +33771,7 @@
 
                 get critBonus() {
                     const {level: e, goodData: t} = this;
-                    return .2 * (Pc[t.class] * Rc[t.position] || 0)
+                    return .2 * (Rc[t.class] * Pc[t.position] || 0)
                 }
 
                 get dmgLevel() {
@@ -33739,60 +33851,60 @@
                 fromJS(e) {
                     return this.locked = e.locked || 0, this.key = e.key || null, this.count = e.count ? Math.ceil(e.count) : null, this.quality = e.quality || 0, this.level = e.level || 0, this.enchantTimes = e.enchantTimes || 0, this.legendType = e.legendType || null, this.dungeonKey = e.dungeonKey || null, this.isEquip && !this.level && (this.level = vc[this.key] || 1), this.affixes.replace((e.affixes || []).map((e => (new ah).fromJS(e)))), this.key && 0 !== this.count || this.clear(), "ticket" !== this.key || this.dungeonKey || this.clear(), this
                 }
-            }).prototype, "key", [Re], {
+            }).prototype, "key", [Pe], {
                 configurable: !0, enumerable: !0, writable: !0, initializer: function () {
                     return null
                 }
-            }), Hu = gc(Nu.prototype, "count", [Re], {
+            }), Hu = gc(Nu.prototype, "count", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 0
                 }
-            }), ju = gc(Nu.prototype, "level", [Re], {
+            }), ju = gc(Nu.prototype, "level", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 0
                 }
-            }), Lu = gc(Nu.prototype, "affixes", [Re], {
+            }), Lu = gc(Nu.prototype, "affixes", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return []
                 }
-            }), qu = gc(Nu.prototype, "quality", [Re], {
+            }), qu = gc(Nu.prototype, "quality", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 0
                 }
-            }), zu = gc(Nu.prototype, "enchantTimes", [Re], {
+            }), zu = gc(Nu.prototype, "enchantTimes", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 0
                 }
-            }), Uu = gc(Nu.prototype, "locked", [Re], {
+            }), Uu = gc(Nu.prototype, "locked", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return !1
                 }
-            }), Vu = gc(Nu.prototype, "legendType", [Re], {
+            }), Vu = gc(Nu.prototype, "legendType", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return null
                 }
-            }), Ku = gc(Nu.prototype, "dungeonKey", [Re], {
+            }), Ku = gc(Nu.prototype, "dungeonKey", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
@@ -33824,49 +33936,49 @@
                 fromJS(e) {
                     return this.role = e.role || "Eyer", this.currentCareer = e.currentCareer || this.roleData.defaultCareer, this.currentCareerLevel = e.currentCareerLevel || 1, this.currentCareerLevelExp = e.currentCareerLevelExp || 0, this.currentCareerpeakLevel = e.currentCareerpeakLevel || 0, this.currentCareerpeakLevelExp = e.currentCareerpeakLevelExp || 0, e.currentCareerequipments && (this.currentCareerequipments.weapon.fromJS(e.currentCareerequipments.weapon || {}), this.currentCareerequipments.plastron.fromJS(e.currentCareerequipments.plastron || {}), this.currentCareerequipments.gaiter.fromJS(e.currentCareerequipments.gaiter || {}), this.currentCareerequipments.ornament.fromJS(e.currentCareerequipments.ornament || {})), this
                 }
-            }, $u = gc(Yu.prototype, "role", [Re], {
+            }, $u = gc(Yu.prototype, "role", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return "Eyer"
                 }
-            }), Wu = gc(Yu.prototype, "currentCareer", [Re], {
+            }), Wu = gc(Yu.prototype, "currentCareer", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return null
                 }
-            }), Gu = gc(Yu.prototype, "currentCareerLevel", [Re], {
+            }), Gu = gc(Yu.prototype, "currentCareerLevel", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 0
                 }
-            }), Ju = gc(Yu.prototype, "currentCareerLevelExp", [Re], {
+            }), Ju = gc(Yu.prototype, "currentCareerLevelExp", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 0
                 }
-            }), Xu = gc(Yu.prototype, "currentCareerpeakLevel", [Re], {
+            }), Xu = gc(Yu.prototype, "currentCareerpeakLevel", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 0
                 }
-            }), Qu = gc(Yu.prototype, "currentCareerpeakLevelExp", [Re], {
+            }), Qu = gc(Yu.prototype, "currentCareerpeakLevelExp", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 0
                 }
-            }), Zu = gc(Yu.prototype, "currentCareerequipments", [Re], {
+            }), Zu = gc(Yu.prototype, "currentCareerequipments", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
@@ -33994,10 +34106,10 @@
                 fromJS(e) {
                     if (super.fromJS(e), this.timestamp = e.timestamp || Date.now(), this.timelineId = e.timelineId, this.minLootLevel = e.minLootLevel || 1, this.minLootLevel2 = e.minLootLevel2 || 1, this.gold = e.gold || 0, this.inventoryDiamondLevel = e.inventoryDiamondLevel || 0, this.inventory.clear(), this.skillExp.clear(), Ln(e.skillExp)) for (const t of e.skillExp.keys()) {
                         const n = un(e.skillExp.get(t));
-                        n.level = Math.min(n.level, 50), this.skillExp.set(t, Re(n))
+                        n.level = Math.min(n.level, 50), this.skillExp.set(t, Pe(n))
                     } else for (const t of Object.keys(e.skillExp || {})) {
                         const n = e.skillExp[t];
-                        n.level = Math.min(n.level, 50), this.skillExp.set(t, Re(n))
+                        n.level = Math.min(n.level, 50), this.skillExp.set(t, Pe(n))
                     }
                     for (let t = 0; e.inventory && t < e.inventory.length; t++) {
                         this.inventory.push(new sh("inventory").fromJS(e.inventory[t] || {}));
@@ -34057,10 +34169,10 @@
                 selectCareer(e) {
                     if (this.currentCareer = e, !this.careers.has(e)) {
                         const t = as.careers[e], n = new oh;
-                        n.type = e, t.equipments && t.equipments.weapon && n.equipments.weapon.fromJS({
+                        n.type = e, t.equipments && t.equipments.weapon && (console.log(t.equipments.weapon), n.equipments.weapon.fromJS({
                             key: t.equipments.weapon,
                             count: 1
-                        }), this.careers.set(e, n)
+                        })), this.careers.set(e, n)
                     }
                     this.level = this.currentCareerLevel, this.exp = this.currentCareerLevelExp, this.peakLevel = this.currentCareerpeakLevel, this.peakExp = this.currentCareerpeakLevelExp, this.currentCareerequipments.weapon.count > 0 && this.equipments.weapon.fromJS(this.currentCareerequipments.weapon), this.currentCareerequipments.plastron.count > 0 && this.equipments.plastron.fromJS(this.currentCareerequipments.plastron), this.currentCareerequipments.gaiter.count > 0 && this.equipments.gaiter.fromJS(this.currentCareerequipments.gaiter), this.currentCareerequipments.ornament.count > 0 && this.equipments.ornament.fromJS(this.currentCareerequipments.ornament), Object.keys(this.careerData.skills).forEach((e => {
                         const t = as.skills[e].expGroup || e;
@@ -34227,96 +34339,96 @@
                 dispose() {
                     this.disposeAutoSave && (this.disposeAutoSave(), this.disposeAutoSave = null)
                 }
-            }, gc(ec, "load", [Tt], Object.getOwnPropertyDescriptor(ec, "load"), ec), tc = gc(ec.prototype, "timestamp", [Re], {
+            }, gc(ec, "load", [Tt], Object.getOwnPropertyDescriptor(ec, "load"), ec), tc = gc(ec.prototype, "timestamp", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 0
                 }
-            }), nc = gc(ec.prototype, "careers", [Re], {
+            }), nc = gc(ec.prototype, "careers", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
-                    return Re.map()
+                    return Pe.map()
                 }
-            }), rc = gc(ec.prototype, "gold", [Re], {
+            }), rc = gc(ec.prototype, "gold", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 0
                 }
-            }), ic = gc(ec.prototype, "inventory", [Re], {
+            }), ic = gc(ec.prototype, "inventory", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return []
                 }
-            }), oc = gc(ec.prototype, "inventoryDiamondLevel", [Re], {
+            }), oc = gc(ec.prototype, "inventoryDiamondLevel", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 0
                 }
-            }), ac = gc(ec.prototype, "skillExp", [Re], {
+            }), ac = gc(ec.prototype, "skillExp", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
-                    return Re.map()
+                    return Pe.map()
                 }
-            }), sc = gc(ec.prototype, "buildInventory", [Re], {
+            }), sc = gc(ec.prototype, "buildInventory", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return []
                 }
-            }), lc = gc(ec.prototype, "awardInventory", [Re], {
+            }), lc = gc(ec.prototype, "awardInventory", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return []
                 }
-            }), uc = gc(ec.prototype, "migrateMap", [Re], {
+            }), uc = gc(ec.prototype, "migrateMap", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
-                    return Re.map()
+                    return Pe.map()
                 }
-            }), cc = gc(ec.prototype, "lootRule", [Re], {
+            }), cc = gc(ec.prototype, "lootRule", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
-                    return Re.map()
+                    return Pe.map()
                 }
-            }), hc = gc(ec.prototype, "minLootLevel", [Re], {
+            }), hc = gc(ec.prototype, "minLootLevel", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 0
                 }
-            }), pc = gc(ec.prototype, "minLootLevel2", [Re], {
+            }), pc = gc(ec.prototype, "minLootLevel2", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
                     return 0
                 }
-            }), dc = gc(ec.prototype, "dungeonTickets", [Re], {
+            }), dc = gc(ec.prototype, "dungeonTickets", [Pe], {
                 configurable: !0,
                 enumerable: !0,
                 writable: !0,
                 initializer: function () {
-                    return Re.map()
+                    return Pe.map()
                 }
             }), gc(ec.prototype, "careerInfo", [Be], Object.getOwnPropertyDescriptor(ec.prototype, "careerInfo"), ec.prototype), gc(ec.prototype, "level", [Be], Object.getOwnPropertyDescriptor(ec.prototype, "level"), ec.prototype), gc(ec.prototype, "maxLevel", [Be], Object.getOwnPropertyDescriptor(ec.prototype, "maxLevel"), ec.prototype), gc(ec.prototype, "peakLevel", [Be], Object.getOwnPropertyDescriptor(ec.prototype, "peakLevel"), ec.prototype), gc(ec.prototype, "exp", [Be], Object.getOwnPropertyDescriptor(ec.prototype, "exp"), ec.prototype), gc(ec.prototype, "peakExp", [Be], Object.getOwnPropertyDescriptor(ec.prototype, "peakExp"), ec.prototype), gc(ec.prototype, "equipments", [Be], Object.getOwnPropertyDescriptor(ec.prototype, "equipments"), ec.prototype), gc(ec.prototype, "maxExp", [Be], Object.getOwnPropertyDescriptor(ec.prototype, "maxExp"), ec.prototype), gc(ec.prototype, "maxPeakExp", [Be], Object.getOwnPropertyDescriptor(ec.prototype, "maxPeakExp"), ec.prototype), gc(ec.prototype, "maxSkillCount", [Be], Object.getOwnPropertyDescriptor(ec.prototype, "maxSkillCount"), ec.prototype), gc(ec.prototype, "nextSkillUnlockLevel", [Be], Object.getOwnPropertyDescriptor(ec.prototype, "nextSkillUnlockLevel"), ec.prototype), gc(ec.prototype, "maxEnhanceCount", [Be], Object.getOwnPropertyDescriptor(ec.prototype, "maxEnhanceCount"), ec.prototype), gc(ec.prototype, "nextEnhanceUnlockLevel", [Be], Object.getOwnPropertyDescriptor(ec.prototype, "nextEnhanceUnlockLevel"), ec.prototype), gc(ec.prototype, "fromJS", [Q], Object.getOwnPropertyDescriptor(ec.prototype, "fromJS"), ec.prototype), gc(ec.prototype, "postCreate", [Tt], Object.getOwnPropertyDescriptor(ec.prototype, "postCreate"), ec.prototype), gc(ec.prototype, "postLoad", [Tt], Object.getOwnPropertyDescriptor(ec.prototype, "postLoad"), ec.prototype), gc(ec.prototype, "selectCareer", [Tt], Object.getOwnPropertyDescriptor(ec.prototype, "selectCareer"), ec.prototype), gc(ec.prototype, "loot", [Tt], Object.getOwnPropertyDescriptor(ec.prototype, "loot"), ec.prototype), gc(ec.prototype, "sellItem", [Tt], Object.getOwnPropertyDescriptor(ec.prototype, "sellItem"), ec.prototype), gc(ec.prototype, "getInventory", [Tt], Object.getOwnPropertyDescriptor(ec.prototype, "getInventory"), ec.prototype), gc(ec.prototype, "addSkillExp", [Tt], Object.getOwnPropertyDescriptor(ec.prototype, "addSkillExp"), ec.prototype), ec);
 
@@ -34403,25 +34515,25 @@
 
         var Ch = "@@__IMMUTABLE_KEYED__@@";
 
-        function Ph(e) {
+        function Rh(e) {
             return Boolean(e && e[Ch])
         }
 
-        var Rh = "@@__IMMUTABLE_INDEXED__@@";
+        var Ph = "@@__IMMUTABLE_INDEXED__@@";
 
         function Oh(e) {
-            return Boolean(e && e[Rh])
+            return Boolean(e && e[Ph])
         }
 
         function Mh(e) {
-            return Ph(e) || Oh(e)
+            return Rh(e) || Oh(e)
         }
 
         var Th = function (e) {
             return Dh(e) ? e : op(e)
         }, Bh = function (e) {
             function t(e) {
-                return Ph(e) ? e : ap(e)
+                return Rh(e) ? e : ap(e)
             }
 
             return e && (t.__proto__ = e), t.prototype = Object.create(e && e.prototype), t.prototype.constructor = t, t
@@ -34549,7 +34661,7 @@
             }, t
         }(Th), ap = function (e) {
             function t(e) {
-                return null == e ? dp().toKeyedSeq() : Dh(e) ? Ph(e) ? e.toSeq() : e.fromEntrySeq() : Lh(e) ? e.toSeq() : fp(e)
+                return null == e ? dp().toKeyedSeq() : Dh(e) ? Rh(e) ? e.toSeq() : e.fromEntrySeq() : Lh(e) ? e.toSeq() : fp(e)
             }
 
             return e && (t.__proto__ = e), t.prototype = Object.create(e && e.prototype), t.prototype.constructor = t, t.prototype.toKeyedSeq = function () {
@@ -34557,7 +34669,7 @@
             }, t
         }(op), sp = function (e) {
             function t(e) {
-                return null == e ? dp() : Dh(e) ? Ph(e) ? e.entrySeq() : e.toIndexedSeq() : Lh(e) ? e.toSeq().entrySeq() : mp(e)
+                return null == e ? dp() : Dh(e) ? Rh(e) ? e.entrySeq() : e.toIndexedSeq() : Lh(e) ? e.toSeq().entrySeq() : mp(e)
             }
 
             return e && (t.__proto__ = e), t.prototype = Object.create(e && e.prototype), t.prototype.constructor = t, t.of = function () {
@@ -34727,7 +34839,7 @@
                         var t;
                         if (Mp && void 0 !== (t = Op.get(e))) return t;
                         if (void 0 !== (t = e[Fp])) return t;
-                        if (!Pp) {
+                        if (!Rp) {
                             if (void 0 !== (t = e.propertyIsEnumerable && e.propertyIsEnumerable[Fp])) return t;
                             if (void 0 !== (t = function (e) {
                                 if (e && e.nodeType > 0) switch (e.nodeType) {
@@ -34738,9 +34850,9 @@
                                 }
                             }(e))) return t
                         }
-                        if (t = Rp(), Mp) Op.set(e, t); else {
+                        if (t = Pp(), Mp) Op.set(e, t); else {
                             if (void 0 !== Cp && !1 === Cp(e)) throw new Error("Non-extensible objects are not allowed as keys.");
-                            if (Pp) Object.defineProperty(e, Fp, {
+                            if (Rp) Object.defineProperty(e, Fp, {
                                 enumerable: !1,
                                 configurable: !1,
                                 writable: !1,
@@ -34757,7 +34869,7 @@
                 case"symbol":
                     return function (e) {
                         var t = Tp[e];
-                        return void 0 !== t || (t = Rp(), Tp[e] = t), t
+                        return void 0 !== t || (t = Pp(), Tp[e] = t), t
                     }(i);
                 default:
                     if ("function" == typeof i.toString) return Dp(i.toString());
@@ -34774,7 +34886,7 @@
             return _p(t)
         }
 
-        var Cp = Object.isExtensible, Pp = function () {
+        var Cp = Object.isExtensible, Rp = function () {
             try {
                 return Object.defineProperty({}, "@", {}), !0
             } catch (e) {
@@ -34782,7 +34894,7 @@
             }
         }();
 
-        function Rp() {
+        function Pp() {
             var e = ++Bp;
             return 1073741824 & Bp && (Bp = 0), e
         }
@@ -35094,7 +35206,7 @@
 
         function Xp(e, t, n) {
             t || (t = ad);
-            var r = Ph(e), i = 0, o = e.toSeq().map((function (t, r) {
+            var r = Rh(e), i = 0, o = e.toSeq().map((function (t, r) {
                 return [r, t, i++, n ? n(t, r, e) : t]
             })).valueSeq().toArray();
             return o.sort((function (e, n) {
@@ -35160,11 +35272,11 @@
         }
 
         function rd(e) {
-            return Ph(e) ? Bh : Oh(e) ? Fh : Nh
+            return Rh(e) ? Bh : Oh(e) ? Fh : Nh
         }
 
         function id(e) {
-            return Object.create((Ph(e) ? ap : Oh(e) ? sp : lp).prototype)
+            return Object.create((Rh(e) ? ap : Oh(e) ? sp : lp).prototype)
         }
 
         function od() {
@@ -35322,7 +35434,7 @@
         function Sd(e, t, n) {
             return Dd(e, t, function (e) {
                 return function t(n, r, i) {
-                    return pd(n) && pd(r) && (o = r, a = op(n), s = op(o), Oh(a) === Oh(s) && Ph(a) === Ph(s)) ? Dd(n, [r], t) : e ? e(n, r, i) : r;
+                    return pd(n) && pd(r) && (o = r, a = op(n), s = op(o), Oh(a) === Oh(s) && Rh(a) === Rh(s)) ? Dd(n, [r], t) : e ? e(n, r, i) : r;
                     var o, a, s
                 }
             }(n))
@@ -35345,12 +35457,12 @@
             return Sd(this, e)
         }
 
-        function Pd(e) {
+        function Rd(e) {
             for (var t = [], n = arguments.length - 1; n-- > 0;) t[n] = arguments[n + 1];
             return Sd(this, t, e)
         }
 
-        function Rd(e) {
+        function Pd(e) {
             for (var t = [], n = arguments.length - 1; n-- > 0;) t[n] = arguments[n + 1];
             return gd(this, e, Wd(), (function (e) {
                 return Dd(e, t)
@@ -35440,7 +35552,7 @@
         }(Bh);
         Nd.isMap = vp;
         var Id = Nd.prototype;
-        Id[yp] = !0, Id[hh] = Id.remove, Id.removeAll = Id.deleteAll, Id.setIn = vd, Id.removeIn = Id.deleteIn = bd, Id.update = wd, Id.updateIn = xd, Id.merge = Id.concat = _d, Id.mergeWith = Ad, Id.mergeDeep = Cd, Id.mergeDeepWith = Pd, Id.mergeIn = Rd, Id.mergeDeepIn = Od, Id.withMutations = Md, Id.wasAltered = Fd, Id.asImmutable = Bd, Id["@@transducer/init"] = Id.asMutable = Td, Id["@@transducer/step"] = function (e, t) {
+        Id[yp] = !0, Id[hh] = Id.remove, Id.removeAll = Id.deleteAll, Id.setIn = vd, Id.removeIn = Id.deleteIn = bd, Id.update = wd, Id.updateIn = xd, Id.merge = Id.concat = _d, Id.mergeWith = Ad, Id.mergeDeep = Cd, Id.mergeDeepWith = Rd, Id.mergeIn = Pd, Id.mergeDeepIn = Od, Id.withMutations = Md, Id.wasAltered = Fd, Id.asImmutable = Bd, Id["@@transducer/init"] = Id.asMutable = Td, Id["@@transducer/step"] = function (e, t) {
             return e.set(t[0], t[1])
         }, Id["@@transducer/result"] = function (e) {
             return e.asImmutable()
@@ -35740,7 +35852,7 @@
         }(Fh);
         sf.isList = af;
         var lf = sf.prototype;
-        lf[of] = !0, lf[hh] = lf.remove, lf.merge = lf.concat, lf.setIn = vd, lf.deleteIn = lf.removeIn = bd, lf.update = wd, lf.updateIn = xd, lf.mergeIn = Rd, lf.mergeDeepIn = Od, lf.withMutations = Md, lf.wasAltered = Fd, lf.asImmutable = Bd, lf["@@transducer/init"] = lf.asMutable = Td, lf["@@transducer/step"] = function (e, t) {
+        lf[of] = !0, lf[hh] = lf.remove, lf.merge = lf.concat, lf.setIn = vd, lf.deleteIn = lf.removeIn = bd, lf.update = wd, lf.updateIn = xd, lf.mergeIn = Pd, lf.mergeDeepIn = Od, lf.withMutations = Md, lf.wasAltered = Fd, lf.asImmutable = Bd, lf["@@transducer/init"] = lf.asMutable = Td, lf["@@transducer/step"] = function (e, t) {
             return e.push(t)
         }, lf["@@transducer/result"] = function (e) {
             return e.asImmutable()
@@ -35956,7 +36068,7 @@
                     value: e[r],
                     next: n
                 };
-                return this.__ownerID ? (this.size = t, this._head = n, this.__hash = void 0, this.__altered = !0, this) : Rf(t, n)
+                return this.__ownerID ? (this.size = t, this._head = n, this.__hash = void 0, this.__altered = !0, this) : Pf(t, n)
             }, t.prototype.pushAll = function (t) {
                 if (0 === (t = e(t)).size) return this;
                 if (0 === this.size && Sf(t)) return t;
@@ -35964,7 +36076,7 @@
                 var n = this.size, r = this._head;
                 return t.__iterate((function (e) {
                     n++, r = {value: e, next: r}
-                }), !0), this.__ownerID ? (this.size = n, this._head = r, this.__hash = void 0, this.__altered = !0, this) : Rf(n, r)
+                }), !0), this.__ownerID ? (this.size = n, this._head = r, this.__hash = void 0, this.__altered = !0, this) : Pf(n, r)
             }, t.prototype.pop = function () {
                 return this.slice(1)
             }, t.prototype.clear = function () {
@@ -35974,9 +36086,9 @@
                 var r = xh(t, this.size);
                 if (_h(n, this.size) !== this.size) return e.prototype.slice.call(this, t, n);
                 for (var i = this.size - r, o = this._head; r--;) o = o.next;
-                return this.__ownerID ? (this.size = i, this._head = o, this.__hash = void 0, this.__altered = !0, this) : Rf(i, o)
+                return this.__ownerID ? (this.size = i, this._head = o, this.__hash = void 0, this.__altered = !0, this) : Pf(i, o)
             }, t.prototype.__ensureOwner = function (e) {
-                return e === this.__ownerID ? this : e ? Rf(this.size, this._head, e, this.__hash) : 0 === this.size ? Of() : (this.__ownerID = e, this.__altered = !1, this)
+                return e === this.__ownerID ? this : e ? Pf(this.size, this._head, e, this.__hash) : 0 === this.size ? Of() : (this.__ownerID = e, this.__altered = !1, this)
             }, t.prototype.__iterate = function (e, t) {
                 var n = this;
                 if (t) return new up(this.toArray()).__iterate((function (t, r) {
@@ -35997,20 +36109,20 @@
             }, t
         }(Fh);
         Df.isStack = Sf;
-        var Cf, Pf = Df.prototype;
+        var Cf, Rf = Df.prototype;
 
-        function Rf(e, t, n, r) {
-            var i = Object.create(Pf);
+        function Pf(e, t, n, r) {
+            var i = Object.create(Rf);
             return i.size = e, i._head = t, i.__ownerID = n, i.__hash = r, i.__altered = !1, i
         }
 
         function Of() {
-            return Cf || (Cf = Rf(0))
+            return Cf || (Cf = Pf(0))
         }
 
-        Pf[Ef] = !0, Pf.shift = Pf.pop, Pf.unshift = Pf.push, Pf.unshiftAll = Pf.pushAll, Pf.withMutations = Md, Pf.wasAltered = Fd, Pf.asImmutable = Bd, Pf["@@transducer/init"] = Pf.asMutable = Td, Pf["@@transducer/step"] = function (e, t) {
+        Rf[Ef] = !0, Rf.shift = Rf.pop, Rf.unshift = Rf.push, Rf.unshiftAll = Rf.pushAll, Rf.withMutations = Md, Rf.wasAltered = Fd, Rf.asImmutable = Bd, Rf["@@transducer/init"] = Rf.asMutable = Td, Rf["@@transducer/step"] = function (e, t) {
             return e.unshift(t)
-        }, Pf["@@transducer/result"] = function (e) {
+        }, Rf["@@transducer/result"] = function (e) {
             return e.asImmutable()
         };
         var Mf = "@@__IMMUTABLE_SET__@@";
@@ -36025,7 +36137,7 @@
 
         function Ff(e, t) {
             if (e === t) return !0;
-            if (!Dh(t) || void 0 !== e.size && void 0 !== t.size && e.size !== t.size || void 0 !== e.__hash && void 0 !== t.__hash && e.__hash !== t.__hash || Ph(e) !== Ph(t) || Oh(e) !== Oh(t) || Uh(e) !== Uh(t)) return !1;
+            if (!Dh(t) || void 0 !== e.size && void 0 !== t.size && e.size !== t.size || void 0 !== e.__hash && void 0 !== t.__hash && e.__hash !== t.__hash || Rh(e) !== Rh(t) || Oh(e) !== Oh(t) || Uh(e) !== Uh(t)) return !1;
             if (0 === e.size && 0 === t.size) return !0;
             var n = !Mh(e);
             if (Uh(e)) {
@@ -36060,7 +36172,7 @@
                 if (!pd(e)) return e;
                 e = op(e)
             }
-            if (Ph(e)) {
+            if (Rh(e)) {
                 var t = {};
                 return e.__iterate((function (e, n) {
                     t[n] = If(e)
@@ -36246,10 +36358,10 @@
             })), e
         }
 
-        Th.isIterable = Dh, Th.isKeyed = Ph, Th.isIndexed = Oh, Th.isAssociative = Mh, Th.isOrdered = Uh, Th.Iterator = Jh, Nf(Th, {
+        Th.isIterable = Dh, Th.isKeyed = Rh, Th.isIndexed = Oh, Th.isAssociative = Mh, Th.isOrdered = Uh, Th.Iterator = Jh, Nf(Th, {
             toArray: function () {
                 ud(this.size);
-                var e = new Array(this.size || 0), t = Ph(this), n = 0;
+                var e = new Array(this.size || 0), t = Rh(this), n = 0;
                 return this.__iterate((function (r, i) {
                     e[n++] = t ? [i, r] : r
                 })), e
@@ -36264,17 +36376,17 @@
             }, toObject: Wf, toOrderedMap: function () {
                 return wf(this.toKeyedSeq())
             }, toOrderedSet: function () {
-                return sm(Ph(this) ? this.valueSeq() : this)
+                return sm(Rh(this) ? this.valueSeq() : this)
             }, toSet: function () {
-                return Hf(Ph(this) ? this.valueSeq() : this)
+                return Hf(Rh(this) ? this.valueSeq() : this)
             }, toSetSeq: function () {
                 return new zp(this)
             }, toSeq: function () {
-                return Oh(this) ? this.toIndexedSeq() : Ph(this) ? this.toKeyedSeq() : this.toSetSeq()
+                return Oh(this) ? this.toIndexedSeq() : Rh(this) ? this.toKeyedSeq() : this.toSetSeq()
             }, toStack: function () {
-                return Df(Ph(this) ? this.valueSeq() : this)
+                return Df(Rh(this) ? this.valueSeq() : this)
             }, toList: function () {
-                return sf(Ph(this) ? this.valueSeq() : this)
+                return sf(Rh(this) ? this.valueSeq() : this)
             }, toString: function () {
                 return "[Collection]"
             }, __toString: function (e, t) {
@@ -36282,7 +36394,7 @@
             }, concat: function () {
                 for (var e = [], t = arguments.length; t--;) e[t] = arguments[t];
                 return td(this, function (e, t) {
-                    var n = Ph(e), r = [e].concat(t).map((function (e) {
+                    var n = Rh(e), r = [e].concat(t).map((function (e) {
                         return Dh(e) ? n && (e = Bh(e)) : e = n ? fp(e) : mp(Array.isArray(e) ? e : [e]), e
                     })).filter((function (e) {
                         return 0 !== e.size
@@ -36290,7 +36402,7 @@
                     if (0 === r.length) return e;
                     if (1 === r.length) {
                         var i = r[0];
-                        if (i === e || n && Ph(i) || Oh(e) && Oh(i)) return i
+                        if (i === e || n && Rh(i) || Oh(e) && Oh(i)) return i
                     }
                     var o = new up(r);
                     return n ? o = o.toKeyedSeq() : Oh(e) || (o = o.toSetSeq()), (o = o.flatten(!0)).size = r.reduce((function (e, t) {
@@ -36316,7 +36428,7 @@
                 return td(this, $p(this, e, t, !0))
             }, partition: function (e, t) {
                 return function (e, t, n) {
-                    var r = Ph(e), i = [[], []];
+                    var r = Rh(e), i = [[], []];
                     e.__iterate((function (o, a) {
                         i[t.call(n, o, a, e) ? 1 : 0].push(r ? [a, o] : o)
                     }));
@@ -36415,7 +36527,7 @@
                 }), void 0, t)
             }, getIn: $f, groupBy: function (e, t) {
                 return function (e, t, n) {
-                    var r = Ph(e), i = (Uh(e) ? wf() : Nd()).asMutable();
+                    var r = Rh(e), i = (Uh(e) ? wf() : Nd()).asMutable();
                     e.__iterate((function (o, a) {
                         i.update(t.call(n, o, a, e), (function (e) {
                             return (e = e || []).push(r ? [a, o] : o), e
@@ -36505,7 +36617,7 @@
             }, hashCode: function () {
                 return this.__hash || (this.__hash = function (e) {
                     if (e.size === 1 / 0) return 0;
-                    var t = Uh(e), n = Ph(e), r = t ? 1 : 0;
+                    var t = Uh(e), n = Rh(e), r = t ? 1 : 0;
                     return function (e, t) {
                         return t = xp(t, 3432918353), t = xp(t << 15 | t >>> -15, 461845907), t = xp(t << 13 | t >>> -13, 5), t = xp((t = t + 3864292196 ^ e) ^ t >>> 16, 2246822507), t = _p((t = xp(t ^ t >>> 13, 3266489909)) ^ t >>> 16)
                     }(e.__iterate(n ? t ? function (e, t) {
@@ -36612,7 +36724,7 @@
             }
         });
         var Xf = Fh.prototype;
-        Xf[Rh] = !0, Xf[zh] = !0, Nf(Nh, {
+        Xf[Ph] = !0, Xf[zh] = !0, Nf(Nh, {
             get: function (e, t) {
                 return this.has(e) ? e : t
             }, includes: function (e) {
@@ -36792,10 +36904,10 @@
             }
         }
 
-        dm[jh] = !0, dm[hh] = dm.remove, dm.deleteIn = dm.removeIn = bd, dm.getIn = $f, dm.hasIn = Gf.hasIn, dm.merge = _d, dm.mergeWith = Ad, dm.mergeIn = Rd, dm.mergeDeep = Cd, dm.mergeDeepWith = Pd, dm.mergeDeepIn = Od, dm.setIn = vd, dm.update = wd, dm.updateIn = xd, dm.withMutations = Md, dm.asMutable = Td, dm.asImmutable = Bd, dm[Gh] = dm.entries, dm.toJSON = dm.toObject = Gf.toObject, dm.inspect = dm.toSource = function () {
+        dm[jh] = !0, dm[hh] = dm.remove, dm.deleteIn = dm.removeIn = bd, dm.getIn = $f, dm.hasIn = Gf.hasIn, dm.merge = _d, dm.mergeWith = Ad, dm.mergeIn = Pd, dm.mergeDeep = Cd, dm.mergeDeepWith = Rd, dm.mergeDeepIn = Od, dm.setIn = vd, dm.update = wd, dm.updateIn = xd, dm.withMutations = Md, dm.asMutable = Td, dm.asImmutable = Bd, dm[Gh] = dm.entries, dm.toJSON = dm.toObject = Gf.toObject, dm.inspect = dm.toSource = function () {
             return this.toString()
         };
-        var vm, bm, km, wm, xm, _m, Am, Em, Sm, Dm, Cm, Pm, Rm, Om, Mm, Tm, Bm, Fm = i(2782);
+        var vm, bm, km, wm, xm, _m, Am, Em, Sm, Dm, Cm, Rm, Pm, Om, Mm, Tm, Bm, Fm = i(2782);
 
         function Nm(e, t, n, r) {
             n && Object.defineProperty(e, t, {
@@ -36883,7 +36995,7 @@
         });
         let Um = (vm = class {
             constructor() {
-                Im(this, "loaded", !1), Nm(this, "secretRecord", bm, this), Nm(this, "currentPlayer", km, this), Nm(this, "playerMetas", wm, this), Nm(this, "playerMetas2", xm, this), Nm(this, "storiesMap", _m, this), Nm(this, "enemyTaskMap", Am, this), Nm(this, "bank", Em, this), Nm(this, "iapMap", Sm, this), Nm(this, "ticketMap", Dm, this), Nm(this, "medicineLevel", Cm, this), Nm(this, "cookingLevel", Pm, this), Nm(this, "medicineExp", Rm, this), Nm(this, "cookingExp", Om, this), Nm(this, "lastVersion", Mm, this), Nm(this, "highestEndlessLevel", Tm, this), Nm(this, "pwuse", Bm, this), Im(this, "banned", !1), bn(this), It((() => {
+                Im(this, "loaded", !1), Nm(this, "secretRecord", bm, this), Nm(this, "currentPlayer", km, this), Nm(this, "playerMetas", wm, this), Nm(this, "playerMetas2", xm, this), Nm(this, "storiesMap", _m, this), Nm(this, "enemyTaskMap", Am, this), Nm(this, "bank", Em, this), Nm(this, "iapMap", Sm, this), Nm(this, "ticketMap", Dm, this), Nm(this, "medicineLevel", Cm, this), Nm(this, "cookingLevel", Rm, this), Nm(this, "medicineExp", Pm, this), Nm(this, "cookingExp", Om, this), Nm(this, "lastVersion", Mm, this), Nm(this, "highestEndlessLevel", Tm, this), Nm(this, "pwuse2", Bm, this), Im(this, "banned", !1), bn(this), It((() => {
                     this.save()
                 }), {delay: 1e3})
             }
@@ -36937,7 +37049,7 @@
             }
 
             get purchaseSlotPrice() {
-                return 400 + 500 * this.playerSlotCount ** 2 + 100 * this.playerSlotCount ** 3
+                return (400 + 500 * this.playerSlotCount ** 2 + 100 * this.playerSlotCount ** 3) / 2
             }
 
             get endlessTicketRate() {
@@ -37040,7 +37152,7 @@
                 this.storiesMap.clear();
                 for (const t of Object.keys(e.storiesMap || {})) this.storiesMap.set(t, e.storiesMap[t]);
                 this.enemyTaskMap.clear();
-                for (const t of Object.keys(e.enemyTaskMap || {})) this.enemyTaskMap.set(t, Re.map(e.enemyTaskMap[t]));
+                for (const t of Object.keys(e.enemyTaskMap || {})) this.enemyTaskMap.set(t, Pe.map(e.enemyTaskMap[t]));
                 this.iapMap.clear();
                 for (const t of Object.keys(e.iapMap || {})) this.iapMap.set(t, e.iapMap[t]);
                 this.ticketMap.clear();
@@ -37059,7 +37171,9 @@
                 for (const t of Object.keys(as.medicines)) this.medicineLevel.set(t, e.medicineLevel && e.medicineLevel[t] || 0);
                 this.medicineExp = e.medicineExp || 0, this.cookingLevel.clear();
                 for (const t of Object.keys(as.cookings)) this.cookingLevel.set(t, e.cookingLevel && e.cookingLevel[t] || 0);
-                return this.cookingExp = e.cookingExp || 0, this.lastVersion = e.lastVersion || null, this.banned = e.banned, this.playerSlotCount < Object.keys(e.playerMetas).length && (this.playerSlotCount = Object.keys(e.playerMetas).length), this.pwuse = e.pwuse || [], t || n || !r || (this.truetime12 += 1), !t && !n && this.diamonds > 2888 && (this.truetime12 += 1), t || n || !(Vm.totalCookingLevel > 0 || Vm.totalMedicineLevel > 0) || (this.truetime12 += 1), (this.medicineExp > 5e4 || this.cookingExp > 1e4) && (this.truetime12 += 1), this.truetime12 > 0 && (this.truetime12 += 1), this
+                this.cookingExp = e.cookingExp || 0, this.lastVersion = e.lastVersion || null, this.banned = e.banned, this.playerSlotCount < Object.keys(e.playerMetas).length && (this.playerSlotCount = Object.keys(e.playerMetas).length), this.pwuse2.clear();
+                for (let t = 0; e.pwuse2 && t < e.pwuse2.length; t++) this.pwuse2.push(e.pwuse2[t]);
+                return t || n || !r || (this.truetime12 += 1), !t && !n && this.diamonds > 28888 && (this.truetime12 += 1), t || n || !(Vm.totalCookingLevel > 0 || Vm.totalMedicineLevel > 0) || (this.truetime12 += 1), (this.medicineExp > 5e4 || this.cookingExp > 1e4) && (this.truetime12 += 1), this.truetime12 > 0 && (this.truetime12 += 1), this
             }
 
             save() {
@@ -37084,7 +37198,7 @@
 
             addKillTask(e, t, n) {
                 let r;
-                this.enemyTaskMap.has(t) ? r = this.enemyTaskMap.get(t) : (r = Re.map(), this.enemyTaskMap.set(t, r)), r.set(e, n)
+                this.enemyTaskMap.has(t) ? r = this.enemyTaskMap.get(t) : (r = Pe.map(), this.enemyTaskMap.set(t, r)), r.set(e, n)
             }
 
             onEnemyKilled(e) {
@@ -37124,112 +37238,112 @@
                 for (; n && "object" == typeof n;) n = n[t.shift()];
                 return "function" == typeof n ? n.apply(this, t) : "商品"
             }
-        }, bm = Hm(vm.prototype, "secretRecord", [Re], {
+        }, bm = Hm(vm.prototype, "secretRecord", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
             initializer: function () {
                 return new zm
             }
-        }), Hm(vm.prototype, "diamonds", [Be], Object.getOwnPropertyDescriptor(vm.prototype, "diamonds"), vm.prototype), Hm(vm.prototype, "truetime", [Be], Object.getOwnPropertyDescriptor(vm.prototype, "truetime"), vm.prototype), Hm(vm.prototype, "truetime12", [Be], Object.getOwnPropertyDescriptor(vm.prototype, "truetime12"), vm.prototype), Hm(vm.prototype, "playerSlotCount", [Be], Object.getOwnPropertyDescriptor(vm.prototype, "playerSlotCount"), vm.prototype), Hm(vm.prototype, "purchaseRate", [Be], Object.getOwnPropertyDescriptor(vm.prototype, "purchaseRate"), vm.prototype), Hm(vm.prototype, "bowelLevel", [Be], Object.getOwnPropertyDescriptor(vm.prototype, "bowelLevel"), vm.prototype), km = Hm(vm.prototype, "currentPlayer", [Re], {
+        }), Hm(vm.prototype, "diamonds", [Be], Object.getOwnPropertyDescriptor(vm.prototype, "diamonds"), vm.prototype), Hm(vm.prototype, "truetime", [Be], Object.getOwnPropertyDescriptor(vm.prototype, "truetime"), vm.prototype), Hm(vm.prototype, "truetime12", [Be], Object.getOwnPropertyDescriptor(vm.prototype, "truetime12"), vm.prototype), Hm(vm.prototype, "playerSlotCount", [Be], Object.getOwnPropertyDescriptor(vm.prototype, "playerSlotCount"), vm.prototype), Hm(vm.prototype, "purchaseRate", [Be], Object.getOwnPropertyDescriptor(vm.prototype, "purchaseRate"), vm.prototype), Hm(vm.prototype, "bowelLevel", [Be], Object.getOwnPropertyDescriptor(vm.prototype, "bowelLevel"), vm.prototype), km = Hm(vm.prototype, "currentPlayer", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
             initializer: function () {
                 return null
             }
-        }), wm = Hm(vm.prototype, "playerMetas", [Re], {
+        }), wm = Hm(vm.prototype, "playerMetas", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
             initializer: function () {
-                return Re.map()
+                return Pe.map()
             }
-        }), xm = Hm(vm.prototype, "playerMetas2", [Re], {
+        }), xm = Hm(vm.prototype, "playerMetas2", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
             initializer: function () {
-                return Re.map()
+                return Pe.map()
             }
-        }), _m = Hm(vm.prototype, "storiesMap", [Re], {
+        }), _m = Hm(vm.prototype, "storiesMap", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
             initializer: function () {
-                return Re.map()
+                return Pe.map()
             }
-        }), Am = Hm(vm.prototype, "enemyTaskMap", [Re], {
+        }), Am = Hm(vm.prototype, "enemyTaskMap", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
             initializer: function () {
-                return Re.map()
+                return Pe.map()
             }
-        }), Em = Hm(vm.prototype, "bank", [Re], {
+        }), Em = Hm(vm.prototype, "bank", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
             initializer: function () {
                 return []
             }
-        }), Sm = Hm(vm.prototype, "iapMap", [Re], {
+        }), Sm = Hm(vm.prototype, "iapMap", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
             initializer: function () {
-                return Re.map()
+                return Pe.map()
             }
-        }), Dm = Hm(vm.prototype, "ticketMap", [Re], {
+        }), Dm = Hm(vm.prototype, "ticketMap", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
             initializer: function () {
-                return Re.map()
+                return Pe.map()
             }
-        }), Cm = Hm(vm.prototype, "medicineLevel", [Re], {
+        }), Cm = Hm(vm.prototype, "medicineLevel", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
             initializer: function () {
-                return Re.map()
+                return Pe.map()
             }
-        }), Pm = Hm(vm.prototype, "cookingLevel", [Re], {
+        }), Rm = Hm(vm.prototype, "cookingLevel", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
             initializer: function () {
-                return Re.map()
+                return Pe.map()
             }
-        }), Rm = Hm(vm.prototype, "medicineExp", [Re], {
-            configurable: !0,
-            enumerable: !0,
-            writable: !0,
-            initializer: function () {
-                return 0
-            }
-        }), Om = Hm(vm.prototype, "cookingExp", [Re], {
+        }), Pm = Hm(vm.prototype, "medicineExp", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
             initializer: function () {
                 return 0
             }
-        }), Mm = Hm(vm.prototype, "lastVersion", [Re], {
+        }), Om = Hm(vm.prototype, "cookingExp", [Pe], {
+            configurable: !0,
+            enumerable: !0,
+            writable: !0,
+            initializer: function () {
+                return 0
+            }
+        }), Mm = Hm(vm.prototype, "lastVersion", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
             initializer: function () {
                 return null
             }
-        }), Tm = Hm(vm.prototype, "highestEndlessLevel", [Re], {
+        }), Tm = Hm(vm.prototype, "highestEndlessLevel", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
             initializer: function () {
                 return 0
             }
-        }), Bm = Hm(vm.prototype, "pwuse", [Re], {
+        }), Bm = Hm(vm.prototype, "pwuse2", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
@@ -37388,7 +37502,7 @@
 
         let lg = ai(ig = class extends t.Component {
             constructor() {
-                super(...arguments), og(this, "refNavBar", (0, t.createRef)()), og(this, "editing", Re.box(!1)), og(this, "entering", Re.box(!1)), og(this, "onRightPressed", Tt((() => {
+                super(...arguments), og(this, "refNavBar", (0, t.createRef)()), og(this, "editing", Pe.box(!1)), og(this, "entering", Pe.box(!1)), og(this, "onRightPressed", Tt((() => {
                     this.editing.get() ? this.editing.set(!1) : this.editing.set(!0)
                 }))), og(this, "ds", new Ca.DataSource({rowHasChanged: (e, t) => e[0] !== t[0]})), og(this, "goCreate", (() => {
                     uw.navigate("/player/create")
@@ -37614,9 +37728,9 @@
             let {className: n, unit: r, field: i, digits: o = 1, mul: a = 1, inc: s = 0, ...l} = e;
             return t.createElement(_a, Eg({className: n}, l), ((r[i] + s) * a).toFixed(o))
         }));
-        var Pg = i(8297), Rg = {};
-        Rg.styleTagTransform = sa(), Rg.setAttributes = ra(), Rg.insert = ta().bind(null, "head"), Rg.domAPI = Zo(), Rg.insertStyleElement = oa(), Xo()(Pg.A, Rg);
-        const Og = Pg.A && Pg.A.locals ? Pg.A.locals : void 0;
+        var Rg = i(8297), Pg = {};
+        Pg.styleTagTransform = sa(), Pg.setAttributes = ra(), Pg.insert = ta().bind(null, "head"), Pg.domAPI = Zo(), Pg.insertStyleElement = oa(), Xo()(Rg.A, Pg);
+        const Og = Rg.A && Rg.A.locals ? Rg.A.locals : void 0;
 
         function Mg(e) {
             let {className: n, children: r} = e;
@@ -37633,7 +37747,7 @@
 
         var Tg = i(391), Bg = {};
         Bg.styleTagTransform = sa(), Bg.setAttributes = ra(), Bg.insert = ta().bind(null, "head"), Bg.domAPI = Zo(), Bg.insertStyleElement = oa(), Xo()(Tg.A, Bg);
-        const Fg = Tg.A && Tg.A.locals ? Tg.A.locals : void 0, Ng = Re(!0), Ig = Tt((function (e) {
+        const Fg = Tg.A && Tg.A.locals ? Tg.A.locals : void 0, Ng = Pe(!0), Ig = Tt((function (e) {
             let t = arguments.length > 1 && void 0 !== arguments[1] && arguments[1],
                 n = arguments.length > 2 ? arguments[2] : void 0;
             const {player: r} = ku;
@@ -37651,7 +37765,7 @@
             } else n()
         })), Hg = ai((function () {
             const {player: e} = ku;
-            return t.createElement(Aa, {className: Fg.container}, t.createElement(Aa, {className: Fg.row}, t.createElement(_a, {className: Fg.container}, "不提示拆解高品质物品"), t.createElement(Pa, {
+            return t.createElement(Aa, {className: Fg.container}, t.createElement(Aa, {className: Fg.row}, t.createElement(_a, {className: Fg.container}, "不提示拆解高品质物品"), t.createElement(Ra, {
                 onValueChange: Tt((e => Ng.set(e))),
                 value: Ng.get()
             })), t.createElement(Sa, {
@@ -37709,7 +37823,7 @@
 
         let Jg = ai((Vg = class extends t.Component {
             constructor() {
-                super(), Wg(this, "selectedItem", Re(null)), $g(this, "locks", Kg, this), $g(this, "newAffixes", Yg, this), Wg(this, "renderRow", ((e, n) => t.createElement(Iy, {
+                super(), Wg(this, "selectedItem", Pe(null)), $g(this, "locks", Kg, this), $g(this, "newAffixes", Yg, this), Wg(this, "renderRow", ((e, n) => t.createElement(Iy, {
                     onPress: () => this.selectItem(e),
                     key: n,
                     slot: e,
@@ -37803,14 +37917,14 @@
                     contentContainerClassName: zg.content
                 }, e.inventory.filter((e => e.isEquip && e.quality > 0)).map(this.renderRow)), this.renderCost(), this.renderDetail())
             }
-        }, Kg = Gg(Vg.prototype, "locks", [Re], {
+        }, Kg = Gg(Vg.prototype, "locks", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
             initializer: function () {
                 return []
             }
-        }), Yg = Gg(Vg.prototype, "newAffixes", [Re], {
+        }), Yg = Gg(Vg.prototype, "newAffixes", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
@@ -37855,7 +37969,7 @@
 
         let iy = ai((ty = class extends t.Component {
             constructor() {
-                super(...arguments), ny(this, "selectedItem", Re(null)), ny(this, "lastUsedAt", 0), ny(this, "renderRow", ((e, n) => t.createElement(Iy, {
+                super(...arguments), ny(this, "selectedItem", Pe(null)), ny(this, "lastUsedAt", 0), ny(this, "renderRow", ((e, n) => t.createElement(Iy, {
                     onPress: () => this.selectItem(e),
                     key: n,
                     slot: e,
@@ -38298,7 +38412,7 @@
                 }))
             }, t.createElement(_a, null, "拾取"))))
         }));
-        let Py = ai(Ay = class extends t.Component {
+        let Ry = ai(Ay = class extends t.Component {
             constructor() {
                 super(...arguments), function (e, t, n) {
                     t = function (e) {
@@ -38319,7 +38433,7 @@
                         configurable: !0,
                         writable: !0
                     }) : e[t] = n
-                }(this, "selectedItem", Re(null))
+                }(this, "selectedItem", Pe(null))
             }
 
             render() {
@@ -38330,9 +38444,9 @@
                 })))
             }
         }) || Ay;
-        var Ry = i(8434), Oy = {};
-        Oy.styleTagTransform = sa(), Oy.setAttributes = ra(), Oy.insert = ta().bind(null, "head"), Oy.domAPI = Zo(), Oy.insertStyleElement = oa(), Xo()(Ry.A, Oy);
-        const My = Ry.A && Ry.A.locals ? Ry.A.locals : void 0;
+        var Py = i(8434), Oy = {};
+        Oy.styleTagTransform = sa(), Oy.setAttributes = ra(), Oy.insert = ta().bind(null, "head"), Oy.domAPI = Zo(), Oy.insertStyleElement = oa(), Xo()(Py.A, Oy);
+        const My = Py.A && Py.A.locals ? Py.A.locals : void 0;
         var Ty;
 
         function By(e, t, n) {
@@ -38575,7 +38689,7 @@
 
         let Gy = ai(Ty = class extends t.Component {
             constructor() {
-                super(...arguments), By(this, "selectedItem", Re(null)), By(this, "onLeftPressed", (() => {
+                super(...arguments), By(this, "selectedItem", Pe(null)), By(this, "onLeftPressed", (() => {
                     uw.navigate("/purchase")
                 })), By(this, "onRightPressed", (() => {
                     uw.navigate("/inventory/bank")
@@ -38762,7 +38876,7 @@
                 let {who: n, what: r} = e;
                 return t.createElement(_a, null, n.displayName, "的", r.name, "被打断了。")
             }
-        }, ev = nv(Zy.prototype, "rendered", [Re], {
+        }, ev = nv(Zy.prototype, "rendered", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
@@ -38939,14 +39053,14 @@
                     onPress: this.back
                 }, t.createElement(_a, {className: vv.backLabel}, "跳过>>")))
             }
-        }, wv = Ev(kv.prototype, "scenePanel", [Re], {
+        }, wv = Ev(kv.prototype, "scenePanel", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
             initializer: function () {
                 return null
             }
-        }), xv = Ev(kv.prototype, "content", [Re], {
+        }), xv = Ev(kv.prototype, "content", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
@@ -38956,7 +39070,7 @@
         }), bv = kv)) || bv;
         var Dv, Cv;
 
-        function Pv(e, t, n) {
+        function Rv(e, t, n) {
             return t = function (e) {
                 var t = function (e, t) {
                     if ("object" != typeof e || null === e) return e;
@@ -38977,7 +39091,7 @@
             }) : e[t] = n, e
         }
 
-        const Rv = ai((function (e) {
+        const Pv = ai((function (e) {
             let {
                 map: n,
                 endlessLevel: r = 0,
@@ -39085,7 +39199,7 @@
         const Nv = ai((function (e) {
                 let {map: n, onChangeMap: r, showNoTicket: i} = e;
                 const o = ku.player.countTicket(n.key);
-                return (i ? o > 0 : o <= 0) ? null : t.createElement(Rv, {
+                return (i ? o > 0 : o <= 0) ? null : t.createElement(Pv, {
                     isDungeon: !0,
                     map: n,
                     onChangeMap: r,
@@ -39101,7 +39215,7 @@
                 const r = ku.player.countTicket("nightmare." + n);
                 if (!r) return null;
                 const i = Iv[(n - 1) % 2];
-                return t.createElement(Aa, {className: uv.endlessGroup}, i.map((e => t.createElement(Rv, {
+                return t.createElement(Aa, {className: uv.endlessGroup}, i.map((e => t.createElement(Pv, {
                     key: e,
                     isDungeon: !0,
                     map: as.maps[e],
@@ -39126,39 +39240,39 @@
             }));
         let Lv = ai((Cv = class extends t.Component {
             constructor() {
-                super(...arguments), Pv(this, "renderMap", (e => {
+                super(...arguments), Rv(this, "renderMap", (e => {
                     const n = as.maps[e];
-                    return t.createElement(Rv, {map: n, key: e, onChangeMap: this.onChangeMap})
-                })), Pv(this, "renderMapName", ((e, n) => {
+                    return t.createElement(Pv, {map: n, key: e, onChangeMap: this.onChangeMap})
+                })), Rv(this, "renderMapName", ((e, n) => {
                     const r = as.maps[e[0]];
-                    return t.createElement(Rv, {
+                    return t.createElement(Pv, {
                         map: r,
                         endlessLevel: e[1],
                         key: "pending-" + n,
                         onChangeMap: e => this.cancelPendingMap(e, n),
                         noActive: !0
                     })
-                })), Pv(this, "renderDungeon", (e => t.createElement(Nv, {
+                })), Rv(this, "renderDungeon", (e => t.createElement(Nv, {
                     map: as.maps[e],
                     key: e,
                     onChangeMap: this.onEnterDungeonCheck
-                }))), Pv(this, "renderDungeonNoTicket", (e => t.createElement(Nv, {
+                }))), Rv(this, "renderDungeonNoTicket", (e => t.createElement(Nv, {
                     map: as.maps[e],
                     key: e,
                     onChangeMap: this.onEnterDungeonCheck,
                     showNoTicket: !0
-                }))), Pv(this, "cancelPendingMap", Tt(((e, t) => {
+                }))), Rv(this, "cancelPendingMap", Tt(((e, t) => {
                     as.maps[e.key].isDungeon && ku.pendingMaps.splice(t, 1)
-                }))), Pv(this, "onChangeMap", Tt(((e, t) => {
+                }))), Rv(this, "onChangeMap", Tt(((e, t) => {
                     !t && ku.pendingMaps.length >= 1 ? ru("提示", "是否确认离开进行中的地城？", [{
                         text: "确认",
                         onPress: () => {
                             this.onChangeMap(e, !0)
                         }
                     }, {text: "取消"}]) : ku.map !== e.key && (ku.map = e.key, ku.pendingMaps.splice(0), Tv())
-                }))), Pv(this, "onEnterDungeon", Tt((e => {
+                }))), Rv(this, "onEnterDungeon", Tt((e => {
                     ku.pendingMaps.length > 0 ? ku.pendingMaps.splice(ku.pendingMaps.length - 1, 0, [e.key, 0]) : (ku.pendingMaps.push([ku.map, 0]), ku.map = e.key, Tv())
-                }))), Pv(this, "onEnterDungeonCheck", (e => {
+                }))), Rv(this, "onEnterDungeonCheck", (e => {
                     const t = e.group || e.key,
                         n = ku.pendingMaps.filter((e => (as.maps[e[0]].group || e[0]) === t)).length + ((as.maps[ku.map].group || ku.map) === t ? 1 : 0), {player: r} = ku;
                     r.countTicket(t) <= n ? e.resetPrice > 0 ? ru("提示", `现在没有任何该副本的钥石，是否花费${e.resetPrice}神力兑换钥石？\n（在普通地图击杀怪物有几率获得钥石）`, [{
@@ -39292,7 +39406,7 @@
             }) : null
         })), ub = ai((function (e) {
             let {unit: n} = e;
-            const r = n.runAttrHooks(3, "maxComboPoint");
+            const r = n.runAttrHooks(5, "maxComboPoint");
             return t.createElement(eb, {value: n.comboPoint, maxValue: r, bgColor: "#ccc", activeColor: "#f37800"})
         }));
         var cb = i(7373), hb = {};
@@ -39341,7 +39455,7 @@
             }), n.maxEp > 0 && t.createElement(ib, {
                 unit: n,
                 className: pb.bar
-            }), (n.player && "knight" === n.player.currentCareer || n.runAttrHooks(!1, "displayCpBar")) && t.createElement(ub, {unit: n}), (n.player && "lv80.sorceress5" === n.player.currentCareer || n.runAttrHooks(!1, "displayCpBar")) && t.createElement(ub, {unit: n}), (n.player && "tielaolv" === n.player.currentCareer || n.runAttrHooks(!1, "displayCpBar")) && t.createElement(ub, {unit: n}), (n.player && "yijinjing" === n.player.currentCareer || n.runAttrHooks(!1, "displayCpBar")) && t.createElement(ub, {unit: n}), (n.player && "xisuijing" === n.player.currentCareer || n.runAttrHooks(!1, "displayCpBar")) && t.createElement(ub, {unit: n}), (n.player && "zixiagong" === n.player.currentCareer || n.runAttrHooks(!1, "displayCpBar")) && t.createElement(ub, {unit: n}), (n.player && "taixujianyi" === n.player.currentCareer || n.runAttrHooks(!1, "displayCpBar")) && t.createElement(ub, {unit: n}), (n.player && "qixiu" === n.player.role || n.runAttrHooks(!1, "displayCpBar")) && t.createElement(ub, {unit: n}), t.createElement(_a, {
+            }), (n.player && "knight" === n.player.currentCareer || n.runAttrHooks(!1, "displayCpBar")) && t.createElement(ub, {unit: n}), (n.player && "lv80.sorceress5" === n.player.currentCareer || n.runAttrHooks(!1, "displayCpBar")) && t.createElement(ub, {unit: n}), (n.player && "villageH" === n.player.role || n.runAttrHooks(!1, "displayCpBar")) && t.createElement(ub, {unit: n}), t.createElement(_a, {
                 numberOfLines: 1,
                 className: pb.target
             }, "目标：", t.createElement(Sg, {
@@ -39400,7 +39514,7 @@
         let Ab = ai(xb = class extends t.Component {
             render() {
                 const {unit: e} = this.props, n = ($a((() => e.player.level >= 1)), $a((() => e.player.level >= 1))),
-                    r = e.runAttrHooks(3, "maxComboPoint");
+                    r = e.runAttrHooks(5, "maxComboPoint");
                 return t.createElement(Sa, {className: wb.panel}, t.createElement(_a, null, t.createElement(Sg, {
                     className: wb.name,
                     unit: e,
@@ -39456,19 +39570,13 @@
                 })), e.maxCp > 0 && t.createElement(ab, {unit: e}), e.player && "knight" === e.player.currentCareer && t.createElement(_a, null, "圣能: ", t.createElement(Dg, {
                     unit: e,
                     field: "comboPoint"
-                }), " / ", r), e.player && "knight" === e.player.currentCareer && t.createElement(ub, {unit: e}), e.player && "qixiu" === e.player.role && t.createElement(_a, null, "剑舞: ", t.createElement(Dg, {
+                }), " / ", r), e.player && "knight" === e.player.currentCareer && t.createElement(ub, {unit: e}), e.player && "villageH" === e.player.role && t.createElement(_a, null, "拳意: ", t.createElement(Dg, {
                     unit: e,
                     field: "comboPoint"
-                }), " / ", r), e.player && "qixiu" === e.player.role && t.createElement(ub, {unit: e}), e.player && "lv80.sorceress5" === e.player.currentCareer && t.createElement(_a, null, "电能: ", t.createElement(Dg, {
+                }), " / ", r), e.player && "villageH" === e.player.role && t.createElement(ub, {unit: e}), e.player && "lv80.sorceress5" === e.player.currentCareer && t.createElement(_a, null, "电能: ", t.createElement(Dg, {
                     unit: e,
                     field: "comboPoint"
-                }), " / ", r), e.player && "lv80.sorceress5" === e.player.currentCareer && t.createElement(ub, {unit: e}), e.player && "yijinjing" === e.player.currentCareer && t.createElement(_a, null, "禅那: ", t.createElement(Dg, {
-                    unit: e,
-                    field: "comboPoint"
-                }), " / ", r), e.player && "yijinjing" === e.player.currentCareer && t.createElement(ub, {unit: e}), e.player && "zixiagong" === e.player.currentCareer && t.createElement(_a, null, "气: ", t.createElement(Dg, {
-                    unit: e,
-                    field: "comboPoint"
-                }), " / ", r), e.player && "zixiagong" === e.player.currentCareer && t.createElement(ub, {unit: e}), t.createElement(_a, null, "经验: ", t.createElement(Dg, {
+                }), " / ", r), e.player && "lv80.sorceress5" === e.player.currentCareer && t.createElement(ub, {unit: e}), t.createElement(_a, null, "经验: ", t.createElement(Dg, {
                     unit: e,
                     field: "exp"
                 }), " /", " ", t.createElement(Dg, {
@@ -39681,9 +39789,9 @@
         var Eb = i(6360), Sb = {};
         Sb.styleTagTransform = sa(), Sb.setAttributes = ra(), Sb.insert = ta().bind(null, "head"), Sb.domAPI = Zo(), Sb.insertStyleElement = oa(), Xo()(Eb.A, Sb);
         const Db = Eb.A && Eb.A.locals ? Eb.A.locals : void 0;
-        var Cb, Pb;
+        var Cb, Rb;
 
-        function Rb(e, t, n) {
+        function Pb(e, t, n) {
             return t = function (e) {
                 var t = function (e, t) {
                     if ("object" != typeof e || null === e) return e;
@@ -39712,14 +39820,14 @@
             })), o.enumerable = !!o.enumerable, o.configurable = !!o.configurable, ("value" in o || o.initializer) && (o.writable = !0), o = n.slice().reverse().reduce((function (n, r) {
                 return r(e, t, n) || n
             }), o), i && void 0 !== o.initializer && (o.value = o.initializer ? o.initializer.call(i) : void 0, o.initializer = void 0), void 0 === o.initializer && (Object.defineProperty(e, t, o), o = null)
-        }((Pb = class extends t.Component {
+        }((Rb = class extends t.Component {
             constructor() {
-                super(...arguments), Rb(this, "selectedItem", Re(null)), Rb(this, "dispose", void 0), Rb(this, "onLeftPressed", Tt((() => {
+                super(...arguments), Pb(this, "selectedItem", Pe(null)), Pb(this, "dispose", void 0), Pb(this, "onLeftPressed", Tt((() => {
                     ku.player && ku.player.save(), ku.dispose(), Km.save(), av.dispose(), Km.currentPlayer = null, uw.navigate("/player/choose")
-                }))), Rb(this, "onMessage", (e => {
+                }))), Pb(this, "onMessage", (e => {
                     let {type: t} = e;
                     "battle.death" === t && Tv()
-                })), Rb(this, "skipForward", (() => {
+                })), Pb(this, "skipForward", (() => {
                     ru("提示", "跳过挂机的时间不能被恢复，你也不能获取到这段时间的金币、经验和装备，是否确认？", [{text: "取消"}, {
                         text: "确认",
                         onPress: () => ku.skipForward()
@@ -39764,7 +39872,7 @@
                     inventory: e.awardInventory
                 })))
             }
-        }).prototype, "pendingTimeLabel", [Be], Object.getOwnPropertyDescriptor(Pb.prototype, "pendingTimeLabel"), Pb.prototype), Cb = Pb)) || Cb;
+        }).prototype, "pendingTimeLabel", [Be], Object.getOwnPropertyDescriptor(Rb.prototype, "pendingTimeLabel"), Rb.prototype), Cb = Rb)) || Cb;
         var Tb = i(8945), Bb = {};
         Bb.styleTagTransform = sa(), Bb.setAttributes = ra(), Bb.insert = ta().bind(null, "head"), Bb.domAPI = Zo(), Bb.insertStyleElement = oa(), Xo()(Tb.A, Bb);
         const Fb = Tb.A && Tb.A.locals ? Tb.A.locals : void 0;
@@ -39923,9 +40031,9 @@
             battle: t.createElement(Mb, null),
             inventory: t.createElement(Gy, null),
             skills: t.createElement(Lb, null),
-            produce: t.createElement(Py, null),
+            produce: t.createElement(Ry, null),
             stories: t.createElement(Yb, null)
-        }, Jb = Re.box("battle");
+        }, Jb = Pe.box("battle");
         let Xb = ai($b = class extends t.Component {
             constructor() {
                 super(...arguments), Wb(this, "onVisibilityChange", (() => {
@@ -40047,14 +40155,14 @@
                     back: !0
                 }, t.createElement(Aa, {className: [uk.container, uk.center]}, t.createElement(_a, null, "此路暂时不通")))
             }
-        }, pk = gk(hk.prototype, "loading", [Re], {
+        }, pk = gk(hk.prototype, "loading", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
             initializer: function () {
                 return !0
             }
-        }), dk = gk(hk.prototype, "products", [Re], {
+        }), dk = gk(hk.prototype, "products", [Pe], {
             configurable: !0,
             enumerable: !0,
             writable: !0,
@@ -40133,12 +40241,12 @@
             }) : e[t] = n, e
         }
 
-        const Pk = {};
+        const Rk = {};
         for (const e in as.goods) {
             const t = as.goods[e];
-            t.class && (Pk[t.class] = Pk[t.class] || [1, 1, 2, 2, 0])
+            t.class && (Rk[t.class] = Rk[t.class] || [1, 1, 2, 2, 0])
         }
-        const Rk = {
+        const Pk = {
             sword: "长剑",
             swordshield: "剑盾",
             spear: "长枪",
@@ -40181,7 +40289,7 @@
         }));
         let Tk = ai((Dk = class extends t.Component {
             constructor() {
-                super(...arguments), Ck(this, "renderSectionHeader", (e => t.createElement(Aa, {className: Ek.header}, t.createElement(_a, {className: Ek.headerFont}, Rk[e] || e, " ")))), Ck(this, "renderRow", ((e, n) => t.createElement(Aa, {
+                super(...arguments), Ck(this, "renderSectionHeader", (e => t.createElement(Aa, {className: Ek.header}, t.createElement(_a, {className: Ek.headerFont}, Pk[e] || e, " ")))), Ck(this, "renderRow", ((e, n) => t.createElement(Aa, {
                     className: [Ek.row, Ek.titleView],
                     key: n
                 }, t.createElement(_a, {className: [Ek.title, Fy[n]]}, Ny[n]), t.createElement(Ok, {
@@ -40198,7 +40306,7 @@
                 return t.createElement(eg, {
                     title: "拾取规则",
                     back: !0
-                }, t.createElement(Aa, {className: Ek.container}, t.createElement(Sa, {className: Ek.flex1}, this.renderHeader(), Object.entries(Pk).map((e => {
+                }, t.createElement(Aa, {className: Ek.container}, t.createElement(Sa, {className: Ek.flex1}, this.renderHeader(), Object.entries(Rk).map((e => {
                     let [n, r] = e;
                     return t.createElement(Aa, {key: n}, this.renderSectionHeader(n), r.map(((e, t) => this.renderRow(n, t))))
                 })))))
@@ -40241,7 +40349,7 @@
         }));
         let Lk = ai(Ik = class extends t.Component {
             constructor() {
-                super(...arguments), Hk(this, "selectedItem", Re(null)), Hk(this, "renderRow", ((e, n) => t.createElement(Iy, {
+                super(...arguments), Hk(this, "selectedItem", Pe(null)), Hk(this, "renderRow", ((e, n) => t.createElement(Iy, {
                     onPress: () => this.selectedItem.set(e),
                     key: n,
                     slot: e
@@ -40409,17 +40517,28 @@
                 }, t.createElement(_a, {className: iw.itemLabel}, e.name, " "), t.createElement(_a, null, "消耗神力", e.price, "点")))), sw(this, "annoucement", (() => {
                     uw.navigate("/story/annoucement")
                 })), sw(this, "renderFooter", (() => t.createElement(Aa, {className: iw.footer}, t.createElement(Ea, {
-                    className: iw.item,
-                    onPress: async () => {
+                    className: iw.item, onPress: async () => {
                         const e = await ou("帝国金库", "卫兵拦住了你，要你说出通行的口令。", "");
                         Ft((() => {
                             if (!e) return;
-                            const t = e || "false", n = tw().find((e => e.pw === t)),
-                                r = Km.pwuse.find((e => e.pw === t)), i = Km.pwuse.findIndex((e => e.pw === t));
-                            return n && r && r.times >= n.times ? void ru("帝国金库", "别喊了，你再喊就真的要挨揍了！") : n ? r ? "diamonds" === n.type ? (ru("帝国金库", `口令重复！但是看在你信仰创世神的份上，你又得到了一小团(${n.value})神力。`), Km.diamonds += n.value, void (Km.pwuse[i].times += 1)) : void ru("帝国金库", "库存不足，请下次再来。") : "diamonds" === n.type ? (ru("帝国金库", `口令正确！你得到了一小团(${n.value})神力。`), Km.diamonds += n.value, void Km.pwuse.push({
-                                pw: n.pw,
+                            const {player: t} = ku, n = encodeURIComponent(e) || "false",
+                                r = tw().find((e => e.pw === n)), i = Km.pwuse2.find((e => e.pw === n)),
+                                o = Km.pwuse2.findIndex((e => e.pw === n));
+                            return r && i && i.times >= r.times ? void ru("帝国金库", "别喊了，你再喊就真的要挨揍了！") : r ? i ? "diamonds" === r.type ? (ru("帝国金库", `口令重复！但是看在你信仰创世神的份上，你又得到了一小团(${r.value})神力。`), Km.diamonds += r.value, void (Km.pwuse2[o].times += 1)) : "zzzz" === r.type ? void 0 : void ru("帝国金库", "库存不足，请下次再来。") : "diamonds" === r.type ? (ru("帝国金库", `口令正确！你得到了一小团(${r.value})神力。`), Km.diamonds += r.value, void Km.pwuse2.push({
+                                pw: r.pw,
                                 times: 1
-                            })) : void ru("帝国金库", "库存不足，请下次再来。") : void ru("帝国金库", "口令错误！卫兵把你赶了出来。")
+                            })) : "stories" === r.type ? (ru("帝国金库", `口令正确！你可以测试新职业“${r.pw}”了。`), Km.storiesMap.set(r.value, "done"), void Km.pwuse2.push({
+                                pw: r.pw,
+                                times: 1
+                            })) : "level" !== r.type ? "zzzz" === r.type ? void 0 : void ru("帝国金库", "库存不足，请下次再来。") : t.level < 100 ? void ru("帝国金库", `口令正确！确定要将角色等级提高至${r.value}级吗？`, [{
+                                text: "猛猛提升",
+                                onPress: () => {
+                                    ru("帝国金库", `角色等级已经提升至${r.value}级。`), t.level = r.value, Km.pwuse2.push({
+                                        pw: r.pw,
+                                        times: 1
+                                    }), t.save()
+                                }
+                            }, {text: "不升"}]) : void ru("帝国金库", "都满级了就不要来捣乱啦。") : void ru("帝国金库", "口令错误！卫兵把你赶了出来。")
                         }))
                     }
                 }, t.createElement(_a, {className: iw.itemLabel}, "帝国金库")), t.createElement(Ea, {
@@ -40512,7 +40631,7 @@
                 })), g || f === Wr.Pop || (f === Wr.Push ? e.history.push(t, t.state) : f === Wr.Replace && e.history.replace(t, t.state)), f = Wr.Pop, m = !1, g = !1, y = !1, v = [], b = []
             }
 
-            async function P(n, r, s) {
+            async function R(n, r, s) {
                 h && h.abort(), h = null, f = n, g = !0 === (s && s.startUninterruptedRevalidation), function (e, t) {
                     if (i && o && a) {
                         let n = t.map((e => vo(e, d.loaderData))), r = o(e, n) || e.key;
@@ -40527,8 +40646,8 @@
                 if (_ = r, (p = d.location).pathname === _.pathname && p.search === _.search && p.hash !== _.hash) return void C(r, {matches: u});
                 var p, _;
                 h = new AbortController;
-                let P, R, B = to(r, h.signal, s && s.submission);
-                if (s && s.pendingError) R = {[oo(u).route.id]: s.pendingError}; else if (s && s.submission && fo(s.submission.formMethod)) {
+                let R, P, B = to(r, h.signal, s && s.submission);
+                if (s && s.pendingError) P = {[oo(u).route.id]: s.pendingError}; else if (s && s.submission && fo(s.submission.formMethod)) {
                     let e = await async function (e, t, n, r, i) {
                         let o;
                         T(), D({navigation: si({state: "submitting", location: t}, n)});
@@ -40557,7 +40676,7 @@
                         return {pendingActionData: {[a.route.id]: o.data}}
                     }(B, r, s.submission, u, {replace: s.replace});
                     if (e.shortCircuited) return;
-                    P = e.pendingActionData, R = e.pendingActionError, l = si({
+                    R = e.pendingActionData, P = e.pendingActionError, l = si({
                         state: "loading",
                         location: r
                     }, s.submission), B = new Request(B.url, {signal: B.signal})
@@ -40609,9 +40728,9 @@
                         let [t] = e;
                         return k.delete(t)
                     }));
-                    let P = lo(f);
-                    if (P) return await O(d, P, {replace: o}), {shortCircuited: !0};
-                    let {loaderData: R, errors: T} = ro(d, n, c, m, s, p, _, S);
+                    let R = lo(f);
+                    if (R) return await O(d, R, {replace: o}), {shortCircuited: !0};
+                    let {loaderData: P, errors: T} = ro(d, n, c, m, s, p, _, S);
                     return S.forEach(((e, t) => {
                         e.subscribe((n => {
                             (n || e.done) && S.delete(t)
@@ -40623,12 +40742,12 @@
                             li(n, "Expected fetcher: " + t), "loading" === n.state && (A.delete(t), e.push(t))
                         }
                         I(e)
-                    }(), si({loaderData: R, errors: T}, H(x) || p.length > 0 ? {fetchers: new Map(d.fetchers)} : {})
-                }(B, r, u, l, s && s.submission, s && s.replace, P, R);
-                F || (h = null, C(r, si({matches: u}, P ? {actionData: P} : {}, {loaderData: N, errors: L})))
+                    }(), si({loaderData: P, errors: T}, H(x) || p.length > 0 ? {fetchers: new Map(d.fetchers)} : {})
+                }(B, r, u, l, s && s.submission, s && s.replace, R, P);
+                F || (h = null, C(r, si({matches: u}, R ? {actionData: R} : {}, {loaderData: N, errors: L})))
             }
 
-            function R(e) {
+            function P(e) {
                 return d.fetchers.get(e) || Wi
             }
 
@@ -40653,7 +40772,7 @@
                     formAction: c,
                     formEncType: p,
                     formData: d
-                }), Yi.has(t.status) && i && fo(i.formMethod) ? await P(l, s, {submission: si({}, i, {formAction: t.location})}) : await P(l, s, {
+                }), Yi.has(t.status) && i && fo(i.formMethod) ? await R(l, s, {submission: si({}, i, {formAction: t.location})}) : await R(l, s, {
                     overrideNavigation: {
                         state: "loading",
                         location: s,
@@ -40700,7 +40819,7 @@
                 for (let t of e) {
                     let e = {
                         state: "idle",
-                        data: R(t).data,
+                        data: P(t).data,
                         formMethod: void 0,
                         formAction: void 0,
                         formEncType: void 0,
@@ -40748,8 +40867,8 @@
                 initialize: function () {
                     return n = e.history.listen((e => {
                         let {action: t, location: n} = e;
-                        return P(t, n)
-                    })), d.initialized || P(Wr.Pop, d.location), c
+                        return R(t, n)
+                    })), d.initialized || R(Wr.Pop, d.location), c
                 },
                 subscribe: function (e) {
                     return r.add(e), () => r.delete(e)
@@ -40771,7 +40890,7 @@
                     let s = n && null != n.replace ? n.replace : void 0, l = Wr.Push;
                     !0 === s ? l = Wr.Replace : !1 === s || null != i && fo(i.formMethod) && i.formAction === d.location.pathname + d.location.search && (l = Wr.Replace);
                     let u = n && "preventScrollReset" in n ? !0 === n.preventScrollReset : void 0;
-                    return await P(l, a, {
+                    return await R(l, a, {
                         submission: i,
                         pendingError: o,
                         preventScrollReset: u,
@@ -40803,14 +40922,14 @@
                         }
                         if (ho(g)) return void B(n, r, g.error);
                         co(g) && li(!1, "defer() is not supported in actions");
-                        let P = d.navigation.location || d.location, R = to(P, p.signal),
+                        let R = d.navigation.location || d.location, P = to(R, p.signal),
                             F = "idle" !== d.navigation.state ? fi(t, d.navigation.location, e.basename) : d.matches;
                         li(F, "Didn't find any matches after fetcher action");
                         let N = ++w;
                         _.set(n, N);
                         let I = si({state: "loading", data: g.data}, s, {" _hasFetcherDoneAnything ": !0});
                         d.fetchers.set(n, I);
-                        let [j, L] = Xi(d, F, s, P, y, v, b, {[o.route.id]: g.data}, void 0, E);
+                        let [j, L] = Xi(d, F, s, R, y, v, b, {[o.route.id]: g.data}, void 0, E);
                         L.filter((e => {
                             let [t] = e;
                             return t !== n
@@ -40826,7 +40945,7 @@
                             };
                             d.fetchers.set(t, r), k.set(t, p)
                         })), D({fetchers: new Map(d.fetchers)});
-                        let {results: q, loaderResults: z, fetcherResults: U} = await M(d.matches, F, j, L, R);
+                        let {results: q, loaderResults: z, fetcherResults: U} = await M(d.matches, F, j, L, P);
                         if (p.signal.aborted) return;
                         _.delete(n), k.delete(n), L.forEach((e => {
                             let [t] = e;
@@ -40889,11 +41008,11 @@
                     }(n, r, s, u, a, l))
                 },
                 revalidate: function () {
-                    T(), D({revalidation: "loading"}), "submitting" !== d.navigation.state && ("idle" !== d.navigation.state ? P(f || d.historyAction, d.navigation.location, {overrideNavigation: d.navigation}) : P(d.historyAction, d.location, {startUninterruptedRevalidation: !0}))
+                    T(), D({revalidation: "loading"}), "submitting" !== d.navigation.state && ("idle" !== d.navigation.state ? R(f || d.historyAction, d.navigation.location, {overrideNavigation: d.navigation}) : R(d.historyAction, d.location, {startUninterruptedRevalidation: !0}))
                 },
                 createHref: t => e.history.createHref(t),
                 encodeLocation: t => e.history.encodeLocation(t),
-                getFetcher: R,
+                getFetcher: P,
                 deleteFetcher: F,
                 dispose: function () {
                     n && n(), r.clear(), h && h.abort(), d.fetchers.forEach(((e, t) => F(t)))
