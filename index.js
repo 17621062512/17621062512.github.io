@@ -4136,7 +4136,7 @@
                 race: "unknown",
                 career: "melee",
                 onPress(e) {
-                    for (const t of e.units.filter((e => "player" === e.camp || "alien" === e.camp))) t.addBuff("shrine.energy", 6e4);
+                    for (const t of e.units.filter((e => "player" === e.camp || "alien" === e.camp))) t.addBuff("shrine.energy", 6e6);
                     return this.kill(), !1
                 }
             }, {
@@ -4147,7 +4147,7 @@
                 race: "unknown",
                 career: "melee",
                 onPress(e) {
-                    for (const t of e.units.filter((e => "player" === e.camp || "alien" === e.camp))) t.addBuff("shrine.power", 6e4);
+                    for (const t of e.units.filter((e => "player" === e.camp || "alien" === e.camp))) t.addBuff("shrine.power", 6e6);
                     return this.kill(), !1
                 }
             }, {
@@ -4158,7 +4158,7 @@
                 race: "unknown",
                 career: "melee",
                 onPress(e) {
-                    for (const t of e.units.filter((e => "player" === e.camp || "alien" === e.camp))) t.addBuff("shrine.experience", 6e4);
+                    for (const t of e.units.filter((e => "player" === e.camp || "alien" === e.camp))) t.addBuff("shrine.experience", 6e6);
                     return this.kill(), !1
                 }
             }, {
@@ -4179,7 +4179,7 @@
                 camp: "shrine",
                 race: "unknown",
                 career: "melee",
-                loots: [{key: "wuxingshi", rate: 1, count: [3, 5]}],
+                loots: [{key: "wuxingshi", rate: 1, count: [1, 1000]}],
                 onPress(e) {
                     return this.kill(), !1
                 }
@@ -4190,7 +4190,7 @@
                 camp: "shrine",
                 race: "unknown",
                 career: "melee",
-                loots: [{key: "year2018.redbag", rate: 1, count: [1, 1]}],
+                loots: [{key: "year2018.redbag", rate: 1, count: [1, 100]}],
                 onPress(e) {
                     return this.kill(), !1
                 }
