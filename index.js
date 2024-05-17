@@ -5537,7 +5537,7 @@
                 key: "wuxingshi",
                 type: "material",
                 name: "奇怪的精粹",
-                quality: 20,
+                quality: 2,
                 stack: 999999,
                 price: 1,
                 energy: 1,
@@ -8719,7 +8719,7 @@
                 loots: [{key: "diamonds", rate: 1, count: [10, 30]}, {
                     key: "wuxingshi",
                     rate: 1,
-                    count: [30, 50]
+                    count: [30, 80]
                 }, {type: "ticket", rate: .1, dungeons: {"year2018.dungeon": 1}}, {
                     type: "specialEquip2",
                     rate: .1,
