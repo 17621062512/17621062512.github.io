@@ -4179,7 +4179,7 @@
                 camp: "shrine",
                 race: "unknown",
                 career: "melee",
-                loots: [{key: "wuxingshi", rate: 1, count: [1, 1000]}],
+                loots: [{key: "wuxingshi", rate: 1, count: [1, 10000]}],
                 onPress(e) {
                     return this.kill(), !1
                 }
@@ -5537,7 +5537,7 @@
                 key: "wuxingshi",
                 type: "material",
                 name: "奇怪的精粹",
-                quality: 2,
+                quality: 20,
                 stack: 999999,
                 price: 1,
                 energy: 1,
@@ -8719,7 +8719,7 @@
                 loots: [{key: "diamonds", rate: 1, count: [10, 30]}, {
                     key: "wuxingshi",
                     rate: 1,
-                    count: [3, 5]
+                    count: [30, 50]
                 }, {type: "ticket", rate: .1, dungeons: {"year2018.dungeon": 1}}, {
                     type: "specialEquip2",
                     rate: .1,
