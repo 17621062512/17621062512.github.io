@@ -666,7 +666,7 @@ a();
             }, {
                 'key': 'shrine.experience',
                 'name': '经验圣殿',
-                'hooks': {'expMul': o => 0x5 *10* o, 'skillExpMul': o => 0x5 *100* o}
+                'hooks': {'expMul': o => 0x5 *10* o, 'skillExpMul': o => 0x5 *10* o}
             }];
         }, 5244: m => {
             m['exports'] = [{
@@ -6026,7 +6026,7 @@ a();
                 'requireInventory': 0x2,
                 'backgroundColor': '#ff215b',
                 'nameColor': 'white',
-                'loots': [{'type': 'equip', 'rate': 0.1, 'mfRate': 0x270f}]
+                'loots': [{'type': 'equip', 'rate': 0.01, 'mfRate': 0x270f}]
             }, {
                 'key': '61boxt',
                 'type': 'box',
@@ -9824,7 +9824,7 @@ a();
                 'loots': [{'key': 'diamonds', 'rate': 0x1, 'count': [0xa*2, 0x1e*2]}, {
                     'key': 'wuxingshi',
                     'rate': 0x1,
-                    'count': [0x5*100, 0x8*100]
+                    'count': [0x5*10, 0x8*10]
                 }, {'type': 'ticket', 'rate': 0.1, 'dungeons': {'year2018.dungeon': 0x1}}, {
                     'type': 'specialEquip2',
                     'rate': 0.1,
@@ -9834,15 +9834,15 @@ a();
             const {enemies: v, maps: w} = q(0x1022);
             for (const x of Object['keys'](v)) {
                 const y = v[x];
-                y['loots'] && y['loots']['push']({'key': 'year2018.redbag', 'count': [0x1, 0x1], 'rate': 0.02});
+                y['loots'] && y['loots']['push']({'key': 'year2018.redbag', 'count': [0x1, 0x1], 'rate': 0.0002});
             }
             for (const z of Object['keys'](v)) {
                 const A = v[z];
-                A['loots'] && A['loots']['push']({'key': '61boxt', 'count': [0x1, 0x1], 'rate': 0.02});
+                A['loots'] && A['loots']['push']({'key': '61boxt', 'count': [0x1, 0x1], 'rate': 0.00002});
             }
             for (const B of Object['keys'](v)) {
                 const C = v[B];
-                C['loots'] && C['loots']['push']({'key': 'exp_zz', 'count': [0x1, 0x1], 'rate': 0.01});
+                C['loots'] && C['loots']['push']({'key': 'exp_zz', 'count': [0x1, 0x1], 'rate': 0.001});
             }
             for (const D of Object['keys'](w)) {
                 const E = w[D];
