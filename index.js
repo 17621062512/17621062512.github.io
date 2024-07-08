@@ -666,7 +666,7 @@ a();
             }, {
                 'key': 'shrine.experience',
                 'name': '经验圣殿',
-                'hooks': {'expMul': o => 0x5 * o, 'skillExpMul': o => 0x5 * o}
+                'hooks': {'expMul': o => 0x5 *10* o, 'skillExpMul': o => 0x5 *100* o}
             }];
         }, 5244: m => {
             m['exports'] = [{
@@ -2396,56 +2396,56 @@ a();
             m['exports'] = [{
                 'key': 'fotiaoqiang',
                 'name': '史莱姆果冻',
-                'description': o => '力量、敏捷、智力、耐力分别增加' + 0x5 * o + '点',
+                'description': o => '力量、敏捷、智力、耐力分别增加' + 0x5 *10* o + '点',
                 'Max_level': 0x270f,
                 'hooks': {
-                    'str': (o, p) => p + 0x5 * Math['min'](o, 0x270f),
-                    'dex': (o, p) => p + 0x5 * Math['min'](o, 0x270f),
-                    'int': (o, p) => p + 0x5 * Math['min'](o, 0x270f),
-                    'sta': (o, p) => p + 0x5 * Math['min'](o, 0x270f)
+                    'str': (o, p) => p + 0x5 *10* Math['min'](o, 0x270f),
+                    'dex': (o, p) => p + 0x5 *10* Math['min'](o, 0x270f),
+                    'int': (o, p) => p + 0x5 *10* Math['min'](o, 0x270f),
+                    'sta': (o, p) => p + 0x5 *10* Math['min'](o, 0x270f)
                 }
             }, {
                 'key': 'huangguajianzirou',
                 'name': '艾尔秘制面包',
-                'description': o => '物理防御增加' + 0x19 * o + '点',
+                'description': o => '物理防御增加' + 0x19 *4* o + '点',
                 'Max_level': 0x270f,
-                'hooks': {'defAdd': (o, p) => p + 0x19 * o}
+                'hooks': {'defAdd': (o, p) => p + 0x19 *4* o}
             }, {
                 'key': 'cuigualijisi',
                 'name': '酒心巧克力',
-                'description': o => '元素抗性增加' + 0x19 * o + '点',
+                'description': o => '元素抗性增加' + 0x19 *4* o + '点',
                 'Max_level': 0x270f,
-                'hooks': {'allResAdd': (o, p) => p + 0x19 * o}
+                'hooks': {'allResAdd': (o, p) => p + 0x19 *4* o}
             }, {
                 'key': 'tangcupaigu',
                 'name': '小饼干',
-                'description': o => '闪避增加' + 0x1e * o + '点',
+                'description': o => '闪避增加' + 0x1e *4* o + '点',
                 'Max_level': 0x270f,
-                'hooks': {'shanbizhiAdd': (o, p) => p + 0x1e * o}
+                'hooks': {'shanbizhiAdd': (o, p) => p + 0x1e *4* o}
             }, {
                 'key': 'suanxiangbairou',
                 'name': '幻想森林果派',
-                'description': o => '生命值恢复增加' + o + '点',
+                'description': o => '生命值恢复增加' + o*10 + '点',
                 'Max_level': 0x270f,
-                'hooks': {'hpRecovery': (o, p) => p + o}
+                'hooks': {'hpRecovery': (o, p) => p + o*10}
             }, {
                 'key': 'jintangsuancaiyu',
                 'name': '金汤酸菜鱼',
-                'description': o => '法力值恢复增加' + o + '点',
+                'description': o => '法力值恢复增加' + o*10 + '点',
                 'Max_level': 0x270f,
-                'hooks': {'mpRecovery': (o, p) => p + o}
+                'hooks': {'mpRecovery': (o, p) => p + o*10}
             }, {
                 'key': 'lianyushuizhuyu',
                 'name': '炼狱海鲜烩',
-                'description': o => '生命值上限' + 0x28 * o + '点',
+                'description': o => '生命值上限' + 0x28 *2* o + '点',
                 'Max_level': 0x270f,
-                'hooks': {'maxHpAdd': (o, p) => p + 0x28 * o}
+                'hooks': {'maxHpAdd': (o, p) => p + 0x28 *2* o}
             }, {
                 'key': 'bingzhenxiaolongxia',
                 'name': '冰镇小龙虾',
-                'description': o => '法力值上限' + 0x28 * o + '点',
+                'description': o => '法力值上限' + 0x28 *2* o + '点',
                 'Max_level': 0x270f,
-                'hooks': {'maxMpAdd': (o, p) => p + 0x28 * o}
+                'hooks': {'maxMpAdd': (o, p) => p + 0x28 *2* o}
             }];
         }, 5353: m => {
             m['exports'] = [{
@@ -4451,7 +4451,7 @@ a();
                 'race': 'unknown',
                 'career': 'melee',
                 'onPress'(o) {
-                    for (const p of o['units']['filter'](q => 'player' === q['camp'] || 'alien' === q['camp'])) p['hp'] += 0x1 * p['maxHp'];
+                    for (const p of o['units']['filter'](q => 'player' === q['camp'] || 'alien' === q['camp'])) p['hp'] += 0x1*5* p['maxHp'];
                     return this['kill'](), !0x1;
                 }
             }, {
@@ -4462,7 +4462,7 @@ a();
                 'race': 'unknown',
                 'career': 'melee',
                 'onPress'(o) {
-                    for (const p of o['units']['filter'](q => 'player' === q['camp'] || 'alien' === q['camp'])) p['addBuff']('shrine.energy', 0xea60);
+                    for (const p of o['units']['filter'](q => 'player' === q['camp'] || 'alien' === q['camp'])) p['addBuff']('shrine.energy', 0xea60*20);
                     return this['kill'](), !0x1;
                 }
             }, {
@@ -4473,7 +4473,7 @@ a();
                 'race': 'unknown',
                 'career': 'melee',
                 'onPress'(o) {
-                    for (const p of o['units']['filter'](q => 'player' === q['camp'] || 'alien' === q['camp'])) p['addBuff']('shrine.power', 0xea60);
+                    for (const p of o['units']['filter'](q => 'player' === q['camp'] || 'alien' === q['camp'])) p['addBuff']('shrine.power', 0xea60*20);
                     return this['kill'](), !0x1;
                 }
             }, {
@@ -4484,7 +4484,7 @@ a();
                 'race': 'unknown',
                 'career': 'melee',
                 'onPress'(o) {
-                    for (const p of o['units']['filter'](q => 'player' === q['camp'] || 'alien' === q['camp'])) p['addBuff']('shrine.experience', 0xea60);
+                    for (const p of o['units']['filter'](q => 'player' === q['camp'] || 'alien' === q['camp'])) p['addBuff']('shrine.experience', 0xea60*20);
                     return this['kill'](), !0x1;
                 }
             }, {
@@ -4505,7 +4505,7 @@ a();
                 'camp': 'shrine',
                 'race': 'unknown',
                 'career': 'melee',
-                'loots': [{'key': 'wuxingshi', 'rate': 0x1, 'count': [0x3, 0x5]}],
+                'loots': [{'key': 'wuxingshi', 'rate': 0x1, 'count': [0x1*1000, 0x5*2000]}],
                 'onPress'(o) {
                     return this['kill'](), !0x1;
                 }
@@ -4516,7 +4516,7 @@ a();
                 'camp': 'shrine',
                 'race': 'unknown',
                 'career': 'melee',
-                'loots': [{'key': 'year2018.redbag', 'rate': 0x1, 'count': [0x1, 0x1]}],
+                'loots': [{'key': 'year2018.redbag', 'rate': 0x1, 'count': [0x1*100, 0x1*500]}],
                 'onPress'(o) {
                     return this['kill'](), !0x1;
                 }
@@ -6026,7 +6026,7 @@ a();
                 'requireInventory': 0x2,
                 'backgroundColor': '#ff215b',
                 'nameColor': 'white',
-                'loots': [{'type': 'equip', 'rate': 0.000001, 'mfRate': 0x270f}]
+                'loots': [{'type': 'equip', 'rate': 0.1, 'mfRate': 0x270f}]
             }, {
                 'key': '61boxt',
                 'type': 'box',
@@ -6933,7 +6933,7 @@ a();
                     'quality': [0x31, 0x7, 0x1]
                 }, {
                     'types': {
-                        'shrine.heal': 0x1,
+                       
                         'shrine.energy': 0x1,
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -7062,7 +7062,7 @@ a();
                     'max': 0x1
                 }, {
                     'types': {
-                        'shrine.heal': 0x1,
+                       
                         'shrine.energy': 0x1,
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -7145,7 +7145,7 @@ a();
                     'quality': [0x31, 0x7, 0x1]
                 }, {
                     'types': {
-                        'shrine.heal': 0x1,
+                       
                         'shrine.energy': 0x1,
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -7241,7 +7241,7 @@ a();
                     'quality': [0x19, 0x5, 0x1]
                 }, {
                     'types': {
-                        'shrine.heal': 0x1,
+                       
                         'shrine.energy': 0x1,
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -7325,7 +7325,7 @@ a();
                     'quality': [0x31, 0x7, 0x1]
                 }, {
                     'types': {
-                        'shrine.heal': 0x1,
+                       
                         'shrine.energy': 0x1,
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -7412,7 +7412,7 @@ a();
                     'quality': [0x31, 0x7, 0x1]
                 }, {
                     'types': {
-                        'shrine.heal': 0x1,
+                       
                         'shrine.energy': 0x1,
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -7648,7 +7648,7 @@ a();
                     'quality': [0x31, 0x7, 0x1]
                 }, {
                     'types': {
-                        'shrine.heal': 0x1,
+                       
                         'shrine.energy': 0x1,
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -7808,7 +7808,7 @@ a();
                     'quality': [0x31, 0x7, 0x1]
                 }, {
                     'types': {
-                        'shrine.heal': 0x1,
+                       
                         'shrine.energy': 0x1,
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -7891,7 +7891,7 @@ a();
                     'quality': [0x31, 0x7, 0x1]
                 }, {
                     'types': {
-                        'shrine.heal': 0x1,
+                       
                         'shrine.energy': 0x1,
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -7983,7 +7983,7 @@ a();
                     }, 'warmup': 0x3e8, 'delay': 0x3e8, 'max': 0x5, 'quality': [0x31, 0x7, 0x1]
                 }, {
                     'types': {
-                        'shrine.heal': 0x1,
+                       
                         'shrine.energy': 0x1,
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -8095,7 +8095,7 @@ a();
                     'quality': [0x31, 0x7, 0x1]
                 }, {
                     'types': {
-                        'shrine.heal': 0x1,
+                       
                         'shrine.energy': 0x1,
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -8172,7 +8172,7 @@ a();
                     'quality': [0x64, 0xa]
                 }, {
                     'types': {
-                        'shrine.heal': 0x1,
+                       
                         'shrine.energy': 0x1,
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -8410,7 +8410,7 @@ a();
                     'quality': [0x64, 0xa]
                 }, {
                     'types': {
-                        'shrine.heal': 0x1,
+                       
                         'shrine.energy': 0x1,
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -8440,7 +8440,7 @@ a();
                     'quality': [0x31, 0x7, 0x1]
                 }, {
                     'types': {
-                        'shrine.heal': 0x1,
+                       
                         'shrine.energy': 0x1,
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -8470,7 +8470,7 @@ a();
                     'quality': [0x64, 0xa]
                 }, {
                     'types': {
-                        'shrine.heal': 0x1,
+                       
                         'shrine.energy': 0x1,
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -8542,27 +8542,27 @@ a();
             m['exports'] = [{
                 'key': 'zhengqiwan',
                 'name': '幸运药剂',
-                'description': o => '运气增加' + 0x5 * o + '点',
+                'description': o => '运气增加' + 0x5 *10* o + '点',
                 'Max_level': 0x270f,
-                'hooks': {'gf': (o, p) => p + 0.05 * o, 'mf': (o, p) => p + 0.05 * o}
+                'hooks': {'gf': (o, p) => p + 0.5 * o, 'mf': (o, p) => p + 0.5 * o}
             }, {
                 'key': 'nayuandan',
                 'name': '知识药剂',
-                'description': o => '经验获得增加' + 0x5 * o + '%',
+                'description': o => '经验获得增加' + 0x5 *10* o + '%',
                 'Max_level': 0x270f,
-                'hooks': {'expInc': (o, p) => p + 0.05 * o}
+                'hooks': {'expInc': (o, p) => p + 0.5 * o}
             }, {
                 'key': '\x20xiaoyaosan',
                 'name': '训练药剂',
-                'description': o => '熟练度获得增加' + 0x5 * o + '%',
+                'description': o => '熟练度获得增加' + 0x5 *10* o + '%',
                 'Max_level': 0x270f,
-                'hooks': {'skillExpInc': (o, p) => p + 0.05 * o}
+                'hooks': {'skillExpInc': (o, p) => p + 0.5 * o}
             }, {
                 'key': 'fengshenlu',
                 'name': '急速药剂',
-                'description': o => '急速+' + o + '%',
+                'description': o => '急速+' + o*2 + '%',
                 'Max_level': 0x64,
-                'hooks': {'speedRateAdd': (o, p) => p + 0.01 * Math['min'](o, 0x64)}
+                'hooks': {'speedRateAdd': (o, p) => p + 0.02 * Math['min'](o, 0x64)}
             }, {
                 'key': 'rdmdc',
                 'name': '恢复药剂',
@@ -9821,10 +9821,10 @@ a();
                 'requireInventory': 0x2,
                 'backgroundColor': '#ff215b',
                 'nameColor': 'white',
-                'loots': [{'key': 'diamonds', 'rate': 0x1, 'count': [0xa, 0x1e]}, {
+                'loots': [{'key': 'diamonds', 'rate': 0x1, 'count': [0xa*2, 0x1e*2]}, {
                     'key': 'wuxingshi',
                     'rate': 0x1,
-                    'count': [0x5, 0x8]
+                    'count': [0x5*100, 0x8*100]
                 }, {'type': 'ticket', 'rate': 0.1, 'dungeons': {'year2018.dungeon': 0x1}}, {
                     'type': 'specialEquip2',
                     'rate': 0.1,
@@ -9834,15 +9834,15 @@ a();
             const {enemies: v, maps: w} = q(0x1022);
             for (const x of Object['keys'](v)) {
                 const y = v[x];
-                y['loots'] && y['loots']['push']({'key': 'year2018.redbag', 'count': [0x1, 0x1], 'rate': 0.0002});
+                y['loots'] && y['loots']['push']({'key': 'year2018.redbag', 'count': [0x1, 0x1], 'rate': 0.02});
             }
             for (const z of Object['keys'](v)) {
                 const A = v[z];
-                A['loots'] && A['loots']['push']({'key': '61boxt', 'count': [0x1, 0x1], 'rate': 0.00002});
+                A['loots'] && A['loots']['push']({'key': '61boxt', 'count': [0x1, 0x1], 'rate': 0.02});
             }
             for (const B of Object['keys'](v)) {
                 const C = v[B];
-                C['loots'] && C['loots']['push']({'key': 'exp_zz', 'count': [0x1, 0x1], 'rate': 0.001});
+                C['loots'] && C['loots']['push']({'key': 'exp_zz', 'count': [0x1, 0x1], 'rate': 0.01});
             }
             for (const D of Object['keys'](w)) {
                 const E = w[D];
