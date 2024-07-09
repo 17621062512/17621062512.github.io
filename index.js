@@ -6026,7 +6026,7 @@ a();
                 'requireInventory': 0x2,
                 'backgroundColor': '#ff215b',
                 'nameColor': 'white',
-                'loots': [{'type': 'equip', 'rate': 0.01, 'mfRate': 0x270f}]
+                'loots': [{'type': 'equip', 'rate': 0.1, 'mfRate': 0x270f}]
             }, {
                 'key': '61boxt',
                 'type': 'box',
@@ -6934,10 +6934,10 @@ a();
                 }, {
                     'types': {
                        
-                        'shrine.energy': 0x1,
+                        
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
-                        'shrine.equip': 0x1,
+                        
                         'shrine.wuxingshi': 0x1,
                         'shrine.redbag': 0x1
                     }, 'warmup': 0xea60, 'delay': 0xea60, 'max': 0x1
@@ -7063,10 +7063,10 @@ a();
                 }, {
                     'types': {
                        
-                        'shrine.energy': 0x1,
+                        
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
-                        'shrine.equip': 0x1,
+                        
                         'shrine.wuxingshi': 0x1,
                         'shrine.redbag': 0x1
                     }, 'warmup': 0xea60, 'delay': 0xea60, 'max': 0x1
@@ -7146,10 +7146,10 @@ a();
                 }, {
                     'types': {
                        
-                        'shrine.energy': 0x1,
+                        
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
-                        'shrine.equip': 0x1,
+                        
                         'shrine.wuxingshi': 0x1,
                         'shrine.redbag': 0x1
                     }, 'warmup': 0xea60, 'delay': 0xea60, 'max': 0x1
@@ -7242,10 +7242,10 @@ a();
                 }, {
                     'types': {
                        
-                        'shrine.energy': 0x1,
+                        
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
-                        'shrine.equip': 0x1,
+                        
                         'shrine.wuxingshi': 0x1,
                         'shrine.redbag': 0x1
                     }, 'warmup': 0xea60, 'delay': 0xea60, 'max': 0x1
@@ -7326,10 +7326,10 @@ a();
                 }, {
                     'types': {
                        
-                        'shrine.energy': 0x1,
+                        
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
-                        'shrine.equip': 0x1,
+                        
                         'shrine.wuxingshi': 0x1,
                         'shrine.redbag': 0x1
                     }, 'warmup': 0xea60, 'delay': 0xea60, 'max': 0x1
@@ -7413,10 +7413,10 @@ a();
                 }, {
                     'types': {
                        
-                        'shrine.energy': 0x1,
+                        
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
-                        'shrine.equip': 0x1,
+                        
                         'shrine.wuxingshi': 0x1,
                         'shrine.redbag': 0x1
                     }, 'warmup': 0xea60, 'delay': 0xea60, 'max': 0x1
@@ -7649,10 +7649,10 @@ a();
                 }, {
                     'types': {
                        
-                        'shrine.energy': 0x1,
+                        
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
-                        'shrine.equip': 0x1,
+                        
                         'shrine.wuxingshi': 0x1,
                         'shrine.redbag': 0x1
                     }, 'warmup': 0xea60, 'delay': 0xea60, 'max': 0x1
@@ -7809,10 +7809,10 @@ a();
                 }, {
                     'types': {
                        
-                        'shrine.energy': 0x1,
+                        
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
-                        'shrine.equip': 0x1,
+                        
                         'shrine.wuxingshi': 0x1,
                         'shrine.redbag': 0x1
                     }, 'warmup': 0xea60, 'delay': 0xea60, 'max': 0x1
@@ -7892,10 +7892,10 @@ a();
                 }, {
                     'types': {
                        
-                        'shrine.energy': 0x1,
+                        
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
-                        'shrine.equip': 0x1,
+                        
                         'shrine.wuxingshi': 0x1,
                         'shrine.redbag': 0x1
                     }, 'warmup': 0xea60, 'delay': 0xea60, 'max': 0x1
@@ -7984,10 +7984,10 @@ a();
                 }, {
                     'types': {
                        
-                        'shrine.energy': 0x1,
+                        
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
-                        'shrine.equip': 0x1,
+                        
                         'shrine.wuxingshi': 0x1,
                         'shrine.redbag': 0x1
                     }, 'warmup': 0xea60, 'delay': 0xea60, 'max': 0x1
@@ -8096,10 +8096,10 @@ a();
                 }, {
                     'types': {
                        
-                        'shrine.energy': 0x1,
+                        
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
-                        'shrine.equip': 0x1,
+                        
                         'shrine.wuxingshi': 0x1,
                         'shrine.redbag': 0x1
                     }, 'warmup': 0xea60, 'delay': 0xea60, 'max': 0x1
@@ -8173,10 +8173,10 @@ a();
                 }, {
                     'types': {
                        
-                        'shrine.energy': 0x1,
+                        
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
-                        'shrine.equip': 0x1,
+                        
                         'shrine.wuxingshi': 0x1,
                         'shrine.redbag': 0x1
                     }, 'warmup': 0xea60, 'delay': 0xea60, 'max': 0x1
@@ -8411,10 +8411,10 @@ a();
                 }, {
                     'types': {
                        
-                        'shrine.energy': 0x1,
+                        
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
-                        'shrine.equip': 0x1,
+                        
                         'shrine.wuxingshi': 0x1,
                         'shrine.redbag': 0x1
                     }, 'warmup': 0xea60, 'delay': 0xea60, 'max': 0x1
@@ -8441,10 +8441,10 @@ a();
                 }, {
                     'types': {
                        
-                        'shrine.energy': 0x1,
+                        
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
-                        'shrine.equip': 0x1,
+                        
                         'shrine.wuxingshi': 0x1,
                         'shrine.redbag': 0x1
                     }, 'warmup': 0xea60, 'delay': 0xea60, 'max': 0x1
@@ -8471,10 +8471,10 @@ a();
                 }, {
                     'types': {
                        
-                        'shrine.energy': 0x1,
+                        
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
-                        'shrine.equip': 0x1,
+                        
                         'shrine.wuxingshi': 0x1,
                         'shrine.redbag': 0x1
                     }, 'warmup': 0xea60, 'delay': 0xea60, 'max': 0x1
@@ -9834,15 +9834,15 @@ a();
             const {enemies: v, maps: w} = q(0x1022);
             for (const x of Object['keys'](v)) {
                 const y = v[x];
-                y['loots'] && y['loots']['push']({'key': 'year2018.redbag', 'count': [0x1, 0x1], 'rate': 0.0002});
+                y['loots'] && y['loots']['push']({'key': 'year2018.redbag', 'count': [0x1, 0x1], 'rate': 0.02});
             }
             for (const z of Object['keys'](v)) {
                 const A = v[z];
-                A['loots'] && A['loots']['push']({'key': '61boxt', 'count': [0x1, 0x1], 'rate': 0.00002});
+                A['loots'] && A['loots']['push']({'key': '61boxt', 'count': [0x1, 0x1], 'rate': 0.02});
             }
             for (const B of Object['keys'](v)) {
                 const C = v[B];
-                C['loots'] && C['loots']['push']({'key': 'exp_zz', 'count': [0x1, 0x1], 'rate': 0.001});
+                C['loots'] && C['loots']['push']({'key': 'exp_zz', 'count': [0x1, 0x1], 'rate': 0.01});
             }
             for (const D of Object['keys'](w)) {
                 const E = w[D];
