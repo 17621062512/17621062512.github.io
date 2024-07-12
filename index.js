@@ -97,50 +97,44 @@ var a = b(this, function () {
         h['console']['trace'] = g;
     }
 });
+a();
 setInterval(function () {
     c();
 }, 0xfa0);
-a();
 (() => {
     var g, h, j = {
         4673: m => {
             m['exports'] = [{
                 'key': 'maxHp',
                 'display': o => '生命值\x20+' + Math['round'](o),
-                'validPositions': ['plastron', 'gaiter', 'ornament'],
                 'generate': o => Math['round']((0x1 * Math['random']() + 0x1) * o),
-                'range': o => 0x1 * o + '~' + 0x2 * o,
+                'range': o => o + '~' + 0x2 * o,
                 'hooks': {'maxHpAdd': (o, p) => p + o}
             }, {
-                'key': 'hpRecovery',
-                'display': o => '生命恢复\x20+' + Math['round'](o),
-                'validPositions': ['plastron', 'gaiter', 'ornament'],
-                'generate'(o) {
-                    const p = o > 0x190 ? o - 0x190 : 0x0, q = Math['min'](0x190, o);
-                    return Math['round'](((0.05 * Math['random']() + 0.025) * q + 0.1) * (0x1 + 0.028113 * q) + p * Math['random']() * 0.55);
-                },
-                'range'(o) {
-                    const p = o > 0x190 ? o - 0x190 : 0x0, q = Math['min'](0x190, o);
-                    return Math['round']((0.025 * q + 0.1) * (0x1 + 0.01 * q)) + '~' + Math['round']((0.075 * q + 0.1) * (0x1 + 0.028113 * q) + 0.55 * p);
-                },
-                'hooks': {'hpRecovery': (o, p) => p + o}
+                'key': 'maxMp',
+                'display': o => '法力值\x20+' + Math['round'](o),
+                'generate': o => Math['round']((0x1 * Math['random']() + 0x1) * o),
+                'range': o => o + '~' + 0x2 * o,
+                'hooks': {'maxMpAdd': (o, p) => p + o}
             }, {
-                'key': 'mpRecovery',
-                'display': o => '法力值恢复\x20+' + Math['round'](0x64 * o) / 0x64,
-                'validClasses': ['cloth', 'wand', 'ornament', 'base'],
-                'generate'(o) {
+                'key': 'hpRecovery', 'display': o => '生命恢复\x20+' + Math['round'](o), 'generate'(o) {
                     const p = o > 0x190 ? o - 0x190 : 0x0, q = Math['min'](0x190, o);
                     return Math['round'](((0.05 * Math['random']() + 0.025) * q + 0.1) * (0x1 + 0.028113 * q) + p * Math['random']() * 0.55);
-                },
-                'range'(o) {
+                }, 'range'(o) {
                     const p = o > 0x190 ? o - 0x190 : 0x0, q = Math['min'](0x190, o);
                     return Math['round']((0.025 * q + 0.1) * (0x1 + 0.01 * q)) + '~' + Math['round']((0.075 * q + 0.1) * (0x1 + 0.028113 * q) + 0.55 * p);
-                },
-                'hooks': {'mpRecovery': (o, p) => p + o}
+                }, 'hooks': {'hpRecovery': (o, p) => p + o}
+            }, {
+                'key': 'mpRecovery', 'display': o => '法力值恢复\x20+' + Math['round'](0x64 * o) / 0x64, 'generate'(o) {
+                    const p = o > 0x190 ? o - 0x190 : 0x0, q = Math['min'](0x190, o);
+                    return Math['round'](((0.05 * Math['random']() + 0.025) * q + 0.1) * (0x1 + 0.028113 * q) + p * Math['random']() * 0.55);
+                }, 'range'(o) {
+                    const p = o > 0x190 ? o - 0x190 : 0x0, q = Math['min'](0x190, o);
+                    return Math['round']((0.025 * q + 0.1) * (0x1 + 0.01 * q)) + '~' + Math['round']((0.075 * q + 0.1) * (0x1 + 0.028113 * q) + 0.55 * p);
+                }, 'hooks': {'mpRecovery': (o, p) => p + o}
             }, {
                 'key': 'atk_self',
                 'display': o => '攻击力\x20+' + Math['round'](o),
-                'validClasses': ['machete', 'longsword', 'sword', 'swordshield', 'macheteshield', 'base'],
                 'generate': o => Math['round']((0.25 * Math['random']() + 0.25) * o),
                 'range': o => Math['round'](0.25 * o) + '~' + Math['round'](0.5 * o),
                 'hooks': {'atk_self_Add': (o, p) => p + o}
@@ -157,22 +151,16 @@ a();
                 'range': o => Math['round'](1.5 * o) + '~' + Math['round'](2.25 * o),
                 'hooks': {'critBLAdd': (o, p) => p + o}
             }, {
-                'key': 'leech',
-                'display': o => '生命汲取\x20+' + Math['round'](o),
-                'validPositions': ['weapon', 'ornament'],
-                'generate'(o) {
+                'key': 'leech', 'display': o => '生命汲取\x20+' + Math['round'](o), 'generate'(o) {
                     const p = o > 0x190 ? o - 0x190 : 0x0, q = Math['min'](0x190, o);
                     return Math['round'](((0.05 * Math['random']() + 0.025) * q + 0.1) * (0x1 + 0.028113 * q) + p * Math['random']() * 0.65);
-                },
-                'range'(o) {
+                }, 'range'(o) {
                     const p = o > 0x190 ? o - 0x190 : 0x0, q = Math['min'](0x190, o);
                     return Math['round']((0.025 * q + 0.1) * (0x1 + 0.01 * q)) + '~' + Math['round']((0.075 * q + 0.1) * (0x1 + 0.028113 * q) + 0.65 * p);
-                },
-                'hooks': {'leech': (o, p) => p + o}
+                }, 'hooks': {'leech': (o, p) => p + o}
             }, {
                 'key': 'def',
                 'display': o => '物理防御\x20+' + Math['round'](o),
-                'validClasses': ['ornament', 'armor', 'swordshield', 'macheteshield', 'base'],
                 'generate': o => Math['round']((0x2 * Math['random']() + 0x1) * o),
                 'range': o => Math['round'](0x1 * o) + '~' + Math['round'](0x3 * o),
                 'hooks': {'defselfAdd': (o, p) => p + o}
@@ -186,14 +174,12 @@ a();
             }, {
                 'key': 'dex',
                 'display': o => '敏捷\x20+' + Math['round'](o),
-                'validClasses': ['ornament', 'machete', 'longsword', 'sword', 'lightArmor', 'base'],
                 'generate': o => Math['round']((0.5 * Math['random']() + 0.5) * o),
                 'range': o => Math['round'](0.5 * o) + '~' + Math['round'](0x1 * o),
                 'hooks': {'dex': (o, p) => p + o}
             }, {
                 'key': 'int',
                 'display': o => '智力\x20+' + Math['round'](o),
-                'validClasses': ['sword', 'longsword', 'cloth', 'ornament', 'wand', 'base'],
                 'generate': o => Math['round']((0.5 * Math['random']() + 0.5) * o),
                 'range': o => Math['round'](0.5 * o) + '~' + Math['round'](0x1 * o),
                 'hooks': {'int': (o, p) => p + o}
@@ -211,7 +197,6 @@ a();
                 'key': 'meleeAbsorb',
                 'display': o => '物理吸收\x20+' + Math['round'](0x64 * o) + '%',
                 'minLevel': 0xc8,
-                'validPositions': ['ornament'],
                 'generate': o => Math['round']((0.0005 * Math['random']() + 0.0005) * o * 0x3e8) / 0x3e8,
                 'range': o => Math['round'](0.05 * o * 0x64) / 0x64 + '%~' + Math['round'](0.1 * o * 0x64 / 0x64) + '%',
                 'hooks': {'meleeAbsorb': (o, p) => p + o}
@@ -219,7 +204,6 @@ a();
                 'key': 'fireAbsorb',
                 'display': o => '火焰吸收\x20+' + Math['round'](0x3e8 * o) / 0xa + '%',
                 'minLevel': 0xc8,
-                'validPositions': ['ornament'],
                 'generate': o => Math['round']((0.0005 * Math['random']() + 0.0005) * o * 0x3e8) / 0x3e8,
                 'range': o => Math['round'](0.05 * o * 0x64) / 0x64 + '%~' + Math['round'](0.1 * o * 0x64 / 0x64) + '%',
                 'hooks': {'fireAbsorb': (o, p) => p + o}
@@ -227,7 +211,6 @@ a();
                 'key': 'coldAbsorb',
                 'display': o => '寒冷吸收\x20+' + Math['round'](0x64 * o) + '%',
                 'minLevel': 0xc8,
-                'validPositions': ['ornament'],
                 'generate': o => Math['round']((0.0005 * Math['random']() + 0.0005) * o * 0x3e8) / 0x3e8,
                 'range': o => Math['round'](0.05 * o * 0x64) / 0x64 + '%~' + Math['round'](0.1 * o * 0x64 / 0x64) + '%',
                 'hooks': {'coldAbsorb': (o, p) => p + o}
@@ -235,7 +218,6 @@ a();
                 'key': 'lightningAbsorb',
                 'display': o => '闪电吸收\x20+' + Math['round'](0x64 * o) + '%',
                 'minLevel': 0xc8,
-                'validPositions': ['ornament'],
                 'generate': o => Math['round']((0.0005 * Math['random']() + 0.0005) * o * 0x3e8) / 0x3e8,
                 'range': o => Math['round'](0.05 * o * 0x64) / 0x64 + '%~' + Math['round'](0.1 * o * 0x64 / 0x64) + '%',
                 'hooks': {'lightningAbsorb': (o, p) => p + o}
@@ -243,7 +225,6 @@ a();
                 'key': 'lightAbsorb',
                 'display': o => '光吸收\x20+' + Math['round'](0x64 * o) + '%',
                 'minLevel': 0xc8,
-                'validPositions': ['ornament'],
                 'generate': o => Math['round']((0.0005 * Math['random']() + 0.0005) * o * 0x3e8) / 0x3e8,
                 'range': o => Math['round'](0.05 * o * 0x64) / 0x64 + '%~' + Math['round'](0.1 * o * 0x64 / 0x64) + '%',
                 'hooks': {'lightAbsorb': (o, p) => p + o}
@@ -251,21 +232,18 @@ a();
                 'key': 'darkAbsorb',
                 'display': o => '暗吸收\x20+' + Math['round'](0x64 * o) + '%',
                 'minLevel': 0xc8,
-                'validPositions': ['ornament'],
                 'generate': o => Math['round']((0.0005 * Math['random']() + 0.0005) * o * 0x3e8) / 0x3e8,
                 'range': o => Math['round'](0.05 * o * 0x64) / 0x64 + '%~' + Math['round'](0.1 * o * 0x64 / 0x64) + '%',
                 'hooks': {'darkAbsorb': (o, p) => p + o}
             }, {
                 'key': 'allResist',
                 'display': o => '元素抗性\x20+' + Math['round'](o),
-                'validClasses': ['ornament', 'cloth', 'swordshield', 'macheteshield'],
                 'generate': o => Math['round']((0x1 * Math['random']() + 0x1) * o),
                 'range': o => Math['round'](0x1 * o) + '~' + Math['round'](0x2 * o),
                 'hooks': {'allResAdd': (o, p) => p + o}
             }, {
                 'key': 'lucky',
                 'display': o => '运气\x20+' + (0x0 | o),
-                'validPositions': ['ornament'],
                 'generate': o => Math['round']((0x1 * Math['random']() + 0.5) * o),
                 'range': o => Math['round'](o) + '~' + Math['round'](1.5 * o),
                 'hooks': {'mf': (o, p) => p + o / 0x64, 'gf': (o, p) => p + o / 0x64}
@@ -273,7 +251,6 @@ a();
                 'key': 'dmgLevel',
                 'display': o => '物理伤害\x20+' + (o / 0xf)['toFixed'](0x2) + '%',
                 'minLevel': 0x64,
-                'validClasses': ['ornament', 'sword', 'swordshield', 'longsword', 'machete', 'macheteshield'],
                 'generate': o => Math['round']((0x1 * Math['random']() + 0.5) * o),
                 'range': o => Math['round'](0.5 * o / 0xf) + '%~' + Math['round'](1.5 * o / 0xf) + '%',
                 'hooks': {'dmgAdd': (o, p) => p + o / 0x5dc}
@@ -281,7 +258,6 @@ a();
                 'key': 'firedmgLevel',
                 'display': o => '火焰伤害\x20+' + (o / 0xf)['toFixed'](0x2) + '%',
                 'minLevel': 0x64,
-                'validClasses': ['ornament', 'sword', 'swordshield', 'machete', 'wand'],
                 'generate': o => Math['round']((0x1 * Math['random']() + 0.5) * o),
                 'range': o => Math['round'](0.5 * o / 0xf) + '%~' + Math['round'](1.5 * o / 0xf) + '%',
                 'hooks': {'firedmgAdd': (o, p) => p + o / 0x5dc}
@@ -289,7 +265,6 @@ a();
                 'key': 'colddmgLevel',
                 'display': o => '寒冷伤害\x20+' + (o / 0xf)['toFixed'](0x2) + '%',
                 'minLevel': 0x64,
-                'validClasses': ['ornament', 'sword', 'swordshield', 'longsword', 'machete', 'wand'],
                 'generate': o => Math['round']((0x1 * Math['random']() + 0.5) * o),
                 'range': o => Math['round'](0.5 * o / 0xf) + '%~' + Math['round'](1.5 * o / 0xf) + '%',
                 'hooks': {'colddmgAdd': (o, p) => p + o / 0x5dc}
@@ -297,7 +272,6 @@ a();
                 'key': 'lightningdmgLevel',
                 'display': o => '闪电伤害\x20+' + (o / 0xf)['toFixed'](0x2) + '%',
                 'minLevel': 0x64,
-                'validClasses': ['ornament', 'sword', 'swordshield', 'wand'],
                 'generate': o => Math['round']((0x1 * Math['random']() + 0.5) * o),
                 'range': o => Math['round'](0.5 * o / 0xf) + '%~' + Math['round'](1.5 * o / 0xf) + '%',
                 'hooks': {'lightningdmgAdd': (o, p) => p + o / 0x5dc}
@@ -305,7 +279,6 @@ a();
                 'key': 'darkdmgLevel',
                 'display': o => '暗伤害\x20+' + (o / 0xf)['toFixed'](0x2) + '%',
                 'minLevel': 0x64,
-                'validClasses': ['ornament', 'sword', 'longsword'],
                 'generate': o => Math['round']((0x1 * Math['random']() + 0.5) * o),
                 'range': o => Math['round'](0.5 * o / 0xf) + '%~' + Math['round'](1.5 * o / 0xf) + '%',
                 'hooks': {'darkdmgAdd': (o, p) => p + o / 0x5dc}
@@ -313,15 +286,14 @@ a();
                 'key': 'lightdmgLevel',
                 'display': o => '光伤害\x20+' + (o / 0xf)['toFixed'](0x2) + '%',
                 'minLevel': 0x64,
-                'validClasses': ['ornament', 'sword', 'swordshield'],
                 'generate': o => Math['round']((0x1 * Math['random']() + 0.5) * o),
                 'range': o => Math['round'](0.5 * o / 0xf) + '%~' + Math['round'](1.5 * o / 0xf) + '%',
                 'hooks': {'lightdmgAdd': (o, p) => p + o / 0x5dc}
             }];
         }, 1484: m => {
             m['exports'] = {
-                'version': '2024.7.5',
-                'description': '永夜玩家交流QQ群：614658451，欢迎加入了解最新永夜资讯。\x0a请各路魔改版本/MOD作者保留上述群号，谢谢。\x0a\x0a保命声明：\x0a此魔改版本的作者为不务正业以及从未正经学过计算机的业余爱好者，烂尾、bug、瞎鸡儿改一切皆有可能，务必要有心理准备。\x0a根据老白大佬的指导意见，正式更名为“永夜之开局一把剑”。\x0a\x0a①网页版\x0a网页版传送门1（首选）\x0ahttps://cszwbirbwl.github.io\x0a网页版传送门2（除非打不开1，否则不不不不不不不不不不要选2）\x0ahttps://cszwbirbwl-github-io.pages.dev\x0a两者同步更新，但存档互相独立\x0a\x0a更新说明\x0a2024.7.7\x0a1.为满足某大佬的调整需求，设计了船新版本的一把剑。\x0ahttps://csztest.pages.dev\x0a\x0a2024.7.5\x0a1.史莱姆果冻的等级上限提高到9999级。\x0a2.噩梦狼王、卡卡列夫不再召唤小弟，而是在地图中直接刷新，小弟数量上限为15个。\x0a3.提高了综合等级差的效果，每相差1级，造成的伤害提高1.5%。\x0a4.上调了守护者部分技能的伤害；下调了“猪突猛进”的效果。\x0a5.调整了被动技能“磁暴”的效果。\x0a6.调整了主动技能“破甲击”的效果\x0a7.长剑也可以附魔智力属性了。\x0a8.时间太久了，可能会有新的bug自己冒出来。\x0a\x0a2024.6.22\x0a1.重置了所有角色的噩梦最高层数。\x0a2.根据角色自身的噩梦通关层数，每层经验加成、熟练度加成+5%、运气+20%，仅对当前角色生效。\x0a3.根据所有角色中的最高噩梦通关层数，每层+5%精粹经验值，对所有角色生效。\x0a\x0a2024.6.20\x0a1.重置了角色的巅峰等级，并调整了升级所需的经验。\x0a2.通关噩梦副本获得的经验不会随着噩梦层数的提升而提升了。\x0a3.噩梦及噩梦以上的目标等级均视为100级。\x0a\x0a2024.6.19\x0a1.综合等级大于目标等级时，每相差1级，造成伤害提高1%（无上限），受到的伤害减少0.5%（上限95%）；综合等级低于目标等级则无影响。\x0a\x0a2024.6.18\x0a1.调整了生命恢复、法力恢复、生命汲取的附魔上限，但不会对已有的装备产生影响。\x0a2.下调了噩梦boss的生命值。\x0a3.增加了“恢复药剂”，上限25级。\x0a4.综合等级=角色等级+巅峰等级。\x0a5.修复了“点燃”实际每层伤害远高于面板伤害的bug。\x0a6.小号（Lv≤50）限制删除的设定又回来了。\x0a7.导出的存档将不会记录所有角色的地图、副本队列数据了；背包物品和角色的数量会决定存档的大小，如果存档太大，建议手动清理仓库、背包。\x0a\x0a2024.6.14\x0a1.调整了元素法师系列、圣骑士、焚天的部分主动、被动技能效果。\x0a\x0a2024.6.13\x0a1.口令“还能抢救一下”，等2438了再用，2次机会。\x0a\x0a2024.6.12\x0a1.提高了“粽子”提供的经验。\x0a2.现在可以导入/导出存档了，但不保证一定成功。\x0a3.导入存档的cd为12小时。\x0a4.游戏总时长（包括离线）小于5天无法使用导入功能，不如重开。\x0a\x0a2024.6.9\x0a1.“端午安康”。\x0a2.增加新的道具“粽子”（rate:\x200.0003），6.9-6.12期间掉落几率为2倍。\x0a\x0a2024.6.6\x0a1.调整了“剑术专精”的效果。\x0a2.尽快拆解带有乱码的“血舞护胸”，以免回档、丢档。\x0a\x0a2024.6.5\x0a1.装备所携带的技能Lv提升效果将不会直接在技能面板上显示了。\x0a\x0a2024.6.4\x0a1.“六一盲盒”改名为“盲盒”，并加入日常掉落（rate:\x200.00002），盲盒(伪)可以滚啦。\x0a2.“百鬼之王·卡隆”下线了，并在原地留下了一个投影。\x0a\x0a2024.5.30\x0a1.“六一儿童节快乐！”。\x0a2.6月1日-6月2日，有极小概率掉落新的道具“六一盲盒”。\x0a3.打开红包后获得的精粹数量提高至5-8个。\x0a4.现在敏捷属性可以为“魔剑士”、“宗师”提供额外的急速属性了。\x0a魔剑士：每150点敏捷增加1%急速，上限20%。\x0a宗师：每100点敏捷增加1%急速，上限30%。\x0a5.修复了噩梦副本掉落不正确的bug。\x0a6.下调了年兽副本的难度。\x0a7.角色不会被殴打至“昏迷”了，而是“重伤”。\x0a8.“血魔”、“焚天”的暴击、暴伤属性来源从“力量”调整为“敏捷”。\x0a9.新增了“血魔护胸”，来自大佬“再见330”。\x0a\x0a2024.5.28\x0a1.为法师增加了几个奇怪的被动技能。\x0a\x0a2024.5.27\x0a1.血魔：调整了“沸血”的技能效果。\x0a2.焚天：调整了“曜日”、“冰凝”、“共舞”的技能效果，新增了被动技能“戏火”、“刺骨”。\x0a3.现在武器也可以重铸耐力属性了。\x0a\x0a2024.5.26\x0a1.部分特殊装备上用“[]”标明了变量的最大值。\x0a\x0a2024.5.25\x0a1.增加了简单的掉落提示，仅作为对掉落装备的说明，具体推图能力仍取决于各职业的优势、劣势。\x0a2.母体史莱姆不再掉落“史莱姆之心”，更换为练功四件套（来自大佬“烂人”），合计掉落几率约为5%。\x0a3.调整了特殊装备“方向盘”的效果，仅装备“方向盘”时的效率与之前一致。。\x0a4.新增特殊装备“肌肉大脑”，来自大佬“烂人”。\x0a5.新增特殊装备“天启圣光”，来自大佬“寒玉仁心”。\x0a\x0a2024.5.24\x0a1.调整了“雨之都卡格西”、“四骑士圣殿”、“未知暗殿”的难度。\x0a2.调整了“年兽的脚掌”的效果。\x0a3.尝试为艾尔新增了两个被动技能。\x0a\x0a2024.5.22\x0a1.增加了“年兽的小腿骨”、“年兽的脚掌”。\x0a2.调整了“火球术”、“闪电”、“水箭术”的习得等级；新增了水系法术“潮汐”。\x0a3.圣骑士现在可以穿戴布甲了；穿戴重甲、布甲时分别可以额外获得力量、智力属性，穿戴轻甲则可以同时额外获得一半的力量和智力属性。\x0a\x0a2024.5.20\x0a1.为大部分特殊装备设定了最低掉落等级，所以洞窟深处掉落鲱鱼干和方向盘的几率相对变大了。\x0a2.修复了“冰之哀痛”伤害不正确的bug。\x0a3.现在删除角色不受等级限制了。\x0a4.为“厨艺”、“炼金”增设了批量升级的按钮，但请注意批量升级没有防呆机制。\x0a5.启用了口令“我真的是萌新”，使用前请确保背包至少有三个空格。\x0a\x0a2024.5.19\x0a1.调整了“连斩姿态”的效果。\x0a2.提高了“元素法师”系列大多数技能的伤害（有点多，麻烦自己翻翻）。\x0a3.调整了“圣骑士”大多数技能的效果（有点多，麻烦自己翻翻）。\x0a\x0a2024.5.18\x0a1.调整了“魔法铠甲”的效果，生效顺序依次为寒冰护甲-魔法盾-护身戒指-魔法铠甲。\x0a2.调整了“法力转化”的效果。\x0a3.暂时去除了“厨艺”和“炼金”的降级按钮。\x0a4.现在即便已经穿戴了不符合穿戴条件的装备，也无法获得属性加成和装备特效了，完成转职后务必尽快更换装备。\x0a5.误删的隐藏职业现在可以再次登场了。\x0a6.大家心心念念的钥石购买功能终于上线，但洞窟深处仍未通网。\x0a7.今天并没有新的口令。\x0a\x0a2024.5.16\x0a1.热心网友“狸狸”为大家提供了一条新的口令“支持ENTP做0”。\x0a\x0a2024.5.15\x0a1.启用了口令“我是萌新”、“浙江泽商律师事务所”。\x0a\x0a2024.5.14\x0a1.“帝国金库”已经恢复运营，听说在金库门口喊几声“没有蛀牙！”，马上就会有卫兵来揍你。\x0a2.减少了购买角色栏位的神力需求。\x0a\x0a2024.5.13\x0a1.调整了各系伤害的附魔词缀。\x0a2.新建文件夹，重命名为“打码-打码-打码-师”。\x0a\x0a2024.5.12\x0a1.提高了“火球”、“闪电”、“水箭术”的伤害。\x0a2.修复了龙盾特效触发不正确的bug，龙盾的最低等级要求调整为40级。\x0a\x0a2024.5.11\x0a1.现在可以选择打开红包的数量了。\x0a\x0a2024.5.10\x0a1.已经对我们亲爱的光明骑士莱特实施了制裁。\x0a2.为守护者精心打造了两把新武器。\x0a3.“炎龙吐息”的冷却时间减少至30秒。\x0a\x0a2024.5.9\x0a1.新增了特殊装备“火之高兴”、“冰之哀痛”。\x0a2.如果装备描述不能完全显示，尝试上下滚动/滑动一下看看。\x0a3.“魔法盾”的冷却时间增加至15秒。\x0a\x0a2024.5.8\x0a1.五一活动结束，该好好上班了。\x0a2.“威能圣殿”的效果调整为增加全属性伤害+25%。\x0a3.新增了“装备圣殿”，点击后有25%几率获得一件随机品质、品级的装备。\x0a4.新增了“精粹圣殿”，点击后获得少量精粹。\x0a5.新增了“欢愉圣殿”，拿到红包的你怎么不开心啊，是红包还不够多吗。\x0a6.现在特殊装备有独立的装备品级筛选了。\x0a7.等级低于80级的角色无法删除了。\x0a\x0a2024.5.6\x0a1.特殊装备不再受装备品级筛选的影响了。\x0a2.“盾击”回到了它该有的位置上。\x0a\x0a2024.5.5\x0a1.修改了负防、负抗性的效果，当防御、抗性小于0时，每减少250点防御、抗性，受到的伤害增加1%。\x0a2.调整了部分降防、减抗技能的效果。\x0a3.调整了时间戳的验证机制。\x0a\x0a2024.5.3\x0a1.迟来的五一节活动，意思意思。\x0a装备（不包括副本）、红包、钥石掉率×2，史莱姆刷起！\x0a获得的经验值、熟练度×2\x0a2.去除了一部分物品的“出售”按钮，新增了“拆解”按钮。\x0a3.修改了部分重复的技能名称。\x0a4.增加了特殊装备“信心”，种类为布甲下装。\x0a5.修复了“复仇”技能经验值错误的bug。\x0a6.删除了失效的烹饪。\x0a\x0a2024.4.25\x0a1.修改了“盾压”的技能效果，“盾击”暂时无变化。\x0a2.增强了“防御戒指”的效果。\x0a3.合并了部分烹饪的效果，失效的烹饪将再下一次更新时删除。\x0a4.调整了各职业的四维加成。\x0a\x0a2024.4.23\x0a1.降低了绝大多数敌对单位的生命值。\x0a\x0a2024.4.18\x0a1.增加了特殊装备“杰哥的眼镜”，来自大佬“你犯天条了知道吗？”。\x0a2.增加了特殊装备“兄弟的酒”，来自大佬“缺盐的咸鱼”。\x0a3.增加了特殊装备“舍友的丝袜”，来自大佬“无关风月”。\x0a4.“火球术”减少了0.5秒的施法时间。\x0a5.增加了新职业“水魄”、“冰魂”。\x0a6.现在每点力量可以为“魔剑”、“焚天”额外增加相应的火焰、寒冷伤害了。\x0a\x0a2024.4.16\x0a1.增加了最最基础的DPS统计功能，日后再优化。\x0a\x0a2024.4.12\x0a1.修复了反伤刺甲、攻速暴击腿甲目标不正确的bug。\x0a2.增加了新的特殊装备“幽影斗篷”。\x0a3.真实伤害不会再被护盾所吸收了，血魔警告。\x0a4.调整了元素法师个别技能的等级要求。\x0a5.新增了三转“电主”、“雷神”。\x0a\x0a2024.4.11\x0a1.修复了鱼人祭祀伤害过高的bug。\x0a2.调整了被动技能“坚韧”的效果。\x0a3.调整了主动技能“元素化”的效果,使其更像是一个爆发技能。\x0a4.经验圣殿的效果对技能熟练度也能起作用了。\x0a5.现在各类伤害属性将不会出现在装备品级100以下的装备上。\x0a6.根据风月无关大佬、无聊大佬的建议，增加了新的特殊装备“方向盘”。\x0a7.根据秃驴大佬的建议，增加了新的特殊装备“护身戒指”、“麻痹戒指”、“防御戒指”。\x0a\x0a2024.4.10\x0a1.默认的拾取规则更改为：普通-出售、优秀-出售、精良-分解、史诗-分解、传说-拾取。\x0a2.圣殿增益的持续时间延长到60秒。\x0a3.新增了三转“赤焰”、“青火”，待集齐法师三转后上传最终安装包。\x0a\x0a2024.4.9\x0a1.上调了通过后副本获得的经验值。\x0a2.增加了经验值补偿机制，未满级的角色将获得更多的经验值，鲱鱼干的效果将不再显示在面板上。\x0a\x0a2024.4.8\x0a1.降低了因等级差产生的经验值惩罚，获得的经验值将至少保留10%。\x0a2.提高了刷新圣殿的效率，增加了“经验圣殿”。\x0a\x0a2024.4.7\x0a1.掉落的低级副本钥石将直接转化为副本次数，已经掉落的钥石仍然可以使用，解放可怜的包包。\x0a2.现在野外的小怪秒刷了，难度明显提高，但掉落也更多了。\x0a3.加快了个别副本的进度。\x0a4.隐藏职业“黑暗君主”现在可以兼用“长剑”类武器，且“太刀”不会出现在200品级以下的装备中了。\x0a5.增加了两件新的特殊装备，详见EXCEL。\x0a\x0a2024.4.6\x0a1.现在通关副本（不包括噩梦、年兽）后将有5次掉落机会，包括武器2次，上衣1次，下装1次，首饰1次，但拆解装备获得的神力也减少了。\x0a2.重铸消耗再次减半，各类装备可重铸的属性详见EXCEL。\x0a3.降低了大部分副本的难度。\x0a4.感恩云轩大佬，现在转职将保留等级和装备了。\x0a\x0a2024.4.5\x0a1.现在可以体验“水之使徒”职业了。\x0a2.为刀客增加了新的三转职业。\x0a3.增加了几件新的特殊装备和专属掉落，且特殊装备的掉率×2.5。\x0a4.新建了“元素法师”三转的文件夹。\x0a\x0a2024.4.3\x0a1.提高了战士系列武器的基础攻击力。\x0a2.现在每点力量可以为艾尔额外增加1点物理伤害。\x0a3.削弱了“法力转化”的效果，提高了“和弦”和“魔力激化”的效果。\x0a4.修正了法师技能等级的错误加成，这一刀法师削大了。\x0a5.减少了“守护者之魂”的冷却时间，且不需要读条了。\x0a6.削弱了“昏迷”效果相关的所有技能，且“昏迷”期间可以正常触发技能(包括且不限于被动技能荆棘以及格挡、防御之后触发的技能)。\x0a7.现在装备上可以重铸出物理、火焰、寒冷、闪电、黑暗伤害的属性了。\x0a8.现在可以体验“雷之使徒”职业了。\x0a\x0a2024.4.2\x0a1.现在可以体验“火之使徒”职业了。\x0a\x0a2024.4.1\x0a1.守护者喜提加强，至少比以前强。\x0a2.旋风斩、重斩喜提加强。\x0a3.现在耐力会为艾尔提供额外的生命恢复了。\x0a4.修复了旧bug，并更新了新的bug们。\x0a\x0a2024.3.30\x0a1.钥石掉率×1.5，红包掉率×1.5。\x0a2.可怕的双前缀敌人遭到削弱，但是增加了增益前缀和减益前缀各两个。\x0a3.现在噩梦副本将掉落随机品质等级的装备了。\x0a4.添加了部分角色、职业的简介。\x0a\x0a2024.3.29\x0a1.现在可以正常掉落法杖类武器了，并且添加了一款特殊装备。\x0a2.现在可以体验“元素法师”职业了。\x0a3.现在角色如果不幸战败，将于20秒后在原地满状态归来。\x0a4.修复了旧bug，并更新了新的bug们。\x0a\x0a2024.3.27\x0a1.优化了一部分的技能描述。\x0a2.现在所有单位的物理防御和抗性属性最多只能减少75%的伤害，角色的吸收属性最多吸收75%的伤害。\x0a3.急速属性的上限调整为300%。\x0a4.“艾冯十世·普洛·麦克斯”大佬为大家定制了贼强贼强的隐藏职业，提示：庇护所773号的暗影法师奈布最近皮有点痒。\x0a5.这一波强化的是谁？是魔剑的“炎铠”。\x0a6.噩梦地图的敌人以及年兽再次遭到削弱。\x0a7.现在只有200品质以上的防具、首饰才可以重铸出吸收属性了。\x0a8.“报纸壳壳”一众七兄弟大大加强。\x0a9.年兽装备的款式增加了。\x0a\x0a2024.3.24\x0a1.现在可以支持负值的防御和抗性了，负值越大则受到的伤害越高；但因为受到了创世神艾尔的庇佑，你的防御和抗性最多减少到0。\x0a2.现在部分敌人将拥有负值的防御或者抗性，不过苟有所长（短）也必有所短（长），请尽量选择合适的属性伤害。\x0a3.减少了附魔、重铸的材料、神力消耗。\x0a4.感谢“云轩”大佬的指导，现在的背包更大了。\x0a\x0a2024.3.22\x0a1.噩梦、年兽的敌人全都惨遭削弱。\x0a\x0a2024.3.21\x0a1.幽暗的货仓、睡美人湖、噩梦巨人国度的敌人惨遭削弱。\x0a2.因为生存环境遭到破坏，你在副本（洞窟深处-森林深处）中遇到的敌人数量减少了很多。\x0a3.你被强化了，现在每1点耐力可以提供物理防御及所有抗性各1点，快上！\x0a4.“守护者”的被动技能“荆棘”效果调整。\x0a5.感谢“艾冯十世·普洛·麦克斯”大佬的支持，“无敌斩”正式更名为“吴迪斩”，并添加了防打断效果（但并不知道是否有效）。\x0a\x0a2024.3.20\x0a1.混乱元素之塔的敌人惨遭削弱。\x0a\x0a2024.3.18\x0a1.红包现在最高只能开出200品质等级的装备了。\x0a2.蓝装（优秀）现在不能拆解了，而且“不提示拆解高品质物品”将默认勾选，装备且拆且珍惜。\x0a3.森林三兄弟也有专属装备了。\x0a4.长剑和双刀的基础属性调整，相信不再刮痧。\x0a5.可以体验魔法学徒的部分技能了，但仍然不会掉落任何相关的装备。\x0a\x0a2024.3.17\x0a1.修复了“守护者”技能学习等级错误的bug，但不影响已经携带的技能。\x0a2.“剑斗士”已经太强了，我们来削弱一下“守护者”吧。\x0a\x0a2024.3.16更新说明\x0a1.意外建立的“亚莲娜”角色可以（必须）删除了，让她再多学一点新技能再加入战斗。\x0a2.主动、被动技能的携带数量调整，以便于低级角色练级。\x0a3.武器、首饰的附魔增加“生命汲取”属性。\x0a4.增加了“刀客”职业，以及相应的武器“双刀”。\x0a5.技能经验值调整为原版标准，先练技能的兄弟有福了。\x0a6.现在每一种非boss召唤的小怪都能掉落钥石了，掉率均为0.001。\x0a7.红包掉率翻倍，小怪为0.0002，BOSS为0.2。\x0a8.红包可以正常开出年兽巢穴钥石和年兽的心脏了。\x0a9.附魔属性“生命值”下调为每品质等级1-2点生命值，但不影响已经掉落的装备。\x0a10.卡卡列夫也有专属装备了。\x0a11.微调了“重斩”、“炎龙吐息”的技能效果。\x0a12.修复旧bug，并更新了新的bug们，实在不行就回滚一个版本。\x0a\x0a\x0a2024.3.13\x20更新说明\x0a1.为“艾尔”设定了全新的职业、技能：\x0a\x20\x20①当等级达到15级且任意角色完成“迷雾森林”首通时，开启第一次转职；\x0a\x20\x20②当等级达到35级且任意角色完成“庇护所773号”首通时，开启第二次转职；\x0a\x20\x20③部分职业在等级达到80级且任意角色完成“未知暗殿”首通时，开启第三次转职；\x0a\x20\x20④暂时禁用“刺客”、“圣骑士”职业。\x0a\x20\x20⑤在转职时请务必要完整阅读提示，以避免不必要的损失。\x0a2.暂时禁用角色“亚莲娜”。\x0a3.角色的等级、携带技能数量调整。\x0a4.拆解装备获得的各种碎片整合为“奇怪的精粹”。\x0a5.调整附魔功能：新的附魔不会让装备的属性下降，但随数值的提高，附魔的成功率会降低。\x0a6.暴击几率的上限调整为100%。\x0a7.基础生命恢复调整为1/s，再也不会被史莱姆们暴捶了。\x0a8.所有伤害技能的基础命中率调整为100%。\x0a9.主动技能的等级上限调整为50级。\x0a10.装备的基本类型调整：\x0a\x20\x20①武器：长剑、剑盾；\x0a\x20\x20②上衣：锁子甲（重甲）、骨甲（轻甲）；\x0a\x20\x20③下装：锁链靴（重甲）、骨靴（轻甲）；\x0a\x20\x20④首饰：秘银指环。\x0a11.四维加成调整：\x0a\x09每1点力量增加：物理伤害+1，物理防御+1；\x0a\x20\x20\x20\x20每1点敏捷增加：暴击等级+1，暴伤等级+1，闪避值+1；\x0a\x09每1点智力增加：元素伤害+1，元素抗性+1；\x20\x20\x20\x20\x0a\x20\x20\x20\x20每1点耐力增加：生命值+5，物理防御+0.5，元素抗性+0.5；\x0a\x09因为重做了数值，所以睡几天仍然打不过一个BOSS是件很正常的事情。\x0a12.原“炼金”功能拆分为“厨艺”和“炼金”。\x0a'
+                'version': '2024.7.9',
+                'description': '永夜玩家交流QQ群：614658451，欢迎加入了解最新永夜资讯。\x0a请各路魔改版本/MOD作者保留上述群号，谢谢。\x0a\x0a保命声明：\x0a此魔改版本的作者为不务正业以及从未正经学过计算机的业余爱好者，烂尾、bug、瞎鸡儿改一切皆有可能，务必要有心理准备。\x0a为满足某大佬的挑战需求，二次魔改版本。\x0a\x0a网页版传送门\x0ahttps://csztest.pages.dev\x0a\x0a更新说明\x0a2024.7.9\x0a1.圣骑士技能已加入套餐。\x0a2.口令“渣男！用不到的技能就想删掉！”。\x0a\x0a2024.7.7\x0a1.现在最多只能建立5个角色，但无需消耗神力。\x0a2.取消了装备以及附魔的限制，现在可以穿戴任意装备，也可以附魔出任意的属性了。\x0a3.取消了进阶职业、存档的导入和导出功能。\x0a4.下调了洞窟深处的收益。\x0a5.能量条现在（怒气、法力）需要通过厨艺来获取。\x0a6.现在角色的主动、被动技能需要通过道具“技能石”来获得了，副本boss有0.5%的几率掉落“技能石Ⅰ”和“技能石Ⅱ”。\x0a①角色最多可以学习20个主动技能和20个被动技能，务必合理搭配，毕竟低等级角色无法删除，“遗忘技能”的功能也还未开通。\x0a②目前使用道具“技能石”有几率获得“一把剑”版本中艾尔、亚莲娜可以掌握的绝大多数技能，但每学习一项技能几率减少10%，最低5%。\x0a③无法获得高于角色等级以及已经掌握的技能。\x0a④放弃学习技能并不会返回已经消耗的“技能石”，也无法将技能交由其他角色学习。\x0a7.口令“不能空手出门”。\x0a'
             };
         }, 4130: (m, o, p) => {
             function q(s) {
@@ -412,7 +384,7 @@ a();
                 }
             }, {'key': 'rosa.angry', 'name': '狂热', 'hooks': {'atkSpeedMul': o => 0x4 * o}}];
         }, 1990: (m, o, p) => {
-            m['exports'] = [...p(0x17db), ...p(0x1b4a), ...p(0x1ec5), ...p(0x162d), ...p(0x147c), ...p(0x4d8), ...p(0x851), ...p(0x1742), ...p(0x2017)];
+            m['exports'] = [...p(0x17db), ...p(0x1b4a), ...p(0x1ec5), ...p(0x162d), ...p(0x147c), ...p(0x851), ...p(0x2017)];
         }, 5677: m => {
             m['exports'] = [{
                 'key': 'knight.shieldReflect',
@@ -666,7 +638,7 @@ a();
             }, {
                 'key': 'shrine.experience',
                 'name': '经验圣殿',
-                'hooks': {'expMul': o => 0x5 *10* o, 'skillExpMul': o => 0x5 *10* o}
+                'hooks': {'expMul': o => 0x5*20 * o, 'skillExpMul': o => 0x5*20 * o}
             }];
         }, 5244: m => {
             m['exports'] = [{
@@ -693,6 +665,14 @@ a();
             }
 
             m['exports'] = [{
+                'key': 'summoned', 'hidden': !0x0, 'hooks': {
+                    'getSummonedBuff'(p) {
+                        return this;
+                    }
+                }, 'willRemove'() {
+                    'ghost' === this['unit']['camp'] || this['stopped'] || this['unit']['kill']();
+                }
+            }, {
                 'key': 'tc_bf', 'hidden': !0x0, 'hooks': {
                     'critRateAdd'(p) {
                         return p + this['arg'];
@@ -948,213 +928,6 @@ a();
                     }
                 }
             }, {'key': 'tidebf3', 'hidden': !0x0}];
-        }, 1240: m => {
-            function o(p, q, s) {
-                const u = q['buffs']['find'](v => 'poison_buff' === v['group']);
-                u ? (u['arg'] += s, u['resetTimer'](0x7530)) : q['addBuff']('poison_buff', 0x2ee0, s, 'poison_buff');
-            }
-
-            m['exports'] = [{
-                'key': 'summoned', 'hidden': !0x0, 'hooks': {
-                    'getSummonedBuff'(p) {
-                        return this;
-                    }
-                }, 'willRemove'() {
-                    'ghost' === this['unit']['camp'] || this['stopped'] || this['unit']['kill']();
-                }
-            }, {
-                'key': 'stop_buff', 'name': '停滞', 'didRemove'() {
-                    this['unit']['timeline']['resume'](), this['unit']['tryUseSkill'](this['unit']['canUseSkill']());
-                }, 'didAppear'() {
-                    this['unit']['timeline']['pause']();
-                }, 'hooks': {'stunned': p => !0x0}
-            }, {
-                'key': 'soul_ice_freezed', 'name': '冻结', 'hooks': {
-                    'freezed'(p) {
-                        return this;
-                    }
-                }, 'willRemove'() {
-                    this['unit']['timeline']['resume'](), this['unit']['tryUseSkill'](this['unit']['canUseSkill']());
-                }, 'didAppear'() {
-                    this['unit']['timeline']['pause']();
-                }
-            }, {
-                'key': 'soul_ice_cold',
-                'name': '冰缓',
-                'hooks': {'speedRateAdd': p => 0.8 * p}
-            }, {
-                'key': 'soul_power_buff', 'name': '鬼神·抛瓦', 'hooks': {
-                    'strAdd'(p) {
-                        return 0x2 * this['arg'] + 0x32 + p;
-                    }, 'intAdd'(p) {
-                        return 0x2 * this['arg'] + 0x32 + p;
-                    }
-                }
-            }, {
-                'key': 'soul_armor_buff', 'name': '鬼神·铠甲', 'hooks': {
-                    'defAdd'(p, q) {
-                        return this['unit'], p * (0xf + this['arg'] / 0x2) / 0x64 + p;
-                    }, 'darkResist'(p, q) {
-                        return this['unit'], p * (0xa + this['arg'] / 0x2) / 0x64 + p;
-                    }
-                }
-            }, {
-                'key': 'soul_armor_buff2', 'name': '鬼神·铠甲', 'hidden': !0x0, 'hooks': {
-                    'darkdmgAdd'(p, q) {
-                        return 0.01 * this['arg'] + p;
-                    }
-                }
-            }, {
-                'key': 'karon_tombstonesummon_buff',
-                'name': '天降墓碑',
-                'hidden': !0x0,
-                'effectInterval': 0x3e8,
-                'effect'(p) {
-                    const q = this['unit'], {target: s} = q;
-                    if (s) {
-                        for (const u of p['units']['filter'](v => q['willAttack'](v))) {
-                            const v = q['atk'] * (0.8 + 0.02 * this['arg'] + Math['random']() * (0.1 + 0.01 * this['arg'])) * q['darkdmgAdd'],
-                                w = q['testCrit']();
-                            p['sendDamage']('dark', q, u, this['skill'], q['getCritBonus'](w) * v, w);
-                        }
-                        p['addEnemy']('karon_summon_tombstone', null, 0x0, q, this)['addBuff']('summoned', q['runAttrHooks'](0x3a98, 'summonTime'));
-                    } else q['removeBuff'](this);
-                }
-            }, {
-                'key': 'tombstonesummon_buff',
-                'name': '天降墓碑',
-                'hidden': !0x0,
-                'effectInterval': 0x3e8,
-                'effect'(p) {
-                    const q = this['unit'], {target: s} = q;
-                    if (s) {
-                        for (const u of p['units']['filter'](v => q['willAttack'](v))) {
-                            const v = q['atk'] * (0.8 + 0.02 * this['arg'] + Math['random']() * (0.1 + 0.01 * this['arg'])) * q['darkdmgAdd'],
-                                w = q['testCrit']();
-                            p['sendDamage']('dark', q, u, this['skill'], q['getCritBonus'](w) * v, w);
-                        }
-                        p['addEnemy']('summon_tombstone', null, 0x0, q, this)['addBuff']('summoned', q['runAttrHooks'](0x3a98, 'summonTime'));
-                    } else q['removeBuff'](this);
-                }
-            }, {
-                'key': 'soul_weak_buff1', 'name': '鬼神·虚弱', 'hidden': !0x0, 'effectInterval': 0x3e8, 'effect'(p) {
-                    const q = this['unit'], {target: s} = q;
-                    for (const u of p['units']['filter'](v => q['willAttack'](v))) u['addBuff']('soul_weak_buff3', 0x7d0, this['arg'], 'soul_weak_buff3');
-                }
-            }, {
-                'key': 'soul_weak_buff2', 'name': '鬼神·虚弱', 'hidden': !0x0, 'effectInterval': 0x3e8, 'effect'(p) {
-                    const q = this['unit'], {target: s} = q;
-                    for (const u of p['units']['filter'](v => q['willAttack'](v))) u['addBuff']('soul_weak_buff4', 0x7d0, this['arg'], 'soul_weak_buff4');
-                }
-            }, {
-                'key': 'soul_weak_buff3', 'name': '鬼神·虚弱', 'hooks': {
-                    'willDamaged'(p, q, s) {
-                        return p * (1.2 + 0.006 * this['arg']);
-                    }
-                }
-            }, {
-                'key': 'soul_weak_buff4', 'name': '鬼神·虚弱', 'hooks': {
-                    'darkResist'(p) {
-                        return p - 0xc8 * this['arg'];
-                    }
-                }
-            }, {
-                'key': 'soul_ice_buff', 'name': '鬼神·冰霜', 'hidden': !0x0, 'effectInterval': 0x3e8, 'effect'(p) {
-                    const q = this['unit'], {target: s} = q;
-                    for (const u of p['units']['filter'](v => q['willAttack'](v))) {
-                        const v = (0x1 + q['atk'] * (0.1 + 0.001 * this['arg'] + Math['random']() * (0.05 + 0.001 * this['arg']))) * q['colddmgAdd'],
-                            w = q['testCrit']();
-                        p['sendDamage']('cold', q, u, this['skill'], q['getCritBonus'](w) * v, w), u['addBuff']('soul_ice_cold', 0x7d0, null, 'soul_ice_cold'), Math['random']() < 0.1 && u['addBuff']('soul_ice_freezed', 0x5dc, null, 'soul_ice_freezed');
-                    }
-                }
-            }, {
-                'key': 'soul_poison_buff', 'name': '鬼神·瘟疫', 'hidden': !0x0, 'effectInterval': 0x3e8, 'effect'(p) {
-                    const q = this['unit'], {target: s} = q;
-                    for (const u of p['units']['filter'](v => q['willAttack'](v))) {
-                        const v = q['atk'],
-                            w = (0x1 + v * (0.1 + 0.001 * this['arg'] + Math['random']() * (0.05 + 0.001 * this['arg']))) * q['poisondmgAdd'],
-                            x = q['testCrit']();
-                        p['sendDamage']('poison', q, u, this['skill'], q['getCritBonus'](x) * w, x), Math['random']() < 0.2 && o(0x0, u, 0.2 * v * q['poisondmgAdd']);
-                    }
-                }
-            }, {'key': 'soul_darkfire_buff', 'name': '鬼神·冥炎'}, {
-                'key': 'soul_iceplus_buff',
-                'name': '鬼神·冰晶',
-                'hidden': !0x0,
-                'effectInterval': 0x1f4,
-                'effect'(p) {
-                    const q = this['unit'], {target: s} = q;
-                    for (const u of p['units']['filter'](v => q['willAttack'](v))) {
-                        const v = (0x1 + q['atk'] * (0.05 + 0.001 * this['arg'] + Math['random']() * (0.05 + 0.001 * this['arg']))) * q['colddmgAdd'],
-                            w = q['testCrit']();
-                        p['sendDamage']('cold', q, u, this['skill'], q['getCritBonus'](w) * v, w), u['addBuff']('soul_ice_cold', 0x7d0, null, 'soul_ice_cold'), Math['random']() < 0.2 && u['addBuff']('soul_ice_freezed', 0x5dc, null, 'soul_ice_freezed');
-                    }
-                }
-            }, {
-                'key': 'soulbringer_enhance2_buff', 'name': '鬼斩·噬魂', 'description': '', 'hooks': {
-                    'strAdd'(p) {
-                        return 0xa * this['arg'] + p;
-                    }, 'intAdd'(p) {
-                        return 0xa * this['arg'] + p;
-                    }
-                }
-            }];
-        }, 5954: m => {
-            m['exports'] = [{
-                'key': 'vbsk1bf1', 'hidden': !0x0, 'hooks': {
-                    'speedRateAdd'(o) {
-                        return this['arg'] + o;
-                    }
-                }
-            }, {
-                'key': 'vbsk1bf2', 'hidden': !0x0, 'hooks': {
-                    'atk_self_Add'(o) {
-                        return o * this['arg'];
-                    }
-                }
-            }, {
-                'key': 'vbsk1bf3', 'hidden': !0x0, 'didRemove'() {
-                    this['unit']['timeline']['resume']();
-                }, 'didAppear'() {
-                    this['unit']['timeline']['pause']();
-                }, 'hooks': {'stunned': o => !0x0}
-            }, {
-                'key': 'vbsk2bf1', 'hidden': !0x0, 'hooks': {
-                    'willDamaged'(o, p) {
-                        return o * this['arg'];
-                    }
-                }
-            }, {
-                'key': 'vbsk2bf2', 'hidden': !0x0, 'hooks': {
-                    'speedRateAdd'(o) {
-                        return o * this['arg'];
-                    }
-                }
-            }, {
-                'key': 'vbsk4bf1', 'hidden': !0x0, 'hooks': {
-                    'critRateAdd'(o) {
-                        return this['arg'] + o;
-                    }
-                }
-            }, {
-                'key': 'vbsk6bf1', 'hidden': !0x0, 'hooks': {
-                    'critBonusAdd'(o) {
-                        return this['arg'] + o;
-                    }
-                }
-            }, {
-                'key': 'vbsk6bf2', 'hidden': !0x0, 'hooks': {
-                    'defAdd'(o) {
-                        return o - this['arg'];
-                    }
-                }
-            }, {
-                'key': 'vbsk6bf1', 'hidden': !0x0, 'hooks': {
-                    'noDodgeRate'(o) {
-                        return o - this['arg'];
-                    }
-                }
-            }];
         }, 6107: m => {
             function o(p, q, s) {
                 const u = q['buffs']['find'](v => 'fire_buff' === v['group']);
@@ -1306,8 +1079,10 @@ a();
                 }
             }, {
                 'key': 'Blessing_buff', 'hidden': !0x0, 'hooks': {
-                    'willDamaged'(p, q) {
-                        return p * (0x1 - 0.025 * this['arg']);
+                    'defselfAdd'(p) {
+                        return 0.02 * this['arg'] * p + p;
+                    }, 'allResAdd'(p) {
+                        return 0.02 * this['arg'] * p + p;
                     }
                 }
             }, {'key': 'guardian_buff1', 'name': '守护者之魂'}, {
@@ -1412,1016 +1187,65 @@ a();
                 }
             }];
         }, 8627: (m, o, p) => {
-            m['exports'] = [...p(0x24c6), ...p(0x165f), ...p(0x148), p(0x531), p(0x10fc)];
-        }, 4348: m => {
-            m['exports'] = {
-                'key': 'paladin',
-                'name': '圣骑士',
-                'description': '圣骑士',
-                'requirement': {'role': 'Ariel'},
-                'equipments': {'weapon': 'SwordShield'},
-                'expFormula': [0x2, 0xa, -0x4, 0x2, 0.3],
-                'skills': {
-                    'paladin_skill1': 0x1,
-                    'paladin_skill2': 0x1,
-                    'paladin_skill3': 0x6,
-                    'paladin_skill5': 0x6,
-                    'paladin_skill4': 0xc,
-                    'paladin_skill9': 0xc,
-                    'paladin_skill6': 0x12,
-                    'paladin_skill13': 0x12,
-                    'paladin_skill7': 0x18,
-                    'paladin_skill14': 0x18,
-                    'paladin_skill8': 0x24,
-                    'paladin_skill11': 0x24,
-                    'paladin_skill10': 0x2a,
-                    'paladin_skill16': 0x30,
-                    'paladin_skill12': 0x30,
-                    'paladin_skill15': 0x3c,
-                    'paladin_skill17': 0x3c
-                },
-                'passives': {'pla_passive1': 0x1},
-                'enhances': {
-                    'pal_enhance1': 0x1,
-                    'pal_enhance3': 0x1,
-                    'pal_enhance4': 0x6,
-                    'pal_enhance5': 0xc,
-                    'pal_enhance6': 0x12,
-                    'pal_enhance2': 0x12,
-                    'pal_enhance12': 0x12,
-                    'pal_enhance7': 0x18,
-                    'pal_enhance8': 0x24,
-                    'pal_enhance9': 0x2a,
-                    'pal_enhance11': 0x30,
-                    'pal_enhance10': 0x3c
-                },
-                'availableClasses': {
-                    'base': !0x0,
-                    'sword': !0x0,
-                    'swordshield': !0x0,
-                    'lightArmor': !0x0,
-                    'armor': !0x0,
-                    'cloth': !0x0,
-                    'ornament': !0x0
-                },
-                'attrGrow': {'str': 1.5, 'dex': 0.5, 'int': 1.5, 'sta': 0.5}
-            };
-        }, 5727: (m, o, p) => {
-            m['exports'] = [p(0x17b4), p(0x15e7), p(0x26ad), p(0xb77), p(0x3ab), p(0x138d), p(0xc54), p(0x44b), p(0x252), p(0x2021), p(0x22f8)];
-        }, 5607: m => {
-            m['exports'] = {
-                'key': 'lv15.sorceress1',
-                'name': '元素法师',
-                'description': '与精灵签订契约就职魔法少女，掌握超自然的力量以击败魔族。',
-                'requirement': {'career': 'sorceress', 'level': 0xf, 'stories': ['eyer-stories-10']},
-                'equipments': {'weapon': 'stickWand'},
-                'expFormula': [0x2, 0xa, -0x4, 0x2, 0.3],
-                'skills': {
-                    'sorceress_atk': 0x1,
-                    'wind_blade': 0x1,
-                    'summon_slime': 0x1,
-                    'sorceress_fireBall': 0xf,
-                    'sorceress_lightning': 0xf,
-                    'sorceress_coldBall': 0xf,
-                    'sorceress_magicShield': 0x14,
-                    'sorceress_igniting': 0x19,
-                    'sorceress_vitalitywater': 0x23
-                },
-                'passives': {'magic': 0x1},
-                'enhances': {
-                    'sorceress_enhance1': 0x5,
-                    'sorceress_enhance2': 0xa,
-                    'ss_ee3': 0xa,
-                    'lv15_sorceress1_enhance1': 0xf,
-                    'lv15_ss1_ee2': 0xf,
-                    'lv15_ss1_ee3': 0xf,
-                    'lv15_sorceress1_enhance2': 0x19,
-                    'lv15_sorceress1_enhance3': 0x23
-                },
-                'availableClasses': {'base': !0x0, 'wand': !0x0, 'cloth': !0x0, 'ornament': !0x0},
-                'attrGrow': {'str': 0x0, 'dex': 0x0, 'int': 1.5, 'sta': 0.5}
-            };
-        }, 9901: m => {
-            m['exports'] = {
-                'key': 'lv35.sorceress1',
-                'name': '火之使徒',
-                'description': '与精灵签订契约就职魔法少女，掌握超自然的力量以击败魔族。',
-                'requirement': {'career': 'lv15.sorceress1', 'level': 0x23, 'stories': ['chapter3-5']},
-                'equipments': {'weapon': 'stickWand'},
-                'expFormula': [0x2, 0xa, -0x4, 0x2, 0.3],
-                'skills': {
-                    'sorceress_atk': 0x1,
-                    'wind_blade': 0x1,
-                    'summon_slime': 0x1,
-                    'sorceress_fireBall': 0xf,
-                    'sorceress_lightning': 0xf,
-                    'sorceress_coldBall': 0xf,
-                    'sorceress_magicShield': 0x14,
-                    'sorceress_igniting': 0x19,
-                    'sorceress_vitalitywater': 0x23,
-                    'sorceress_fireBall_ex': 0x28,
-                    'sorceress_overdraft': 0x32,
-                    'sorceress_hellfire': 0x3c,
-                    'sorceress_fireShield': 0x46
-                },
-                'passives': {'magic': 0x1},
-                'enhances': {
-                    'sorceress_enhance1': 0x5,
-                    'sorceress_enhance2': 0xa,
-                    'ss_ee3': 0xa,
-                    'lv15_sorceress1_enhance1': 0xf,
-                    'lv15_ss1_ee2': 0xf,
-                    'lv15_ss1_ee3': 0xf,
-                    'lv15_sorceress1_enhance2': 0x19,
-                    'lv15_sorceress1_enhance3': 0x23,
-                    'lv35_sorceress1_enhance1': 0x2d,
-                    'lv35_sorceress1_enhance2': 0x37,
-                    'lv35_sorceress1_enhance3': 0x41
-                },
-                'availableClasses': {'base': !0x0, 'wand': !0x0, 'cloth': !0x0, 'ornament': !0x0},
-                'attrGrow': {'str': 0x0, 'dex': 0x0, 'int': 0x2, 'sta': 0.5}
-            };
-        }, 2935: m => {
-            m['exports'] = {
-                'key': 'lv35.sorceress2',
-                'name': '水之使徒',
-                'description': '与精灵签订契约就职魔法少女，掌握超自然的力量以击败魔族。',
-                'requirement': {'career': 'lv15.sorceress1', 'level': 0x23, 'stories': ['chapter3-5']},
-                'equipments': {'weapon': 'stickWand'},
-                'expFormula': [0x2, 0xa, -0x4, 0x2, 0.3],
-                'skills': {
-                    'sorceress_atk': 0x1,
-                    'wind_blade': 0x1,
-                    'summon_slime': 0x1,
-                    'sorceress_fireBall': 0xf,
-                    'sorceress_lightning': 0xf,
-                    'sorceress_coldBall': 0xf,
-                    'sorceress_magicShield': 0x14,
-                    'sorceress_igniting': 0x19,
-                    'sorceress_vitalitywater': 0x23,
-                    'sorceress_tide': 0x28,
-                    'sorceress_lucky': 0x32,
-                    'sorceress_torrent': 0x3c,
-                    'sorceress_coldShield': 0x46
-                },
-                'passives': {'magic': 0x1},
-                'enhances': {
-                    'sorceress_enhance1': 0x5,
-                    'sorceress_enhance2': 0xa,
-                    'ss_ee3': 0xa,
-                    'lv15_sorceress1_enhance1': 0xf,
-                    'lv15_ss1_ee2': 0xf,
-                    'lv15_ss1_ee3': 0xf,
-                    'lv15_sorceress1_enhance2': 0x19,
-                    'lv15_sorceress1_enhance3': 0x23,
-                    'lv35_sorceress2_enhance1': 0x2d,
-                    'lv35_sorceress2_enhance2': 0x37,
-                    'lv35_sorceress1_enhance3': 0x41
-                },
-                'availableClasses': {'base': !0x0, 'wand': !0x0, 'cloth': !0x0, 'ornament': !0x0},
-                'attrGrow': {'str': 0x0, 'dex': 0x0, 'int': 0x2, 'sta': 0.5}
-            };
-        }, 939: m => {
-            m['exports'] = {
-                'key': 'lv35.sorceress3',
-                'name': '雷之使徒',
-                'description': '与精灵签订契约就职魔法少女，掌握超自然的力量以击败魔族。',
-                'requirement': {'career': 'lv15.sorceress1', 'level': 0x23, 'stories': ['chapter3-5']},
-                'equipments': {'weapon': 'stickWand'},
-                'expFormula': [0x2, 0xa, -0x4, 0x2, 0.3],
-                'skills': {
-                    'sorceress_atk': 0x1,
-                    'wind_blade': 0x1,
-                    'summon_slime': 0x1,
-                    'sorceress_fireBall': 0xf,
-                    'sorceress_lightning': 0xf,
-                    'sorceress_coldBall': 0xf,
-                    'sorceress_magicShield': 0x14,
-                    'sorceress_igniting': 0x19,
-                    'sorceress_vitalitywater': 0x23,
-                    'sorceress_chainingLightning': 0x28,
-                    'sorceress_energy': 0x32,
-                    'sorceress_supernova': 0x3c,
-                    'sorceress_electrostatic': 0x46
-                },
-                'passives': {'magic': 0x1},
-                'enhances': {
-                    'sorceress_enhance1': 0x5,
-                    'sorceress_enhance2': 0xa,
-                    'ss_ee3': 0xa,
-                    'lv15_sorceress1_enhance1': 0xf,
-                    'lv15_ss1_ee2': 0xf,
-                    'lv15_ss1_ee3': 0xf,
-                    'lv15_sorceress1_enhance2': 0x19,
-                    'lv15_sorceress1_enhance3': 0x23,
-                    'lv35_sorceress3_enhance1': 0x2d,
-                    'lv35_sorceress3_enhance2': 0x37,
-                    'lv35_sorceress1_enhance3': 0x41
-                },
-                'availableClasses': {'base': !0x0, 'wand': !0x0, 'cloth': !0x0, 'ornament': !0x0},
-                'attrGrow': {'str': 0x0, 'dex': 0x0, 'int': 0x2, 'sta': 0.5}
-            };
-        }, 5005: m => {
-            m['exports'] = {
-                'key': 'lv80.sorceress1',
-                'name': '赤焰',
-                'description': '与精灵签订契约就职魔法少女，掌握超自然的力量以击败魔族。',
-                'requirement': {'career': 'lv35.sorceress1', 'level': 0x50, 'stories': ['career-lv80']},
-                'equipments': {'weapon': 'stickWand'},
-                'expFormula': [0x2, 0xa, -0x4, 0x2, 0.3],
-                'skills': {
-                    'sorceress_atk': 0x1,
-                    'wind_blade': 0x1,
-                    'summon_slime': 0x1,
-                    'sorceress_fireBall': 0xf,
-                    'sorceress_lightning': 0xf,
-                    'sorceress_coldBall': 0xf,
-                    'sorceress_magicShield': 0x14,
-                    'sorceress_igniting': 0x19,
-                    'sorceress_vitalitywater': 0x23,
-                    'sorceress_fireBall_ex': 0x1,
-                    'sorceress_overdraft': 0x1,
-                    'sorceress_hellfire': 0x1,
-                    'sorceress_fireShield': 0x1,
-                    'sorceress_bc_fire': 0x50,
-                    'sorceress_fire_wind': 0x5a
-                },
-                'passives': {'magic': 0x1},
-                'enhances': {
-                    'sorceress_enhance1': 0x5,
-                    'sorceress_enhance2': 0xa,
-                    'ss_ee3': 0xa,
-                    'lv15_sorceress1_enhance1': 0xf,
-                    'lv15_ss1_ee2': 0xf,
-                    'lv15_ss1_ee3': 0xf,
-                    'lv15_sorceress1_enhance2': 0x19,
-                    'lv15_sorceress1_enhance3': 0x23,
-                    'lv35_sorceress1_enhance1': 0x1,
-                    'lv35_sorceress1_enhance2': 0x1,
-                    'lv35_sorceress1_enhance3': 0x1,
-                    'lv80_sorceress1_enhance1': 0x50,
-                    'lv80_sorceress1_enhance2': 0x55,
-                    'lv80_sorceress1_enhance3': 0x5a,
-                    'lv80_sorceress1_enhance4': 0x5f,
-                    'lv80_sorceress1_enhance5': 0x64
-                },
-                'availableClasses': {'base': !0x0, 'wand': !0x0, 'cloth': !0x0, 'ornament': !0x0},
-                'attrGrow': {'str': 0x0, 'dex': 0x0, 'int': 2.5, 'sta': 0.5}
-            };
-        }, 3156: m => {
-            m['exports'] = {
-                'key': 'lv80.sorceress2',
-                'name': '青火',
-                'description': '与精灵签订契约就职魔法少女，掌握超自然的力量以击败魔族。',
-                'requirement': {'career': 'lv35.sorceress1', 'level': 0x50, 'stories': ['career-lv80']},
-                'equipments': {'weapon': 'stickWand'},
-                'expFormula': [0x2, 0xa, -0x4, 0x2, 0.3],
-                'skills': {
-                    'sorceress_atk': 0x1,
-                    'wind_blade': 0x1,
-                    'summon_slime': 0x1,
-                    'sorceress_fireBall': 0xf,
-                    'sorceress_lightning': 0xf,
-                    'sorceress_coldBall': 0xf,
-                    'sorceress_magicShield': 0x14,
-                    'sorceress_igniting': 0x19,
-                    'sorceress_vitalitywater': 0x23,
-                    'sorceress_fireBall_ex': 0x1,
-                    'sorceress_overdraft': 0x1,
-                    'sorceress_hellfire': 0x1,
-                    'sorceress_fireShield': 0x1,
-                    'sorceress_bc_fire': 0x50,
-                    'sorceress_hellfire_plus': 0x5a
-                },
-                'passives': {'magic': 0x1},
-                'enhances': {
-                    'sorceress_enhance1': 0x5,
-                    'sorceress_enhance2': 0xa,
-                    'ss_ee3': 0xa,
-                    'lv15_sorceress1_enhance1': 0xf,
-                    'lv15_ss1_ee2': 0xf,
-                    'lv15_ss1_ee3': 0xf,
-                    'lv15_sorceress1_enhance2': 0x19,
-                    'lv15_sorceress1_enhance3': 0x23,
-                    'lv35_sorceress1_enhance1': 0x1,
-                    'lv35_sorceress1_enhance2': 0x1,
-                    'lv35_sorceress1_enhance3': 0x1,
-                    'lv80_sorceress2_enhance1': 0x50,
-                    'lv80_sorceress1_enhance2': 0x55,
-                    'lv80_sorceress2_enhance3': 0x5a,
-                    'lv80_sorceress1_enhance4': 0x5f,
-                    'lv80_sorceress2_enhance5': 0x64
-                },
-                'availableClasses': {'base': !0x0, 'wand': !0x0, 'cloth': !0x0, 'ornament': !0x0},
-                'attrGrow': {'str': 0x0, 'dex': 0x0, 'int': 2.5, 'sta': 0.5}
-            };
-        }, 1099: m => {
-            m['exports'] = {
-                'key': 'lv80.sorceress3',
-                'name': '水魄',
-                'description': '与精灵签订契约就职魔法少女，掌握超自然的力量以击败魔族。',
-                'requirement': {'career': 'lv35.sorceress2', 'level': 0x50, 'stories': ['career-lv80']},
-                'equipments': {'weapon': 'stickWand'},
-                'expFormula': [0x2, 0xa, -0x4, 0x2, 0.3],
-                'skills': {
-                    'sorceress_atk': 0x1,
-                    'wind_blade': 0x1,
-                    'summon_slime': 0x1,
-                    'sorceress_fireBall': 0xf,
-                    'sorceress_lightning': 0xf,
-                    'sorceress_coldBall': 0xf,
-                    'sorceress_magicShield': 0x14,
-                    'sorceress_igniting': 0x19,
-                    'sorceress_vitalitywater': 0x23,
-                    'sorceress_tide': 0x28,
-                    'sorceress_lucky': 0x32,
-                    'sorceress_torrent': 0x3c,
-                    'sorceress_coldShield': 0x46,
-                    'sorceress_bc_cold': 0x50,
-                    'sorceress_sea': 0x5a
-                },
-                'passives': {'magic': 0x1},
-                'enhances': {
-                    'sorceress_enhance1': 0x5,
-                    'sorceress_enhance2': 0xa,
-                    'ss_ee3': 0xa,
-                    'lv15_sorceress1_enhance1': 0xf,
-                    'lv15_ss1_ee2': 0xf,
-                    'lv15_ss1_ee3': 0xf,
-                    'lv15_sorceress1_enhance2': 0x19,
-                    'lv15_sorceress1_enhance3': 0x23,
-                    'lv35_sorceress2_enhance1': 0x1,
-                    'lv35_sorceress2_enhance2': 0x1,
-                    'lv35_sorceress1_enhance3': 0x1,
-                    'lv80_sorceress3_enhance1': 0x50,
-                    'lv80_sorceress3_enhance2': 0x55,
-                    'lv80_sorceress3_enhance3': 0x5a,
-                    'lv80_sorceress1_enhance4': 0x5f,
-                    'lv80_sorceress3_enhance5': 0x64
-                },
-                'availableClasses': {'base': !0x0, 'wand': !0x0, 'cloth': !0x0, 'ornament': !0x0},
-                'attrGrow': {'str': 0x0, 'dex': 0x0, 'int': 2.5, 'sta': 0.5}
-            };
-        }, 594: m => {
-            m['exports'] = {
-                'key': 'lv80.sorceress4',
-                'name': '冰魂',
-                'description': '与精灵签订契约就职魔法少女，掌握超自然的力量以击败魔族。',
-                'requirement': {'career': 'lv35.sorceress2', 'level': 0x50, 'stories': ['career-lv80']},
-                'equipments': {'weapon': 'stickWand'},
-                'expFormula': [0x2, 0xa, -0x4, 0x2, 0.3],
-                'skills': {
-                    'sorceress_atk': 0x1,
-                    'wind_blade': 0x1,
-                    'summon_slime': 0x1,
-                    'sorceress_fireBall': 0xf,
-                    'sorceress_lightning': 0xf,
-                    'sorceress_coldBall': 0xf,
-                    'sorceress_magicShield': 0x14,
-                    'sorceress_igniting': 0x19,
-                    'sorceress_vitalitywater': 0x23,
-                    'sorceress_tide': 0x28,
-                    'sorceress_lucky': 0x32,
-                    'sorceress_torrent': 0x3c,
-                    'sorceress_coldShield': 0x46,
-                    'sorceress_bc_cold': 0x50,
-                    'sorceress_blizzard': 0x5a
-                },
-                'passives': {'magic': 0x1},
-                'enhances': {
-                    'sorceress_enhance1': 0x5,
-                    'sorceress_enhance2': 0xa,
-                    'ss_ee3': 0xa,
-                    'lv15_sorceress1_enhance1': 0xf,
-                    'lv15_ss1_ee2': 0xf,
-                    'lv15_ss1_ee3': 0xf,
-                    'lv15_sorceress1_enhance2': 0x19,
-                    'lv15_sorceress1_enhance3': 0x23,
-                    'lv35_sorceress2_enhance1': 0x1,
-                    'lv35_sorceress2_enhance2': 0x1,
-                    'lv35_sorceress1_enhance3': 0x1,
-                    'lv80_sorceress4_enhance1': 0x50,
-                    'lv80_sorceress3_enhance2': 0x55,
-                    'lv80_sorceress4_enhance3': 0x5a,
-                    'lv80_sorceress1_enhance4': 0x5f,
-                    'lv80_sorceress4_enhance5': 0x64
-                },
-                'availableClasses': {'base': !0x0, 'wand': !0x0, 'cloth': !0x0, 'ornament': !0x0},
-                'attrGrow': {'str': 0x0, 'dex': 0x0, 'int': 2.5, 'sta': 0.5}
-            };
-        }, 8225: m => {
-            m['exports'] = {
-                'key': 'lv80.sorceress5',
-                'name': '电主',
-                'description': '与精灵签订契约就职魔法少女，掌握超自然的力量以击败魔族。',
-                'requirement': {'career': 'lv35.sorceress3', 'level': 0x50, 'stories': ['career-lv80']},
-                'equipments': {'weapon': 'stickWand'},
-                'expFormula': [0x2, 0xa, -0x4, 0x2, 0.3],
-                'skills': {
-                    'sorceress_atk': 0x1,
-                    'wind_blade': 0x1,
-                    'summon_slime': 0x1,
-                    'sorceress_fireBall': 0xf,
-                    'sorceress_lightning': 0xf,
-                    'sorceress_coldBall': 0xf,
-                    'sorceress_magicShield': 0x14,
-                    'sorceress_igniting': 0x19,
-                    'sorceress_vitalitywater': 0x23,
-                    'sorceress_chainingLightning': 0x1,
-                    'sorceress_energy': 0x1,
-                    'sorceress_supernova': 0x1,
-                    'sorceress_electrostatic': 0x1,
-                    'sorceress_bc_lightning': 0x50,
-                    'sorceress_impulse': 0x5a
-                },
-                'passives': {'magic': 0x1, 'elect': 0x1},
-                'enhances': {
-                    'sorceress_enhance1': 0x5,
-                    'sorceress_enhance2': 0xa,
-                    'ss_ee3': 0xa,
-                    'lv15_sorceress1_enhance1': 0xf,
-                    'lv15_ss1_ee2': 0xf,
-                    'lv15_ss1_ee3': 0xf,
-                    'lv15_sorceress1_enhance2': 0x19,
-                    'lv15_sorceress1_enhance3': 0x23,
-                    'lv35_sorceress3_enhance1': 0x1,
-                    'lv35_sorceress3_enhance2': 0x1,
-                    'lv35_sorceress1_enhance3': 0x1,
-                    'lv80_sorceress5_enhance1': 0x50,
-                    'lv80_sorceress5_enhance2': 0x55,
-                    'lv80_sorceress5_enhance3': 0x5a,
-                    'lv80_sorceress1_enhance4': 0x5f,
-                    'lv80_sorceress5_enhance5': 0x64
-                },
-                'availableClasses': {'base': !0x0, 'wand': !0x0, 'cloth': !0x0, 'ornament': !0x0},
-                'attrGrow': {'str': 0x0, 'dex': 0x0, 'int': 2.5, 'sta': 0.5}
-            };
-        }, 8952: m => {
-            m['exports'] = {
-                'key': 'lv80.sorceress6',
-                'name': '雷神',
-                'description': '与精灵签订契约就职魔法少女，掌握超自然的力量以击败魔族。',
-                'requirement': {'career': 'lv35.sorceress3', 'level': 0x50, 'stories': ['career-lv80']},
-                'equipments': {'weapon': 'stickWand'},
-                'expFormula': [0x2, 0xa, -0x4, 0x2, 0.3],
-                'skills': {
-                    'sorceress_atk': 0x1,
-                    'wind_blade': 0x1,
-                    'summon_slime': 0x1,
-                    'sorceress_fireBall': 0xf,
-                    'sorceress_lightning': 0xf,
-                    'sorceress_coldBall': 0xf,
-                    'sorceress_magicShield': 0x14,
-                    'sorceress_igniting': 0x19,
-                    'sorceress_vitalitywater': 0x23,
-                    'sorceress_chainingLightning': 0x1,
-                    'sorceress_energy': 0x1,
-                    'sorceress_supernova': 0x1,
-                    'sorceress_electrostatic': 0x1,
-                    'sorceress_bc_lightning': 0x50,
-                    'sorceress_thunder': 0x5a
-                },
-                'passives': {'magic': 0x1},
-                'enhances': {
-                    'sorceress_enhance1': 0x5,
-                    'sorceress_enhance2': 0xa,
-                    'ss_ee3': 0xa,
-                    'lv15_sorceress1_enhance1': 0xf,
-                    'lv15_ss1_ee2': 0xf,
-                    'lv15_ss1_ee3': 0xf,
-                    'lv15_sorceress1_enhance2': 0x19,
-                    'lv15_sorceress1_enhance3': 0x23,
-                    'lv35_sorceress3_enhance1': 0x1,
-                    'lv35_sorceress3_enhance2': 0x1,
-                    'lv35_sorceress1_enhance3': 0x1,
-                    'lv80_sorceress6_enhance1': 0x50,
-                    'lv80_sorceress5_enhance2': 0x55,
-                    'lv80_sorceress6_enhance3': 0x5a,
-                    'lv80_sorceress1_enhance4': 0x5f,
-                    'lv80_sorceress6_enhance5': 0x64
-                },
-                'availableClasses': {'base': !0x0, 'wand': !0x0, 'cloth': !0x0, 'ornament': !0x0},
-                'attrGrow': {'str': 0x0, 'dex': 0x0, 'int': 2.5, 'sta': 0.5}
-            };
-        }, 6068: m => {
+            m['exports'] = [p(0x240d), p(0x2088)];
+        }, 8328: m => {
             m['exports'] = {
                 'key': 'sorceress',
                 'name': '魔法学徒',
                 'description': '与精灵签订契约就职魔法少女，掌握超自然的力量以击败魔族。',
                 'requirement': {'role': 'Aleanor', 'level': 0x65},
-                'equipments': {'weapon': 'stickWand'},
-                'expFormula': [0x2, 0xa, -0x4, 0x2, 0.3],
-                'skills': {'sorceress_atk': 0x1, 'wind_blade': 0x2, 'summon_slime': 0x5},
-                'passives': {'magic': 0x1},
-                'enhances': {'sorceress_enhance1': 0x5, 'sorceress_enhance2': 0xa, 'ss_ee3': 0xa},
-                'availableClasses': {'base': !0x0, 'wand': !0x0, 'cloth': !0x0, 'ornament': !0x0},
-                'attrGrow': {'str': 0x0, 'dex': 0x0, 'int': 0x1, 'sta': 0.5}
-            };
-        }, 1329: m => {
-            m['exports'] = {
-                'key': 'soulbringer',
-                'name': '黑暗君主',
-                'description': '黑暗君主',
-                'requirement': {'role': 'iPhone14promax'},
-                'equipments': {'weapon': 'LongSword'},
-                'expFormula': [0x2, 0xa, -0x4, 0x2, 0.3],
-                'skills': {
-                    'soulbringer_atk': 0x1,
-                    'onikiri': 0x2,
-                    'soul_power': 0x5,
-                    'moonlight_slash': 0xa,
-                    'ghost_whip': 0xf,
-                    'soul_armor': 0xf,
-                    'tombstone': 0x14,
-                    'soul_weak': 0x14,
-                    'ghost_fury': 0x19,
-                    'soul_shadow': 0x1e,
-                    'soul_ice': 0x1e,
-                    'soul_poison': 0x23,
-                    'ghost_puncture': 0x28,
-                    'soul_darkfire': 0x2d,
-                    'tombstoneplus': 0x32,
-                    'ghost_pidi': 0x3c,
-                    'dark_jige': 0x46,
-                    'soul_iceplus': 0x50,
-                    'soul_7': 0x5a
-                },
-                'passives': {'soulbringer_passive': 0x1},
-                'enhances': {
-                    'soulbringer_enhance1': 0x5,
-                    'soulbringer_enhance2': 0xa,
-                    'soulbringer_enhance3': 0x14,
-                    'soulbringer_enhance4': 0x28,
-                    'soulbringer_enhance5': 0x3c,
-                    'soulbringer_enhance6': 0x5a
-                },
-                'availableClasses': {'base': !0x0, 'sword': !0x0, 'longsword': !0x0, 'cloth': !0x0, 'ornament': !0x0},
-                'attrGrow': {'str': 1.5, 'dex': 0.5, 'int': 1.5, 'sta': 0.5}
-            };
-        }, 328: (m, o, p) => {
-            m['exports'] = [p(0x199f)];
-        }, 6559: m => {
-            m['exports'] = {
-                'key': 'villagelv1',
-                'name': '拳师',
-                'description': '1',
-                'requirement': {'role': 'villageH', 'level': 0x65},
                 'equipments': {},
                 'expFormula': [0x2, 0xa, -0x4, 0x2, 0.3],
-                'skills': {
-                    'vbsk1': 0x1,
-                    'vbsk2': 0x1,
-                    'vbsk3': 0x1,
-                    'vbsk4': 0x1,
-                    'vbsk5': 0x1,
-                    'vbsk6': 0x1,
-                    'vbsk7': 0x1,
-                    'vbsk8': 0x1,
-                    'vbsk9': 0x1
-                },
-                'passives': {'vbps1': 0x1},
+                'skills': {},
+                'passives': {'magic': 0x1},
                 'enhances': {},
-                'availableClasses': {'base': !0x0, 'armor': !0x0, 'cloth': !0x0, 'ornament': !0x0},
-                'attrGrow': {'str': 0x2, 'dex': 0.5, 'int': 0x0, 'sta': 1.5}
+                'availableClasses': {'base': !0x0},
+                'attrGrow': {'str': 0x0, 'dex': 0x0, 'int': 0x2, 'sta': 0x1}
             };
-        }, 9414: (m, o, p) => {
-            m['exports'] = [p(0x2408), p(0x1729), p(0x2037), p(0xb6b), p(0x16be), p(0x1b3f), p(0x4d3), p(0x1e56), p(0xf89), p(0x18c4)];
-        }, 5929: m => {
-            m['exports'] = {
-                'key': 'warrior1.lv15',
-                'name': '剑斗士',
-                'description': '好用的炮灰(?)职业，用肌肉来解决问题。',
-                'requirement': {'career': 'warrior', 'level': 0xf, 'stories': ['eyer-stories-10']},
-                'equipments': {'weapon': 'stickSword'},
-                'expFormula': [0x2, 0xa, -0x4, 0x2, 0.3],
-                'attrGrow': {'str': 0.5, 'dex': 0x0, 'int': 0x0, 'sta': 0.5},
-                'skills': {
-                    'warrior_atk': 0x1,
-                    'save_oneself': 0x1,
-                    'thump': 0x1,
-                    'fury_cutter': 0xf,
-                    'warrior_hp': 0x14,
-                    'whirlwind': 0x19,
-                    'warrior_def': 0x1e,
-                    'hamstring': 0x23
-                },
-                'passives': {'warrior_passive1': 0x1},
-                'enhances': {
-                    'warrior_enhance1': 0x5,
-                    'wree2': 0x5,
-                    'wree3': 0x5,
-                    'warrior_enhance2': 0x1,
-                    'lv15_warrior_enhance1': 0xf,
-                    'lv15_warrior_enhance2': 0x19,
-                    'lv15_warrior_enhance3': 0x23
-                },
-                'availableClasses': {
-                    'base': !0x0,
-                    'sword': !0x0,
-                    'swordshield': !0x0,
-                    'lightArmor': !0x0,
-                    'armor': !0x0,
-                    'ornament': !0x0
-                }
-            };
-        }, 8247: m => {
-            m['exports'] = {
-                'key': 'warrior3.lv15',
-                'name': '刀客',
-                'description': '好用的炮灰(?)职业，用肌肉来解决问题。',
-                'requirement': {'career': 'warrior', 'level': 0xf, 'stories': ['eyer-stories-10']},
-                'equipments': {'weapon': 'Machete'},
-                'expFormula': [0x2, 0xa, -0x4, 0x2, 0.3],
-                'attrGrow': {'str': 0.5, 'dex': 0x0, 'int': 0x0, 'sta': 0.5},
-                'skills': {
-                    'warrior_atk': 0x1,
-                    'save_oneself': 0x1,
-                    'thump': 0x1,
-                    'hacking': 0xf,
-                    'warrior_hp': 0x14,
-                    'shield_wall': 0x19,
-                    'warrior_def': 0x1e,
-                    'sunder_armor': 0x23
-                },
-                'passives': {'warrior_passive1': 0x1},
-                'enhances': {
-                    'warrior_enhance1': 0x5,
-                    'wree2': 0x5,
-                    'wree3': 0x5,
-                    'warrior_enhance2': 0x1,
-                    'lv15_warrior_enhance1': 0xf,
-                    'lv15_warrior_enhance2': 0x19,
-                    'lv15_warrior_enhance3': 0x1e
-                },
-                'availableClasses': {
-                    'base': !0x0,
-                    'machete': !0x0,
-                    'macheteshield': !0x0,
-                    'lightArmor': !0x0,
-                    'armor': !0x0,
-                    'ornament': !0x0
-                }
-            };
-        }, 2923: m => {
-            m['exports'] = {
-                'key': 'warrior1.lv35',
-                'name': '大剑士',
-                'description': '好用的炮灰(?)职业，用肌肉来解决问题。',
-                'requirement': {'career': 'warrior1.lv15', 'level': 0x23, 'stories': ['chapter3-5']},
-                'equipments': {'weapon': 'stickSword'},
-                'expFormula': [0x2, 0xa, -0x4, 0x2, 0.3],
-                'attrGrow': {'str': 0x1, 'dex': 0.5, 'int': 0x0, 'sta': 0x1},
-                'skills': {
-                    'warrior_atk': 0x1,
-                    'save_oneself': 0x1,
-                    'thump': 0x1,
-                    'fury_cutter': 0x1,
-                    'warrior_hp': 0x1,
-                    'whirlwind': 0x1,
-                    'warrior_def': 0x1,
-                    'hamstring': 0x1,
-                    'element_fire': 0x28,
-                    'white_heat': 0x32,
-                    'fury_cutter_plus': 0x3c,
-                    'block': 0x46
-                },
-                'passives': {'warrior_passive1': 0x1},
-                'enhances': {
-                    'warrior_enhance1': 0x5,
-                    'wree2': 0x5,
-                    'wree3': 0x5,
-                    'warrior_enhance2': 0x1,
-                    'lv15_warrior_enhance1': 0x1,
-                    'lv15_warrior_enhance2': 0x1,
-                    'lv15_warrior_enhance3': 0x1,
-                    'lv35_warrior1_enhance1': 0x2d,
-                    'lv35_warrior1_enhance2': 0x37,
-                    'lv35_warrior1_enhance3': 0x41
-                },
-                'availableClasses': {'base': !0x0, 'sword': !0x0, 'lightArmor': !0x0, 'ornament': !0x0}
-            };
-        }, 5822: m => {
-            m['exports'] = {
-                'key': 'warrior2.lv35',
-                'name': '守护者',
-                'description': '好用的炮灰(?)职业，用肌肉来解决问题。',
-                'requirement': {'career': 'warrior1.lv15', 'level': 0x23, 'stories': ['chapter3-5']},
-                'equipments': {'weapon': 'SwordShield'},
-                'expFormula': [0x2, 0xa, -0x4, 0x2, 0.3],
-                'attrGrow': {'str': 1.5, 'dex': 0x1, 'int': 0x0, 'sta': 0x2},
-                'skills': {
-                    'warrior_atk': 0x1,
-                    'save_oneself': 0x1,
-                    'thump': 0x1,
-                    'fury_cutter': 0x1,
-                    'warrior_hp': 0x1,
-                    'whirlwind': 0x1,
-                    'warrior_def': 0x1,
-                    'hamstring': 0x1,
-                    'guardian': 0x28,
-                    'shield_charge': 0x32,
-                    'fury_cutter_plus': 0x3c,
-                    'defensive_stance': 0x46,
-                    'first_aid': 0x50,
-                    'infinite_justice': 0x5a
-                },
-                'passives': {'warrior_passive1': 0x1, 'warrior_passive4': 0x1},
-                'enhances': {
-                    'warrior_enhance1': 0x5,
-                    'wree2': 0x5,
-                    'wree3': 0x5,
-                    'warrior_enhance2': 0x1,
-                    'lv15_warrior_enhance1': 0x1,
-                    'lv15_warrior_enhance2': 0x1,
-                    'lv15_warrior_enhance3': 0x1,
-                    'lv35_warrior2_enhance1': 0x2d,
-                    'lv35_warrior2_enhance2': 0x37,
-                    'lv35_warrior2_enhance3': 0x41,
-                    'lv35_warrior2_enhance8': 0x50,
-                    'lv35_warrior2_enhance5': 0x55,
-                    'lv35_warrior2_enhance6': 0x5a,
-                    'lv35_warrior2_enhance7': 0x5f,
-                    'lv35_warrior2_enhance4': 0x64
-                },
-                'availableClasses': {'base': !0x0, 'swordshield': !0x0, 'armor': !0x0, 'ornament': !0x0}
-            };
-        }, 6975: m => {
-            m['exports'] = {
-                'key': 'warrior5.lv35',
-                'name': '勇士',
-                'description': '好用的炮灰(?)职业，用肌肉来解决问题。',
-                'requirement': {'career': 'warrior3.lv15', 'level': 0x23, 'stories': ['chapter3-5']},
-                'equipments': {'weapon': 'Machete'},
-                'expFormula': [0x2, 0xa, -0x4, 0x2, 0.3],
-                'attrGrow': {'str': 0x1, 'dex': 0.5, 'int': 0x0, 'sta': 0x1},
-                'skills': {
-                    'warrior_atk': 0x1,
-                    'save_oneself': 0x1,
-                    'thump': 0x1,
-                    'hacking': 0x1,
-                    'warrior_hp': 0x1,
-                    'shield_wall': 0x1,
-                    'warrior_def': 0x1,
-                    'sunder_armor': 0x1,
-                    'element_cold_fire': 0x28,
-                    'fanatical': 0x32,
-                    'hacking_plus_double': 0x3c,
-                    'block': 0x46
-                },
-                'passives': {'warrior_passive1': 0x1},
-                'enhances': {
-                    'warrior_enhance1': 0x5,
-                    'wree2': 0x5,
-                    'wree3': 0x5,
-                    'warrior_enhance2': 0x1,
-                    'lv15_warrior_enhance1': 0x1,
-                    'lv15_warrior_enhance2': 0x1,
-                    'lv15_warrior_enhance3': 0x1,
-                    'lv35_warrior2_enhance1': 0x2d,
-                    'lv35_warrior5_enhance2': 0x37,
-                    'lv35_warrior5_enhance3': 0x41
-                },
-                'availableClasses': {'base': !0x0, 'machete': !0x0, 'lightArmor': !0x0, 'ornament': !0x0}
-            };
-        }, 1235: m => {
-            m['exports'] = {
-                'key': 'warrior1.lv80',
-                'name': '魔剑士',
-                'description': '好用的炮灰(?)职业，用肌肉来解决问题。',
-                'requirement': {'career': 'warrior1.lv35', 'level': 0x50, 'stories': ['career-lv80']},
-                'equipments': {'weapon': 'stickSword'},
-                'expFormula': [0x2, 0xa, -0x4, 0x2, 0.3],
-                'attrGrow': {'str': 1.5, 'dex': 0x0, 'int': 0x1, 'sta': 1.5},
-                'skills': {
-                    'warrior_atk': 0x1,
-                    'save_oneself': 0x1,
-                    'thump': 0x1,
-                    'fury_cutter': 0x1,
-                    'warrior_hp': 0x1,
-                    'whirlwind': 0x1,
-                    'warrior_def': 0x1,
-                    'hamstring': 0x1,
-                    'element_fire': 0x28,
-                    'white_heat': 0x32,
-                    'fury_cutter_plus': 0x3c,
-                    'block': 0x46,
-                    'flame_armor': 0x50,
-                    'dragon_breath': 0x5a
-                },
-                'passives': {'warrior_passive1': 0x1, 'warrior_passive2': 0x1},
-                'enhances': {
-                    'warrior_enhance1': 0x5,
-                    'wree2': 0x5,
-                    'wree3': 0x5,
-                    'warrior_enhance2': 0x1,
-                    'lv15_warrior_enhance1': 0x1,
-                    'lv15_warrior_enhance2': 0x1,
-                    'lv15_warrior_enhance3': 0x1,
-                    'lv35_warrior1_enhance1': 0x2d,
-                    'lv35_warrior1_enhance2': 0x37,
-                    'lv35_warrior1_enhance3': 0x41,
-                    'lv80_warrior1_enhance1': 0x50,
-                    'lv80_warrior1_enhance2': 0x55,
-                    'lv80_warrior1_enhance3': 0x5a,
-                    'lv80_warrior1_enhance4': 0x5f,
-                    'lv80_warrior1_enhance5': 0x64
-                },
-                'availableClasses': {'base': !0x0, 'sword': !0x0, 'lightArmor': !0x0, 'ornament': !0x0}
-            };
-        }, 7766: m => {
-            m['exports'] = {
-                'key': 'warrior2.lv80',
-                'name': '宗师',
-                'description': '好用的炮灰(?)职业，用肌肉来解决问题。',
-                'requirement': {'career': 'warrior1.lv35', 'level': 0x50, 'stories': ['career-lv80']},
-                'equipments': {'weapon': 'stickSword'},
-                'expFormula': [0x2, 0xa, -0x4, 0x2, 0.3],
-                'attrGrow': {'str': 1.5, 'dex': 0x1, 'int': 0x0, 'sta': 1.5},
-                'skills': {
-                    'warrior_atk': 0x1,
-                    'save_oneself': 0x1,
-                    'thump': 0x1,
-                    'fury_cutter': 0x1,
-                    'warrior_hp': 0x1,
-                    'whirlwind': 0x1,
-                    'warrior_def': 0x1,
-                    'hamstring': 0x1,
-                    'element_fire': 0x1,
-                    'white_heat': 0x1,
-                    'fury_cutter_plus': 0x1,
-                    'block': 0x1,
-                    'fury_cutter_time': 0x50,
-                    'omnislash': 0x5a
-                },
-                'passives': {'warrior_passive1': 0x1, 'warrior_passive3': 0x1},
-                'enhances': {
-                    'warrior_enhance1': 0x5,
-                    'wree2': 0x5,
-                    'wree3': 0x5,
-                    'warrior_enhance2': 0x1,
-                    'lv15_warrior_enhance1': 0x1,
-                    'lv15_warrior_enhance2': 0x1,
-                    'lv15_warrior_enhance3': 0x1,
-                    'lv35_warrior1_enhance1': 0x1,
-                    'lv35_warrior1_enhance2': 0x1,
-                    'lv35_warrior1_enhance3': 0x1,
-                    'lv80_warrior2_enhance1': 0x50,
-                    'lv80_warrior2_enhance2': 0x55,
-                    'lv80_warrior2_enhance3': 0x5a,
-                    'lv80_warrior2_enhance4': 0x5f,
-                    'lv80_warrior2_enhance5': 0x64
-                },
-                'availableClasses': {'base': !0x0, 'sword': !0x0, 'lightArmor': !0x0, 'ornament': !0x0}
-            };
-        }, 3977: m => {
-            m['exports'] = {
-                'key': 'warrior7.lv80',
-                'name': '血魔',
-                'description': '好用的炮灰(?)职业，用肌肉来解决问题。',
-                'requirement': {'career': 'warrior5.lv35', 'level': 0x50, 'stories': ['career-lv80']},
-                'equipments': {'weapon': 'Machete'},
-                'expFormula': [0x2, 0xa, -0x4, 0x2, 0.3],
-                'attrGrow': {'str': 1.5, 'dex': 0x1, 'int': 0x0, 'sta': 1.5},
-                'skills': {
-                    'warrior_atk': 0x1,
-                    'save_oneself': 0x1,
-                    'thump': 0x1,
-                    'hacking': 0x1,
-                    'warrior_hp': 0x1,
-                    'shield_wall': 0x1,
-                    'warrior_def': 0x1,
-                    'sunder_armor': 0x1,
-                    'element_cold_fire': 0x1,
-                    'fanatical': 0x1,
-                    'hacking_plus_double': 0x1,
-                    'block': 0x1,
-                    'ghost_shuffle': 0x50,
-                    'hacking_time': 0x5a
-                },
-                'passives': {'warrior_passive1': 0x1, 'warrior_passive5': 0x1},
-                'enhances': {
-                    'warrior_enhance1': 0x5,
-                    'wree2': 0x5,
-                    'wree3': 0x5,
-                    'warrior_enhance2': 0x1,
-                    'lv15_warrior_enhance1': 0x1,
-                    'lv15_warrior_enhance2': 0x1,
-                    'lv15_warrior_enhance3': 0x1,
-                    'lv35_warrior2_enhance1': 0x1,
-                    'lv35_warrior5_enhance2': 0x1,
-                    'lv35_warrior5_enhance3': 0x1,
-                    'lv80_warrior5_enhance1': 0x50,
-                    'lv80_warrior5_enhance2': 0x55,
-                    'lv80_warrior5_enhance3': 0x5a,
-                    'lv80_warrior5_enhance4': 0x5f,
-                    'lv80_warrior5_enhance5': 0x64
-                },
-                'availableClasses': {'base': !0x0, 'machete': !0x0, 'lightArmor': !0x0, 'ornament': !0x0}
-            };
-        }, 6340: m => {
-            m['exports'] = {
-                'key': 'warrior8.lv80',
-                'name': '焚天',
-                'description': '好用的炮灰(?)职业，用肌肉来解决问题。',
-                'requirement': {'career': 'warrior5.lv35', 'level': 0x50, 'stories': ['career-lv80']},
-                'equipments': {'weapon': 'Machete'},
-                'expFormula': [0x2, 0xa, -0x4, 0x2, 0.3],
-                'attrGrow': {'str': 1.5, 'dex': 0x0, 'int': 0x1, 'sta': 1.5},
-                'skills': {
-                    'warrior_atk': 0x1,
-                    'save_oneself': 0x1,
-                    'thump': 0x1,
-                    'hacking': 0x1,
-                    'warrior_hp': 0x1,
-                    'shield_wall': 0x1,
-                    'warrior_def': 0x1,
-                    'sunder_armor': 0x1,
-                    'element_cold_fire': 0x1,
-                    'fanatical': 0x1,
-                    'hacking_plus_double': 0x1,
-                    'block': 0x1,
-                    'warrior_deadline': 0x50,
-                    'warrior_con_energy': 0x5a
-                },
-                'passives': {'warrior_passive1': 0x1, 'warrior_passive6': 0x1},
-                'enhances': {
-                    'warrior_enhance1': 0x5,
-                    'wree2': 0x5,
-                    'wree3': 0x5,
-                    'warrior_enhance2': 0x1,
-                    'lv15_warrior_enhance1': 0x1,
-                    'lv15_warrior_enhance2': 0x1,
-                    'lv15_warrior_enhance3': 0x1,
-                    'lv35_warrior2_enhance1': 0x1,
-                    'lv35_warrior5_enhance2': 0x1,
-                    'lv35_warrior5_enhance3': 0x1,
-                    'lv80_warrior1_enhance3': 0x50,
-                    'lv80_warrior8_enhance1': 0x55,
-                    'lv80_warrior8_enhance1_2': 0x55,
-                    'lv80_warrior8_enhance2': 0x5a,
-                    'lv80_wr8_ee2_2': 0x5a,
-                    'lv80_wr8_ee2_3': 0x5a,
-                    'lv80_warrior8_enhance3': 0x5f,
-                    'lv80_warrior8_enhance3_2': 0x5f,
-                    'lv80_warrior8_enhance4': 0x64
-                },
-                'availableClasses': {'base': !0x0, 'machete': !0x0, 'lightArmor': !0x0, 'ornament': !0x0}
-            };
-        }, 9224: m => {
+        }, 9229: m => {
             m['exports'] = {
                 'key': 'warrior',
                 'name': '战士',
                 'description': '好用的炮灰(?)职业，用肌肉来解决问题。',
                 'requirement': {'role': 'Eyer', 'level': 0x65},
-                'equipments': {'weapon': 'stickSword'},
+                'equipments': {},
                 'expFormula': [0x2, 0xa, -0x4, 0x2, 0.3],
-                'attrGrow': {'str': 0x0, 'dex': 0x0, 'int': 0x0, 'sta': 0.5},
-                'skills': {'warrior_atk': 0x1, 'save_oneself': 0x2, 'thump': 0x5},
+                'attrGrow': {'str': 0x2, 'dex': 0x1, 'int': 0x0, 'sta': 0x2},
+                'skills': {},
                 'passives': {'warrior_passive1': 0x1},
-                'enhances': {'warrior_enhance1': 0x5, 'wree2': 0x5, 'wree3': 0x5, 'warrior_enhance2': 0xa},
-                'availableClasses': {
-                    'base': !0x0,
-                    'sword': !0x0,
-                    'swordshield': !0x0,
-                    'spear': !0x0,
-                    'spearshield': !0x0,
-                    'machete': !0x0,
-                    'macheteshield': !0x0,
-                    'lightArmor': !0x0,
-                    'armor': !0x0,
-                    'ornament': !0x0
-                }
+                'enhances': {},
+                'availableClasses': {'base': !0x0}
             };
         }, 7586: m => {
             m['exports'] = [{
                 'key': 'fotiaoqiang',
                 'name': '史莱姆果冻',
-                'description': o => '力量、敏捷、智力、耐力分别增加' + 0x5 *10* o + '点',
+                'description': o => '力量、敏捷、智力、耐力分别增加' + 0x5*10 * o + '点',
                 'Max_level': 0x270f,
                 'hooks': {
-                    'str': (o, p) => p + 0x5 *10* Math['min'](o, 0x270f),
-                    'dex': (o, p) => p + 0x5 *10* Math['min'](o, 0x270f),
-                    'int': (o, p) => p + 0x5 *10* Math['min'](o, 0x270f),
-                    'sta': (o, p) => p + 0x5 *10* Math['min'](o, 0x270f)
+                    'str': (o, p) => p + 0x5*10 * Math['min'](o, 0x270f),
+                    'dex': (o, p) => p + 0x5*10 * Math['min'](o, 0x270f),
+                    'int': (o, p) => p + 0x5*10 * Math['min'](o, 0x270f),
+                    'sta': (o, p) => p + 0x5*10 * Math['min'](o, 0x270f)
                 }
             }, {
                 'key': 'huangguajianzirou',
                 'name': '艾尔秘制面包',
-                'description': o => '物理防御增加' + 0x19 *4* o + '点',
+                'description': o => '物理防御增加' + 0x19*10 * o + '点',
                 'Max_level': 0x270f,
-                'hooks': {'defAdd': (o, p) => p + 0x19 *4* o}
+                'hooks': {'defAdd': (o, p) => p + 0x19*10 * o}
             }, {
                 'key': 'cuigualijisi',
                 'name': '酒心巧克力',
-                'description': o => '元素抗性增加' + 0x19 *4* o + '点',
+                'description': o => '元素抗性增加' + 0x19*10 * o + '点',
                 'Max_level': 0x270f,
-                'hooks': {'allResAdd': (o, p) => p + 0x19 *4* o}
+                'hooks': {'allResAdd': (o, p) => p + 0x19*10 * o}
             }, {
                 'key': 'tangcupaigu',
                 'name': '小饼干',
-                'description': o => '闪避增加' + 0x1e *4* o + '点',
+                'description': o => '闪避增加' + 0x1e*10 * o + '点',
                 'Max_level': 0x270f,
-                'hooks': {'shanbizhiAdd': (o, p) => p + 0x1e *4* o}
+                'hooks': {'shanbizhiAdd': (o, p) => p + 0x1e*10 * o}
             }, {
                 'key': 'suanxiangbairou',
                 'name': '幻想森林果派',
@@ -2437,15 +1261,21 @@ a();
             }, {
                 'key': 'lianyushuizhuyu',
                 'name': '炼狱海鲜烩',
-                'description': o => '生命值上限' + 0x28 *2* o + '点',
+                'description': o => '生命值上限' + 0x3c*10 * o + '点',
                 'Max_level': 0x270f,
-                'hooks': {'maxHpAdd': (o, p) => p + 0x28 *2* o}
+                'hooks': {'maxHpAdd': (o, p) => p + 0x3c*10 * o}
             }, {
                 'key': 'bingzhenxiaolongxia',
                 'name': '冰镇小龙虾',
-                'description': o => '法力值上限' + 0x28 *2* o + '点',
+                'description': o => '法力值上限' + 0x3c*10 * o + '点',
                 'Max_level': 0x270f,
-                'hooks': {'maxMpAdd': (o, p) => p + 0x28 *2* o}
+                'hooks': {'maxMpAdd': (o, p) => p + 0x3c*10 * o}
+            }, {
+                'key': 'zkb',
+                'name': '炸昆布',
+                'description': o => '怒气上限' + 0xa*10 * o + '点',
+                'Max_level': 0x14,
+                'hooks': {'maxRp': (o, p) => p + 0xa*10 * o}
             }];
         }, 5353: m => {
             m['exports'] = [{
@@ -4241,7 +3071,7 @@ a();
                 'loots': [{'key': 'gold', 'count': [0x32, 0x96], 'rate': 0.25}]
             }];
         }, 9580: (m, o, p) => {
-            m['exports'] = [...p(0x1f1c), ...p(0x8c5), ...p(0x786), ...p(0x1dd3), ...p(0x528), ...p(0x8ea), ...p(0x3f3), ...p(0x1388), ...p(0x14e9), ...p(0x1fae), ...p(0x1a40), ...p(0xf85), ...p(0x1ba0), ...p(0x440), ...p(0x149), ...p(0xdc6), ...p(0x1cb3), ...p(0x24d7), ...p(0x2131), ...p(0x1259), ...p(0x1f42), ...p(0x1006), ...p(0x1862), ...p(0xbcf)];
+            m['exports'] = [...p(0x1f1c), ...p(0x8c5), ...p(0x786), ...p(0x1dd3), ...p(0x528), ...p(0x8ea), ...p(0x3f3), ...p(0x1388), ...p(0x14e9), ...p(0x1fae), ...p(0x1a40), ...p(0xf85), ...p(0x1ba0), ...p(0x440), ...p(0x149), ...p(0xdc6), ...p(0x1cb3), ...p(0x24d7), ...p(0x1259), ...p(0x1f42), ...p(0x1006), ...p(0x1862)];
         }, 2282: m => {
             m['exports'] = [{
                 'key': 'knight.normal',
@@ -4451,7 +3281,7 @@ a();
                 'race': 'unknown',
                 'career': 'melee',
                 'onPress'(o) {
-                    for (const p of o['units']['filter'](q => 'player' === q['camp'] || 'alien' === q['camp'])) p['hp'] += 0x1*5* p['maxHp'];
+                    for (const p of o['units']['filter'](q => 'player' === q['camp'] || 'alien' === q['camp'])) p['hp'] += 0x1 * p['maxHp'];
                     return this['kill'](), !0x1;
                 }
             }, {
@@ -4462,7 +3292,7 @@ a();
                 'race': 'unknown',
                 'career': 'melee',
                 'onPress'(o) {
-                    for (const p of o['units']['filter'](q => 'player' === q['camp'] || 'alien' === q['camp'])) p['addBuff']('shrine.energy', 0xea60*20);
+                    for (const p of o['units']['filter'](q => 'player' === q['camp'] || 'alien' === q['camp'])) p['addBuff']('shrine.energy', 0xea60*10);
                     return this['kill'](), !0x1;
                 }
             }, {
@@ -4473,7 +3303,7 @@ a();
                 'race': 'unknown',
                 'career': 'melee',
                 'onPress'(o) {
-                    for (const p of o['units']['filter'](q => 'player' === q['camp'] || 'alien' === q['camp'])) p['addBuff']('shrine.power', 0xea60*20);
+                    for (const p of o['units']['filter'](q => 'player' === q['camp'] || 'alien' === q['camp'])) p['addBuff']('shrine.power', 0xea60*10);
                     return this['kill'](), !0x1;
                 }
             }, {
@@ -4505,7 +3335,7 @@ a();
                 'camp': 'shrine',
                 'race': 'unknown',
                 'career': 'melee',
-                'loots': [{'key': 'wuxingshi', 'rate': 0x1, 'count': [0x1*1000, 0x5*2000]}],
+                'loots': [{'key': 'wuxingshi', 'rate': 0x1, 'count': [0x3*1000, 0x5*1000]}],
                 'onPress'(o) {
                     return this['kill'](), !0x1;
                 }
@@ -4516,7 +3346,7 @@ a();
                 'camp': 'shrine',
                 'race': 'unknown',
                 'career': 'melee',
-                'loots': [{'key': 'year2018.redbag', 'rate': 0x1, 'count': [0x1*100, 0x1*500]}],
+                'loots': [{'key': 'year2018.redbag', 'rate': 0x1, 'count': [0x1*500, 0x1*1000]}],
                 'onPress'(o) {
                     return this['kill'](), !0x1;
                 }
@@ -4619,65 +3449,6 @@ a();
                     'rate': 0x1,
                     'mfRate': 0x2
                 }]
-            }];
-        }, 3023: m => {
-            m['exports'] = [{
-                'key': 'soul_karon',
-                'name': '卡隆的投影',
-                'description': '百鬼之王·卡隆',
-                'camp': 'enemy',
-                'race': 'unknown',
-                'career': 'melee',
-                'boss': !0x0,
-                'maxHp': 0xf4240,
-                'hpRecovery': 0x320,
-                'maxMp': 0x2540be3ff,
-                'mpRecovery': 0x2540be3ff,
-                'darkResist': 0x1869f,
-                'lightResist': -0xf423f,
-                'exp': 0x1,
-                'atk': 0x7d0,
-                'level': 0x12c,
-                'atkSpeed': 0x1,
-                'stunResist': 0x9c40,
-                'skills': [{'key': 'soul_7', 'level': 0x0}, {
-                    'key': 'soul_iceplus',
-                    'level': 0x0
-                }, {'key': 'karon_dark_jige', 'level': 0x0}, {
-                    'key': 'karon_tombstoneplus',
-                    'level': 0x0
-                }, {'key': 'soul_darkfire', 'level': 0x0}, {
-                    'key': 'ghost_puncture',
-                    'level': 0x0
-                }, {'key': 'soul_poison', 'level': 0x0}, {'key': 'soul_ice', 'level': 0x0}, {
-                    'key': 'soul_shadow',
-                    'level': 0x0
-                }, {'key': 'ghost_fury', 'level': 0x0}, {'key': 'soul_weak', 'level': 0x0}, {
-                    'key': 'karon_tombstone',
-                    'level': 0x0
-                }, {'key': 'soul_armor', 'level': 0x0}, {'key': 'ghost_whip', 'level': 0x0}, {
-                    'key': 'moonlight_slash',
-                    'level': 0x0
-                }, {'key': 'soul_power', 'level': 0x0}, {'key': 'onikiri', 'level': 0x0}, {
-                    'key': 'jige_atk',
-                    'level': 0x0
-                }],
-                'loots': [{'key': 'gold', 'count': [0x1, 0x1], 'rate': 0x1}]
-            }, {
-                'key': 'paladin_ariel',
-                'name': '圣骑士·伊瑞尔',
-                'description': '圣骑士·伊瑞尔',
-                'camp': 'enemy',
-                'race': 'unknown',
-                'career': 'melee',
-                'boss': !0x0,
-                'maxHp': 0x1f40,
-                'exp': 0x1,
-                'atk': 0x96,
-                'level': 0x1e,
-                'atkSpeed': 0x1,
-                'skills': [{'key': 'ariel_skill1', 'level': 0x0}, {'key': 'ariel_skill2', 'level': 0x0}],
-                'loots': [{'key': 'gold', 'count': [0x1, 0x1], 'rate': 0x1}]
             }];
         }, 9431: m => {
             function o(s) {
@@ -4848,197 +3619,6 @@ a();
                 'skills': [...s['skills'], ...s['v2Skills']]
             }));
             m['exports'] = [...p, ...q];
-        }, 8497: m => {
-            m['exports'] = [{
-                'key': 'summon_tombstone',
-                'name': '墓碑',
-                'description': '哈哈哈哈，来打我啊',
-                'camp': 'alien',
-                'race': 'unknown',
-                'career': 'melee',
-                'maxHp': 0xa,
-                'skills': [{'key': 'tombstone_boom', 'level': 0x0}],
-                'hooks': {
-                    'atk'(o, p) {
-                        return this['summoner'] ? this['summoner']['atk'] : 0x0;
-                    }, 'def'(o, p) {
-                        if (!this['summoner']) return 0x1;
-                        const {player: q} = this['summoner'];
-                        return q['getSkillLevel']('tombstone');
-                    }, 'speedRateAdd'(o, p, q) {
-                        return this['summoner'] ? this['summoner']['runAttrHooks'](p, 'speedRateAdd') : p;
-                    }, 'critRate'(o, p) {
-                        return this['summoner'] ? this['summoner']['critRate'] : 0x0;
-                    }, 'critBonus'(o, p) {
-                        return this['summoner'] ? this['summoner']['critBonus'] : 0x0;
-                    }, 'darkdmgAdd'(o, p) {
-                        return this['summoner'] ? this['summoner']['darkdmgAdd'] : 0x0;
-                    }, 'maxHp'(o, p) {
-                        return this['summoner'] ? 0.05 * this['summoner']['maxHp'] : 0x1;
-                    }
-                }
-            }, {
-                'key': 'summon_tombstoneplus',
-                'name': '坟头',
-                'description': '哈哈哈哈，来打我啊',
-                'camp': 'alien',
-                'race': 'unknown',
-                'career': 'melee',
-                'maxHp': 0xa,
-                'allResist': 0x7d0,
-                'poisonResist': 0x1869f,
-                'darkResist': 0x1869f,
-                'lightResist': -0x1869f,
-                'skills': [{'key': 'tombstoneplus_skill1', 'level': 0x0}, {
-                    'key': 'tombstoneplus_skill2',
-                    'level': 0x0
-                }],
-                'hooks': {
-                    'atk'(o, p) {
-                        return this['summoner'] ? this['summoner']['atk'] : 0x0;
-                    }, 'def'(o, p) {
-                        if (!this['summoner']) return 0x1;
-                        const {player: q} = this['summoner'];
-                        return q['getSkillLevel']('tombstoneplus');
-                    }, 'speedRateAdd'(o, p, q) {
-                        return this['summoner'] ? this['summoner']['runAttrHooks'](p, 'speedRateAdd') : p;
-                    }, 'critRate'(o, p) {
-                        return this['summoner'] ? this['summoner']['critRate'] : 0x0;
-                    }, 'critBonus'(o, p) {
-                        return this['summoner'] ? this['summoner']['critBonus'] : 0x0;
-                    }, 'darkdmgAdd'(o, p) {
-                        return this['summoner'] ? this['summoner']['darkdmgAdd'] : 0x0;
-                    }, 'maxHp'(o, p) {
-                        return this['summoner'] ? 0.1 * this['summoner']['maxHp'] : 0x1;
-                    }
-                }
-            }, {
-                'key': 'summon_jige',
-                'name': '神官吉哥',
-                'description': '哈哈哈哈，来打我啊',
-                'camp': 'alien',
-                'race': 'unknown',
-                'career': 'melee',
-                'maxHp': 0xa,
-                'maxMp': 0x98967f,
-                'mpRecovery': 0x1869f,
-                'poisonResist': 0x1869f,
-                'darkResist': 0x1869f,
-                'lightResist': -0x1869f,
-                'skills': [{'key': 'jige_atk', 'level': 0x19}, {'key': 'onikiri', 'level': 0x19}, {
-                    'key': 'tombstone',
-                    'level': 0x19
-                }, {'key': 'tombstoneplus_skill2', 'level': 0x0}],
-                'hooks': {
-                    'atk'(o, p) {
-                        return this['summoner'] ? this['summoner']['atk'] : 0x0;
-                    }, 'def'(o, p) {
-                        if (!this['summoner']) return 0x1;
-                        const {player: q} = this['summoner'];
-                        return q['getSkillLevel']('dark_jige');
-                    }, 'speedRateAdd'(o, p, q) {
-                        return this['summoner'] ? this['summoner']['runAttrHooks'](p, 'speedRateAdd') : p;
-                    }, 'critRate'(o, p) {
-                        return this['summoner'] ? this['summoner']['critRate'] : 0x0;
-                    }, 'critBonus'(o, p) {
-                        return this['summoner'] ? this['summoner']['critBonus'] : 0x0;
-                    }, 'darkdmgAdd'(o, p) {
-                        return this['summoner'] ? this['summoner']['darkdmgAdd'] : 0x0;
-                    }, 'maxHp'(o, p) {
-                        return this['summoner'] ? this['summoner']['maxHp'] : 0x1;
-                    }
-                }
-            }, {
-                'key': 'karon_summon_tombstone',
-                'name': '墓碑',
-                'description': '哈哈哈哈，来打我啊',
-                'camp': 'enemy',
-                'race': 'unknown',
-                'career': 'melee',
-                'maxHp': 0xa,
-                'def': 0x32,
-                'skills': [{'key': 'tombstone_boom', 'level': 0x32}],
-                'hooks': {
-                    'atk'(o, p) {
-                        return this['summoner'] ? this['summoner']['atk'] : 0x0;
-                    }, 'speedRateAdd'(o, p, q) {
-                        return this['summoner'] ? this['summoner']['runAttrHooks'](p, 'speedRateAdd') : p;
-                    }, 'critRate'(o, p) {
-                        return this['summoner'] ? this['summoner']['critRate'] : 0x0;
-                    }, 'critBonus'(o, p) {
-                        return this['summoner'] ? this['summoner']['critBonus'] : 0x0;
-                    }, 'darkdmgAdd'(o, p) {
-                        return this['summoner'] ? this['summoner']['darkdmgAdd'] : 0x0;
-                    }, 'maxHp'(o, p) {
-                        return this['summoner'] ? 0.05 * this['summoner']['maxHp'] : 0x1;
-                    }
-                }
-            }, {
-                'key': 'karon_summon_tombstoneplus',
-                'name': '坟头',
-                'description': '哈哈哈哈，来打我啊',
-                'camp': 'enemy',
-                'race': 'unknown',
-                'career': 'melee',
-                'maxHp': 0xa,
-                'def': 0x32,
-                'allResist': 0x7d0,
-                'poisonResist': 0x1869f,
-                'darkResist': 0x1869f,
-                'lightResist': -0x1869f,
-                'skills': [{'key': 'tombstoneplus_skill1', 'level': 0x32}, {
-                    'key': 'tombstoneplus_skill2',
-                    'level': 0x32
-                }],
-                'hooks': {
-                    'atk'(o, p) {
-                        return this['summoner'] ? this['summoner']['atk'] : 0x0;
-                    }, 'speedRateAdd'(o, p, q) {
-                        return this['summoner'] ? this['summoner']['runAttrHooks'](p, 'speedRateAdd') : p;
-                    }, 'critRate'(o, p) {
-                        return this['summoner'] ? this['summoner']['critRate'] : 0x0;
-                    }, 'critBonus'(o, p) {
-                        return this['summoner'] ? this['summoner']['critBonus'] : 0x0;
-                    }, 'darkdmgAdd'(o, p) {
-                        return this['summoner'] ? this['summoner']['darkdmgAdd'] : 0x0;
-                    }, 'maxHp'(o, p) {
-                        return this['summoner'] ? 0.1 * this['summoner']['maxHp'] : 0x1;
-                    }
-                }
-            }, {
-                'key': 'karon_summon_jige',
-                'name': '神官吉哥',
-                'description': '哈哈哈哈，来打我啊',
-                'camp': 'enemy',
-                'race': 'unknown',
-                'career': 'melee',
-                'maxHp': 0xa,
-                'def': 0x32,
-                'maxMp': 0x98967f,
-                'mpRecovery': 0x1869f,
-                'poisonResist': 0x1869f,
-                'darkResist': 0x1869f,
-                'lightResist': -0x1869f,
-                'skills': [{'key': 'jige_atk', 'level': 0x32}, {
-                    'key': 'onikiri',
-                    'level': 0x32
-                }, {'key': 'karon_tombstone', 'level': 0x32}, {'key': 'tombstoneplus_skill2', 'level': 0x32}],
-                'hooks': {
-                    'atk'(o, p) {
-                        return this['summoner'] ? this['summoner']['atk'] : 0x0;
-                    }, 'speedRateAdd'(o, p, q) {
-                        return this['summoner'] ? this['summoner']['runAttrHooks'](p, 'speedRateAdd') : p;
-                    }, 'critRate'(o, p) {
-                        return this['summoner'] ? this['summoner']['critRate'] : 0x0;
-                    }, 'critBonus'(o, p) {
-                        return this['summoner'] ? this['summoner']['critBonus'] : 0x0;
-                    }, 'darkdmgAdd'(o, p) {
-                        return this['summoner'] ? this['summoner']['darkdmgAdd'] : 0x0;
-                    }, 'maxHp'(o, p) {
-                        return this['summoner'] ? this['summoner']['maxHp'] : 0x1;
-                    }
-                }
-            }];
         }, 2245: m => {
             m['exports'] = [{
                 'key': 'wolf.minimal',
@@ -5212,15 +3792,17 @@ a();
                     'darkResist': (o, p) => p + 0x1869f,
                     'lightResist': (o, p) => p + 0x1869f
                 }
-            }, {'key': 'old', 'name': '年迈的', 'hooks': {'atkSpeedMul': (o, p) => 0.1 * p}}];
+            }, {'key': 'old', 'name': '迟缓的', 'hooks': {'atkSpeedMul': (o, p) => 0.1 * p}}];
         }, 1862: (m, o, p) => {
             m['exports'] = [...p(0x4d)];
         }, 787: (m, o, p) => {
-            m['exports'] = [...p(0x190d), ...p(0x1728), ...p(0x1f31), ...p(0x1c1c)];
+            m['exports'] = [...p(0x190d), ...p(0x1728), ...p(0x1c1c)];
         }, 7196: m => {
             m['exports'] = [{
                 'key': 'pal_enhance1',
                 'name': '祈祷',
+                'type': 'player',
+                'lv': 0x1,
                 'description': '每综合等级+2生命恢复。',
                 'hooks': {
                     'hpRecovery'(o, p) {
@@ -5230,6 +3812,8 @@ a();
             }, {
                 'key': 'pal_enhance2',
                 'name': '火焰抵抗',
+                'type': 'player',
+                'lv': 0x12,
                 'description': '火焰吸收+20%，火焰吸收上限+5%。',
                 'hooks': {
                     'fireAbsorb': (o, p) => p + 0.2,
@@ -5239,6 +3823,8 @@ a();
             }, {
                 'key': 'pal_enhance3',
                 'name': '反抗',
+                'type': 'player',
+                'lv': 0x1,
                 'description': '自身受到的物理伤害减少35%，每综合等级+0.35%物理防御。',
                 'hooks': {
                     'willDamaged': (o, p, q, s) => 'melee' === s ? 0.65 * p : p, 'defAdd'(o, p) {
@@ -5248,6 +3834,8 @@ a();
             }, {
                 'key': 'pal_enhance4',
                 'name': '荆棘',
+                'type': 'player',
+                'lv': 0x6,
                 'description': '受到物理伤害时，对攻击你的目标反弹（实际受到伤害×综合等级×50%）点物理伤害。',
                 'hooks': {
                     'pla_jingji'(o, p, q, s) {
@@ -5257,6 +3845,8 @@ a();
             }, {
                 'key': 'pal_enhance5',
                 'name': '祝福瞄准',
+                'type': 'player',
+                'lv': 0xc,
                 'description': '每综合等级+1%暴击伤害。',
                 'hooks': {
                     'critBonusAdd'(o, p) {
@@ -5266,6 +3856,8 @@ a();
             }, {
                 'key': 'pal_enhance6',
                 'name': '寒冷抵抗',
+                'type': 'player',
+                'lv': 0x12,
                 'description': '寒冷吸收+20%，寒冷吸收上限+5%。',
                 'hooks': {
                     'coldAbsorb': (o, p) => p + 0.2,
@@ -5275,6 +3867,8 @@ a();
             }, {
                 'key': 'pal_enhance7',
                 'name': '净化',
+                'type': 'player',
+                'lv': 0x18,
                 'description': '暗、毒素吸收+30%，暗、毒素吸收上限+5%。',
                 'hooks': {
                     'darkAbsorb': (o, p) => p + 0.3,
@@ -5284,7 +3878,12 @@ a();
                     'pal_enhance7': () => !0x0
                 }
             }, {
-                'key': 'pal_enhance8', 'name': '精力', 'description': '每综合等级+2耐力。', 'hooks': {
+                'key': 'pal_enhance8',
+                'name': '精力',
+                'type': 'player',
+                'lv': 0x24,
+                'description': '每综合等级+2耐力。',
+                'hooks': {
                     'staAdd'(o, p) {
                         return p + 0x2 * (this['level'] + this['player']['peakLevel']);
                     }, 'pal_enhance8': () => !0x0
@@ -5292,6 +3891,8 @@ a();
             }, {
                 'key': 'pal_enhance9',
                 'name': '冥思',
+                'type': 'player',
+                'lv': 0x2a,
                 'description': '每综合等级+2智力，每秒恢复1%的法力值。',
                 'hooks': {
                     'mpRecovery'(o, p) {
@@ -5303,6 +3904,8 @@ a();
             }, {
                 'key': 'pal_enhance10',
                 'name': '救助',
+                'type': 'player',
+                'lv': 0x3c,
                 'description': '自身受到的火焰、寒冷、闪电伤害减少35%。',
                 'hooks': {
                     'willDamaged': (o, p, q, s) => 'fire' === s || 'cold' === s || 'lightning' === s ? 0.65 * p : p,
@@ -5311,6 +3914,8 @@ a();
             }, {
                 'key': 'pal_enhance11',
                 'name': '救赎',
+                'type': 'player',
+                'lv': 0x30,
                 'description': '每次完成击杀，恢复自身5%的生命值和法力值。',
                 'hooks': {
                     'hpFromKill'(o, p) {
@@ -5322,6 +3927,8 @@ a();
             }, {
                 'key': 'pal_enhance12',
                 'name': '闪电抵抗',
+                'type': 'player',
+                'lv': 0x12,
                 'description': '闪电吸收+20%，闪电吸收上限+5%。',
                 'hooks': {
                     'lightningAbsorb': (o, p) => p + 0.2,
@@ -5333,6 +3940,8 @@ a();
             m['exports'] = [{
                 'key': 'sorceress_enhance1',
                 'name': '能量亲和',
+                'type': 'player',
+                'lv': 0x5,
                 'description': '每秒恢复0.5%的法力值。',
                 'hooks': {
                     'mpRecovery'(o, p) {
@@ -5342,6 +3951,8 @@ a();
             }, {
                 'key': 'sorceress_enhance2',
                 'name': '魔法铠甲',
+                'type': 'player',
+                'lv': 0xa,
                 'description': '受到伤害时，消耗1点法力来抵消1点伤害（至多抵消80%的伤害）。',
                 'hooks': {
                     'mgd_hook'(o, p, q, s) {
@@ -5353,6 +3964,8 @@ a();
             }, {
                 'key': 'ss_ee3',
                 'name': '织网',
+                'type': 'player',
+                'lv': 0xa,
                 'description': '增加25%元素抗性的物理防御。',
                 'hooks': {
                     'defselfAdd'(o, p) {
@@ -5362,13 +3975,15 @@ a();
             }, {
                 'key': 'lv15_sorceress1_enhance1',
                 'name': '和弦·Ⅰ',
-                'group': 0xf,
+                'type': 'player',
+                'lv': 0xf,
                 'description': '释放“魔法连弹”将使你下一个元素法术的伤害提高30%，但任何类型的持续伤害不受影响。',
                 'hooks': {'lv15_sorceress1_enhance1': () => !0x0}
             }, {
                 'key': 'lv15_ss1_ee2',
                 'name': '和弦·Ⅱ',
-                'group': 0xf,
+                'type': 'player',
+                'lv': 0xf,
                 'description': '“魔法连弹”每次命中，若伤害未暴击，则为自身添加一层“和弦”效果，持续3秒。\x0a\x09\x09和弦：暴击几率+8%，每次触发将叠加层数并刷新持续时间，但任意伤害暴击后减少一半的层数。',
                 'hooks': {
                     'testCrit1'(p, q, s, u, v, w) {
@@ -5379,7 +3994,8 @@ a();
             }, {
                 'key': 'lv15_ss1_ee3',
                 'name': '和弦·Ⅲ',
-                'group': 0xf,
+                'type': 'player',
+                'lv': 0xf,
                 'description': '“魔法连弹”每次命中将恢复自身0.15%的生命值和法力值。',
                 'hooks': {
                     'testCrit1'(o, p, q, s, u, v) {
@@ -5389,6 +4005,8 @@ a();
             }, {
                 'key': 'lv15_sorceress1_enhance2',
                 'name': '法力转化',
+                'type': 'player',
+                'lv': 0x19,
                 'description': '增加相当于法力值上限25%的元素伤害等级。',
                 'hooks': {
                     'firedmgLAdd'(o, p) {
@@ -5402,11 +4020,15 @@ a();
             }, {
                 'key': 'lv15_sorceress1_enhance3',
                 'name': '魔力激化',
+                'type': 'player',
+                'lv': 0x23,
                 'description': '每次释放伤害类的法术将额外消耗法力值上限2%的法力值，每额外消耗10点法力则造成的伤害提高2%，该效果在法力值低于20%时无法生效。',
                 'hooks': {'lv15_sorceress1_enhance3': () => !0x0}
             }, {
                 'key': 'lv35_sorceress1_enhance1',
-                'name': '元素重置',
+                'name': '元素重置·火',
+                'type': 'player',
+                'lv': 0x2d,
                 'description': '火焰伤害+30%，寒冷、闪电伤害-30%。',
                 'hooks': {
                     'firedmgAdd': (o, p) => p + 0.3,
@@ -5416,16 +4038,22 @@ a();
             }, {
                 'key': 'lv35_sorceress1_enhance2',
                 'name': '连珠火球',
+                'type': 'player',
+                'lv': 0x37,
                 'description': '释放“火球术”有50%几率额外生成第二颗火球，25%几率额外生成第三颗火球，10%几率额外生成第四颗火球，1%几率额外生成第五颗火球。',
                 'hooks': {'lv35_sorceress1_enhance2': () => !0x0}
             }, {
                 'key': 'lv35_sorceress1_enhance3',
                 'name': '咒语改良',
+                'type': 'player',
+                'lv': 0x41,
                 'description': '急速+15%。',
                 'hooks': {'speedRateAdd': (o, p) => 0.15 + p}
             }, {
                 'key': 'lv35_sorceress3_enhance1',
-                'name': '元素重置',
+                'name': '元素重置·雷',
+                'type': 'player',
+                'lv': 0x2d,
                 'description': '闪电伤害+30%，火焰、寒冷伤害-30%。',
                 'hooks': {
                     'firedmgAdd': (o, p) => p - 0.3,
@@ -5435,11 +4063,15 @@ a();
             }, {
                 'key': 'lv35_sorceress3_enhance2',
                 'name': '击穿电压',
+                'type': 'player',
+                'lv': 0x37,
                 'description': '每次造成闪电伤害都有50%几率使目标获得一层“感电”效果。感电：受到的闪电伤害增加2%，持续10秒，每次触发将叠加效果并刷新持续时间。',
                 'hooks': {'lv35_sorceress3_enhance2': () => !0x0}
             }, {
                 'key': 'lv35_sorceress2_enhance1',
-                'name': '元素重置',
+                'name': '元素重置·冰',
+                'type': 'player',
+                'lv': 0x2d,
                 'description': '寒冷伤害+30%，火焰、闪电伤害-30%。',
                 'hooks': {
                     'firedmgAdd': (o, p) => p - 0.3,
@@ -5449,11 +4081,15 @@ a();
             }, {
                 'key': 'lv35_sorceress2_enhance2',
                 'name': '入微',
+                'type': 'player',
+                'lv': 0x37,
                 'description': '“活力之水”的效果+150%。',
                 'hooks': {'lv35_sorceress2_enhance2': () => 2.5}
             }, {
                 'key': 'lv80_sorceress1_enhance1',
                 'name': '殉爆',
+                'type': 'player',
+                'lv': 0x50,
                 'description': '对受到“灼烧”效果影响的目标造成火焰伤害时，有50%几率触发“殉爆”效果。殉爆：对所有目标造成（智力×2）点火焰伤害，持续伤害无法触发“殉爆”效果。',
                 'hooks': {
                     'willDamage'(o, p, q, s) {
@@ -5464,26 +4100,36 @@ a();
             }, {
                 'key': 'lv80_sorceress1_enhance2',
                 'name': '汇源',
+                'type': 'player',
+                'lv': 0x55,
                 'description': '释放“透支”将不再获得法力值恢复减少的负面效果。',
                 'hooks': {'lv80_sorceress1_enhance1': () => !0x0}
             }, {
                 'key': 'lv80_sorceress1_enhance3',
                 'name': '毁灭之握',
+                'type': 'player',
+                'lv': 0x5a,
                 'description': '“爆炎术”只对主目标造成伤害，但伤害提高400%。',
                 'hooks': {'lv80_sorceress1_enhance3': () => 0x4}
             }, {
                 'key': 'lv80_sorceress1_enhance4',
                 'name': '咒语进阶',
+                'type': 'player',
+                'lv': 0x5f,
                 'description': '急速+30%。',
                 'hooks': {'speedRateAdd': (o, p) => 0.3 + p}
             }, {
                 'key': 'lv80_sorceress1_enhance5',
                 'name': '灰烬',
+                'type': 'player',
+                'lv': 0x64,
                 'description': '“焚骨”每段伤害递增100%。',
                 'hooks': {'lv80_sorceress1_enhance5': () => !0x0}
             }, {
                 'key': 'lv80_sorceress2_enhance1',
                 'name': '燃尽',
+                'type': 'player',
+                'lv': 0x50,
                 'description': '造成火焰伤害时有20%几率释放一次“点燃”，但“点燃”的伤害减少50%。持续伤害无法触发“燃尽”效果。',
                 'hooks': {
                     'willDamage'(o, p, q, s) {
@@ -5494,46 +4140,64 @@ a();
             }, {
                 'key': 'lv80_sorceress2_enhance3',
                 'name': '烙印',
+                'type': 'player',
+                'lv': 0x5a,
                 'description': '每次为目标添加“灼烧”效果将使其火焰抗性永久减少30点。',
                 'hooks': {'lv80_sorceress2_enhance3': () => !0x0}
             }, {
                 'key': 'lv80_sorceress2_enhance5',
                 'name': '传火者',
+                'type': 'player',
+                'lv': 0x64,
                 'description': '每次释放“点燃”时，有60%的几率额外释放一次“点燃”；触发效果后将再次判定，直至未触发为止。',
                 'hooks': {'lv80_sorceress2_enhance5': () => !0x0}
             }, {
                 'key': 'lv80_sorceress5_enhance1',
                 'name': '电压波动',
+                'type': 'player',
+                'lv': 0x50,
                 'description': '闪电法术的伤害上限提高50%。',
                 'hooks': {'lv80_sorceress5_enhance1': () => 1.5}
             }, {
                 'key': 'lv80_sorceress5_enhance2',
                 'name': '快充',
+                'type': 'player',
+                'lv': 0x55,
                 'description': '“蓄电”的冷却时间减少3秒。',
                 'hooks': {'lv80_sorceress5_enhance2': () => 0xbb8}
             }, {
                 'key': 'lv80_sorceress5_enhance3',
                 'name': '磁暴',
+                'type': 'player',
+                'lv': 0x5a,
                 'description': '“闪电”的冷却时间提高至1秒，但每次必定造成最大值伤害。\x0a\x09\x09每次释放“闪电”，有50%的几率获得1格电能。',
                 'hooks': {'lv80_sorceress5_enhance3': () => 0x3e8, 'lv80_sorceress5_enhance33': () => !0x0}
             }, {
                 'key': 'lv80_sorceress5_enhance5',
                 'name': '电能回收',
+                'type': 'player',
+                'lv': 0x64,
                 'description': '“雷蛇”每命中一个目标则额外获得一格“电能”。',
                 'hooks': {'lv80_sorceress5_enhance5': () => !0x0}
             }, {
                 'key': 'lv80_sorceress6_enhance1',
                 'name': '稳定电压',
+                'type': 'player',
+                'lv': 0x50,
                 'description': '闪电法术的伤害下限提高至上限的30%。',
                 'hooks': {'lv80_sorceress6_enhance1': () => !0x0}
             }, {
                 'key': 'lv80_sorceress6_enhance3',
                 'name': '回流',
+                'type': 'player',
+                'lv': 0x5a,
                 'description': '释放“静电力场”将为目标额外添加一层感电。',
                 'hooks': {'lv80_sorceress6_enhance3': () => !0x0}
             }, {
                 'key': 'lv80_sorceress6_enhance5',
                 'name': '电击流',
+                'type': 'player',
+                'lv': 0x64,
                 'description': '造成闪电伤害时，有50%几率再次对所有目标造成（智力×2）点闪电伤害。',
                 'hooks': {
                     'willDamage'(o, p, q, s) {
@@ -5544,98 +4208,59 @@ a();
             }, {
                 'key': 'lv80_sorceress3_enhance1',
                 'name': '水射流',
+                'type': 'player',
+                'lv': 0x50,
                 'description': '“水箭术”伤害+30%，目标数+5。',
                 'hooks': {'lv80_sorceress3_enhance1': () => !0x0}
             }, {
                 'key': 'lv80_sorceress3_enhance2',
                 'name': '坚冰',
+                'type': 'player',
+                'lv': 0x55,
                 'description': '释放“寒冰护甲”时将额外释放一次“魔法盾”。',
                 'hooks': {'lv80_sorceress3_enhance2': () => !0x0}
             }, {
                 'key': 'lv80_sorceress3_enhance3',
                 'name': '狂澜',
+                'type': 'player',
+                'lv': 0x5a,
                 'description': '“湍流”每命中一个目标，则额外释放一次“水箭术”。',
                 'hooks': {'lv80_sorceress3_enhance3': () => !0x0}
             }, {
                 'key': 'lv80_sorceress3_enhance5',
                 'name': '浪涌',
+                'type': 'player',
+                'lv': 0x64,
                 'description': '“海啸”命中后使目标停止行动1秒，每次命中刷新持续时间。',
                 'hooks': {'lv80_sorceress3_enhance5': () => !0x0}
             }, {
                 'key': 'lv80_sorceress4_enhance1',
                 'name': '冰刺',
+                'type': 'player',
+                'lv': 0x50,
                 'description': '“水箭术”伤害+150%，15%几率冻结目标1.5秒。',
                 'hooks': {'lv80_sorceress4_enhance1': () => !0x0}
             }, {
                 'key': 'lv80_sorceress4_enhance3',
                 'name': '冻伤',
+                'type': 'player',
+                'lv': 0x5a,
                 'description': '受“冻结”效果影响的目标再次触发“冻结”效果时，立即移除“冻结”效果并额外造成其生命值20%的寒冷伤害，该伤害最大不超过自身智力的50倍。',
                 'hooks': {'lv80_sorceress4_enhance3': () => !0x0}
             }, {
                 'key': 'lv80_sorceress4_enhance5',
                 'name': '绝对零度',
+                'type': 'player',
+                'lv': 0x64,
                 'description': '对boss单位造成的寒冷伤害提高25%；对非boss单位造成的寒冷伤害提高50%，且有5%几率触发即死效果。',
                 'hooks': {'willDamage': (o, p, q, s) => ('cold' === s && (q['boss'] && (p *= 1.25), !q['boss'] && Math['random']() < 0.05 ? q['kill']() : p *= 1.5), p)}
-            }];
-        }, 7985: m => {
-            m['exports'] = [{
-                'key': 'soulbringer_enhance1',
-                'name': '黑暗君主·布甲精通',
-                'description': '根据穿戴的布甲品质等级提升属性。每级提升0.5智力、4闪避值、0.05法力值恢复、3暗抗性，但自身的光抗性同时减少2。',
-                'hooks': {
-                    'intAdd'(o, p) {
-                        let q = 0x0;
-                        const {plastron: s, gaiter: u} = this['player']['equipments'];
-                        return s['empty'] || (q += s['level']), u['empty'] || (q += u['level']), p + 0.5 * q;
-                    }, 'shanbizhiAdd'(o, p) {
-                        let q = 0x0;
-                        const {plastron: s, gaiter: u} = this['player']['equipments'];
-                        return s['empty'] || (q += s['level']), u['empty'] || (q += u['level']), p + 0x4 * q;
-                    }, 'mpRecovery'(o, p) {
-                        let q = 0x0;
-                        const {plastron: s, gaiter: u} = this['player']['equipments'];
-                        return s['empty'] || (q += s['level']), u['empty'] || (q += u['level']), p + 0.05 * q;
-                    }, 'darkResist'(o, p) {
-                        let q = 0x0;
-                        const {plastron: s, gaiter: u} = this['player']['equipments'];
-                        return s['empty'] || (q += s['level']), u['empty'] || (q += u['level']), p + 0x3 * q;
-                    }, 'lightResist'(o, p) {
-                        let q = 0x0;
-                        const {plastron: s, gaiter: u} = this['player']['equipments'];
-                        return s['empty'] || (q += s['level']), u['empty'] || (q += u['level']), Math['max'](p - 0x2 * q, 0x0);
-                    }
-                }
-            }, {
-                'key': 'soulbringer_enhance2',
-                'name': '鬼斩·噬魂',
-                'description': '“鬼斩”的伤害+30%，造成伤害后提高（技能等级×10）力量、智力，持续4秒。',
-                'hooks': {'soulbringer_enhance2': (o, p) => 1.3}
-            }, {
-                'key': 'soulbringer_enhance3',
-                'name': '凭依',
-                'description': '普通攻击转变为暗属性伤害，且伤害提高50%，攻击目标数+2。',
-                'hooks': {'soulbringer_enhance3': (o, p) => !0x0}
-            }, {
-                'key': 'soulbringer_enhance4',
-                'name': '黑暗降临',
-                'description': '鬼神·虚弱的力量将使所有目标额外减少（技能等级×200）暗抗性。',
-                'hooks': {'soulbringer_enhance4': (o, p) => !0x0}
-            }, {
-                'key': 'soulbringer_enhance5',
-                'name': '黑暗光环',
-                'description': '鬼神·铠甲的力量将使自身暗伤害+（技能等级×1%）。',
-                'hooks': {'soulbringer_enhance5': (o, p) => !0x0}
-            }, {
-                'key': 'soulbringer_enhance6',
-                'name': '封印解除',
-                'description': '鬼神系列技能的技能效果提高10级，可突破等级上限的限制。',
-                'hooks': {'soulbringer_enhance6': (o, p) => 0xa}
             }];
         }, 6413: m => {
             m['exports'] = [{
                 'key': 'warrior_enhance1',
                 'name': '壁垒',
-                'group': 0x5,
+                'type': 'player',
+                'lv': 0x5,
                 'description': '每角色等级使自身受到的伤害减少0.35%，最多不超过35%。',
                 'hooks': {
                     'willDamaged'(o, p, q, s) {
@@ -5645,13 +4270,15 @@ a();
             }, {
                 'key': 'wree2',
                 'name': '拙技',
-                'group': 0x5,
+                'type': 'player',
+                'lv': 0x1,
                 'description': '“普通攻击”的伤害+100%',
                 'hooks': {'lv5_wree2': (o, p) => !0x0}
             }, {
                 'key': 'wree3',
                 'name': '坚韧',
-                'group': 0x5,
+                'type': 'player',
+                'lv': 0x5,
                 'description': '每秒额外恢复1%的生命值',
                 'hooks': {
                     'hpRecovery'(o, p) {
@@ -5661,16 +4288,22 @@ a();
             }, {
                 'key': 'warrior_enhance2',
                 'name': '奋勇',
+                'type': 'player',
+                'lv': 0xa,
                 'description': '攻击力+20',
                 'hooks': {'atk_self_Add': (o, p) => p + 0x14}
             }, {
                 'key': 'lv15_warrior_enhance1',
                 'name': '生存技巧',
+                'type': 'player',
+                'lv': 0xf,
                 'description': '“伤口包扎”恢复的生命值×2',
                 'hooks': {'lv15_warrior_enhance1_time': (o, p) => 0x2}
             }, {
                 'key': 'lv15_warrior_enhance2',
                 'name': '武器掌握',
+                'type': 'player',
+                'lv': 0x19,
                 'description': '攻击力+20%',
                 'hooks': {
                     'atk_Add'(o, p) {
@@ -5680,66 +4313,92 @@ a();
             }, {
                 'key': 'lv15_warrior_enhance3',
                 'name': '联防',
+                'type': 'player',
+                'lv': 0x23,
                 'description': '释放“钢铁之躯”时，额外增加等量的元素抗性',
                 'hooks': {'lv15_warrior_enhance3_time': (o, p) => !0x0}
             }, {
                 'key': 'lv35_warrior1_enhance1',
                 'name': '剑花',
+                'type': 'player',
+                'lv': 0x2d,
                 'description': '释放“斩击”有20%几率触发“剑花”效果，对目标额外造成80%的物理伤害',
                 'hooks': {'lv35_warrior1_enhance1_time': (o, p) => !0x0}
             }, {
                 'key': 'lv35_warrior1_enhance2',
                 'name': '克敌',
+                'type': 'player',
+                'lv': 0x37,
                 'description': '对受“断筋”效果影响的目标造成的伤害提高30%',
                 'hooks': {'lv35_warrior1_enhance2_time': (o, p) => !0x0}
             }, {
                 'key': 'lv35_warrior1_enhance3',
                 'name': '火焰之舞',
+                'type': 'player',
+                'lv': 0x41,
                 'description': '释放“元素附魔”额外使下一个“旋风斩”变为火焰伤害，并对目标添加一层“灼烧”效果。灼烧：每3秒受到35%攻击力的火焰伤害，持续15秒，可叠加。',
                 'hooks': {'lv35_warrior1_enhance3_time': (o, p) => !0x0}
             }, {
                 'key': 'lv80_warrior1_enhance1',
                 'name': '火锤',
+                'type': 'player',
+                'lv': 0x50,
                 'description': '释放“重斩”将使目标受到的火焰伤害+50%，持续12秒。',
                 'hooks': {'lv80_warrior1_enhance1_time': (o, p) => !0x0}
             }, {
                 'key': 'lv80_warrior1_enhance2',
                 'name': '借力打力',
+                'type': 'player',
+                'lv': 0x55,
                 'description': '格挡概率提高至30%，成功格挡后将释放一次“旋风斩”。',
                 'hooks': {'lv80_warrior1_enhance2_time': (o, p) => !0x0}
             }, {
                 'key': 'lv80_warrior1_enhance3',
                 'name': '元素掌控',
+                'type': 'player',
+                'lv': 0x5a,
                 'description': '“元素附魔”的效果不再因为释放技能而被消耗，且可以维持10秒。',
                 'hooks': {'lv80_warrior1_enhance3_time': (o, p) => !0x0}
             }, {
                 'key': 'lv80_warrior1_enhance4',
                 'name': '越战越勇',
+                'type': 'player',
+                'lv': 0x5f,
                 'description': '每点怒气使“重斩”、“炎龙吐息”造成的伤害增加0.5%。',
                 'hooks': {'lv80_warrior1_enhance4_time': (o, p) => !0x0}
             }, {
                 'key': 'lv80_warrior1_enhance5',
                 'name': '星火',
+                'type': 'player',
+                'lv': 0x64,
                 'description': '每次释放“斩击”造成火焰伤害，可以额外获得2点怒气，并使“炎龙吐息”的冷却时间减少1秒。',
                 'hooks': {'lv80_warrior1_enhance5_time': (o, p) => !0x0}
             }, {
                 'key': 'lv80_warrior2_enhance1',
                 'name': '追击',
+                'type': 'player',
+                'lv': 0x50,
                 'description': '“重斩”命中目标后，有50%立即对目标释放一次额外的“斩击”。',
                 'hooks': {'lv80_warrior2_enhance1_time': (o, p) => !0x0}
             }, {
                 'key': 'lv80_warrior2_enhance2',
                 'name': '借力打力',
+                'type': 'player',
+                'lv': 0x55,
                 'description': '格挡概率提高至30%，成功格挡后将立即释放一次额外的“斩击”。',
                 'hooks': {'lv80_warrior2_enhance2_time': (o, p) => !0x0}
             }, {
                 'key': 'lv80_warrior2_enhance3',
                 'name': '剑术专精',
+                'type': 'player',
+                'lv': 0x5a,
                 'description': '释放“斩击”造成伤害后，有20%的几率再释放一次额外的“斩击”，可重复触发。',
                 'hooks': {'lv80_warrior2_enhance3_time': (o, p) => !0x0}
             }, {
                 'key': 'lv80_warrior2_enhance4',
                 'name': '冷静',
+                'type': 'player',
+                'lv': 0x5f,
                 'description': '当怒气小于50点时，攻击力+30%',
                 'hooks': {
                     'atk_Add'(o, p) {
@@ -5749,26 +4408,36 @@ a();
             }, {
                 'key': 'lv80_warrior2_enhance5',
                 'name': '蓄剑势',
+                'type': 'player',
+                'lv': 0x64,
                 'description': '释放“连斩姿态”将立即重置“无敌斩”的冷却时间。',
                 'hooks': {'lv80_warrior2_enhance5_time': (o, p) => !0x0}
             }, {
                 'key': 'lv35_warrior2_enhance1',
                 'name': '生生不息',
+                'type': 'player',
+                'lv': 0x2d,
                 'description': '“气血激增”的效果提高100%。',
                 'hooks': {'lv35_warrior2_enhance1_time': (o, p) => 0x2}
             }, {
                 'key': 'lv35_warrior2_enhance2',
                 'name': '金石之躯',
+                'type': 'player',
+                'lv': 0x37,
                 'description': '“钢铁之躯”的效果提高100%。',
                 'hooks': {'lv35_warrior2_enhance2_time': (o, p) => 0x2}
             }, {
                 'key': 'lv35_warrior2_enhance3',
                 'name': '以攻代守',
+                'type': 'player',
+                'lv': 0x41,
                 'description': '“断筋”的减速效果提高至50%。',
                 'hooks': {'lv35_warrior2_enhance3_time': (o, p) => 0.5}
             }, {
                 'key': 'lv35_warrior2_enhance4',
                 'name': '不屈意志',
+                'type': 'player',
+                'lv': 0x64,
                 'description': '每损失1点气血值，增加1点物理防御、1点元素（火焰、寒冷、闪电）抗性。',
                 'hooks': {
                     'defselfAdd'(o, p) {
@@ -5780,6 +4449,8 @@ a();
             }, {
                 'key': 'lv35_warrior2_enhance5',
                 'name': '创世神的守护',
+                'type': 'player',
+                'lv': 0x55,
                 'description': '吸收上限+5%。',
                 'hooks': {
                     'meleeAbsorbmax': (o, p) => p + 0.05,
@@ -5793,21 +4464,29 @@ a();
             }, {
                 'key': 'lv35_warrior2_enhance6',
                 'name': '猪突猛进',
+                'type': 'player',
+                'lv': 0x5a,
                 'description': '“盾冲”造成的昏迷效果延长1秒。',
                 'hooks': {'lv35_warrior2_enhance6_time': (o, p) => 0xfa0}
             }, {
                 'key': 'lv35_warrior2_enhance7',
                 'name': '以守待攻',
+                'type': 'player',
+                'lv': 0x5f,
                 'description': '成功防御后有50%的几率立即释放一次额外的“无限正义之剑”。',
                 'hooks': {'lv35_warrior2_enhance7_time': (o, p) => !0x0}
             }, {
                 'key': 'lv35_warrior2_enhance8',
                 'name': '绝对领域',
+                'type': 'player',
+                'lv': 0x50,
                 'description': '受到攻击时“守护者之魂”会自动反击所有敌人，造成（物理防御×10%）点真实伤害。',
                 'hooks': {'lv35_warrior2_enhance8_time': (o, p) => !0x0}
             }, {
                 'key': 'lv35_warrior5_enhance2',
                 'name': '浴血奋战',
+                'type': 'player',
+                'lv': 0x37,
                 'description': '每损失1%生命值，提高0.5%物理伤害。',
                 'hooks': {
                     'dmgAdd'(o, p) {
@@ -5817,26 +4496,36 @@ a();
             }, {
                 'key': 'lv35_warrior5_enhance3',
                 'name': '瓦解',
+                'type': 'player',
+                'lv': 0x41,
                 'description': '“碎甲”效果从30%提升至45%。',
                 'hooks': {'lv35_warrior5_enhance3_time': (o, p) => 0.15}
             }, {
                 'key': 'lv80_warrior5_enhance1',
                 'name': '力量训练',
+                'type': 'player',
+                'lv': 0x50,
                 'description': '“劈砍”和“致命劈砍”的伤害提高30%，但每次释放“劈砍”和“致命劈砍”都会损失当前5%/10%的生命值。',
                 'hooks': {'lv80_warrior5_enhance1_time': (o, p) => 1.3}
             }, {
                 'key': 'lv80_warrior5_enhance2',
                 'name': '沸血',
+                'type': 'player',
+                'lv': 0x55,
                 'description': '“血怒”效果持续期间，以2点/秒的速度获得怒气。',
                 'hooks': {'lv80_warrior5_enhance2_time': (o, p) => !0x0}
             }, {
                 'key': 'lv80_warrior5_enhance3',
                 'name': '双刀专精',
+                'type': 'player',
+                'lv': 0x5a,
                 'description': '暴击几率+10%，暴击伤害+20%。',
                 'hooks': {'critRateAdd': (o, p) => p + 0.1, 'critBonusAdd': (o, p) => p + 0.2}
             }, {
                 'key': 'lv80_warrior5_enhance4',
                 'name': '挣扎',
+                'type': 'player',
+                'lv': 0x5f,
                 'description': '每损失1%生命值，提高0.25%急速。',
                 'hooks': {
                     'speedRateAdd'(o, p) {
@@ -5846,6 +4535,8 @@ a();
             }, {
                 'key': 'lv80_warrior5_enhance5',
                 'name': '破釜沉舟',
+                'type': 'player',
+                'lv': 0x64,
                 'description': '释放“血甲缚”获得的护盾以及护盾上限+100%，但释放后仅保留1点生命值。',
                 'hooks': {'lv80_warrior5_enhance5_time': (o, p) => 0x2}
             }, {
@@ -5913,66 +4604,50 @@ a();
                 'key': 'copperArmor',
                 'type': 'equip',
                 'position': 'plastron',
-                'class': 'armor',
+                'class': 'base',
                 'name': '锁子甲',
                 'description': '铜环串联而成的胸甲，远远看去像身上挂满了铜钱，很是炫富。'
             }, {
                 'key': 'copperShinGuard',
                 'type': 'equip',
                 'position': 'gaiter',
-                'class': 'armor',
-                'name': '锁链靴',
-                'minLevel': 0x174876e7ff,
-                'description': '木质的鞋底，铜环串联而成鞋面，防御力很不错。'
-            }, {
-                'key': 'copperShinGuard1',
-                'type': 'equip',
-                'position': 'gaiter',
-                'class': 'armor',
+                'class': 'base',
                 'name': '锁链靴',
                 'description': '木质的鞋底，铜环串联而成鞋面，防御力很不错。'
             }, {
                 'key': 'boneArmor',
                 'type': 'equip',
                 'position': 'plastron',
-                'class': 'lightArmor',
+                'class': 'base',
                 'name': '骨甲',
                 'description': '烧焦的人骨紧密排列，不但防御良好而且轻便，但是敢穿的人真不多……'
             }, {
                 'key': 'boneShinGuard',
                 'type': 'equip',
                 'position': 'gaiter',
-                'class': 'lightArmor',
+                'class': 'base',
                 'name': '骨靴',
                 'description': '用骨片雕琢而成的靴子，已经看不出骨头来自哪个部位了。'
             }, {
                 'key': 'shoes',
                 'type': 'equip',
                 'position': 'gaiter',
-                'class': 'lightArmor',
+                'class': 'base',
                 'name': '皮靴',
                 'description': '',
                 'minLevel': 0xe8d4a50fff
             }, {
-                'key': 'boneArmor1',
-                'type': 'equip',
-                'position': 'plastron',
-                'class': 'lightArmor',
-                'name': '骨甲',
-                'description': '烧焦的人骨紧密排列，不但防御良好而且轻便，但是敢穿的人真不多……',
-                'minLevel': 0x174876e7ff
-            }, {
                 'key': 'mithrilDress',
                 'type': 'equip',
                 'position': 'plastron',
-                'class': 'cloth',
+                'class': 'base',
                 'name': '秘银衬衫',
                 'description': '布料掺杂秘银制造的衬衫，不过到处是镂空，不知道是为了美观还是为了节约成本。'
             }, {
                 'key': 'mithrilSkirt',
                 'type': 'equip',
                 'position': 'gaiter',
-                'class': 'cloth',
+                'class': 'base',
                 'name': '秘银长裤',
                 'description': '一层布料一层秘银叠加而成的长裤，款式男女皆宜。'
             }];
@@ -5991,7 +4666,7 @@ a();
             }, {
                 'key': 'ornament',
                 'type': 'equip',
-                'class': 'ornament',
+                'class': 'base',
                 'position': 'ornament',
                 'name': '首饰',
                 'description': '就是普通的首饰。',
@@ -6000,7 +4675,7 @@ a();
             }, {
                 'key': 'mithrilStannumRing',
                 'type': 'equip',
-                'class': 'ornament',
+                'class': 'base',
                 'position': 'ornament',
                 'name': '秘银指环',
                 'description': '按当前的市场价，铜其实也不便宜。',
@@ -6026,7 +4701,7 @@ a();
                 'requireInventory': 0x2,
                 'backgroundColor': '#ff215b',
                 'nameColor': 'white',
-                'loots': [{'type': 'equip', 'rate': 0.1, 'mfRate': 0x270f}]
+                'loots': [{'type': 'equip', 'rate': 0.01, 'mfRate': 0x270f}]
             }, {
                 'key': '61boxt',
                 'type': 'box',
@@ -6047,6 +4722,24 @@ a();
                 'price': 0x1,
                 'backgroundColor': '#FF8C00',
                 'nameColor': 'white'
+            }, {
+                'key': 'skill1',
+                'type': 'skill1',
+                'name': '技能石Ⅰ',
+                'description': '没有抽奖系统的游戏必不可能成为一个好游戏。\x0a\x09\x09使用后将随机抽取一项尚未习得的主动技能。\x0a\x09\x09每掌握一项主动技能，抽取的几率会减少10%，但最低不会低于5%。',
+                'stack': 0x1869f,
+                'price': 0x1,
+                'backgroundColor': '#cbe0ff',
+                'nameColor': 'white'
+            }, {
+                'key': 'skill2',
+                'type': 'skill2',
+                'name': '技能石Ⅱ',
+                'description': '没有抽奖系统的游戏必不可能成为一个好游戏。\x0a\x09\x09使用后将随机抽取一项尚未习得的被动技能。\x0a\x09\x09每掌握一项被动技能，抽取的几率会减少10%，但最低不会低于5%。',
+                'stack': 0x1869f,
+                'price': 0x1,
+                'backgroundColor': '#e9b4ff',
+                'nameColor': 'white'
             }];
         }, 8479: m => {
             m['exports'] = [{
@@ -6060,21 +4753,21 @@ a();
             }, {
                 'key': 'stickSword',
                 'type': 'equip',
-                'class': 'sword',
+                'class': 'base',
                 'position': 'weapon',
                 'name': '长剑',
                 'description': '朴素的长剑。'
             }, {
                 'key': 'SwordShield',
                 'type': 'equip',
-                'class': 'swordshield',
+                'class': 'base',
                 'position': 'weapon',
                 'name': '剑盾',
                 'description': '外加朴素的圆盾。'
             }, {
                 'key': 'LongSword',
                 'type': 'equip',
-                'class': 'longsword',
+                'class': 'base',
                 'position': 'weapon',
                 'name': '太刀',
                 'description': '用木头制作的长刀，有传言说这是萨菲罗斯小时候使用过的。',
@@ -6082,22 +4775,14 @@ a();
             }, {
                 'key': 'Machete',
                 'type': 'equip',
-                'class': 'machete',
+                'class': 'base',
                 'position': 'weapon',
                 'name': '双刀',
                 'description': '左手一把菜刀，右手还是一把菜刀。'
             }, {
-                'key': 'MacheteShield',
-                'type': 'equip',
-                'class': 'macheteshield',
-                'position': 'weapon',
-                'name': '刀盾',
-                'description': '左手是朴素的圆盾。',
-                'minLevel': 0xe8d4a50fff
-            }, {
                 'key': 'stickWand',
                 'type': 'equip',
-                'class': 'wand',
+                'class': 'base',
                 'position': 'weapon',
                 'name': '铁木法杖',
                 'description': '搬不动，真的搬不动，不是开玩笑的。'
@@ -6235,8 +4920,8 @@ a();
                     }
                 }
             }, {
-                'key': 'copperShinGuard1-gsbj',
-                'type': 'copperShinGuard1',
+                'key': 'copperShinGuard-gsbj',
+                'type': 'copperShinGuard',
                 'itemName': '攻速暴击腿甲',
                 'itemDescription': '前身叫“攻速暴击裙”，是为了照顾重甲职业特地改造而成的，有着特殊的效果。',
                 'display': o => '攻击你的目标急速×2，但攻击力×0.5',
@@ -6504,7 +5189,7 @@ a();
                     },
                     'testCrit1'(p, q, s, u, v, w) {
                         const x = this['buffs']['find'](y => 'xmhx_buff' === y['group']);
-                        return w['type'] && 'hacking_plus_double' === w['type'] && (x ? (x['arg'] += 0.015, x['resetTimer'](0x7d0)) : this['addBuff']('xmhx_buff', 0x7d0, 0.015, 'xmhx_buff')), q;
+                        return 'hacking_plus_double' === w['type'] && (x ? (x['arg'] += 0.015, x['resetTimer'](0x7d0)) : this['addBuff']('xmhx_buff', 0x7d0, 0.015, 'xmhx_buff')), q;
                     }
                 }
             }, {
@@ -6568,7 +5253,7 @@ a();
                 }
             }, {
                 'key': 'bA_zsqj2',
-                'type': 'copperShinGuard1',
+                'type': 'copperShinGuard',
                 'itemName': '制式裙甲',
                 'itemDescription': '时下最流行的款式\x0a\x09\x09魅力+999',
                 'display': o => '耐力+' + o[0x0] + '[50]\x0a\x09\x09“包扎伤口”Lv+' + o[0x1][0x0]['value'] + '[10]\x0a\x09\x09“气血激增”Lv+' + o[0x1][0x1]['value'] + '[10]\x0a\x09\x09“钢铁之躯”Lv+' + o[0x1][0x2]['value'] + '[10]\x0a\x09\x09套装-战场新秀：穿戴2件后，攻击力+100',
@@ -6791,26 +5476,6 @@ a();
                     'lightningdmgLAdd': (o, p) => p + 0x3e8
                 }
             }, {
-                'key': 'ornament-ceshi',
-                'type': 'ornament',
-                'itemName': '测试首饰',
-                'itemDescription': '穿上之后会有奇怪的效果。\x0a\x09\x09但是，如果你看到了这件装备，反倒是你比较奇怪。',
-                'special': !0x0,
-                'display': o => '每角色等级+' + o + '点攻击力',
-                'generate': o => 0x1,
-                'range': o => '无法附魔',
-                'hooks': {'meleeAbsorb': (o, p) => p + 0xf, 'meleeAbsorbmax': (o, p) => p + 0.15}
-            }, {
-                'key': 'copperShinGuard1-ceshi',
-                'type': 'copperShinGuard1',
-                'itemName': '测试重甲下装',
-                'itemDescription': '穿上之后会有奇怪的效果。\x0a\x09\x09但是，如果你看到了这件装备，反倒是你比较奇怪。',
-                'special': !0x0,
-                'display': o => '穿上之后会有奇怪的效果',
-                'generate': o => 0x1 + Math['floor'](0xf * Math['random']()),
-                'range': o => '无法附魔',
-                'hooks': {}
-            }, {
                 'key': 'year2018.yearBeastWeapon-4',
                 'type': 'SwordShield',
                 'itemName': '年兽的脚掌',
@@ -6875,44 +5540,6 @@ a();
                 'range': o => '无法附魔',
                 'hooks': {'skExpadd': (o, p) => p + 0.25, 'lg_4': () => !0x0}
             }];
-        }, 7443: (m, o, p) => {
-            m['exports'] = [p(0x1af1), p(0xa2c)];
-        }, 2604: m => {
-            m['exports'] = {
-                'key': 'paladin_map',
-                'name': '邻村村口-2',
-                'hint': '邻村村口-2',
-                'isDungeon': !0x0,
-                'outside': 'home',
-                'requirement': {'stories': ['pal-1'], 'beforeStories': ['pal-2']},
-                'phases': [{
-                    'description': '击败圣骑士·伊瑞尔',
-                    'monsters': [{'type': 'paladin_ariel', 'max': 0x1, 'delay': 0x1388, 'total': 0x1}]
-                }],
-                'monsters': [],
-                'resetPrice': -0x1,
-                'level': 0x12c,
-                'exp': 0x1,
-                'loots': []
-            };
-        }, 6897: m => {
-            m['exports'] = {
-                'key': 'soulbringer_map',
-                'name': '庇护所深处',
-                'hint': '庇护所深处',
-                'isDungeon': !0x0,
-                'outside': 'home',
-                'requirement': {'stories': ['soulbringer-1']},
-                'phases': [{
-                    'description': '击败百鬼之王·卡隆的投影',
-                    'monsters': [{'type': 'soul_karon', 'max': 0x1, 'delay': 0x2710, 'total': 0x1}]
-                }],
-                'monsters': [],
-                'resetPrice': -0x1,
-                'level': 0x12c,
-                'exp': 0x1,
-                'loots': []
-            };
         }, 4877: m => {
             m['exports'] = {
                 'key': 'chapter3.auran',
@@ -6933,7 +5560,7 @@ a();
                     'quality': [0x31, 0x7, 0x1]
                 }, {
                     'types': {
-                       
+                        
                         
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -7062,7 +5689,7 @@ a();
                     'max': 0x1
                 }, {
                     'types': {
-                       
+                        
                         
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -7145,7 +5772,7 @@ a();
                     'quality': [0x31, 0x7, 0x1]
                 }, {
                     'types': {
-                       
+                        
                         
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -7241,7 +5868,7 @@ a();
                     'quality': [0x19, 0x5, 0x1]
                 }, {
                     'types': {
-                       
+                        
                         
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -7325,7 +5952,7 @@ a();
                     'quality': [0x31, 0x7, 0x1]
                 }, {
                     'types': {
-                       
+                        
                         
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -7412,7 +6039,7 @@ a();
                     'quality': [0x31, 0x7, 0x1]
                 }, {
                     'types': {
-                       
+                        
                         
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -7648,7 +6275,7 @@ a();
                     'quality': [0x31, 0x7, 0x1]
                 }, {
                     'types': {
-                       
+                        
                         
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -7808,7 +6435,7 @@ a();
                     'quality': [0x31, 0x7, 0x1]
                 }, {
                     'types': {
-                       
+                        
                         
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -7891,7 +6518,7 @@ a();
                     'quality': [0x31, 0x7, 0x1]
                 }, {
                     'types': {
-                       
+                        
                         
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -7983,7 +6610,7 @@ a();
                     }, 'warmup': 0x3e8, 'delay': 0x3e8, 'max': 0x5, 'quality': [0x31, 0x7, 0x1]
                 }, {
                     'types': {
-                       
+                        
                         
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -8068,7 +6695,7 @@ a();
         }, 9520: m => {
             m['exports'] = {'key': 'home', 'name': '自宅', 'hint': '安全的避难所。休息够了就可以再度出发。'};
         }, 3663: (m, o, p) => {
-            m['exports'] = [p(0xbaa), p(0xf7), p(0x2530), ...p(0x18b8), ...p(0xdfa), ...p(0x1e1b), ...p(0x1614), ...p(0x1d13)];
+            m['exports'] = [p(0xbaa), p(0xf7), p(0x2530), ...p(0x18b8), ...p(0xdfa), ...p(0x1e1b), ...p(0x1614)];
         }, 7759: m => {
             m['exports'] = {
                 'key': 'town.cave',
@@ -8095,7 +6722,7 @@ a();
                     'quality': [0x31, 0x7, 0x1]
                 }, {
                     'types': {
-                       
+                        
                         
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -8138,17 +6765,11 @@ a();
                     'type': 'specialEquip',
                     'rate': 0.05,
                     'items': ['lg_1', 'lg_2', 'lg_3', 'lg_4']
-                }, {'type': 'equip', 'rate': 0x1, 'mfRate': 0xc8, 'position': 'weapon'}, {
+                }, {'type': 'equip', 'rate': 0x1, 'mfRate': 0xc8}, {
                     'type': 'equip',
                     'rate': 0x1,
-                    'mfRate': 0xc8,
-                    'position': 'weapon'
-                }, {'type': 'equip', 'rate': 0x1, 'mfRate': 0xc8, 'position': 'plastron'}, {
-                    'type': 'equip',
-                    'rate': 0x1,
-                    'mfRate': 0xc8,
-                    'position': 'gaiter'
-                }, {'type': 'equip', 'rate': 0x1, 'mfRate': 0xc8, 'position': 'ornament'}]
+                    'mfRate': 0xc8
+                }, {'type': 'equip', 'rate': 0x1, 'mfRate': 0xc8}]
             };
         }, 6328: (m, o, p) => {
             m['exports'] = [p(0x2371), p(0x1e4f), p(0x599), p(0x24fd), p(0x253a), p(0x2377), p(0x1dca), p(0x199), p(0x2283), p(0x89), p(0x1230)];
@@ -8172,7 +6793,7 @@ a();
                     'quality': [0x64, 0xa]
                 }, {
                     'types': {
-                       
+                        
                         
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -8410,7 +7031,7 @@ a();
                     'quality': [0x64, 0xa]
                 }, {
                     'types': {
-                       
+                        
                         
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -8440,7 +7061,7 @@ a();
                     'quality': [0x31, 0x7, 0x1]
                 }, {
                     'types': {
-                       
+                        
                         
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -8470,7 +7091,7 @@ a();
                     'quality': [0x64, 0xa]
                 }, {
                     'types': {
-                       
+                        
                         
                         'shrine.power': 0x1,
                         'shrine.experience': 0x1,
@@ -8542,27 +7163,27 @@ a();
             m['exports'] = [{
                 'key': 'zhengqiwan',
                 'name': '幸运药剂',
-                'description': o => '运气增加' + 0x5 *10* o + '点',
+                'description': o => '运气增加' + 0x5*10 * o + '点',
                 'Max_level': 0x270f,
-                'hooks': {'gf': (o, p) => p + 0.5 * o, 'mf': (o, p) => p + 0.5 * o}
+                'hooks': {'gf': (o, p) => p + 0.05*10 * o, 'mf': (o, p) => p + 0.05 * o}
             }, {
                 'key': 'nayuandan',
                 'name': '知识药剂',
-                'description': o => '经验获得增加' + 0x5 *10* o + '%',
+                'description': o => '经验获得增加' + 0x5*10 * o + '%',
                 'Max_level': 0x270f,
-                'hooks': {'expInc': (o, p) => p + 0.5 * o}
+                'hooks': {'expInc': (o, p) => p + 0.05*10 * o}
             }, {
                 'key': '\x20xiaoyaosan',
                 'name': '训练药剂',
-                'description': o => '熟练度获得增加' + 0x5 *10* o + '%',
+                'description': o => '熟练度获得增加' + 0x5*10 * o + '%',
                 'Max_level': 0x270f,
-                'hooks': {'skillExpInc': (o, p) => p + 0.5 * o}
+                'hooks': {'skillExpInc': (o, p) => p + 0.05*10 * o}
             }, {
                 'key': 'fengshenlu',
                 'name': '急速药剂',
                 'description': o => '急速+' + o*2 + '%',
                 'Max_level': 0x64,
-                'hooks': {'speedRateAdd': (o, p) => p + 0.02 * Math['min'](o, 0x64)}
+                'hooks': {'speedRateAdd': (o, p) => p + 0.01*2 * Math['min'](o, 0x64)}
             }, {
                 'key': 'rdmdc',
                 'name': '恢复药剂',
@@ -8723,7 +7344,6 @@ a();
                     'monsters': [{
                         'type': 'nightmare.fire.minimal1',
                         'max': 0xf,
-                        'warmup': 0x2ee0,
                         'delay': 0xbb8
                     }, {'type': 'nightmare.fire.kakarif', 'warmup': 0x2710, 'total': 0x1}]
                 }],
@@ -8746,7 +7366,7 @@ a();
                 }]
             });
         }, 5403: (m, o, p) => {
-            p(0x151c), p(0xf97), p(0x1626), p(0x1f16), p(0xd83), p(0x102e);
+            p(0xbcf), p(0xf97), p(0x1626), p(0x1f16), p(0xd83), p(0x102e);
         }, 4142: (m, o, p) => {
             p(0x2026);
             const {define: q, extend: s} = p(0x19ed);
@@ -9017,7 +7637,7 @@ a();
                     'rate': 0.02
                 }]
             });
-        }, 5404: (m, o, p) => {
+        }, 3023: (m, o, p) => {
             p(0x2026);
             const {define: q, extend: s} = p(0x19ed);
             q('buffs', 'nightmare.slime.queen.debuff.1', {
@@ -9416,15 +8036,9 @@ a();
                         'type': 'nightmare.wolf.hunter',
                         'max': 0x1,
                         'delay': 0x5
-                    }, {
-                        'type': 'nightmare.wolf.healer',
-                        'max': 0x5,
-                        'warmup': 0x2ee0,
-                        'delay': 0xbb8
-                    }, {
+                    }, {'type': 'nightmare.wolf.healer', 'max': 0x5, 'delay': 0xbb8}, {
                         'type': 'nightmare.wolf.minium',
                         'max': 0x5,
-                        'warmup': 0x2ee0,
                         'delay': 0xbb8
                     }, {'type': 'nightmare.wolf.king', 'warmup': 0x2710, 'total': 0x1}]
                 }],
@@ -9692,7 +8306,7 @@ a();
                     'poisonAbsorb': (u, v) => v + 0.15
                 }
             }), q('legends', 'year2018.yearBeastTrousers-1', {
-                'type': 'copperShinGuard1',
+                'type': 'copperShinGuard',
                 'itemName': '年兽的鬃毛',
                 'itemDescription': '比钢铁还硬的鬃毛。',
                 'minLevel': 0x1,
@@ -9821,10 +8435,10 @@ a();
                 'requireInventory': 0x2,
                 'backgroundColor': '#ff215b',
                 'nameColor': 'white',
-                'loots': [{'key': 'diamonds', 'rate': 0x1, 'count': [0xa*2, 0x1e*2]}, {
+                'loots': [{'key': 'diamonds', 'rate': 0x1, 'count': [0xa, 0x1e]}, {
                     'key': 'wuxingshi',
                     'rate': 0x1,
-                    'count': [0x5*10, 0x8*10]
+                    'count': [0x5*100, 0x8*100]
                 }, {'type': 'ticket', 'rate': 0.1, 'dungeons': {'year2018.dungeon': 0x1}}, {
                     'type': 'specialEquip2',
                     'rate': 0.1,
@@ -9834,141 +8448,56 @@ a();
             const {enemies: v, maps: w} = q(0x1022);
             for (const x of Object['keys'](v)) {
                 const y = v[x];
-                y['loots'] && y['loots']['push']({'key': 'year2018.redbag', 'count': [0x1, 0x1], 'rate': 0.02});
+                y['loots'] && y['loots']['push']({'key': 'year2018.redbag', 'count': [0x1, 0x1], 'rate': 0.2});
             }
             for (const z of Object['keys'](v)) {
                 const A = v[z];
-                A['loots'] && A['loots']['push']({'key': '61boxt', 'count': [0x1, 0x1], 'rate': 0.02});
+                A['loots'] && A['loots']['push']({'key': '61boxt', 'count': [0x1, 0x1], 'rate': 0.2});
             }
             for (const B of Object['keys'](v)) {
                 const C = v[B];
-                C['loots'] && C['loots']['push']({'key': 'exp_zz', 'count': [0x1, 0x1], 'rate': 0.01});
+                C['loots'] && C['loots']['push']({'key': 'exp_zz', 'count': [0x1, 0x1], 'rate': 0.1});
             }
             for (const D of Object['keys'](w)) {
                 const E = w[D];
                 E['loots'] && E['loots']['push']({'key': 'year2018.redbag', 'count': [0x1, 0x1], 'rate': 0.2});
             }
-        }, 9497: m => {
-            m['exports'] = [{
-                'key': 'atkByDex', 'name': '强力攻击', 'hooks': {
-                    'atkAdd'(o, p) {
-                        return p + this['dex'] / 0x64;
-                    }
-                }
-            }, {
-                'key': 'energy',
-                'name': '能量',
-                'hooks': {'maxEp': (o, p) => p + 0x64, 'epRecovery': (o, p) => p + 0x5}
-            }];
+            for (const F of Object['keys'](w)) {
+                const G = w[F];
+                G['loots'] && G['loots']['push']({'key': 'skill1', 'rate': 0.2, 'count': [0x1, 0x1]});
+            }
+            for (const H of Object['keys'](w)) {
+                const I = w[H];
+                I['loots'] && I['loots']['push']({'key': 'skill2', 'rate': 0.2, 'count': [0x1, 0x1]});
+            }
         }, 5034: (m, o, p) => {
-            m['exports'] = [...p(0xca4), ...p(0x20f9), ...p(0x2519), ...p(0x1b4), ...p(0x17f5), ...p(0x1756)];
-        }, 6133: m => {
-            m['exports'] = [{
-                'key': 'pla_passive1', 'name': '神圣力量', 'description': '', 'hooks': {
-                    'maxMpAdd'(o, p) {
-                        return p + 0x64 + 0x4 * this['level'];
-                    }, 'mpRecovery'(o, p) {
-                        return p + 0x1 + 0.09 * this['level'];
-                    }, 'intAdd'(o, p) {
-                        let q = 0x0;
-                        const {weapon: s, plastron: u, gaiter: v} = this['player']['equipments'];
-                        return s['empty'] || 'sword' !== s['goodData']['class'] || (q += s['level']), u['empty'] || ('cloth' === u['goodData']['class'] ? q += u['level'] : 'lightArmor' === u['goodData']['class'] && (q += 0.5 * u['level'])), v['empty'] || ('cloth' === v['goodData']['class'] ? q += v['level'] : 'lightArmor' === v['goodData']['class'] && (q += 0.5 * v['level'])), p + Math['ceil'](0.5 * q);
-                    }, 'strAdd'(o, p) {
-                        let q = 0x0;
-                        const {weapon: s, plastron: u, gaiter: v} = this['player']['equipments'];
-                        return s['empty'] || 'swordshield' !== s['goodData']['class'] || (q += s['level']), u['empty'] || ('armor' === u['goodData']['class'] ? q += u['level'] : 'lightArmor' === u['goodData']['class'] && (q += 0.5 * u['level'])), v['empty'] || ('armor' === v['goodData']['class'] ? q += v['level'] : 'lightArmor' === v['goodData']['class'] && (q += 0.5 * v['level'])), p + Math['ceil'](0.5 * q);
-                    }, 'defselfAdd'(o, p) {
-                        return p + 0.8 * this['sta'];
-                    }, 'allResselfAdd'(o, p) {
-                        return p + 0.6 * this['sta'];
-                    }, 'speResAdd'(o, p) {
-                        return p + 0.6 * this['sta'];
-                    }, 'maxHp_Add'(o, p) {
-                        return p + 0x4 * this['sta'];
-                    }, 'dmgLAdd'(o, p) {
-                        return p + this['str'];
-                    }, 'lightdmgLAdd'(o, p) {
-                        return p + 1.2 * this['int'];
-                    }, 'lightResist'(o, p) {
-                        return p + this['int'];
-                    }, 'firedmgLAdd'(o, p) {
-                        return p + 0.8 * this['int'];
-                    }, 'colddmgLAdd'(o, p) {
-                        return p + 0.8 * this['int'];
-                    }, 'lightningdmgLAdd'(o, p) {
-                        return p + 0.8 * this['int'];
-                    }
-                }
-            }];
+            m['exports'] = [...p(0xca4), ...p(0x20f9)];
         }, 8441: m => {
             m['exports'] = [{
                 'key': 'magic', 'name': '法力', 'description': '', 'hooks': {
-                    'maxMpAdd'(o, p) {
-                        return p + 0x32 + 0x5 * this['int'];
-                    }, 'mpRecovery'(o, p) {
-                        return p + 0x1 + 0.1 * this['int'];
-                    }, 'defselfAdd'(o, p) {
-                        return p + 0.3 * this['sta'];
-                    }, 'allResselfAdd'(o, p) {
-                        return p + 0.3 * this['sta'] + this['int'];
-                    }, 'speResAdd'(o, p) {
-                        return p + 0.3 * this['sta'];
-                    }, 'maxHp_Add'(o, p) {
-                        return p + 2.5 * this['sta'];
-                    }, 'firedmgLAdd'(o, p) {
-                        return p + this['int'];
-                    }, 'colddmgLAdd'(o, p) {
-                        return p + this['int'];
-                    }, 'lightningdmgLAdd'(o, p) {
-                        return p + this['int'];
-                    }
-                }
-            }, {'key': 'elect', 'name': '电能', 'description': '', 'hooks': {'maxComboPoint': (o, p) => p + 0x5}}];
-        }, 436: m => {
-            m['exports'] = [{
-                'key': 'soulbringer_passive',
-                'name': '鬼泣封印',
-                'description': '',
-                'hooks': {
-                    'maxMpAdd'(o, p) {
-                        return p + 0x32 + 0x5 * this['int'];
-                    }, 'darkResist'(o, p) {
-                        return p + 0x1 * this['int'];
-                    }, 'darkdmgLAdd'(o, p) {
-                        return p + 0x1 * this['int'];
-                    }, 'atk_self_Add'(o, p) {
-                        return p + 0.2 * this['int'] + 0.2 * this['str'];
-                    }, 'defselfAdd'(o, p) {
-                        return p + 0.5 * this['sta'];
-                    }, 'allResselfAdd'(o, p) {
-                        return p + 0.5 * this['sta'];
-                    }, 'speResAdd'(o, p) {
-                        return p + 0.5 * this['sta'];
-                    }, 'maxHp_Add'(o, p) {
-                        return p + 2.5 * this['sta'];
-                    }
-                }
-            }];
-        }, 5974: m => {
-            m['exports'] = [{
-                'key': 'vbps1', 'name': '拳师', 'description': '', 'hooks': {
                     'atk_self_Add'(o, p) {
                         return p + 0.5 * this['str'];
                     }, 'dmgLAdd'(o, p) {
-                        return p + 0.45 * this['str'];
+                        return p + 0.5 * this['str'];
                     }, 'defselfAdd'(o, p) {
-                        return p + 0.5 * this['str'] + 0.8 * this['sta'];
+                        return p + 0.5 * this['str'];
                     }, 'allResselfAdd'(o, p) {
-                        return p + 0.6 * this['sta'];
-                    }, 'speResAdd'(o, p) {
-                        return p + 0.45 * this['sta'];
+                        return p + 0.5 * this['sta'];
                     }, 'maxHp_Add'(o, p) {
                         return p + 3.5 * this['sta'];
-                    }, 'maxMpMul': (o, p) => 0x0, 'hpRecovery'(o, p) {
-                        return p + 0.08 * this['sta'];
+                    }, 'rpOnAttacked': (o, p) => p + 0x1, 'hpRecovery'(o, p) {
+                        return p + 0.1 * this['sta'];
+                    }, 'speResAdd'(o, p) {
+                        return p + 0.5 * this['sta'];
+                    }, 'firedmgLAdd'(o, p) {
+                        return p + 0.5 * this['int'];
+                    }, 'colddmgLAdd'(o, p) {
+                        return p + 0.5 * this['int'];
+                    }, 'lightningdmgLAdd'(o, p) {
+                        return p + 0.5 * this['int'];
                     }
                 }
-            }];
+            }, {'key': 'elect', 'name': '电能', 'description': '', 'hooks': {'maxComboPoint': (o, p) => p + 0x5}}];
         }, 3236: m => {
             m['exports'] = [{
                 'key': 'warrior_passive1',
@@ -9977,86 +8506,25 @@ a();
                 'hooks': {
                     'atk_self_Add'(o, p) {
                         return p + 0.5 * this['str'];
-                    },
-                    'dmgLAdd'(o, p) {
-                        return p + 0.85 * this['str'];
-                    },
-                    'defselfAdd'(o, p) {
-                        return p + 0.85 * this['str'] + this['sta'];
-                    },
-                    'allResselfAdd'(o, p) {
-                        return p + this['sta'];
-                    },
-                    'speResAdd'(o, p) {
-                        return p + this['sta'];
-                    },
-                    'maxHp_Add'(o, p) {
-                        return p + 0x4 * this['sta'];
-                    },
-                    'maxRp': (o, p) => p + 0x64,
-                    'rpOnAttacked': (o, p) => p + 0x1,
-                    'nomp': (o, p) => 0x0,
-                    'hpRecovery'(o, p) {
-                        return p + 0.1 * this['sta'];
-                    }
-                }
-            }, {
-                'key': 'warrior_passive2',
-                'name': '魔剑',
-                'description': '',
-                'hooks': {
-                    'firedmgAdd': (o, p) => p + 0.1, 'firedmgLAdd'(o, p) {
-                        return p + 0.5 * this['str'] + 0.5 * this['int'];
-                    }, 'shanbizhiAdd'(o, p) {
-                        return p + 0x2 * this['dex'];
-                    }, 'speedRateAdd'(o, p) {
-                        return p + Math['min'](0.2, Math['round'](this['dex'] / 0x96) / 0x64);
-                    }
-                }
-            }, {
-                'key': 'warrior_passive3', 'name': '宗师', 'description': '', 'hooks': {
-                    'dmgLAdd'(o, p) {
-                        return p + this['str'];
-                    }, 'shanbizhiAdd'(o, p) {
-                        return p + 0x4 * this['dex'];
-                    }, 'speedRateAdd'(o, p) {
-                        return p + Math['min'](0.3, Math['round'](this['dex'] / 0x64) / 0x64);
-                    }
-                }
-            }, {
-                'key': 'warrior_passive4', 'name': '守护者', 'description': '', 'hooks': {
-                    'atk_self_Add'(o, p) {
-                        return p + this['maxHp'] / 0x32;
+                    }, 'dmgLAdd'(o, p) {
+                        return p + 0.5 * this['str'];
                     }, 'defselfAdd'(o, p) {
-                        return p + this['str'] + 0.5 * this['sta'];
+                        return p + 0.5 * this['str'];
                     }, 'allResselfAdd'(o, p) {
                         return p + 0.5 * this['sta'];
                     }, 'maxHp_Add'(o, p) {
-                        return p + 0x2 * this['sta'];
-                    }
-                }
-            }, {
-                'key': 'warrior_passive5', 'name': '血魔', 'description': '', 'hooks': {
-                    'critRLAdd'(o, p) {
-                        return p + 0x1 * this['dex'];
-                    }, 'critBLAdd'(o, p) {
-                        return p + 0x2 * this['dex'];
-                    }
-                }
-            }, {
-                'key': 'warrior_passive6',
-                'name': '焚天',
-                'description': '',
-                'hooks': {
-                    'firedmgAdd': (o, p) => p + 0.1, 'colddmgAdd': (o, p) => p + 0.1, 'firedmgLAdd'(o, p) {
-                        return p + 0.5 * this['str'] + 0.5 * this['int'];
+                        return p + 3.5 * this['sta'];
+                    }, 'rpOnAttacked': (o, p) => p + 0x1, 'hpRecovery'(o, p) {
+                        return p + 0.1 * this['sta'];
+                    }, 'speResAdd'(o, p) {
+                        return p + 0.5 * this['sta'];
+                    }, 'firedmgLAdd'(o, p) {
+                        return p + 0.5 * this['int'];
                     }, 'colddmgLAdd'(o, p) {
-                        return p + 0.5 * this['str'] + 0.5 * this['int'];
-                    }, 'critRLAdd'(o, p) {
-                        return p + 0.5 * this['dex'];
-                    }, 'critBLAdd'(o, p) {
-                        return p + this['dex'];
-                    }, 'maxCpAdd': (o, p) => p + 0x64, 'maxFpAdd': (o, p) => p + 0x64
+                        return p + 0.5 * this['int'];
+                    }, 'lightningdmgLAdd'(o, p) {
+                        return p + 0.5 * this['int'];
+                    }
                 }
             }];
         }, 8531: m => {
@@ -10065,58 +8533,25 @@ a();
             m['exports'] = {
                 'key': 'Aleanor',
                 'name': '亚莲娜',
-                'description': '艾尔的童年好友，一名蓝发的少女。似乎有些不同寻常的地方……\x0a\x20\x20\x20\x0a\x20\x20职业：\x20魔法学徒\x0a\x20\x20职业特性：\x20\x0a\x20\x20①法力值上限+50，法力值恢复+1\x0a\x20\x20②每点智力额外增加5点法力值上限和0.1法力值恢复\x0a\x20\x20\x20\x0a\x20\x20可以使用的武器：\x20法杖\x0a\x20\x20可以穿戴的防具：\x20布甲\x0a\x20\x20\x20\x20\x0a\x20\x20可以习得的主动技能：\x20杖击、魔法连弹、召唤术·史莱姆\x0a\x20\x20可以习得的被动技能：\x20能量亲和、魔法铠甲\x0a\x20\x20\x20\x0a\x20\x20当角色等级达到15级且任意一个角色完成副本“迷雾森林”的首通时，可以进行第一次转职。',
+                'description': '艾尔的童年好友，一名蓝发的少女。似乎有些不同寻常的地方……',
                 'defaultCareer': 'sorceress',
                 'atk': 0x0,
                 'atkSpeed': 0x1,
                 'requirement': {'stories': ['aleanor-startup']},
                 'attrBase': {'str': 0x4, 'dex': 0x8, 'int': 0xc, 'sta': 0x8}
             };
-        }, 662: m => {
-            m['exports'] = {
-                'key': 'Ariel',
-                'name': '伊瑞尔',
-                'description': '这是一名来自庇护之地的圣骑士。',
-                'defaultCareer': 'paladin',
-                'atk': 0x1,
-                'atkSpeed': 0.5,
-                'requirement': {'stories': ['pal-2'], 'unplayer': ['Ariel']},
-                'attrBase': {'str': 0xa, 'dex': 0x5, 'int': 0xa, 'sta': 0x5}
-            };
         }, 4564: m => {
             m['exports'] = {
                 'key': 'Eyer',
                 'name': '艾尔',
-                'description': '边境之村的一名普通少年，熟读数百本勇者传，头发染成了勇者专用的金色。\x0a\x20\x20\x20\x0a\x20\x20职业：\x20战士\x0a\x20\x20职业特性：\x20\x0a\x20\x20①每点力量额外增加0.2攻击力\x0a\x20\x20②被攻击时获得1点怒气\x0a\x20\x20\x0a\x20\x20可以使用的武器：\x20长剑、剑盾、双刀\x0a\x20\x20可以穿戴的防具：\x20轻甲、重甲\x0a\x20\x20\x20\x0a\x20\x20可以习得的主动技能：\x20普通攻击、包扎伤口、重击\x0a\x20\x20可以习得的被动技能：\x20坚韧、奋勇\x0a\x20\x20\x0a\x20\x20当角色等级达到15级且任意一个角色完成副本“迷雾森林”的首通时，可以进行第一次转职。\x0a\x20\x20',
+                'description': '边境之村的一名普通少年，熟读数百本勇者传，头发染成了勇者专用的金色。',
                 'defaultCareer': 'warrior',
                 'atk': 0x1,
                 'atkSpeed': 0.5,
                 'attrBase': {'str': 0xa, 'dex': 0x8, 'int': 0x4, 'sta': 0xa}
             };
-        }, 2334: m => {
-            m['exports'] = {
-                'key': 'iPhone14promax',
-                'name': '恶魔五月哭',
-                'description': 'I\x20am\x20the\x20storm\x20that\x20is\x20approaching\x0a\x09\x20\x0a\x09Provoking\x20black\x20clouds\x20in\x20isolation\x0a\x09\x20\x0a\x09I\x20am\x20reclaimer\x20of\x20my\x20name\x0a\x09\x20\x0a\x09Born\x20in\x20flames,\x20I\x20have\x20been\x20blessed\x0a\x09\x20\x0a\x09My\x20family\x20crest\x20is\x20a\x20demon\x20of\x20death!\x0a\x09\x20\x0a\x09\x20\x0a\x09职业：\x20黑暗君主\x0a\x09职业特性：\x20\x0a\x09①法力值上限+50\x0a\x09②每点力量额外增加0.2攻击力\x0a\x09③每点智力额外增加0.2攻击力、1点暗伤害、1点暗抗性、5点法力值上限\x0a\x09\x20\x0a\x09可以使用的武器：\x20太刀，长剑\x0a\x09可以穿戴的防具：\x20布甲\x0a\x09\x20\x20\x0a\x09艾冯十世·普洛·麦克斯大佬为大家定制的超强（？）角色。\x0a\x09',
-                'defaultCareer': 'soulbringer',
-                'atk': 0x1,
-                'atkSpeed': 0x1,
-                'requirement': {'stories': ['soulbringer-2'], 'unplayer': ['iPhone14promax']},
-                'attrBase': {'str': 0xa, 'dex': 0x8, 'int': 0xa, 'sta': 0x8}
-            };
         }, 1725: (m, o, p) => {
-            m['exports'] = [p(0x11d4), p(0x68b), p(0x91e), p(0x296), p(0xe0d)];
-        }, 3597: m => {
-            m['exports'] = {
-                'key': 'villageH',
-                'name': '村长',
-                'description': '边境之村的村长，没有人能知道他的姓名\x0a\x09如果没有这场灾难，他可能永远过着悠哉游哉看黄色书籍、调戏中年熟妇的生活\x0a\x20\x20\x20\x0a\x09职业：\x20拳师\x0a\x09职业特性：\x20\x0a\x09①每点力量+0.2攻击力\x0a\x20\x20\x20\x0a\x09可以使用的武器：\x20无\x0a\x09可以穿戴的防具：\x20重甲、布甲\x0a\x09\x09\x0a\x09可以习得的主动技能：\x20直拳、推掌\x0a\x09可以习得的被动技能：\x20赤手空拳',
-                'defaultCareer': 'villagelv1',
-                'atk': 0x0,
-                'atkSpeed': 0x1,
-                'requirement': {'stories': ['villageboss-ceshi']},
-                'attrBase': {'str': 0xa, 'dex': 0x4, 'int': 0x4, 'sta': 0x8}
-            };
+            m['exports'] = [p(0x11d4), p(0x68b)];
         }, 7249: m => {
             m['exports'] = [{
                 'key': 'mz_st',
@@ -10996,45 +9431,7 @@ a();
                 }
             }];
         }, 5218: (m, o, p) => {
-            m['exports'] = [...p(0x1c51), ...p(0xfac), ...p(0x20e1), ...p(0x1621), ...p(0x152e), ...p(0xc0), ...p(0x26d1), ...p(0x11ea), ...p(0x1bec), ...p(0x2049), ...p(0x12ad), ...p(0xcae)];
-        }, 8265: m => {
-            m['exports'] = [{
-                'key': 'karon_tombstone',
-                'name': '天降墓碑',
-                'coolDown': 0x4650,
-                'notBreakable': !0x0,
-                'description': (o, p) => '每秒召唤一块墓碑，持续5秒。\x0a\x09\x09\x09墓碑：墓碑入场时立即对所有目标造成' + Math['round']((0x50 + 0x2 * o) / 0x64 * p['atk']) + '-' + Math['round']((0x5a + 0x3 * o) / 0x64 * p['atk']) + '点暗属性伤害；自爆后再次对所有目标造成' + Math['round']((0x14 + 0x1 * o) / 0x64 * p['atk']) + '-' + Math['round']((0x19 + 0x1 * o) / 0x64 * p['atk']) + '点暗属性伤害',
-                'cost': {'mp': 0x2d},
-                'maxExp': o => o ** 0x2 * 0x64 + 0x12c * o + 0xc8,
-                'canUse': (o, p) => !!p['target'],
-                'effect'(o, p, q) {
-                    p['startRead']('karon_tombstonesummon_buff', 0x138d, null, this);
-                }
-            }, {
-                'key': 'karon_tombstoneplus',
-                'name': '坟头蹦迪',
-                'coolDown': 0x9c40,
-                'notBreakable': !0x0,
-                'description': (o, p) => (Math['round']((0x190 + 0x28 * o) / 0x64 * p['atk']), Math['round']((0x1f4 + 0x32 * o) / 0x64 * p['atk']), '召唤一个坟头上场。\x0a\x09\x09\x09坟头：携带“蹦迪”、“自爆”技能。'),
-                'cost': {'mp': 0x96},
-                'maxExp': o => o ** 0x2 * 0x64 + 0x12c * o + 0xc8,
-                'canUse': (o, p) => !o['units']['find'](q => 'karon_summon_tombstoneplus' === q['type']),
-                'effect'(o, p, q) {
-                    o['addEnemy']('karon_summon_tombstoneplus', null, 0x0, p, this);
-                }
-            }, {
-                'key': 'karon_dark_jige',
-                'name': '吉哥降临',
-                'coolDown': 0x4e20,
-                'castTime': 0x1388,
-                'description': (o, p) => (Math['round']((0x190 + 0x28 * o) / 0x64 * p['atk']), Math['round']((0x1f4 + 0x32 * o) / 0x64 * p['atk']), '召唤神官吉哥上场。\x0a\x09\x09\x09吉哥：携带“鬼斩”、“天降墓碑”、“自爆”技能。'),
-                'cost': {'mp': 0x1c2},
-                'maxExp': o => o ** 0x2 * 0x64 + 0x12c * o + 0xc8,
-                'canUse': (o, p) => !o['units']['find'](q => 'karon_summon_jige' === q['type']),
-                'effect'(o, p, q) {
-                    o['addEnemy']('karon_summon_jige', null, 0x0, p, this);
-                }
-            }];
+            m['exports'] = [...p(0x1c51), ...p(0xfac), ...p(0x20e1), ...p(0x1621), ...p(0x152e), ...p(0xc0), ...p(0x26d1), ...p(0x11ea), ...p(0x12ad)];
         }, 5665: m => {
             function o(p) {
                 let q = arguments['length'] > 0x1 && void 0x0 !== arguments[0x1] ? arguments[0x1] : 0x1;
@@ -11267,7 +9664,8 @@ a();
             m['exports'] = [{
                 'key': 'paladin_skill1',
                 'name': '牺牲',
-                'group': '1',
+                'type': 'player',
+                'lv': 0x1,
                 'coolDown': 0x5dc,
                 'cost': {'mp': 0x1},
                 'description': (o, p) => {
@@ -11286,7 +9684,8 @@ a();
             }, {
                 'key': 'paladin_skill2',
                 'name': '力量',
-                'group': '2',
+                'type': 'player',
+                'lv': 0x1,
                 'halo': !0x0,
                 'coolDown': 0x1388,
                 'description': o => '物理伤害+' + Math['round'](0x64 + 0x2 * o) / 0xa + '%。\x0a\x09\x09\x09同时携带“祝福瞄准”，额外+10%物理伤害。\x0a\x09\x09\x09同时携带“反抗”，额外+10%物理伤害。\x0a\x09\x09\x09每5秒增加1点技能熟练度。',
@@ -11298,15 +9697,13 @@ a();
             }, {
                 'key': 'paladin_skill3',
                 'name': '盾击',
-                'group': '4',
+                'type': 'player',
+                'lv': 0x6,
                 'description': (o, p) => '虽然我会炖鸡，但兄弟你记得要带盾啊。\x0a\x09\x09\x09用盾牌猛击敌人，根据自身物理防御，对目标造成' + Math['round'](p['def'] * (0.5 + 0.01 * o)) + '点物理伤害，并使其昏迷1秒。\x0a\x09\x09\x09同时携带“力量”，昏迷时间增加0.5秒。\x0a\x09\x09\x09同时携带“荆棘”，下一个“牺牲”伤害+100%。\x0a\x09\x09\x09同时携带“反抗”，盾击的伤害+' + Math['round'](p['def'] / (p['def'] + 0x1388) * 0x64 + 0x2 * o) + '%。',
                 'coolDown': 0x1f40,
                 'cost': {'mp': 0x5},
                 'maxExp': o => o ** 0x2 * 0xc8 + 0x258 * o + 0x190,
-                'canUse'(o, p) {
-                    const {weapon: q} = p['player']['equipments'];
-                    return !!p['target'] && 'swordshield' === q['goodData']['class'];
-                },
+                'canUse': (o, p) => !!p['target'],
                 'effect'(p, q, u) {
                     const {target: v, def: w, leech: x = 0x0} = q,
                         y = Math['round'](q['def'] * (0.5 + 0.01 * u) * q['dmgAdd']) * (0x1 + (q['runAttrHooks'](!0x1, 'pal_enhance3') ? q['def'] / (q['def'] + 0x1388) + u / 0x32 : 0x0)),
@@ -11316,6 +9713,8 @@ a();
             }, {
                 'key': 'paladin_skill4',
                 'name': '圣光弹',
+                'type': 'player',
+                'lv': 0xc,
                 'description': (o, p) => {
                     const q = o + p['runAttrHooks'](0x0, 'allskillLv') + p['runAttrHooks'](0x0, 'pdsk4'),
                         s = (0.8 * p['atk'] + (p['int'] + p['str']) * (0.35 + 0.006 * q)) * (0.06 * q + 0x1);
@@ -11337,7 +9736,8 @@ a();
             }, {
                 'key': 'paladin_skill5',
                 'name': '神圣之火',
-                'group': '3',
+                'type': 'player',
+                'lv': 0x6,
                 'halo': !0x0,
                 'coolDown': 0x1388,
                 'description': (o, p) => {
@@ -11352,7 +9752,8 @@ a();
             }, {
                 'key': 'paladin_skill6',
                 'name': '白热',
-                'group': '1',
+                'type': 'player',
+                'lv': 0x12,
                 'coolDown': 0x5dc,
                 'cost': {'mp': 0x2},
                 'description': (o, p) => {
@@ -11375,15 +9776,13 @@ a();
             }, {
                 'key': 'paladin_skill7',
                 'name': '盾压',
-                'group': '4',
+                'type': 'player',
+                'lv': 0x18,
                 'description': (o, p) => '虽然我会炖鸭，但兄弟你记得要带盾啊。\x0a\x09\x09\x09用盾牌拍击敌人，根据自身物理防御，对目标造成' + Math['round'](p['def'] * (0x1 + 0.03 * o)) + '点物理伤害，10%几率触发“压碎性打击”。\x0a\x09\x09\x09压碎性打击：对目标造成其当前生命值25%的物理伤害，但最大不能超过自身物理防御的' + Math['round'](0x1f4 + 0xa * o) + '%。\x0a\x09\x09\x09携带“力量”时，“压碎性打击”的触发几率增加至25%。\x0a\x09\x09\x09携带“荆棘”时，下一个“牺牲”伤害+100%。\x0a\x09\x09\x09携带“反抗”时，“压碎性打击”的伤害上限×2。',
                 'coolDown': 0x3a98,
                 'cost': {'mp': 0xa},
                 'maxExp': o => o ** 0x2 * 0xc8 + 0x258 * o + 0x190,
-                'canUse'(o, p) {
-                    const {weapon: q} = p['player']['equipments'];
-                    return !!p['target'] && 'swordshield' === q['goodData']['class'];
-                },
+                'canUse': (o, p) => !!p['target'],
                 'effect'(p, q, s) {
                     const {target: u, leech: v = 0x0} = q, w = q['def'] * (0x1 + 0.03 * s) * q['dmgAdd'],
                         x = q['testCrit']();
@@ -11392,7 +9791,8 @@ a();
             }, {
                 'key': 'paladin_skill8',
                 'name': '复仇',
-                'group': '1',
+                'type': 'player',
+                'lv': 0x24,
                 'description': (o, p) => {
                     const q = (p['atk'] + (p['int'] + p['str']) * (0.35 + 0.003 * o)) * (0.04 * o + 0x1) / 0x3;
                     return '根据自身攻击力、力量、智力，对目标分别造成' + Math['round'](0.9 * q) + '-' + Math['round'](1.1 * q) + '点火焰、寒冷、闪电伤害。\x0a\x09\x09\x09每“神圣之火”等级，造成的火焰伤害提高5%。\x0a\x09\x09\x09每“神圣冰冻”等级，造成的寒冷伤害提高5%。\x0a\x09\x09\x09每“神圣冲击”等级，造成的闪电伤害提高5%。\x0a\x09\x09\x09同时携带“信念”，每次命中使目标的火焰、寒冷、闪电抗性永久减少' + p['player']['getSkillLevel']('paladin_skill16') + '点。\x0a\x09\x09\x09同时携带“救助”，每次命中有50%的几率使目标受到的火焰、寒冷、闪电伤害+1%，可叠加。';
@@ -11413,7 +9813,8 @@ a();
             }, {
                 'key': 'paladin_skill9',
                 'name': '神圣冰冻',
-                'group': '3',
+                'type': 'player',
+                'lv': 0xc,
                 'halo': !0x0,
                 'coolDown': 0x1388,
                 'description': (o, p) => {
@@ -11428,6 +9829,8 @@ a();
             }, {
                 'key': 'paladin_skill10',
                 'name': '祝福之锤',
+                'type': 'player',
+                'lv': 0x2a,
                 'description': (o, p) => {
                     const q = (p['atk'] + (p['int'] + p['str']) * (0.55 + 0.005 * o)) * (0.06 * o + 0x1);
                     return '大锤八十，小锤四十。\x0a\x09\x09\x09将神圣能量凝聚成一柄祝福之锤，根据自身攻击力、力量、智力，对所有目标造成' + Math['round'](0.9 * q) + '-' + Math['round'](1.1 * q) + '点光伤害。\x0a\x09\x09\x09同时携带“祝福瞄准”，技能暴击几率+25%。\x0a\x09\x09\x09同时携带“精力”，冷却时间减少3秒。\x0a\x09\x09\x09同时携带“专注”，额外对主目标造成一次350%的伤害。';
@@ -11454,7 +9857,8 @@ a();
             }, {
                 'key': 'paladin_skill11',
                 'name': '专注',
-                'group': '2',
+                'type': 'player',
+                'lv': 0x24,
                 'halo': !0x0,
                 'coolDown': 0x1388,
                 'description': (o, p) => '暴击等级+' + 0.5 * p['level'] * o + '点，闪避值+' + 0.25 * p['level'] * o + '点。\x0a\x09\x09\x09同时携带“祝福瞄准”，暴击几率+10%。\x0a\x09\x09\x09同时携带“反抗”，闪避几率+10%。\x0a\x09\x09\x09每5秒增加1点技能熟练度。',
@@ -11466,22 +9870,22 @@ a();
             }, {
                 'key': 'paladin_skill12',
                 'name': '神圣之盾',
+                'type': 'player',
+                'lv': 0x30,
                 'description': (o, p) => '虽然我不会炖猪脚，但兄弟你记得要带盾啊。\x0a\x09\x09\x09用神圣的力量强化你的盾牌，火焰、寒冷、闪电抗性+' + 0.25 * p['level'] * o + '点，受到物理伤害时有15%几率格挡。\x0a\x09\x09\x09格挡：使受到的物理伤害减少50%。\x0a\x09\x09\x09同时携带“力量”，格挡几率提高至25%。\x0a\x09\x09\x09同时携带“反抗”，所有伤害吸收+20%。',
                 'coolDown': 0x61a8,
                 'cost': {'mp': 0x16},
                 'castTime': 0x1f4,
                 'maxExp': o => o ** 0x2 * 0x258 + 0x708 * o + 0x4b0,
-                'canUse'(o, p) {
-                    const {weapon: q} = p['player']['equipments'];
-                    return !!p['target'] && 'swordshield' === q['goodData']['class'];
-                },
+                'canUse': (o, p) => !!p['target'],
                 'effect'(o, p, q) {
                     p['addBuff']('skill12_buff', 0x61a8, q, 'skill12_buff');
                 }
             }, {
                 'key': 'paladin_skill13',
                 'name': '神圣冲击',
-                'group': '3',
+                'type': 'player',
+                'lv': 0x12,
                 'halo': !0x0,
                 'coolDown': 0x1388,
                 'description': (o, p) => {
@@ -11496,7 +9900,8 @@ a();
             }, {
                 'key': 'paladin_skill14',
                 'name': '庇护之光',
-                'group': '3',
+                'type': 'player',
+                'lv': 0x18,
                 'halo': !0x0,
                 'coolDown': 0x1388,
                 'description': (o, p) => {
@@ -11513,6 +9918,8 @@ a();
             }, {
                 'key': 'paladin_skill15',
                 'name': '天堂之拳',
+                'type': 'player',
+                'lv': 0x3c,
                 'description': (o, p) => {
                     const q = (p['atk'] + 1.5 * (p['str'] + p['int']) + 0x4e * o) * (0.035 * o + 0x1);
                     return '你记不记得有一招从天而降的拳法。\x0a\x09\x09\x09召唤神圣能量攻击你的目标，根据自身攻击力、力量、智力，对目标造成' + Math['round'](0.9 * q) + '-' + Math['round'](1.1 * q) + '点光伤害。\x0a\x09\x09\x09同时携带“圣光弹”，每“圣光弹”技能等级+5%伤害，并对目标额外释放一次“圣光弹”。\x0a\x09\x09\x09同时携带“庇护之光”，技能伤害+25%。\x0a\x09\x09\x09同时携带“净化”，冷却时间减少5秒。\x0a\x09\x09\x09同时携带“救赎”，释放技能时若生命值小于55%，则额外恢复20%最大生命值。';
@@ -11533,6 +9940,8 @@ a();
             }, {
                 'key': 'paladin_skill16',
                 'name': '信念',
+                'type': 'player',
+                'lv': 0x30,
                 'halo': !0x0,
                 'coolDown': 0x1388,
                 'description': o => '使所有敌对目标的物理防御减少' + (0x1f4 + 0x1e * o) + '点，元素抗性减少' + (0x1f4 + 0x1e * o) + '点。\x0a\x09\x09\x09同时携带“火焰抵抗”，额外减少' + 0x14 * o + '点火焰抗性。\x0a\x09\x09\x09同时携带“寒冷抵抗”，额外减少' + 0x14 * o + '点寒冷抗性。\x0a\x09\x09\x09同时携带“闪电抵抗”，额外减少' + 0x14 * o + '点闪电抗性。\x0a\x09\x09\x09同时携带“救助”，额外减少' + 0xa * o + '点元素抗性。\x0a\x09\x09\x09每5秒增加1点技能熟练度。',
@@ -11544,7 +9953,8 @@ a();
             }, {
                 'key': 'paladin_skill17',
                 'name': '狂热',
-                'group': '2',
+                'type': 'player',
+                'lv': 0x3c,
                 'halo': !0x0,
                 'coolDown': 0x1388,
                 'description': (o, p) => '造成的伤害+' + Math['round'](0x64 + 0x2 * o) / 0xa + '%，急速+20%。\x0a\x09\x09\x09同时携带“祝福瞄准”，造成的伤害额外+10%。\x0a\x09\x09\x09同时携带“精力”，造成的伤害额外+10%。\x0a\x09\x09\x09每5秒增加1点技能熟练度。',
@@ -11552,16 +9962,6 @@ a();
                 'canUse': (o, p) => !!p['target'],
                 'effect'(o, p, q) {
                     p['removeBuff'](p['buffs']['find'](s => 'skill17_buff' === s['group'])), p['addBuff']('skill17_buff', 0x1388, 1.1 + 0.002 * q, 'skill17_buff');
-                }
-            }, {
-                'key': 'holy_skill',
-                'name': '神圣',
-                'description': '',
-                'maxExp': o => o ** 0x2 * 0xc8 + 0x258 * o + 0x190,
-                'canUse': (o, p) => !!p['target'],
-                'effect'(o, p, q) {
-                    const {target: s} = p, u = p['testCrit']();
-                    p['runAttrHooks'](!0x1, 'skill5_buff') && o['sendDamage']('fire', null, s, '火曜', p['getCritBonus'](u) * p['int'] * (0.5 + 0.03 * p['player']['getSkillLevel']('paladin_skill5')) * p['firedmgAdd'] * (0x1 + (p['runAttrHooks'](!0x1, 'pal_enhance10') ? 0.25 : 0x0)), u), p['runAttrHooks'](!0x1, 'skill9_buff') && o['sendDamage']('cold', null, s, '霜冻', p['getCritBonus'](u) * p['int'] * (0.5 + 0.03 * p['player']['getSkillLevel']('paladin_skill5')) * p['colddmgAdd'] * (0x1 + (p['runAttrHooks'](!0x1, 'pal_enhance10') ? 0.25 : 0x0)), u), p['runAttrHooks'](!0x1, 'skill13_buff') && o['sendDamage']('lightning', null, s, '雷冲', p['getCritBonus'](u) * p['int'] * (0.5 + 0.03 * p['player']['getSkillLevel']('paladin_skill5')) * p['lightningdmgAdd'] * (0x1 + (p['runAttrHooks'](!0x1, 'pal_enhance10') ? 0.25 : 0x0)), u), p['runAttrHooks'](!0x1, 'skill14_buff') && o['sendDamage']('light', null, s, '圣光', p['getCritBonus'](u) * p['int'] * (0.5 + 0.03 * p['player']['getSkillLevel']('paladin_skill5')) * p['lightdmgAdd'] * (0x1 + (p['runAttrHooks'](!0x1, 'pal_enhance11') ? 0.25 : 0x0)), u);
                 }
             }];
         }, 8417: m => {
@@ -11882,6 +10282,8 @@ a();
             }, {
                 'key': 'sorceress_chainingLightning',
                 'name': '雷蛇',
+                'type': 'player',
+                'lv': 0x28,
                 'element': 'lightning',
                 'description': (u, v) => {
                     const w = v['runAttrHooks'](!0x1, 'lv80_sorceress6_enhance1'),
@@ -11920,6 +10322,8 @@ a();
             }, {
                 'key': 'sorceress_energy',
                 'name': '蓄电',
+                'type': 'player',
+                'lv': 0x32,
                 'element': 'lightning',
                 'coolDown': (u, v, w) => 0x2af8 - v['runAttrHooks'](0x0, 'lv80_sorceress5_enhance2'),
                 'maxExp': u => u ** 0x2 * 0x258 + 0x708 * u + 0x4b0,
@@ -11932,6 +10336,8 @@ a();
             }, {
                 'key': 'sorceress_supernova',
                 'name': '超级新星',
+                'type': 'player',
+                'lv': 0x3c,
                 'element': 'lightning',
                 'description': (u, v) => {
                     const w = v['runAttrHooks'](!0x1, 'lv80_sorceress6_enhance1'),
@@ -11969,6 +10375,8 @@ a();
             }, {
                 'key': 'sorceress_electrostatic',
                 'name': '静电力场',
+                'type': 'player',
+                'lv': 0x46,
                 'description': u => '使所有目标的添加一层“静电”效果，可叠加。\x0a\x09\x09\x09静电：闪电抗性永久减少' + Math['round'](0x64 + 0x2 * u) + '点。',
                 'castTime': 0x1f4,
                 'coolDown': 0x1388,
@@ -11985,6 +10393,8 @@ a();
             }, {
                 'key': 'sorceress_coldBall',
                 'name': '水箭术',
+                'type': 'player',
+                'lv': 0xf,
                 'element': 'cold',
                 'description': (u, v) => {
                     const w = (0xf + 0x2 * u) * (0.01 * v['int'] + 0x1) * (0.05 * u + 0x1);
@@ -12021,6 +10431,8 @@ a();
             }, {
                 'key': 'sorceress_lucky',
                 'name': '幸运祝福',
+                'type': 'player',
+                'lv': 0x32,
                 'element': 'cold',
                 'description': u => '你只有一个金苹果，所以你只能换取一种祝福。\x0a\x09\x09\x09随机获得以下一种祝福效果，每一种祝福效果不可共存，持续25秒。\x0a\x09\x09\x09幸运A面：智力+' + Math['round'](0x64 + 0x8 * u) + '\x0a\x09\x09\x09幸运B面：寒冷伤害+' + Math['round'](0xfa + 0x5 * u) / 0xa + '%\x0a\x09\x09\x09幸运C面：生命值恢复+' + Math['round'](0x32 + 0x3 * u) + '，法力值恢复+' + Math['round'](0x32 + 0x3 * u),
                 'coolDown': 0x61a8,
@@ -12053,6 +10465,8 @@ a();
             }, {
                 'key': 'sorceress_torrent',
                 'name': '湍流',
+                'type': 'player',
+                'lv': 0x3c,
                 'element': 'cold',
                 'description': (u, v) => {
                     const w = (0x23 + 0x1 * u) * (0.01 * v['int'] + 0x1) * (0.05 * u + 0x1);
@@ -12081,6 +10495,8 @@ a();
             }, {
                 'key': 'sorceress_coldShield',
                 'name': '寒冰护甲',
+                'type': 'player',
+                'lv': 0x46,
                 'element': 'cold',
                 'maxExp': u => u ** 0x2 * 0x258 + 0x708 * u + 0x4b0,
                 'canUse': (u, v) => !!v['target'],
@@ -12093,6 +10509,8 @@ a();
             }, {
                 'key': 'sorceress_bc_fire',
                 'name': '元素化·烈焰',
+                'type': 'player',
+                'lv': 0x50,
                 'element': 'fire',
                 'maxExp': u => u ** 0x2 * 0x258 + 0x708 * u + 0x4b0,
                 'canUse'(u, v) {
@@ -12109,6 +10527,8 @@ a();
             }, {
                 'key': 'sorceress_bc_cold',
                 'name': '元素化·寒冰',
+                'type': 'player',
+                'lv': 0x50,
                 'element': 'cold',
                 'maxExp': u => u ** 0x2 * 0x258 + 0x708 * u + 0x4b0,
                 'canUse'(u, v) {
@@ -12125,6 +10545,8 @@ a();
             }, {
                 'key': 'sorceress_bc_lightning',
                 'name': '元素化·雷光',
+                'type': 'player',
+                'lv': 0x50,
                 'element': 'lightning',
                 'maxExp': u => u ** 0x2 * 0x258 + 0x708 * u + 0x4b0,
                 'canUse'(u, v) {
@@ -12141,6 +10563,8 @@ a();
             }, {
                 'key': 'sorceress_fire_wind',
                 'name': '焚骨',
+                'type': 'player',
+                'lv': 0x5a,
                 'element': 'fire',
                 'coolDown': 0xafc8,
                 'cost': {'mp': u => 0x384},
@@ -12191,6 +10615,8 @@ a();
             }, {
                 'key': 'sorceress_hellfire_plus',
                 'name': '狱炎之门',
+                'type': 'player',
+                'lv': 0x5a,
                 'coolDown': 0x9c40,
                 'notBreakable': !0x0,
                 'element': 'fire',
@@ -12213,6 +10639,7 @@ a();
             }, {
                 'key': 'sorceress_impulse',
                 'name': '脉冲',
+                'lv': 0x5a,
                 'description': (u, v) => {
                     const w = v['runAttrHooks'](0x1, 'lv80_sorceress5_enhance1'),
                         x = (0xb4 + 0x12 * u) * (0.01 * v['int'] + 0x1) * (0.1 * u + 0x1) * 0x3 * w;
@@ -12243,6 +10670,8 @@ a();
             }, {
                 'key': 'sorceress_thunder',
                 'name': '雷神降临',
+                'type': 'player',
+                'lv': 0x5a,
                 'coolDown': 0xafc8,
                 'castTime': 0x1f4,
                 'notBreakable': !0x0,
@@ -12272,6 +10701,8 @@ a();
             }, {
                 'key': 'sorceress_sea',
                 'name': '海啸',
+                'type': 'player',
+                'lv': 0x5a,
                 'coolDown': 0xafc8,
                 'notBreakable': !0x0,
                 'element': 'cold',
@@ -12294,6 +10725,8 @@ a();
             }, {
                 'key': 'sorceress_blizzard',
                 'name': '暴风雪',
+                'type': 'player',
+                'lv': 0x5a,
                 'coolDown': 0xafc8,
                 'notBreakable': !0x0,
                 'element': 'cold',
@@ -12316,6 +10749,8 @@ a();
             }, {
                 'key': 'sorceress_tide',
                 'name': '潮汐',
+                'type': 'player',
+                'lv': 0x28,
                 'element': 'cold',
                 'description': (u, v) => {
                     const w = (0x14 + 0x1 * u) * (0.01 * v['int'] + 0x1) * (0.05 * u + 0x1);
@@ -12450,695 +10885,6 @@ a();
                     });
                 }
             }];
-        }, 7148: m => {
-            function o(p, q, s) {
-                if (p['buffs']['find'](u => 'soul_darkfire_buff' === u['group'])) {
-                    const u = q['buffs']['find'](v => 'darkfire_buff' === v['group']);
-                    u ? (u['arg'] += s, console['log'](u['arg']), u['arg'] = Math['min'](u['arg'], 0x3 * p['atk'] * p['darkdmgAdd']), u['resetTimer'](0xbb8)) : q['addBuff']('darkfire_buff', 0xbb8, s, 'darkfire_buff');
-                }
-            }
-
-            m['exports'] = [{
-                'key': 'soulbringer_atk',
-                'name': '普通攻击',
-                'coolDown': 0x3e8,
-                'description': (p, q) => '对目标造成' + Math['round']((0x28 + 0x2 * p) / 0x64 * q['atk']) + '-' + Math['round']((0x37 + 0x3 * p) / 0x64 * q['atk']) + '点物理伤害，恢复1点法力。',
-                'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, v) {
-                    const {target: w, leech: x = 0x0, atk: y} = q;
-                    if (p['testDodge'](q, w, this)) return;
-                    const z = q['runAttrHooks'](!0x1, 'soulbringer_enhance3'),
-                        A = y * (0.4 + 0.02 * v + Math['random']() * (0.15 + 0.01 * v)), B = q['testCrit']();
-                    let C = 0x0;
-                    z ? (p['sendDamage']('dark', q, w, this, q['getCritBonus'](B) * A * 1.5 * q['darkdmgAdd'], B), C += 0.4, p['units']['filter'](D => D !== w && q['willAttack'](D))['slice'](0x0, 0x2)['forEach'](D => {
-                        if (p['testDodge'](q, D, this)) return;
-                        const E = y * (0.8 + 0.04 * v + Math['random']() * (0.1 + 0.01 * v));
-                        C += 0.4;
-                        const F = q['testCrit']();
-                        p['sendDamage']('dark', q, D, this, q['getCritBonus'](F) * E * q['darkdmgAdd'] * 1.5, F), o(q, D, q['atk'] * q['darkdmgAdd']), D['runAttrHooks'](q, 'attacked');
-                    })) : (p['sendDamage']('melee', q, w, this, q['getCritBonus'](B) * A * q['dmgAdd'], B), C += 0x1), o(q, w, q['atk'] * q['darkdmgAdd']), x && (q['hp'] += x * C), q['mp'] += 0x1, w['rp'] += w['rpOnAttacked'], w['runAttrHooks'](q, 'attacked');
-                }
-            }, {
-                'key': 'onikiri',
-                'name': '鬼斩',
-                'coolDown': 0x1770,
-                'description': (p, q) => '对目标造成' + Math['round']((0x6e + 0x5 * p) / 0x64 * q['atk']) + '-' + Math['round']((0x87 + 0x7 * p) / 0x64 * q['atk']) + '点暗属性伤害。',
-                'cost': {'mp': 0xc},
-                'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, u) {
-                    const {target: v, leech: w = 0x0, atk: x} = q;
-                    if (p['testDodge'](q, v, this)) return;
-                    const y = q['runAttrHooks'](0x1, 'soulbringer_enhance2'),
-                        z = x * (1.1 + 0.05 * u + Math['random']() * (0.25 + 0.02 * u)) * q['darkdmgAdd'] * y,
-                        A = q['testCrit']();
-                    if (p['sendDamage']('dark', q, v, this, q['getCritBonus'](A) * z, A), y > 0x1) {
-                        const B = q['mp'] / q['maxMp'];
-                        q['addBuff']('soulbringer_enhance2_buff', 0xfa0, u, 'soulbringer_enhance2_buff'), q['mp'] = q['maxMp'] * B;
-                    }
-                    w && (q['hp'] += w), v['rp'] += v['rpOnAttacked'], v['runAttrHooks'](q, 'attacked');
-                }
-            }, {
-                'key': 'soul_power',
-                'name': '鬼神·抛瓦',
-                'coolDown': 0x4e20,
-                'description': (p, q) => {
-                    let s = p;
-                    return s += q['runAttrHooks'](0x0, 'soulbringer_enhance6'), Math['round'](q['maxHp_self'] * (0xa + 0.5 * s) / 0x64), '召唤鬼神·抛瓦的力量，持续25秒。\x0a\x09\x09\x09鬼神·抛瓦：提高' + (0x32 + 0x2 * p) + '点力量、智力。';
-                },
-                'castTime': 0x1f4,
-                'cost': {'mp': 0x19},
-                'maxExp': p => p ** 0x2 * 0x64 + 0x12c * p + 0xc8,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, s) {
-                    let u = s;
-                    u += q['runAttrHooks'](0x0, 'soulbringer_enhance6');
-                    const v = q['mp'] / q['maxMp'];
-                    q['addBuff']('soul_power_buff', 0x61a8, u, 'soul_power_buff'), q['mp'] = q['maxMp'] * v;
-                }
-            }, {
-                'key': 'moonlight_slash',
-                'name': '月光连斩',
-                'coolDown': 0xfa0,
-                'description': (p, q) => '快速斩击目标两次，每次造成' + Math['round']((0x3c + 0x4 * p) / 0x64 * q['atk']) + '-' + Math['round']((0x4b + 0x5 * p) / 0x64 * q['atk']) + '点暗伤害。',
-                'cost': {'mp': 0xc},
-                'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, v) {
-                    const {target: w, leech: x = 0x0, atk: y} = q;
-                    if (p['testDodge'](q, w, this)) return;
-                    const z = y * (0.6 + 0.04 * v + Math['random']() * (0.15 + 0.01 * v)) * q['darkdmgAdd'],
-                        A = q['testCrit']();
-                    p['sendDamage']('dark', q, w, this, q['getCritBonus'](A) * z, A);
-                    const B = y * (0.6 + 0.04 * v + Math['random']() * (0.15 + 0.01 * v)) * q['darkdmgAdd'],
-                        C = q['testCrit']();
-                    p['sendDamage']('dark', q, w, this, q['getCritBonus'](C) * B, C), x && (q['hp'] += x), w['rp'] += w['rpOnAttacked'], w['runAttrHooks'](q, 'attacked');
-                }
-            }, {
-                'key': 'ghost_whip',
-                'name': '鬼影三击剑',
-                'description': (p, q) => '对三个目标各刺出一剑，分别造成' + Math['round']((0x50 + 0x4 * p) / 0x64 * q['atk']) + '-' + Math['round']((0x5a + 0x5 * p) / 0x64 * q['atk']) + '点暗属性伤害。',
-                'coolDown': 0x1f40,
-                'cost': {'mp': 0x19},
-                'maxExp': p => p ** 0x2 * 0xc8 + 0x258 * p + 0x190,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, u) {
-                    const {atk: v, target: w, leech: x} = q,
-                        y = v * (0.8 + 0.04 * u + Math['random']() * (0.1 + 0.01 * u)), z = q['testCrit']();
-                    p['sendDamage']('dark', q, w, this, q['getCritBonus'](z) * y * q['darkdmgAdd'], z);
-                    let A = 0.4;
-                    p['units']['filter'](B => B !== w && q['willAttack'](B))['slice'](0x0, 0x2)['forEach'](B => {
-                        if (p['testDodge'](q, B, this)) return;
-                        const C = v * (0.8 + 0.04 * u + Math['random']() * (0.1 + 0.01 * u));
-                        A += 0.4;
-                        const D = q['testCrit']();
-                        p['sendDamage']('dark', q, B, this, q['getCritBonus'](D) * C * q['darkdmgAdd'], D), B['runAttrHooks'](q, 'attacked');
-                    }), x && (q['hp'] += x * A), w['rp'] += w['rpOnAttacked'], w['runAttrHooks'](q, 'attacked');
-                }
-            }, {
-                'key': 'soul_armor',
-                'name': '鬼神·铠甲',
-                'coolDown': 0x3a98,
-                'notBreakable': !0x0,
-                'description': (p, q) => {
-                    let s = p;
-                    return s += q['runAttrHooks'](0x0, 'soulbringer_enhance6'), '召唤鬼神·铠甲的力量，持续20秒。\x0a\x09\x09\x09鬼神·铠甲：物理防御+' + Math['round'](q['def_self'] * (0xf + s / 0x2) / 0x64) + ',暗抗性+' + Math['round'](q['darkResist'] * (0xa + s / 0x2) / 0x64) + '。';
-                },
-                'castTime': 0x1f4,
-                'cost': {'mp': 0xf},
-                'maxExp': p => p ** 0x2 * 0x64 + 0x12c * p + 0xc8,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, s) {
-                    let u = s;
-                    u += q['runAttrHooks'](0x0, 'soulbringer_enhance6'), q['addBuff']('soul_armor_buff', 0x4e20, u, 'soul_armor_buff'), q['runAttrHooks'](!0x1, 'soulbringer_enhance5') && q['addBuff']('soul_armor_buff2', 0x4e20, u, 'soul_armor_buff2');
-                }
-            }, {
-                'key': 'tombstone',
-                'name': '天降墓碑',
-                'coolDown': 0x4650,
-                'notBreakable': !0x0,
-                'description': (p, q) => '每秒召唤一块墓碑，持续5秒。\x0a\x09\x09\x09墓碑：墓碑入场时立即对所有目标造成' + Math['round']((0x50 + 0x2 * p) / 0x64 * q['atk']) + '-' + Math['round']((0x5a + 0x3 * p) / 0x64 * q['atk']) + '点暗属性伤害；自爆后再次对所有目标造成' + Math['round']((0x14 + 0x1 * p) / 0x64 * q['atk']) + '-' + Math['round']((0x19 + 0x1 * p) / 0x64 * q['atk']) + '点暗属性伤害',
-                'cost': {'mp': 0x2d},
-                'maxExp': p => p ** 0x2 * 0x64 + 0x12c * p + 0xc8,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, s) {
-                    q['startRead']('tombstonesummon_buff', 0x138d, null, this);
-                }
-            }, {
-                'key': 'tombstone_boom',
-                'name': '自爆',
-                'description': '自爆',
-                'castTime': 0x1388,
-                'notBreakable': !0x0,
-                'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
-                'canUse': (p, q) => !0x0,
-                'effect'(p, q, s) {
-                    for (const u of p['units']['filter'](v => q['willAttack'](v))) {
-                        const v = q['def'], w = q['atk'] * (0.2 + 0.01 * v + 0.05 * Math['random']()) * q['darkdmgAdd'],
-                            x = q['testCrit']();
-                        p['sendDamage']('dark', q, u, this, q['getCritBonus'](x) * w, x), u['runAttrHooks'](q, 'attacked');
-                    }
-                    q['kill']();
-                }
-            }, {
-                'key': 'soul_weak',
-                'name': '鬼神·虚弱',
-                'coolDown': 0x61a8,
-                'notBreakable': !0x0,
-                'description': (p, q) => {
-                    let s = p;
-                    return s += q['runAttrHooks'](0x0, 'soulbringer_enhance6'), '召唤鬼神·虚弱的力量，持续30秒。\x0a\x09\x09\x09鬼神·虚弱：使所有目标受到的伤害提高' + Math['round'](0xc8 + 0x6 * s) / 0xa + '%。';
-                },
-                'castTime': 0x1f4,
-                'cost': {'mp': 0x19},
-                'maxExp': p => p ** 0x2 * 0x64 + 0x12c * p + 0xc8,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, s) {
-                    let u = s;
-                    u += q['runAttrHooks'](0x0, 'soulbringer_enhance6'), q['addBuff']('soul_weak_buff1', 0x7530, u, 'soul_weak_buff1'), q['runAttrHooks'](!0x1, 'soulbringer_enhance4') && q['addBuff']('soul_weak_buff2', 0x7530, u, 'soul_weak_buff2');
-                }
-            }, {
-                'key': 'ghost_fury',
-                'name': '鬼斩·裂地',
-                'description': (p, q) => '对四个目标分别造成' + Math['round']((0xb4 + 0x8 * p) / 0x64 * q['atk']) + '-' + Math['round']((0xdc + 0xc * p) / 0x64 * q['atk']) + '点暗属性伤害。',
-                'coolDown': 0x4e20,
-                'cost': {'mp': 0x41},
-                'maxExp': p => p ** 0x2 * 0xc8 + 0x258 * p + 0x190,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, u) {
-                    const {atk: v, target: w, leech: x} = q,
-                        y = v * (1.8 + 0.08 * u + Math['random']() * (0.4 + 0.04 * u)), z = q['testCrit']();
-                    p['sendDamage']('dark', q, w, this, q['getCritBonus'](z) * y * q['darkdmgAdd'], z);
-                    let A = 0.4;
-                    p['units']['filter'](B => B !== w && q['willAttack'](B))['slice'](0x0, 0x3)['forEach'](B => {
-                        if (p['testDodge'](q, B, this)) return;
-                        const C = v * (1.8 + 0.08 * u + Math['random']() * (0.4 + 0.04 * u));
-                        A += 0.4;
-                        const D = q['testCrit']();
-                        p['sendDamage']('dark', q, B, this, q['getCritBonus'](D) * C * q['darkdmgAdd'], D), B['runAttrHooks'](q, 'attacked');
-                    }), x && (q['hp'] += x * A), w['rp'] += w['rpOnAttacked'], w['runAttrHooks'](q, 'attacked');
-                }
-            }, {
-                'key': 'soul_shadow',
-                'name': '鬼影瞬闪',
-                'coolDown': 0x4e20,
-                'description': (p, q) => '对目标造成' + Math['round']((0xe6 + 0xa * p) / 0x64 * q['atk']) + '-' + Math['round']((0x118 + 0xf * p) / 0x64 * q['atk']) + '点暗属性伤害。\x0a\x09\x09\x09若携带了被动技能“凭依”，则随机使目标停滞1-5秒。',
-                'cost': {'mp': 0x46},
-                'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, u) {
-                    const {target: v, leech: w = 0x0, atk: x} = q;
-                    if (p['testDodge'](q, v, this)) return;
-                    const y = x * (2.3 + 0.1 * u + Math['random']() * (0.5 + 0.05 * u)) * q['darkdmgAdd'],
-                        z = q['testCrit']();
-                    p['sendDamage']('dark', q, v, this, q['getCritBonus'](z) * y, z), q['runAttrHooks'](0x0, 'soulbringer_enhance3') && v['addBuff']('stop_buff', 0x3e8 * (0x1 + 0x4 * Math['random']()), null, 'stop_buff'), w && (q['hp'] += w), v['rp'] += v['rpOnAttacked'], v['runAttrHooks'](q, 'attacked');
-                }
-            }, {
-                'key': 'soul_ice',
-                'name': '鬼神·冰霜',
-                'coolDown': 0x4e20,
-                'description': (p, q) => {
-                    let s = p;
-                    return s += q['runAttrHooks'](0x0, 'soulbringer_enhance6'), '召唤鬼神·冰霜的力量，持续10秒。\x0a\x09\x09\x09鬼神·冰霜：每秒对所有目标造成' + (0x1 + Math['round']((0xa + 0.1 * s) / 0x64 * q['atk'])) + '-' + (0x1 + Math['round']((0xf + 0.2 * s) / 0x64 * q['atk'])) + '点寒冷伤害并使其获得“冰缓”效果，10%几率额外获得“冻结”效果。\x0a\x09\x09\x09冰缓：减速20%，持续2秒。\x0a\x09\x09\x09冻结：无法行动，持续1.5秒。';
-                },
-                'castTime': 0x1f4,
-                'cost': {'mp': 0x2d},
-                'maxExp': p => p ** 0x2 * 0x64 + 0x12c * p + 0xc8,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, s) {
-                    let u = s;
-                    u += q['runAttrHooks'](0x0, 'soulbringer_enhance6'), q['addBuff']('soul_ice_buff', 0x2715, u, 'soul_ice_buff', maxStack = 0x1, this);
-                }
-            }, {
-                'key': 'soul_poison',
-                'name': '鬼神·瘟疫',
-                'coolDown': 0x4e20,
-                'description': (p, q) => {
-                    let s = p;
-                    return s += q['runAttrHooks'](0x0, 'soulbringer_enhance6'), '召唤鬼神·瘟疫的力量，持续10秒。\x0a\x09\x09\x09鬼神·瘟疫：每秒对所有目标造成' + (0x1 + Math['round']((0xa + 0.1 * s) / 0x64 * q['atk'])) + '-' + (0x1 + Math['round']((0xf + 0.2 * s) / 0x64 * q['atk'])) + '点毒素伤害，20%几率使目标获得“中毒”效果。\x0a\x09\x09\x09中毒：每3秒受到20%攻击力的毒素伤害，持续30秒，可叠加；受“中毒”效果影响的目标每损失1%生命值，“中毒”的伤害提高5%。';
-                },
-                'castTime': 0x1f4,
-                'cost': {'mp': 0x3c},
-                'maxExp': p => p ** 0x2 * 0x64 + 0x12c * p + 0xc8,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, s) {
-                    let u = s;
-                    u += q['runAttrHooks'](0x0, 'soulbringer_enhance6'), q['addBuff']('soul_poison_buff', 0x2715, u, 'soul_poison_buff', maxStack = 0x1, this);
-                }
-            }, {
-                'key': 'ghost_puncture',
-                'name': '鬼斩·穿刺',
-                'description': (p, q) => '对五个目标分别造成' + Math['round']((0x14a + 0x14 * p) / 0x64 * q['atk']) + '-' + Math['round']((0x1a4 + 0x1e * p) / 0x64 * q['atk']) + '点暗属性伤害，并使目标停滞3秒。',
-                'coolDown': 0x88b8,
-                'cost': {'mp': 0x6e},
-                'maxExp': p => p ** 0x2 * 0xc8 + 0x258 * p + 0x190,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, u) {
-                    const {atk: v, target: w, leech: x} = q,
-                        y = v * (3.3 + 0.2 * u + Math['random']() * (0.9 + 0.1 * u)), z = q['testCrit']();
-                    p['sendDamage']('dark', q, w, this, q['getCritBonus'](z) * y * q['darkdmgAdd'], z), w['addBuff']('stop_buff', 0xbb8, u, 'stop_buff');
-                    let A = 0.4;
-                    p['units']['filter'](B => B !== w && q['willAttack'](B))['slice'](0x0, 0x4)['forEach'](B => {
-                        if (p['testDodge'](q, B, this)) return;
-                        const C = v * (3.3 + 0.2 * u + Math['random']() * (0.9 + 0.1 * u));
-                        A += 0.4;
-                        const D = q['testCrit']();
-                        p['sendDamage']('dark', q, B, this, q['getCritBonus'](D) * C * q['darkdmgAdd'], D), B['addBuff']('stop_buff', 0xbb8, u, 'stop_buff'), B['runAttrHooks'](q, 'attacked');
-                    }), x && (q['hp'] += x * A), w['rp'] += w['rpOnAttacked'], w['runAttrHooks'](q, 'attacked');
-                }
-            }, {
-                'key': 'soul_darkfire',
-                'name': '鬼神·冥炎',
-                'coolDown': 0x4e20,
-                'description': (p, q) => {
-                    let s = p;
-                    return s += q['runAttrHooks'](0x0, 'soulbringer_enhance6'), '召唤鬼神·冥炎的力量，持续' + Math['round'](0x64 + 0x2 * s) / 0xa + '秒。\x0a\x09\x09\x09鬼神·冥炎：普通攻击命中目标时，为目标添加“冥炎”效果。\x0a\x09\x09\x09冥炎：每秒受到100%攻击力的暗属性伤害，持续3秒，最多叠加3次。';
-                },
-                'castTime': 0x1f4,
-                'cost': {'mp': 0x78},
-                'maxExp': p => p ** 0x2 * 0x64 + 0x12c * p + 0xc8,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, s) {
-                    let u = s;
-                    u += q['runAttrHooks'](0x0, 'soulbringer_enhance6'), q['addBuff']('soul_darkfire_buff', 0x2715 + 0xc8 * u, null, 'soul_darkfire_buff', maxStack = 0x1, this);
-                }
-            }, {
-                'key': 'tombstoneplus',
-                'name': '坟头蹦迪',
-                'coolDown': 0x9c40,
-                'notBreakable': !0x0,
-                'description': (p, q) => (Math['round']((0x190 + 0x28 * p) / 0x64 * q['atk']), Math['round']((0x1f4 + 0x32 * p) / 0x64 * q['atk']), '召唤一个坟头上场。\x0a\x09\x09\x09坟头：携带“蹦迪”、“自爆”技能。'),
-                'cost': {'mp': 0x96},
-                'maxExp': p => p ** 0x2 * 0x64 + 0x12c * p + 0xc8,
-                'canUse': (p, q) => !p['units']['find'](s => 'summon_tombstoneplus' === s['type']),
-                'effect'(p, q, s) {
-                    p['addEnemy']('summon_tombstoneplus', null, 0x0, q, this);
-                }
-            }, {
-                'key': 'tombstoneplus_skill1',
-                'name': '蹦迪',
-                'castTime': 0x3e8,
-                'coolDown': 0x64,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, s) {
-                    for (const u of p['units']['filter'](v => q['willAttack'](v))) q['target']['target'] = q;
-                }
-            }, {
-                'key': 'tombstoneplus_skill2',
-                'name': '自爆',
-                'description': '自爆',
-                'castTime': 0x2710,
-                'coolDown': 0x7530,
-                'notBreakable': !0x0,
-                'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
-                'canUse': (p, q) => !0x0,
-                'effect'(p, q, s) {
-                    for (const u of p['units']['filter'](v => q['willAttack'](v))) {
-                        const v = q['def'],
-                            w = q['atk'] * (0x4 + 0.4 * v + Math['random']() * (0x1 + 0.5 * v)) * q['darkdmgAdd'],
-                            x = q['testCrit']();
-                        p['sendDamage']('dark', q, u, this, q['getCritBonus'](x) * w, x), u['runAttrHooks'](q, 'attacked');
-                    }
-                    q['kill']();
-                }
-            }, {
-                'key': 'ghost_pidi',
-                'name': '鬼斩·辟地',
-                'description': (p, q) => '对六个目标分别造成' + Math['round']((0xc8 + 0xa * p) / 0x64 * q['atk']) + '-' + Math['round']((0xdc + 0x14 * p) / 0x64 * q['atk']) + '点暗属性伤害，并为目标添加“冥炎”效果。\x0a\x09\x09\x09冥炎：每秒受到100%攻击力的暗属性伤害，持续3秒，最多叠加3次。',
-                'coolDown': 0x2ee0,
-                'cost': {'mp': 0x5a},
-                'maxExp': p => p ** 0x2 * 0xc8 + 0x258 * p + 0x190,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, v) {
-                    const {atk: w, target: x, leech: y} = q,
-                        z = w * (0x2 + 0.1 * v + Math['random']() * (0.2 + 0.1 * v)), A = q['testCrit']();
-                    p['sendDamage']('dark', q, x, this, q['getCritBonus'](A) * z * q['darkdmgAdd'], A), o(q, x, q['atk'] * q['darkdmgAdd']);
-                    let B = 0.4;
-                    p['units']['filter'](C => C !== x && q['willAttack'](C))['slice'](0x0, 0x4)['forEach'](C => {
-                        if (p['testDodge'](q, C, this)) return;
-                        const D = w * (3.3 + 0.2 * v + Math['random']() * (0.9 + 0.1 * v));
-                        B += 0.4;
-                        const E = q['testCrit']();
-                        p['sendDamage']('dark', q, C, this, q['getCritBonus'](E) * D * q['darkdmgAdd'], E), o(q, C, q['atk'] * q['darkdmgAdd']), C['runAttrHooks'](q, 'attacked');
-                    }), y && (q['hp'] += y * B), x['rp'] += x['rpOnAttacked'], x['runAttrHooks'](q, 'attacked');
-                }
-            }, {
-                'key': 'dark_jige',
-                'name': '吉哥降临',
-                'coolDown': 0x4e20,
-                'castTime': 0x1388,
-                'description': (p, q) => (Math['round']((0x190 + 0x28 * p) / 0x64 * q['atk']), Math['round']((0x1f4 + 0x32 * p) / 0x64 * q['atk']), '召唤神官吉哥上场。\x0a\x09\x09\x09吉哥：携带“鬼斩”、“天降墓碑”、“自爆”技能。'),
-                'cost': {'mp': 0x1c2},
-                'maxExp': p => p ** 0x2 * 0x64 + 0x12c * p + 0xc8,
-                'canUse': (p, q) => !p['units']['find'](s => 'summon_jige' === s['type']),
-                'effect'(p, q, s) {
-                    p['addEnemy']('summon_jige', null, 0x0, q, this);
-                }
-            }, {
-                'key': 'jige_atk',
-                'name': '普通攻击',
-                'coolDown': 0x3e8,
-                'description': (p, q) => (Math['round']((0x28 + 0x2 * p) / 0x64 * q['atk']), Math['round']((0x37 + 0x3 * p) / 0x64 * q['atk']), '吉哥普攻。'),
-                'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, u) {
-                    const {atk: v, target: w, leech: x} = q,
-                        y = v * (0.4 + 0.02 * u + Math['random']() * (0.15 + 0.01 * u)), z = q['testCrit']();
-                    p['sendDamage']('dark', q, w, this, q['getCritBonus'](z) * y * q['darkdmgAdd'], z);
-                    let A = 0.4;
-                    p['units']['filter'](B => B !== w && q['willAttack'](B))['slice'](0x0, 0x2)['forEach'](B => {
-                        if (p['testDodge'](q, B, this)) return;
-                        const C = v * (0.4 + 0.2 * u + Math['random']() * (0.15 + 0.1 * u));
-                        A += 0.4;
-                        const D = q['testCrit']();
-                        p['sendDamage']('dark', q, B, this, q['getCritBonus'](D) * C * q['darkdmgAdd'], D), B['runAttrHooks'](q, 'attacked');
-                    }), w['rp'] += w['rpOnAttacked'], w['runAttrHooks'](q, 'attacked');
-                }
-            }, {
-                'key': 'soul_iceplus',
-                'name': '鬼神·冰晶',
-                'coolDown': 0x4e20,
-                'description': (p, q) => {
-                    let s = p;
-                    return s += q['runAttrHooks'](0x0, 'soulbringer_enhance6'), '召唤鬼神·冰晶的力量，持续10秒。\x0a\x09\x09\x09鬼神·冰晶：每0.5秒对所有目标造成' + (0x1 + Math['round']((0x5 + 0x1 * p) / 0x64 * q['atk'])) + '-' + (0x1 + Math['round']((0xa + 0x2 * p) / 0x64 * q['atk'])) + '点寒冷伤害并使其获得“冰缓”效果，20%几率额外获得“冻结”效果。\x0a\x09\x09\x09冰缓：减速20%，持续5秒。\x0a\x09\x09\x09冻结：无法行动，持续2秒。';
-                },
-                'castTime': 0x1f4,
-                'cost': {'mp': 0xc8},
-                'maxExp': p => p ** 0x2 * 0x64 + 0x12c * p + 0xc8,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, s) {
-                    let u = s;
-                    u += q['runAttrHooks'](0x0, 'soulbringer_enhance6'), q['addBuff']('soul_iceplus_buff', 0x2715, u, 'soul_iceplus_buff', maxStack = 0x1, this);
-                }
-            }, {
-                'key': 'soul_7',
-                'name': '鬼神·鱼头',
-                'coolDown': 0x88b8,
-                'castTime': 0xbb8,
-                'description': (p, q) => {
-                    let s = p;
-                    return s += q['runAttrHooks'](0x0, 'soulbringer_enhance6'), '召唤第八鬼神·鱼头对所有目标发起一次攻击，造成' + Math['round']((0x352 + 0x5a * s) / 0x64 * q['atk']) + '-' + Math['round']((0x47e + 0x96 * s) / 0x64 * q['atk']) + '点暗属性伤害。\x0a\x09\x09\x09第八鬼神·鱼头会吞噬在场所有其他鬼神的力量，伤害增加（吞噬数量×100）%。';
-                },
-                'cost': {'mp': 0x4e2},
-                'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(q, v, w) {
-                    const {target: x, leech: y = 0x0, atk: z} = v;
-                    let A = w;
-                    A += v['runAttrHooks'](0x0, 'soulbringer_enhance6');
-                    let B = 0x0;
-                    const C = v['buffs']['find'](L => 'soul_power_buff' === L['group']);
-                    C && (B += 0x1, v['removeBuff'](C));
-                    const D = v['buffs']['find'](L => 'soul_armor_buff' === L['group']);
-                    D && (B += 0x1, v['removeBuff'](D));
-                    const E = v['buffs']['find'](L => 'soul_armor_buff2' === L['group']);
-                    E && v['removeBuff'](E);
-                    const F = v['buffs']['find'](L => 'soul_weak_buff1' === L['group']);
-                    F && (B += 0x1, v['removeBuff'](F));
-                    const G = v['buffs']['find'](L => 'soul_weak_buff2' === L['group']);
-                    G && v['removeBuff'](G);
-                    const H = v['buffs']['find'](L => 'soul_ice_buff' === L['group']);
-                    H && (B += 0x1, v['removeBuff'](H));
-                    const I = v['buffs']['find'](L => 'soul_darkfire_buff' === L['group']);
-                    I && (B += 0x1, v['removeBuff'](I));
-                    const J = v['buffs']['find'](L => 'soul_poison_buff' === L['group']);
-                    J && (B += 0x1, v['removeBuff'](J));
-                    const K = v['buffs']['find'](L => 'soul_iceplus_buff' === L['group']);
-                    K && (B += 0x1, v['removeBuff'](K));
-                    for (const L of q['units']['filter'](M => v['willAttack'](M))) {
-                        const M = v['atk'] * (8.5 + 0.9 * A + Math['random']() * (11.5 + 1.5 * A)) * v['darkdmgAdd'] * (0x1 + B),
-                            N = v['testCrit']();
-                        q['sendDamage']('dark', v, L, this, v['getCritBonus'](N) * M, N);
-                    }
-                    x['rp'] += x['rpOnAttacked'], x['runAttrHooks'](v, 'attacked');
-                }
-            }];
-        }, 3246: m => {
-            function o(p) {
-                let q = arguments['length'] > 0x1 && void 0x0 !== arguments[0x1] ? arguments[0x1] : 0x1;
-                const s = p['runAttrHooks'](0x5, 'maxComboPoint');
-                p['runAttrHooks'](q, 'fistCombo'), p['comboPoint'] = Math['min'](s, p['comboPoint'] + q);
-            }
-
-            m['exports'] = [{
-                'key': 'vbsk1',
-                'name': '直拳',
-                'coolDown': 0xbb8,
-                'castTime': 0x1f4,
-                'description': (p, q) => '平平无奇的一拳，臻至化境或许有特殊的效果。\x0a\x09\x09\x09根据自身攻击力，对目标造成' + Math['round']((0x3c + 0x4 * p) / 0x64 * q['atk']) + '-' + Math['round']((0x64 + 0x4 * p) / 0x64 * q['atk']) + '点物理伤害，获得1格拳意。\x0a\x09\x09\x09明奇：自身急速+' + (0xa + Math['round'](0x4 * p) / 0xa) + '%，持续1秒。\x0a\x09\x09\x09行偶：自身攻击力+' + (0xa + Math['round'](0x4 * p) / 0xa) + '%，持续1秒。\x0a\x09\x09\x09臻至化境：技能达到50级时，每次命中使目标昏迷，持续0.1秒。',
-                'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, u) {
-                    const {target: v, leech: w = 0x0, atk: x} = q;
-                    if (p['testDodge'](q, v, this)) return;
-                    const y = x * (0.6 + 0.04 * u + 0.4 * Math['random']()) * q['dmgAdd'], z = q['testCrit']();
-                    p['sendDamage']('melee', q, v, this, q['getCritBonus'](z) * y, z), o(q), (p['player']['careerInfo']['selectedSkills']['findIndex'](A => A === this['type']) + 0x1) % 0x2 != 0x0 ? q['addBuff']('vbsk1bf1', 0x3ed, 0.1 + 0.04 * u, 'vbsk1bf1') : q['addBuff']('vbsk1bf2', 0x3ed, 1.1 + 0.04 * u, 'vbsk1bf2'), u >= 0x32 && v['addBuff']('vbsk1bf3', 0x64, null, 'vbsk1bf3'), w && (q['hp'] += w), v['runAttrHooks'](q, 'attacked');
-                }
-            }, {
-                'key': 'vbsk2',
-                'name': '推掌',
-                'coolDown': 0xbb8,
-                'castTime': 0x1f4,
-                'description': (p, q) => '平平无奇的一拳，臻至化境或许有特殊的效果。\x0a\x09\x09\x09根据自身攻击力，对目标造成' + Math['round']((0x3c + 0x4 * p) / 0x64 * q['atk']) + '-' + Math['round']((0x64 + 0x4 * p) / 0x64 * q['atk']) + '点物理伤害，获得1格拳意。\x0a\x09\x09\x09明奇：使目标受到的伤害提高' + (0xa + Math['round'](0x4 * p) / 0xa) + '%，持续1秒。\x0a\x09\x09\x09行偶：使自身受到的伤害降低' + (0xa + Math['round'](0x4 * p) / 0xa) + '%，持续1秒。\x0a\x09\x09\x09臻至化境：技能达到50级时，每次命中使目标减速50%，持续1秒。',
-                'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, u) {
-                    const {target: v, leech: w = 0x0, atk: x} = q;
-                    if (p['testDodge'](q, v, this)) return;
-                    const y = x * (0.6 + 0.04 * u + 0.4 * Math['random']()) * q['dmgAdd'], z = q['testCrit']();
-                    p['sendDamage']('melee', q, v, this, q['getCritBonus'](z) * y, z), o(q), (p['player']['careerInfo']['selectedSkills']['findIndex'](A => A === this['type']) + 0x1) % 0x2 != 0x0 ? v['addBuff']('vbsk2bf1', 0x3ed, 1.1 + 0.04 * u, 'vbsk2bf1') : q['addBuff']('vbsk2bf1', 0x3ed, 0.9 - 0.04 * u, 'vbsk2bf1'), u >= 0x32 && v['addBuff']('vbsk2bf2', 0x3e8, 0.5, 'vbsk2bf2'), w && (q['hp'] += w), v['runAttrHooks'](q, 'attacked');
-                }
-            }, {
-                'key': 'vbsk3',
-                'name': '童子迎宾',
-                'coolDown': 0xbb8,
-                'castTime': 0x1f4,
-                'description': (p, q) => '以礼迎客，以力送客。\x0a\x09\x09\x09根据自身攻击力，对目标造成' + Math['round']((0x78 + 0xc * p) / 0x64 * q['atk']) + '-' + Math['round']((0xc8 + 0xc * p) / 0x64 * q['atk']) + '点物理伤害。\x0a\x09\x09\x09末境：消耗所有拳意。每消耗1格拳意，自身将获得' + Math['round'](0x64 + 0x4 * p) / 0xa + '%生命值上限的护盾，持续1秒。',
-                'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, u) {
-                    const {target: v, leech: w = 0x0, atk: x} = q;
-                    if (p['testDodge'](q, v, this)) return;
-                    q['comboPoint'] >= 0x1 && (q['addBuff']('shield_wall_buff', 0x3e8, q['maxHp'] * (0.1 + 0.004 * u) * q['comboPoint'], 'shield_wall_buff'), q['comboPoint'] = 0x0);
-                    const y = x * (1.2 + 0.12 * u + 0.8 * Math['random']()) * q['dmgAdd'], z = q['testCrit']();
-                    p['sendDamage']('melee', q, v, this, q['getCritBonus'](z) * y, z), w && (q['hp'] += w), v['runAttrHooks'](q, 'attacked');
-                }
-            }, {
-                'key': 'vbsk4',
-                'name': '扑面掌',
-                'coolDown': 0xbb8,
-                'castTime': 0x1f4,
-                'description': (p, q) => '瞄准目标鼻梁骨击出，顺势推入脑干的迅猛一掌。\x0a\x09\x09\x09根据自身攻击力，对目标造成' + Math['round']((0x50 + 0x8 * p) / 0x64 * q['atk']) + '-' + Math['round']((0x64 + 0x8 * p) / 0x64 * q['atk']) + '点物理伤害，获得1格拳意。\x0a\x09\x09\x09明奇：自身暴击几率+' + (0x14 + Math['round'](0x4 * p) / 0xa) + '%，持续1秒。\x0a\x09\x09\x09行偶：打断目标正在释放的技能，并使其0.5秒内无法释放同样的技能。',
-                'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, u) {
-                    const {target: v, leech: w = 0x0, atk: x} = q;
-                    if (p['testDodge'](q, v, this)) return;
-                    const y = x * (0.8 + 0.04 * u + 0.4 * Math['random']()) * q['dmgAdd'], z = q['testCrit']();
-                    p['sendDamage']('melee', q, v, this, q['getCritBonus'](z) * y, z), o(q), (p['player']['careerInfo']['selectedSkills']['findIndex'](A => A === this['type']) + 0x1) % 0x2 != 0x0 ? q['addBuff']('vbsk4bf1', 0x3ed, 0.2 - 0.004 * u, 'vbsk4bf1') : (null !== v['casting'] && !v['casting']['notBreakable'] || null !== v['reading'] && v['reading']['skill'] && !v['reading']['skill']['notBreakable']) && v['breakCasting'](0x1f4), w && (q['hp'] += w), v['runAttrHooks'](q, 'attacked');
-                }
-            }, {
-                'key': 'vbsk5',
-                'name': '搬拦捶',
-                'coolDown': 0xbb8,
-                'castTime': 0x1f4,
-                'description': (p, q) => '先化后打，以掌搬移拦截，以拳进击猛砸，柔中寓刚。\x0a\x09\x09\x09根据自身攻击力，对目标造成' + Math['round']((0x50 + 0x8 * p) / 0x64 * q['atk']) + '-' + Math['round']((0x64 + 0x8 * p) / 0x64 * q['atk']) + '点物理伤害，获得1格拳意。\x0a\x09\x09\x09明奇：获得' + Math['round'](0x64 + 0x2 * p) + '%生命值上限的护盾，持续1秒。\x0a\x09\x09\x09行偶：恢复' + Math['round'](0x64 + 0x2 * p) / 0xa + '%的生命值。',
-                'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, u) {
-                    const {target: v, leech: w = 0x0, atk: x} = q;
-                    if (p['testDodge'](q, v, this)) return;
-                    const y = x * (0.8 + 0.04 * u + 0.4 * Math['random']()) * q['dmgAdd'], z = q['testCrit']();
-                    p['sendDamage']('melee', q, v, this, q['getCritBonus'](z) * y, z), o(q), (p['player']['careerInfo']['selectedSkills']['findIndex'](A => A === this['type']) + 0x1) % 0x2 != 0x0 ? q['addBuff']('shield_wall_buff', 0x3e8, q['maxHp'] * (0x1 + 0.02 * u), 'shield_wall_buff') : q['hp'] += q['maxHp'] * (0.1 + 0.002 * u), w && (q['hp'] += w), v['runAttrHooks'](q, 'attacked');
-                }
-            }, {
-                'key': 'vbsk6',
-                'name': '顶心肘',
-                'coolDown': 0xbb8,
-                'castTime': 0x1f4,
-                'description': (p, q) => '急步切入，以肘猛击对方心窝。\x0a\x09\x09\x09根据自身攻击力，对目标造成' + Math['round']((0x50 + 0x8 * p) / 0x64 * q['atk']) + '-' + Math['round']((0x64 + 0x8 * p) / 0x64 * q['atk']) + '点物理伤害，获得1格拳意。\x0a\x09\x09\x09明奇：自身暴击伤害+' + (0x32 + p) + '%，持续1秒。\x0a\x09\x09\x09行偶：永久减少目标' + (0x32 + p) + '点物理防御等级。',
-                'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, u) {
-                    const {target: v, leech: w = 0x0, atk: x} = q;
-                    if (p['testDodge'](q, v, this)) return;
-                    const y = x * (0.8 + 0.04 * u + 0.4 * Math['random']()) * q['dmgAdd'], z = q['testCrit']();
-                    p['sendDamage']('melee', q, v, this, q['getCritBonus'](z) * y, z), o(q), (p['player']['careerInfo']['selectedSkills']['findIndex'](A => A === this['type']) + 0x1) % 0x2 != 0x0 ? q['addBuff']('vbsk6bf1', 0x3e8, 0.5 + 0.01 * u, 'vbsk6bf1') : v['addBuff']('vbsk6bf2', null, 0x32 + u), w && (q['hp'] += w), v['runAttrHooks'](q, 'attacked');
-                }
-            }, {
-                'key': 'vbsk7',
-                'name': '黑虎掏心',
-                'coolDown': 0xbb8,
-                'castTime': 0x1f4,
-                'description': (p, q) => '猛虎下山，博兔亦用全力。\x0a\x09\x09\x09根据自身攻击力，对目标造成' + Math['round']((0xa0 + 0x10 * p) / 0x64 * q['atk']) + '-' + Math['round']((0xf0 + 0x10 * p) / 0x64 * q['atk']) + '点物理伤害。\x0a\x09\x09\x09末境：消耗所有拳意。每消耗1格拳意，造成的伤害提高' + Math['round'](0x32 + p) / 0xa + '%。',
-                'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, u) {
-                    const {target: v, leech: w = 0x0, atk: x} = q;
-                    if (p['testDodge'](q, v, this)) return;
-                    let y = 0x1;
-                    q['comboPoint'] >= 0x1 && (y += q['comboPoint'], q['comboPoint'] = 0x0);
-                    const z = x * (1.6 + 0.16 * u + 0.8 * Math['random']()) * q['dmgAdd'] * y, A = q['testCrit']();
-                    p['sendDamage']('melee', q, v, this, q['getCritBonus'](A) * z, A), w && (q['hp'] += w), v['runAttrHooks'](q, 'attacked');
-                }
-            }, {
-                'key': 'vbsk8',
-                'name': '扫堂腿',
-                'coolDown': 0xbb8,
-                'castTime': 0x1f4,
-                'description': (p, q) => '腿似铁帚，弹膝横扫，同时躲开对方的上段攻击。\x0a\x09\x09\x09根据自身攻击力，对5个目标分别造成' + Math['round']((0x3c + 0x2 * p) / 0x64 * q['atk']) + '-' + Math['round']((0x50 + 0x2 * p) / 0x64 * q['atk']) + '点物理伤害，获得1格拳意。\x0a\x09\x09\x09明奇：命中后使目标减速' + Math['round'](0x64 + 0x4 * p) / 0xa + '%，持续1秒。\x0a\x09\x09\x09行偶：命中后自身闪避几率+' + Math['round'](0xc8 + 0x8 * p) / 0xa + '%，持续1秒。',
-                'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, u) {
-                    const {target: v, leech: w = 0x0, atk: x} = q;
-                    if (p['testDodge'](q, v, this)) return;
-                    const y = x * (0.6 + 0.02 * u + 0.2 * Math['random']()) * q['dmgAdd'], z = q['testCrit']();
-                    p['sendDamage']('melee', q, v, this, q['getCritBonus'](z) * y, z), p['units']['filter'](A => A !== v && q['willAttack'](A))['slice'](0x0, 0x4)['forEach'](A => {
-                        if (p['testDodge'](q, A, this)) return;
-                        const B = x * (0.6 + 0.02 * u + 0.2 * Math['random']()) * q['dmgAdd'], C = q['testCrit']();
-                        p['sendDamage']('melee', q, A, this, q['getCritBonus'](C) * B * q['dmgAdd'], C), A['runAttrHooks'](q, 'attacked');
-                    }), o(q), (p['player']['careerInfo']['selectedSkills']['findIndex'](A => A === this['type']) + 0x1) % 0x2 != 0x0 ? v['addBuff']('vbsk2bf2', 0x3e8, 0.9 - 0.004 * u, 'vbsk2bf2') : q['addBuff']('vbsk6bf1', 0x3e8, 0.2 + 0.008 * u, 'vbsk6bf1'), w && (q['hp'] += w), v['runAttrHooks'](q, 'attacked');
-                }
-            }, {
-                'key': 'vbsk9',
-                'name': '双劈手',
-                'coolDown': 0xbb8,
-                'castTime': 0x1f4,
-                'description': (p, q) => '拧腰切胯，随后双臂如抽鞭长击，翻腾不息。\x0a\x09\x09\x09根据自身攻击力，对目标造成' + Math['round']((0x50 + 0x8 * p) / 0x64 * q['atk']) + '-' + Math['round']((0x64 + 0x8 * p) / 0x64 * q['atk']) + '点物理伤害，获得1格拳意。\x0a\x09\x09\x09明奇：命中后刷新目标的减益效果。\x0a\x09\x09\x09行偶：命中后刷新自身的增益效果。',
-                'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, u) {
-                    const {target: v, leech: w = 0x0, atk: x} = q;
-                    if (p['testDodge'](q, v, this)) return;
-                    const y = x * (0.8 + 0.08 * u + 0.4 * Math['random']()) * q['dmgAdd'], z = q['testCrit']();
-                    p['sendDamage']('melee', q, v, this, q['getCritBonus'](z) * y, z), o(q), (p['player']['careerInfo']['selectedSkills']['findIndex'](A => A === this['type']) + 0x1) % 0x2 != 0x0 ? v['addBuff']('vbsk2bf2', 0x3e8, 0.9 - 0.004 * u, 'vbsk2bf2') : q['addBuff']('vbsk6bf1', 0x3e8, 0.2 + 0.008 * u, 'vbsk6bf1'), w && (q['hp'] += w), v['runAttrHooks'](q, 'attacked');
-                }
-            }, {
-                'key': 'vbsk10',
-                'name': '无影腿',
-                'coolDown': 0xbb8,
-                'castTime': 0x1f4,
-                'description': (p, q) => '手若蝴蝶翩飞，惑敌，脚若鬼蜮射影，夺命。\x0a\x09\x09\x09根据自身攻击力，对目标造成' + Math['round']((0x50 + 0x8 * p) / 0x64 * q['atk']) + '-' + Math['round']((0x64 + 0x8 * p) / 0x64 * q['atk']) + '点物理伤害，获得1格拳意。\x0a\x09\x09\x09明奇：额外造成' + (0x2 + (p > 0x31 ? 0x1 : 0x0)) + '次伤害。\x0a\x09\x09\x09行偶：对有负面状态的目标额外造成（50\x20+\x202/Lv）%的伤害。',
-                'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, u) {
-                    const {target: v, leech: w = 0x0, atk: x} = q;
-                    if (p['testDodge'](q, v, this)) return;
-                    const y = x * (0.8 + 0.08 * u + 0.4 * Math['random']()) * q['dmgAdd'], z = q['testCrit']();
-                    p['sendDamage']('melee', q, v, this, q['getCritBonus'](z) * y, z), o(q), (p['player']['careerInfo']['selectedSkills']['findIndex'](A => A === this['type']) + 0x1) % 0x2 != 0x0 ? v['addBuff']('vbsk2bf2', 0x3e8, 0.9 - 0.004 * u, 'vbsk2bf2') : q['addBuff']('vbsk6bf1', 0x3e8, 0.2 + 0.008 * u, 'vbsk6bf1'), w && (q['hp'] += w), v['runAttrHooks'](q, 'attacked');
-                }
-            }, {
-                'key': 'vbsk11',
-                'name': '铁山靠',
-                'coolDown': 0xbb8,
-                'castTime': 0x1f4,
-                'description': (p, q) => '将全身重量运至肩膀，静若岳镇渊渟，动若泰山压顶。\x0a\x09\x09\x09根据自身攻击力，对目标造成' + Math['round']((0x50 + 0x8 * p) / 0x64 * q['atk']) + '-' + Math['round']((0x64 + 0x8 * p) / 0x64 * q['atk']) + '点物理伤害，获得1格拳意。\x0a\x09\x09\x09明奇：自身每点拳意提高（5+0.1/Lv）%的伤害。\x0a\x09\x09\x09行偶：附加（50+1/Lv）%防御力的伤害。',
-                'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, u) {
-                    const {target: v, leech: w = 0x0, atk: x} = q;
-                    if (p['testDodge'](q, v, this)) return;
-                    const y = x * (0.8 + 0.08 * u + 0.4 * Math['random']()) * q['dmgAdd'], z = q['testCrit']();
-                    p['sendDamage']('melee', q, v, this, q['getCritBonus'](z) * y, z), o(q), (p['player']['careerInfo']['selectedSkills']['findIndex'](A => A === this['type']) + 0x1) % 0x2 != 0x0 ? v['addBuff']('vbsk2bf2', 0x3e8, 0.9 - 0.004 * u, 'vbsk2bf2') : q['addBuff']('vbsk6bf1', 0x3e8, 0.2 + 0.008 * u, 'vbsk6bf1'), w && (q['hp'] += w), v['runAttrHooks'](q, 'attacked');
-                }
-            }, {
-                'key': 'vbsk12',
-                'name': '隔山打牛',
-                'coolDown': 0xbb8,
-                'castTime': 0x1f4,
-                'description': (p, q) => '浮屠善幻此技能，乃是深山白猿授。\x0a\x09\x09\x09根据自身攻击力，对目标造成' + Math['round']((0xf0 + 0x18 * p) / 0x64 * q['atk']) + '-' + Math['round']((0x168 + 0x20 * p) / 0x64 * q['atk']) + '点物理伤害。\x0a\x09\x09\x09末境：消耗所有拳意，每点拳意将（10\x20+\x200.1/Lv）%的该技能伤害扩散至全体。',
-                'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, u) {
-                    const {target: v, leech: w = 0x0, atk: x} = q;
-                    if (p['testDodge'](q, v, this)) return;
-                    let y = 0x1;
-                    q['comboPoint'] >= 0x1 && (y += q['comboPoint'], q['comboPoint'] = 0x0);
-                    const z = x * (1.6 + 0.16 * u + 0.8 * Math['random']()) * q['dmgAdd'] * y, A = q['testCrit']();
-                    p['sendDamage']('melee', q, v, this, q['getCritBonus'](A) * z, A), w && (q['hp'] += w), v['runAttrHooks'](q, 'attacked');
-                }
-            }, {
-                'key': 'vbsk13',
-                'name': '白鹤亮翅',
-                'coolDown': 0xbb8,
-                'castTime': 0x1f4,
-                'description': (p, q) => '沉势蓄劲神机足，亮翅由来见白鹤。\x0a\x09\x09\x09根据自身攻击力，对目标造成' + Math['round']((0xa0 + 0x10 * p) / 0x64 * q['atk']) + '-' + Math['round']((0xf0 + 0x10 * p) / 0x64 * q['atk']) + '点物理伤害。\x0a\x09\x09\x09末境：消耗所有拳意，每点拳意自身恢复（1\x20+\x200.1/Lv）%的最大生命值。',
-                'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, u) {
-                    const {target: v, leech: w = 0x0, atk: x} = q;
-                    if (p['testDodge'](q, v, this)) return;
-                    let y = 0x1;
-                    q['comboPoint'] >= 0x1 && (y += q['comboPoint'], q['comboPoint'] = 0x0);
-                    const z = x * (1.6 + 0.16 * u + 0.8 * Math['random']()) * q['dmgAdd'] * y, A = q['testCrit']();
-                    p['sendDamage']('melee', q, v, this, q['getCritBonus'](A) * z, A), w && (q['hp'] += w), v['runAttrHooks'](q, 'attacked');
-                }
-            }, {
-                'key': 'vbsk14',
-                'name': '游龙',
-                'coolDown': 0xbb8,
-                'castTime': 0x1f4,
-                'description': (p, q) => '八卦游龙。休、生、伤、杜、景、死、惊、开。\x0a\x09\x09\x09根据自身攻击力，对目标造成' + Math['round']((0x168 + 0x1e * p) / 0x64 * q['atk']) + '-' + Math['round']((0x1e0 + 0x28 * p) / 0x64 * q['atk']) + '点物理伤害。\x0a\x09\x09\x09末境：消耗所有拳意，每点拳意附加技能伤害\x202%的\x20各类元素伤害。\x0a\x09\x09\x09明奇：8次游龙之后，该技能造成一次20倍的伤害。\x0a\x09\x09\x09行偶：每次游龙之后，该技能伤害+25%，最高提升8次。\x0a\x09\x09\x09',
-                'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, u) {
-                    const {target: v, leech: w = 0x0, atk: x} = q;
-                    if (p['testDodge'](q, v, this)) return;
-                    let y = 0x1;
-                    q['comboPoint'] >= 0x1 && (y += q['comboPoint'], q['comboPoint'] = 0x0);
-                    const z = x * (1.6 + 0.16 * u + 0.8 * Math['random']()) * q['dmgAdd'] * y, A = q['testCrit']();
-                    p['sendDamage']('melee', q, v, this, q['getCritBonus'](A) * z, A), w && (q['hp'] += w), v['runAttrHooks'](q, 'attacked');
-                }
-            }, {
-                'key': 'vbsk15',
-                'name': '太极',
-                'coolDown': 0xbb8,
-                'castTime': 0x1f4,
-                'description': (p, q) => '只一招只一式，亦或是无招也无式。\x0a\x09\x09\x09根据自身攻击力，对目标造成' + Math['round']((0x168 + 0x1e * p) / 0x64 * q['atk']) + '-' + Math['round']((0x1e0 + 0x28 * p) / 0x64 * q['atk']) + '点物理伤害。\x0a\x09\x09\x09末境：消耗所有拳意，每点拳意延长\x200.15秒\x20的该技能给予的状态\x0a\x09\x09\x09明奇：获得每次受击急速+20%的增益，最多叠加5次，持续0秒。\x0a\x09\x09\x09行偶：获得将受到伤害（50+1/Lv）%反弹给目标的增益，持续\x200秒。',
-                'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, u) {
-                    const {target: v, leech: w = 0x0, atk: x} = q;
-                    if (p['testDodge'](q, v, this)) return;
-                    let y = 0x1;
-                    q['comboPoint'] >= 0x1 && (y += q['comboPoint'], q['comboPoint'] = 0x0);
-                    const z = x * (1.6 + 0.16 * u + 0.8 * Math['random']()) * q['dmgAdd'] * y, A = q['testCrit']();
-                    p['sendDamage']('melee', q, v, this, q['getCritBonus'](A) * z, A), w && (q['hp'] += w), v['runAttrHooks'](q, 'attacked');
-                }
-            }, {
-                'key': 'vbsk16',
-                'name': '白鹤亮翅',
-                'coolDown': 0xbb8,
-                'castTime': 0x1f4,
-                'description': (p, q) => '沉势蓄劲神机足，亮翅由来见白鹤。\x0a\x09\x09\x09根据自身攻击力，对目标造成' + Math['round']((0xa0 + 0x10 * p) / 0x64 * q['atk']) + '-' + Math['round']((0xf0 + 0x10 * p) / 0x64 * q['atk']) + '点物理伤害。\x0a\x09\x09\x09末境：消耗所有拳意，每点拳意自身恢复（1\x20+\x200.1/Lv）%的最大生命值。',
-                'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, u) {
-                    const {target: v, leech: w = 0x0, atk: x} = q;
-                    if (p['testDodge'](q, v, this)) return;
-                    let y = 0x1;
-                    q['comboPoint'] >= 0x1 && (y += q['comboPoint'], q['comboPoint'] = 0x0);
-                    const z = x * (1.6 + 0.16 * u + 0.8 * Math['random']()) * q['dmgAdd'] * y, A = q['testCrit']();
-                    p['sendDamage']('melee', q, v, this, q['getCritBonus'](A) * z, A), w && (q['hp'] += w), v['runAttrHooks'](q, 'attacked');
-                }
-            }, {
-                'key': 'vbsk17',
-                'name': '游龙',
-                'coolDown': 0xbb8,
-                'castTime': 0x1f4,
-                'description': (p, q) => '八卦游龙。休、生、伤、杜、景、死、惊、开。\x0a\x09\x09\x09根据自身攻击力，对目标造成' + Math['round']((0x168 + 0x1e * p) / 0x64 * q['atk']) + '-' + Math['round']((0x1e0 + 0x28 * p) / 0x64 * q['atk']) + '点物理伤害。\x0a\x09\x09\x09末境：消耗所有拳意，每点拳意附加技能伤害\x202%的\x20各类元素伤害。\x0a\x09\x09\x09明奇：8次游龙之后，该技能造成一次20倍的伤害。\x0a\x09\x09\x09行偶：每次游龙之后，该技能伤害+25%，最高提升8次。\x0a\x09\x09\x09',
-                'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
-                'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, u) {
-                    const {target: v, leech: w = 0x0, atk: x} = q;
-                    if (p['testDodge'](q, v, this)) return;
-                    let y = 0x1;
-                    q['comboPoint'] >= 0x1 && (y += q['comboPoint'], q['comboPoint'] = 0x0);
-                    const z = x * (1.6 + 0.16 * u + 0.8 * Math['random']()) * q['dmgAdd'] * y, A = q['testCrit']();
-                    p['sendDamage']('melee', q, v, this, q['getCritBonus'](A) * z, A), w && (q['hp'] += w), v['runAttrHooks'](q, 'attacked');
-                }
-            }];
         }, 4012: m => {
             function o(p, q, s) {
                 const u = q['buffs']['find'](v => 'fire_buff' === v['group']);
@@ -13148,7 +10894,8 @@ a();
             m['exports'] = [{
                 'key': 'warrior_atk',
                 'name': '普通攻击',
-                'group': '1',
+                'type': 'player',
+                'lv': 0x1,
                 'coolDown': 0x5dc,
                 'description': (p, q) => '毫无章法的一击。\x0a\x09\x09\x09对目标造成' + Math['round']((0x2d + 0x4 * p) / 0x64 * q['atk']) + '-' + Math['round']((0x3c + 0x6 * p) / 0x64 * q['atk']) + '点物理伤害，获得5点怒气。',
                 'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
@@ -13163,8 +10910,9 @@ a();
                 }
             }, {
                 'key': 'thump',
-                'group': 'thump',
                 'name': '重击',
+                'type': 'player',
+                'lv': 0x5,
                 'description': (p, q) => '这是，赌上自身体重的一击！\x0a\x09\x09\x09对目标造成' + Math['round']((0x50 + 0x8 * p) / 0x64 * q['atk']) + '-' + Math['round']((0x82 + 0xc * p) / 0x64 * q['atk']) + '点物理伤害，消耗25点怒气。',
                 'cost': {'rp': 0x19},
                 'coolDown': 0x3e8,
@@ -13186,6 +10934,8 @@ a();
             }, {
                 'key': 'save_oneself',
                 'name': '包扎伤口',
+                'type': 'player',
+                'lv': 0x1,
                 'description': (p, q) => {
                     const s = q['runAttrHooks'](0x1, 'lv15_warrior_enhance1_time');
                     return '你确定纱布已经消毒了吗？\x0a\x09\x09\x09恢复' + Math['round'](0.05 * q['maxHp'] + 0x5 * p) * s + '点生命值。';
@@ -13201,7 +10951,8 @@ a();
             }, {
                 'key': 'fury_cutter',
                 'name': '斩击',
-                'group': '1',
+                'type': 'player',
+                'lv': 0xf,
                 'coolDown': 0x5dc,
                 'description': (p, q) => '挥剑！\x0a\x09\x09\x09对目标造成' + Math['round']((0x46 + 0x6 * p) / 0x64 * q['atk']) + '-' + Math['round']((0x64 + 0x8 * p) / 0x64 * q['atk']) + '点物理伤害，获得5点怒气。',
                 'maxExp': p => p ** 0x2 * 0x3e8 + 0xbb8 * p + 0x7d0,
@@ -13232,6 +10983,8 @@ a();
             }, {
                 'key': 'whirlwind',
                 'name': '旋风斩',
+                'type': 'player',
+                'lv': 0x19,
                 'description': (p, q) => '转！转！转！\x0a\x09\x09\x09对最多五个目标分别造成' + Math['round']((0x50 + 0x3 * p) / 0x64 * q['atk']) + '-' + Math['round']((0x6e + 0x5 * p) / 0x64 * q['atk']) + '点物理伤害，每命中一个目标将获得3点怒气。',
                 'coolDown': 0x1388,
                 'maxExp': p => p ** 0x2 * 0xc8 + 0x258 * p + 0x190,
@@ -13263,6 +11016,8 @@ a();
             }, {
                 'key': 'warrior_hp',
                 'name': '气血激增',
+                'type': 'player',
+                'lv': 0x14,
                 'coolDown': 0x7530,
                 'description': (p, q) => {
                     const s = q['runAttrHooks'](0x1, 'lv35_warrior2_enhance1_time');
@@ -13278,6 +11033,8 @@ a();
             }, {
                 'key': 'warrior_def',
                 'name': '钢铁之躯',
+                'type': 'player',
+                'lv': 0x1e,
                 'coolDown': 0x7530,
                 'description': (p, q) => {
                     const s = q['runAttrHooks'](0x1, 'lv35_warrior2_enhance2_time');
@@ -13293,6 +11050,8 @@ a();
             }, {
                 'key': 'hamstring',
                 'name': '断筋',
+                'type': 'player',
+                'lv': 0x23,
                 'description': (p, q) => '我叫你瞄准的是敌人的心脏，你在做什么？\x0a\x09\x09\x09对目标造成' + Math['round']((0x1e + 0x1 * p) / 0x64 * q['atk']) + '-' + Math['round']((0x23 + 0x2 * p) / 0x64 * q['atk']) + '点物理伤害并使其减速30%，持续4秒。',
                 'coolDown': 0x2328,
                 'maxExp': p => p ** 0x2 * 0xc8 + 0x258 * p + 0x190,
@@ -13309,6 +11068,8 @@ a();
             }, {
                 'key': 'element_fire',
                 'name': '元素附魔·Ⅰ',
+                'type': 'player',
+                'lv': 0x28,
                 'description': p => 'fire\x20in\x20the\x20hole!\x0a\x09\x09\x09借助火焰的力量，使下一个“斩击”变为火焰伤害，且伤害+' + Math['round'](0xfa + 0x5 * p) / 0xa + '%。',
                 'coolDown': 0x1770,
                 'castTime': 0x1f4,
@@ -13321,6 +11082,8 @@ a();
             }, {
                 'key': 'white_heat',
                 'name': '疾风',
+                'type': 'player',
+                'lv': 0x32,
                 'coolDown': 0x4e20,
                 'description': p => '你的手上仿佛多出了好几把剑。\x0a\x09\x09\x09急速+' + Math['round'](0xa * (0xa + 0.2 * p)) / 0xa + '%，持续5秒。',
                 'maxExp': p => p ** 0x2 * 0x64 + 0x12c * p + 0xc8,
@@ -13332,6 +11095,8 @@ a();
             }, {
                 'key': 'fury_cutter_plus',
                 'name': '重斩',
+                'type': 'player',
+                'lv': 0x3c,
                 'description': (p, q) => '这一剑力度之大，以至于连你都见到了对岸的奶奶在招手。\x0a\x09\x09\x09对目标造成' + Math['round']((0xfa + 0xc * p) / 0x64 * q['atk']) + '-' + Math['round']((0x15e + 0x18 * p) / 0x64 * q['atk']) + '点物理伤害，消耗40点怒气。',
                 'cost': {'rp': 0x28},
                 'castTime': 0x3e8,
@@ -13350,6 +11115,8 @@ a();
             }, {
                 'key': 'block',
                 'name': '格挡姿态',
+                'type': 'player',
+                'lv': 0x46,
                 'coolDown': 0x4e20,
                 'description': p => '你的武器已经磕了好几个口了！\x0a\x09\x09\x09受到攻击时有15%的几率进行格挡，成功格挡后将使本次伤害减少50%，持续' + Math['round'](0x64 + 0x2 * p) / 0xa + '秒。',
                 'maxExp': p => p ** 0x2 * 0x64 + 0x12c * p + 0xc8,
@@ -13363,6 +11130,8 @@ a();
             }, {
                 'key': 'flame_armor',
                 'name': '炎铠',
+                'type': 'player',
+                'lv': 0x50,
                 'description': p => '尝尝这黑色的火焰吧！\x0a\x09\x09\x20\x20每秒为所有目标添加一层“灼烧”效果，持续' + (0xa + 0.2 * p)['toFixed'](0x1) + '秒。\x0a\x09\x09\x20\x20受到伤害时将额外为伤害来源添加一层“灼烧效果。\x0a\x09\x09\x20\x20灼烧：每3秒受到35%攻击力的火焰伤害，持续15秒，可叠加。',
                 'maxExp': p => p ** 0x2 * 0x64 + 0x12c * p + 0xc8,
                 'canUse': (p, q) => !!q['target'],
@@ -13374,6 +11143,8 @@ a();
             }, {
                 'key': 'dragon_breath',
                 'name': '炎龙吐息',
+                'type': 'player',
+                'lv': 0x5a,
                 'description': (p, q) => '这场面，就像是深秋的时候你在山上放了一把火。\x0a\x09\x20\x20\x09\x09对所有目标造成' + Math['round']((0x2bc + 0x3c * p) / 0x64 * q['atk']) + '-' + Math['round']((0x4b0 + 0x78 * p) / 0x64 * q['atk']) + '点火焰伤害。\x0a\x09\x09\x09终结技：消耗自身所有怒气，每消耗1点怒气提升0.5%伤害。',
                 'castTime': 0x3e8,
                 'coolDown': 0x7530,
@@ -13398,6 +11169,8 @@ a();
             }, {
                 'key': 'fury_cutter_time',
                 'name': '连斩姿态',
+                'type': 'player',
+                'lv': 0x50,
                 'description': p => '剑即正义！\x0a\x09\x09\x09消耗所有怒气进入“连斩姿态”，期间每释放一次“斩击”，“斩击”所造成的伤害递增10%，持续' + Math['round'](0x32 + p) / 0xa + '秒。',
                 'maxExp': p => p ** 0x2 * 0x64 + 0x12c * p + 0xc8,
                 'castTime': 0x3e8,
@@ -13410,6 +11183,8 @@ a();
             }, {
                 'key': 'omnislash',
                 'name': '吴迪斩',
+                'type': 'player',
+                'lv': 0x5a,
                 'coolDown': 0xafc8,
                 'notBreakable': !0x0,
                 'description': (p, q) => '众所周知，吴迪斩和无敌斩并不是同一个技能。\x0a\x09\x09\x09精湛的剑技，每0.5秒对目标释放一次“斩击”，持续8秒。\x0a\x09\x09\x09技能持续期间，自身受到的伤害减少' + Math['round'](0x1e + p) + '%。',
@@ -13422,20 +11197,24 @@ a();
             }, {
                 'key': 'shield_charge',
                 'name': '盾冲',
-                'description': (p, q) => '持盾冲击目标，根据攻击力和物理防御，对目标造成' + Math['round']((0x64 + p) / 0x64 * q['atk'] + q['def'] * (0.08 + 0.008 * p) * 0x2) + '-' + Math['round']((0x82 + 0x2 * p) / 0x64 * q['atk'] + q['def'] * (0.08 + 0.008 * p) * 0x2) + '点物理伤害，并使目标昏迷3秒。',
+                'type': 'player',
+                'lv': 0x32,
+                'description': (p, q) => '持盾冲击目标，根据攻击力和物理防御，对目标造成' + Math['round']((0x64 + p) / 0x64 * q['atk'] + q['def'] * (0.15 + 0.015 * p) * 0x2) + '-' + Math['round']((0x82 + 0x2 * p) / 0x64 * q['atk'] + q['def'] * (0.15 + 0.015 * p) * 0x2) + '点物理伤害，并使目标昏迷3秒。',
                 'coolDown': 0x2ee0,
                 'maxExp': p => p ** 0x2 * 0xc8 + 0x258 * p + 0x190,
                 'canUse': (p, q) => !!q['target'],
                 'effect'(p, q, v) {
                     const {target: w, atk: x, def: y, leech: z = 0x0} = q;
                     if (p['testDodge'](q, w, this)) return;
-                    const A = (x * (0x1 + 0.01 * v + Math['random']() * (0.3 + 0.01 * v)) + y * (0.08 + 0.008 * v) * 0x2) * q['dmgAdd'],
+                    const A = (x * (0x1 + 0.01 * v + Math['random']() * (0.3 + 0.01 * v)) + y * (0.15 + 0.015 * v) * 0x2) * q['dmgAdd'],
                         B = q['testCrit'](), C = q['runAttrHooks'](0xbb8, 'lv35_warrior2_enhance6_time');
                     w['breakCasting'](), w['addBuff']('stunned', C, null, 'stunned'), p['sendDamage']('melee', q, w, this, q['getCritBonus'](B) * A, B), z && (q['hp'] += z), w['rp'] += w['rpOnAttacked'], w['runAttrHooks'](q, 'attacked');
                 }
             }, {
                 'key': 'defensive_stance',
                 'name': '防御姿态',
+                'type': 'player',
+                'lv': 0x46,
                 'coolDown': 0x4e20,
                 'description': p => '你看这盾，那是又大又圆，又白。\x0a\x09\x09\x09受到攻击时有25%的几率用盾牌进行防御，成功防御后将使本次伤害降低至1点，持续' + Math['round'](0x64 + 0x2 * p) / 0xa + '秒。',
                 'maxExp': p => p ** 0x2 * 0x64 + 0x12c * p + 0xc8,
@@ -13450,6 +11229,8 @@ a();
             }, {
                 'key': 'first_aid',
                 'name': '急救',
+                'type': 'player',
+                'lv': 0x50,
                 'description': (p, q) => '苟...苟...苟住！\x0a\x09\x09\x09\x09恢复' + Math['round'](q['maxHp'] * (0.5 + 0.01 * p)) + '点生命值，只会生命值小于40%时释放。',
                 'castTime': 0x1f4,
                 'coolDown': (p, q, s) => 0x9c40 * q['runAttrHooks'](0x1, 'defring'),
@@ -13461,10 +11242,12 @@ a();
             }, {
                 'key': 'guardian',
                 'name': '守护者之魂',
+                'type': 'player',
+                'lv': 0x28,
                 'coolDown': 0x4e20,
                 'description': (p, q) => {
                     const s = p + q['runAttrHooks'](0x0, 'allskillLv') + q['runAttrHooks'](0x0, 'guardianLv');
-                    return '愿大...守护者护佑着你。\x0a\x09\x09\x09召唤守护者之魂，持续30秒。期间每次受到攻击将获得一层“护佑”效果，最多叠加20层。\x0a\x09\x09\x09叠加至20层后，再次召唤守护者之魂时将消耗所有“护佑”效果，根据物理防御对所有目标造成' + Math['round']((0xc8 + 0x8 * s) / 0x64 * q['def'] / 6.5) + '-' + Math['round']((0xfa + 0xc * s) / 0x64 * q['def'] / 6.5) + '点魔法伤害。\x0a\x09\x09\x09护佑：受到的伤害减少2.5%。';
+                    return '愿大...守护者护佑着你。\x0a\x09\x09\x09召唤守护者之魂，持续30秒。期间每次受到攻击将获得一层“护佑”效果，最多叠加20层。\x0a\x09\x09\x09叠加至20层后，再次召唤守护者之魂时将消耗所有“护佑”效果，根据物理防御对所有目标造成' + Math['round']((0xc8 + 0x8 * s) / 0x64 * q['def'] / 0x3) + '-' + Math['round']((0xfa + 0xc * s) / 0x64 * q['def'] / 0x3) + '点魔法伤害。\x0a\x09\x09\x09护佑：物理防御+2%，元素抗性+2%。';
                 },
                 'maxExp': p => p ** 0x2 * 0x64 + 0x12c * p + 0xc8,
                 'canUse': (p, q) => !!q['target'],
@@ -13473,7 +11256,7 @@ a();
                         v = q['buffs']['find'](w => 'Blessing_buff' === w['group']);
                     v && 0x14 === v['arg'] && (p['units']['filter'](w => q['willAttack'](w))['forEach'](w => {
                         if (p['testDodge'](q, w, this)) return;
-                        const x = q['def'] * (0x2 + 0.08 * u + Math['random']() * (0.5 + 0.4 * u)) / 6.5,
+                        const x = q['def'] * (0x2 + 0.08 * u + Math['random']() * (0.5 + 0.4 * u)) / 0x3,
                             y = q['testCrit']();
                         p['sendDamage']('magic', q, w, this, q['getCritBonus'](y) * x, y);
                     }), q['removeBuff'](v)), q['addBuff']('guardian_buff1', 0x7530, null, 'guardian_buff1'), q['addBuff']('guardian_buff2', null, u, 'guardian_buff2');
@@ -13506,28 +11289,31 @@ a();
             }, {
                 'key': 'infinite_justice',
                 'name': '无限正义之剑',
+                'type': 'player',
+                'lv': 0x5a,
                 'description': (p, q) => {
                     const s = p + q['runAttrHooks'](0x0, 'allskillLv') + q['runAttrHooks'](0x0, 'igsLv');
-                    return '你还是觉得盾牌会比长剑更加顺手。\x0a\x09\x09\x09根据攻击力和物理防御，对目标造成' + Math['round']((0xc8 + 0x5 * s) / 0x64 * q['atk'] + q['def'] * (0.1 + 0.012 * s) * 1.2) + '-' + Math['round']((0x12c + 0xa * s) / 0x64 * q['atk'] + q['def'] * (0.1 + 0.012 * s) * 1.2) + '点物理伤害。';
+                    return '你还是觉得盾牌会比长剑更加顺手。\x0a\x09\x09\x09根据攻击力和物理防御，对目标造成' + Math['round']((0xc8 + 0x5 * s) / 0x64 * q['atk'] + q['def'] * (0.2 + 0.04 * s) * 0x2) + '-' + Math['round']((0x12c + 0xa * s) / 0x64 * q['atk'] + q['def'] * (0.2 + 0.04 * s) * 0x2) + '点物理伤害。';
                 },
                 'coolDown': 0x4e20,
                 'maxExp': p => p ** 0x2 * 0x64 + 0x12c * p + 0xc8,
                 'canUse': (p, q) => !!q['target'],
-                'effect'(p, q, v) {
-                    const {target: w, def: x, atk: y, leech: z = 0x0} = q;
-                    if (p['testDodge'](q, w, this)) return;
-                    let A = 0x1;
-                    const B = q['buffs']['find'](F => 'igs_buff' === F['group']);
-                    B && (A += B['arg'], q['removeBuff'](B));
-                    const C = v + q['runAttrHooks'](0x0, 'allskillLv') + q['runAttrHooks'](0x0, 'igsLv'),
-                        D = y * (0x2 + 0.05 * C + Math['random']() * (0x1 + 0.1 * C)) * q['dmgAdd'] + x * (0.1 + 0.012 * C) * q['dmgAdd'] * 1.2,
-                        E = q['testCrit']();
-                    p['sendDamage']('melee', q, w, this, q['getCritBonus'](E) * D * A, E), z && (q['hp'] += z), w['rp'] += w['rpOnAttacked'], w['runAttrHooks'](q, 'attacked');
+                'effect'(q, v, w) {
+                    const {target: x, def: y, atk: z, leech: A = 0x0} = v;
+                    if (q['testDodge'](v, x, this)) return;
+                    let B = 0x1;
+                    const C = v['buffs']['find'](G => 'igs_buff' === G['group']);
+                    C && (B += C['arg'], v['removeBuff'](C));
+                    const D = w + v['runAttrHooks'](0x0, 'allskillLv') + v['runAttrHooks'](0x0, 'igsLv'),
+                        E = z * (0x2 + 0.05 * D + Math['random']() * (0x1 + 0.1 * D)) * v['dmgAdd'] + y * (0.2 + 0.04 * D) * v['dmgAdd'] * 0x2,
+                        F = v['testCrit']();
+                    q['sendDamage']('melee', v, x, this, v['getCritBonus'](F) * E * B, F), A && (v['hp'] += A), x['rp'] += x['rpOnAttacked'], x['runAttrHooks'](v, 'attacked');
                 }
             }, {
                 'key': 'hacking',
                 'name': '劈砍',
-                'group': '1',
+                'type': 'player',
+                'lv': 0xf,
                 'coolDown': 0x5dc,
                 'description': (p, q) => {
                     const s = p + q['runAttrHooks'](0x0, 'allskillLv') + q['runAttrHooks'](0x0, 'whksk');
@@ -13559,6 +11345,8 @@ a();
             }, {
                 'key': 'sunder_armor',
                 'name': '破甲击',
+                'type': 'player',
+                'lv': 0x23,
                 'description': (p, q) => {
                     const s = p + q['runAttrHooks'](0x0, 'allskillLv') + q['runAttrHooks'](0x0, 'wsask');
                     return '敌羞！吾去脱......追他一击！\x0a\x09\x09\x09击破目标的护甲，对其造成' + Math['round']((0x96 + 0x3 * s) / 0x64 * q['atk']) + '-' + Math['round']((0xb4 + 0x4 * s) / 0x64 * q['atk']) + '点物理伤害并获得“碎甲”效果，持续5秒。\x0a\x09\x09\x09碎甲：物理防御减少' + (0xf + s) + '%，受到的伤害提高30%。';
@@ -13577,8 +11365,10 @@ a();
             }, {
                 'key': 'shield_wall',
                 'name': '血甲缚',
+                'type': 'player',
+                'lv': 0x19,
                 'maxExp': p => p ** 0x2 * 0xc8 + 0x258 * p + 0x190,
-                'canUse': (p, q) => 'home' !== p['map'],
+                'canUse': (p, q) => !!q['target'],
                 'description': (p, q) => {
                     const s = p + q['runAttrHooks'](0x0, 'allskillLv') + q['runAttrHooks'](0x0, 'wswsk'),
                         u = q['runAttrHooks'](0x1, 'zwww_hjl'),
@@ -13598,6 +11388,8 @@ a();
             }, {
                 'key': 'element_cold_fire',
                 'name': '元素附魔·Ⅱ',
+                'type': 'player',
+                'lv': 0x28,
                 'description': (p, q) => {
                     const s = p + q['runAttrHooks'](0x0, 'allskillLv') + q['runAttrHooks'](0x0, 'wecfsk');
                     return '让我尝尝冰火两重天的滋味。\x0a\x09\x09\x09借助魔法的力量，使下一个“劈砍”随机附魔寒冷或者火焰效果，且伤害+' + Math['round'](0xfa + 0x5 * s) / 0xa + '%。';
@@ -13614,6 +11406,8 @@ a();
             }, {
                 'key': 'fanatical',
                 'name': '血怒',
+                'type': 'player',
+                'lv': 0x32,
                 'coolDown': 0x4e20,
                 'description': (p, q) => {
                     const s = p + q['runAttrHooks'](0x0, 'allskillLv') + q['runAttrHooks'](0x0, 'wftsk');
@@ -13628,6 +11422,8 @@ a();
             }, {
                 'key': 'hacking_plus_double',
                 'name': '致命劈砍',
+                'type': 'player',
+                'lv': 0x3c,
                 'coolDown': 0xfa0,
                 'castTime': 0x3e8,
                 'cost': {'rp': 0x28},
@@ -13654,6 +11450,8 @@ a();
             }, {
                 'key': 'ghost_shuffle',
                 'name': '鬼步',
+                'type': 'player',
+                'lv': 0x50,
                 'coolDown': 0x61a8,
                 'description': (p, q) => '摩擦~~摩擦~~\x0a\x09\x09\x09根据已损失的生命值，自身闪避值提高' + Math['round'](q['maxHp'] - q['hp']) + '点，持续' + Math['round'](0x32 + p) / 0xa + '秒。',
                 'maxExp': p => p ** 0x2 * 0x64 + 0x12c * p + 0xc8,
@@ -13665,6 +11463,8 @@ a();
             }, {
                 'key': 'hacking_time',
                 'name': '血魔乱舞',
+                'type': 'player',
+                'lv': 0x5a,
                 'coolDown': p => 0xafc8 - 0x12c * p,
                 'description': (p, q) => (Math['round'](0x1e + p), '你对着空气一顿乱切。\x0a\x09\x09\x09精湛的刀法，每秒对所有目标释放一次“致命劈砍”，持续5秒。'),
                 'maxExp': p => p ** 0x2 * 0x64 + 0x12c * p + 0xc8,
@@ -13675,6 +11475,7 @@ a();
             }, {
                 'key': 'warrior_deadline',
                 'name': '末日',
+                'lv': 0x50,
                 'coolDown': 0x1388,
                 'castTime': 0x1f4,
                 'description': (p, q) => {
@@ -13724,6 +11525,7 @@ a();
             }, {
                 'key': 'warrior_con_energy',
                 'name': '能量守恒',
+                'lv': 0x5a,
                 'coolDown': 0x2710,
                 'description': (p, q) => {
                     const s = Math['round'](0xfa + 0x5 * p) / 0xa;
@@ -13769,17 +11571,17 @@ a();
                 'coolDown': 0x9c4,
                 'maxExp': o => o ** 0x2 * 0x3e8 + 0xbb8 * o + 0x7d0,
                 'canUse': (o, p) => !!p['target'],
-                'effect'(p, q, v) {
-                    const {atk: w, target: x, leech: y = 0x0, critRate: z = 0x0, critBonus: A = 1.5} = q,
-                        B = q['runAttrHooks'](0x1, 'cleaveDamageRate'),
-                        C = w * (0.2 * Math['random']() + 0.4) * (v / 0x5 + 0x1) * B, D = q['testCrit']();
-                    p['sendDamage']('melee', q, x, this, q['getCritBonus'](D) * C, D);
-                    let E = 0.4;
-                    p['units']['filter'](F => F !== x && q['willAttack'](F))['slice'](0x0, 0x2)['forEach'](F => {
-                        if (p['testDodge'](q, F, this)) return;
-                        const G = w * (0.2 * Math['random']() + 0.4) * (v / 0xa + 0x1) * B;
-                        E += 0.4, p['sendDamage']('melee', q, F, this, q['getCritBonus'](D) * G, D), F['runAttrHooks'](q, 'attacked');
-                    }), y && (q['hp'] += y * E), q['rp'] += q['rpOnAttack'], x['rp'] += x['rpOnAttacked'], x['runAttrHooks'](q, 'attacked');
+                'effect'(q, v, w) {
+                    const {atk: x, target: y, leech: z = 0x0, critRate: A = 0x0, critBonus: B = 1.5} = v,
+                        C = v['runAttrHooks'](0x1, 'cleaveDamageRate'),
+                        D = x * (0.2 * Math['random']() + 0.4) * (w / 0x5 + 0x1) * C, E = v['testCrit']();
+                    q['sendDamage']('melee', v, y, this, v['getCritBonus'](E) * D, E);
+                    let F = 0.4;
+                    q['units']['filter'](G => G !== y && v['willAttack'](G))['slice'](0x0, 0x2)['forEach'](G => {
+                        if (q['testDodge'](v, G, this)) return;
+                        const H = x * (0.2 * Math['random']() + 0.4) * (w / 0xa + 0x1) * C;
+                        F += 0.4, q['sendDamage']('melee', v, G, this, v['getCritBonus'](E) * H, E), G['runAttrHooks'](v, 'attacked');
+                    }), z && (v['hp'] += z * F), v['rp'] += v['rpOnAttack'], y['rp'] += y['rpOnAttacked'], y['runAttrHooks'](v, 'attacked');
                 }
             }, {
                 'key': 'shout',
@@ -14215,36 +12017,7 @@ a();
                 'killCount': 0x1
             }];
         }, 4589: (m, o, p) => {
-            m['exports'] = [...p(0xc4e), ...p(0x1e83), ...p(0x21fc), ...p(0x137b), ...p(0x5e3), ...p(0xc94), ...p(0x2323)];
-        }, 8995: (m, o, p) => {
-            m['exports'] = [{
-                'key': 'pal-1',
-                'group': '偶遇-1',
-                'name': '偶遇-1',
-                'requirement': {'stories': ['aleanor-stories-6']},
-                'script': p(0x170),
-                'taskType': 'kill',
-                'enemy': 'knight.leader',
-                'killCount': 0xf
-            }, {
-                'key': 'pal-2',
-                'group': '圣骑士-2',
-                'name': '圣骑士-2',
-                'requirement': {'stories': ['pal-1']},
-                'script': p(0x2d9),
-                'taskType': 'kill',
-                'enemy': 'paladin_ariel',
-                'killCount': 0x1
-            }, {
-                'key': 'pal-3',
-                'group': '圣骑士-3',
-                'name': '圣骑士-3',
-                'requirement': {'role': 'Ariel', 'map': 'home'}
-            }];
-        }, 368: m => {
-            m['exports'] = '\x0aSCENE\x20邻村村口-2\x0a\x0aSAY\x20系统\x20当你清点完卡罗给你的战利品之后\x0aSAY\x20系统\x20非常凑巧地遇上了赶来救援闪银村的伊瑞尔\x0aSAY\x20系统\x20根据传统剧情的发展，你已经被当做是这一切惨状的罪魁祸首\x0aWAIT\x201000\x0a\x0aSAY\x20系统\x20尝试击败伊瑞尔并向他说明这一切，他会相信你的。\x0aASIDE\x20伊瑞尔是一名出身于庇护之地的杰出圣骑士，在他们看来圣殿骑士们才是真正的异端，同时这也是他此次救援闪银村的原因，只是因为剧情的原因而没有赶上。\x0a\x20\x0a';
-        }, 729: m => {
-            m['exports'] = '\x0aSCENE\x20邻村村口-2\x0a\x0aSAY\x20系统\x20击败伊瑞尔之后，你向他解释了发生的一切。\x0aSAY\x20系统\x20现在，你现在可以创建角色“伊瑞尔”来体验新职业“圣骑士”了。\x0aWAIT\x201000\x0a\x0aSAY\x20系统\x20同样作为隐藏职业，“圣骑士”也仅有一次创建角色的机会，误删之后无法恢复或者再次创建。\x0a';
+            m['exports'] = [...p(0xc4e), ...p(0x1e83), ...p(0x21fc), ...p(0x137b), ...p(0x5e3)];
         }, 1507: m => {
             m['exports'] = [{
                 'key': 'purchase-rates-lvl-60',
@@ -14257,35 +12030,6 @@ a();
                 'requirement': {'level': 0x2bc},
                 'awards': {'purchaseRate': 0.5}
             }];
-        }, 3220: (m, o, p) => {
-            m['exports'] = [{
-                'key': 'soulbringer-1',
-                'group': '？？-1',
-                'name': '？？-1',
-                'requirement': {},
-                'script': p(0x698),
-                'taskType': 'kill',
-                'enemy': 'chapter3.necromancer',
-                'killCount': 0x64
-            }, {
-                'key': 'soulbringer-2',
-                'group': '黑暗君主-2',
-                'name': '黑暗君主-2',
-                'requirement': {},
-                'script': p(0x3c1),
-                'taskType': 'kill',
-                'enemy': 'soul_karon',
-                'killCount': 0x1
-            }, {
-                'key': 'soulbringer-3',
-                'group': '黑暗君主-3',
-                'name': '黑暗君主-3',
-                'requirement': {'role': 'iPhone14promax', 'map': 'home'}
-            }];
-        }, 1688: m => {
-            m['exports'] = '\x0aSCENE\x20庇护所深处\x0a\x0aSAY\x20系统\x20这是你第101次来到庇护所\x0aSAY\x20系统\x20不同的是，这一次你在庇护所的深处遇到了一个奇怪的男人\x0aSAY\x20系统\x20男人的头顶上漂浮着“百鬼之王·卡隆”几个大字\x0aSAY\x20系统\x20虽然现在的你还不够强大，但他已经等你很久了\x0aWAIT\x201500\x0a\x0aSAY\x20系统\x20尝试向他发起挑战并击败他！\x0aASIDE\x20百鬼之王·卡隆是非常强大的敌人，建议在满级且具备一定的装备基础后再发起挑战。\x0a\x20\x0a';
-        }, 961: m => {
-            m['exports'] = '\x0aSCENE\x20\x0a\x0aSAY\x20系统\x20你竟然轻而易举地击败了百鬼之王·卡隆\x0aSAY\x20系统\x20不愧是创世神艾尔所挑选的种子\x0aSAY\x20系统\x20作为奖励，你现在可以创建角色“恶魔五月哭”来体验新职业“黑暗君主”了\x0aWAIT\x201500\x0a\x0aSAY\x20系统\x20忘记提醒你了，“黑暗君主”作为强大的隐藏职业，仅有一次创建角色的机会\x0aSAY\x20系统\x20所以，假如你误删了角色，既无法恢复，也不能再次创建\x0a';
         }, 9818: m => {
             m['exports'] = {
                 'bankByDiamonds': [0xa, 0xa, 0x14, 0x1e, 0x28, 0x3c, 0x5a, 0x82, 0xbe, 0x118, 0x19a, 0x258, 0x370, 0x50a, 0x762, 0xad2, 0xfdc, 0x173e, 0x2210, 0x31ec, 0x492a, 0x6b3a, 0x9d26, 0xe650, 0x1518a, 0x1eeb0, 0x2d500, 0x4268a],
@@ -27259,7 +25003,7 @@ a();
             m['exports'] = p(0x710);
         }, 5160: (q, z) => {
             'use strict';
-            var G, I, J, K;
+            var G, H, J, K;
             if ('object' == typeof performance && 'function' == typeof performance['now']) {
                 var L = performance;
                 z['unstable_now'] = function () {
@@ -27282,7 +25026,7 @@ a();
                 };
                 G = function (ao) {
                     null !== V ? setTimeout(G, 0x0, ao) : (V = ao, setTimeout(X, 0x0));
-                }, I = function (ao, ap) {
+                }, H = function (ao, ap) {
                     W = setTimeout(ao, ap);
                 }, J = function () {
                     clearTimeout(W);
@@ -27316,7 +25060,7 @@ a();
                     } else a1 = !0x1;
                 }, G = function (ao) {
                     a2 = ao, a1 || (a1 = !0x0, a7['postMessage'](null));
-                }, I = function (ao, ap) {
+                }, H = function (ao, ap) {
                     a3 = Y(function () {
                         ao(z['unstable_now']());
                     }, ap);
@@ -27378,7 +25122,7 @@ a();
             function al(ao) {
                 if (aj = !0x1, ak(ao), !ai) if (null !== a9(ac)) ai = !0x0, G(am); else {
                     var ap = a9(ad);
-                    null !== ap && I(al, ap['startTime'] - ao);
+                    null !== ap && H(al, ap['startTime'] - ao);
                 }
             }
 
@@ -27397,7 +25141,7 @@ a();
                     }
                     if (null !== af) var at = !0x0; else {
                         var au = a9(ad);
-                        null !== au && I(al, au['startTime'] - ap), at = !0x1;
+                        null !== au && H(al, au['startTime'] - ap), at = !0x1;
                     }
                     return at;
                 } finally {
@@ -27475,7 +25219,7 @@ a();
                     'startTime': aq,
                     'expirationTime': as = aq + as,
                     'sortIndex': -0x1
-                }, aq > ar ? (ao['sortIndex'] = aq, a8(ad, ao), null === a9(ac) && ao === a9(ad) && (aj ? J() : aj = !0x0, I(al, aq - ar))) : (ao['sortIndex'] = as, a8(ac, ao), ai || ah || (ai = !0x0, G(am))), ao;
+                }, aq > ar ? (ao['sortIndex'] = aq, a8(ad, ao), null === a9(ac) && ao === a9(ad) && (aj ? J() : aj = !0x0, H(al, aq - ar))) : (ao['sortIndex'] = as, a8(ac, ao), ai || ah || (ai = !0x0, G(am))), ao;
             }, z['unstable_wrapCallback'] = function (ao) {
                 var ap = ag;
                 return function () {
@@ -27493,42 +25237,14 @@ a();
             m['exports'] = p(0x1428);
         }, 8818: m => {
             m['exports'] = [{
-                'pw': '%E6%B2%A1%E6%9C%89%E8%9B%80%E7%89%99%EF%BC%81',
-                'times': 0x3,
-                'type': 'diamonds',
-                'value': 0x14d
-            }, {
-                'pw': '%E6%88%91%E6%98%AF%E8%90%8C%E6%96%B0',
-                'times': 0x1,
-                'type': 'diamonds',
-                'value': 0x190
-            }, {
-                'pw': '%E6%B5%99%E6%B1%9F%E6%B3%BD%E5%95%86%E5%BE%8B%E5%B8%88%E4%BA%8B%E5%8A%A1%E6%89%80',
-                'times': 0x1,
-                'type': 'level',
-                'value': 0x64
-            }, {
-                'pw': '%E6%94%AF%E6%8C%81ENTP%E5%81%9A0',
-                'times': 0x1,
-                'type': 'redbag',
-                'value': 0x63
-            }, {
-                'pw': '%E6%88%91%E7%9C%9F%E7%9A%84%E6%98%AF%E8%90%8C%E6%96%B0',
+                'pw': '%E4%B8%8D%E8%83%BD%E7%A9%BA%E6%89%8B%E5%87%BA%E9%97%A8',
                 'times': 0x1,
                 'type': 'new'
             }, {
-                'pw': '%E7%AB%AF%E5%8D%88%E5%AE%89%E5%BA%B7',
+                'pw': '%E6%B8%A3%E7%94%B7%EF%BC%81%E7%94%A8%E4%B8%8D%E5%88%B0%E7%9A%84%E6%8A%80%E8%83%BD%E5%B0%B1%E6%83%B3%E5%88%A0%E6%8E%89%EF%BC%81',
                 'times': 0x1,
-                'type': 'exp',
-                'key': 'exp_zz',
-                'name': '“粽子”',
-                'value': 0x3e7
-            }, {
-                'pw': '%E8%BF%98%E8%83%BD%E6%8A%A2%E6%95%91%E4%B8%80%E4%B8%8B',
-                'times': 0x2,
-                'type': 'rem',
-                'value': 0x1
-            }, {'pw': 'qwertyuiop', 'times': 0x1, 'type': 'playerlist', 'value': 0x1}];
+                'type': 'skill'
+            }];
         }, 6205: (m, p, q) => {
             'use strict';
             q['d'](p, {'A': () => y});
@@ -32649,7 +30365,7 @@ a();
                             DW = nU['_endlessLevel'] ? 'nightmare.' + nU['_endlessLevel'] : this['mapData']['group'] || this['map'];
                         if (DV['countTicket'](DW) > 0x0) {
                             const {exp: DX = 0x0, level: DY, loots: DZ} = this['mapData'];
-                            nU['gotExp'](DX, q4(DY)), nU['loots'](DZ, DY, 0x0), nU['lootEndless'](), nU['_endlessLevel'] && nU['_endlessLevel'] > DV['hdlv'] && (DV['hdlv'] = nU['_endlessLevel']), DV['costTicket'](DW);
+                            nU['gotExp'](DX, q5(DY)), nU['loots'](DZ, DY, 0x0), nU['lootEndless'](), nU['_endlessLevel'] && nU['_endlessLevel'] > DV['hdlv'] && (DV['hdlv'] = nU['_endlessLevel']), DV['costTicket'](DW);
                         }
                         if (this['currentPhase'] = null, nU['pendingMaps']['length'] > 0x0) {
                             const [E0, E1] = nU['pendingMaps']['shift']();
@@ -33143,7 +30859,7 @@ a();
 
                 get ['speedRate']() {
                     let DS = 0x1;
-                    return DS = this['runAttrHooks'](DS, 'speedRateAdd'), DS >= 0x4 && (wL['truetime12'] = 0x3e7), Math['min'](DS, 0x4);
+                    return DS = this['runAttrHooks'](DS, 'speedRateAdd'), DS >= 0x4 && (wM['truetime12'] = 0x3e7), Math['min'](DS, 0x4);
                 }
 
                 ['setAttackCoolDown']() {
@@ -33492,14 +31208,14 @@ a();
                             const {hooks: E1} = kS['medicines'][E0];
                             if (E1) for (const E2 of Object['keys'](E1)) this['addAttrHook'](E2, function () {
                                 for (var E3 = arguments['length'], E4 = new Array(E3), E5 = 0x0; E5 < E3; E5++) E4[E5] = arguments[E5];
-                                return E1[E2]['apply'](DV, [wL['medicineLevel']['get'](E0) || 0x0, ...E4]);
+                                return E1[E2]['apply'](DV, [wM['medicineLevel']['get'](E0) || 0x0, ...E4]);
                             });
                         }
                         for (const E3 of Object['keys'](kS['cookings'])) {
                             const {hooks: E4} = kS['cookings'][E3];
                             if (E4) for (const E5 of Object['keys'](E4)) this['addAttrHook'](E5, function () {
                                 for (var E6 = arguments['length'], E7 = new Array(E6), E8 = 0x0; E8 < E6; E8++) E7[E8] = arguments[E8];
-                                return E4[E5]['apply'](DV, [wL['cookingLevel']['get'](E3) || 0x0, ...E7]);
+                                return E4[E5]['apply'](DV, [wM['cookingLevel']['get'](E3) || 0x0, ...E7]);
                             });
                         }
                     });
@@ -33771,7 +31487,7 @@ a();
                     let DS = 0x0;
                     DS = this['runAttrHooks'](DS, 'fireAbsorb');
                     const DT = this['runAttrHooks'](0.75, 'fireAbsorbmax');
-                    return Math['min'](DS, DT);
+                    return Math['min'](DS, DT, 0.95);
                 }
 
                 get ['fireResist']() {
@@ -33788,7 +31504,7 @@ a();
                     let DS = 0x0;
                     DS = this['runAttrHooks'](DS, 'coldAbsorb');
                     const DT = this['runAttrHooks'](0.75, 'coldAbsorbmax');
-                    return Math['min'](DS, DT);
+                    return Math['min'](DS, DT, 0.95);
                 }
 
                 get ['coldResist']() {
@@ -33805,7 +31521,7 @@ a();
                     let DS = 0x0;
                     DS = this['runAttrHooks'](DS, 'lightningAbsorb');
                     const DT = this['runAttrHooks'](0.75, 'lightningAbsorbmax');
-                    return Math['min'](DS, DT);
+                    return Math['min'](DS, DT, 0.95);
                 }
 
                 get ['lightningResist']() {
@@ -33822,7 +31538,7 @@ a();
                     let DS = 0x0;
                     DS = this['runAttrHooks'](DS, 'poisonAbsorb');
                     const DT = this['runAttrHooks'](0.75, 'poisonAbsorbmax');
-                    return Math['min'](DS, DT);
+                    return Math['min'](DS, DT, 0.95);
                 }
 
                 get ['poisonResist']() {
@@ -33839,7 +31555,7 @@ a();
                     let DS = 0x0;
                     DS = this['runAttrHooks'](DS, 'lightAbsorb');
                     const DT = this['runAttrHooks'](0.75, 'lightAbsorbmax');
-                    return Math['min'](DS, DT);
+                    return Math['min'](DS, DT, 0.95);
                 }
 
                 get ['lightResist']() {
@@ -33856,7 +31572,7 @@ a();
                     let DS = 0x0;
                     DS = this['runAttrHooks'](DS, 'darkAbsorb');
                     const DT = this['runAttrHooks'](0.75, 'darkAbsorbmax');
-                    return Math['min'](DS, DT);
+                    return Math['min'](DS, DT, 0.95);
                 }
 
                 get ['darkResist']() {
@@ -34021,7 +31737,7 @@ a();
 
                 ['canEquip'](DS) {
                     const {goodData: DT, level: DU} = DS;
-                    return !(!DT || 'equip' !== DT['type'] || this['level'] < q4(DU) || !this['player']['careerData']['availableClasses'][DT['class']]);
+                    return !(!DT || 'equip' !== DT['type'] || this['level'] < q5(DU) || !this['player']['careerData']['availableClasses'][DT['class']]);
                 }
 
                 ['dispose']() {
@@ -34300,7 +32016,7 @@ a();
                 }
 
                 get ['stunResist']() {
-                    const DS = q4(this['level']);
+                    const DS = q5(this['level']);
                     return this['runAttrHooks'](this['enemyData']['stunResist'] || 0xa * DS, 'stunResist');
                 }
 
@@ -34311,7 +32027,7 @@ a();
 
                 ['kill']() {
                     let DS = !(arguments['length'] > 0x0 && void 0x0 !== arguments[0x0]) || arguments[0x0];
-                    this['runAttrHooks'](!0x0, 'willClean', this, nU) && this['setCleanTimer'](DS ? 0x5dc : 0x0), super['kill'](), this['summoner'] && this['summoner']['runAttrHooks'](this, 'onSummonDeath'), lG['sendDeath'](this), this['exp'] && nU['gotExp'](this['exp'], q4(this['level']));
+                    this['runAttrHooks'](!0x0, 'willClean', this, nU) && this['setCleanTimer'](DS ? 0x5dc : 0x0), super['kill'](), this['summoner'] && this['summoner']['runAttrHooks'](this, 'onSummonDeath'), lG['sendDeath'](this), this['exp'] && nU['gotExp'](this['exp'], q5(this['level']));
                 }
 
                 ['setCleanTimer']() {
@@ -34383,7 +32099,7 @@ a();
                 'writable': !0x0,
                 'initializer': function () {
                     return () => {
-                        this['enemyData']['loots'] && nU['loots'](this['enemyData']['loots'], this['level'], this['quality']), nU['player'] && wL['onEnemyKilled'](this['type'], 0x1, nU['player']['role']), nU['removeUnit'](this);
+                        this['enemyData']['loots'] && nU['loots'](this['enemyData']['loots'], this['level'], this['quality']), nU['player'] && wM['onEnemyKilled'](this['type'], 0x1, nU['player']['role']), nU['removeUnit'](this);
                     };
                 }
             }), mI(mz['prototype'], 'setTarget', [bq], Object['getOwnPropertyDescriptor'](mz['prototype'], 'setTarget'), mz['prototype']), mz);
@@ -34396,7 +32112,7 @@ a();
                 const E0 = kS['affixes'][DZ]['weight'] || 0x1;
                 return DX < E0 || (DX -= E0, !0x1);
             });
-            return DU[DY] = !0x0, new qq()['fromJS']({'key': DY, 'value': kS['affixes'][DY]['generate'](DT)});
+            return DU[DY] = !0x0, new qw()['fromJS']({'key': DY, 'value': kS['affixes'][DY]['generate'](DT)});
         }
 
         function mY(DS, DT, DU) {
@@ -34407,10 +32123,10 @@ a();
         function mZ(DS, DT, DU, DV) {
             const DW = Object['keys'](kS['affixes'])['filter'](DZ => mY(DS, DZ, DT)), DX = [], DY = {};
             for (let DZ = 0x0; DZ < DU; DZ++) DX['push'](mX(DW, DT || 0x0, DY));
-            return DV && DX['push'](new qq()['fromJS']({
+            return DV && DX['push'](new qw()['fromJS']({
                 'key': DV,
                 'value': kS['legends'][DV]['generate'](DT)
-            })), new qw('loot')['fromJS']({
+            })), new qx('loot')['fromJS']({
                 'key': DS,
                 'level': DT,
                 'count': 0x1,
@@ -34577,15 +32293,15 @@ a();
                 this['timeline']['pause'](), this['paused'] = !0x0, this['updateRate'] = 0x1, this['updatedTime'] = 0x0;
                 const DT = Date['now']();
                 let DU = Date['now']() - this['player']['timestamp'] - this['timeline']['getTime']();
-                'export' === wL['truetime3'] && (wL['truetime3'] = DT), (wL['playerMetas']['get']('1714288131229-0') || wL['playerMetas2']['get']('1714288131229-0')) && this['DiamondsBug'](0x0);
-                const DV = this['player']['key'], DW = wL['playerMetas2']['get'](DV),
+                'export' === wM['truetime3'] && (wM['truetime3'] = DT), (wM['playerMetas']['get']('1714288131229-0') || wM['playerMetas2']['get']('1714288131229-0')) && this['DiamondsBug'](0x0);
+                const DV = this['player']['key'], DW = wM['playerMetas2']['get'](DV),
                     DX = this['player']['playerstamp'];
-                !DX && wL['playerMetas']['get'](DV)['currentCareerLevel'] > 0x1 && (wL['truetime5'] += 0x1), wL['playerMetas']['get'](DV)['currentCareerLevel'] > 0x64 && (wL['truetime12'] = 0x378, this['DiamondsBug'](0x0));
+                !DX && wM['playerMetas']['get'](DV)['currentCareerLevel'] > 0x1 && (wM['truetime5'] += 0x1), wM['playerMetas']['get'](DV)['currentCareerLevel'] > 0x64 && (wM['truetime12'] = 0x378, this['DiamondsBug'](0x0));
                 const DY = !(DW > 0x0 && DX && DW !== DX);
-                if (wL['playerMetas2']['set'](DV, DT), this['player']['playerstamp'] = DT, wL['save'](), this['player']['save'](), DU >= 0x0 && wL['truetime'] <= Date['now']() && DY) {
+                if (wM['playerMetas2']['set'](DV, DT), this['player']['playerstamp'] = DT, wM['save'](), this['player']['save'](), DU >= 0x0 && wM['truetime'] <= Date['now']() && DY) {
                     let DZ = Math['min'](DU, 0xf731400);
                     const E0 = DU - DZ;
-                    this['player']['timestamp'] += E0, wL['truetime'] = DT, this['forward'](DZ), this['player']['save']();
+                    this['player']['timestamp'] += E0, wM['truetime'] = DT, this['forward'](DZ), this['player']['save']();
                 } else this['DiamondsBug'](0x0), this['timeline']['resume']();
             }
 
@@ -34598,7 +32314,7 @@ a();
             }
 
             ['DiamondsBug'](DT) {
-                wL['truetime'] = 0x3333333333333, this['player']['save'](), nD('' + (0x986 - wL['truetime12'] * wL['truetime12'] * 0xd), '你好像搞了点骚操作，导致存档罢工了。');
+                wM['truetime'] = 0x3333333333333, this['player']['save'](), nD('' + (0x986 - wM['truetime12'] * wM['truetime12'] * 0xd), '你好像搞了点骚操作，导致存档罢工了。');
             }
 
             ['pause']() {
@@ -34733,11 +32449,11 @@ a();
             }
 
             ['cklv']() {
-                return wL['totalCookingLevel'];
+                return wM['totalCookingLevel'];
             }
 
             ['mdlv']() {
-                return wL['totalMedicineLevel'];
+                return wM['totalMedicineLevel'];
             }
 
             ['sendDamage'](DT, DU, DV, DW, DX, DY) {
@@ -34810,7 +32526,7 @@ a();
                 const E0 = [], E1 = 0x1 << DV;
                 if (!this['player'] || !this['playerUnit']) return;
                 const E2 = DX ? 0x1 : this['updateRate'];
-                this['_endlessLevel'] && (DU += 0x32 * (this['_endlessLevel'] - 0x1), this['_endlessLevel'] > wL['hgdlv'] && (wL['hgdlv'] = this['_endlessLevel']));
+                this['_endlessLevel'] && (DU += 0x32 * (this['_endlessLevel'] - 0x1), this['_endlessLevel'] > wM['hgdlv'] && (wM['hgdlv'] = this['_endlessLevel']));
                 for (const {
                     key: E3,
                     type: E4,
@@ -34830,7 +32546,7 @@ a();
                             const ED = EA['find'](EF => {
                                 const EG = E9[EF];
                                 return EC < EG || (EC -= EG, !0x1);
-                            }), EE = new qw('loot');
+                            }), EE = new qx('loot');
                             EE['key'] = 'ticket', EE['dungeonKey'] = ED, EE['count'] = 0x1, DU < 0xc8 ? this['player']['dungeonTickets']['set'](ED, this['player']['dungeonTickets']['get'](ED) + 0x1) : E0['push'](EE);
                         }
                     } else if ('equip' === E4 || 'specialEquip' === E4 || 'specialEquip2' === E4) {
@@ -34843,20 +32559,20 @@ a();
                             const EI = Ew[Math['floor'](Math['random']() * Ew['length'])];
                             EF = mZ(kS['legends'][EI]['type'], EG, 0x4, EI);
                         } else if ('specialEquip2' === E4) {
-                            EG = DY || q5(this['player']['level']);
+                            EG = DY || q6(this['player']['level']);
                             const EJ = Ew[Math['floor'](Math['random']() * Ew['length'])];
                             EF = mZ(kS['legends'][EJ]['type'], EG, 0x4, EJ);
                         } else {
                             const EK = this['playerUnit'] ? this['playerUnit']['mf'] : 0x1;
-                            EG || (EG = Math['ceil'](Math['random']() * this['player']['level'] * 0x2)), DZ && (EG = 0xc8 + Math['round'](0x32 * wL['hgdlv'] * Math['random']())), EF = n2(EG, E8 * EK * E1, Eq, DZ);
+                            EG || (EG = Math['ceil'](Math['random']() * this['player']['level'] * 0x2)), DZ && (EG = 0xc8 + Math['round'](0x32 * wM['hgdlv'] * Math['random']())), EF = n2(EG, E8 * EK * E1, Eq, DZ);
                         }
                         switch (this['getLootRule'](EF['goodData']['class'], EF['quality'], EF['level'], E4, EF['legendType'])) {
                             case 0x1:
-                                E0['push'](new qw('loot')['fromJS']({'key': 'gold', 'count': EF['price']}));
+                                E0['push'](new qx('loot')['fromJS']({'key': 'gold', 'count': EF['price']}));
                                 break;
                             case 0x2: {
                                 const EL = n5(EF);
-                                for (const EM of Object['keys'](EL)) E0['push'](new qw('build')['fromJS']({
+                                for (const EM of Object['keys'](EL)) E0['push'](new qx('build')['fromJS']({
                                     'key': EM,
                                     'count': EL[EM]
                                 }));
@@ -34868,7 +32584,7 @@ a();
                     } else if ('maxLevel' === E4) this['player']['maxLevel'] < Ej && (this['player']['maxLevel'] = Ej, nD(this['player']['name'] + '的最大等级提升到了' + Ej)); else if (E3) {
                         let EN = (Math['random']() * (E6 - E5 + 0x1) + E5) * Ex;
                         'gold' === E3 && (EN *= this['playerUnit']['gf'], EN *= this['_endlessLevel'] ? this['_endlessLevel'] : 0x1);
-                        const EO = new qw('loot');
+                        const EO = new qx('loot');
                         EO['key'] = E3, EO['count'] = 0x0 | EN, E0['push'](EO), Ez = Ex;
                     }
                 }
@@ -34877,8 +32593,8 @@ a();
 
             ['lootEndless']() {
                 let DT = arguments['length'] > 0x0 && void 0x0 !== arguments[0x0] && arguments[0x0];
-                if (this['_endlessLevel'] > 0x0 && Math['random']() < wL['endlessTicketRate']) {
-                    const DU = [], DV = new qw('loot');
+                if (this['_endlessLevel'] > 0x0 && Math['random']() < wM['endlessTicketRate']) {
+                    const DU = [], DV = new qx('loot');
                     return DV['key'] = 'ticket', DV['dungeonKey'] = 'nightmare.' + (this['_endlessLevel'] + 0x1), DV['count'] = 0x1, DU['push'](DV), this['lootGoods'](DU, DT);
                 }
             }
@@ -34973,6 +32689,27 @@ a();
                 let DX = Math['round']((DV['level'] + DV['peakLevel']) * (0xfa + 0x1f4 * Math['random']()) * DU);
                 this['playerUnit']['gotExpbox'](DX), DT['count'] -= DU, nD('提示', '你一共获得了' + DX + '点经验。'), 0x0 === DT['count'] && DT['clear']();
             }
+
+            ['sskill1'](DT) {
+                let DU = arguments['length'] > 0x1 && void 0x0 !== arguments[0x1] ? arguments[0x1] : 0x1;
+                const {player: DV} = this, {goodData: DW} = DT;
+                if (DV['playerskill']['length'] >= 0x14) return void nD('贪多嚼不烂，少学一点啦。');
+                const DX = Object['keys'](kS['skills'])['filter'](E1 => 'player' === (kS['skills'][E1]['type'] || 0x0) && (kS['skills'][E1]['lv'] || 0x1) < DV['level']);
+                if (DV['playerskill']['length'] >= DX['length']) return void nD('你竟然不小心学完了技能。');
+                let DY = DX[Math['floor'](Math['random']() * DX['length'])], DZ = DV['playerskill']['indexOf'](DY);
+                for (; DZ > -0x1;) DY = DX[Math['floor'](Math['random']() * DX['length'])], DZ = DV['playerskill']['indexOf'](DY);
+                console['log'](DY);
+                let E0 = Math['round']((DV['level'] + DV['peakLevel']) * (0xfa + 0x1f4 * Math['random']()) * DU);
+                this['playerUnit']['gotExpbox'](E0), nD('提示', '你一共获得了' + E0 + '点经验。'), 0x0 === DT['count'] && DT['clear']();
+            }
+
+            ['sskill2'](DT) {
+                let DU = arguments['length'] > 0x1 && void 0x0 !== arguments[0x1] ? arguments[0x1] : 0x1;
+                const {player: DV} = this, {goodData: DW} = DT;
+                if (this['pendingTime'] > 0x0) return void nD('莫慌，再等等。');
+                let DX = Math['round']((DV['level'] + DV['peakLevel']) * (0xfa + 0x1f4 * Math['random']()) * DU);
+                this['playerUnit']['gotExpbox'](DX), nD('提示', '你一共获得了' + DX + '点经验。'), 0x0 === DT['count'] && DT['clear']();
+            }
         }, nH = nS(nG['prototype'], 'units', [c2], {
             'configurable': !0x0,
             'enumerable': !0x0,
@@ -35036,7 +32773,7 @@ a();
             'initializer': function () {
                 return [];
             }
-        }), nS(nG['prototype'], 'mapData', [c6], Object['getOwnPropertyDescriptor'](nG['prototype'], 'mapData'), nG['prototype']), nS(nG['prototype'], 'focusEnemy', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'focusEnemy'), nG['prototype']), nS(nG['prototype'], 'sendDamage', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'sendDamage'), nG['prototype']), nS(nG['prototype'], 'sendHeal', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'sendHeal'), nG['prototype']), nS(nG['prototype'], 'gotExp', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'gotExp'), nG['prototype']), nS(nG['prototype'], 'lootGood', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'lootGood'), nG['prototype']), nS(nG['prototype'], 'lootGoods', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'lootGoods'), nG['prototype']), nS(nG['prototype'], 'loots', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'loots'), nG['prototype']), nS(nG['prototype'], 'selectSkill', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'selectSkill'), nG['prototype']), nS(nG['prototype'], 'unselectSkill', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'unselectSkill'), nG['prototype']), nS(nG['prototype'], 'selectEnhance', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'selectEnhance'), nG['prototype']), nS(nG['prototype'], 'unselectEnhance', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'unselectEnhance'), nG['prototype']), nS(nG['prototype'], 'usePackage', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'usePackage'), nG['prototype']), nS(nG['prototype'], 'useBox', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'useBox'), nG['prototype']), nS(nG['prototype'], 'useexp', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'useexp'), nG['prototype']), nG);
+        }), nS(nG['prototype'], 'mapData', [c6], Object['getOwnPropertyDescriptor'](nG['prototype'], 'mapData'), nG['prototype']), nS(nG['prototype'], 'focusEnemy', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'focusEnemy'), nG['prototype']), nS(nG['prototype'], 'sendDamage', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'sendDamage'), nG['prototype']), nS(nG['prototype'], 'sendHeal', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'sendHeal'), nG['prototype']), nS(nG['prototype'], 'gotExp', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'gotExp'), nG['prototype']), nS(nG['prototype'], 'lootGood', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'lootGood'), nG['prototype']), nS(nG['prototype'], 'lootGoods', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'lootGoods'), nG['prototype']), nS(nG['prototype'], 'loots', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'loots'), nG['prototype']), nS(nG['prototype'], 'selectSkill', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'selectSkill'), nG['prototype']), nS(nG['prototype'], 'unselectSkill', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'unselectSkill'), nG['prototype']), nS(nG['prototype'], 'selectEnhance', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'selectEnhance'), nG['prototype']), nS(nG['prototype'], 'unselectEnhance', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'unselectEnhance'), nG['prototype']), nS(nG['prototype'], 'usePackage', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'usePackage'), nG['prototype']), nS(nG['prototype'], 'useBox', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'useBox'), nG['prototype']), nS(nG['prototype'], 'useexp', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'useexp'), nG['prototype']), nS(nG['prototype'], 'sskill1', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'sskill1'), nG['prototype']), nS(nG['prototype'], 'sskill2', [dF], Object['getOwnPropertyDescriptor'](nG['prototype'], 'sskill2'), nG['prototype']), nG);
         const nU = new nT(), nV = {};
 
         function nW(DT) {
@@ -35055,9 +32792,9 @@ a();
         }
 
         var nX, nY, nZ, o0, o1, o2, o3, o4, o5, o6, o7, o8, o9, oj, oq, ox, oz, oA, oB, oC, oD, oE, oF, oG, oH, oI, oJ,
-            oK, oL, oM, oN, oO, oP, oQ, oR, oS, oT, oU, oV, oW, oX, oY, oZ, p0, p1, p2, p3, p4;
+            oK, oL, oM, oN, oO, oP, oQ, oR, oS, oT, oU, oV, oW, oX, oY, oZ, p0, p1, p2, p3, p4, p5, p6;
 
-        function p5(DT, DU, DV, DW) {
+        function p7(DT, DU, DV, DW) {
             DV && Object['defineProperty'](DT, DU, {
                 'enumerable': DV['enumerable'],
                 'configurable': DV['configurable'],
@@ -35066,7 +32803,7 @@ a();
             });
         }
 
-        function p6(DT, DU, DV) {
+        function p8(DT, DU, DV) {
             return DU = function (DW) {
                 var DX = function (DY, DZ) {
                     if ('object' != typeof DY || null === DY) return DY;
@@ -35087,7 +32824,7 @@ a();
             }) : DT[DU] = DV, DT;
         }
 
-        function p7(DT, DU, DV, DW, DX) {
+        function p9(DT, DU, DV, DW, DX) {
             var DY = {};
             return Object['keys'](DW)['forEach'](function (DZ) {
                 DY[DZ] = DW[DZ];
@@ -35096,62 +32833,19 @@ a();
             }, DY), DX && void 0x0 !== DY['initializer'] && (DY['value'] = DY['initializer'] ? DY['initializer']['call'](DX) : void 0x0, DY['initializer'] = void 0x0), void 0x0 === DY['initializer'] && (Object['defineProperty'](DT, DU, DY), DY = null), DY;
         }
 
-        const p8 = {};
-        Object['keys'](kS['goods'])['forEach']((DT, DU) => p8[DT] = DU);
-        const p9 = {
-                'stickSword': 0x1,
-                'stickWand': 0x1,
-                'woodSword': 0x6,
-                'woodWand': 0x6,
-                'dress': 0x2,
-                'skirt': 0x2,
-                'rattanArmor': 0x8,
-                'rattanShinGuard': 0x8,
-                'hardDress': 0x8,
-                'boot': 0x8,
-                'boneSword': 0x10,
-                'boneWand': 0x10,
-                'wolfTeethMace': 0x18,
-                'wolfTeethWand': 0x18,
-                'leatherArmor': 0x14,
-                'leatherTrousers': 0x14,
-                'leatherDress': 0x14,
-                'leatherSkirt': 0x14,
-                'copperSword': 0x20,
-                'copperBigSword': 0x24,
-                'copperSword2': 0x28,
-                'copperBigSword2': 0x2c,
-                'copperArmor': 0x20,
-                'copperShinGuard': 0x20,
-                'zombieBoneHandyWand': 0x20,
-                'zombieBoneWand': 0x24,
-                'mithrilShortWand': 0x28,
-                'mithrilWand': 0x2c,
-                'silkDress': 0x20,
-                'silkSocks': 0x20,
-                'magicBoneSword': 0x32,
-                'magicBoneBigSword': 0x36,
-                'mithrilCopperSword': 0x3c,
-                'mithrilCopperBigSword': 0x40,
-                'boneArmor': 0x34,
-                'boneShinGuard': 0x34,
-                'ghostCreamShortWand': 0x32,
-                'ghostCreamStick': 0x32,
-                'mithrilStannumShortWand': 0x3c,
-                'mithrilStannumWand': 0x40,
-                'mithrilDress': 0x34,
-                'mithrilSkirt': 0x34
-            }, pj = {
+        const pj = {};
+        Object['keys'](kS['goods'])['forEach']((DT, DU) => pj[DT] = DU);
+        const pq = {
                 'cloth': 0x1,
                 'lightArmor': 1.5,
                 'armor': 0x2,
                 'swordshield': 1.5,
                 'spearshield': 1.5,
                 'macheteshield': 1.5
-            }, pq = {'plastron': 0x1, 'gaiter': 0.8, 'weapon': 0x1},
-            px = {'cloth': 0x2, 'lightArmor': 0.5, 'armor': 0.5, 'wand': 0x2},
-            pz = {'plastron': 0x1, 'gaiter': 0.8, 'weapon': 0x2}, pA = {'sword': 0x1}, pB = {'weapon': 0x1},
-            pC = {'longsword': 1.5}, pD = {'weapon': 0x1}, pE = {
+            }, px = {'plastron': 0x1, 'gaiter': 0.8, 'weapon': 0x1},
+            pz = {'cloth': 0x2, 'lightArmor': 0.5, 'armor': 0.5, 'wand': 0x2},
+            pA = {'plastron': 0x1, 'gaiter': 0.8, 'weapon': 0x2}, pB = {'sword': 0x1}, pC = {'weapon': 0x1},
+            pD = {'longsword': 1.5}, pE = {'weapon': 0x1}, pF = {
                 'sword': 0x1,
                 'swordshield': 0.8,
                 'spear': 1.2,
@@ -35160,56 +32854,45 @@ a();
                 'macheteshield': 0.8,
                 'ornament': 0x1,
                 'longsword': 0x1
-            }, pF = {'weapon': 0x1}, pG = {'machete': 0x1}, pH = {'weapon': 0x1}, pI = {'ornament': 0x1},
-            pJ = {'sta': 0x1, 'str': 0.5, 'dex': 0.5, 'int': 0.5}, pK = {'ornament': 0x1}, pL = {'sta': 0x1},
-            pM = {'ornament': 0x1}, pN = {'str': 0x1}, pO = {'ornament': 0x1}, pP = {'dex': 0x1}, pQ = {'wand': 0x1},
-            pR = {'int': 0x1, 'weapon': 0x1}, pS = {'weapon_wanhua': 0x1}, pT = {'weapon': 0x1}, pU = {'ornament': 0x1},
-            pV = {'jingjian_pofang': 1.5}, pW = {}, pX = {}, pY = {}, pZ = {}, q0 = {}, q1 = {}, q2 = {
-                'armor': '重甲',
-                'lightArmor': '轻甲',
-                'cloth': '布甲',
-                'ornament': '首饰',
-                'sword': '长剑',
-                'swordshield': '剑盾',
-                'spear': '长枪',
-                'spearshield': '枪盾',
-                'machete': '双刀',
-                'macheteshield': '刀盾',
-                'wand': '法杖',
-                'longsword': '太刀',
-                'base': '通用装备'
-            }, q3 = {'plastron': 0x1, 'gaiter': 0x2, 'ornament': 0x3, 'weapon': 0x0};
+            }, pG = {'weapon': 0x1}, pH = {'machete': 0x1}, pI = {'weapon': 0x1}, pJ = {'ornament': 0x1},
+            pK = {'sta': 0x1, 'str': 0.5, 'dex': 0.5, 'int': 0.5}, pL = {'ornament': 0x1}, pM = {'sta': 0x1},
+            pN = {'ornament': 0x1}, pO = {'str': 0x1}, pP = {'ornament': 0x1}, pQ = {'dex': 0x1}, pR = {'wand': 0x1},
+            pS = {'int': 0x1, 'weapon': 0x1}, pT = {'weapon_wanhua': 0x1}, pU = {'weapon': 0x1}, pV = {'ornament': 0x1},
+            pW = {'jingjian_pofang': 1.5}, pX = {}, pY = {}, pZ = {}, q0 = {}, q1 = {}, q2 = {},
+            q3 = {'base': '通用装备'}, q4 = {'plastron': 0x1, 'gaiter': 0x2, 'ornament': 0x3, 'weapon': 0x0};
 
-        function q4(DT) {
+        function q5(DT) {
             return DT <= 0xc8 ? Math['ceil'](DT / 0x2) : 0x64;
         }
 
-        function q5(DT) {
+        function q6(DT) {
             return DT <= 0x64 ? 0x2 * DT : 0xc8;
         }
 
-        function q6(DT) {
+        function q7(DT) {
             if (DT['startsWith']('nightmare.')) return 0x0 | Number(DT['substr'](0xa));
         }
 
-        const q7 = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV', 'XVI', 'XVII', 'XVIII', 'XIX', 'XX'];
-
-        function q8(DT) {
-            const DU = q6(DT);
-            if (DU) return '无尽噩梦' + (q7[DU] || DU);
-        }
+        const q8 = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV', 'XVI', 'XVII', 'XVIII', 'XIX', 'XX'];
 
         function q9(DT) {
-            return 0xfa + 0x32 * (q6(DT) - 0x1);
+            const DU = q7(DT);
+            if (DU) return '无尽噩梦' + (q8[DU] || DU);
         }
 
-        let qj = (nY = p7((nX = class {
+        function qj(DT) {
+            return 0xfa + 0x32 * (q7(DT) - 0x1);
+        }
+
+        let qq = (nY = p9((nX = class {
                 constructor() {
-                    p6(this, 'type', ''), p5(this, 'exp', nY, this), p5(this, 'level', nZ, this), p5(this, 'peakExp', o0, this), p5(this, 'peakLevel', o1, this), p5(this, 'maxLevel', o2, this), p5(this, 'equipments', o3, this), p5(this, 'selectedSkills', o4, this), p5(this, 'selectedEnhances', o5, this), eE(this);
+                    p8(this, 'type', ''), p7(this, 'exp', nY, this), p7(this, 'level', nZ, this), p7(this, 'peakExp', o0, this), p7(this, 'peakLevel', o1, this), p7(this, 'maxLevel', o2, this), p7(this, 'equipments', o3, this), p7(this, 'selectedSkills', o4, this), p7(this, 'selectedEnhances', o5, this), eE(this);
                 }
 
                 ['fromJS'](DT) {
-                    return this['exp'] = DT['exp'] || 0x0, this['level'] = DT['level'] || 0x1, this['peakExp'] = DT['peakExp'] || 0x0, this['peakLevel'] = DT['peakLevel'] || 0x0, this['maxLevel'] = DT['maxLevel'] || 0x64, DT['equipments'] && (this['equipments']['weapon']['fromJS'](DT['equipments']['weapon'] || {}), this['equipments']['plastron']['fromJS'](DT['equipments']['plastron'] || {}), this['equipments']['gaiter']['fromJS'](DT['equipments']['gaiter'] || {}), this['equipments']['ornament']['fromJS'](DT['equipments']['ornament'] || {})), DT['selectedSkills'] && this['selectedSkills']['replace'](DT['selectedSkills']['filter'](DU => kS['careers'][this['type']]['skills'][DU])), DT['selectedEnhances'] && this['selectedEnhances']['replace'](DT['selectedEnhances']['filter'](DU => kS['careers'][this['type']]['enhances'][DU])), this;
+                    if (this['exp'] = DT['exp'] || 0x0, this['level'] = DT['level'] || 0x1, this['peakExp'] = DT['peakExp'] || 0x0, this['peakLevel'] = DT['peakLevel'] || 0x0, this['maxLevel'] = DT['maxLevel'] || 0x64, DT['equipments'] && (this['equipments']['weapon']['fromJS'](DT['equipments']['weapon'] || {}), this['equipments']['plastron']['fromJS'](DT['equipments']['plastron'] || {}), this['equipments']['gaiter']['fromJS'](DT['equipments']['gaiter'] || {}), this['equipments']['ornament']['fromJS'](DT['equipments']['ornament'] || {})), DT['selectedSkills']) for (let DU = 0x0; DT['selectedSkills'] && DU < DT['selectedSkills']['length']; DU++) this['selectedSkills']['push'](DT['selectedSkills'][DU]); else this['selectedSkills'] = [];
+                    if (DT['selectedEnhances']) for (let DV = 0x0; DT['selectedEnhances'] && DV < DT['selectedEnhances']['length']; DV++) this['selectedEnhances']['push'](DT['selectedEnhances'][DV]); else this['selectedEnhances'] = [];
+                    return this;
                 }
 
                 get ['maxExp']() {
@@ -35230,64 +32913,64 @@ a();
                 'initializer': function () {
                     return 0x0;
                 }
-            }), nZ = p7(nX['prototype'], 'level', [c2], {
+            }), nZ = p9(nX['prototype'], 'level', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return 0x1;
                 }
-            }), o0 = p7(nX['prototype'], 'peakExp', [c2], {
+            }), o0 = p9(nX['prototype'], 'peakExp', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return 0x0;
                 }
-            }), o1 = p7(nX['prototype'], 'peakLevel', [c2], {
+            }), o1 = p9(nX['prototype'], 'peakLevel', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return 0x0;
                 }
-            }), o2 = p7(nX['prototype'], 'maxLevel', [c2], {
+            }), o2 = p9(nX['prototype'], 'maxLevel', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return 0x64;
                 }
-            }), o3 = p7(nX['prototype'], 'equipments', [c2], {
+            }), o3 = p9(nX['prototype'], 'equipments', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return {
-                        'weapon': new qw('equip'),
-                        'plastron': new qw('equip'),
-                        'gaiter': new qw('equip'),
-                        'ornament': new qw('equip')
+                        'weapon': new qx('equip'),
+                        'plastron': new qx('equip'),
+                        'gaiter': new qx('equip'),
+                        'ornament': new qx('equip')
                     };
                 }
-            }), o4 = p7(nX['prototype'], 'selectedSkills', [c2], {
+            }), o4 = p9(nX['prototype'], 'selectedSkills', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return [];
                 }
-            }), o5 = p7(nX['prototype'], 'selectedEnhances', [c2], {
+            }), o5 = p9(nX['prototype'], 'selectedEnhances', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return [];
                 }
-            }), p7(nX['prototype'], 'maxExp', [c6], Object['getOwnPropertyDescriptor'](nX['prototype'], 'maxExp'), nX['prototype']), p7(nX['prototype'], 'maxPeakExp', [c6], Object['getOwnPropertyDescriptor'](nX['prototype'], 'maxPeakExp'), nX['prototype']), nX),
-            qq = (o7 = p7((o6 = class {
+            }), p9(nX['prototype'], 'maxExp', [c6], Object['getOwnPropertyDescriptor'](nX['prototype'], 'maxExp'), nX['prototype']), p9(nX['prototype'], 'maxPeakExp', [c6], Object['getOwnPropertyDescriptor'](nX['prototype'], 'maxPeakExp'), nX['prototype']), nX),
+            qw = (o7 = p9((o6 = class {
                 constructor() {
-                    p5(this, 'key', o7, this), p5(this, 'value', o8, this), p5(this, 'rebuilded', o9, this), eE(this);
+                    p7(this, 'key', o7, this), p7(this, 'value', o8, this), p7(this, 'rebuilded', o9, this), eE(this);
                 }
 
                 get ['affixData']() {
@@ -35316,24 +32999,24 @@ a();
                 'initializer': function () {
                     return null;
                 }
-            }), o8 = p7(o6['prototype'], 'value', [c2], {
+            }), o8 = p9(o6['prototype'], 'value', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return 0x0;
                 }
-            }), o9 = p7(o6['prototype'], 'rebuilded', [c2], {
+            }), o9 = p9(o6['prototype'], 'rebuilded', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return !0x1;
                 }
-            }), p7(o6['prototype'], 'affixData', [c6], Object['getOwnPropertyDescriptor'](o6['prototype'], 'affixData'), o6['prototype']), p7(o6['prototype'], 'isLegend', [c6], Object['getOwnPropertyDescriptor'](o6['prototype'], 'isLegend'), o6['prototype']), p7(o6['prototype'], 'display', [c6], Object['getOwnPropertyDescriptor'](o6['prototype'], 'display'), o6['prototype']), p7(o6['prototype'], 'fromJS', [dF], Object['getOwnPropertyDescriptor'](o6['prototype'], 'fromJS'), o6['prototype']), o6),
-            qw = (oq = p7((oj = class {
+            }), p9(o6['prototype'], 'affixData', [c6], Object['getOwnPropertyDescriptor'](o6['prototype'], 'affixData'), o6['prototype']), p9(o6['prototype'], 'isLegend', [c6], Object['getOwnPropertyDescriptor'](o6['prototype'], 'isLegend'), o6['prototype']), p9(o6['prototype'], 'display', [c6], Object['getOwnPropertyDescriptor'](o6['prototype'], 'display'), o6['prototype']), p9(o6['prototype'], 'fromJS', [dF], Object['getOwnPropertyDescriptor'](o6['prototype'], 'fromJS'), o6['prototype']), o6),
+            qx = (oq = p9((oj = class {
                 constructor(DT) {
-                    p6(this, 'position', null), p5(this, 'key', oq, this), p5(this, 'count', ox, this), p5(this, 'level', oz, this), p5(this, 'affixes', oA, this), p5(this, 'quality', oB, this), p5(this, 'enchantTimes', oC, this), p5(this, 'locked', oD, this), p5(this, 'legendType', oE, this), p5(this, 'dungeonKey', oF, this), eE(this), this['position'] = DT;
+                    p8(this, 'position', null), p7(this, 'key', oq, this), p7(this, 'count', ox, this), p7(this, 'level', oz, this), p7(this, 'affixes', oA, this), p7(this, 'quality', oB, this), p7(this, 'enchantTimes', oC, this), p7(this, 'locked', oD, this), p7(this, 'legendType', oE, this), p7(this, 'dungeonKey', oF, this), eE(this), this['position'] = DT;
                 }
 
                 get ['goodData']() {
@@ -35364,7 +33047,7 @@ a();
                 }
 
                 get ['name']() {
-                    return this['key'] ? 'gold' === this['key'] ? '金币' : 'diamonds' === this['key'] ? '神力' : 'ticket' === this['key'] ? '钥石:' + (q8(this['dungeonKey']) || kS['maps'][this['dungeonKey']]['name']) : this['legendData'] ? this['legendData']['itemName'] : this['goodData'] && this['goodData']['name'] : '';
+                    return this['key'] ? 'gold' === this['key'] ? '金币' : 'diamonds' === this['key'] ? '神力' : 'ticket' === this['key'] ? '钥石:' + (q9(this['dungeonKey']) || kS['maps'][this['dungeonKey']]['name']) : this['legendData'] ? this['legendData']['itemName'] : this['goodData'] && this['goodData']['name'] : '';
                 }
 
                 get ['originName']() {
@@ -35387,7 +33070,7 @@ a();
                     if (!this['key']) return 0x0;
                     if (this['isEquip']) {
                         const {level: DT} = this;
-                        return (0.01 * DT * DT + 0x1 * DT) * 0x2 ** this['quality'] | 0x0;
+                        return (0.01 * DT * DT + 0x1 * DT) * 0x2 ** this['quality'] | 0x1;
                     }
                     return this['goodData']['price'] * 0x2 ** this['quality'];
                 }
@@ -35397,7 +33080,7 @@ a();
                 }
 
                 get ['requireLevel']() {
-                    return this['isEquip'] ? q4(this['level']) : 0x0;
+                    return this['isEquip'] ? q5(this['level']) : 0x0;
                 }
 
                 get ['atkSpeed']() {
@@ -35408,98 +33091,98 @@ a();
                 get ['atk_self']() {
                     const {level: DT, goodData: DU} = this;
                     if ('weapon' === DU['position']) {
-                        const DV = pE[DU['class']] * pF[DU['position']] || 0x0;
+                        const DV = pF[DU['class']] * pG[DU['position']] || 0x0;
                         return Math['ceil'](DT * DV);
                     }
                     if ('ornament' === DU['position']) {
-                        const DW = pE[DU['class']] * pF[DU['item']] || 0x0;
+                        const DW = pF[DU['class']] * pG[DU['item']] || 0x0;
                         return Math['ceil'](DT * DW);
                     }
                 }
 
                 get ['def']() {
-                    const {level: DT, goodData: DU} = this, DV = pj[DU['class']] * pq[DU['position']] || 0x0;
+                    const {level: DT, goodData: DU} = this, DV = pq[DU['class']] * px[DU['position']] || 0x0;
                     return Math['round'](DT * DV);
                 }
 
                 get ['allResist']() {
-                    const {level: DT, goodData: DU} = this, DV = px[DU['class']] * pz[DU['position']] || 0x0;
+                    const {level: DT, goodData: DU} = this, DV = pz[DU['class']] * pA[DU['position']] || 0x0;
                     return Math['round'](DT * DV * 0.8);
                 }
 
                 get ['critRate']() {
                     const {level: DT, goodData: DU} = this;
-                    return 0.1 * (pA[DU['class']] * pB[DU['position']] || 0x0);
+                    return 0.1 * (pB[DU['class']] * pC[DU['position']] || 0x0);
                 }
 
                 get ['dmgAdd']() {
-                    const {level: DT, goodData: DU} = this, DV = pS[DU['class']] * pT[DU['position']] || 0x0;
+                    const {level: DT, goodData: DU} = this, DV = pT[DU['class']] * pU[DU['position']] || 0x0;
                     return DT > 0xc8 ? 0.1 * DV : 0.0005 * DT * DV;
                 }
 
                 get ['atkMul']() {
                     const {level: DT, goodData: DU} = this;
-                    return 0.1 * (pC[DU['class']] * pD[DU['position']] || 0x0);
+                    return 0.1 * (pD[DU['class']] * pE[DU['position']] || 0x0);
                 }
 
                 get ['critBonus']() {
                     const {level: DT, goodData: DU} = this;
-                    return 0.2 * (pG[DU['class']] * pH[DU['position']] || 0x0);
+                    return 0.2 * (pH[DU['class']] * pI[DU['position']] || 0x0);
                 }
 
                 get ['dmgLevel']() {
-                    const {level: DT, goodData: DU} = this, DV = pU[DU['class']] * pV[DU['item']] || 0x0;
+                    const {level: DT, goodData: DU} = this, DV = pV[DU['class']] * pW[DU['item']] || 0x0;
                     return Math['round'](DT * DV);
                 }
 
                 get ['critR_level']() {
-                    const {level: DT, goodData: DU} = this, DV = pW[DU['class']] * pX[DU['position']] || 0x0;
+                    const {level: DT, goodData: DU} = this, DV = pX[DU['class']] * pY[DU['position']] || 0x0;
                     return Math['round'](DT * DV);
                 }
 
                 get ['critB_level']() {
-                    const {level: DT, goodData: DU} = this, DV = pY[DU['class']] * pZ[DU['position']] || 0x0;
+                    const {level: DT, goodData: DU} = this, DV = pZ[DU['class']] * q0[DU['position']] || 0x0;
                     return Math['round'](DT * DV);
                 }
 
                 get ['miss_shanbizhi']() {
-                    const {level: DT, goodData: DU} = this, DV = q0[DU['class']] * q1[DU['position']] || 0x0;
+                    const {level: DT, goodData: DU} = this, DV = q1[DU['class']] * q2[DU['position']] || 0x0;
                     return Math['round'](DT * DV);
                 }
 
                 get ['equipPositionName']() {
                     const {goodData: DT} = this;
-                    return q2[DT['class']];
+                    return q3[DT['class']];
                 }
 
                 get ['equipPositionOrder']() {
                     const {position: DT} = this['goodData'];
-                    return q3[DT];
+                    return q4[DT];
                 }
 
                 get ['maxHp']() {
                     const {level: DT, goodData: DU} = this;
-                    return DT * (pI[DU['class']] * pJ[DU['item']] || 0x0) / 0x2;
+                    return DT * (pJ[DU['class']] * pK[DU['item']] || 0x0) / 0x2;
                 }
 
                 get ['sta']() {
                     const {level: DT, goodData: DU} = this;
-                    return DT * (pK[DU['class']] * pL[DU['item']] || 0x0) / 0x4;
+                    return DT * (pL[DU['class']] * pM[DU['item']] || 0x0) / 0x4;
                 }
 
                 get ['str']() {
                     const {level: DT, goodData: DU} = this;
-                    return DT * (pM[DU['class']] * pN[DU['item']] || 0x0) / 0x4;
+                    return DT * (pN[DU['class']] * pO[DU['item']] || 0x0) / 0x4;
                 }
 
                 get ['dex']() {
                     const {level: DT, goodData: DU} = this;
-                    return DT * (pO[DU['class']] * pP[DU['item']] || 0x0) / 0x4;
+                    return DT * (pP[DU['class']] * pQ[DU['item']] || 0x0) / 0x4;
                 }
 
                 get ['int']() {
                     const {level: DT, goodData: DU} = this;
-                    return DT * (pQ[DU['class']] * pR[DU['position']] || 0x0);
+                    return DT * (pR[DU['class']] * pS[DU['position']] || 0x0);
                 }
 
                 get ['mpRecovery']() {
@@ -35522,7 +33205,7 @@ a();
                 }
 
                 ['fromJS'](DT) {
-                    return this['locked'] = DT['locked'] || 0x0, this['key'] = DT['key'] || null, this['count'] = DT['count'] ? Math['ceil'](DT['count']) : null, this['quality'] = DT['quality'] || 0x0, this['level'] = DT['level'] || 0x0, this['enchantTimes'] = DT['enchantTimes'] || 0x0, this['legendType'] = DT['legendType'] || null, this['dungeonKey'] = DT['dungeonKey'] || null, this['isEquip'] && !this['level'] && (this['level'] = p9[this['key']] || 0x1), this['affixes']['replace']((DT['affixes'] || [])['map'](DU => new qq()['fromJS'](DU))), this['key'] && 0x0 !== this['count'] || this['clear'](), 'ticket' !== this['key'] || this['dungeonKey'] || this['clear'](), this;
+                    return this['locked'] = DT['locked'] || 0x0, this['key'] = DT['key'] || null, this['count'] = DT['count'] ? Math['ceil'](DT['count']) : null, this['quality'] = DT['quality'] || 0x0, this['level'] = DT['level'] || 0x0, this['enchantTimes'] = DT['enchantTimes'] || 0x0, this['legendType'] = DT['legendType'] || null, this['dungeonKey'] = DT['dungeonKey'] || null, this['affixes']['replace']((DT['affixes'] || [])['map'](DU => new qw()['fromJS'](DU))), this['key'] && 0x0 !== this['count'] || this['clear'](), 'ticket' !== this['key'] || this['dungeonKey'] || this['clear'](), this;
                 }
             })['prototype'], 'key', [c2], {
                 'configurable': !0x0,
@@ -35531,66 +33214,66 @@ a();
                 'initializer': function () {
                     return null;
                 }
-            }), ox = p7(oj['prototype'], 'count', [c2], {
+            }), ox = p9(oj['prototype'], 'count', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return 0x0;
                 }
-            }), oz = p7(oj['prototype'], 'level', [c2], {
+            }), oz = p9(oj['prototype'], 'level', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return 0x0;
                 }
-            }), oA = p7(oj['prototype'], 'affixes', [c2], {
+            }), oA = p9(oj['prototype'], 'affixes', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return [];
                 }
-            }), oB = p7(oj['prototype'], 'quality', [c2], {
+            }), oB = p9(oj['prototype'], 'quality', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return 0x0;
                 }
-            }), oC = p7(oj['prototype'], 'enchantTimes', [c2], {
+            }), oC = p9(oj['prototype'], 'enchantTimes', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return 0x0;
                 }
-            }), oD = p7(oj['prototype'], 'locked', [c2], {
+            }), oD = p9(oj['prototype'], 'locked', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return !0x1;
                 }
-            }), oE = p7(oj['prototype'], 'legendType', [c2], {
+            }), oE = p9(oj['prototype'], 'legendType', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return null;
                 }
-            }), oF = p7(oj['prototype'], 'dungeonKey', [c2], {
+            }), oF = p9(oj['prototype'], 'dungeonKey', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return null;
                 }
-            }), p7(oj['prototype'], 'goodData', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'goodData'), oj['prototype']), p7(oj['prototype'], 'isEnergyMaterial', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'isEnergyMaterial'), oj['prototype']), p7(oj['prototype'], 'legendData', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'legendData'), oj['prototype']), p7(oj['prototype'], 'backgroundColor', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'backgroundColor'), oj['prototype']), p7(oj['prototype'], 'nameColor', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'nameColor'), oj['prototype']), p7(oj['prototype'], 'description', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'description'), oj['prototype']), p7(oj['prototype'], 'name', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'name'), oj['prototype']), p7(oj['prototype'], 'originName', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'originName'), oj['prototype']), p7(oj['prototype'], 'isEquip', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'isEquip'), oj['prototype']), p7(oj['prototype'], 'displayQuality', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'displayQuality'), oj['prototype']), p7(oj['prototype'], 'empty', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'empty'), oj['prototype']), p7(oj['prototype'], 'price', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'price'), oj['prototype']), p7(oj['prototype'], 'totalPrice', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'totalPrice'), oj['prototype']), p7(oj['prototype'], 'requireLevel', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'requireLevel'), oj['prototype']), p7(oj['prototype'], 'atkSpeed', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'atkSpeed'), oj['prototype']), p7(oj['prototype'], 'atk_self', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'atk_self'), oj['prototype']), p7(oj['prototype'], 'def', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'def'), oj['prototype']), p7(oj['prototype'], 'allResist', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'allResist'), oj['prototype']), p7(oj['prototype'], 'critRate', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'critRate'), oj['prototype']), p7(oj['prototype'], 'dmgAdd', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'dmgAdd'), oj['prototype']), p7(oj['prototype'], 'atkMul', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'atkMul'), oj['prototype']), p7(oj['prototype'], 'critBonus', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'critBonus'), oj['prototype']), p7(oj['prototype'], 'dmgLevel', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'dmgLevel'), oj['prototype']), p7(oj['prototype'], 'critR_level', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'critR_level'), oj['prototype']), p7(oj['prototype'], 'critB_level', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'critB_level'), oj['prototype']), p7(oj['prototype'], 'miss_shanbizhi', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'miss_shanbizhi'), oj['prototype']), p7(oj['prototype'], 'equipPositionName', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'equipPositionName'), oj['prototype']), p7(oj['prototype'], 'maxHp', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'maxHp'), oj['prototype']), p7(oj['prototype'], 'sta', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'sta'), oj['prototype']), p7(oj['prototype'], 'str', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'str'), oj['prototype']), p7(oj['prototype'], 'dex', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'dex'), oj['prototype']), p7(oj['prototype'], 'int', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'int'), oj['prototype']), p7(oj['prototype'], 'mpRecovery', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'mpRecovery'), oj['prototype']), p7(oj['prototype'], 'mpFromKill', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'mpFromKill'), oj['prototype']), p7(oj['prototype'], 'swap', [dF], Object['getOwnPropertyDescriptor'](oj['prototype'], 'swap'), oj['prototype']), p7(oj['prototype'], 'clear', [dF], Object['getOwnPropertyDescriptor'](oj['prototype'], 'clear'), oj['prototype']), p7(oj['prototype'], 'fromJS', [dF], Object['getOwnPropertyDescriptor'](oj['prototype'], 'fromJS'), oj['prototype']), oj),
-            qx = (oG = class {
+            }), p9(oj['prototype'], 'goodData', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'goodData'), oj['prototype']), p9(oj['prototype'], 'isEnergyMaterial', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'isEnergyMaterial'), oj['prototype']), p9(oj['prototype'], 'legendData', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'legendData'), oj['prototype']), p9(oj['prototype'], 'backgroundColor', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'backgroundColor'), oj['prototype']), p9(oj['prototype'], 'nameColor', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'nameColor'), oj['prototype']), p9(oj['prototype'], 'description', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'description'), oj['prototype']), p9(oj['prototype'], 'name', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'name'), oj['prototype']), p9(oj['prototype'], 'originName', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'originName'), oj['prototype']), p9(oj['prototype'], 'isEquip', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'isEquip'), oj['prototype']), p9(oj['prototype'], 'displayQuality', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'displayQuality'), oj['prototype']), p9(oj['prototype'], 'empty', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'empty'), oj['prototype']), p9(oj['prototype'], 'price', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'price'), oj['prototype']), p9(oj['prototype'], 'totalPrice', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'totalPrice'), oj['prototype']), p9(oj['prototype'], 'requireLevel', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'requireLevel'), oj['prototype']), p9(oj['prototype'], 'atkSpeed', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'atkSpeed'), oj['prototype']), p9(oj['prototype'], 'atk_self', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'atk_self'), oj['prototype']), p9(oj['prototype'], 'def', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'def'), oj['prototype']), p9(oj['prototype'], 'allResist', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'allResist'), oj['prototype']), p9(oj['prototype'], 'critRate', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'critRate'), oj['prototype']), p9(oj['prototype'], 'dmgAdd', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'dmgAdd'), oj['prototype']), p9(oj['prototype'], 'atkMul', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'atkMul'), oj['prototype']), p9(oj['prototype'], 'critBonus', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'critBonus'), oj['prototype']), p9(oj['prototype'], 'dmgLevel', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'dmgLevel'), oj['prototype']), p9(oj['prototype'], 'critR_level', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'critR_level'), oj['prototype']), p9(oj['prototype'], 'critB_level', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'critB_level'), oj['prototype']), p9(oj['prototype'], 'miss_shanbizhi', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'miss_shanbizhi'), oj['prototype']), p9(oj['prototype'], 'equipPositionName', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'equipPositionName'), oj['prototype']), p9(oj['prototype'], 'maxHp', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'maxHp'), oj['prototype']), p9(oj['prototype'], 'sta', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'sta'), oj['prototype']), p9(oj['prototype'], 'str', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'str'), oj['prototype']), p9(oj['prototype'], 'dex', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'dex'), oj['prototype']), p9(oj['prototype'], 'int', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'int'), oj['prototype']), p9(oj['prototype'], 'mpRecovery', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'mpRecovery'), oj['prototype']), p9(oj['prototype'], 'mpFromKill', [c6], Object['getOwnPropertyDescriptor'](oj['prototype'], 'mpFromKill'), oj['prototype']), p9(oj['prototype'], 'swap', [dF], Object['getOwnPropertyDescriptor'](oj['prototype'], 'swap'), oj['prototype']), p9(oj['prototype'], 'clear', [dF], Object['getOwnPropertyDescriptor'](oj['prototype'], 'clear'), oj['prototype']), p9(oj['prototype'], 'fromJS', [dF], Object['getOwnPropertyDescriptor'](oj['prototype'], 'fromJS'), oj['prototype']), oj),
+            qz = (oG = class {
                 constructor(DT) {
-                    p6(this, 'key', null), p5(this, 'role', oH, this), p5(this, 'currentCareer', oI, this), p5(this, 'currentCareerLevel', oJ, this), p5(this, 'currentCareerLevelExp', oK, this), p5(this, 'currentCareerpeakLevel', oL, this), p5(this, 'currentCareerpeakLevelExp', oM, this), p5(this, 'resetlv', oN, this), p5(this, 'hdlv', oO, this), p5(this, 'currentCareerequipments', oP, this), this['key'] = DT, eE(this);
+                    p8(this, 'key', null), p7(this, 'role', oH, this), p7(this, 'currentCareer', oI, this), p7(this, 'currentCareerLevel', oJ, this), p7(this, 'currentCareerLevelExp', oK, this), p7(this, 'currentCareerpeakLevel', oL, this), p7(this, 'currentCareerpeakLevelExp', oM, this), p7(this, 'resetlv', oN, this), p7(this, 'hdlv', oO, this), p7(this, 'currentCareerequipments', oP, this), this['key'] = DT, eE(this);
                 }
 
                 get ['roleData']() {
@@ -35612,78 +33295,78 @@ a();
                 ['fromJS'](DT) {
                     return this['role'] = DT['role'] || 'Eyer', this['currentCareer'] = DT['currentCareer'] || this['roleData']['defaultCareer'], this['currentCareerLevel'] = DT['currentCareerLevel'] || 0x1, this['currentCareerLevelExp'] = DT['currentCareerLevelExp'] || 0x0, this['resetlv'] = DT['resetlv'] || 0x0, this['resetlv'] < 0x1 ? (this['resetlv'] += 0x1, this['currentCareerpeakLevel'] = 0x0) : this['currentCareerpeakLevel'] = DT['currentCareerpeakLevel'] || 0x0, this['currentCareerpeakLevelExp'] = DT['currentCareerpeakLevelExp'] || 0x0, DT['currentCareerequipments'] && (this['currentCareerequipments']['weapon']['fromJS'](DT['currentCareerequipments']['weapon'] || {}), this['currentCareerequipments']['plastron']['fromJS'](DT['currentCareerequipments']['plastron'] || {}), this['currentCareerequipments']['gaiter']['fromJS'](DT['currentCareerequipments']['gaiter'] || {}), this['currentCareerequipments']['ornament']['fromJS'](DT['currentCareerequipments']['ornament'] || {})), this;
                 }
-            }, oH = p7(oG['prototype'], 'role', [c2], {
+            }, oH = p9(oG['prototype'], 'role', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return 'Eyer';
                 }
-            }), oI = p7(oG['prototype'], 'currentCareer', [c2], {
+            }), oI = p9(oG['prototype'], 'currentCareer', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return null;
                 }
-            }), oJ = p7(oG['prototype'], 'currentCareerLevel', [c2], {
+            }), oJ = p9(oG['prototype'], 'currentCareerLevel', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return 0x0;
                 }
-            }), oK = p7(oG['prototype'], 'currentCareerLevelExp', [c2], {
+            }), oK = p9(oG['prototype'], 'currentCareerLevelExp', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return 0x0;
                 }
-            }), oL = p7(oG['prototype'], 'currentCareerpeakLevel', [c2], {
+            }), oL = p9(oG['prototype'], 'currentCareerpeakLevel', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return 0x0;
                 }
-            }), oM = p7(oG['prototype'], 'currentCareerpeakLevelExp', [c2], {
+            }), oM = p9(oG['prototype'], 'currentCareerpeakLevelExp', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return 0x0;
                 }
-            }), oN = p7(oG['prototype'], 'resetlv', [c2], {
+            }), oN = p9(oG['prototype'], 'resetlv', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return 0x0;
                 }
-            }), oO = p7(oG['prototype'], 'hdlv', [c2], {
+            }), oO = p9(oG['prototype'], 'hdlv', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return 0x0;
                 }
-            }), oP = p7(oG['prototype'], 'currentCareerequipments', [c2], {
+            }), oP = p9(oG['prototype'], 'currentCareerequipments', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return {
-                        'weapon': new qw('equip'),
-                        'plastron': new qw('equip'),
-                        'gaiter': new qw('equip'),
-                        'ornament': new qw('equip')
+                        'weapon': new qx('equip'),
+                        'plastron': new qx('equip'),
+                        'gaiter': new qx('equip'),
+                        'ornament': new qx('equip')
                     };
                 }
-            }), p7(oG['prototype'], 'roleData', [c6], Object['getOwnPropertyDescriptor'](oG['prototype'], 'roleData'), oG['prototype']), p7(oG['prototype'], 'name', [c6], Object['getOwnPropertyDescriptor'](oG['prototype'], 'name'), oG['prototype']), p7(oG['prototype'], 'careerData', [c6], Object['getOwnPropertyDescriptor'](oG['prototype'], 'careerData'), oG['prototype']), p7(oG['prototype'], 'careerName', [c6], Object['getOwnPropertyDescriptor'](oG['prototype'], 'careerName'), oG['prototype']), p7(oG['prototype'], 'fromJS', [dF], Object['getOwnPropertyDescriptor'](oG['prototype'], 'fromJS'), oG['prototype']), oG),
-            qz = (oQ = class DT extends qx {
+            }), p9(oG['prototype'], 'roleData', [c6], Object['getOwnPropertyDescriptor'](oG['prototype'], 'roleData'), oG['prototype']), p9(oG['prototype'], 'name', [c6], Object['getOwnPropertyDescriptor'](oG['prototype'], 'name'), oG['prototype']), p9(oG['prototype'], 'careerData', [c6], Object['getOwnPropertyDescriptor'](oG['prototype'], 'careerData'), oG['prototype']), p9(oG['prototype'], 'careerName', [c6], Object['getOwnPropertyDescriptor'](oG['prototype'], 'careerName'), oG['prototype']), p9(oG['prototype'], 'fromJS', [dF], Object['getOwnPropertyDescriptor'](oG['prototype'], 'fromJS'), oG['prototype']), oG),
+            qA = (oQ = class DT extends qz {
                 constructor(DU) {
-                    super(DU), p5(this, 'timestamp', oR, this), p5(this, 'playerstamp', oS, this), p6(this, 'timelineId', null), p6(this, 'banned', !0x1), p5(this, 'careers', oT, this), p5(this, 'gold', oU, this), p5(this, 'inventory', oV, this), p5(this, 'inventoryDiamondLevel', oW, this), p5(this, 'skillExp', oX, this), p5(this, 'buildInventory', oY, this), p5(this, 'awardInventory', oZ, this), p5(this, 'migrateMap', p0, this), p5(this, 'lootRule', p1, this), p5(this, 'minLootLevel', p2, this), p5(this, 'minLootLevel2', p3, this), p5(this, 'dungeonTickets', p4, this), eE(this), this['disposeAutoSave'] = dJ(() => {
+                    super(DU), p7(this, 'timestamp', oR, this), p7(this, 'playerstamp', oS, this), p8(this, 'timelineId', null), p8(this, 'banned', !0x1), p7(this, 'careers', oT, this), p7(this, 'gold', oU, this), p7(this, 'inventory', oV, this), p7(this, 'inventoryDiamondLevel', oW, this), p7(this, 'skillExp', oX, this), p7(this, 'playerskill', oY, this), p7(this, 'playerskill2', oZ, this), p7(this, 'buildInventory', p0, this), p7(this, 'awardInventory', p1, this), p7(this, 'migrateMap', p2, this), p7(this, 'lootRule', p3, this), p7(this, 'minLootLevel', p4, this), p7(this, 'minLootLevel2', p5, this), p7(this, 'dungeonTickets', p6, this), eE(this), this['disposeAutoSave'] = dJ(() => {
                         this['save']();
                     }, {'delay': 0x7530});
                 }
@@ -35698,23 +33381,23 @@ a();
                             for (const E0 in nV) DZ['migrateMap'][E0] || (DZ['migrateMap'][E0] = 0x1, nV[E0](DZ));
                         }(DY), DX['fromJS'](DY), DV && (DY['worldState'] = null, DY['map'] = null), nU['load'](DX, DY['worldState'] || {'map': DY['map'] || 'home'});
                     }
-                    return wL['currentPlayer'] = DU, DX;
+                    return wM['currentPlayer'] = DU, DX;
                 }
 
                 static ['create'](DU) {
                     let DV = arguments['length'] > 0x1 && void 0x0 !== arguments[0x1] ? arguments[0x1] : 0x0;
                     return dH(() => {
-                        wL['checkCanCreate']();
+                        wM['checkCanCreate']();
                         const DW = Date['now']() + '-' + DV;
-                        if (wL['playerMetas']['has'](DW)) return DT['create'](DU, DV + 0x1);
-                        DU['key'] = DW, wL['playerMetas']['set'](DW, DU), wL['playerMetas2']['set'](DW, Date['now']());
+                        if (wM['playerMetas']['has'](DW)) return DT['create'](DU, DV + 0x1);
+                        DU['key'] = DW, wM['playerMetas']['set'](DW, DU), wM['playerMetas2']['set'](DW, Date['now']());
                         const DX = new DT(DW);
-                        return wL['currentPlayer'] = DW, DX['fromJS'](DU), DX['postCreate'](), DX['save'](!0x0), wL['save'](), DX;
+                        return wM['currentPlayer'] = DW, DX['fromJS'](DU), DX['postCreate'](), DX['save'](!0x0), wM['save'](), DX;
                     });
                 }
 
                 get ['isBanned']() {
-                    return this['banned'] || wL['banned'];
+                    return this['banned'] || wM['banned'];
                 }
 
                 get ['careerInfo']() {
@@ -35794,64 +33477,68 @@ a();
                 }
 
                 ['fromJS'](DU) {
-                    if (super['fromJS'](DU), this['timestamp'] = DU['timestamp'] || Date['now'](), this['playerstamp'] = DU['playerstamp'], this['timelineId'] = DU['timelineId'], this['minLootLevel'] = DU['minLootLevel'] || 0x1, this['minLootLevel2'] = DU['minLootLevel2'] || 0x1, this['hdlv'] = DU['hdlv'] || 0x0, this['gold'] = DU['gold'] || 0x0, this['inventoryDiamondLevel'] = DU['inventoryDiamondLevel'] || 0x0, this['inventory']['clear'](), this['skillExp']['clear'](), eZ(DU['skillExp'])) for (const DV of DU['skillExp']['keys']()) {
-                        const DW = e8(DU['skillExp']['get'](DV));
-                        DW['level'] = Math['min'](DW['level'], 0x32), this['skillExp']['set'](DV, c2(DW));
-                    } else for (const DX of Object['keys'](DU['skillExp'] || {})) {
-                        const DY = DU['skillExp'][DX];
+                    super['fromJS'](DU), this['timestamp'] = DU['timestamp'] || Date['now'](), this['playerstamp'] = DU['playerstamp'], this['timelineId'] = DU['timelineId'], this['minLootLevel'] = DU['minLootLevel'] || 0x1, this['minLootLevel2'] = DU['minLootLevel2'] || 0x1, this['hdlv'] = DU['hdlv'] || 0x0, this['playerskill']['clear']();
+                    for (let DV = 0x0; DU['playerskill'] && DV < DU['playerskill']['length']; DV++) this['playerskill']['push'](DU['playerskill'][DV]);
+                    this['playerskill'][0x0] || (this['playerskill']['push']('warrior_atk'), this['playerskill']['push']('save_oneself')), this['playerskill2']['clear']();
+                    for (let DW = 0x0; DU['playerskill2'] && DW < DU['playerskill2']['length']; DW++) this['playerskill2']['push'](DU['playerskill2'][DW]);
+                    if (this['playerskill2'][0x0] || this['playerskill2']['push']('wree2'), this['gold'] = DU['gold'] || 0x0, this['inventoryDiamondLevel'] = DU['inventoryDiamondLevel'] || 0x0, this['inventory']['clear'](), this['skillExp']['clear'](), eZ(DU['skillExp'])) for (const DX of DU['skillExp']['keys']()) {
+                        const DY = e8(DU['skillExp']['get'](DX));
                         DY['level'] = Math['min'](DY['level'], 0x32), this['skillExp']['set'](DX, c2(DY));
+                    } else for (const DZ of Object['keys'](DU['skillExp'] || {})) {
+                        const E0 = DU['skillExp'][DZ];
+                        E0['level'] = Math['min'](E0['level'], 0x32), this['skillExp']['set'](DZ, c2(E0));
                     }
-                    for (let DZ = 0x0; DU['inventory'] && DZ < DU['inventory']['length']; DZ++) {
-                        this['inventory']['push'](new qw('inventory')['fromJS'](DU['inventory'][DZ] || {}));
-                        const {key: E0, dungeonKey: E1} = this['inventory'][DZ];
-                        if ('ticket' == E0 && E1) {
-                            const E2 = q6(E1);
-                            E2 && E2 > wL['highestEndlessLevel'] && (wL['highestEndlessLevel'] = E2);
+                    for (let E1 = 0x0; DU['inventory'] && E1 < DU['inventory']['length']; E1++) {
+                        this['inventory']['push'](new qx('inventory')['fromJS'](DU['inventory'][E1] || {}));
+                        const {key: E2, dungeonKey: E3} = this['inventory'][E1];
+                        if ('ticket' == E2 && E3) {
+                            const E4 = q7(E3);
+                            E4 && E4 > wM['highestEndlessLevel'] && (wM['highestEndlessLevel'] = E4);
                         }
                     }
-                    for (let E3 = 0x0; DU['buildInventory'] && E3 < DU['buildInventory']['length']; E3++) {
-                        const E4 = new qw('build')['fromJS'](DU['buildInventory'][E3] || {});
-                        E4['empty'] || this['buildInventory']['push'](E4);
+                    for (let E5 = 0x0; DU['buildInventory'] && E5 < DU['buildInventory']['length']; E5++) {
+                        const E6 = new qx('build')['fromJS'](DU['buildInventory'][E5] || {});
+                        E6['empty'] || this['buildInventory']['push'](E6);
                     }
-                    for (let E5 = 0x0; DU['awardInventory'] && E5 < DU['awardInventory']['length']; E5++) {
-                        const E6 = new qw('award')['fromJS'](DU['awardInventory'][E5] || {});
-                        E6['empty'] || this['awardInventory']['push'](E6);
+                    for (let E7 = 0x0; DU['awardInventory'] && E7 < DU['awardInventory']['length']; E7++) {
+                        const E8 = new qx('award')['fromJS'](DU['awardInventory'][E7] || {});
+                        E8['empty'] || this['awardInventory']['push'](E8);
                     }
-                    if (this['careers']['clear'](), eZ(DU['careers'])) for (const E7 of DU['careers']['keys']()) {
-                        const E8 = new qj();
-                        E8['type'] = E7, E8['fromJS'](DU['careers']['get'](E7)), this['careers']['set'](E7, E8);
-                    } else for (const E9 of Object['keys'](DU['careers'] || {})) {
-                        const Ej = new qj();
-                        Ej['type'] = E9, Ej['fromJS'](DU['careers'][E9]), this['careers']['set'](E9, Ej);
+                    if (this['careers']['clear'](), eZ(DU['careers'])) for (const E9 of DU['careers']['keys']()) {
+                        const Ej = new qq();
+                        Ej['type'] = E9, Ej['fromJS'](DU['careers']['get'](E9)), this['careers']['set'](E9, Ej);
+                    } else for (const Eq of Object['keys'](DU['careers'] || {})) {
+                        const Ew = new qq();
+                        Ew['type'] = Eq, Ew['fromJS'](DU['careers'][Eq]), this['careers']['set'](Eq, Ew);
                     }
-                    if (this['migrateMap']['clear'](), eZ(DU['migrateMap'])) for (const Eq of DU['migrateMap']['keys']()) this['migrateMap']['set'](Eq, 0x1); else for (const Ew of Object['keys'](DU['migrateMap'] || {})) this['migrateMap']['set'](Ew, 0x1);
-                    if (this['lootRule']['clear'](), eZ(DU['lootRule'])) for (const Ex of DU['lootRule']['keys']()) this['lootRule']['set'](Ex, DU['lootRule']['get'](Ex)); else for (const Ez of Object['keys'](DU['lootRule'] || {})) this['lootRule']['set'](Ez, DU['lootRule'][Ez]);
+                    if (this['migrateMap']['clear'](), eZ(DU['migrateMap'])) for (const Ex of DU['migrateMap']['keys']()) this['migrateMap']['set'](Ex, 0x1); else for (const Ez of Object['keys'](DU['migrateMap'] || {})) this['migrateMap']['set'](Ez, 0x1);
+                    if (this['lootRule']['clear'](), eZ(DU['lootRule'])) for (const EA of DU['lootRule']['keys']()) this['lootRule']['set'](EA, DU['lootRule']['get'](EA)); else for (const EB of Object['keys'](DU['lootRule'] || {})) this['lootRule']['set'](EB, DU['lootRule'][EB]);
                     if (this['dungeonTickets']['clear'](), eZ(DU['dungeonTickets'])) {
-                        for (const EA of Object['keys'](kS['maps'])) if (kS['maps'][EA]['isDungeon'] && !kS['maps'][EA]['isEndless']) {
-                            const EB = 'number' == typeof kS['maps'][EA]['defaultTicketCount'] ? kS['maps'][EA]['defaultTicketCount'] : 0x1,
-                                EC = kS['maps'][EA]['group'] || EA;
-                            this['dungeonTickets']['set'](EC, DU['dungeonTickets'] && DU['dungeonTickets']['has'](EC) && void 0x0 !== DU['dungeonTickets']['get'](EC) ? DU['dungeonTickets']['get'](EA) : EB);
+                        for (const EC of Object['keys'](kS['maps'])) if (kS['maps'][EC]['isDungeon'] && !kS['maps'][EC]['isEndless']) {
+                            const ED = 'number' == typeof kS['maps'][EC]['defaultTicketCount'] ? kS['maps'][EC]['defaultTicketCount'] : 0x1,
+                                EE = kS['maps'][EC]['group'] || EC;
+                            this['dungeonTickets']['set'](EE, DU['dungeonTickets'] && DU['dungeonTickets']['has'](EE) && void 0x0 !== DU['dungeonTickets']['get'](EE) ? DU['dungeonTickets']['get'](EC) : ED);
                         }
-                    } else for (const ED of Object['keys'](kS['maps'])) if (kS['maps'][ED]['isDungeon'] && !kS['maps'][ED]['isEndless']) {
-                        const EE = 'number' == typeof kS['maps'][ED]['defaultTicketCount'] ? kS['maps'][ED]['defaultTicketCount'] : 0x1,
-                            EF = kS['maps'][ED]['group'] || ED;
-                        this['dungeonTickets']['set'](EF, DU['dungeonTickets'] && void 0x0 !== DU['dungeonTickets'][EF] ? DU['dungeonTickets'][EF] : EE);
+                    } else for (const EF of Object['keys'](kS['maps'])) if (kS['maps'][EF]['isDungeon'] && !kS['maps'][EF]['isEndless']) {
+                        const EG = 'number' == typeof kS['maps'][EF]['defaultTicketCount'] ? kS['maps'][EF]['defaultTicketCount'] : 0x1,
+                            EH = kS['maps'][EF]['group'] || EF;
+                        this['dungeonTickets']['set'](EH, DU['dungeonTickets'] && void 0x0 !== DU['dungeonTickets'][EH] ? DU['dungeonTickets'][EH] : EG);
                     }
                     return this;
                 }
 
                 ['postCreate']() {
-                    for (this['selectCareer'](this['roleData']['defaultCareer']); this['inventory']['length'] < 0xc;) this['inventory']['push'](new qw('inventory'));
+                    for (this['selectCareer'](this['roleData']['defaultCareer']); this['inventory']['length'] < 0xc;) this['inventory']['push'](new qx('inventory'));
                     const {startup: DU} = this['roleData'];
                     for (const DV of Object['keys'](DU || {})) if ('number' == typeof DU[DV]) {
                         const DW = this['awardInventory']['find'](DX => DX['key'] === DV);
-                        DW ? DW['count'] += DU[DV] : this['awardInventory']['push'](new qw('award')['fromJS']({
+                        DW ? DW['count'] += DU[DV] : this['awardInventory']['push'](new qx('award')['fromJS']({
                             'key': DV,
                             'count': DU[DV]
                         }));
                     } else {
                         const {quality: DX, affixes: DY} = DU[DV];
-                        this['awardInventory']['push'](new qw('award')['fromJS']({
+                        this['awardInventory']['push'](new qx('award')['fromJS']({
                             'key': DV,
                             'count': 0x1,
                             'quality': DX,
@@ -35861,18 +33548,18 @@ a();
                 }
 
                 ['postLoad']() {
-                    for (this['selectCareer'](this['currentCareer']); this['inventory']['length'] < 0xc;) this['inventory']['push'](new qw('inventory'));
+                    for (this['selectCareer'](this['currentCareer']); this['inventory']['length'] < 0xc;) this['inventory']['push'](new qx('inventory'));
                 }
 
                 ['selectCareer'](DU) {
                     if (this['currentCareer'] = DU, !this['careers']['has'](DU)) {
-                        const DV = kS['careers'][DU], DW = new qj();
+                        const DV = kS['careers'][DU], DW = new qq();
                         DW['type'] = DU, DV['equipments'] && DV['equipments']['weapon'] && DW['equipments']['weapon']['fromJS']({
                             'key': DV['equipments']['weapon'],
                             'count': 0x1
                         }), this['careers']['set'](DU, DW);
                     }
-                    this['level'] = this['currentCareerLevel'], this['exp'] = this['currentCareerLevelExp'], this['peakLevel'] = this['currentCareerpeakLevel'], this['peakExp'] = this['currentCareerpeakLevelExp'], this['currentCareerequipments']['weapon']['count'] > 0x0 && this['equipments']['weapon']['fromJS'](this['currentCareerequipments']['weapon']), this['currentCareerequipments']['plastron']['count'] > 0x0 && this['equipments']['plastron']['fromJS'](this['currentCareerequipments']['plastron']), this['currentCareerequipments']['gaiter']['count'] > 0x0 && this['equipments']['gaiter']['fromJS'](this['currentCareerequipments']['gaiter']), this['currentCareerequipments']['ornament']['count'] > 0x0 && this['equipments']['ornament']['fromJS'](this['currentCareerequipments']['ornament']), Object['keys'](this['careerData']['skills'])['forEach'](DX => {
+                    this['level'] = this['currentCareerLevel'], this['exp'] = this['currentCareerLevelExp'], this['peakLevel'] = this['currentCareerpeakLevel'], this['peakExp'] = this['currentCareerpeakLevelExp'], this['currentCareerequipments']['weapon']['count'] > 0x0 && this['equipments']['weapon']['fromJS'](this['currentCareerequipments']['weapon']), this['currentCareerequipments']['plastron']['count'] > 0x0 && this['equipments']['plastron']['fromJS'](this['currentCareerequipments']['plastron']), this['currentCareerequipments']['gaiter']['count'] > 0x0 && this['equipments']['gaiter']['fromJS'](this['currentCareerequipments']['gaiter']), this['currentCareerequipments']['ornament']['count'] > 0x0 && this['equipments']['ornament']['fromJS'](this['currentCareerequipments']['ornament']), Object['values'](this['playerskill'])['forEach'](DX => {
                         const DY = kS['skills'][DX]['expGroup'] || DX;
                         this['skillExp']['has'](DY) || this['skillExp']['set'](DY, {'level': 0x0, 'exp': 0x0});
                     });
@@ -35896,7 +33583,7 @@ a();
                     const DW = DV || this['inventory'], {key: DX} = DU;
                     if (DU['empty']) return;
                     if ('gold' === DX) return this['gold'] += DU['count'], void DU['clear']();
-                    if ('diamonds' === DX) return wL['diamonds'] += DU['count'], void DU['clear']();
+                    if ('diamonds' === DX) return wM['diamonds'] += DU['count'], void DU['clear']();
                     const DY = 'ticket' === DX ? 0x1869f : kS['goods'][DX]['stack'];
                     if (!DY) {
                         const DZ = this['emptySlot'](DW);
@@ -35910,8 +33597,8 @@ a();
                         DW[E0]['count'] += E1, DU['count'] -= E1;
                     }
                     if ('ticket' === DX) {
-                        const E2 = q6(DU['dungeonKey']);
-                        E2 && E2 > wL['highestEndlessLevel'] && (wL['highestEndlessLevel'] = E2);
+                        const E2 = q7(DU['dungeonKey']);
+                        E2 && E2 > wM['highestEndlessLevel'] && (wM['highestEndlessLevel'] = E2);
                     }
                     DU['clear']();
                 }
@@ -35919,7 +33606,7 @@ a();
                 ['save'](DU) {
                     try {
                         if (!this['key']) return void console['warn']('No\x20player\x20key\x20,\x20failed\x20to\x20save');
-                        const DV = wL['playerMetas']['get'](this['key']);
+                        const DV = wM['playerMetas']['get'](this['key']);
                         if (!DV) return void console['warn']('可能角色已经被删除。不再保存。');
                         DV['fromJS'](this);
                         const DW = nW(this['toJS']());
@@ -35940,7 +33627,7 @@ a();
                 ['decomposeItem'](DU) {
                     if (null === DU['key']) return;
                     const DV = n5(DU), DW = [];
-                    for (const DX of Object['keys'](DV)) DW['push'](new qw('build')['fromJS']({
+                    for (const DX of Object['keys'](DV)) DW['push'](new qx('build')['fromJS']({
                         'key': DX,
                         'count': DV[DX]
                     }));
@@ -35949,13 +33636,13 @@ a();
 
                 ['countTicket'](DU) {
                     let DV = 0x0;
-                    return DV += this['dungeonTickets']['get'](DU) || 0x0, DV += this['inventory']['reduce']((DW, DX) => 'ticket' === DX['key'] && DX['dungeonKey'] === DU ? DW + DX['count'] : DW, 0x0), DV += wL['bank']['reduce']((DW, DX) => 'ticket' === DX['key'] && DX['dungeonKey'] === DU ? DW + DX['count'] : DW, 0x0), DV;
+                    return DV += this['dungeonTickets']['get'](DU) || 0x0, DV += this['inventory']['reduce']((DW, DX) => 'ticket' === DX['key'] && DX['dungeonKey'] === DU ? DW + DX['count'] : DW, 0x0), DV += wM['bank']['reduce']((DW, DX) => 'ticket' === DX['key'] && DX['dungeonKey'] === DU ? DW + DX['count'] : DW, 0x0), DV;
                 }
 
                 ['costTicket'](DU) {
                     const DV = this['dungeonTickets']['get'](DU);
                     if (DV > 0x0) return void this['dungeonTickets']['set'](DU, DV - 0x1);
-                    const DW = this['inventory']['find'](DX => 'ticket' === DX['key'] && DX['dungeonKey'] === DU) || wL['bank']['find'](DX => 'ticket' === DX['key'] && DX['dungeonKey'] === DU);
+                    const DW = this['inventory']['find'](DX => 'ticket' === DX['key'] && DX['dungeonKey'] === DU) || wM['bank']['find'](DX => 'ticket' === DX['key'] && DX['dungeonKey'] === DU);
                     DW && (DW['count']--, 0x0 === DW['count'] && DW['clear']());
                 }
 
@@ -36008,7 +33695,7 @@ a();
 
                 ['sortInventory']() {
                     let DU = arguments['length'] > 0x0 && void 0x0 !== arguments[0x0] ? arguments[0x0] : this['inventory'];
-                    const DV = DU['filter'](DX => DX['key'])['map'](DX => new qw('inventory')['fromJS'](DX));
+                    const DV = DU['filter'](DX => DX['key'])['map'](DX => new qx('inventory')['fromJS'](DX));
 
                     function DW(DX, DY, DZ) {
                         return DZ[DX] - DZ[DY];
@@ -36026,8 +33713,8 @@ a();
                         });
                         if ('ticket' === DZ && DX['dungeonKey'] !== DY['dungeonKey']) {
                             const E1 = kS['maps'][DX['dungeonKey']], E2 = kS['maps'][DY['dungeonKey']],
-                                E3 = q9(DX['dungeonKey']) || E1 && E1['level'] || 0x0,
-                                E4 = q9(DY['dungeonKey']) || E1 && E2['level'] || 0x0;
+                                E3 = qj(DX['dungeonKey']) || E1 && E1['level'] || 0x0,
+                                E4 = qj(DY['dungeonKey']) || E1 && E2['level'] || 0x0;
                             return E3 !== E4 ? E3 - E4 : DX['dungeonKey'] < DY['dungeonKey'] ? -0x1 : 0x1;
                         }
                         if (DX['displayQuality'] !== DY['displayQuality']) return DX['displayQuality'] - DY['displayQuality'];
@@ -36035,7 +33722,7 @@ a();
                             if (DX['equipPositionOrder'] !== DY['equipPositionOrder']) return DX['equipPositionOrder'] - DY['equipPositionOrder'];
                             if (DX['level'] !== DY['level']) return DX['level'] - DY['level'];
                         }
-                        return DW(DX['key'], DY['key'], p8);
+                        return DW(DX['key'], DY['key'], pj);
                     }), DU['forEach'](DX => DX['clear']());
                     for (const DX of DV) this['loot'](DX, DU);
                 }
@@ -36048,107 +33735,121 @@ a();
                 ['dispose']() {
                     this['disposeAutoSave'] && (this['disposeAutoSave'](), this['disposeAutoSave'] = null);
                 }
-            }, p7(oQ, 'load', [dF], Object['getOwnPropertyDescriptor'](oQ, 'load'), oQ), oR = p7(oQ['prototype'], 'timestamp', [c2], {
+            }, p9(oQ, 'load', [dF], Object['getOwnPropertyDescriptor'](oQ, 'load'), oQ), oR = p9(oQ['prototype'], 'timestamp', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return 0x0;
                 }
-            }), oS = p7(oQ['prototype'], 'playerstamp', [c2], {
+            }), oS = p9(oQ['prototype'], 'playerstamp', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return 0x0;
                 }
-            }), oT = p7(oQ['prototype'], 'careers', [c2], {
+            }), oT = p9(oQ['prototype'], 'careers', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return c2['map']();
                 }
-            }), oU = p7(oQ['prototype'], 'gold', [c2], {
+            }), oU = p9(oQ['prototype'], 'gold', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return 0x0;
                 }
-            }), oV = p7(oQ['prototype'], 'inventory', [c2], {
+            }), oV = p9(oQ['prototype'], 'inventory', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return [];
                 }
-            }), oW = p7(oQ['prototype'], 'inventoryDiamondLevel', [c2], {
+            }), oW = p9(oQ['prototype'], 'inventoryDiamondLevel', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return 0x0;
                 }
-            }), oX = p7(oQ['prototype'], 'skillExp', [c2], {
+            }), oX = p9(oQ['prototype'], 'skillExp', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return c2['map']();
                 }
-            }), oY = p7(oQ['prototype'], 'buildInventory', [c2], {
+            }), oY = p9(oQ['prototype'], 'playerskill', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return [];
                 }
-            }), oZ = p7(oQ['prototype'], 'awardInventory', [c2], {
+            }), oZ = p9(oQ['prototype'], 'playerskill2', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return [];
                 }
-            }), p0 = p7(oQ['prototype'], 'migrateMap', [c2], {
+            }), p0 = p9(oQ['prototype'], 'buildInventory', [c2], {
+                'configurable': !0x0,
+                'enumerable': !0x0,
+                'writable': !0x0,
+                'initializer': function () {
+                    return [];
+                }
+            }), p1 = p9(oQ['prototype'], 'awardInventory', [c2], {
+                'configurable': !0x0,
+                'enumerable': !0x0,
+                'writable': !0x0,
+                'initializer': function () {
+                    return [];
+                }
+            }), p2 = p9(oQ['prototype'], 'migrateMap', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return c2['map']();
                 }
-            }), p1 = p7(oQ['prototype'], 'lootRule', [c2], {
+            }), p3 = p9(oQ['prototype'], 'lootRule', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return c2['map']();
                 }
-            }), p2 = p7(oQ['prototype'], 'minLootLevel', [c2], {
+            }), p4 = p9(oQ['prototype'], 'minLootLevel', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return 0x0;
                 }
-            }), p3 = p7(oQ['prototype'], 'minLootLevel2', [c2], {
+            }), p5 = p9(oQ['prototype'], 'minLootLevel2', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return 0x0;
                 }
-            }), p4 = p7(oQ['prototype'], 'dungeonTickets', [c2], {
+            }), p6 = p9(oQ['prototype'], 'dungeonTickets', [c2], {
                 'configurable': !0x0,
                 'enumerable': !0x0,
                 'writable': !0x0,
                 'initializer': function () {
                     return c2['map']();
                 }
-            }), p7(oQ['prototype'], 'careerInfo', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'careerInfo'), oQ['prototype']), p7(oQ['prototype'], 'level', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'level'), oQ['prototype']), p7(oQ['prototype'], 'maxLevel', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'maxLevel'), oQ['prototype']), p7(oQ['prototype'], 'peakLevel', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'peakLevel'), oQ['prototype']), p7(oQ['prototype'], 'exp', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'exp'), oQ['prototype']), p7(oQ['prototype'], 'peakExp', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'peakExp'), oQ['prototype']), p7(oQ['prototype'], 'equipments', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'equipments'), oQ['prototype']), p7(oQ['prototype'], 'maxExp', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'maxExp'), oQ['prototype']), p7(oQ['prototype'], 'maxPeakExp', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'maxPeakExp'), oQ['prototype']), p7(oQ['prototype'], 'maxSkillCount', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'maxSkillCount'), oQ['prototype']), p7(oQ['prototype'], 'nextSkillUnlockLevel', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'nextSkillUnlockLevel'), oQ['prototype']), p7(oQ['prototype'], 'maxEnhanceCount', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'maxEnhanceCount'), oQ['prototype']), p7(oQ['prototype'], 'nextEnhanceUnlockLevel', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'nextEnhanceUnlockLevel'), oQ['prototype']), p7(oQ['prototype'], 'fromJS', [bq], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'fromJS'), oQ['prototype']), p7(oQ['prototype'], 'postCreate', [dF], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'postCreate'), oQ['prototype']), p7(oQ['prototype'], 'postLoad', [dF], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'postLoad'), oQ['prototype']), p7(oQ['prototype'], 'selectCareer', [dF], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'selectCareer'), oQ['prototype']), p7(oQ['prototype'], 'loot', [dF], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'loot'), oQ['prototype']), p7(oQ['prototype'], 'sellItem', [dF], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'sellItem'), oQ['prototype']), p7(oQ['prototype'], 'getInventory', [dF], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'getInventory'), oQ['prototype']), p7(oQ['prototype'], 'addSkillExp', [dF], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'addSkillExp'), oQ['prototype']), oQ);
+            }), p9(oQ['prototype'], 'careerInfo', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'careerInfo'), oQ['prototype']), p9(oQ['prototype'], 'level', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'level'), oQ['prototype']), p9(oQ['prototype'], 'maxLevel', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'maxLevel'), oQ['prototype']), p9(oQ['prototype'], 'peakLevel', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'peakLevel'), oQ['prototype']), p9(oQ['prototype'], 'exp', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'exp'), oQ['prototype']), p9(oQ['prototype'], 'peakExp', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'peakExp'), oQ['prototype']), p9(oQ['prototype'], 'equipments', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'equipments'), oQ['prototype']), p9(oQ['prototype'], 'maxExp', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'maxExp'), oQ['prototype']), p9(oQ['prototype'], 'maxPeakExp', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'maxPeakExp'), oQ['prototype']), p9(oQ['prototype'], 'maxSkillCount', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'maxSkillCount'), oQ['prototype']), p9(oQ['prototype'], 'nextSkillUnlockLevel', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'nextSkillUnlockLevel'), oQ['prototype']), p9(oQ['prototype'], 'maxEnhanceCount', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'maxEnhanceCount'), oQ['prototype']), p9(oQ['prototype'], 'nextEnhanceUnlockLevel', [c6], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'nextEnhanceUnlockLevel'), oQ['prototype']), p9(oQ['prototype'], 'fromJS', [bq], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'fromJS'), oQ['prototype']), p9(oQ['prototype'], 'postCreate', [dF], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'postCreate'), oQ['prototype']), p9(oQ['prototype'], 'postLoad', [dF], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'postLoad'), oQ['prototype']), p9(oQ['prototype'], 'selectCareer', [dF], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'selectCareer'), oQ['prototype']), p9(oQ['prototype'], 'loot', [dF], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'loot'), oQ['prototype']), p9(oQ['prototype'], 'sellItem', [dF], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'sellItem'), oQ['prototype']), p9(oQ['prototype'], 'getInventory', [dF], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'getInventory'), oQ['prototype']), p9(oQ['prototype'], 'addSkillExp', [dF], Object['getOwnPropertyDescriptor'](oQ['prototype'], 'addSkillExp'), oQ['prototype']), oQ);
 
-        class qA extends Error {
+        class qB extends Error {
             constructor(DU, DV) {
                 super(DU), function (DW, DX, DY) {
                     DX = function (DZ) {
@@ -36173,176 +33874,176 @@ a();
             }
 
             static ['forbidden']() {
-                throw new qA('Forbidden', 0x193);
+                throw new qB('Forbidden', 0x193);
             }
         }
 
-        var qB = 'delete', qC = 0x5, qD = 0x1 << qC, qE = qD - 0x1, qF = {};
+        var qC = 'delete', qD = 0x5, qE = 0x1 << qD, qF = qE - 0x1, qG = {};
 
-        function qG(DU) {
+        function qH(DU) {
             DU && (DU['value'] = !0x0);
         }
 
-        function qH() {
+        function qI() {
         }
 
-        function qI(DU) {
-            return void 0x0 === DU['size'] && (DU['size'] = DU['__iterate'](qK)), DU['size'];
+        function qJ(DU) {
+            return void 0x0 === DU['size'] && (DU['size'] = DU['__iterate'](qL)), DU['size'];
         }
 
-        function qJ(DU, DV) {
+        function qK(DU, DV) {
             if ('number' != typeof DV) {
                 var DW = DV >>> 0x0;
                 if ('' + DW !== DV || 0xffffffff === DW) return NaN;
                 DV = DW;
             }
-            return DV < 0x0 ? qI(DU) + DV : DV;
+            return DV < 0x0 ? qJ(DU) + DV : DV;
         }
 
-        function qK() {
+        function qL() {
             return !0x0;
         }
 
-        function qL(DU, DV, DW) {
-            return (0x0 === DU && !qP(DU) || void 0x0 !== DW && DU <= -DW) && (void 0x0 === DV || void 0x0 !== DW && DV >= DW);
-        }
-
-        function qM(DU, DV) {
-            return qO(DU, DV, 0x0);
+        function qM(DU, DV, DW) {
+            return (0x0 === DU && !qQ(DU) || void 0x0 !== DW && DU <= -DW) && (void 0x0 === DV || void 0x0 !== DW && DV >= DW);
         }
 
         function qN(DU, DV) {
-            return qO(DU, DV, DV);
+            return qP(DU, DV, 0x0);
         }
 
-        function qO(DU, DV, DW) {
-            return void 0x0 === DU ? DW : qP(DU) ? DV === 0x1 / 0x0 ? DV : 0x0 | Math['max'](0x0, DV + DU) : void 0x0 === DV || DV === DU ? DU : 0x0 | Math['min'](DV, DU);
+        function qO(DU, DV) {
+            return qP(DU, DV, DV);
         }
 
-        function qP(DU) {
+        function qP(DU, DV, DW) {
+            return void 0x0 === DU ? DW : qQ(DU) ? DV === 0x1 / 0x0 ? DV : 0x0 | Math['max'](0x0, DV + DU) : void 0x0 === DV || DV === DU ? DU : 0x0 | Math['min'](DV, DU);
+        }
+
+        function qQ(DU) {
             return DU < 0x0 || 0x0 === DU && 0x1 / DU == -0x1 / 0x0;
         }
 
-        var qQ = '@@__IMMUTABLE_ITERABLE__@@';
+        var qR = '@@__IMMUTABLE_ITERABLE__@@';
 
-        function qR(DU) {
-            return Boolean(DU && DU[qQ]);
+        function qS(DU) {
+            return Boolean(DU && DU[qR]);
         }
 
-        var qS = '@@__IMMUTABLE_KEYED__@@';
+        var qT = '@@__IMMUTABLE_KEYED__@@';
 
-        function qT(DU) {
-            return Boolean(DU && DU[qS]);
+        function qU(DU) {
+            return Boolean(DU && DU[qT]);
         }
 
-        var qU = '@@__IMMUTABLE_INDEXED__@@';
-
-        function qV(DU) {
-            return Boolean(DU && DU[qU]);
-        }
+        var qV = '@@__IMMUTABLE_INDEXED__@@';
 
         function qW(DU) {
-            return qT(DU) || qV(DU);
+            return Boolean(DU && DU[qV]);
         }
 
-        var qX = function (DU) {
-            return qR(DU) ? DU : rJ(DU);
-        }, qY = function (DU) {
+        function qX(DU) {
+            return qU(DU) || qW(DU);
+        }
+
+        var qY = function (DU) {
+            return qS(DU) ? DU : rK(DU);
+        }, qZ = function (DU) {
             function DV(DW) {
-                return qT(DW) ? DW : rK(DW);
+                return qU(DW) ? DW : rL(DW);
             }
 
             return DU && (DV['__proto__'] = DU), DV['prototype'] = Object['create'](DU && DU['prototype']), DV['prototype']['constructor'] = DV, DV;
-        }(qX), qZ = function (DU) {
+        }(qY), r0 = function (DU) {
             function DV(DW) {
-                return qV(DW) ? DW : rL(DW);
+                return qW(DW) ? DW : rM(DW);
             }
 
             return DU && (DV['__proto__'] = DU), DV['prototype'] = Object['create'](DU && DU['prototype']), DV['prototype']['constructor'] = DV, DV;
-        }(qX), r0 = function (DU) {
+        }(qY), r1 = function (DU) {
             function DV(DW) {
-                return qR(DW) && !qW(DW) ? DW : rM(DW);
+                return qS(DW) && !qX(DW) ? DW : rN(DW);
             }
 
             return DU && (DV['__proto__'] = DU), DV['prototype'] = Object['create'](DU && DU['prototype']), DV['prototype']['constructor'] = DV, DV;
-        }(qX);
-        qX['Keyed'] = qY, qX['Indexed'] = qZ, qX['Set'] = r0;
-        var r1 = '@@__IMMUTABLE_SEQ__@@';
+        }(qY);
+        qY['Keyed'] = qZ, qY['Indexed'] = r0, qY['Set'] = r1;
+        var r2 = '@@__IMMUTABLE_SEQ__@@';
 
-        function r2(DU) {
-            return Boolean(DU && DU[r1]);
+        function r3(DU) {
+            return Boolean(DU && DU[r2]);
         }
 
-        var r3 = '@@__IMMUTABLE_RECORD__@@';
-
-        function r4(DU) {
-            return Boolean(DU && DU[r3]);
-        }
+        var r4 = '@@__IMMUTABLE_RECORD__@@';
 
         function r5(DU) {
-            return qR(DU) || r4(DU);
+            return Boolean(DU && DU[r4]);
         }
 
-        var r6 = '@@__IMMUTABLE_ORDERED__@@';
-
-        function r7(DU) {
-            return Boolean(DU && DU[r6]);
+        function r6(DU) {
+            return qS(DU) || r5(DU);
         }
 
-        var r8 = 0x0, r9 = 0x1, rj = 0x2, rq = 'function' == typeof Symbol && Symbol['iterator'], rx = '@@iterator',
-            rz = rq || rx, rA = function (DU) {
+        var r7 = '@@__IMMUTABLE_ORDERED__@@';
+
+        function r8(DU) {
+            return Boolean(DU && DU[r7]);
+        }
+
+        var r9 = 0x0, rj = 0x1, rq = 0x2, rx = 'function' == typeof Symbol && Symbol['iterator'], rz = '@@iterator',
+            rA = rx || rz, rB = function (DU) {
                 this['next'] = DU;
             };
 
-        function rB(DU, DV, DW, DX) {
+        function rC(DU, DV, DW, DX) {
             var DY = 0x0 === DU ? DV : 0x1 === DU ? DW : [DV, DW];
             return DX ? DX['value'] = DY : DX = {'value': DY, 'done': !0x1}, DX;
         }
 
-        function rC() {
+        function rD() {
             return {'value': void 0x0, 'done': !0x0};
         }
 
-        function rD(DU) {
-            return !!Array['isArray'](DU) || !!rG(DU);
-        }
-
         function rE(DU) {
-            return DU && 'function' == typeof DU['next'];
+            return !!Array['isArray'](DU) || !!rH(DU);
         }
 
         function rF(DU) {
-            var DV = rG(DU);
-            return DV && DV['call'](DU);
+            return DU && 'function' == typeof DU['next'];
         }
 
         function rG(DU) {
-            var DV = DU && (rq && DU[rq] || DU[rx]);
+            var DV = rH(DU);
+            return DV && DV['call'](DU);
+        }
+
+        function rH(DU) {
+            var DV = DU && (rx && DU[rx] || DU[rz]);
             if ('function' == typeof DV) return DV;
         }
 
-        rA['prototype']['toString'] = function () {
+        rB['prototype']['toString'] = function () {
             return '[Iterator]';
-        }, rA['KEYS'] = r8, rA['VALUES'] = r9, rA['ENTRIES'] = rj, rA['prototype']['inspect'] = rA['prototype']['toSource'] = function () {
+        }, rB['KEYS'] = r9, rB['VALUES'] = rj, rB['ENTRIES'] = rq, rB['prototype']['inspect'] = rB['prototype']['toSource'] = function () {
             return this['toString']();
-        }, rA['prototype'][rz] = function () {
+        }, rB['prototype'][rA] = function () {
             return this;
         };
-        var rH = Object['prototype']['hasOwnProperty'];
+        var rI = Object['prototype']['hasOwnProperty'];
 
-        function rI(DU) {
+        function rJ(DU) {
             return !(!Array['isArray'](DU) && 'string' != typeof DU) || DU && 'object' == typeof DU && Number['isInteger'](DU['length']) && DU['length'] >= 0x0 && (0x0 === DU['length'] ? 0x1 === Object['keys'](DU)['length'] : DU['hasOwnProperty'](DU['length'] - 0x1));
         }
 
-        var rJ = function (DU) {
+        var rK = function (DU) {
             function DV(DW) {
-                return null == DW ? rR() : r5(DW) ? DW['toSeq']() : function (DX) {
-                    var DY, DZ, E0 = rU(DX);
-                    if (E0) return (DZ = rG(DY = DX)) && DZ === DY['entries'] ? E0['fromEntrySeq']() : function (E1) {
-                        var E2 = rG(E1);
+                return null == DW ? rS() : r6(DW) ? DW['toSeq']() : function (DX) {
+                    var DY, DZ, E0 = rV(DX);
+                    if (E0) return (DZ = rH(DY = DX)) && DZ === DY['entries'] ? E0['fromEntrySeq']() : function (E1) {
+                        var E2 = rH(E1);
                         return E2 && E2 === E1['keys'];
                     }(DX) ? E0['toSetSeq']() : E0;
-                    if ('object' == typeof DX) return new rO(DX);
+                    if ('object' == typeof DX) return new rP(DX);
                     throw new TypeError('Expected\x20Array\x20or\x20collection\x20object\x20of\x20values,\x20or\x20keyed\x20object:\x20' + DX);
                 }(DW);
             }
@@ -36367,25 +34068,25 @@ a();
                 var DY = this['_cache'];
                 if (DY) {
                     var DZ = DY['length'], E0 = 0x0;
-                    return new rA(function () {
+                    return new rB(function () {
                         if (E0 === DZ) return {'value': void 0x0, 'done': !0x0};
                         var E1 = DY[DX ? DZ - ++E0 : E0++];
-                        return rB(DW, E1[0x0], E1[0x1]);
+                        return rC(DW, E1[0x0], E1[0x1]);
                     });
                 }
                 return this['__iteratorUncached'](DW, DX);
             }, DV;
-        }(qX), rK = function (DU) {
+        }(qY), rL = function (DU) {
             function DV(DW) {
-                return null == DW ? rR()['toKeyedSeq']() : qR(DW) ? qT(DW) ? DW['toSeq']() : DW['fromEntrySeq']() : r4(DW) ? DW['toSeq']() : rS(DW);
+                return null == DW ? rS()['toKeyedSeq']() : qS(DW) ? qU(DW) ? DW['toSeq']() : DW['fromEntrySeq']() : r5(DW) ? DW['toSeq']() : rT(DW);
             }
 
             return DU && (DV['__proto__'] = DU), DV['prototype'] = Object['create'](DU && DU['prototype']), DV['prototype']['constructor'] = DV, DV['prototype']['toKeyedSeq'] = function () {
                 return this;
             }, DV;
-        }(rJ), rL = function (DU) {
+        }(rK), rM = function (DU) {
             function DV(DW) {
-                return null == DW ? rR() : qR(DW) ? qT(DW) ? DW['entrySeq']() : DW['toIndexedSeq']() : r4(DW) ? DW['toSeq']()['entrySeq']() : rT(DW);
+                return null == DW ? rS() : qS(DW) ? qU(DW) ? DW['entrySeq']() : DW['toIndexedSeq']() : r5(DW) ? DW['toSeq']()['entrySeq']() : rU(DW);
             }
 
             return DU && (DV['__proto__'] = DU), DV['prototype'] = Object['create'](DU && DU['prototype']), DV['prototype']['constructor'] = DV, DV['of'] = function () {
@@ -36395,9 +34096,9 @@ a();
             }, DV['prototype']['toString'] = function () {
                 return this['__toString']('Seq\x20[', ']');
             }, DV;
-        }(rJ), rM = function (DU) {
+        }(rK), rN = function (DU) {
             function DV(DW) {
-                return (qR(DW) && !qW(DW) ? DW : rL(DW))['toSetSeq']();
+                return (qS(DW) && !qX(DW) ? DW : rM(DW))['toSetSeq']();
             }
 
             return DU && (DV['__proto__'] = DU), DV['prototype'] = Object['create'](DU && DU['prototype']), DV['prototype']['constructor'] = DV, DV['of'] = function () {
@@ -36405,15 +34106,15 @@ a();
             }, DV['prototype']['toSetSeq'] = function () {
                 return this;
             }, DV;
-        }(rJ);
-        rJ['isSeq'] = r2, rJ['Keyed'] = rK, rJ['Set'] = rM, rJ['Indexed'] = rL, rJ['prototype'][r1] = !0x0;
-        var rN = function (DU) {
+        }(rK);
+        rK['isSeq'] = r3, rK['Keyed'] = rL, rK['Set'] = rN, rK['Indexed'] = rM, rK['prototype'][r2] = !0x0;
+        var rO = function (DU) {
             function DV(DW) {
                 this['_array'] = DW, this['size'] = DW['length'];
             }
 
             return DU && (DV['__proto__'] = DU), DV['prototype'] = Object['create'](DU && DU['prototype']), DV['prototype']['constructor'] = DV, DV['prototype']['get'] = function (DW, DX) {
-                return this['has'](DW) ? this['_array'][qJ(this, DW)] : DX;
+                return this['has'](DW) ? this['_array'][qK(this, DW)] : DX;
             }, DV['prototype']['__iterate'] = function (DW, DX) {
                 for (var DY = this['_array'], DZ = DY['length'], E0 = 0x0; E0 !== DZ;) {
                     var E1 = DX ? DZ - ++E0 : E0++;
@@ -36422,13 +34123,13 @@ a();
                 return E0;
             }, DV['prototype']['__iterator'] = function (DW, DX) {
                 var DY = this['_array'], DZ = DY['length'], E0 = 0x0;
-                return new rA(function () {
+                return new rB(function () {
                     if (E0 === DZ) return {'value': void 0x0, 'done': !0x0};
                     var E1 = DX ? DZ - ++E0 : E0++;
-                    return rB(DW, E1, DY[E1]);
+                    return rC(DW, E1, DY[E1]);
                 });
             }, DV;
-        }(rL), rO = function (DU) {
+        }(rM), rP = function (DU) {
             function DV(DW) {
                 var DX = Object['keys'](DW)['concat'](Object['getOwnPropertySymbols'] ? Object['getOwnPropertySymbols'](DW) : []);
                 this['_object'] = DW, this['_keys'] = DX, this['size'] = DX['length'];
@@ -36437,7 +34138,7 @@ a();
             return DU && (DV['__proto__'] = DU), DV['prototype'] = Object['create'](DU && DU['prototype']), DV['prototype']['constructor'] = DV, DV['prototype']['get'] = function (DW, DX) {
                 return void 0x0 === DX || this['has'](DW) ? this['_object'][DW] : DX;
             }, DV['prototype']['has'] = function (DW) {
-                return rH['call'](this['_object'], DW);
+                return rI['call'](this['_object'], DW);
             }, DV['prototype']['__iterate'] = function (DW, DX) {
                 for (var DY = this['_object'], DZ = this['_keys'], E0 = DZ['length'], E1 = 0x0; E1 !== E0;) {
                     var E2 = DZ[DX ? E0 - ++E1 : E1++];
@@ -36446,98 +34147,98 @@ a();
                 return E1;
             }, DV['prototype']['__iterator'] = function (DW, DX) {
                 var DY = this['_object'], DZ = this['_keys'], E0 = DZ['length'], E1 = 0x0;
-                return new rA(function () {
+                return new rB(function () {
                     if (E1 === E0) return {'value': void 0x0, 'done': !0x0};
                     var E2 = DZ[DX ? E0 - ++E1 : E1++];
-                    return rB(DW, E2, DY[E2]);
+                    return rC(DW, E2, DY[E2]);
                 });
             }, DV;
-        }(rK);
-        rO['prototype'][r6] = !0x0;
-        var rP, rQ = function (DU) {
+        }(rL);
+        rP['prototype'][r7] = !0x0;
+        var rQ, rR = function (DU) {
             function DV(DW) {
                 this['_collection'] = DW, this['size'] = DW['length'] || DW['size'];
             }
 
             return DU && (DV['__proto__'] = DU), DV['prototype'] = Object['create'](DU && DU['prototype']), DV['prototype']['constructor'] = DV, DV['prototype']['__iterateUncached'] = function (DW, DX) {
                 if (DX) return this['cacheResult']()['__iterate'](DW, DX);
-                var DY = rF(this['_collection']), DZ = 0x0;
-                if (rE(DY)) for (var E0; !(E0 = DY['next']())['done'] && !0x1 !== DW(E0['value'], DZ++, this);) ;
+                var DY = rG(this['_collection']), DZ = 0x0;
+                if (rF(DY)) for (var E0; !(E0 = DY['next']())['done'] && !0x1 !== DW(E0['value'], DZ++, this);) ;
                 return DZ;
             }, DV['prototype']['__iteratorUncached'] = function (DW, DX) {
                 if (DX) return this['cacheResult']()['__iterator'](DW, DX);
-                var DY = rF(this['_collection']);
-                if (!rE(DY)) return new rA(rC);
+                var DY = rG(this['_collection']);
+                if (!rF(DY)) return new rB(rD);
                 var DZ = 0x0;
-                return new rA(function () {
+                return new rB(function () {
                     var E0 = DY['next']();
-                    return E0['done'] ? E0 : rB(DW, DZ++, E0['value']);
+                    return E0['done'] ? E0 : rC(DW, DZ++, E0['value']);
                 });
             }, DV;
-        }(rL);
+        }(rM);
 
-        function rR() {
-            return rP || (rP = new rN([]));
-        }
-
-        function rS(DU) {
-            var DV = rU(DU);
-            if (DV) return DV['fromEntrySeq']();
-            if ('object' == typeof DU) return new rO(DU);
-            throw new TypeError('Expected\x20Array\x20or\x20collection\x20object\x20of\x20[k,\x20v]\x20entries,\x20or\x20keyed\x20object:\x20' + DU);
+        function rS() {
+            return rQ || (rQ = new rO([]));
         }
 
         function rT(DU) {
-            var DV = rU(DU);
+            var DV = rV(DU);
+            if (DV) return DV['fromEntrySeq']();
+            if ('object' == typeof DU) return new rP(DU);
+            throw new TypeError('Expected\x20Array\x20or\x20collection\x20object\x20of\x20[k,\x20v]\x20entries,\x20or\x20keyed\x20object:\x20' + DU);
+        }
+
+        function rU(DU) {
+            var DV = rV(DU);
             if (DV) return DV;
             throw new TypeError('Expected\x20Array\x20or\x20collection\x20object\x20of\x20values:\x20' + DU);
         }
 
-        function rU(DU) {
-            return rI(DU) ? new rN(DU) : rD(DU) ? new rQ(DU) : void 0x0;
+        function rV(DU) {
+            return rJ(DU) ? new rO(DU) : rE(DU) ? new rR(DU) : void 0x0;
         }
 
-        var rV = '@@__IMMUTABLE_MAP__@@';
-
-        function rW(DU) {
-            return Boolean(DU && DU[rV]);
-        }
+        var rW = '@@__IMMUTABLE_MAP__@@';
 
         function rX(DU) {
-            return rW(DU) && r7(DU);
+            return Boolean(DU && DU[rW]);
         }
 
         function rY(DU) {
+            return rX(DU) && r8(DU);
+        }
+
+        function rZ(DU) {
             return Boolean(DU && 'function' == typeof DU['equals'] && 'function' == typeof DU['hashCode']);
         }
 
-        function rZ(DU, DV) {
+        function s0(DU, DV) {
             if (DU === DV || DU != DU && DV != DV) return !0x0;
             if (!DU || !DV) return !0x1;
             if ('function' == typeof DU['valueOf'] && 'function' == typeof DV['valueOf']) {
                 if ((DU = DU['valueOf']()) === (DV = DV['valueOf']()) || DU != DU && DV != DV) return !0x0;
                 if (!DU || !DV) return !0x1;
             }
-            return !!(rY(DU) && rY(DV) && DU['equals'](DV));
+            return !!(rZ(DU) && rZ(DV) && DU['equals'](DV));
         }
 
-        var s0 = 'function' == typeof Math['imul'] && -0x2 === Math['imul'](0xffffffff, 0x2) ? Math['imul'] : function (DU, DV) {
+        var s1 = 'function' == typeof Math['imul'] && -0x2 === Math['imul'](0xffffffff, 0x2) ? Math['imul'] : function (DU, DV) {
             var DW = 0xffff & (DU |= 0x0), DX = 0xffff & (DV |= 0x0);
             return DW * DX + ((DU >>> 0x10) * DX + DW * (DV >>> 0x10) << 0x10 >>> 0x0) | 0x0;
         };
 
-        function s1(DU) {
+        function s2(DU) {
             return DU >>> 0x1 & 0x40000000 | 0xbfffffff & DU;
         }
 
-        var s2 = Object['prototype']['valueOf'];
+        var s3 = Object['prototype']['valueOf'];
 
-        function s3(DU) {
-            if (null == DU) return s4(DU);
-            if ('function' == typeof DU['hashCode']) return s1(DU['hashCode'](DU));
+        function s4(DU) {
+            if (null == DU) return s5(DU);
+            if ('function' == typeof DU['hashCode']) return s2(DU['hashCode'](DU));
             var DV, DW, DX,
-                DY = (DV = DU)['valueOf'] !== s2 && 'function' == typeof DV['valueOf'] ? DV['valueOf'](DV) : DV;
-            if (null == DY) return s4(DY);
+                DY = (DV = DU)['valueOf'] !== s3 && 'function' == typeof DV['valueOf'] ? DV['valueOf'](DV) : DV;
+            if (null == DY) return s5(DY);
             switch (typeof DY) {
                 case'boolean':
                     return DY ? 0x42108421 : 0x42108420;
@@ -36546,18 +34247,18 @@ a();
                         if (DZ != DZ || DZ === 0x1 / 0x0) return 0x0;
                         var E0 = 0x0 | DZ;
                         for (E0 !== DZ && (E0 ^= 0xffffffff * DZ); DZ > 0xffffffff;) E0 ^= DZ /= 0xffffffff;
-                        return s1(E0);
+                        return s2(E0);
                     }(DY);
                 case'string':
-                    return DY['length'] > sA ? (void 0x0 === (DX = sD[DW = DY]) && (DX = s5(DW), sC === sB && (sC = 0x0, sD = {}), sC++, sD[DW] = DX), DX) : s5(DY);
+                    return DY['length'] > sB ? (void 0x0 === (DX = sE[DW = DY]) && (DX = s6(DW), sD === sC && (sD = 0x0, sE = {}), sD++, sE[DW] = DX), DX) : s6(DY);
                 case'object':
                 case'function':
                     return function (DZ) {
                         var E0;
-                        if (sj && void 0x0 !== (E0 = s9['get'](DZ))) return E0;
-                        if (void 0x0 !== (E0 = DZ[sz])) return E0;
-                        if (!s7) {
-                            if (void 0x0 !== (E0 = DZ['propertyIsEnumerable'] && DZ['propertyIsEnumerable'][sz])) return E0;
+                        if (sq && void 0x0 !== (E0 = sj['get'](DZ))) return E0;
+                        if (void 0x0 !== (E0 = DZ[sA])) return E0;
+                        if (!s8) {
+                            if (void 0x0 !== (E0 = DZ['propertyIsEnumerable'] && DZ['propertyIsEnumerable'][sA])) return E0;
                             if (void 0x0 !== (E0 = function (E1) {
                                 if (E1 && E1['nodeType'] > 0x0) switch (E1['nodeType']) {
                                     case 0x1:
@@ -36567,43 +34268,43 @@ a();
                                 }
                             }(DZ))) return E0;
                         }
-                        if (E0 = s8(), sj) s9['set'](DZ, E0); else {
-                            if (void 0x0 !== s6 && !0x1 === s6(DZ)) throw new Error('Non-extensible\x20objects\x20are\x20not\x20allowed\x20as\x20keys.');
-                            if (s7) Object['defineProperty'](DZ, sz, {
+                        if (E0 = s9(), sq) sj['set'](DZ, E0); else {
+                            if (void 0x0 !== s7 && !0x1 === s7(DZ)) throw new Error('Non-extensible\x20objects\x20are\x20not\x20allowed\x20as\x20keys.');
+                            if (s8) Object['defineProperty'](DZ, sA, {
                                 'enumerable': !0x1,
                                 'configurable': !0x1,
                                 'writable': !0x1,
                                 'value': E0
                             }); else if (void 0x0 !== DZ['propertyIsEnumerable'] && DZ['propertyIsEnumerable'] === DZ['constructor']['prototype']['propertyIsEnumerable']) DZ['propertyIsEnumerable'] = function () {
                                 return this['constructor']['prototype']['propertyIsEnumerable']['apply'](this, arguments);
-                            }, DZ['propertyIsEnumerable'][sz] = E0; else {
+                            }, DZ['propertyIsEnumerable'][sA] = E0; else {
                                 if (void 0x0 === DZ['nodeType']) throw new Error('Unable\x20to\x20set\x20a\x20non-enumerable\x20property\x20on\x20object.');
-                                DZ[sz] = E0;
+                                DZ[sA] = E0;
                             }
                         }
                         return E0;
                     }(DY);
                 case'symbol':
                     return function (DZ) {
-                        var E0 = sq[DZ];
-                        return void 0x0 !== E0 || (E0 = s8(), sq[DZ] = E0), E0;
+                        var E0 = sx[DZ];
+                        return void 0x0 !== E0 || (E0 = s9(), sx[DZ] = E0), E0;
                     }(DY);
                 default:
-                    if ('function' == typeof DY['toString']) return s5(DY['toString']());
+                    if ('function' == typeof DY['toString']) return s6(DY['toString']());
                     throw new Error('Value\x20type\x20' + typeof DY + '\x20cannot\x20be\x20hashed.');
             }
         }
 
-        function s4(DU) {
+        function s5(DU) {
             return null === DU ? 0x42108422 : 0x42108423;
         }
 
-        function s5(DU) {
+        function s6(DU) {
             for (var DV = 0x0, DW = 0x0; DW < DU['length']; DW++) DV = 0x1f * DV + DU['charCodeAt'](DW) | 0x0;
-            return s1(DV);
+            return s2(DV);
         }
 
-        var s6 = Object['isExtensible'], s7 = function () {
+        var s7 = Object['isExtensible'], s8 = function () {
             try {
                 return Object['defineProperty']({}, '@', {}), !0x0;
             } catch (DU) {
@@ -36611,16 +34312,16 @@ a();
             }
         }();
 
-        function s8() {
-            var DU = ++sx;
-            return 0x40000000 & sx && (sx = 0x0), DU;
+        function s9() {
+            var DU = ++sz;
+            return 0x40000000 & sz && (sz = 0x0), DU;
         }
 
-        var s9, sj = 'function' == typeof WeakMap;
-        sj && (s9 = new WeakMap());
-        var sq = Object['create'](null), sx = 0x0, sz = '__immutablehash__';
-        'function' == typeof Symbol && (sz = Symbol(sz));
-        var sA = 0x10, sB = 0xff, sC = 0x0, sD = {}, sE = function (DU) {
+        var sj, sq = 'function' == typeof WeakMap;
+        sq && (sj = new WeakMap());
+        var sx = Object['create'](null), sz = 0x0, sA = '__immutablehash__';
+        'function' == typeof Symbol && (sA = Symbol(sA));
+        var sB = 0x10, sC = 0xff, sD = 0x0, sE = {}, sF = function (DU) {
             function DV(DW, DX) {
                 this['_iter'] = DW, this['_useKeys'] = DX, this['size'] = DW['size'];
             }
@@ -36632,12 +34333,12 @@ a();
             }, DV['prototype']['valueSeq'] = function () {
                 return this['_iter']['valueSeq']();
             }, DV['prototype']['reverse'] = function () {
-                var DW = this, DX = sK(this, !0x0);
+                var DW = this, DX = sL(this, !0x0);
                 return this['_useKeys'] || (DX['valueSeq'] = function () {
                     return DW['_iter']['toSeq']()['reverse']();
                 }), DX;
             }, DV['prototype']['map'] = function (DW, DX) {
-                var DY = this, DZ = sJ(this, DW, DX);
+                var DY = this, DZ = sK(this, DW, DX);
                 return this['_useKeys'] || (DZ['valueSeq'] = function () {
                     return DY['_iter']['toSeq']()['map'](DW, DX);
                 }), DZ;
@@ -36649,9 +34350,9 @@ a();
             }, DV['prototype']['__iterator'] = function (DW, DX) {
                 return this['_iter']['__iterator'](DW, DX);
             }, DV;
-        }(rK);
-        sE['prototype'][r6] = !0x0;
-        var sF = function (DU) {
+        }(rL);
+        sF['prototype'][r7] = !0x0;
+        var sG = function (DU) {
             function DV(DW) {
                 this['_iter'] = DW, this['size'] = DW['size'];
             }
@@ -36660,17 +34361,17 @@ a();
                 return this['_iter']['includes'](DW);
             }, DV['prototype']['__iterate'] = function (DW, DX) {
                 var DY = this, DZ = 0x0;
-                return DX && qI(this), this['_iter']['__iterate'](function (E0) {
+                return DX && qJ(this), this['_iter']['__iterate'](function (E0) {
                     return DW(E0, DX ? DY['size'] - ++DZ : DZ++, DY);
                 }, DX);
             }, DV['prototype']['__iterator'] = function (DW, DX) {
-                var DY = this, DZ = this['_iter']['__iterator'](r9, DX), E0 = 0x0;
-                return DX && qI(this), new rA(function () {
+                var DY = this, DZ = this['_iter']['__iterator'](rj, DX), E0 = 0x0;
+                return DX && qJ(this), new rB(function () {
                     var E1 = DZ['next']();
-                    return E1['done'] ? E1 : rB(DW, DX ? DY['size'] - ++E0 : E0++, E1['value'], E1);
+                    return E1['done'] ? E1 : rC(DW, DX ? DY['size'] - ++E0 : E0++, E1['value'], E1);
                 });
             }, DV;
-        }(rL), sG = function (DU) {
+        }(rM), sH = function (DU) {
             function DV(DW) {
                 this['_iter'] = DW, this['size'] = DW['size'];
             }
@@ -36683,13 +34384,13 @@ a();
                     return DW(DZ, DZ, DY);
                 }, DX);
             }, DV['prototype']['__iterator'] = function (DW, DX) {
-                var DY = this['_iter']['__iterator'](r9, DX);
-                return new rA(function () {
+                var DY = this['_iter']['__iterator'](rj, DX);
+                return new rB(function () {
                     var DZ = DY['next']();
-                    return DZ['done'] ? DZ : rB(DW, DZ['value'], DZ['value'], DZ);
+                    return DZ['done'] ? DZ : rC(DW, DZ['value'], DZ['value'], DZ);
                 });
             }, DV;
-        }(rM), sH = function (DU) {
+        }(rN), sI = function (DU) {
             function DV(DW) {
                 this['_iter'] = DW, this['size'] = DW['size'];
             }
@@ -36700,30 +34401,30 @@ a();
                 var DY = this;
                 return this['_iter']['__iterate'](function (DZ) {
                     if (DZ) {
-                        sU(DZ);
-                        var E0 = qR(DZ);
+                        sV(DZ);
+                        var E0 = qS(DZ);
                         return DW(E0 ? DZ['get'](0x1) : DZ[0x1], E0 ? DZ['get'](0x0) : DZ[0x0], DY);
                     }
                 }, DX);
             }, DV['prototype']['__iterator'] = function (DW, DX) {
-                var DY = this['_iter']['__iterator'](r9, DX);
-                return new rA(function () {
+                var DY = this['_iter']['__iterator'](rj, DX);
+                return new rB(function () {
                     for (; ;) {
                         var DZ = DY['next']();
                         if (DZ['done']) return DZ;
                         var E0 = DZ['value'];
                         if (E0) {
-                            sU(E0);
-                            var E1 = qR(E0);
-                            return rB(DW, E1 ? E0['get'](0x0) : E0[0x0], E1 ? E0['get'](0x1) : E0[0x1], DZ);
+                            sV(E0);
+                            var E1 = qS(E0);
+                            return rC(DW, E1 ? E0['get'](0x0) : E0[0x0], E1 ? E0['get'](0x1) : E0[0x1], DZ);
                         }
                     }
                 });
             }, DV;
-        }(rK);
+        }(rL);
 
-        function sI(DU) {
-            var DV = sW(DU);
+        function sJ(DU) {
+            var DV = sX(DU);
             return DV['_iter'] = DU, DV['size'] = DU['size'], DV['flip'] = function () {
                 return DU;
             }, DV['reverse'] = function () {
@@ -36735,15 +34436,15 @@ a();
                 return DU['includes'](DW);
             }, DV['includes'] = function (DW) {
                 return DU['has'](DW);
-            }, DV['cacheResult'] = sX, DV['__iterateUncached'] = function (DW, DX) {
+            }, DV['cacheResult'] = sY, DV['__iterateUncached'] = function (DW, DX) {
                 var DY = this;
                 return DU['__iterate'](function (DZ, E0) {
                     return !0x1 !== DW(E0, DZ, DY);
                 }, DX);
             }, DV['__iteratorUncached'] = function (DW, DX) {
-                if (DW === rj) {
+                if (DW === rq) {
                     var DY = DU['__iterator'](DW, DX);
-                    return new rA(function () {
+                    return new rB(function () {
                         var DZ = DY['next']();
                         if (!DZ['done']) {
                             var E0 = DZ['value'][0x0];
@@ -36752,39 +34453,39 @@ a();
                         return DZ;
                     });
                 }
-                return DU['__iterator'](DW === r9 ? r8 : r9, DX);
+                return DU['__iterator'](DW === rj ? r9 : rj, DX);
             }, DV;
         }
 
-        function sJ(DU, DV, DW) {
-            var DX = sW(DU);
+        function sK(DU, DV, DW) {
+            var DX = sX(DU);
             return DX['size'] = DU['size'], DX['has'] = function (DY) {
                 return DU['has'](DY);
             }, DX['get'] = function (DY, DZ) {
-                var E0 = DU['get'](DY, qF);
-                return E0 === qF ? DZ : DV['call'](DW, E0, DY, DU);
+                var E0 = DU['get'](DY, qG);
+                return E0 === qG ? DZ : DV['call'](DW, E0, DY, DU);
             }, DX['__iterateUncached'] = function (DY, DZ) {
                 var E0 = this;
                 return DU['__iterate'](function (E1, E2, E3) {
                     return !0x1 !== DY(DV['call'](DW, E1, E2, E3), E2, E0);
                 }, DZ);
             }, DX['__iteratorUncached'] = function (DY, DZ) {
-                var E0 = DU['__iterator'](rj, DZ);
-                return new rA(function () {
+                var E0 = DU['__iterator'](rq, DZ);
+                return new rB(function () {
                     var E1 = E0['next']();
                     if (E1['done']) return E1;
                     var E2 = E1['value'], E3 = E2[0x0];
-                    return rB(DY, E3, DV['call'](DW, E2[0x1], E3, DU), E1);
+                    return rC(DY, E3, DV['call'](DW, E2[0x1], E3, DU), E1);
                 });
             }, DX;
         }
 
-        function sK(DU, DV) {
-            var DW = this, DX = sW(DU);
+        function sL(DU, DV) {
+            var DW = this, DX = sX(DU);
             return DX['_iter'] = DU, DX['size'] = DU['size'], DX['reverse'] = function () {
                 return DU;
             }, DU['flip'] && (DX['flip'] = function () {
-                var DY = sI(DU);
+                var DY = sJ(DU);
                 return DY['reverse'] = function () {
                     return DU['flip']();
                 }, DY;
@@ -36794,60 +34495,60 @@ a();
                 return DU['has'](DV ? DY : -0x1 - DY);
             }, DX['includes'] = function (DY) {
                 return DU['includes'](DY);
-            }, DX['cacheResult'] = sX, DX['__iterate'] = function (DY, DZ) {
+            }, DX['cacheResult'] = sY, DX['__iterate'] = function (DY, DZ) {
                 var E0 = this, E1 = 0x0;
-                return DZ && qI(DU), DU['__iterate'](function (E2, E3) {
+                return DZ && qJ(DU), DU['__iterate'](function (E2, E3) {
                     return DY(E2, DV ? E3 : DZ ? E0['size'] - ++E1 : E1++, E0);
                 }, !DZ);
             }, DX['__iterator'] = function (DY, DZ) {
                 var E0 = 0x0;
-                DZ && qI(DU);
-                var E1 = DU['__iterator'](rj, !DZ);
-                return new rA(function () {
+                DZ && qJ(DU);
+                var E1 = DU['__iterator'](rq, !DZ);
+                return new rB(function () {
                     var E2 = E1['next']();
                     if (E2['done']) return E2;
                     var E3 = E2['value'];
-                    return rB(DY, DV ? E3[0x0] : DZ ? DW['size'] - ++E0 : E0++, E3[0x1], E2);
+                    return rC(DY, DV ? E3[0x0] : DZ ? DW['size'] - ++E0 : E0++, E3[0x1], E2);
                 });
             }, DX;
         }
 
-        function sL(DU, DV, DW, DX) {
-            var DY = sW(DU);
+        function sM(DU, DV, DW, DX) {
+            var DY = sX(DU);
             return DX && (DY['has'] = function (DZ) {
-                var E0 = DU['get'](DZ, qF);
-                return E0 !== qF && !!DV['call'](DW, E0, DZ, DU);
+                var E0 = DU['get'](DZ, qG);
+                return E0 !== qG && !!DV['call'](DW, E0, DZ, DU);
             }, DY['get'] = function (DZ, E0) {
-                var E1 = DU['get'](DZ, qF);
-                return E1 !== qF && DV['call'](DW, E1, DZ, DU) ? E1 : E0;
+                var E1 = DU['get'](DZ, qG);
+                return E1 !== qG && DV['call'](DW, E1, DZ, DU) ? E1 : E0;
             }), DY['__iterateUncached'] = function (DZ, E0) {
                 var E1 = this, E2 = 0x0;
                 return DU['__iterate'](function (E3, E4, E5) {
                     if (DV['call'](DW, E3, E4, E5)) return E2++, DZ(E3, DX ? E4 : E2 - 0x1, E1);
                 }, E0), E2;
             }, DY['__iteratorUncached'] = function (DZ, E0) {
-                var E1 = DU['__iterator'](rj, E0), E2 = 0x0;
-                return new rA(function () {
+                var E1 = DU['__iterator'](rq, E0), E2 = 0x0;
+                return new rB(function () {
                     for (; ;) {
                         var E3 = E1['next']();
                         if (E3['done']) return E3;
                         var E4 = E3['value'], E5 = E4[0x0], E6 = E4[0x1];
-                        if (DV['call'](DW, E6, E5, DU)) return rB(DZ, DX ? E5 : E2++, E6, E3);
+                        if (DV['call'](DW, E6, E5, DU)) return rC(DZ, DX ? E5 : E2++, E6, E3);
                     }
                 });
             }, DY;
         }
 
-        function sM(DU, DV, DW, DX) {
+        function sN(DU, DV, DW, DX) {
             var DY = DU['size'];
-            if (qL(DV, DW, DY)) return DU;
-            var DZ = qM(DV, DY), E0 = qN(DW, DY);
-            if (DZ != DZ || E0 != E0) return sM(DU['toSeq']()['cacheResult'](), DV, DW, DX);
+            if (qM(DV, DW, DY)) return DU;
+            var DZ = qN(DV, DY), E0 = qO(DW, DY);
+            if (DZ != DZ || E0 != E0) return sN(DU['toSeq']()['cacheResult'](), DV, DW, DX);
             var E1, E2 = E0 - DZ;
             E2 == E2 && (E1 = E2 < 0x0 ? 0x0 : E2);
-            var E3 = sW(DU);
-            return E3['size'] = 0x0 === E1 ? E1 : DU['size'] && E1 || void 0x0, !DX && r2(DU) && E1 >= 0x0 && (E3['get'] = function (E4, E5) {
-                return (E4 = qJ(this, E4)) >= 0x0 && E4 < E1 ? DU['get'](E4 + DZ, E5) : E5;
+            var E3 = sX(DU);
+            return E3['size'] = 0x0 === E1 ? E1 : DU['size'] && E1 || void 0x0, !DX && r3(DU) && E1 >= 0x0 && (E3['get'] = function (E4, E5) {
+                return (E4 = qK(this, E4)) >= 0x0 && E4 < E1 ? DU['get'](E4 + DZ, E5) : E5;
             }), E3['__iterateUncached'] = function (E4, E5) {
                 var E6 = this;
                 if (0x0 === E1) return 0x0;
@@ -36858,19 +34559,19 @@ a();
                 }), E9;
             }, E3['__iteratorUncached'] = function (E4, E5) {
                 if (0x0 !== E1 && E5) return this['cacheResult']()['__iterator'](E4, E5);
-                if (0x0 === E1) return new rA(rC);
+                if (0x0 === E1) return new rB(rD);
                 var E6 = DU['__iterator'](E4, E5), E7 = 0x0, E8 = 0x0;
-                return new rA(function () {
+                return new rB(function () {
                     for (; E7++ < DZ;) E6['next']();
                     if (++E8 > E1) return {'value': void 0x0, 'done': !0x0};
                     var E9 = E6['next']();
-                    return DX || E4 === r9 || E9['done'] ? E9 : rB(E4, E8 - 0x1, E4 === r8 ? void 0x0 : E9['value'][0x1], E9);
+                    return DX || E4 === rj || E9['done'] ? E9 : rC(E4, E8 - 0x1, E4 === r9 ? void 0x0 : E9['value'][0x1], E9);
                 });
             }, E3;
         }
 
-        function sN(DU, DV, DW, DX) {
-            var DY = sW(DU);
+        function sO(DU, DV, DW, DX) {
+            var DY = sX(DU);
             return DY['__iterateUncached'] = function (DZ, E0) {
                 var E1 = this;
                 if (E0) return this['cacheResult']()['__iterate'](DZ, E0);
@@ -36881,38 +34582,38 @@ a();
             }, DY['__iteratorUncached'] = function (DZ, E0) {
                 var E1 = this;
                 if (E0) return this['cacheResult']()['__iterator'](DZ, E0);
-                var E2 = DU['__iterator'](rj, E0), E3 = !0x0, E4 = 0x0;
-                return new rA(function () {
+                var E2 = DU['__iterator'](rq, E0), E3 = !0x0, E4 = 0x0;
+                return new rB(function () {
                     var E5, E6, E7;
                     do {
-                        if ((E5 = E2['next']())['done']) return DX || DZ === r9 ? E5 : rB(DZ, E4++, DZ === r8 ? void 0x0 : E5['value'][0x1], E5);
+                        if ((E5 = E2['next']())['done']) return DX || DZ === rj ? E5 : rC(DZ, E4++, DZ === r9 ? void 0x0 : E5['value'][0x1], E5);
                         var E8 = E5['value'];
                         E6 = E8[0x0], E7 = E8[0x1], E3 && (E3 = DV['call'](DW, E7, E6, E1));
                     } while (E3);
-                    return DZ === rj ? E5 : rB(DZ, E6, E7, E5);
+                    return DZ === rq ? E5 : rC(DZ, E6, E7, E5);
                 });
             }, DY;
         }
 
-        function sO(DU, DV, DW) {
-            var DX = sW(DU);
+        function sP(DU, DV, DW) {
+            var DX = sX(DU);
             return DX['__iterateUncached'] = function (DY, DZ) {
                 if (DZ) return this['cacheResult']()['__iterate'](DY, DZ);
                 var E0 = 0x0, E1 = !0x1;
                 return function E2(E3, E4) {
                     E3['__iterate'](function (E5, E6) {
-                        return (!DV || E4 < DV) && qR(E5) ? E2(E5, E4 + 0x1) : (E0++, !0x1 === DY(E5, DW ? E6 : E0 - 0x1, DX) && (E1 = !0x0)), !E1;
+                        return (!DV || E4 < DV) && qS(E5) ? E2(E5, E4 + 0x1) : (E0++, !0x1 === DY(E5, DW ? E6 : E0 - 0x1, DX) && (E1 = !0x0)), !E1;
                     }, DZ);
                 }(DU, 0x0), E0;
             }, DX['__iteratorUncached'] = function (DY, DZ) {
                 if (DZ) return this['cacheResult']()['__iterator'](DY, DZ);
                 var E0 = DU['__iterator'](DY, DZ), E1 = [], E2 = 0x0;
-                return new rA(function () {
+                return new rB(function () {
                     for (; E0;) {
                         var E3 = E0['next']();
                         if (!0x1 === E3['done']) {
                             var E4 = E3['value'];
-                            if (DY === rj && (E4 = E4[0x1]), DV && !(E1['length'] < DV) || !qR(E4)) return DW ? E3 : rB(DY, E2++, E4, E3);
+                            if (DY === rq && (E4 = E4[0x1]), DV && !(E1['length'] < DV) || !qS(E4)) return DW ? E3 : rC(DY, E2++, E4, E3);
                             E1['push'](E0), E0 = E4['__iterator'](DY, DZ);
                         } else E0 = E1['pop']();
                     }
@@ -36921,9 +34622,9 @@ a();
             }, DX;
         }
 
-        function sP(DU, DV, DW) {
-            DV || (DV = sY);
-            var DX = qT(DU), DY = 0x0, DZ = DU['toSeq']()['map'](function (E0, E1) {
+        function sQ(DU, DV, DW) {
+            DV || (DV = sZ);
+            var DX = qU(DU), DY = 0x0, DZ = DU['toSeq']()['map'](function (E0, E1) {
                 return [E1, E0, DY++, DW ? DW(E0, E1, DU) : E0];
             })['valueSeq']()['toArray']();
             return DZ['sort'](function (E0, E1) {
@@ -36932,40 +34633,40 @@ a();
                 DZ[E1]['length'] = 0x2;
             } : function (E0, E1) {
                 DZ[E1] = E0[0x1];
-            }), DX ? rK(DZ) : qV(DU) ? rL(DZ) : rM(DZ);
+            }), DX ? rL(DZ) : qW(DU) ? rM(DZ) : rN(DZ);
         }
 
-        function sQ(DU, DV, DW) {
-            if (DV || (DV = sY), DW) {
+        function sR(DU, DV, DW) {
+            if (DV || (DV = sZ), DW) {
                 var DX = DU['toSeq']()['map'](function (DY, DZ) {
                     return [DY, DW(DY, DZ, DU)];
                 })['reduce'](function (DY, DZ) {
-                    return sR(DV, DY[0x1], DZ[0x1]) ? DZ : DY;
+                    return sS(DV, DY[0x1], DZ[0x1]) ? DZ : DY;
                 });
                 return DX && DX[0x0];
             }
             return DU['reduce'](function (DY, DZ) {
-                return sR(DV, DY, DZ) ? DZ : DY;
+                return sS(DV, DY, DZ) ? DZ : DY;
             });
         }
 
-        function sR(DU, DV, DW) {
+        function sS(DU, DV, DW) {
             var DX = DU(DW, DV);
             return 0x0 === DX && DW !== DV && (null == DW || DW != DW) || DX > 0x0;
         }
 
-        function sS(DU, DV, DW, DX) {
-            var DY = sW(DU), DZ = new rN(DW)['map'](function (E0) {
+        function sT(DU, DV, DW, DX) {
+            var DY = sX(DU), DZ = new rO(DW)['map'](function (E0) {
                 return E0['size'];
             });
             return DY['size'] = DX ? DZ['max']() : DZ['min'](), DY['__iterate'] = function (E0, E1) {
-                for (var E2, E3 = this['__iterator'](r9, E1), E4 = 0x0; !(E2 = E3['next']())['done'] && !0x1 !== E0(E2['value'], E4++, this);) ;
+                for (var E2, E3 = this['__iterator'](rj, E1), E4 = 0x0; !(E2 = E3['next']())['done'] && !0x1 !== E0(E2['value'], E4++, this);) ;
                 return E4;
             }, DY['__iteratorUncached'] = function (E0, E1) {
                 var E2 = DW['map'](function (E5) {
-                    return E5 = qX(E5), rF(E1 ? E5['reverse']() : E5);
+                    return E5 = qY(E5), rG(E1 ? E5['reverse']() : E5);
                 }), E3 = 0x0, E4 = !0x1;
-                return new rA(function () {
+                return new rB(function () {
                     var E5;
                     return E4 || (E5 = E2['map'](function (E6) {
                         return E6['next']();
@@ -36976,63 +34677,63 @@ a();
                     })), E4 ? {
                         'value': void 0x0,
                         'done': !0x0
-                    } : rB(E0, E3++, DV['apply'](null, E5['map'](function (E6) {
+                    } : rC(E0, E3++, DV['apply'](null, E5['map'](function (E6) {
                         return E6['value'];
                     })));
                 });
             }, DY;
         }
 
-        function sT(DU, DV) {
-            return DU === DV ? DU : r2(DU) ? DV : DU['constructor'](DV);
-        }
-
-        function sU(DU) {
-            if (DU !== Object(DU)) throw new TypeError('Expected\x20[K,\x20V]\x20tuple:\x20' + DU);
+        function sU(DU, DV) {
+            return DU === DV ? DU : r3(DU) ? DV : DU['constructor'](DV);
         }
 
         function sV(DU) {
-            return qT(DU) ? qY : qV(DU) ? qZ : r0;
+            if (DU !== Object(DU)) throw new TypeError('Expected\x20[K,\x20V]\x20tuple:\x20' + DU);
         }
 
         function sW(DU) {
-            return Object['create']((qT(DU) ? rK : qV(DU) ? rL : rM)['prototype']);
+            return qU(DU) ? qZ : qW(DU) ? r0 : r1;
         }
 
-        function sX() {
-            return this['_iter']['cacheResult'] ? (this['_iter']['cacheResult'](), this['size'] = this['_iter']['size'], this) : rJ['prototype']['cacheResult']['call'](this);
+        function sX(DU) {
+            return Object['create']((qU(DU) ? rL : qW(DU) ? rM : rN)['prototype']);
         }
 
-        function sY(DU, DV) {
-            return void 0x0 === DU && void 0x0 === DV ? 0x0 : void 0x0 === DU ? 0x1 : void 0x0 === DV ? -0x1 : DU > DV ? 0x1 : DU < DV ? -0x1 : 0x0;
+        function sY() {
+            return this['_iter']['cacheResult'] ? (this['_iter']['cacheResult'](), this['size'] = this['_iter']['size'], this) : rK['prototype']['cacheResult']['call'](this);
         }
 
         function sZ(DU, DV) {
+            return void 0x0 === DU && void 0x0 === DV ? 0x0 : void 0x0 === DU ? 0x1 : void 0x0 === DV ? -0x1 : DU > DV ? 0x1 : DU < DV ? -0x1 : 0x0;
+        }
+
+        function t0(DU, DV) {
             DV = DV || 0x0;
             for (var DW = Math['max'](0x0, DU['length'] - DV), DX = new Array(DW), DY = 0x0; DY < DW; DY++) DX[DY] = DU[DY + DV];
             return DX;
         }
 
-        function t0(DU, DV) {
+        function t1(DU, DV) {
             if (!DU) throw new Error(DV);
         }
 
-        function t1(DU) {
-            t0(DU !== 0x1 / 0x0, 'Cannot\x20perform\x20this\x20action\x20with\x20an\x20infinite\x20size.');
+        function t2(DU) {
+            t1(DU !== 0x1 / 0x0, 'Cannot\x20perform\x20this\x20action\x20with\x20an\x20infinite\x20size.');
         }
 
-        function t2(DU) {
-            if (rI(DU) && 'string' != typeof DU) return DU;
-            if (r7(DU)) return DU['toArray']();
+        function t3(DU) {
+            if (rJ(DU) && 'string' != typeof DU) return DU;
+            if (r8(DU)) return DU['toArray']();
             throw new TypeError('Invalid\x20keyPath:\x20expected\x20Ordered\x20Collection\x20or\x20Array:\x20' + DU);
         }
 
-        sF['prototype']['cacheResult'] = sE['prototype']['cacheResult'] = sG['prototype']['cacheResult'] = sH['prototype']['cacheResult'] = sX;
-        var t3 = Object['prototype']['toString'];
+        sG['prototype']['cacheResult'] = sF['prototype']['cacheResult'] = sH['prototype']['cacheResult'] = sI['prototype']['cacheResult'] = sY;
+        var t4 = Object['prototype']['toString'];
 
-        function t4(DU) {
-            return 'object' == typeof DU && (r5(DU) || Array['isArray'](DU) || function (DV) {
-                if (!DV || 'object' != typeof DV || '[object\x20Object]' !== t3['call'](DV)) return !0x1;
+        function t5(DU) {
+            return 'object' == typeof DU && (r6(DU) || Array['isArray'](DU) || function (DV) {
+                if (!DV || 'object' != typeof DV || '[object\x20Object]' !== t4['call'](DV)) return !0x1;
                 var DW = Object['getPrototypeOf'](DV);
                 if (null === DW) return !0x0;
                 for (var DX = DW, DY = Object['getPrototypeOf'](DW); null !== DY;) DX = DY, DY = Object['getPrototypeOf'](DX);
@@ -37040,7 +34741,7 @@ a();
             }(DU));
         }
 
-        function t5(DU) {
+        function t6(DU) {
             try {
                 return 'string' == typeof DU ? JSON['stringify'](DU) : String(DU);
             } catch (DV) {
@@ -37048,102 +34749,102 @@ a();
             }
         }
 
-        function t6(DU, DV, DW) {
-            return r5(DU) ? DU['get'](DV, DW) : function (DX, DY) {
-                return r5(DX) ? DX['has'](DY) : t4(DX) && rH['call'](DX, DY);
+        function t7(DU, DV, DW) {
+            return r6(DU) ? DU['get'](DV, DW) : function (DX, DY) {
+                return r6(DX) ? DX['has'](DY) : t5(DX) && rI['call'](DX, DY);
             }(DU, DV) ? 'function' == typeof DU['get'] ? DU['get'](DV) : DU[DV] : DW;
         }
 
-        function t7(DU) {
-            if (Array['isArray'](DU)) return sZ(DU);
+        function t8(DU) {
+            if (Array['isArray'](DU)) return t0(DU);
             var DV = {};
-            for (var DW in DU) rH['call'](DU, DW) && (DV[DW] = DU[DW]);
+            for (var DW in DU) rI['call'](DU, DW) && (DV[DW] = DU[DW]);
             return DV;
         }
 
-        function t8(DU, DV, DW, DX) {
+        function t9(DU, DV, DW, DX) {
             DX || (DX = DW, DW = void 0x0);
-            var DY = t9(r5(DU), DU, t2(DV), 0x0, DW, DX);
-            return DY === qF ? DW : DY;
+            var DY = tj(r6(DU), DU, t3(DV), 0x0, DW, DX);
+            return DY === qG ? DW : DY;
         }
 
-        function t9(DU, DV, DW, DX, DY, DZ) {
-            var E0 = DV === qF;
+        function tj(DU, DV, DW, DX, DY, DZ) {
+            var E0 = DV === qG;
             if (DX === DW['length']) {
                 var E1 = E0 ? DY : DV, E2 = DZ(E1);
                 return E2 === E1 ? DV : E2;
             }
-            if (!E0 && !t4(DV)) throw new TypeError('Cannot\x20update\x20within\x20non-data-structure\x20value\x20in\x20path\x20[' + DW['slice'](0x0, DX)['map'](t5) + ']:\x20' + DV);
-            var E3 = DW[DX], E4 = E0 ? qF : t6(DV, E3, qF), E5 = t9(E4 === qF ? DU : r5(E4), E4, DW, DX + 0x1, DY, DZ);
-            return E5 === E4 ? DV : E5 === qF ? function (E6, E7) {
-                if (!t4(E6)) throw new TypeError('Cannot\x20update\x20non-data-structure\x20value:\x20' + E6);
-                if (r5(E6)) {
+            if (!E0 && !t5(DV)) throw new TypeError('Cannot\x20update\x20within\x20non-data-structure\x20value\x20in\x20path\x20[' + DW['slice'](0x0, DX)['map'](t6) + ']:\x20' + DV);
+            var E3 = DW[DX], E4 = E0 ? qG : t7(DV, E3, qG), E5 = tj(E4 === qG ? DU : r6(E4), E4, DW, DX + 0x1, DY, DZ);
+            return E5 === E4 ? DV : E5 === qG ? function (E6, E7) {
+                if (!t5(E6)) throw new TypeError('Cannot\x20update\x20non-data-structure\x20value:\x20' + E6);
+                if (r6(E6)) {
                     if (!E6['remove']) throw new TypeError('Cannot\x20update\x20immutable\x20value\x20without\x20.remove()\x20method:\x20' + E6);
                     return E6['remove'](E7);
                 }
-                if (!rH['call'](E6, E7)) return E6;
-                var E8 = t7(E6);
+                if (!rI['call'](E6, E7)) return E6;
+                var E8 = t8(E6);
                 return Array['isArray'](E8) ? E8['splice'](E7, 0x1) : delete E8[E7], E8;
             }(DV, E3) : function (E6, E7, E8) {
-                if (!t4(E6)) throw new TypeError('Cannot\x20update\x20non-data-structure\x20value:\x20' + E6);
-                if (r5(E6)) {
+                if (!t5(E6)) throw new TypeError('Cannot\x20update\x20non-data-structure\x20value:\x20' + E6);
+                if (r6(E6)) {
                     if (!E6['set']) throw new TypeError('Cannot\x20update\x20immutable\x20value\x20without\x20.set()\x20method:\x20' + E6);
                     return E6['set'](E7, E8);
                 }
-                if (rH['call'](E6, E7) && E8 === E6[E7]) return E6;
-                var E9 = t7(E6);
+                if (rI['call'](E6, E7) && E8 === E6[E7]) return E6;
+                var E9 = t8(E6);
                 return E9[E7] = E8, E9;
-            }(E0 ? DU ? u0() : {} : DV, E3, E5);
+            }(E0 ? DU ? u1() : {} : DV, E3, E5);
         }
 
-        function tj(DU, DV) {
+        function tq(DU, DV) {
             return function (DW, DX, DY) {
-                return t8(DW, DX, qF, function () {
+                return t9(DW, DX, qG, function () {
                     return DY;
                 });
             }(this, DU, DV);
         }
 
-        function tq(DU) {
+        function tx(DU) {
             return function (DV, DW) {
-                return t8(DV, DW, function () {
-                    return qF;
+                return t9(DV, DW, function () {
+                    return qG;
                 });
             }(this, DU);
         }
 
-        function tx(DU, DV, DW, DX) {
-            return t8(DU, [DV], DW, DX);
-        }
-
-        function tz(DU, DV, DW) {
-            return 0x1 === arguments['length'] ? DU(this) : tx(this, DU, DV, DW);
+        function tz(DU, DV, DW, DX) {
+            return t9(DU, [DV], DW, DX);
         }
 
         function tA(DU, DV, DW) {
-            return t8(this, DU, DV, DW);
+            return 0x1 === arguments['length'] ? DU(this) : tz(this, DU, DV, DW);
         }
 
-        function tB() {
+        function tB(DU, DV, DW) {
+            return t9(this, DU, DV, DW);
+        }
+
+        function tC() {
             for (var DU = [], DV = arguments['length']; DV--;) DU[DV] = arguments[DV];
-            return tD(this, DU);
+            return tE(this, DU);
         }
 
-        function tC(DU) {
+        function tD(DU) {
             for (var DV = [], DW = arguments['length'] - 0x1; DW-- > 0x0;) DV[DW] = arguments[DW + 0x1];
             if ('function' != typeof DU) throw new TypeError('Invalid\x20merger\x20function:\x20' + DU);
-            return tD(this, DV, DU);
+            return tE(this, DV, DU);
         }
 
-        function tD(DU, DV, DW) {
+        function tE(DU, DV, DW) {
             for (var DX = [], DY = 0x0; DY < DV['length']; DY++) {
-                var DZ = qY(DV[DY]);
+                var DZ = qZ(DV[DY]);
                 0x0 !== DZ['size'] && DX['push'](DZ);
             }
             return 0x0 === DX['length'] ? DU : 0x0 !== DU['toSeq']()['size'] || DU['__ownerID'] || 0x1 !== DX['length'] ? DU['withMutations'](function (E0) {
                 for (var E1 = DW ? function (E3, E4) {
-                    tx(E0, E4, qF, function (E5) {
-                        return E5 === qF ? E3 : DW(E5, E3, E4);
+                    tz(E0, E4, qG, function (E5) {
+                        return E5 === qG ? E3 : DW(E5, E3, E4);
                     });
                 } : function (E3, E4) {
                     E0['set'](E4, E3);
@@ -37151,73 +34852,73 @@ a();
             }) : DU['constructor'](DX[0x0]);
         }
 
-        function tE(DU, DV, DW) {
-            return tF(DU, DV, function (DX) {
+        function tF(DU, DV, DW) {
+            return tG(DU, DV, function (DX) {
                 return function DY(DZ, E0, E1) {
-                    return t4(DZ) && t4(E0) && (E2 = E0, E3 = rJ(DZ), E4 = rJ(E2), qV(E3) === qV(E4) && qT(E3) === qT(E4)) ? tF(DZ, [E0], DY) : DX ? DX(DZ, E0, E1) : E0;
+                    return t5(DZ) && t5(E0) && (E2 = E0, E3 = rK(DZ), E4 = rK(E2), qW(E3) === qW(E4) && qU(E3) === qU(E4)) ? tG(DZ, [E0], DY) : DX ? DX(DZ, E0, E1) : E0;
                     var E2, E3, E4;
                 };
             }(DW));
         }
 
-        function tF(DU, DV, DW) {
-            if (!t4(DU)) throw new TypeError('Cannot\x20merge\x20into\x20non-data-structure\x20value:\x20' + DU);
-            if (r5(DU)) return 'function' == typeof DW && DU['mergeWith'] ? DU['mergeWith']['apply'](DU, [DW]['concat'](DV)) : DU['merge'] ? DU['merge']['apply'](DU, DV) : DU['concat']['apply'](DU, DV);
-            for (var DX = Array['isArray'](DU), DY = DU, DZ = DX ? qZ : qY, E0 = DX ? function (E2) {
-                DY === DU && (DY = t7(DY)), DY['push'](E2);
+        function tG(DU, DV, DW) {
+            if (!t5(DU)) throw new TypeError('Cannot\x20merge\x20into\x20non-data-structure\x20value:\x20' + DU);
+            if (r6(DU)) return 'function' == typeof DW && DU['mergeWith'] ? DU['mergeWith']['apply'](DU, [DW]['concat'](DV)) : DU['merge'] ? DU['merge']['apply'](DU, DV) : DU['concat']['apply'](DU, DV);
+            for (var DX = Array['isArray'](DU), DY = DU, DZ = DX ? r0 : qZ, E0 = DX ? function (E2) {
+                DY === DU && (DY = t8(DY)), DY['push'](E2);
             } : function (E2, E3) {
-                var E4 = rH['call'](DY, E3), E5 = E4 && DW ? DW(DY[E3], E2, E3) : E2;
-                E4 && E5 === DY[E3] || (DY === DU && (DY = t7(DY)), DY[E3] = E5);
+                var E4 = rI['call'](DY, E3), E5 = E4 && DW ? DW(DY[E3], E2, E3) : E2;
+                E4 && E5 === DY[E3] || (DY === DU && (DY = t8(DY)), DY[E3] = E5);
             }, E1 = 0x0; E1 < DV['length']; E1++) DZ(DV[E1])['forEach'](E0);
             return DY;
         }
 
-        function tG() {
+        function tH() {
             for (var DU = [], DV = arguments['length']; DV--;) DU[DV] = arguments[DV];
-            return tE(this, DU);
-        }
-
-        function tH(DU) {
-            for (var DV = [], DW = arguments['length'] - 0x1; DW-- > 0x0;) DV[DW] = arguments[DW + 0x1];
-            return tE(this, DV, DU);
+            return tF(this, DU);
         }
 
         function tI(DU) {
             for (var DV = [], DW = arguments['length'] - 0x1; DW-- > 0x0;) DV[DW] = arguments[DW + 0x1];
-            return t8(this, DU, u0(), function (DX) {
-                return tF(DX, DV);
-            });
+            return tF(this, DV, DU);
         }
 
         function tJ(DU) {
             for (var DV = [], DW = arguments['length'] - 0x1; DW-- > 0x0;) DV[DW] = arguments[DW + 0x1];
-            return t8(this, DU, u0(), function (DX) {
-                return tE(DX, DV);
+            return t9(this, DU, u1(), function (DX) {
+                return tG(DX, DV);
             });
         }
 
         function tK(DU) {
+            for (var DV = [], DW = arguments['length'] - 0x1; DW-- > 0x0;) DV[DW] = arguments[DW + 0x1];
+            return t9(this, DU, u1(), function (DX) {
+                return tF(DX, DV);
+            });
+        }
+
+        function tL(DU) {
             var DV = this['asMutable']();
             return DU(DV), DV['wasAltered']() ? DV['__ensureOwner'](this['__ownerID']) : this;
         }
 
-        function tL() {
-            return this['__ownerID'] ? this : this['__ensureOwner'](new qH());
-        }
-
         function tM() {
-            return this['__ensureOwner']();
+            return this['__ownerID'] ? this : this['__ensureOwner'](new qI());
         }
 
         function tN() {
+            return this['__ensureOwner']();
+        }
+
+        function tO() {
             return this['__altered'];
         }
 
-        var tO = function (DU) {
+        var tP = function (DU) {
             function DV(DW) {
-                return null == DW ? u0() : rW(DW) && !r7(DW) ? DW : u0()['withMutations'](function (DX) {
+                return null == DW ? u1() : rX(DW) && !r8(DW) ? DW : u1()['withMutations'](function (DX) {
                     var DY = DU(DW);
-                    t1(DY['size']), DY['forEach'](function (DZ, E0) {
+                    t2(DY['size']), DY['forEach'](function (DZ, E0) {
                         return DX['set'](E0, DZ);
                     });
                 });
@@ -37225,7 +34926,7 @@ a();
 
             return DU && (DV['__proto__'] = DU), DV['prototype'] = Object['create'](DU && DU['prototype']), DV['prototype']['constructor'] = DV, DV['of'] = function () {
                 for (var DW = [], DX = arguments['length']; DX--;) DW[DX] = arguments[DX];
-                return u0()['withMutations'](function (DY) {
+                return u1()['withMutations'](function (DY) {
                     for (var DZ = 0x0; DZ < DW['length']; DZ += 0x2) {
                         if (DZ + 0x1 >= DW['length']) throw new Error('Missing\x20value\x20for\x20key:\x20' + DW[DZ]);
                         DY['set'](DW[DZ], DW[DZ + 0x1]);
@@ -37236,22 +34937,22 @@ a();
             }, DV['prototype']['get'] = function (DW, DX) {
                 return this['_root'] ? this['_root']['get'](0x0, void 0x0, DW, DX) : DX;
             }, DV['prototype']['set'] = function (DW, DX) {
-                return u1(this, DW, DX);
+                return u2(this, DW, DX);
             }, DV['prototype']['remove'] = function (DW) {
-                return u1(this, DW, qF);
+                return u2(this, DW, qG);
             }, DV['prototype']['deleteAll'] = function (DW) {
-                var DX = qX(DW);
+                var DX = qY(DW);
                 return 0x0 === DX['size'] ? this : this['withMutations'](function (DY) {
                     DX['forEach'](function (DZ) {
                         return DY['remove'](DZ);
                     });
                 });
             }, DV['prototype']['clear'] = function () {
-                return 0x0 === this['size'] ? this : this['__ownerID'] ? (this['size'] = 0x0, this['_root'] = null, this['__hash'] = void 0x0, this['__altered'] = !0x0, this) : u0();
+                return 0x0 === this['size'] ? this : this['__ownerID'] ? (this['size'] = 0x0, this['_root'] = null, this['__hash'] = void 0x0, this['__altered'] = !0x0, this) : u1();
             }, DV['prototype']['sort'] = function (DW) {
-                return uM(sP(this, DW));
+                return uN(sQ(this, DW));
             }, DV['prototype']['sortBy'] = function (DW, DX) {
-                return uM(sP(this, DX, DW));
+                return uN(sQ(this, DX, DW));
             }, DV['prototype']['map'] = function (DW, DX) {
                 var DY = this;
                 return this['withMutations'](function (DZ) {
@@ -37260,68 +34961,68 @@ a();
                     });
                 });
             }, DV['prototype']['__iterator'] = function (DW, DX) {
-                return new tW(this, DW, DX);
+                return new tX(this, DW, DX);
             }, DV['prototype']['__iterate'] = function (DW, DX) {
                 var DY = this, DZ = 0x0;
                 return this['_root'] && this['_root']['iterate'](function (E0) {
                     return DZ++, DW(E0[0x1], E0[0x0], DY);
                 }, DX), DZ;
             }, DV['prototype']['__ensureOwner'] = function (DW) {
-                return DW === this['__ownerID'] ? this : DW ? tZ(this['size'], this['_root'], DW, this['__hash']) : 0x0 === this['size'] ? u0() : (this['__ownerID'] = DW, this['__altered'] = !0x1, this);
+                return DW === this['__ownerID'] ? this : DW ? u0(this['size'], this['_root'], DW, this['__hash']) : 0x0 === this['size'] ? u1() : (this['__ownerID'] = DW, this['__altered'] = !0x1, this);
             }, DV;
-        }(qY);
-        tO['isMap'] = rW;
-        var tP = tO['prototype'];
-        tP[rV] = !0x0, tP[qB] = tP['remove'], tP['removeAll'] = tP['deleteAll'], tP['setIn'] = tj, tP['removeIn'] = tP['deleteIn'] = tq, tP['update'] = tz, tP['updateIn'] = tA, tP['merge'] = tP['concat'] = tB, tP['mergeWith'] = tC, tP['mergeDeep'] = tG, tP['mergeDeepWith'] = tH, tP['mergeIn'] = tI, tP['mergeDeepIn'] = tJ, tP['withMutations'] = tK, tP['wasAltered'] = tN, tP['asImmutable'] = tM, tP['@@transducer/init'] = tP['asMutable'] = tL, tP['@@transducer/step'] = function (DU, DV) {
+        }(qZ);
+        tP['isMap'] = rX;
+        var tQ = tP['prototype'];
+        tQ[rW] = !0x0, tQ[qC] = tQ['remove'], tQ['removeAll'] = tQ['deleteAll'], tQ['setIn'] = tq, tQ['removeIn'] = tQ['deleteIn'] = tx, tQ['update'] = tA, tQ['updateIn'] = tB, tQ['merge'] = tQ['concat'] = tC, tQ['mergeWith'] = tD, tQ['mergeDeep'] = tH, tQ['mergeDeepWith'] = tI, tQ['mergeIn'] = tJ, tQ['mergeDeepIn'] = tK, tQ['withMutations'] = tL, tQ['wasAltered'] = tO, tQ['asImmutable'] = tN, tQ['@@transducer/init'] = tQ['asMutable'] = tM, tQ['@@transducer/step'] = function (DU, DV) {
             return DU['set'](DV[0x0], DV[0x1]);
-        }, tP['@@transducer/result'] = function (DU) {
+        }, tQ['@@transducer/result'] = function (DU) {
             return DU['asImmutable']();
         };
-        var tQ = function (DU, DV) {
+        var tR = function (DU, DV) {
             this['ownerID'] = DU, this['entries'] = DV;
         };
-        tQ['prototype']['get'] = function (DU, DV, DW, DX) {
-            for (var DY = this['entries'], DZ = 0x0, E0 = DY['length']; DZ < E0; DZ++) if (rZ(DW, DY[DZ][0x0])) return DY[DZ][0x1];
+        tR['prototype']['get'] = function (DU, DV, DW, DX) {
+            for (var DY = this['entries'], DZ = 0x0, E0 = DY['length']; DZ < E0; DZ++) if (s0(DW, DY[DZ][0x0])) return DY[DZ][0x1];
             return DX;
-        }, tQ['prototype']['update'] = function (DU, DV, DW, DX, DY, DZ, E0) {
-            for (var E1 = DY === qF, E2 = this['entries'], E3 = 0x0, E4 = E2['length']; E3 < E4 && !rZ(DX, E2[E3][0x0]); E3++) ;
+        }, tR['prototype']['update'] = function (DU, DV, DW, DX, DY, DZ, E0) {
+            for (var E1 = DY === qG, E2 = this['entries'], E3 = 0x0, E4 = E2['length']; E3 < E4 && !s0(DX, E2[E3][0x0]); E3++) ;
             var E5 = E3 < E4;
             if (E5 ? E2[E3][0x1] === DY : E1) return this;
-            if (qG(E0), (E1 || !E5) && qG(DZ), !E1 || 0x1 !== E2['length']) {
-                if (!E5 && !E1 && E2['length'] >= u7) return function (E8, E9, Ej, Eq) {
-                    E8 || (E8 = new qH());
-                    for (var Ew = new tU(E8, s3(Ej), [Ej, Eq]), Ex = 0x0; Ex < E9['length']; Ex++) {
+            if (qH(E0), (E1 || !E5) && qH(DZ), !E1 || 0x1 !== E2['length']) {
+                if (!E5 && !E1 && E2['length'] >= u8) return function (E8, E9, Ej, Eq) {
+                    E8 || (E8 = new qI());
+                    for (var Ew = new tV(E8, s4(Ej), [Ej, Eq]), Ex = 0x0; Ex < E9['length']; Ex++) {
                         var Ez = E9[Ex];
                         Ew = Ew['update'](E8, 0x0, void 0x0, Ez[0x0], Ez[0x1]);
                     }
                     return Ew;
                 }(DU, E2, DX, DY);
-                var E6 = DU && DU === this['ownerID'], E7 = E6 ? E2 : sZ(E2);
-                return E5 ? E1 ? E3 === E4 - 0x1 ? E7['pop']() : E7[E3] = E7['pop']() : E7[E3] = [DX, DY] : E7['push']([DX, DY]), E6 ? (this['entries'] = E7, this) : new tQ(DU, E7);
+                var E6 = DU && DU === this['ownerID'], E7 = E6 ? E2 : t0(E2);
+                return E5 ? E1 ? E3 === E4 - 0x1 ? E7['pop']() : E7[E3] = E7['pop']() : E7[E3] = [DX, DY] : E7['push']([DX, DY]), E6 ? (this['entries'] = E7, this) : new tR(DU, E7);
             }
         };
-        var tR = function (DU, DV, DW) {
+        var tS = function (DU, DV, DW) {
             this['ownerID'] = DU, this['bitmap'] = DV, this['nodes'] = DW;
         };
-        tR['prototype']['get'] = function (DU, DV, DW, DX) {
-            void 0x0 === DV && (DV = s3(DW));
-            var DY = 0x1 << ((0x0 === DU ? DV : DV >>> DU) & qE), DZ = this['bitmap'];
-            return DZ & DY ? this['nodes'][u5(DZ & DY - 0x1)]['get'](DU + qC, DV, DW, DX) : DX;
-        }, tR['prototype']['update'] = function (DU, DV, DW, DX, DY, DZ, E0) {
-            void 0x0 === DW && (DW = s3(DX));
-            var E1 = (0x0 === DV ? DW : DW >>> DV) & qE, E2 = 0x1 << E1, E3 = this['bitmap'], E4 = !!(E3 & E2);
-            if (!E4 && DY === qF) return this;
-            var E5 = u5(E3 & E2 - 0x1), E6 = this['nodes'], E7 = E4 ? E6[E5] : void 0x0,
-                E8 = u2(E7, DU, DV + qC, DW, DX, DY, DZ, E0);
+        tS['prototype']['get'] = function (DU, DV, DW, DX) {
+            void 0x0 === DV && (DV = s4(DW));
+            var DY = 0x1 << ((0x0 === DU ? DV : DV >>> DU) & qF), DZ = this['bitmap'];
+            return DZ & DY ? this['nodes'][u6(DZ & DY - 0x1)]['get'](DU + qD, DV, DW, DX) : DX;
+        }, tS['prototype']['update'] = function (DU, DV, DW, DX, DY, DZ, E0) {
+            void 0x0 === DW && (DW = s4(DX));
+            var E1 = (0x0 === DV ? DW : DW >>> DV) & qF, E2 = 0x1 << E1, E3 = this['bitmap'], E4 = !!(E3 & E2);
+            if (!E4 && DY === qG) return this;
+            var E5 = u6(E3 & E2 - 0x1), E6 = this['nodes'], E7 = E4 ? E6[E5] : void 0x0,
+                E8 = u3(E7, DU, DV + qD, DW, DX, DY, DZ, E0);
             if (E8 === E7) return this;
-            if (!E4 && E8 && E6['length'] >= u8) return function (Ew, Ex, Ez, EA, EB) {
-                for (var EC = 0x0, ED = new Array(qD), EE = 0x0; 0x0 !== Ez; EE++, Ez >>>= 0x1) ED[EE] = 0x1 & Ez ? Ex[EC++] : void 0x0;
-                return ED[EA] = EB, new tS(Ew, EC + 0x1, ED);
+            if (!E4 && E8 && E6['length'] >= u9) return function (Ew, Ex, Ez, EA, EB) {
+                for (var EC = 0x0, ED = new Array(qE), EE = 0x0; 0x0 !== Ez; EE++, Ez >>>= 0x1) ED[EE] = 0x1 & Ez ? Ex[EC++] : void 0x0;
+                return ED[EA] = EB, new tT(Ew, EC + 0x1, ED);
             }(DU, E6, E3, E1, E8);
-            if (E4 && !E8 && 0x2 === E6['length'] && u3(E6[0x1 ^ E5])) return E6[0x1 ^ E5];
-            if (E4 && E8 && 0x1 === E6['length'] && u3(E8)) return E8;
+            if (E4 && !E8 && 0x2 === E6['length'] && u4(E6[0x1 ^ E5])) return E6[0x1 ^ E5];
+            if (E4 && E8 && 0x1 === E6['length'] && u4(E8)) return E8;
             var E9 = DU && DU === this['ownerID'], Ej = E4 ? E8 ? E3 : E3 ^ E2 : E3 | E2,
-                Eq = E4 ? E8 ? u6(E6, E5, E8, E9) : function (Ew, Ex, Ez) {
+                Eq = E4 ? E8 ? u7(E6, E5, E8, E9) : function (Ew, Ex, Ez) {
                     var EA = Ew['length'] - 0x1;
                     if (Ez && Ex === EA) return Ew['pop'](), Ew;
                     for (var EB = new Array(EA), EC = 0x0, ED = 0x0; ED < EA; ED++) ED === Ex && (EC = 0x1), EB[ED] = Ew[ED + EC];
@@ -37332,86 +35033,86 @@ a();
                     for (var EC = new Array(EB), ED = 0x0, EE = 0x0; EE < EB; EE++) EE === Ex ? (EC[EE] = Ez, ED = -0x1) : EC[EE] = Ew[EE + ED];
                     return EC;
                 }(E6, E5, E8, E9);
-            return E9 ? (this['bitmap'] = Ej, this['nodes'] = Eq, this) : new tR(DU, Ej, Eq);
+            return E9 ? (this['bitmap'] = Ej, this['nodes'] = Eq, this) : new tS(DU, Ej, Eq);
         };
-        var tS = function (DU, DV, DW) {
+        var tT = function (DU, DV, DW) {
             this['ownerID'] = DU, this['count'] = DV, this['nodes'] = DW;
         };
-        tS['prototype']['get'] = function (DU, DV, DW, DX) {
-            void 0x0 === DV && (DV = s3(DW));
-            var DY = (0x0 === DU ? DV : DV >>> DU) & qE, DZ = this['nodes'][DY];
-            return DZ ? DZ['get'](DU + qC, DV, DW, DX) : DX;
-        }, tS['prototype']['update'] = function (DU, DV, DW, DX, DY, DZ, E0) {
-            void 0x0 === DW && (DW = s3(DX));
-            var E1 = (0x0 === DV ? DW : DW >>> DV) & qE, E2 = DY === qF, E3 = this['nodes'], E4 = E3[E1];
+        tT['prototype']['get'] = function (DU, DV, DW, DX) {
+            void 0x0 === DV && (DV = s4(DW));
+            var DY = (0x0 === DU ? DV : DV >>> DU) & qF, DZ = this['nodes'][DY];
+            return DZ ? DZ['get'](DU + qD, DV, DW, DX) : DX;
+        }, tT['prototype']['update'] = function (DU, DV, DW, DX, DY, DZ, E0) {
+            void 0x0 === DW && (DW = s4(DX));
+            var E1 = (0x0 === DV ? DW : DW >>> DV) & qF, E2 = DY === qG, E3 = this['nodes'], E4 = E3[E1];
             if (E2 && !E4) return this;
-            var E5 = u2(E4, DU, DV + qC, DW, DX, DY, DZ, E0);
+            var E5 = u3(E4, DU, DV + qD, DW, DX, DY, DZ, E0);
             if (E5 === E4) return this;
             var E6 = this['count'];
             if (E4) {
-                if (!E5 && --E6 < u9) return function (E9, Ej, Eq, Ew) {
+                if (!E5 && --E6 < uj) return function (E9, Ej, Eq, Ew) {
                     for (var Ex = 0x0, Ez = 0x0, EA = new Array(Eq), EB = 0x0, EC = 0x1, ED = Ej['length']; EB < ED; EB++, EC <<= 0x1) {
                         var EE = Ej[EB];
                         void 0x0 !== EE && EB !== Ew && (Ex |= EC, EA[Ez++] = EE);
                     }
-                    return new tR(E9, Ex, EA);
+                    return new tS(E9, Ex, EA);
                 }(DU, E3, E6, E1);
             } else E6++;
-            var E7 = DU && DU === this['ownerID'], E8 = u6(E3, E1, E5, E7);
-            return E7 ? (this['count'] = E6, this['nodes'] = E8, this) : new tS(DU, E6, E8);
-        };
-        var tT = function (DU, DV, DW) {
-            this['ownerID'] = DU, this['keyHash'] = DV, this['entries'] = DW;
-        };
-        tT['prototype']['get'] = function (DU, DV, DW, DX) {
-            for (var DY = this['entries'], DZ = 0x0, E0 = DY['length']; DZ < E0; DZ++) if (rZ(DW, DY[DZ][0x0])) return DY[DZ][0x1];
-            return DX;
-        }, tT['prototype']['update'] = function (DU, DV, DW, DX, DY, DZ, E0) {
-            void 0x0 === DW && (DW = s3(DX));
-            var E1 = DY === qF;
-            if (DW !== this['keyHash']) return E1 ? this : (qG(E0), qG(DZ), u4(this, DU, DV, DW, [DX, DY]));
-            for (var E2 = this['entries'], E3 = 0x0, E4 = E2['length']; E3 < E4 && !rZ(DX, E2[E3][0x0]); E3++) ;
-            var E5 = E3 < E4;
-            if (E5 ? E2[E3][0x1] === DY : E1) return this;
-            if (qG(E0), (E1 || !E5) && qG(DZ), E1 && 0x2 === E4) return new tU(DU, this['keyHash'], E2[0x1 ^ E3]);
-            var E6 = DU && DU === this['ownerID'], E7 = E6 ? E2 : sZ(E2);
-            return E5 ? E1 ? E3 === E4 - 0x1 ? E7['pop']() : E7[E3] = E7['pop']() : E7[E3] = [DX, DY] : E7['push']([DX, DY]), E6 ? (this['entries'] = E7, this) : new tT(DU, this['keyHash'], E7);
+            var E7 = DU && DU === this['ownerID'], E8 = u7(E3, E1, E5, E7);
+            return E7 ? (this['count'] = E6, this['nodes'] = E8, this) : new tT(DU, E6, E8);
         };
         var tU = function (DU, DV, DW) {
-            this['ownerID'] = DU, this['keyHash'] = DV, this['entry'] = DW;
+            this['ownerID'] = DU, this['keyHash'] = DV, this['entries'] = DW;
         };
         tU['prototype']['get'] = function (DU, DV, DW, DX) {
-            return rZ(DW, this['entry'][0x0]) ? this['entry'][0x1] : DX;
+            for (var DY = this['entries'], DZ = 0x0, E0 = DY['length']; DZ < E0; DZ++) if (s0(DW, DY[DZ][0x0])) return DY[DZ][0x1];
+            return DX;
         }, tU['prototype']['update'] = function (DU, DV, DW, DX, DY, DZ, E0) {
-            var E1 = DY === qF, E2 = rZ(DX, this['entry'][0x0]);
-            return (E2 ? DY === this['entry'][0x1] : E1) ? this : (qG(E0), E1 ? void qG(DZ) : E2 ? DU && DU === this['ownerID'] ? (this['entry'][0x1] = DY, this) : new tU(DU, this['keyHash'], [DX, DY]) : (qG(DZ), u4(this, DU, DV, s3(DX), [DX, DY])));
-        }, tQ['prototype']['iterate'] = tT['prototype']['iterate'] = function (DU, DV) {
+            void 0x0 === DW && (DW = s4(DX));
+            var E1 = DY === qG;
+            if (DW !== this['keyHash']) return E1 ? this : (qH(E0), qH(DZ), u5(this, DU, DV, DW, [DX, DY]));
+            for (var E2 = this['entries'], E3 = 0x0, E4 = E2['length']; E3 < E4 && !s0(DX, E2[E3][0x0]); E3++) ;
+            var E5 = E3 < E4;
+            if (E5 ? E2[E3][0x1] === DY : E1) return this;
+            if (qH(E0), (E1 || !E5) && qH(DZ), E1 && 0x2 === E4) return new tV(DU, this['keyHash'], E2[0x1 ^ E3]);
+            var E6 = DU && DU === this['ownerID'], E7 = E6 ? E2 : t0(E2);
+            return E5 ? E1 ? E3 === E4 - 0x1 ? E7['pop']() : E7[E3] = E7['pop']() : E7[E3] = [DX, DY] : E7['push']([DX, DY]), E6 ? (this['entries'] = E7, this) : new tU(DU, this['keyHash'], E7);
+        };
+        var tV = function (DU, DV, DW) {
+            this['ownerID'] = DU, this['keyHash'] = DV, this['entry'] = DW;
+        };
+        tV['prototype']['get'] = function (DU, DV, DW, DX) {
+            return s0(DW, this['entry'][0x0]) ? this['entry'][0x1] : DX;
+        }, tV['prototype']['update'] = function (DU, DV, DW, DX, DY, DZ, E0) {
+            var E1 = DY === qG, E2 = s0(DX, this['entry'][0x0]);
+            return (E2 ? DY === this['entry'][0x1] : E1) ? this : (qH(E0), E1 ? void qH(DZ) : E2 ? DU && DU === this['ownerID'] ? (this['entry'][0x1] = DY, this) : new tV(DU, this['keyHash'], [DX, DY]) : (qH(DZ), u5(this, DU, DV, s4(DX), [DX, DY])));
+        }, tR['prototype']['iterate'] = tU['prototype']['iterate'] = function (DU, DV) {
             for (var DW = this['entries'], DX = 0x0, DY = DW['length'] - 0x1; DX <= DY; DX++) if (!0x1 === DU(DW[DV ? DY - DX : DX])) return !0x1;
-        }, tR['prototype']['iterate'] = tS['prototype']['iterate'] = function (DU, DV) {
+        }, tS['prototype']['iterate'] = tT['prototype']['iterate'] = function (DU, DV) {
             for (var DW = this['nodes'], DX = 0x0, DY = DW['length'] - 0x1; DX <= DY; DX++) {
                 var DZ = DW[DV ? DY - DX : DX];
                 if (DZ && !0x1 === DZ['iterate'](DU, DV)) return !0x1;
             }
-        }, tU['prototype']['iterate'] = function (DU, DV) {
+        }, tV['prototype']['iterate'] = function (DU, DV) {
             return DU(this['entry']);
         };
-        var tV, tW = function (DU) {
+        var tW, tX = function (DU) {
             function DV(DW, DX, DY) {
-                this['_type'] = DX, this['_reverse'] = DY, this['_stack'] = DW['_root'] && tY(DW['_root']);
+                this['_type'] = DX, this['_reverse'] = DY, this['_stack'] = DW['_root'] && tZ(DW['_root']);
             }
 
             return DU && (DV['__proto__'] = DU), DV['prototype'] = Object['create'](DU && DU['prototype']), DV['prototype']['constructor'] = DV, DV['prototype']['next'] = function () {
                 for (var DW = this['_type'], DX = this['_stack']; DX;) {
                     var DY = DX['node'], DZ = DX['index']++, E0 = void 0x0;
                     if (DY['entry']) {
-                        if (0x0 === DZ) return tX(DW, DY['entry']);
+                        if (0x0 === DZ) return tY(DW, DY['entry']);
                     } else if (DY['entries']) {
-                        if (DZ <= (E0 = DY['entries']['length'] - 0x1)) return tX(DW, DY['entries'][this['_reverse'] ? E0 - DZ : DZ]);
+                        if (DZ <= (E0 = DY['entries']['length'] - 0x1)) return tY(DW, DY['entries'][this['_reverse'] ? E0 - DZ : DZ]);
                     } else if (DZ <= (E0 = DY['nodes']['length'] - 0x1)) {
                         var E1 = DY['nodes'][this['_reverse'] ? E0 - DZ : DZ];
                         if (E1) {
-                            if (E1['entry']) return tX(DW, E1['entry']);
-                            DX = this['_stack'] = tY(E1, DX);
+                            if (E1['entry']) return tY(DW, E1['entry']);
+                            DX = this['_stack'] = tZ(E1, DX);
                         }
                         continue;
                     }
@@ -37419,76 +35120,76 @@ a();
                 }
                 return {'value': void 0x0, 'done': !0x0};
             }, DV;
-        }(rA);
-
-        function tX(DU, DV) {
-            return rB(DU, DV[0x0], DV[0x1]);
-        }
+        }(rB);
 
         function tY(DU, DV) {
+            return rC(DU, DV[0x0], DV[0x1]);
+        }
+
+        function tZ(DU, DV) {
             return {'node': DU, 'index': 0x0, '__prev': DV};
         }
 
-        function tZ(DU, DV, DW, DX) {
-            var DY = Object['create'](tP);
+        function u0(DU, DV, DW, DX) {
+            var DY = Object['create'](tQ);
             return DY['size'] = DU, DY['_root'] = DV, DY['__ownerID'] = DW, DY['__hash'] = DX, DY['__altered'] = !0x1, DY;
         }
 
-        function u0() {
-            return tV || (tV = tZ(0x0));
+        function u1() {
+            return tW || (tW = u0(0x0));
         }
 
-        function u1(DU, DV, DW) {
+        function u2(DU, DV, DW) {
             var DX, DY;
             if (DU['_root']) {
                 var DZ = {'value': !0x1}, E0 = {'value': !0x1};
-                if (DX = u2(DU['_root'], DU['__ownerID'], 0x0, void 0x0, DV, DW, DZ, E0), !E0['value']) return DU;
-                DY = DU['size'] + (DZ['value'] ? DW === qF ? -0x1 : 0x1 : 0x0);
+                if (DX = u3(DU['_root'], DU['__ownerID'], 0x0, void 0x0, DV, DW, DZ, E0), !E0['value']) return DU;
+                DY = DU['size'] + (DZ['value'] ? DW === qG ? -0x1 : 0x1 : 0x0);
             } else {
-                if (DW === qF) return DU;
-                DY = 0x1, DX = new tQ(DU['__ownerID'], [[DV, DW]]);
+                if (DW === qG) return DU;
+                DY = 0x1, DX = new tR(DU['__ownerID'], [[DV, DW]]);
             }
-            return DU['__ownerID'] ? (DU['size'] = DY, DU['_root'] = DX, DU['__hash'] = void 0x0, DU['__altered'] = !0x0, DU) : DX ? tZ(DY, DX) : u0();
+            return DU['__ownerID'] ? (DU['size'] = DY, DU['_root'] = DX, DU['__hash'] = void 0x0, DU['__altered'] = !0x0, DU) : DX ? u0(DY, DX) : u1();
         }
 
-        function u2(DU, DV, DW, DX, DY, DZ, E0, E1) {
-            return DU ? DU['update'](DV, DW, DX, DY, DZ, E0, E1) : DZ === qF ? DU : (qG(E1), qG(E0), new tU(DV, DX, [DY, DZ]));
+        function u3(DU, DV, DW, DX, DY, DZ, E0, E1) {
+            return DU ? DU['update'](DV, DW, DX, DY, DZ, E0, E1) : DZ === qG ? DU : (qH(E1), qH(E0), new tV(DV, DX, [DY, DZ]));
         }
 
-        function u3(DU) {
-            return DU['constructor'] === tU || DU['constructor'] === tT;
+        function u4(DU) {
+            return DU['constructor'] === tV || DU['constructor'] === tU;
         }
 
-        function u4(DU, DV, DW, DX, DY) {
-            if (DU['keyHash'] === DX) return new tT(DV, DX, [DU['entry'], DY]);
-            var DZ, E0 = (0x0 === DW ? DU['keyHash'] : DU['keyHash'] >>> DW) & qE,
-                E1 = (0x0 === DW ? DX : DX >>> DW) & qE,
-                E2 = E0 === E1 ? [u4(DU, DV, DW + qC, DX, DY)] : (DZ = new tU(DV, DX, DY), E0 < E1 ? [DU, DZ] : [DZ, DU]);
-            return new tR(DV, 0x1 << E0 | 0x1 << E1, E2);
+        function u5(DU, DV, DW, DX, DY) {
+            if (DU['keyHash'] === DX) return new tU(DV, DX, [DU['entry'], DY]);
+            var DZ, E0 = (0x0 === DW ? DU['keyHash'] : DU['keyHash'] >>> DW) & qF,
+                E1 = (0x0 === DW ? DX : DX >>> DW) & qF,
+                E2 = E0 === E1 ? [u5(DU, DV, DW + qD, DX, DY)] : (DZ = new tV(DV, DX, DY), E0 < E1 ? [DU, DZ] : [DZ, DU]);
+            return new tS(DV, 0x1 << E0 | 0x1 << E1, E2);
         }
 
-        function u5(DU) {
+        function u6(DU) {
             return DU = (DU = (0x33333333 & (DU -= DU >> 0x1 & 0x55555555)) + (DU >> 0x2 & 0x33333333)) + (DU >> 0x4) & 0xf0f0f0f, 0x7f & (DU += DU >> 0x8) + (DU >> 0x10);
         }
 
-        function u6(DU, DV, DW, DX) {
-            var DY = DX ? DU : sZ(DU);
+        function u7(DU, DV, DW, DX) {
+            var DY = DX ? DU : t0(DU);
             return DY[DV] = DW, DY;
         }
 
-        var u7 = qD / 0x4, u8 = qD / 0x2, u9 = qD / 0x4, uj = '@@__IMMUTABLE_LIST__@@';
+        var u8 = qE / 0x4, u9 = qE / 0x2, uj = qE / 0x4, uq = '@@__IMMUTABLE_LIST__@@';
 
-        function uq(DU) {
-            return Boolean(DU && DU[uj]);
+        function ux(DU) {
+            return Boolean(DU && DU[uq]);
         }
 
-        var ux = function (DU) {
+        var uz = function (DU) {
             function DV(DW) {
-                var DX = uF();
+                var DX = uG();
                 if (null == DW) return DX;
-                if (uq(DW)) return DW;
+                if (ux(DW)) return DW;
                 var DY = DU(DW), DZ = DY['size'];
-                return 0x0 === DZ ? DX : (t1(DZ), DZ > 0x0 && DZ < qD ? uE(0x0, DZ, qC, null, new uA(DY['toArray']())) : DX['withMutations'](function (E0) {
+                return 0x0 === DZ ? DX : (t2(DZ), DZ > 0x0 && DZ < qE ? uF(0x0, DZ, qD, null, new uB(DY['toArray']())) : DX['withMutations'](function (E0) {
                     E0['setSize'](DZ), DY['forEach'](function (E1, E2) {
                         return E0['set'](E2, E1);
                     });
@@ -37500,46 +35201,46 @@ a();
             }, DV['prototype']['toString'] = function () {
                 return this['__toString']('List\x20[', ']');
             }, DV['prototype']['get'] = function (DW, DX) {
-                if ((DW = qJ(this, DW)) >= 0x0 && DW < this['size']) {
-                    var DY = uI(this, DW += this['_origin']);
-                    return DY && DY['array'][DW & qE];
+                if ((DW = qK(this, DW)) >= 0x0 && DW < this['size']) {
+                    var DY = uJ(this, DW += this['_origin']);
+                    return DY && DY['array'][DW & qF];
                 }
                 return DX;
             }, DV['prototype']['set'] = function (DW, DX) {
                 return function (DY, DZ, E0) {
-                    if ((DZ = qJ(DY, DZ)) != DZ) return DY;
+                    if ((DZ = qK(DY, DZ)) != DZ) return DY;
                     if (DZ >= DY['size'] || DZ < 0x0) return DY['withMutations'](function (E4) {
-                        DZ < 0x0 ? uJ(E4, DZ)['set'](0x0, E0) : uJ(E4, 0x0, DZ + 0x1)['set'](DZ, E0);
+                        DZ < 0x0 ? uK(E4, DZ)['set'](0x0, E0) : uK(E4, 0x0, DZ + 0x1)['set'](DZ, E0);
                     });
                     DZ += DY['_origin'];
                     var E1 = DY['_tail'], E2 = DY['_root'], E3 = {'value': !0x1};
-                    return DZ >= uK(DY['_capacity']) ? E1 = uG(E1, DY['__ownerID'], 0x0, DZ, E0, E3) : E2 = uG(E2, DY['__ownerID'], DY['_level'], DZ, E0, E3), E3['value'] ? DY['__ownerID'] ? (DY['_root'] = E2, DY['_tail'] = E1, DY['__hash'] = void 0x0, DY['__altered'] = !0x0, DY) : uE(DY['_origin'], DY['_capacity'], DY['_level'], E2, E1) : DY;
+                    return DZ >= uL(DY['_capacity']) ? E1 = uH(E1, DY['__ownerID'], 0x0, DZ, E0, E3) : E2 = uH(E2, DY['__ownerID'], DY['_level'], DZ, E0, E3), E3['value'] ? DY['__ownerID'] ? (DY['_root'] = E2, DY['_tail'] = E1, DY['__hash'] = void 0x0, DY['__altered'] = !0x0, DY) : uF(DY['_origin'], DY['_capacity'], DY['_level'], E2, E1) : DY;
                 }(this, DW, DX);
             }, DV['prototype']['remove'] = function (DW) {
                 return this['has'](DW) ? 0x0 === DW ? this['shift']() : DW === this['size'] - 0x1 ? this['pop']() : this['splice'](DW, 0x1) : this;
             }, DV['prototype']['insert'] = function (DW, DX) {
                 return this['splice'](DW, 0x0, DX);
             }, DV['prototype']['clear'] = function () {
-                return 0x0 === this['size'] ? this : this['__ownerID'] ? (this['size'] = this['_origin'] = this['_capacity'] = 0x0, this['_level'] = qC, this['_root'] = this['_tail'] = this['__hash'] = void 0x0, this['__altered'] = !0x0, this) : uF();
+                return 0x0 === this['size'] ? this : this['__ownerID'] ? (this['size'] = this['_origin'] = this['_capacity'] = 0x0, this['_level'] = qD, this['_root'] = this['_tail'] = this['__hash'] = void 0x0, this['__altered'] = !0x0, this) : uG();
             }, DV['prototype']['push'] = function () {
                 var DW = arguments, DX = this['size'];
                 return this['withMutations'](function (DY) {
-                    uJ(DY, 0x0, DX + DW['length']);
+                    uK(DY, 0x0, DX + DW['length']);
                     for (var DZ = 0x0; DZ < DW['length']; DZ++) DY['set'](DX + DZ, DW[DZ]);
                 });
             }, DV['prototype']['pop'] = function () {
-                return uJ(this, 0x0, -0x1);
+                return uK(this, 0x0, -0x1);
             }, DV['prototype']['unshift'] = function () {
                 var DW = arguments;
                 return this['withMutations'](function (DX) {
-                    uJ(DX, -DW['length']);
+                    uK(DX, -DW['length']);
                     for (var DY = 0x0; DY < DW['length']; DY++) DX['set'](DY, DW[DY]);
                 });
             }, DV['prototype']['shift'] = function () {
-                return uJ(this, 0x1);
+                return uK(this, 0x1);
             }, DV['prototype']['concat'] = function () {
                 for (var DW = arguments, DX = [], DY = 0x0; DY < arguments['length']; DY++) {
-                    var DZ = DW[DY], E0 = DU('string' != typeof DZ && rD(DZ) ? DZ : [DZ]);
+                    var DZ = DW[DY], E0 = DU('string' != typeof DZ && rE(DZ) ? DZ : [DZ]);
                     0x0 !== E0['size'] && DX['push'](E0);
                 }
                 return 0x0 === DX['length'] ? this : 0x0 !== this['size'] || this['__ownerID'] || 0x1 !== DX['length'] ? this['withMutations'](function (E1) {
@@ -37550,7 +35251,7 @@ a();
                     });
                 }) : this['constructor'](DX[0x0]);
             }, DV['prototype']['setSize'] = function (DW) {
-                return uJ(this, 0x0, DW);
+                return uK(this, 0x0, DW);
             }, DV['prototype']['map'] = function (DW, DX) {
                 var DY = this;
                 return this['withMutations'](function (DZ) {
@@ -37558,153 +35259,153 @@ a();
                 });
             }, DV['prototype']['slice'] = function (DW, DX) {
                 var DY = this['size'];
-                return qL(DW, DX, DY) ? this : uJ(this, qM(DW, DY), qN(DX, DY));
+                return qM(DW, DX, DY) ? this : uK(this, qN(DW, DY), qO(DX, DY));
             }, DV['prototype']['__iterator'] = function (DW, DX) {
-                var DY = DX ? this['size'] : 0x0, DZ = uD(this, DX);
-                return new rA(function () {
+                var DY = DX ? this['size'] : 0x0, DZ = uE(this, DX);
+                return new rB(function () {
                     var E0 = DZ();
-                    return E0 === uC ? {'value': void 0x0, 'done': !0x0} : rB(DW, DX ? --DY : DY++, E0);
+                    return E0 === uD ? {'value': void 0x0, 'done': !0x0} : rC(DW, DX ? --DY : DY++, E0);
                 });
             }, DV['prototype']['__iterate'] = function (DW, DX) {
-                for (var DY, DZ = DX ? this['size'] : 0x0, E0 = uD(this, DX); (DY = E0()) !== uC && !0x1 !== DW(DY, DX ? --DZ : DZ++, this);) ;
+                for (var DY, DZ = DX ? this['size'] : 0x0, E0 = uE(this, DX); (DY = E0()) !== uD && !0x1 !== DW(DY, DX ? --DZ : DZ++, this);) ;
                 return DZ;
             }, DV['prototype']['__ensureOwner'] = function (DW) {
-                return DW === this['__ownerID'] ? this : DW ? uE(this['_origin'], this['_capacity'], this['_level'], this['_root'], this['_tail'], DW, this['__hash']) : 0x0 === this['size'] ? uF() : (this['__ownerID'] = DW, this['__altered'] = !0x1, this);
+                return DW === this['__ownerID'] ? this : DW ? uF(this['_origin'], this['_capacity'], this['_level'], this['_root'], this['_tail'], DW, this['__hash']) : 0x0 === this['size'] ? uG() : (this['__ownerID'] = DW, this['__altered'] = !0x1, this);
             }, DV;
-        }(qZ);
-        ux['isList'] = uq;
-        var uz = ux['prototype'];
-        uz[uj] = !0x0, uz[qB] = uz['remove'], uz['merge'] = uz['concat'], uz['setIn'] = tj, uz['deleteIn'] = uz['removeIn'] = tq, uz['update'] = tz, uz['updateIn'] = tA, uz['mergeIn'] = tI, uz['mergeDeepIn'] = tJ, uz['withMutations'] = tK, uz['wasAltered'] = tN, uz['asImmutable'] = tM, uz['@@transducer/init'] = uz['asMutable'] = tL, uz['@@transducer/step'] = function (DU, DV) {
+        }(r0);
+        uz['isList'] = ux;
+        var uA = uz['prototype'];
+        uA[uq] = !0x0, uA[qC] = uA['remove'], uA['merge'] = uA['concat'], uA['setIn'] = tq, uA['deleteIn'] = uA['removeIn'] = tx, uA['update'] = tA, uA['updateIn'] = tB, uA['mergeIn'] = tJ, uA['mergeDeepIn'] = tK, uA['withMutations'] = tL, uA['wasAltered'] = tO, uA['asImmutable'] = tN, uA['@@transducer/init'] = uA['asMutable'] = tM, uA['@@transducer/step'] = function (DU, DV) {
             return DU['push'](DV);
-        }, uz['@@transducer/result'] = function (DU) {
+        }, uA['@@transducer/result'] = function (DU) {
             return DU['asImmutable']();
         };
-        var uA = function (DU, DV) {
+        var uB = function (DU, DV) {
             this['array'] = DU, this['ownerID'] = DV;
         };
-        uA['prototype']['removeBefore'] = function (DU, DV, DW) {
+        uB['prototype']['removeBefore'] = function (DU, DV, DW) {
             if (DW === DV ? 0x1 << DV : 0x0 === this['array']['length']) return this;
-            var DX = DW >>> DV & qE;
-            if (DX >= this['array']['length']) return new uA([], DU);
+            var DX = DW >>> DV & qF;
+            if (DX >= this['array']['length']) return new uB([], DU);
             var DY, DZ = 0x0 === DX;
             if (DV > 0x0) {
                 var E0 = this['array'][DX];
-                if ((DY = E0 && E0['removeBefore'](DU, DV - qC, DW)) === E0 && DZ) return this;
+                if ((DY = E0 && E0['removeBefore'](DU, DV - qD, DW)) === E0 && DZ) return this;
             }
             if (DZ && !DY) return this;
-            var E1 = uH(this, DU);
+            var E1 = uI(this, DU);
             if (!DZ) for (var E2 = 0x0; E2 < DX; E2++) E1['array'][E2] = void 0x0;
             return DY && (E1['array'][DX] = DY), E1;
-        }, uA['prototype']['removeAfter'] = function (DU, DV, DW) {
+        }, uB['prototype']['removeAfter'] = function (DU, DV, DW) {
             if (DW === (DV ? 0x1 << DV : 0x0) || 0x0 === this['array']['length']) return this;
-            var DX, DY = DW - 0x1 >>> DV & qE;
+            var DX, DY = DW - 0x1 >>> DV & qF;
             if (DY >= this['array']['length']) return this;
             if (DV > 0x0) {
                 var DZ = this['array'][DY];
-                if ((DX = DZ && DZ['removeAfter'](DU, DV - qC, DW)) === DZ && DY === this['array']['length'] - 0x1) return this;
+                if ((DX = DZ && DZ['removeAfter'](DU, DV - qD, DW)) === DZ && DY === this['array']['length'] - 0x1) return this;
             }
-            var E0 = uH(this, DU);
+            var E0 = uI(this, DU);
             return E0['array']['splice'](DY + 0x1), DX && (E0['array'][DY] = DX), E0;
         };
-        var uB, uC = {};
+        var uC, uD = {};
 
-        function uD(DU, DV) {
-            var DW = DU['_origin'], DX = DU['_capacity'], DY = uK(DX), DZ = DU['_tail'];
+        function uE(DU, DV) {
+            var DW = DU['_origin'], DX = DU['_capacity'], DY = uL(DX), DZ = DU['_tail'];
             return function E0(E1, E2, E3) {
                 return 0x0 === E2 ? function (E4, E5) {
                     var E6 = E5 === DY ? DZ && DZ['array'] : E4 && E4['array'], E7 = E5 > DW ? 0x0 : DW - E5,
                         E8 = DX - E5;
-                    return E8 > qD && (E8 = qD), function () {
-                        if (E7 === E8) return uC;
+                    return E8 > qE && (E8 = qE), function () {
+                        if (E7 === E8) return uD;
                         var E9 = DV ? --E8 : E7++;
                         return E6 && E6[E9];
                     };
                 }(E1, E3) : function (E4, E5, E6) {
                     var E7, E8 = E4 && E4['array'], E9 = E6 > DW ? 0x0 : DW - E6 >> E5, Ej = 0x1 + (DX - E6 >> E5);
-                    return Ej > qD && (Ej = qD), function () {
+                    return Ej > qE && (Ej = qE), function () {
                         for (; ;) {
                             if (E7) {
                                 var Eq = E7();
-                                if (Eq !== uC) return Eq;
+                                if (Eq !== uD) return Eq;
                                 E7 = null;
                             }
-                            if (E9 === Ej) return uC;
+                            if (E9 === Ej) return uD;
                             var Ew = DV ? --Ej : E9++;
-                            E7 = E0(E8 && E8[Ew], E5 - qC, E6 + (Ew << E5));
+                            E7 = E0(E8 && E8[Ew], E5 - qD, E6 + (Ew << E5));
                         }
                     };
                 }(E1, E2, E3);
             }(DU['_root'], DU['_level'], 0x0);
         }
 
-        function uE(DU, DV, DW, DX, DY, DZ, E0) {
-            var E1 = Object['create'](uz);
+        function uF(DU, DV, DW, DX, DY, DZ, E0) {
+            var E1 = Object['create'](uA);
             return E1['size'] = DV - DU, E1['_origin'] = DU, E1['_capacity'] = DV, E1['_level'] = DW, E1['_root'] = DX, E1['_tail'] = DY, E1['__ownerID'] = DZ, E1['__hash'] = E0, E1['__altered'] = !0x1, E1;
         }
 
-        function uF() {
-            return uB || (uB = uE(0x0, 0x0, qC));
+        function uG() {
+            return uC || (uC = uF(0x0, 0x0, qD));
         }
 
-        function uG(DU, DV, DW, DX, DY, DZ) {
-            var E0, E1 = DX >>> DW & qE, E2 = DU && E1 < DU['array']['length'];
+        function uH(DU, DV, DW, DX, DY, DZ) {
+            var E0, E1 = DX >>> DW & qF, E2 = DU && E1 < DU['array']['length'];
             if (!E2 && void 0x0 === DY) return DU;
             if (DW > 0x0) {
-                var E3 = DU && DU['array'][E1], E4 = uG(E3, DV, DW - qC, DX, DY, DZ);
-                return E4 === E3 ? DU : ((E0 = uH(DU, DV))['array'][E1] = E4, E0);
+                var E3 = DU && DU['array'][E1], E4 = uH(E3, DV, DW - qD, DX, DY, DZ);
+                return E4 === E3 ? DU : ((E0 = uI(DU, DV))['array'][E1] = E4, E0);
             }
-            return E2 && DU['array'][E1] === DY ? DU : (DZ && qG(DZ), E0 = uH(DU, DV), void 0x0 === DY && E1 === E0['array']['length'] - 0x1 ? E0['array']['pop']() : E0['array'][E1] = DY, E0);
-        }
-
-        function uH(DU, DV) {
-            return DV && DU && DV === DU['ownerID'] ? DU : new uA(DU ? DU['array']['slice']() : [], DV);
+            return E2 && DU['array'][E1] === DY ? DU : (DZ && qH(DZ), E0 = uI(DU, DV), void 0x0 === DY && E1 === E0['array']['length'] - 0x1 ? E0['array']['pop']() : E0['array'][E1] = DY, E0);
         }
 
         function uI(DU, DV) {
-            if (DV >= uK(DU['_capacity'])) return DU['_tail'];
-            if (DV < 0x1 << DU['_level'] + qC) {
-                for (var DW = DU['_root'], DX = DU['_level']; DW && DX > 0x0;) DW = DW['array'][DV >>> DX & qE], DX -= qC;
+            return DV && DU && DV === DU['ownerID'] ? DU : new uB(DU ? DU['array']['slice']() : [], DV);
+        }
+
+        function uJ(DU, DV) {
+            if (DV >= uL(DU['_capacity'])) return DU['_tail'];
+            if (DV < 0x1 << DU['_level'] + qD) {
+                for (var DW = DU['_root'], DX = DU['_level']; DW && DX > 0x0;) DW = DW['array'][DV >>> DX & qF], DX -= qD;
                 return DW;
             }
         }
 
-        function uJ(DU, DV, DW) {
+        function uK(DU, DV, DW) {
             void 0x0 !== DV && (DV |= 0x0), void 0x0 !== DW && (DW |= 0x0);
-            var DX = DU['__ownerID'] || new qH(), DY = DU['_origin'], DZ = DU['_capacity'], E0 = DY + DV,
+            var DX = DU['__ownerID'] || new qI(), DY = DU['_origin'], DZ = DU['_capacity'], E0 = DY + DV,
                 E1 = void 0x0 === DW ? DZ : DW < 0x0 ? DZ + DW : DY + DW;
             if (E0 === DY && E1 === DZ) return DU;
             if (E0 >= E1) return DU['clear']();
-            for (var E2 = DU['_level'], E3 = DU['_root'], E4 = 0x0; E0 + E4 < 0x0;) E3 = new uA(E3 && E3['array']['length'] ? [void 0x0, E3] : [], DX), E4 += 0x1 << (E2 += qC);
+            for (var E2 = DU['_level'], E3 = DU['_root'], E4 = 0x0; E0 + E4 < 0x0;) E3 = new uB(E3 && E3['array']['length'] ? [void 0x0, E3] : [], DX), E4 += 0x1 << (E2 += qD);
             E4 && (E0 += E4, DY += E4, E1 += E4, DZ += E4);
-            for (var E5 = uK(DZ), E6 = uK(E1); E6 >= 0x1 << E2 + qC;) E3 = new uA(E3 && E3['array']['length'] ? [E3] : [], DX), E2 += qC;
-            var E7 = DU['_tail'], E8 = E6 < E5 ? uI(DU, E1 - 0x1) : E6 > E5 ? new uA([], DX) : E7;
+            for (var E5 = uL(DZ), E6 = uL(E1); E6 >= 0x1 << E2 + qD;) E3 = new uB(E3 && E3['array']['length'] ? [E3] : [], DX), E2 += qD;
+            var E7 = DU['_tail'], E8 = E6 < E5 ? uJ(DU, E1 - 0x1) : E6 > E5 ? new uB([], DX) : E7;
             if (E7 && E6 > E5 && E0 < DZ && E7['array']['length']) {
-                for (var E9 = E3 = uH(E3, DX), Ej = E2; Ej > qC; Ej -= qC) {
-                    var Eq = E5 >>> Ej & qE;
-                    E9 = E9['array'][Eq] = uH(E9['array'][Eq], DX);
+                for (var E9 = E3 = uI(E3, DX), Ej = E2; Ej > qD; Ej -= qD) {
+                    var Eq = E5 >>> Ej & qF;
+                    E9 = E9['array'][Eq] = uI(E9['array'][Eq], DX);
                 }
-                E9['array'][E5 >>> qC & qE] = E7;
+                E9['array'][E5 >>> qD & qF] = E7;
             }
-            if (E1 < DZ && (E8 = E8 && E8['removeAfter'](DX, 0x0, E1)), E0 >= E6) E0 -= E6, E1 -= E6, E2 = qC, E3 = null, E8 = E8 && E8['removeBefore'](DX, 0x0, E0); else if (E0 > DY || E6 < E5) {
+            if (E1 < DZ && (E8 = E8 && E8['removeAfter'](DX, 0x0, E1)), E0 >= E6) E0 -= E6, E1 -= E6, E2 = qD, E3 = null, E8 = E8 && E8['removeBefore'](DX, 0x0, E0); else if (E0 > DY || E6 < E5) {
                 for (E4 = 0x0; E3;) {
-                    var Ew = E0 >>> E2 & qE;
-                    if (Ew !== E6 >>> E2 & qE) break;
-                    Ew && (E4 += (0x1 << E2) * Ew), E2 -= qC, E3 = E3['array'][Ew];
+                    var Ew = E0 >>> E2 & qF;
+                    if (Ew !== E6 >>> E2 & qF) break;
+                    Ew && (E4 += (0x1 << E2) * Ew), E2 -= qD, E3 = E3['array'][Ew];
                 }
                 E3 && E0 > DY && (E3 = E3['removeBefore'](DX, E2, E0 - E4)), E3 && E6 < E5 && (E3 = E3['removeAfter'](DX, E2, E6 - E4)), E4 && (E0 -= E4, E1 -= E4);
             }
-            return DU['__ownerID'] ? (DU['size'] = E1 - E0, DU['_origin'] = E0, DU['_capacity'] = E1, DU['_level'] = E2, DU['_root'] = E3, DU['_tail'] = E8, DU['__hash'] = void 0x0, DU['__altered'] = !0x0, DU) : uE(E0, E1, E2, E3, E8);
+            return DU['__ownerID'] ? (DU['size'] = E1 - E0, DU['_origin'] = E0, DU['_capacity'] = E1, DU['_level'] = E2, DU['_root'] = E3, DU['_tail'] = E8, DU['__hash'] = void 0x0, DU['__altered'] = !0x0, DU) : uF(E0, E1, E2, E3, E8);
         }
 
-        function uK(DU) {
-            return DU < qD ? 0x0 : DU - 0x1 >>> qC << qC;
+        function uL(DU) {
+            return DU < qE ? 0x0 : DU - 0x1 >>> qD << qD;
         }
 
-        var uL, uM = function (DU) {
+        var uM, uN = function (DU) {
             function DV(DW) {
-                return null == DW ? uO() : rX(DW) ? DW : uO()['withMutations'](function (DX) {
-                    var DY = qY(DW);
-                    t1(DY['size']), DY['forEach'](function (DZ, E0) {
+                return null == DW ? uP() : rY(DW) ? DW : uP()['withMutations'](function (DX) {
+                    var DY = qZ(DW);
+                    t2(DY['size']), DY['forEach'](function (DZ, E0) {
                         return DX['set'](E0, DZ);
                     });
                 });
@@ -37718,11 +35419,11 @@ a();
                 var DY = this['_map']['get'](DW);
                 return void 0x0 !== DY ? this['_list']['get'](DY)[0x1] : DX;
             }, DV['prototype']['clear'] = function () {
-                return 0x0 === this['size'] ? this : this['__ownerID'] ? (this['size'] = 0x0, this['_map']['clear'](), this['_list']['clear'](), this['__altered'] = !0x0, this) : uO();
+                return 0x0 === this['size'] ? this : this['__ownerID'] ? (this['size'] = 0x0, this['_map']['clear'](), this['_list']['clear'](), this['__altered'] = !0x0, this) : uP();
             }, DV['prototype']['set'] = function (DW, DX) {
-                return uP(this, DW, DX);
+                return uQ(this, DW, DX);
             }, DV['prototype']['remove'] = function (DW) {
-                return uP(this, DW, qF);
+                return uQ(this, DW, qG);
             }, DV['prototype']['__iterate'] = function (DW, DX) {
                 var DY = this;
                 return this['_list']['__iterate'](function (DZ) {
@@ -37733,24 +35434,24 @@ a();
             }, DV['prototype']['__ensureOwner'] = function (DW) {
                 if (DW === this['__ownerID']) return this;
                 var DX = this['_map']['__ensureOwner'](DW), DY = this['_list']['__ensureOwner'](DW);
-                return DW ? uN(DX, DY, DW, this['__hash']) : 0x0 === this['size'] ? uO() : (this['__ownerID'] = DW, this['__altered'] = !0x1, this['_map'] = DX, this['_list'] = DY, this);
+                return DW ? uO(DX, DY, DW, this['__hash']) : 0x0 === this['size'] ? uP() : (this['__ownerID'] = DW, this['__altered'] = !0x1, this['_map'] = DX, this['_list'] = DY, this);
             }, DV;
-        }(tO);
+        }(tP);
 
-        function uN(DU, DV, DW, DX) {
-            var DY = Object['create'](uM['prototype']);
+        function uO(DU, DV, DW, DX) {
+            var DY = Object['create'](uN['prototype']);
             return DY['size'] = DU ? DU['size'] : 0x0, DY['_map'] = DU, DY['_list'] = DV, DY['__ownerID'] = DW, DY['__hash'] = DX, DY['__altered'] = !0x1, DY;
         }
 
-        function uO() {
-            return uL || (uL = uN(u0(), uF()));
+        function uP() {
+            return uM || (uM = uO(u1(), uG()));
         }
 
-        function uP(DU, DV, DW) {
+        function uQ(DU, DV, DW) {
             var DX, DY, DZ = DU['_map'], E0 = DU['_list'], E1 = DZ['get'](DV), E2 = void 0x0 !== E1;
-            if (DW === qF) {
+            if (DW === qG) {
                 if (!E2) return DU;
-                E0['size'] >= qD && E0['size'] >= 0x2 * DZ['size'] ? (DX = (DY = E0['filter'](function (E3, E4) {
+                E0['size'] >= qE && E0['size'] >= 0x2 * DZ['size'] ? (DX = (DY = E0['filter'](function (E3, E4) {
                     return void 0x0 !== E3 && E1 !== E4;
                 }))['toKeyedSeq']()['map'](function (E3) {
                     return E3[0x0];
@@ -37759,19 +35460,19 @@ a();
                 if (DW === E0['get'](E1)[0x1]) return DU;
                 DX = DZ, DY = E0['set'](E1, [DV, DW]);
             } else DX = DZ['set'](DV, E0['size']), DY = E0['set'](E0['size'], [DV, DW]);
-            return DU['__ownerID'] ? (DU['size'] = DX['size'], DU['_map'] = DX, DU['_list'] = DY, DU['__hash'] = void 0x0, DU['__altered'] = !0x0, DU) : uN(DX, DY);
+            return DU['__ownerID'] ? (DU['size'] = DX['size'], DU['_map'] = DX, DU['_list'] = DY, DU['__hash'] = void 0x0, DU['__altered'] = !0x0, DU) : uO(DX, DY);
         }
 
-        uM['isOrderedMap'] = rX, uM['prototype'][r6] = !0x0, uM['prototype'][qB] = uM['prototype']['remove'];
-        var uQ = '@@__IMMUTABLE_STACK__@@';
+        uN['isOrderedMap'] = rY, uN['prototype'][r7] = !0x0, uN['prototype'][qC] = uN['prototype']['remove'];
+        var uR = '@@__IMMUTABLE_STACK__@@';
 
-        function uR(DU) {
-            return Boolean(DU && DU[uQ]);
+        function uS(DU) {
+            return Boolean(DU && DU[uR]);
         }
 
-        var uS = function (DU) {
+        var uT = function (DU) {
             function DV(DW) {
-                return null == DW ? uW() : uR(DW) ? DW : uW()['pushAll'](DW);
+                return null == DW ? uX() : uS(DW) ? DW : uX()['pushAll'](DW);
             }
 
             return DU && (DV['__proto__'] = DU), DV['prototype'] = Object['create'](DU && DU['prototype']), DV['prototype']['constructor'] = DV, DV['of'] = function () {
@@ -37780,7 +35481,7 @@ a();
                 return this['__toString']('Stack\x20[', ']');
             }, DV['prototype']['get'] = function (DW, DX) {
                 var DY = this['_head'];
-                for (DW = qJ(this, DW); DY && DW--;) DY = DY['next'];
+                for (DW = qK(this, DW); DY && DW--;) DY = DY['next'];
                 return DY ? DY['value'] : DX;
             }, DV['prototype']['peek'] = function () {
                 return this['_head'] && this['_head']['value'];
@@ -37791,83 +35492,83 @@ a();
                     'value': DW[DZ],
                     'next': DY
                 };
-                return this['__ownerID'] ? (this['size'] = DX, this['_head'] = DY, this['__hash'] = void 0x0, this['__altered'] = !0x0, this) : uV(DX, DY);
+                return this['__ownerID'] ? (this['size'] = DX, this['_head'] = DY, this['__hash'] = void 0x0, this['__altered'] = !0x0, this) : uW(DX, DY);
             }, DV['prototype']['pushAll'] = function (DW) {
                 if (0x0 === (DW = DU(DW))['size']) return this;
-                if (0x0 === this['size'] && uR(DW)) return DW;
-                t1(DW['size']);
+                if (0x0 === this['size'] && uS(DW)) return DW;
+                t2(DW['size']);
                 var DX = this['size'], DY = this['_head'];
                 return DW['__iterate'](function (DZ) {
                     DX++, DY = {'value': DZ, 'next': DY};
-                }, !0x0), this['__ownerID'] ? (this['size'] = DX, this['_head'] = DY, this['__hash'] = void 0x0, this['__altered'] = !0x0, this) : uV(DX, DY);
+                }, !0x0), this['__ownerID'] ? (this['size'] = DX, this['_head'] = DY, this['__hash'] = void 0x0, this['__altered'] = !0x0, this) : uW(DX, DY);
             }, DV['prototype']['pop'] = function () {
                 return this['slice'](0x1);
             }, DV['prototype']['clear'] = function () {
-                return 0x0 === this['size'] ? this : this['__ownerID'] ? (this['size'] = 0x0, this['_head'] = void 0x0, this['__hash'] = void 0x0, this['__altered'] = !0x0, this) : uW();
+                return 0x0 === this['size'] ? this : this['__ownerID'] ? (this['size'] = 0x0, this['_head'] = void 0x0, this['__hash'] = void 0x0, this['__altered'] = !0x0, this) : uX();
             }, DV['prototype']['slice'] = function (DW, DX) {
-                if (qL(DW, DX, this['size'])) return this;
-                var DY = qM(DW, this['size']);
-                if (qN(DX, this['size']) !== this['size']) return DU['prototype']['slice']['call'](this, DW, DX);
+                if (qM(DW, DX, this['size'])) return this;
+                var DY = qN(DW, this['size']);
+                if (qO(DX, this['size']) !== this['size']) return DU['prototype']['slice']['call'](this, DW, DX);
                 for (var DZ = this['size'] - DY, E0 = this['_head']; DY--;) E0 = E0['next'];
-                return this['__ownerID'] ? (this['size'] = DZ, this['_head'] = E0, this['__hash'] = void 0x0, this['__altered'] = !0x0, this) : uV(DZ, E0);
+                return this['__ownerID'] ? (this['size'] = DZ, this['_head'] = E0, this['__hash'] = void 0x0, this['__altered'] = !0x0, this) : uW(DZ, E0);
             }, DV['prototype']['__ensureOwner'] = function (DW) {
-                return DW === this['__ownerID'] ? this : DW ? uV(this['size'], this['_head'], DW, this['__hash']) : 0x0 === this['size'] ? uW() : (this['__ownerID'] = DW, this['__altered'] = !0x1, this);
+                return DW === this['__ownerID'] ? this : DW ? uW(this['size'], this['_head'], DW, this['__hash']) : 0x0 === this['size'] ? uX() : (this['__ownerID'] = DW, this['__altered'] = !0x1, this);
             }, DV['prototype']['__iterate'] = function (DW, DX) {
                 var DY = this;
-                if (DX) return new rN(this['toArray']())['__iterate'](function (E1, E2) {
+                if (DX) return new rO(this['toArray']())['__iterate'](function (E1, E2) {
                     return DW(E1, E2, DY);
                 }, DX);
                 for (var DZ = 0x0, E0 = this['_head']; E0 && !0x1 !== DW(E0['value'], DZ++, this);) E0 = E0['next'];
                 return DZ;
             }, DV['prototype']['__iterator'] = function (DW, DX) {
-                if (DX) return new rN(this['toArray']())['__iterator'](DW, DX);
+                if (DX) return new rO(this['toArray']())['__iterator'](DW, DX);
                 var DY = 0x0, DZ = this['_head'];
-                return new rA(function () {
+                return new rB(function () {
                     if (DZ) {
                         var E0 = DZ['value'];
-                        return DZ = DZ['next'], rB(DW, DY++, E0);
+                        return DZ = DZ['next'], rC(DW, DY++, E0);
                     }
                     return {'value': void 0x0, 'done': !0x0};
                 });
             }, DV;
-        }(qZ);
-        uS['isStack'] = uR;
-        var uT, uU = uS['prototype'];
+        }(r0);
+        uT['isStack'] = uS;
+        var uU, uV = uT['prototype'];
 
-        function uV(DU, DV, DW, DX) {
-            var DY = Object['create'](uU);
+        function uW(DU, DV, DW, DX) {
+            var DY = Object['create'](uV);
             return DY['size'] = DU, DY['_head'] = DV, DY['__ownerID'] = DW, DY['__hash'] = DX, DY['__altered'] = !0x1, DY;
         }
 
-        function uW() {
-            return uT || (uT = uV(0x0));
+        function uX() {
+            return uU || (uU = uW(0x0));
         }
 
-        uU[uQ] = !0x0, uU['shift'] = uU['pop'], uU['unshift'] = uU['push'], uU['unshiftAll'] = uU['pushAll'], uU['withMutations'] = tK, uU['wasAltered'] = tN, uU['asImmutable'] = tM, uU['@@transducer/init'] = uU['asMutable'] = tL, uU['@@transducer/step'] = function (DU, DV) {
+        uV[uR] = !0x0, uV['shift'] = uV['pop'], uV['unshift'] = uV['push'], uV['unshiftAll'] = uV['pushAll'], uV['withMutations'] = tL, uV['wasAltered'] = tO, uV['asImmutable'] = tN, uV['@@transducer/init'] = uV['asMutable'] = tM, uV['@@transducer/step'] = function (DU, DV) {
             return DU['unshift'](DV);
-        }, uU['@@transducer/result'] = function (DU) {
+        }, uV['@@transducer/result'] = function (DU) {
             return DU['asImmutable']();
         };
-        var uX = '@@__IMMUTABLE_SET__@@';
-
-        function uY(DU) {
-            return Boolean(DU && DU[uX]);
-        }
+        var uY = '@@__IMMUTABLE_SET__@@';
 
         function uZ(DU) {
-            return uY(DU) && r7(DU);
+            return Boolean(DU && DU[uY]);
         }
 
-        function v0(DU, DV) {
+        function v0(DU) {
+            return uZ(DU) && r8(DU);
+        }
+
+        function v1(DU, DV) {
             if (DU === DV) return !0x0;
-            if (!qR(DV) || void 0x0 !== DU['size'] && void 0x0 !== DV['size'] && DU['size'] !== DV['size'] || void 0x0 !== DU['__hash'] && void 0x0 !== DV['__hash'] && DU['__hash'] !== DV['__hash'] || qT(DU) !== qT(DV) || qV(DU) !== qV(DV) || r7(DU) !== r7(DV)) return !0x1;
+            if (!qS(DV) || void 0x0 !== DU['size'] && void 0x0 !== DV['size'] && DU['size'] !== DV['size'] || void 0x0 !== DU['__hash'] && void 0x0 !== DV['__hash'] && DU['__hash'] !== DV['__hash'] || qU(DU) !== qU(DV) || qW(DU) !== qW(DV) || r8(DU) !== r8(DV)) return !0x1;
             if (0x0 === DU['size'] && 0x0 === DV['size']) return !0x0;
-            var DW = !qW(DU);
-            if (r7(DU)) {
+            var DW = !qX(DU);
+            if (r8(DU)) {
                 var DX = DU['entries']();
                 return DV['every'](function (E2, E3) {
                     var E4 = DX['next']()['value'];
-                    return E4 && rZ(E4[0x1], E2) && (DW || rZ(E4[0x0], E3));
+                    return E4 && s0(E4[0x1], E2) && (DW || s0(E4[0x0], E3));
                 }) && DX['next']()['done'];
             }
             var DY = !0x1;
@@ -37877,41 +35578,41 @@ a();
                 DU = DV, DV = DZ;
             }
             var E0 = !0x0, E1 = DV['__iterate'](function (E2, E3) {
-                if (DW ? !DU['has'](E2) : DY ? !rZ(E2, DU['get'](E3, qF)) : !rZ(DU['get'](E3, qF), E2)) return E0 = !0x1, !0x1;
+                if (DW ? !DU['has'](E2) : DY ? !s0(E2, DU['get'](E3, qG)) : !s0(DU['get'](E3, qG), E2)) return E0 = !0x1, !0x1;
             });
             return E0 && DU['size'] === E1;
         }
 
-        function v1(DU, DV) {
+        function v2(DU, DV) {
             var DW = function (DX) {
                 DU['prototype'][DX] = DV[DX];
             };
             return Object['keys'](DV)['forEach'](DW), Object['getOwnPropertySymbols'] && Object['getOwnPropertySymbols'](DV)['forEach'](DW), DU;
         }
 
-        function v2(DU) {
+        function v3(DU) {
             if (!DU || 'object' != typeof DU) return DU;
-            if (!qR(DU)) {
-                if (!t4(DU)) return DU;
-                DU = rJ(DU);
+            if (!qS(DU)) {
+                if (!t5(DU)) return DU;
+                DU = rK(DU);
             }
-            if (qT(DU)) {
+            if (qU(DU)) {
                 var DV = {};
                 return DU['__iterate'](function (DX, DY) {
-                    DV[DY] = v2(DX);
+                    DV[DY] = v3(DX);
                 }), DV;
             }
             var DW = [];
             return DU['__iterate'](function (DX) {
-                DW['push'](v2(DX));
+                DW['push'](v3(DX));
             }), DW;
         }
 
-        var v3 = function (DU) {
+        var v4 = function (DU) {
             function DV(DW) {
-                return null == DW ? v8() : uY(DW) && !r7(DW) ? DW : v8()['withMutations'](function (DX) {
+                return null == DW ? v9() : uZ(DW) && !r8(DW) ? DW : v9()['withMutations'](function (DX) {
                     var DY = DU(DW);
-                    t1(DY['size']), DY['forEach'](function (DZ) {
+                    t2(DY['size']), DY['forEach'](function (DZ) {
                         return DX['add'](DZ);
                     });
                 });
@@ -37920,23 +35621,23 @@ a();
             return DU && (DV['__proto__'] = DU), DV['prototype'] = Object['create'](DU && DU['prototype']), DV['prototype']['constructor'] = DV, DV['of'] = function () {
                 return this(arguments);
             }, DV['fromKeys'] = function (DW) {
-                return this(qY(DW)['keySeq']());
+                return this(qZ(DW)['keySeq']());
             }, DV['intersect'] = function (DW) {
-                return (DW = qX(DW)['toArray']())['length'] ? v5['intersect']['apply'](DV(DW['pop']()), DW) : v8();
+                return (DW = qY(DW)['toArray']())['length'] ? v6['intersect']['apply'](DV(DW['pop']()), DW) : v9();
             }, DV['union'] = function (DW) {
-                return (DW = qX(DW)['toArray']())['length'] ? v5['union']['apply'](DV(DW['pop']()), DW) : v8();
+                return (DW = qY(DW)['toArray']())['length'] ? v6['union']['apply'](DV(DW['pop']()), DW) : v9();
             }, DV['prototype']['toString'] = function () {
                 return this['__toString']('Set\x20{', '}');
             }, DV['prototype']['has'] = function (DW) {
                 return this['_map']['has'](DW);
             }, DV['prototype']['add'] = function (DW) {
-                return v6(this, this['_map']['set'](DW, DW));
+                return v7(this, this['_map']['set'](DW, DW));
             }, DV['prototype']['remove'] = function (DW) {
-                return v6(this, this['_map']['remove'](DW));
+                return v7(this, this['_map']['remove'](DW));
             }, DV['prototype']['clear'] = function () {
-                return v6(this, this['_map']['clear']());
+                return v7(this, this['_map']['clear']());
             }, DV['prototype']['map'] = function (DW, DX) {
-                var DY = this, DZ = !0x1, E0 = v6(this, this['_map']['mapEntries'](function (E1) {
+                var DY = this, DZ = !0x1, E0 = v7(this, this['_map']['mapEntries'](function (E1) {
                     var E2 = E1[0x1], E3 = DW['call'](DX, E2, E2, DY);
                     return E3 !== E2 && (DZ = !0x0), [E3, E3];
                 }, DX));
@@ -37983,9 +35684,9 @@ a();
                     });
                 });
             }, DV['prototype']['sort'] = function (DW) {
-                return vM(sP(this, DW));
+                return vN(sQ(this, DW));
             }, DV['prototype']['sortBy'] = function (DW, DX) {
-                return vM(sP(this, DX, DW));
+                return vN(sQ(this, DX, DW));
             }, DV['prototype']['wasAltered'] = function () {
                 return this['_map']['wasAltered']();
             }, DV['prototype']['__iterate'] = function (DW, DX) {
@@ -38000,46 +35701,46 @@ a();
                 var DX = this['_map']['__ensureOwner'](DW);
                 return DW ? this['__make'](DX, DW) : 0x0 === this['size'] ? this['__empty']() : (this['__ownerID'] = DW, this['_map'] = DX, this);
             }, DV;
-        }(r0);
-        v3['isSet'] = uY;
-        var v4, v5 = v3['prototype'];
+        }(r1);
+        v4['isSet'] = uZ;
+        var v5, v6 = v4['prototype'];
 
-        function v6(DU, DV) {
+        function v7(DU, DV) {
             return DU['__ownerID'] ? (DU['size'] = DV['size'], DU['_map'] = DV, DU) : DV === DU['_map'] ? DU : 0x0 === DV['size'] ? DU['__empty']() : DU['__make'](DV);
         }
 
-        function v7(DU, DV) {
-            var DW = Object['create'](v5);
+        function v8(DU, DV) {
+            var DW = Object['create'](v6);
             return DW['size'] = DU ? DU['size'] : 0x0, DW['_map'] = DU, DW['__ownerID'] = DV, DW;
         }
 
-        function v8() {
-            return v4 || (v4 = v7(u0()));
+        function v9() {
+            return v5 || (v5 = v8(u1()));
         }
 
-        v5[uX] = !0x0, v5[qB] = v5['remove'], v5['merge'] = v5['concat'] = v5['union'], v5['withMutations'] = tK, v5['asImmutable'] = tM, v5['@@transducer/init'] = v5['asMutable'] = tL, v5['@@transducer/step'] = function (DU, DV) {
+        v6[uY] = !0x0, v6[qC] = v6['remove'], v6['merge'] = v6['concat'] = v6['union'], v6['withMutations'] = tL, v6['asImmutable'] = tN, v6['@@transducer/init'] = v6['asMutable'] = tM, v6['@@transducer/step'] = function (DU, DV) {
             return DU['add'](DV);
-        }, v5['@@transducer/result'] = function (DU) {
+        }, v6['@@transducer/result'] = function (DU) {
             return DU['asImmutable']();
-        }, v5['__empty'] = v8, v5['__make'] = v7;
-        var v9, vj = function (DU) {
+        }, v6['__empty'] = v9, v6['__make'] = v8;
+        var vj, vq = function (DU) {
             function DV(DW, DX, DY) {
                 if (!(this instanceof DV)) return new DV(DW, DX, DY);
-                if (t0(0x0 !== DY, 'Cannot\x20step\x20a\x20Range\x20by\x200'), DW = DW || 0x0, void 0x0 === DX && (DX = 0x1 / 0x0), DY = void 0x0 === DY ? 0x1 : Math['abs'](DY), DX < DW && (DY = -DY), this['_start'] = DW, this['_end'] = DX, this['_step'] = DY, this['size'] = Math['max'](0x0, Math['ceil']((DX - DW) / DY - 0x1) + 0x1), 0x0 === this['size']) {
-                    if (v9) return v9;
-                    v9 = this;
+                if (t1(0x0 !== DY, 'Cannot\x20step\x20a\x20Range\x20by\x200'), DW = DW || 0x0, void 0x0 === DX && (DX = 0x1 / 0x0), DY = void 0x0 === DY ? 0x1 : Math['abs'](DY), DX < DW && (DY = -DY), this['_start'] = DW, this['_end'] = DX, this['_step'] = DY, this['size'] = Math['max'](0x0, Math['ceil']((DX - DW) / DY - 0x1) + 0x1), 0x0 === this['size']) {
+                    if (vj) return vj;
+                    vj = this;
                 }
             }
 
             return DU && (DV['__proto__'] = DU), DV['prototype'] = Object['create'](DU && DU['prototype']), DV['prototype']['constructor'] = DV, DV['prototype']['toString'] = function () {
                 return 0x0 === this['size'] ? 'Range\x20[]' : 'Range\x20[\x20' + this['_start'] + '...' + this['_end'] + (0x1 !== this['_step'] ? '\x20by\x20' + this['_step'] : '') + '\x20]';
             }, DV['prototype']['get'] = function (DW, DX) {
-                return this['has'](DW) ? this['_start'] + qJ(this, DW) * this['_step'] : DX;
+                return this['has'](DW) ? this['_start'] + qK(this, DW) * this['_step'] : DX;
             }, DV['prototype']['includes'] = function (DW) {
                 var DX = (DW - this['_start']) / this['_step'];
                 return DX >= 0x0 && DX < this['size'] && DX === Math['floor'](DX);
             }, DV['prototype']['slice'] = function (DW, DX) {
-                return qL(DW, DX, this['size']) ? this : (DW = qM(DW, this['size']), (DX = qN(DX, this['size'])) <= DW ? new DV(0x0, 0x0) : new DV(this['get'](DW, this['_end']), this['get'](DX, this['_end']), this['_step']));
+                return qM(DW, DX, this['size']) ? this : (DW = qN(DW, this['size']), (DX = qO(DX, this['size'])) <= DW ? new DV(0x0, 0x0) : new DV(this['get'](DW, this['_end']), this['get'](DX, this['_end']), this['_step']));
             }, DV['prototype']['indexOf'] = function (DW) {
                 var DX = DW - this['_start'];
                 if (DX % this['_step'] == 0x0) {
@@ -38055,81 +35756,81 @@ a();
             }, DV['prototype']['__iterator'] = function (DW, DX) {
                 var DY = this['size'], DZ = this['_step'], E0 = DX ? this['_start'] + (DY - 0x1) * DZ : this['_start'],
                     E1 = 0x0;
-                return new rA(function () {
+                return new rB(function () {
                     if (E1 === DY) return {'value': void 0x0, 'done': !0x0};
                     var E2 = E0;
-                    return E0 += DX ? -DZ : DZ, rB(DW, DX ? DY - ++E1 : E1++, E2);
+                    return E0 += DX ? -DZ : DZ, rC(DW, DX ? DY - ++E1 : E1++, E2);
                 });
             }, DV['prototype']['equals'] = function (DW) {
-                return DW instanceof DV ? this['_start'] === DW['_start'] && this['_end'] === DW['_end'] && this['_step'] === DW['_step'] : v0(this, DW);
+                return DW instanceof DV ? this['_start'] === DW['_start'] && this['_end'] === DW['_end'] && this['_step'] === DW['_step'] : v1(this, DW);
             }, DV;
-        }(rL);
+        }(rM);
 
-        function vq(DU, DV, DW) {
-            for (var DX = t2(DV), DY = 0x0; DY !== DX['length'];) if ((DU = t6(DU, DX[DY++], qF)) === qF) return DW;
+        function vx(DU, DV, DW) {
+            for (var DX = t3(DV), DY = 0x0; DY !== DX['length'];) if ((DU = t7(DU, DX[DY++], qG)) === qG) return DW;
             return DU;
         }
 
-        function vx(DU, DV) {
-            return vq(this, DU, DV);
+        function vz(DU, DV) {
+            return vx(this, DU, DV);
         }
 
-        function vz() {
-            t1(this['size']);
+        function vA() {
+            t2(this['size']);
             var DU = {};
             return this['__iterate'](function (DV, DW) {
                 DU[DW] = DV;
             }), DU;
         }
 
-        qX['isIterable'] = qR, qX['isKeyed'] = qT, qX['isIndexed'] = qV, qX['isAssociative'] = qW, qX['isOrdered'] = r7, qX['Iterator'] = rA, v1(qX, {
+        qY['isIterable'] = qS, qY['isKeyed'] = qU, qY['isIndexed'] = qW, qY['isAssociative'] = qX, qY['isOrdered'] = r8, qY['Iterator'] = rB, v2(qY, {
             'toArray': function () {
-                t1(this['size']);
-                var DU = new Array(this['size'] || 0x0), DV = qT(this), DW = 0x0;
+                t2(this['size']);
+                var DU = new Array(this['size'] || 0x0), DV = qU(this), DW = 0x0;
                 return this['__iterate'](function (DX, DY) {
                     DU[DW++] = DV ? [DY, DX] : DX;
                 }), DU;
             }, 'toIndexedSeq': function () {
-                return new sF(this);
-            }, 'toJS': function () {
-                return v2(this);
-            }, 'toKeyedSeq': function () {
-                return new sE(this, !0x0);
-            }, 'toMap': function () {
-                return tO(this['toKeyedSeq']());
-            }, 'toObject': vz, 'toOrderedMap': function () {
-                return uM(this['toKeyedSeq']());
-            }, 'toOrderedSet': function () {
-                return vM(qT(this) ? this['valueSeq']() : this);
-            }, 'toSet': function () {
-                return v3(qT(this) ? this['valueSeq']() : this);
-            }, 'toSetSeq': function () {
                 return new sG(this);
+            }, 'toJS': function () {
+                return v3(this);
+            }, 'toKeyedSeq': function () {
+                return new sF(this, !0x0);
+            }, 'toMap': function () {
+                return tP(this['toKeyedSeq']());
+            }, 'toObject': vA, 'toOrderedMap': function () {
+                return uN(this['toKeyedSeq']());
+            }, 'toOrderedSet': function () {
+                return vN(qU(this) ? this['valueSeq']() : this);
+            }, 'toSet': function () {
+                return v4(qU(this) ? this['valueSeq']() : this);
+            }, 'toSetSeq': function () {
+                return new sH(this);
             }, 'toSeq': function () {
-                return qV(this) ? this['toIndexedSeq']() : qT(this) ? this['toKeyedSeq']() : this['toSetSeq']();
+                return qW(this) ? this['toIndexedSeq']() : qU(this) ? this['toKeyedSeq']() : this['toSetSeq']();
             }, 'toStack': function () {
-                return uS(qT(this) ? this['valueSeq']() : this);
+                return uT(qU(this) ? this['valueSeq']() : this);
             }, 'toList': function () {
-                return ux(qT(this) ? this['valueSeq']() : this);
+                return uz(qU(this) ? this['valueSeq']() : this);
             }, 'toString': function () {
                 return '[Collection]';
             }, '__toString': function (DU, DV) {
                 return 0x0 === this['size'] ? DU + DV : DU + '\x20' + this['toSeq']()['map'](this['__toStringMapper'])['join'](',\x20') + '\x20' + DV;
             }, 'concat': function () {
                 for (var DU = [], DV = arguments['length']; DV--;) DU[DV] = arguments[DV];
-                return sT(this, function (DW, DX) {
-                    var DY = qT(DW), DZ = [DW]['concat'](DX)['map'](function (E2) {
-                        return qR(E2) ? DY && (E2 = qY(E2)) : E2 = DY ? rS(E2) : rT(Array['isArray'](E2) ? E2 : [E2]), E2;
+                return sU(this, function (DW, DX) {
+                    var DY = qU(DW), DZ = [DW]['concat'](DX)['map'](function (E2) {
+                        return qS(E2) ? DY && (E2 = qZ(E2)) : E2 = DY ? rT(E2) : rU(Array['isArray'](E2) ? E2 : [E2]), E2;
                     })['filter'](function (E2) {
                         return 0x0 !== E2['size'];
                     });
                     if (0x0 === DZ['length']) return DW;
                     if (0x1 === DZ['length']) {
                         var E0 = DZ[0x0];
-                        if (E0 === DW || DY && qT(E0) || qV(DW) && qV(E0)) return E0;
+                        if (E0 === DW || DY && qU(E0) || qW(DW) && qW(E0)) return E0;
                     }
-                    var E1 = new rN(DZ);
-                    return DY ? E1 = E1['toKeyedSeq']() : qV(DW) || (E1 = E1['toSetSeq']()), (E1 = E1['flatten'](!0x0))['size'] = DZ['reduce'](function (E2, E3) {
+                    var E1 = new rO(DZ);
+                    return DY ? E1 = E1['toKeyedSeq']() : qW(DW) || (E1 = E1['toSetSeq']()), (E1 = E1['flatten'](!0x0))['size'] = DZ['reduce'](function (E2, E3) {
                         if (void 0x0 !== E2) {
                             var E4 = E3['size'];
                             if (void 0x0 !== E4) return E2 + E4;
@@ -38138,58 +35839,58 @@ a();
                 }(this, DU));
             }, 'includes': function (DU) {
                 return this['some'](function (DV) {
-                    return rZ(DV, DU);
+                    return s0(DV, DU);
                 });
             }, 'entries': function () {
-                return this['__iterator'](rj);
+                return this['__iterator'](rq);
             }, 'every': function (DU, DV) {
-                t1(this['size']);
+                t2(this['size']);
                 var DW = !0x0;
                 return this['__iterate'](function (DX, DY, DZ) {
                     if (!DU['call'](DV, DX, DY, DZ)) return DW = !0x1, !0x1;
                 }), DW;
             }, 'filter': function (DU, DV) {
-                return sT(this, sL(this, DU, DV, !0x0));
+                return sU(this, sM(this, DU, DV, !0x0));
             }, 'partition': function (DU, DV) {
                 return function (DW, DX, DY) {
-                    var DZ = qT(DW), E0 = [[], []];
+                    var DZ = qU(DW), E0 = [[], []];
                     DW['__iterate'](function (E2, E3) {
                         E0[DX['call'](DY, E2, E3, DW) ? 0x1 : 0x0]['push'](DZ ? [E3, E2] : E2);
                     });
-                    var E1 = sV(DW);
+                    var E1 = sW(DW);
                     return E0['map'](function (E2) {
-                        return sT(DW, E1(E2));
+                        return sU(DW, E1(E2));
                     });
                 }(this, DU, DV);
             }, 'find': function (DU, DV, DW) {
                 var DX = this['findEntry'](DU, DV);
                 return DX ? DX[0x1] : DW;
             }, 'forEach': function (DU, DV) {
-                return t1(this['size']), this['__iterate'](DV ? DU['bind'](DV) : DU);
+                return t2(this['size']), this['__iterate'](DV ? DU['bind'](DV) : DU);
             }, 'join': function (DU) {
-                t1(this['size']), DU = void 0x0 !== DU ? '' + DU : ',';
+                t2(this['size']), DU = void 0x0 !== DU ? '' + DU : ',';
                 var DV = '', DW = !0x0;
                 return this['__iterate'](function (DX) {
                     DW ? DW = !0x1 : DV += DU, DV += null != DX ? DX['toString']() : '';
                 }), DV;
             }, 'keys': function () {
-                return this['__iterator'](r8);
-            }, 'map': function (DU, DV) {
-                return sT(this, sJ(this, DU, DV));
-            }, 'reduce': function (DU, DV, DW) {
-                return vE(this, DU, DV, DW, arguments['length'] < 0x2, !0x1);
-            }, 'reduceRight': function (DU, DV, DW) {
-                return vE(this, DU, DV, DW, arguments['length'] < 0x2, !0x0);
-            }, 'reverse': function () {
-                return sT(this, sK(this, !0x0));
-            }, 'slice': function (DU, DV) {
-                return sT(this, sM(this, DU, DV, !0x0));
-            }, 'some': function (DU, DV) {
-                return !this['every'](vH(DU), DV);
-            }, 'sort': function (DU) {
-                return sT(this, sP(this, DU));
-            }, 'values': function () {
                 return this['__iterator'](r9);
+            }, 'map': function (DU, DV) {
+                return sU(this, sK(this, DU, DV));
+            }, 'reduce': function (DU, DV, DW) {
+                return vF(this, DU, DV, DW, arguments['length'] < 0x2, !0x1);
+            }, 'reduceRight': function (DU, DV, DW) {
+                return vF(this, DU, DV, DW, arguments['length'] < 0x2, !0x0);
+            }, 'reverse': function () {
+                return sU(this, sL(this, !0x0));
+            }, 'slice': function (DU, DV) {
+                return sU(this, sN(this, DU, DV, !0x0));
+            }, 'some': function (DU, DV) {
+                return !this['every'](vI(DU), DV);
+            }, 'sort': function (DU) {
+                return sU(this, sQ(this, DU));
+            }, 'values': function () {
+                return this['__iterator'](rj);
             }, 'butLast': function () {
                 return this['slice'](0x0, -0x1);
             }, 'isEmpty': function () {
@@ -38197,10 +35898,10 @@ a();
                     return !0x0;
                 });
             }, 'count': function (DU, DV) {
-                return qI(DU ? this['toSeq']()['filter'](DU, DV) : this);
+                return qJ(DU ? this['toSeq']()['filter'](DU, DV) : this);
             }, 'countBy': function (DU, DV) {
                 return function (DW, DX, DY) {
-                    var DZ = tO()['asMutable']();
+                    var DZ = tP()['asMutable']();
                     return DW['__iterate'](function (E0, E1) {
                         DZ['update'](DX['call'](DY, E0, E1, DW), 0x0, function (E2) {
                             return E2 + 0x1;
@@ -38208,16 +35909,16 @@ a();
                     }), DZ['asImmutable']();
                 }(this, DU, DV);
             }, 'equals': function (DU) {
-                return v0(this, DU);
+                return v1(this, DU);
             }, 'entrySeq': function () {
                 var DU = this;
-                if (DU['_cache']) return new rN(DU['_cache']);
-                var DV = DU['toSeq']()['map'](vG)['toIndexedSeq']();
+                if (DU['_cache']) return new rO(DU['_cache']);
+                var DV = DU['toSeq']()['map'](vH)['toIndexedSeq']();
                 return DV['fromEntrySeq'] = function () {
                     return DU['toSeq']();
                 }, DV;
             }, 'filterNot': function (DU, DV) {
-                return this['filter'](vH(DU), DV);
+                return this['filter'](vI(DU), DV);
             }, 'findEntry': function (DU, DV, DW) {
                 var DX = DW;
                 return this['__iterate'](function (DY, DZ, E0) {
@@ -38233,63 +35934,63 @@ a();
             }, 'findLastKey': function (DU, DV) {
                 return this['toKeyedSeq']()['reverse']()['findKey'](DU, DV);
             }, 'first': function (DU) {
-                return this['find'](qK, null, DU);
+                return this['find'](qL, null, DU);
             }, 'flatMap': function (DU, DV) {
-                return sT(this, function (DW, DX, DY) {
-                    var DZ = sV(DW);
+                return sU(this, function (DW, DX, DY) {
+                    var DZ = sW(DW);
                     return DW['toSeq']()['map'](function (E0, E1) {
                         return DZ(DX['call'](DY, E0, E1, DW));
                     })['flatten'](!0x0);
                 }(this, DU, DV));
             }, 'flatten': function (DU) {
-                return sT(this, sO(this, DU, !0x0));
+                return sU(this, sP(this, DU, !0x0));
             }, 'fromEntrySeq': function () {
-                return new sH(this);
+                return new sI(this);
             }, 'get': function (DU, DV) {
                 return this['find'](function (DW, DX) {
-                    return rZ(DX, DU);
+                    return s0(DX, DU);
                 }, void 0x0, DV);
-            }, 'getIn': vx, 'groupBy': function (DU, DV) {
+            }, 'getIn': vz, 'groupBy': function (DU, DV) {
                 return function (DW, DX, DY) {
-                    var DZ = qT(DW), E0 = (r7(DW) ? uM() : tO())['asMutable']();
+                    var DZ = qU(DW), E0 = (r8(DW) ? uN() : tP())['asMutable']();
                     DW['__iterate'](function (E2, E3) {
                         E0['update'](DX['call'](DY, E2, E3, DW), function (E4) {
                             return (E4 = E4 || [])['push'](DZ ? [E3, E2] : E2), E4;
                         });
                     });
-                    var E1 = sV(DW);
+                    var E1 = sW(DW);
                     return E0['map'](function (E2) {
-                        return sT(DW, E1(E2));
+                        return sU(DW, E1(E2));
                     })['asImmutable']();
                 }(this, DU, DV);
             }, 'has': function (DU) {
-                return this['get'](DU, qF) !== qF;
+                return this['get'](DU, qG) !== qG;
             }, 'hasIn': function (DU) {
-                return vq(this, DU, qF) !== qF;
+                return vx(this, DU, qG) !== qG;
             }, 'isSubset': function (DU) {
-                return DU = 'function' == typeof DU['includes'] ? DU : qX(DU), this['every'](function (DV) {
+                return DU = 'function' == typeof DU['includes'] ? DU : qY(DU), this['every'](function (DV) {
                     return DU['includes'](DV);
                 });
             }, 'isSuperset': function (DU) {
-                return (DU = 'function' == typeof DU['isSubset'] ? DU : qX(DU))['isSubset'](this);
+                return (DU = 'function' == typeof DU['isSubset'] ? DU : qY(DU))['isSubset'](this);
             }, 'keyOf': function (DU) {
                 return this['findKey'](function (DV) {
-                    return rZ(DV, DU);
+                    return s0(DV, DU);
                 });
             }, 'keySeq': function () {
-                return this['toSeq']()['map'](vF)['toIndexedSeq']();
+                return this['toSeq']()['map'](vG)['toIndexedSeq']();
             }, 'last': function (DU) {
                 return this['toSeq']()['reverse']()['first'](DU);
             }, 'lastKeyOf': function (DU) {
                 return this['toKeyedSeq']()['reverse']()['keyOf'](DU);
             }, 'max': function (DU) {
-                return sQ(this, DU);
+                return sR(this, DU);
             }, 'maxBy': function (DU, DV) {
-                return sQ(this, DV, DU);
+                return sR(this, DV, DU);
             }, 'min': function (DU) {
-                return sQ(this, DU ? vI(DU) : vK);
+                return sR(this, DU ? vJ(DU) : vL);
             }, 'minBy': function (DU, DV) {
-                return sQ(this, DV ? vI(DV) : vK, DU);
+                return sR(this, DV ? vJ(DV) : vL, DU);
             }, 'rest': function () {
                 return this['slice'](0x1);
             }, 'skip': function (DU) {
@@ -38297,18 +35998,18 @@ a();
             }, 'skipLast': function (DU) {
                 return 0x0 === DU ? this : this['slice'](0x0, -Math['max'](0x0, DU));
             }, 'skipWhile': function (DU, DV) {
-                return sT(this, sN(this, DU, DV, !0x0));
+                return sU(this, sO(this, DU, DV, !0x0));
             }, 'skipUntil': function (DU, DV) {
-                return this['skipWhile'](vH(DU), DV);
+                return this['skipWhile'](vI(DU), DV);
             }, 'sortBy': function (DU, DV) {
-                return sT(this, sP(this, DV, DU));
+                return sU(this, sQ(this, DV, DU));
             }, 'take': function (DU) {
                 return this['slice'](0x0, Math['max'](0x0, DU));
             }, 'takeLast': function (DU) {
                 return this['slice'](-Math['max'](0x0, DU));
             }, 'takeWhile': function (DU, DV) {
-                return sT(this, function (DW, DX, DY) {
-                    var DZ = sW(DW);
+                return sU(this, function (DW, DX, DY) {
+                    var DZ = sX(DW);
                     return DZ['__iterateUncached'] = function (E0, E1) {
                         var E2 = this;
                         if (E1) return this['cacheResult']()['__iterate'](E0, E1);
@@ -38319,13 +36020,13 @@ a();
                     }, DZ['__iteratorUncached'] = function (E0, E1) {
                         var E2 = this;
                         if (E1) return this['cacheResult']()['__iterator'](E0, E1);
-                        var E3 = DW['__iterator'](rj, E1), E4 = !0x0;
-                        return new rA(function () {
+                        var E3 = DW['__iterator'](rq, E1), E4 = !0x0;
+                        return new rB(function () {
                             if (!E4) return {'value': void 0x0, 'done': !0x0};
                             var E5 = E3['next']();
                             if (E5['done']) return E5;
                             var E6 = E5['value'], E7 = E6[0x0], E8 = E6[0x1];
-                            return DX['call'](DY, E8, E7, E2) ? E0 === rj ? E5 : rB(E0, E7, E8, E5) : (E4 = !0x1, {
+                            return DX['call'](DY, E8, E7, E2) ? E0 === rq ? E5 : rC(E0, E7, E8, E5) : (E4 = !0x1, {
                                 'value': void 0x0,
                                 'done': !0x0
                             });
@@ -38333,7 +36034,7 @@ a();
                     }, DZ;
                 }(this, DU, DV));
             }, 'takeUntil': function (DU, DV) {
-                return this['takeWhile'](vH(DU), DV);
+                return this['takeWhile'](vI(DU), DV);
             }, 'update': function (DU) {
                 return DU(this);
             }, 'valueSeq': function () {
@@ -38341,47 +36042,47 @@ a();
             }, 'hashCode': function () {
                 return this['__hash'] || (this['__hash'] = function (DU) {
                     if (DU['size'] === 0x1 / 0x0) return 0x0;
-                    var DV = r7(DU), DW = qT(DU), DX = DV ? 0x1 : 0x0;
+                    var DV = r8(DU), DW = qU(DU), DX = DV ? 0x1 : 0x0;
                     return function (DY, DZ) {
-                        return DZ = s0(DZ, 0xcc9e2d51), DZ = s0(DZ << 0xf | DZ >>> -0xf, 0x1b873593), DZ = s0(DZ << 0xd | DZ >>> -0xd, 0x5), DZ = s0((DZ = DZ + 0xe6546b64 ^ DY) ^ DZ >>> 0x10, 0x85ebca6b), DZ = s1((DZ = s0(DZ ^ DZ >>> 0xd, 0xc2b2ae35)) ^ DZ >>> 0x10);
+                        return DZ = s1(DZ, 0xcc9e2d51), DZ = s1(DZ << 0xf | DZ >>> -0xf, 0x1b873593), DZ = s1(DZ << 0xd | DZ >>> -0xd, 0x5), DZ = s1((DZ = DZ + 0xe6546b64 ^ DY) ^ DZ >>> 0x10, 0x85ebca6b), DZ = s2((DZ = s1(DZ ^ DZ >>> 0xd, 0xc2b2ae35)) ^ DZ >>> 0x10);
                     }(DU['__iterate'](DW ? DV ? function (DY, DZ) {
-                        DX = 0x1f * DX + vL(s3(DY), s3(DZ)) | 0x0;
+                        DX = 0x1f * DX + vM(s4(DY), s4(DZ)) | 0x0;
                     } : function (DY, DZ) {
-                        DX = DX + vL(s3(DY), s3(DZ)) | 0x0;
+                        DX = DX + vM(s4(DY), s4(DZ)) | 0x0;
                     } : DV ? function (DY) {
-                        DX = 0x1f * DX + s3(DY) | 0x0;
+                        DX = 0x1f * DX + s4(DY) | 0x0;
                     } : function (DY) {
-                        DX = DX + s3(DY) | 0x0;
+                        DX = DX + s4(DY) | 0x0;
                     }), DX);
                 }(this));
             }
         });
-        var vA = qX['prototype'];
-        vA[qQ] = !0x0, vA[rz] = vA['values'], vA['toJSON'] = vA['toArray'], vA['__toStringMapper'] = t5, vA['inspect'] = vA['toSource'] = function () {
+        var vB = qY['prototype'];
+        vB[qR] = !0x0, vB[rA] = vB['values'], vB['toJSON'] = vB['toArray'], vB['__toStringMapper'] = t6, vB['inspect'] = vB['toSource'] = function () {
             return this['toString']();
-        }, vA['chain'] = vA['flatMap'], vA['contains'] = vA['includes'], v1(qY, {
+        }, vB['chain'] = vB['flatMap'], vB['contains'] = vB['includes'], v2(qZ, {
             'flip': function () {
-                return sT(this, sI(this));
+                return sU(this, sJ(this));
             }, 'mapEntries': function (DU, DV) {
                 var DW = this, DX = 0x0;
-                return sT(this, this['toSeq']()['map'](function (DY, DZ) {
+                return sU(this, this['toSeq']()['map'](function (DY, DZ) {
                     return DU['call'](DV, [DZ, DY], DX++, DW);
                 })['fromEntrySeq']());
             }, 'mapKeys': function (DU, DV) {
                 var DW = this;
-                return sT(this, this['toSeq']()['flip']()['map'](function (DX, DY) {
+                return sU(this, this['toSeq']()['flip']()['map'](function (DX, DY) {
                     return DU['call'](DV, DX, DY, DW);
                 })['flip']());
             }
         });
-        var vB = qY['prototype'];
-        vB[qS] = !0x0, vB[rz] = vA['entries'], vB['toJSON'] = vz, vB['__toStringMapper'] = function (DU, DV) {
-            return t5(DV) + ':\x20' + t5(DU);
-        }, v1(qZ, {
+        var vC = qZ['prototype'];
+        vC[qT] = !0x0, vC[rA] = vB['entries'], vC['toJSON'] = vA, vC['__toStringMapper'] = function (DU, DV) {
+            return t6(DV) + ':\x20' + t6(DU);
+        }, v2(r0, {
             'toKeyedSeq': function () {
-                return new sE(this, !0x1);
+                return new sF(this, !0x1);
             }, 'filter': function (DU, DV) {
-                return sT(this, sL(this, DU, DV, !0x1));
+                return sU(this, sM(this, DU, DV, !0x1));
             }, 'findIndex': function (DU, DV) {
                 var DW = this['findEntry'](DU, DV);
                 return DW ? DW[0x0] : -0x1;
@@ -38392,64 +36093,64 @@ a();
                 var DV = this['lastKeyOf'](DU);
                 return void 0x0 === DV ? -0x1 : DV;
             }, 'reverse': function () {
-                return sT(this, sK(this, !0x1));
+                return sU(this, sL(this, !0x1));
             }, 'slice': function (DU, DV) {
-                return sT(this, sM(this, DU, DV, !0x1));
+                return sU(this, sN(this, DU, DV, !0x1));
             }, 'splice': function (DU, DV) {
                 var DW = arguments['length'];
                 if (DV = Math['max'](DV || 0x0, 0x0), 0x0 === DW || 0x2 === DW && !DV) return this;
-                DU = qM(DU, DU < 0x0 ? this['count']() : this['size']);
+                DU = qN(DU, DU < 0x0 ? this['count']() : this['size']);
                 var DX = this['slice'](0x0, DU);
-                return sT(this, 0x1 === DW ? DX : DX['concat'](sZ(arguments, 0x2), this['slice'](DU + DV)));
+                return sU(this, 0x1 === DW ? DX : DX['concat'](t0(arguments, 0x2), this['slice'](DU + DV)));
             }, 'findLastIndex': function (DU, DV) {
                 var DW = this['findLastEntry'](DU, DV);
                 return DW ? DW[0x0] : -0x1;
             }, 'first': function (DU) {
                 return this['get'](0x0, DU);
             }, 'flatten': function (DU) {
-                return sT(this, sO(this, DU, !0x1));
+                return sU(this, sP(this, DU, !0x1));
             }, 'get': function (DU, DV) {
-                return (DU = qJ(this, DU)) < 0x0 || this['size'] === 0x1 / 0x0 || void 0x0 !== this['size'] && DU > this['size'] ? DV : this['find'](function (DW, DX) {
+                return (DU = qK(this, DU)) < 0x0 || this['size'] === 0x1 / 0x0 || void 0x0 !== this['size'] && DU > this['size'] ? DV : this['find'](function (DW, DX) {
                     return DX === DU;
                 }, void 0x0, DV);
             }, 'has': function (DU) {
-                return (DU = qJ(this, DU)) >= 0x0 && (void 0x0 !== this['size'] ? this['size'] === 0x1 / 0x0 || DU < this['size'] : -0x1 !== this['indexOf'](DU));
+                return (DU = qK(this, DU)) >= 0x0 && (void 0x0 !== this['size'] ? this['size'] === 0x1 / 0x0 || DU < this['size'] : -0x1 !== this['indexOf'](DU));
             }, 'interpose': function (DU) {
-                return sT(this, function (DV, DW) {
-                    var DX = sW(DV);
+                return sU(this, function (DV, DW) {
+                    var DX = sX(DV);
                     return DX['size'] = DV['size'] && 0x2 * DV['size'] - 0x1, DX['__iterateUncached'] = function (DY, DZ) {
                         var E0 = this, E1 = 0x0;
                         return DV['__iterate'](function (E2) {
                             return (!E1 || !0x1 !== DY(DW, E1++, E0)) && !0x1 !== DY(E2, E1++, E0);
                         }, DZ), E1;
                     }, DX['__iteratorUncached'] = function (DY, DZ) {
-                        var E0, E1 = DV['__iterator'](r9, DZ), E2 = 0x0;
-                        return new rA(function () {
-                            return (!E0 || E2 % 0x2) && (E0 = E1['next']())['done'] ? E0 : E2 % 0x2 ? rB(DY, E2++, DW) : rB(DY, E2++, E0['value'], E0);
+                        var E0, E1 = DV['__iterator'](rj, DZ), E2 = 0x0;
+                        return new rB(function () {
+                            return (!E0 || E2 % 0x2) && (E0 = E1['next']())['done'] ? E0 : E2 % 0x2 ? rC(DY, E2++, DW) : rC(DY, E2++, E0['value'], E0);
                         });
                     }, DX;
                 }(this, DU));
             }, 'interleave': function () {
-                var DU = [this]['concat'](sZ(arguments)), DV = sS(this['toSeq'](), rL['of'], DU),
+                var DU = [this]['concat'](t0(arguments)), DV = sT(this['toSeq'](), rM['of'], DU),
                     DW = DV['flatten'](!0x0);
-                return DV['size'] && (DW['size'] = DV['size'] * DU['length']), sT(this, DW);
+                return DV['size'] && (DW['size'] = DV['size'] * DU['length']), sU(this, DW);
             }, 'keySeq': function () {
-                return vj(0x0, this['size']);
+                return vq(0x0, this['size']);
             }, 'last': function (DU) {
                 return this['get'](-0x1, DU);
             }, 'skipWhile': function (DU, DV) {
-                return sT(this, sN(this, DU, DV, !0x1));
+                return sU(this, sO(this, DU, DV, !0x1));
             }, 'zip': function () {
-                return sT(this, sS(this, vJ, [this]['concat'](sZ(arguments))));
+                return sU(this, sT(this, vK, [this]['concat'](t0(arguments))));
             }, 'zipAll': function () {
-                return sT(this, sS(this, vJ, [this]['concat'](sZ(arguments)), !0x0));
+                return sU(this, sT(this, vK, [this]['concat'](t0(arguments)), !0x0));
             }, 'zipWith': function (DU) {
-                var DV = sZ(arguments);
-                return DV[0x0] = this, sT(this, sS(this, DU, DV));
+                var DV = t0(arguments);
+                return DV[0x0] = this, sU(this, sT(this, DU, DV));
             }
         });
-        var vC = qZ['prototype'];
-        vC[qU] = !0x0, vC[r6] = !0x0, v1(r0, {
+        var vD = r0['prototype'];
+        vD[qV] = !0x0, vD[r7] = !0x0, v2(r1, {
             'get': function (DU, DV) {
                 return this['has'](DU) ? DU : DV;
             }, 'includes': function (DU) {
@@ -38458,52 +36159,52 @@ a();
                 return this['valueSeq']();
             }
         });
-        var vD = r0['prototype'];
+        var vE = r1['prototype'];
 
-        function vE(DU, DV, DW, DX, DY, DZ) {
-            return t1(DU['size']), DU['__iterate'](function (E0, E1, E2) {
+        function vF(DU, DV, DW, DX, DY, DZ) {
+            return t2(DU['size']), DU['__iterate'](function (E0, E1, E2) {
                 DY ? (DY = !0x1, DW = E0) : DW = DV['call'](DX, DW, E0, E1, E2);
             }, DZ), DW;
         }
 
-        function vF(DU, DV) {
+        function vG(DU, DV) {
             return DV;
         }
 
-        function vG(DU, DV) {
+        function vH(DU, DV) {
             return [DV, DU];
         }
 
-        function vH(DU) {
+        function vI(DU) {
             return function () {
                 return !DU['apply'](this, arguments);
             };
         }
 
-        function vI(DU) {
+        function vJ(DU) {
             return function () {
                 return -DU['apply'](this, arguments);
             };
         }
 
-        function vJ() {
-            return sZ(arguments);
-        }
-
-        function vK(DU, DV) {
-            return DU < DV ? 0x1 : DU > DV ? -0x1 : 0x0;
+        function vK() {
+            return t0(arguments);
         }
 
         function vL(DU, DV) {
+            return DU < DV ? 0x1 : DU > DV ? -0x1 : 0x0;
+        }
+
+        function vM(DU, DV) {
             return DU ^ DV + 0x9e3779b9 + (DU << 0x6) + (DU >> 0x2);
         }
 
-        vD['has'] = vA['includes'], vD['contains'] = vD['includes'], vD['keys'] = vD['values'], v1(rK, vB), v1(rL, vC), v1(rM, vD);
-        var vM = function (DU) {
+        vE['has'] = vB['includes'], vE['contains'] = vE['includes'], vE['keys'] = vE['values'], v2(rL, vC), v2(rM, vD), v2(rN, vE);
+        var vN = function (DU) {
             function DV(DW) {
-                return null == DW ? vQ() : uZ(DW) ? DW : vQ()['withMutations'](function (DX) {
-                    var DY = r0(DW);
-                    t1(DY['size']), DY['forEach'](function (DZ) {
+                return null == DW ? vR() : v0(DW) ? DW : vR()['withMutations'](function (DX) {
+                    var DY = r1(DW);
+                    t2(DY['size']), DY['forEach'](function (DZ) {
                         return DX['add'](DZ);
                     });
                 });
@@ -38512,29 +36213,29 @@ a();
             return DU && (DV['__proto__'] = DU), DV['prototype'] = Object['create'](DU && DU['prototype']), DV['prototype']['constructor'] = DV, DV['of'] = function () {
                 return this(arguments);
             }, DV['fromKeys'] = function (DW) {
-                return this(qY(DW)['keySeq']());
+                return this(qZ(DW)['keySeq']());
             }, DV['prototype']['toString'] = function () {
                 return this['__toString']('OrderedSet\x20{', '}');
             }, DV;
-        }(v3);
-        vM['isOrderedSet'] = uZ;
-        var vN, vO = vM['prototype'];
+        }(v4);
+        vN['isOrderedSet'] = v0;
+        var vO, vP = vN['prototype'];
 
-        function vP(DU, DV) {
-            var DW = Object['create'](vO);
+        function vQ(DU, DV) {
+            var DW = Object['create'](vP);
             return DW['size'] = DU ? DU['size'] : 0x0, DW['_map'] = DU, DW['__ownerID'] = DV, DW;
         }
 
-        function vQ() {
-            return vN || (vN = vP(uO()));
+        function vR() {
+            return vO || (vO = vQ(uP()));
         }
 
-        vO[r6] = !0x0, vO['zip'] = vC['zip'], vO['zipWith'] = vC['zipWith'], vO['zipAll'] = vC['zipAll'], vO['__empty'] = vQ, vO['__make'] = vP;
-        var vR = function (DU, DV) {
+        vP[r7] = !0x0, vP['zip'] = vD['zip'], vP['zipWith'] = vD['zipWith'], vP['zipAll'] = vD['zipAll'], vP['__empty'] = vR, vP['__make'] = vQ;
+        var vS = function (DU, DV) {
             var DW;
             !function (DZ) {
-                if (r4(DZ)) throw new Error('Can\x20not\x20call\x20`Record`\x20with\x20an\x20immutable\x20Record\x20as\x20default\x20values.\x20Use\x20a\x20plain\x20javascript\x20object\x20instead.');
-                if (r5(DZ)) throw new Error('Can\x20not\x20call\x20`Record`\x20with\x20an\x20immutable\x20Collection\x20as\x20default\x20values.\x20Use\x20a\x20plain\x20javascript\x20object\x20instead.');
+                if (r5(DZ)) throw new Error('Can\x20not\x20call\x20`Record`\x20with\x20an\x20immutable\x20Record\x20as\x20default\x20values.\x20Use\x20a\x20plain\x20javascript\x20object\x20instead.');
+                if (r6(DZ)) throw new Error('Can\x20not\x20call\x20`Record`\x20with\x20an\x20immutable\x20Collection\x20as\x20default\x20values.\x20Use\x20a\x20plain\x20javascript\x20object\x20instead.');
                 if (null === DZ || 'object' != typeof DZ) throw new Error('Can\x20not\x20call\x20`Record`\x20with\x20a\x20non-object\x20as\x20default\x20values.\x20Use\x20a\x20plain\x20javascript\x20object\x20instead.');
             }(DU);
             var DX = function (DZ) {
@@ -38547,94 +36248,94 @@ a();
                     DY['_name'] = DV, DY['_keys'] = E1, DY['_defaultValues'] = DU;
                     for (var E3 = 0x0; E3 < E1['length']; E3++) {
                         var E4 = E1[E3];
-                        E2[E4] = E3, DY[E4] ? 'object' == typeof console && console['warn'] && console['warn']('Cannot\x20define\x20' + vU(this) + '\x20with\x20property\x20\x22' + E4 + '\x22\x20since\x20that\x20property\x20name\x20is\x20part\x20of\x20the\x20Record\x20API.') : vW(DY, E4);
+                        E2[E4] = E3, DY[E4] ? 'object' == typeof console && console['warn'] && console['warn']('Cannot\x20define\x20' + vV(this) + '\x20with\x20property\x20\x22' + E4 + '\x22\x20since\x20that\x20property\x20name\x20is\x20part\x20of\x20the\x20Record\x20API.') : vX(DY, E4);
                     }
                 }
-                return this['__ownerID'] = void 0x0, this['_values'] = ux()['withMutations'](function (E5) {
-                    E5['setSize'](E0['_keys']['length']), qY(DZ)['forEach'](function (E6, E7) {
+                return this['__ownerID'] = void 0x0, this['_values'] = uz()['withMutations'](function (E5) {
+                    E5['setSize'](E0['_keys']['length']), qZ(DZ)['forEach'](function (E6, E7) {
                         E5['set'](E0['_indices'][E7], E6 === E0['_defaultValues'][E7] ? void 0x0 : E6);
                     });
                 }), this;
-            }, DY = DX['prototype'] = Object['create'](vS);
+            }, DY = DX['prototype'] = Object['create'](vT);
             return DY['constructor'] = DX, DV && (DX['displayName'] = DV), DX;
         };
-        vR['prototype']['toString'] = function () {
-            for (var DU, DV = vU(this) + '\x20{\x20', DW = this['_keys'], DX = 0x0, DY = DW['length']; DX !== DY; DX++) DV += (DX ? ',\x20' : '') + (DU = DW[DX]) + ':\x20' + t5(this['get'](DU));
+        vS['prototype']['toString'] = function () {
+            for (var DU, DV = vV(this) + '\x20{\x20', DW = this['_keys'], DX = 0x0, DY = DW['length']; DX !== DY; DX++) DV += (DX ? ',\x20' : '') + (DU = DW[DX]) + ':\x20' + t6(this['get'](DU));
             return DV + '\x20}';
-        }, vR['prototype']['equals'] = function (DU) {
-            return this === DU || r4(DU) && vV(this)['equals'](vV(DU));
-        }, vR['prototype']['hashCode'] = function () {
-            return vV(this)['hashCode']();
-        }, vR['prototype']['has'] = function (DU) {
+        }, vS['prototype']['equals'] = function (DU) {
+            return this === DU || r5(DU) && vW(this)['equals'](vW(DU));
+        }, vS['prototype']['hashCode'] = function () {
+            return vW(this)['hashCode']();
+        }, vS['prototype']['has'] = function (DU) {
             return this['_indices']['hasOwnProperty'](DU);
-        }, vR['prototype']['get'] = function (DU, DV) {
+        }, vS['prototype']['get'] = function (DU, DV) {
             if (!this['has'](DU)) return DV;
             var DW = this['_indices'][DU], DX = this['_values']['get'](DW);
             return void 0x0 === DX ? this['_defaultValues'][DU] : DX;
-        }, vR['prototype']['set'] = function (DU, DV) {
+        }, vS['prototype']['set'] = function (DU, DV) {
             if (this['has'](DU)) {
                 var DW = this['_values']['set'](this['_indices'][DU], DV === this['_defaultValues'][DU] ? void 0x0 : DV);
-                if (DW !== this['_values'] && !this['__ownerID']) return vT(this, DW);
+                if (DW !== this['_values'] && !this['__ownerID']) return vU(this, DW);
             }
             return this;
-        }, vR['prototype']['remove'] = function (DU) {
+        }, vS['prototype']['remove'] = function (DU) {
             return this['set'](DU);
-        }, vR['prototype']['clear'] = function () {
+        }, vS['prototype']['clear'] = function () {
             var DU = this['_values']['clear']()['setSize'](this['_keys']['length']);
-            return this['__ownerID'] ? this : vT(this, DU);
-        }, vR['prototype']['wasAltered'] = function () {
+            return this['__ownerID'] ? this : vU(this, DU);
+        }, vS['prototype']['wasAltered'] = function () {
             return this['_values']['wasAltered']();
-        }, vR['prototype']['toSeq'] = function () {
-            return vV(this);
-        }, vR['prototype']['toJS'] = function () {
-            return v2(this);
-        }, vR['prototype']['entries'] = function () {
-            return this['__iterator'](rj);
-        }, vR['prototype']['__iterator'] = function (DU, DV) {
-            return vV(this)['__iterator'](DU, DV);
-        }, vR['prototype']['__iterate'] = function (DU, DV) {
-            return vV(this)['__iterate'](DU, DV);
-        }, vR['prototype']['__ensureOwner'] = function (DU) {
+        }, vS['prototype']['toSeq'] = function () {
+            return vW(this);
+        }, vS['prototype']['toJS'] = function () {
+            return v3(this);
+        }, vS['prototype']['entries'] = function () {
+            return this['__iterator'](rq);
+        }, vS['prototype']['__iterator'] = function (DU, DV) {
+            return vW(this)['__iterator'](DU, DV);
+        }, vS['prototype']['__iterate'] = function (DU, DV) {
+            return vW(this)['__iterate'](DU, DV);
+        }, vS['prototype']['__ensureOwner'] = function (DU) {
             if (DU === this['__ownerID']) return this;
             var DV = this['_values']['__ensureOwner'](DU);
-            return DU ? vT(this, DV, DU) : (this['__ownerID'] = DU, this['_values'] = DV, this);
-        }, vR['isRecord'] = r4, vR['getDescriptiveName'] = vU;
-        var vS = vR['prototype'];
+            return DU ? vU(this, DV, DU) : (this['__ownerID'] = DU, this['_values'] = DV, this);
+        }, vS['isRecord'] = r5, vS['getDescriptiveName'] = vV;
+        var vT = vS['prototype'];
 
-        function vT(DU, DV, DW) {
+        function vU(DU, DV, DW) {
             var DX = Object['create'](Object['getPrototypeOf'](DU));
             return DX['_values'] = DV, DX['__ownerID'] = DW, DX;
         }
 
-        function vU(DU) {
+        function vV(DU) {
             return DU['constructor']['displayName'] || DU['constructor']['name'] || 'Record';
         }
 
-        function vV(DU) {
-            return rS(DU['_keys']['map'](function (DV) {
+        function vW(DU) {
+            return rT(DU['_keys']['map'](function (DV) {
                 return [DV, DU['get'](DV)];
             }));
         }
 
-        function vW(DU, DV) {
+        function vX(DU, DV) {
             try {
                 Object['defineProperty'](DU, DV, {
                     'get': function () {
                         return this['get'](DV);
                     }, 'set': function (DW) {
-                        t0(this['__ownerID'], 'Cannot\x20set\x20on\x20an\x20immutable\x20record.'), this['set'](DV, DW);
+                        t1(this['__ownerID'], 'Cannot\x20set\x20on\x20an\x20immutable\x20record.'), this['set'](DV, DW);
                     }
                 });
             } catch (DW) {
             }
         }
 
-        vS[r3] = !0x0, vS[qB] = vS['remove'], vS['deleteIn'] = vS['removeIn'] = tq, vS['getIn'] = vx, vS['hasIn'] = vA['hasIn'], vS['merge'] = tB, vS['mergeWith'] = tC, vS['mergeIn'] = tI, vS['mergeDeep'] = tG, vS['mergeDeepWith'] = tH, vS['mergeDeepIn'] = tJ, vS['setIn'] = tj, vS['update'] = tz, vS['updateIn'] = tA, vS['withMutations'] = tK, vS['asMutable'] = tL, vS['asImmutable'] = tM, vS[rz] = vS['entries'], vS['toJSON'] = vS['toObject'] = vA['toObject'], vS['inspect'] = vS['toSource'] = function () {
+        vT[r4] = !0x0, vT[qC] = vT['remove'], vT['deleteIn'] = vT['removeIn'] = tx, vT['getIn'] = vz, vT['hasIn'] = vB['hasIn'], vT['merge'] = tC, vT['mergeWith'] = tD, vT['mergeIn'] = tJ, vT['mergeDeep'] = tH, vT['mergeDeepWith'] = tI, vT['mergeDeepIn'] = tK, vT['setIn'] = tq, vT['update'] = tA, vT['updateIn'] = tB, vT['withMutations'] = tL, vT['asMutable'] = tM, vT['asImmutable'] = tN, vT[rA] = vT['entries'], vT['toJSON'] = vT['toObject'] = vB['toObject'], vT['inspect'] = vT['toSource'] = function () {
             return this['toString']();
         };
-        var vX, vY, vZ, w0, w1, w2, w3, w4, w5, w6, w7, w8, w9, wj, wq, ww, wx, wz, wA, wB = l(0xade);
+        var vY, vZ, w0, w1, w2, w3, w4, w5, w6, w7, w8, w9, wj, wq, ww, wx, wz, wA, wB, wC = l(0xade);
 
-        function wC(DU, DV, DW, DX) {
+        function wD(DU, DV, DW, DX) {
             DW && Object['defineProperty'](DU, DV, {
                 'enumerable': DW['enumerable'],
                 'configurable': DW['configurable'],
@@ -38643,7 +36344,7 @@ a();
             });
         }
 
-        function wD(DU, DV, DW) {
+        function wE(DU, DV, DW) {
             return DV = function (DX) {
                 var DY = function (DZ, E0) {
                     if ('object' != typeof DZ || null === DZ) return DZ;
@@ -38664,7 +36365,7 @@ a();
             }) : DU[DV] = DW, DU;
         }
 
-        function wE(DU, DV, DW, DX, DY) {
+        function wF(DU, DV, DW, DX, DY) {
             var DZ = {};
             return Object['keys'](DX)['forEach'](function (E0) {
                 DZ[E0] = DX[E0];
@@ -38673,7 +36374,7 @@ a();
             }, DZ), DY && void 0x0 !== DZ['initializer'] && (DZ['value'] = DZ['initializer'] ? DZ['initializer']['call'](DY) : void 0x0, DZ['initializer'] = void 0x0), void 0x0 === DZ['initializer'] && (Object['defineProperty'](DU, DV, DZ), DZ = null), DZ;
         }
 
-        const wF = 'chapter5.woodElf', wG = {
+        const wG = 'yyrg975346', wH = {
             'diamonds'(DU) {
                 this['diamonds'] += +DU * this['purchaseRate'];
             }, 'diamondsConst'(DU) {
@@ -38690,7 +36391,7 @@ a();
                 if (nU['player']['inventory']['filter'](DV => DV['empty'])['length'] < 0x1) throw new Error('');
                 nU['loots']([{'key': 'year2018.redbag', 'count': [DU, DU], 'rate': 0x1}], 0x12c, 0x0, !0x1);
             }
-        }, wH = {
+        }, wI = {
             'diamonds'(DU) {
                 return this['purchaseRate'] > 0x1 ? (DU * this['purchaseRate'] | 0x0) + '神力' : DU + '神力';
             },
@@ -38699,9 +36400,9 @@ a();
             'gold': DU => DU + '金币',
             'medicine': DU => '药剂直升' + +DU + '级',
             'redbag': DU => '红包' + +DU + '个'
-        }, wI = vR({
+        }, wJ = vS({
             'diamonds': 0xb48,
-            'playerSlotCount': 0x1,
+            'playerSlotCount': 0x5,
             'purchaseRate': 0x1,
             'bowelLevel': 0x0,
             'truetime': 0x0,
@@ -38718,9 +36419,9 @@ a();
             'truetime11': 0x0,
             'truetime12': 0x0
         });
-        let wJ = (vX = class {
+        let wK = (vY = class {
             constructor() {
-                wD(this, 'loaded', !0x1), wC(this, 'secretRecord', vY, this), wC(this, 'currentPlayer', vZ, this), wC(this, 'playerMetas', w0, this), wC(this, 'playerMetas2', w1, this), wC(this, 'storiesMap', w2, this), wC(this, 'enemyTaskMap', w3, this), wC(this, 'bank', w4, this), wC(this, 'iapMap', w5, this), wC(this, 'ticketMap', w6, this), wC(this, 'medicineLevel', w7, this), wC(this, 'cookingLevel', w8, this), wC(this, 'medicineExp', w9, this), wC(this, 'cookingExp', wj, this), wC(this, 'lastVersion', wq, this), wC(this, 'highestEndlessLevel', ww, this), wC(this, 'hgdlv', wx, this), wC(this, 'pwuse2', wz, this), wC(this, 'fortime', wA, this), wD(this, 'banned', !0x1), eE(this), dJ(() => {
+                wE(this, 'loaded', !0x1), wD(this, 'secretRecord', vZ, this), wD(this, 'currentPlayer', w0, this), wD(this, 'playerMetas', w1, this), wD(this, 'playerMetas2', w2, this), wD(this, 'storiesMap', w3, this), wD(this, 'enemyTaskMap', w4, this), wD(this, 'bank', w5, this), wD(this, 'iapMap', w6, this), wD(this, 'ticketMap', w7, this), wD(this, 'medicineLevel', w8, this), wD(this, 'cookingLevel', w9, this), wD(this, 'medicineExp', wj, this), wD(this, 'cookingExp', wq, this), wD(this, 'lastVersion', ww, this), wD(this, 'highestEndlessLevel', wx, this), wD(this, 'hgdlv', wz, this), wD(this, 'pwuse2', wA, this), wD(this, 'fortime', wB, this), wE(this, 'banned', !0x1), eE(this), dJ(() => {
                     this['save']();
                 }, {'delay': 0x3e8});
             }
@@ -38805,10 +36506,6 @@ a();
                 this['secretRecord'] = this['secretRecord']['set']('bowelLevel', DU);
             }
 
-            get ['purchaseSlotPrice']() {
-                return (0x190 + 0x1f4 * this['playerSlotCount'] ** 0x2 + 0x64 * this['playerSlotCount'] ** 0x3) / 0x2;
-            }
-
             get ['endlessTicketRate']() {
                 const DU = this['highestEndlessLevel'] + 0x1;
                 return Math['pow'](0.5 / DU, 0x1 / DU);
@@ -38860,10 +36557,6 @@ a();
                 return 0x3e8 * Math['pow'](0x2, this['bowelLevel']);
             }
 
-            ['purchaseSlot']() {
-                this['diamonds'] -= this['purchaseSlotPrice'], this['playerSlotCount'] += 0x1;
-            }
-
             ['gotMedicineExp'](DU) {
                 const DV = [];
                 for (this['medicineExp'] += DU; this['medicineExp'] >= this['maxMedicineExp'];) {
@@ -38895,22 +36588,22 @@ a();
             async ['load']() {
                 try {
                     const DU = localStorage['getItem']('game');
-                    DU && ('{' === DU[0x0] ? this['fromJS'](JSON['parse'](DU)) : 'e' === DU[0x0] ? wB['hT']['JWS']['verifyJWT'](DU, wF, {'alg': ['HS256']}) && this['fromJS'](wB['hT']['JWS']['readSafeJSONString']((0x0, wB['kT'])(DU['split']('.')[0x1]))) : 's' === DU[0x0] && this['fromJS'](nU['start'](DU))), console['log']('Game\x20info\x20loaded.'), this['loaded'] = !0x0;
+                    DU && ('{' === DU[0x0] ? this['fromJS'](JSON['parse'](DU)) : 'e' === DU[0x0] ? wC['hT']['JWS']['verifyJWT'](DU, wG, {'alg': ['HS256']}) && this['fromJS'](wC['hT']['JWS']['readSafeJSONString']((0x0, wC['kT'])(DU['split']('.')[0x1]))) : 's' === DU[0x0] && this['fromJS'](nU['start'](DU))), console['log']('Game\x20info\x20loaded.'), this['loaded'] = !0x0;
                 } catch (DV) {
                 }
             }
 
             ['fromJS'](DU) {
-                DU['secretRecord'] ? this['secretRecord'] = this['secretRecord']['merge'](DU['secretRecord']) : (this['diamonds'] = DU['diamonds'] || 0x0, this['playerSlotCount'] = DU['playerSlotCount'] || 0x1, this['purchaseRate'] = DU['purchaseRate'] || 0x1), DU['bowelLevel'] && (this['bowelLevel'] = DU['bowelLevel']), DU['highestEndlessLevel'] && (this['highestEndlessLevel'] = DU['highestEndlessLevel']), this['hgdlv'] = DU['hgdlv'] || 0x0, this['currentPlayer'] = DU['currentPlayer'] || null, this['playerMetas']['clear']();
-                for (const DY of Object['keys'](DU['playerMetas'] || {})) this['playerMetas']['set'](DY, new qx(DY)['fromJS'](DU['playerMetas'][DY]));
+                DU['secretRecord'] ? this['secretRecord'] = this['secretRecord']['merge'](DU['secretRecord']) : (this['diamonds'] = DU['diamonds'] || 0x0, this['playerSlotCount'] = DU['playerSlotCount'] || 0x5, this['purchaseRate'] = DU['purchaseRate'] || 0x1), DU['bowelLevel'] && (this['bowelLevel'] = DU['bowelLevel']), DU['highestEndlessLevel'] && (this['highestEndlessLevel'] = DU['highestEndlessLevel']), this['hgdlv'] = DU['hgdlv'] || 0x0, this['currentPlayer'] = DU['currentPlayer'] || null, this['playerMetas']['clear']();
+                for (const DY of Object['keys'](DU['playerMetas'] || {})) this['playerMetas']['set'](DY, new qz(DY)['fromJS'](DU['playerMetas'][DY]));
                 this['playerMetas2']['clear']();
                 for (const DZ of Object['keys'](DU['playerMetas2'] || {})) this['playerMetas2']['set'](DZ, DU['playerMetas2'][DZ]);
-                for (const E0 of Object['keys'](DU['playerMetas'] || {})) wK['playerMetas2']['get'](E0) || this['playerMetas2']['set'](E0, 0x0);
+                for (const E0 of Object['keys'](DU['playerMetas'] || {})) wL['playerMetas2']['get'](E0) || this['playerMetas2']['set'](E0, 0x0);
                 const DV = Array['from'](this['playerMetas'])[0x0], DW = Array['from'](this['playerMetas2'])[0x0];
                 for (const E1 of Object['keys'](DU['playerMetas'])) {
                     let E2 = 0x0;
                     for (let E3 = 0x0; E3 < localStorage['length']; E3++) localStorage['key'](E3) === 'player-' + E1 && (E2 += 0x1);
-                    E2 < 0x1 && (wK['truetime12'] += 0xde);
+                    E2 < 0x1 && (wL['truetime12'] += 0xde);
                 }
                 this['storiesMap']['clear']();
                 for (const E4 of Object['keys'](DU['storiesMap'] || {})) this['storiesMap']['set'](E4, DU['storiesMap'][E4]);
@@ -38922,10 +36615,10 @@ a();
                 for (const E7 of Object['keys'](DU['ticketMap'] || {})) this['ticketMap']['set'](E7, DU['ticketMap'][E7]);
                 this['bank']['clear']();
                 for (let E8 = 0x0; DU['bank'] && E8 < DU['bank']['length']; E8++) {
-                    this['bank']['push'](new qw('bank')['fromJS'](DU['bank'][E8] || {}));
+                    this['bank']['push'](new qx('bank')['fromJS'](DU['bank'][E8] || {}));
                     const {key: E9, dungeonKey: Ej} = this['bank'][E8];
                     if ('ticket' === E9 && Ej) {
-                        const Eq = q6(Ej);
+                        const Eq = q7(Ej);
                         Eq && Eq > this['highestEndlessLevel'] && (this['highestEndlessLevel'] = Eq);
                     }
                 }
@@ -38936,14 +36629,14 @@ a();
                 for (const Ex of Object['keys'](kS['cookings'])) this['cookingLevel']['set'](Ex, DU['cookingLevel'] && DU['cookingLevel'][Ex] || 0x0);
                 this['cookingExp'] = DU['cookingExp'] || 0x0, this['lastVersion'] = DU['lastVersion'] || null, this['banned'] = DU['banned'], this['playerSlotCount'] < Object['keys'](DU['playerMetas'])['length'] && (this['playerSlotCount'] = Object['keys'](DU['playerMetas'])['length']), this['pwuse2']['clear']();
                 for (let Ez = 0x0; DU['pwuse2'] && Ez < DU['pwuse2']['length']; Ez++) this['pwuse2']['push'](DU['pwuse2'][Ez]);
-                return this['fortime'] ? this['truetime8'] > this['fortime'] ? this['truetime12'] += 0xb : this['truetime8'] = this['fortime'] : !this['fortime'] && this['truetime8'] > 0x0 && (this['truetime12'] += 0xb), DV || DW || !DX || (this['truetime12'] += 0x9), !DV && !DW && this['diamonds'] > 0x70d8 && (this['diamonds'] = 0xb49, this['truetime12'] += 0x7), DV || DW || !(wK['totalCookingLevel'] > 0x0 || wK['totalMedicineLevel'] > 0x0) || (this['truetime12'] += 0x5), DV || DW || !(this['medicineExp'] > 0xc350 || this['cookingExp'] > 0x2710) || (this['medicineExp'] = 0x0, this['cookingExp'] = 0x0, this['truetime12'] += 0x3), (this['medicineLevel']['get']('rdmdc') > 0x19 || this['medicineLevel']['get']('fengshenlu') > 0x64) && (this['truetime12'] += 0x6f), this;
+                return this['fortime'] ? this['truetime8'] > this['fortime'] ? this['truetime12'] += 0xb : this['truetime8'] = this['fortime'] : !this['fortime'] && this['truetime8'] > 0x0 && (this['truetime12'] += 0xb), DV || DW || !DX || (this['truetime12'] += 0x9), !DV && !DW && this['diamonds'] > 0x70d8 && (this['diamonds'] = 0xb49, this['truetime12'] += 0x7), DV || DW || !(wL['totalCookingLevel'] > 0x0 || wL['totalMedicineLevel'] > 0x0) || (this['truetime12'] += 0x5), DV || DW || !(this['medicineExp'] > 0xc350 || this['cookingExp'] > 0x2710) || (this['medicineExp'] = 0x0, this['cookingExp'] = 0x0, this['truetime12'] += 0x3), (this['medicineLevel']['get']('rdmdc') > 0x19 || this['medicineLevel']['get']('fengshenlu') > 0x64) && (this['truetime12'] += 0x6f), this;
             }
 
             ['save']() {
-                this['loaded'] && localStorage['setItem']('game', wB['hT']['JWS']['sign'](null, {
+                this['loaded'] && localStorage['setItem']('game', wC['hT']['JWS']['sign'](null, {
                     'alg': 'HS256',
                     'typ': 'JWT'
-                }, nW(this['toJS']()), wF));
+                }, nW(this['toJS']()), wG));
             }
 
             ['toJS']() {
@@ -38952,7 +36645,7 @@ a();
             }
 
             ['checkCanCreate']() {
-                this['playerSlotCount'] <= this['playerMetas']['size'] && qA['forbidden']();
+                this['playerSlotCount'] <= this['playerMetas']['size'] && qB['forbidden']();
             }
 
             ['removePlayer'](DU) {
@@ -38969,7 +36662,7 @@ a();
                 const DU = {};
                 for (let DV = 0x0; DV < localStorage['length']; DV++) {
                     const DW = localStorage['key'](DV);
-                    if (wK['playerMetas']['get'](DW['slice'](0x7)) || 'game' === DW) {
+                    if (wL['playerMetas']['get'](DW['slice'](0x7)) || 'game' === DW) {
                         let DX = localStorage['getItem'](DW);
                         if ('game' !== DW) {
                             DX = nU['start'](DX), DX['worldState'] = {};
@@ -38986,7 +36679,7 @@ a();
             ['playerlist']() {
                 for (let DU = 0x0; DU < localStorage['length']; DU++) {
                     const DV = localStorage['key'](DU);
-                    wK['playerMetas']['get'](DV['slice'](0x7)) || 'game' === DV || (localStorage['removeItem'](DV), DU = 0x0);
+                    wL['playerMetas']['get'](DV['slice'](0x7)) || 'game' === DV || (localStorage['removeItem'](DV), DU = 0x0);
                 }
             }
 
@@ -39011,7 +36704,7 @@ a();
             ['runProduct'](DU) {
                 let DV = arguments['length'] > 0x1 && void 0x0 !== arguments[0x1] && arguments[0x1];
                 const DW = DU['split']('.');
-                let DX = wG;
+                let DX = wH;
                 for (; DX && 'object' == typeof DX;) DX = DX[DW['shift']()];
                 if (DW['push'](DV), 'function' == typeof DX) {
                     try {
@@ -39025,162 +36718,162 @@ a();
 
             ['getProductName'](DU) {
                 const DV = DU['split']('.');
-                let DW = wH;
+                let DW = wI;
                 for (; DW && 'object' == typeof DW;) DW = DW[DV['shift']()];
                 return 'function' == typeof DW ? DW['apply'](this, DV) : '商品';
             }
-        }, vY = wE(vX['prototype'], 'secretRecord', [c2], {
+        }, vZ = wF(vY['prototype'], 'secretRecord', [c2], {
             'configurable': !0x0,
             'enumerable': !0x0,
             'writable': !0x0,
             'initializer': function () {
-                return new wI();
+                return new wJ();
             }
-        }), wE(vX['prototype'], 'diamonds', [c6], Object['getOwnPropertyDescriptor'](vX['prototype'], 'diamonds'), vX['prototype']), wE(vX['prototype'], 'truetime', [c6], Object['getOwnPropertyDescriptor'](vX['prototype'], 'truetime'), vX['prototype']), wE(vX['prototype'], 'truetime3', [c6], Object['getOwnPropertyDescriptor'](vX['prototype'], 'truetime3'), vX['prototype']), wE(vX['prototype'], 'truetime5', [c6], Object['getOwnPropertyDescriptor'](vX['prototype'], 'truetime5'), vX['prototype']), wE(vX['prototype'], 'truetime7', [c6], Object['getOwnPropertyDescriptor'](vX['prototype'], 'truetime7'), vX['prototype']), wE(vX['prototype'], 'truetime8', [c6], Object['getOwnPropertyDescriptor'](vX['prototype'], 'truetime8'), vX['prototype']), wE(vX['prototype'], 'truetime12', [c6], Object['getOwnPropertyDescriptor'](vX['prototype'], 'truetime12'), vX['prototype']), wE(vX['prototype'], 'playerSlotCount', [c6], Object['getOwnPropertyDescriptor'](vX['prototype'], 'playerSlotCount'), vX['prototype']), wE(vX['prototype'], 'purchaseRate', [c6], Object['getOwnPropertyDescriptor'](vX['prototype'], 'purchaseRate'), vX['prototype']), wE(vX['prototype'], 'bowelLevel', [c6], Object['getOwnPropertyDescriptor'](vX['prototype'], 'bowelLevel'), vX['prototype']), vZ = wE(vX['prototype'], 'currentPlayer', [c2], {
-            'configurable': !0x0,
-            'enumerable': !0x0,
-            'writable': !0x0,
-            'initializer': function () {
-                return null;
-            }
-        }), w0 = wE(vX['prototype'], 'playerMetas', [c2], {
-            'configurable': !0x0,
-            'enumerable': !0x0,
-            'writable': !0x0,
-            'initializer': function () {
-                return c2['map']();
-            }
-        }), w1 = wE(vX['prototype'], 'playerMetas2', [c2], {
-            'configurable': !0x0,
-            'enumerable': !0x0,
-            'writable': !0x0,
-            'initializer': function () {
-                return c2['map']();
-            }
-        }), w2 = wE(vX['prototype'], 'storiesMap', [c2], {
-            'configurable': !0x0,
-            'enumerable': !0x0,
-            'writable': !0x0,
-            'initializer': function () {
-                return c2['map']();
-            }
-        }), w3 = wE(vX['prototype'], 'enemyTaskMap', [c2], {
-            'configurable': !0x0,
-            'enumerable': !0x0,
-            'writable': !0x0,
-            'initializer': function () {
-                return c2['map']();
-            }
-        }), w4 = wE(vX['prototype'], 'bank', [c2], {
-            'configurable': !0x0,
-            'enumerable': !0x0,
-            'writable': !0x0,
-            'initializer': function () {
-                return [];
-            }
-        }), w5 = wE(vX['prototype'], 'iapMap', [c2], {
-            'configurable': !0x0,
-            'enumerable': !0x0,
-            'writable': !0x0,
-            'initializer': function () {
-                return c2['map']();
-            }
-        }), w6 = wE(vX['prototype'], 'ticketMap', [c2], {
-            'configurable': !0x0,
-            'enumerable': !0x0,
-            'writable': !0x0,
-            'initializer': function () {
-                return c2['map']();
-            }
-        }), w7 = wE(vX['prototype'], 'medicineLevel', [c2], {
-            'configurable': !0x0,
-            'enumerable': !0x0,
-            'writable': !0x0,
-            'initializer': function () {
-                return c2['map']();
-            }
-        }), w8 = wE(vX['prototype'], 'cookingLevel', [c2], {
-            'configurable': !0x0,
-            'enumerable': !0x0,
-            'writable': !0x0,
-            'initializer': function () {
-                return c2['map']();
-            }
-        }), w9 = wE(vX['prototype'], 'medicineExp', [c2], {
-            'configurable': !0x0,
-            'enumerable': !0x0,
-            'writable': !0x0,
-            'initializer': function () {
-                return 0x0;
-            }
-        }), wj = wE(vX['prototype'], 'cookingExp', [c2], {
-            'configurable': !0x0,
-            'enumerable': !0x0,
-            'writable': !0x0,
-            'initializer': function () {
-                return 0x0;
-            }
-        }), wq = wE(vX['prototype'], 'lastVersion', [c2], {
+        }), wF(vY['prototype'], 'diamonds', [c6], Object['getOwnPropertyDescriptor'](vY['prototype'], 'diamonds'), vY['prototype']), wF(vY['prototype'], 'truetime', [c6], Object['getOwnPropertyDescriptor'](vY['prototype'], 'truetime'), vY['prototype']), wF(vY['prototype'], 'truetime3', [c6], Object['getOwnPropertyDescriptor'](vY['prototype'], 'truetime3'), vY['prototype']), wF(vY['prototype'], 'truetime5', [c6], Object['getOwnPropertyDescriptor'](vY['prototype'], 'truetime5'), vY['prototype']), wF(vY['prototype'], 'truetime7', [c6], Object['getOwnPropertyDescriptor'](vY['prototype'], 'truetime7'), vY['prototype']), wF(vY['prototype'], 'truetime8', [c6], Object['getOwnPropertyDescriptor'](vY['prototype'], 'truetime8'), vY['prototype']), wF(vY['prototype'], 'truetime12', [c6], Object['getOwnPropertyDescriptor'](vY['prototype'], 'truetime12'), vY['prototype']), wF(vY['prototype'], 'playerSlotCount', [c6], Object['getOwnPropertyDescriptor'](vY['prototype'], 'playerSlotCount'), vY['prototype']), wF(vY['prototype'], 'purchaseRate', [c6], Object['getOwnPropertyDescriptor'](vY['prototype'], 'purchaseRate'), vY['prototype']), wF(vY['prototype'], 'bowelLevel', [c6], Object['getOwnPropertyDescriptor'](vY['prototype'], 'bowelLevel'), vY['prototype']), w0 = wF(vY['prototype'], 'currentPlayer', [c2], {
             'configurable': !0x0,
             'enumerable': !0x0,
             'writable': !0x0,
             'initializer': function () {
                 return null;
             }
-        }), ww = wE(vX['prototype'], 'highestEndlessLevel', [c2], {
+        }), w1 = wF(vY['prototype'], 'playerMetas', [c2], {
             'configurable': !0x0,
             'enumerable': !0x0,
             'writable': !0x0,
             'initializer': function () {
-                return 0x0;
+                return c2['map']();
             }
-        }), wx = wE(vX['prototype'], 'hgdlv', [c2], {
+        }), w2 = wF(vY['prototype'], 'playerMetas2', [c2], {
             'configurable': !0x0,
             'enumerable': !0x0,
             'writable': !0x0,
             'initializer': function () {
-                return 0x0;
+                return c2['map']();
             }
-        }), wz = wE(vX['prototype'], 'pwuse2', [c2], {
+        }), w3 = wF(vY['prototype'], 'storiesMap', [c2], {
+            'configurable': !0x0,
+            'enumerable': !0x0,
+            'writable': !0x0,
+            'initializer': function () {
+                return c2['map']();
+            }
+        }), w4 = wF(vY['prototype'], 'enemyTaskMap', [c2], {
+            'configurable': !0x0,
+            'enumerable': !0x0,
+            'writable': !0x0,
+            'initializer': function () {
+                return c2['map']();
+            }
+        }), w5 = wF(vY['prototype'], 'bank', [c2], {
             'configurable': !0x0,
             'enumerable': !0x0,
             'writable': !0x0,
             'initializer': function () {
                 return [];
             }
-        }), wA = wE(vX['prototype'], 'fortime', [c2], {
+        }), w6 = wF(vY['prototype'], 'iapMap', [c2], {
+            'configurable': !0x0,
+            'enumerable': !0x0,
+            'writable': !0x0,
+            'initializer': function () {
+                return c2['map']();
+            }
+        }), w7 = wF(vY['prototype'], 'ticketMap', [c2], {
+            'configurable': !0x0,
+            'enumerable': !0x0,
+            'writable': !0x0,
+            'initializer': function () {
+                return c2['map']();
+            }
+        }), w8 = wF(vY['prototype'], 'medicineLevel', [c2], {
+            'configurable': !0x0,
+            'enumerable': !0x0,
+            'writable': !0x0,
+            'initializer': function () {
+                return c2['map']();
+            }
+        }), w9 = wF(vY['prototype'], 'cookingLevel', [c2], {
+            'configurable': !0x0,
+            'enumerable': !0x0,
+            'writable': !0x0,
+            'initializer': function () {
+                return c2['map']();
+            }
+        }), wj = wF(vY['prototype'], 'medicineExp', [c2], {
+            'configurable': !0x0,
+            'enumerable': !0x0,
+            'writable': !0x0,
+            'initializer': function () {
+                return 0x0;
+            }
+        }), wq = wF(vY['prototype'], 'cookingExp', [c2], {
+            'configurable': !0x0,
+            'enumerable': !0x0,
+            'writable': !0x0,
+            'initializer': function () {
+                return 0x0;
+            }
+        }), ww = wF(vY['prototype'], 'lastVersion', [c2], {
+            'configurable': !0x0,
+            'enumerable': !0x0,
+            'writable': !0x0,
+            'initializer': function () {
+                return null;
+            }
+        }), wx = wF(vY['prototype'], 'highestEndlessLevel', [c2], {
+            'configurable': !0x0,
+            'enumerable': !0x0,
+            'writable': !0x0,
+            'initializer': function () {
+                return 0x0;
+            }
+        }), wz = wF(vY['prototype'], 'hgdlv', [c2], {
+            'configurable': !0x0,
+            'enumerable': !0x0,
+            'writable': !0x0,
+            'initializer': function () {
+                return 0x0;
+            }
+        }), wA = wF(vY['prototype'], 'pwuse2', [c2], {
+            'configurable': !0x0,
+            'enumerable': !0x0,
+            'writable': !0x0,
+            'initializer': function () {
+                return [];
+            }
+        }), wB = wF(vY['prototype'], 'fortime', [c2], {
             'configurable': !0x0,
             'enumerable': !0x0,
             'writable': !0x0,
             'initializer': function () {
                 return 0x1903cc20290;
             }
-        }), wE(vX['prototype'], 'purchaseSlotPrice', [c6], Object['getOwnPropertyDescriptor'](vX['prototype'], 'purchaseSlotPrice'), vX['prototype']), wE(vX['prototype'], 'endlessTicketRate', [c6], Object['getOwnPropertyDescriptor'](vX['prototype'], 'endlessTicketRate'), vX['prototype']), wE(vX['prototype'], 'totalMedicineLevel', [c6], Object['getOwnPropertyDescriptor'](vX['prototype'], 'totalMedicineLevel'), vX['prototype']), wE(vX['prototype'], 'totalCookingLevel', [c6], Object['getOwnPropertyDescriptor'](vX['prototype'], 'totalCookingLevel'), vX['prototype']), wE(vX['prototype'], 'maxMedicineExp', [c6], Object['getOwnPropertyDescriptor'](vX['prototype'], 'maxMedicineExp'), vX['prototype']), wE(vX['prototype'], 'maxCookingExp', [c6], Object['getOwnPropertyDescriptor'](vX['prototype'], 'maxCookingExp'), vX['prototype']), wE(vX['prototype'], 'resetMedicineCost', [c6], Object['getOwnPropertyDescriptor'](vX['prototype'], 'resetMedicineCost'), vX['prototype']), wE(vX['prototype'], 'resetMedicineDiamondsCost', [c6], Object['getOwnPropertyDescriptor'](vX['prototype'], 'resetMedicineDiamondsCost'), vX['prototype']), wE(vX['prototype'], 'resetCookingCost', [c6], Object['getOwnPropertyDescriptor'](vX['prototype'], 'resetCookingCost'), vX['prototype']), wE(vX['prototype'], 'resetCookingDiamondsCost', [c6], Object['getOwnPropertyDescriptor'](vX['prototype'], 'resetCookingDiamondsCost'), vX['prototype']), wE(vX['prototype'], 'bowelEffect', [c6], Object['getOwnPropertyDescriptor'](vX['prototype'], 'bowelEffect'), vX['prototype']), wE(vX['prototype'], 'bowelUpgradePrice', [c6], Object['getOwnPropertyDescriptor'](vX['prototype'], 'bowelUpgradePrice'), vX['prototype']), wE(vX['prototype'], 'purchaseSlot', [dF], Object['getOwnPropertyDescriptor'](vX['prototype'], 'purchaseSlot'), vX['prototype']), wE(vX['prototype'], 'gotMedicineExp', [dF], Object['getOwnPropertyDescriptor'](vX['prototype'], 'gotMedicineExp'), vX['prototype']), wE(vX['prototype'], 'gotCookingExp', [dF], Object['getOwnPropertyDescriptor'](vX['prototype'], 'gotCookingExp'), vX['prototype']), wE(vX['prototype'], 'fromJS', [dF], Object['getOwnPropertyDescriptor'](vX['prototype'], 'fromJS'), vX['prototype']), wE(vX['prototype'], 'onEnemyKilled', [dF], Object['getOwnPropertyDescriptor'](vX['prototype'], 'onEnemyKilled'), vX['prototype']), vX);
-        const wK = new wJ(), wL = wK;
-        var wM = l(0x270e), wN = {};
-        wN['styleTagTransform'] = jG(), wN['setAttributes'] = jC(), wN['insert'] = jA()['bind'](null, 'head'), wN['domAPI'] = jx(), wN['insertStyleElement'] = jE(), jq()(wM['A'], wN);
-        const wO = wM['A'] && wM['A']['locals'] ? wM['A']['locals'] : void 0x0;
+        }), wF(vY['prototype'], 'endlessTicketRate', [c6], Object['getOwnPropertyDescriptor'](vY['prototype'], 'endlessTicketRate'), vY['prototype']), wF(vY['prototype'], 'totalMedicineLevel', [c6], Object['getOwnPropertyDescriptor'](vY['prototype'], 'totalMedicineLevel'), vY['prototype']), wF(vY['prototype'], 'totalCookingLevel', [c6], Object['getOwnPropertyDescriptor'](vY['prototype'], 'totalCookingLevel'), vY['prototype']), wF(vY['prototype'], 'maxMedicineExp', [c6], Object['getOwnPropertyDescriptor'](vY['prototype'], 'maxMedicineExp'), vY['prototype']), wF(vY['prototype'], 'maxCookingExp', [c6], Object['getOwnPropertyDescriptor'](vY['prototype'], 'maxCookingExp'), vY['prototype']), wF(vY['prototype'], 'resetMedicineCost', [c6], Object['getOwnPropertyDescriptor'](vY['prototype'], 'resetMedicineCost'), vY['prototype']), wF(vY['prototype'], 'resetMedicineDiamondsCost', [c6], Object['getOwnPropertyDescriptor'](vY['prototype'], 'resetMedicineDiamondsCost'), vY['prototype']), wF(vY['prototype'], 'resetCookingCost', [c6], Object['getOwnPropertyDescriptor'](vY['prototype'], 'resetCookingCost'), vY['prototype']), wF(vY['prototype'], 'resetCookingDiamondsCost', [c6], Object['getOwnPropertyDescriptor'](vY['prototype'], 'resetCookingDiamondsCost'), vY['prototype']), wF(vY['prototype'], 'bowelEffect', [c6], Object['getOwnPropertyDescriptor'](vY['prototype'], 'bowelEffect'), vY['prototype']), wF(vY['prototype'], 'bowelUpgradePrice', [c6], Object['getOwnPropertyDescriptor'](vY['prototype'], 'bowelUpgradePrice'), vY['prototype']), wF(vY['prototype'], 'gotMedicineExp', [dF], Object['getOwnPropertyDescriptor'](vY['prototype'], 'gotMedicineExp'), vY['prototype']), wF(vY['prototype'], 'gotCookingExp', [dF], Object['getOwnPropertyDescriptor'](vY['prototype'], 'gotCookingExp'), vY['prototype']), wF(vY['prototype'], 'fromJS', [dF], Object['getOwnPropertyDescriptor'](vY['prototype'], 'fromJS'), vY['prototype']), wF(vY['prototype'], 'onEnemyKilled', [dF], Object['getOwnPropertyDescriptor'](vY['prototype'], 'onEnemyKilled'), vY['prototype']), vY);
+        const wL = new wK(), wM = wL;
+        var wN = l(0x270e), wO = {};
+        wO['styleTagTransform'] = jG(), wO['setAttributes'] = jC(), wO['insert'] = jA()['bind'](null, 'head'), wO['domAPI'] = jx(), wO['insertStyleElement'] = jE(), jq()(wN['A'], wO);
+        const wP = wN['A'] && wN['A']['locals'] ? wN['A']['locals'] : void 0x0;
 
-        class wP extends a1['Component'] {
+        class wQ extends a1['Component'] {
             async ['componentDidMount']() {
-                if (await wL['load'](), wL['currentPlayer']) try {
-                    return (await qz['load'](wL['currentPlayer']))['postLoad'](), nU['resumeGame'](), void DJ['navigate']('/home');
+                if (await wM['load'](), wM['currentPlayer']) try {
+                    return (await qA['load'](wM['currentPlayer']))['postLoad'](), nU['resumeGame'](), void DJ['navigate']('/home');
                 } catch (DU) {
-                    nU['dispose'](), wL['currentPlayer'] = null, nD('错误', '加载游戏失败，请耐心等待更新，或者先选择其它角色进入游戏。' + DU['message']);
+                    nU['dispose'](), wM['currentPlayer'] = null, nD('错误', '加载游戏失败，请耐心等待更新，或者先选择其它角色进入游戏。' + DU['message']);
                 }
                 DJ['navigate']('/player/choose');
             }
 
             ['render']() {
-                return a1['createElement'](jX, {'className': wO['container']});
+                return a1['createElement'](jX, {'className': wP['container']});
             }
         }
 
-        var wQ = l(0xc23), wR = {};
-        wR['styleTagTransform'] = jG(), wR['setAttributes'] = jC(), wR['insert'] = jA()['bind'](null, 'head'), wR['domAPI'] = jx(), wR['insertStyleElement'] = jE(), jq()(wQ['A'], wR);
-        const wS = wQ['A'] && wQ['A']['locals'] ? wQ['A']['locals'] : void 0x0;
+        var wR = l(0xc23), wS = {};
+        wS['styleTagTransform'] = jG(), wS['setAttributes'] = jC(), wS['insert'] = jA()['bind'](null, 'head'), wS['domAPI'] = jx(), wS['insertStyleElement'] = jE(), jq()(wR['A'], wS);
+        const wT = wR['A'] && wR['A']['locals'] ? wR['A']['locals'] : void 0x0;
 
-        function wT(DU, DV, DW) {
+        function wU(DU, DV, DW) {
             return DV = function (DX) {
                 var DY = function (DZ, E0) {
                     if ('object' != typeof DZ || null === DZ) return DZ;
@@ -39201,42 +36894,42 @@ a();
             }) : DU[DV] = DW, DU;
         }
 
-        class wU extends a1['Component'] {
+        class wV extends a1['Component'] {
             constructor() {
-                super(...arguments), wT(this, 'getRef', DU => {
+                super(...arguments), wU(this, 'getRef', DU => {
                     this['childrenRef'] = DU;
-                }), wT(this, 'onLeftPressed', () => {
+                }), wU(this, 'onLeftPressed', () => {
                     this['props']['onLeftPressed'] ? this['props']['onLeftPressed']() : DJ['navigate'](-0x1);
-                }), wT(this, 'onRightPressed', () => {
+                }), wU(this, 'onRightPressed', () => {
                     this['props']['onRightPressed'] && this['props']['onRightPressed']();
                 });
             }
 
             ['renderBack']() {
                 return a1['createElement'](jY, {
-                    'className': wS['left'],
+                    'className': wT['left'],
                     'onPress': this['onLeftPressed']
-                }, a1['createElement'](jW, {'className': wS['button']}, '返回'));
+                }, a1['createElement'](jW, {'className': wT['button']}, '返回'));
             }
 
             ['render']() {
                 const {children: DU, back: DV, leftNavTitle: DW, rightNavTitle: DX, title: DY} = this['props'];
-                return a1['createElement'](jX, {'className': wS['container']}, a1['createElement'](jX, {'className': wS['navBar']}, a1['createElement'](jW, {'className': wS['title']}, DY), !!DV && this['renderBack'](), !!DW && a1['createElement'](jY, {
-                    'className': wS['left'],
+                return a1['createElement'](jX, {'className': wT['container']}, a1['createElement'](jX, {'className': wT['navBar']}, a1['createElement'](jW, {'className': wT['title']}, DY), !!DV && this['renderBack'](), !!DW && a1['createElement'](jY, {
+                    'className': wT['left'],
                     'onPress': this['onLeftPressed']
-                }, a1['createElement'](jW, {'className': wS['button']}, DW)), !!DX && a1['createElement'](jY, {
-                    'className': wS['right'],
+                }, a1['createElement'](jW, {'className': wT['button']}, DW)), !!DX && a1['createElement'](jY, {
+                    'className': wT['right'],
                     'onPress': this['onRightPressed']
-                }, a1['createElement'](jW, {'className': wS['button']}, DX))), DU);
+                }, a1['createElement'](jW, {'className': wT['button']}, DX))), DU);
             }
         }
 
-        var wV = l(0xa26), wW = {};
-        wW['styleTagTransform'] = jG(), wW['setAttributes'] = jC(), wW['insert'] = jA()['bind'](null, 'head'), wW['domAPI'] = jx(), wW['insertStyleElement'] = jE(), jq()(wV['A'], wW);
-        const wX = wV['A'] && wV['A']['locals'] ? wV['A']['locals'] : void 0x0;
-        var wY;
+        var wW = l(0xa26), wX = {};
+        wX['styleTagTransform'] = jG(), wX['setAttributes'] = jC(), wX['insert'] = jA()['bind'](null, 'head'), wX['domAPI'] = jx(), wX['insertStyleElement'] = jE(), jq()(wW['A'], wX);
+        const wY = wW['A'] && wW['A']['locals'] ? wW['A']['locals'] : void 0x0;
+        var wZ;
 
-        function wZ(DU, DV, DW) {
+        function x0(DU, DV, DW) {
             return DV = function (DX) {
                 var DY = function (DZ, E0) {
                     if ('object' != typeof DZ || null === DZ) return DZ;
@@ -39257,14 +36950,14 @@ a();
             }) : DU[DV] = DW, DU;
         }
 
-        const x0 = gT(function (DU, DV) {
+        const x1 = gT(function (DU, DV) {
             let {meta: DW, id: DX, editing: DY, entering: DZ} = DU;
             const E0 = async E2 => {
                 if (DZ['get']()) return;
                 DZ['set'](!0x0);
                 const {navigator: E3} = DV;
                 try {
-                    (await qz['load'](DX, E2))['postLoad'](), nU['resumeGame'](), DJ['navigate']('/home');
+                    (await qA['load'](DX, E2))['postLoad'](), nU['resumeGame'](), DJ['navigate']('/home');
                 } catch (E4) {
                     nU['dispose'](), mgn['debug'](E4['message']), mgn['debug'](E4['stack']), nD('错误', '加载游戏失败，请耐心等待更新，或者先选择其它角色进入游戏。' + E4['message']);
                 }
@@ -39277,53 +36970,34 @@ a();
                 }, {'text': '取消'}]);
             }
 
-            return DY['get']() ? DW['currentCareerLevel'] < 0x32 ? a1['createElement'](jX, {'className': wX['row']}, a1['createElement'](jX, {'className': [wX['item'], wX['flex']]}, a1['createElement'](jW, null, DW['roleData']['name'], '\x20', DW['currentCareerLevel'], '级', DW['careerName'])), a1['createElement'](jY, {
-                'className': wX['button'],
+            return DY['get']() ? DW['currentCareerLevel'] < 0x32 ? a1['createElement'](jX, {'className': wY['row']}, a1['createElement'](jX, {'className': [wY['item'], wY['flex']]}, a1['createElement'](jW, null, DW['roleData']['name'], '\x20', DW['currentCareerLevel'], '级', DW['careerName'])), a1['createElement'](jY, {
+                'className': wY['button'],
                 'onPress': E1
-            }, a1['createElement'](jW, {'className': wX['buttonLabel']}, '修复异常'))) : a1['createElement'](jX, {'className': wX['row']}, a1['createElement'](jX, {'className': [wX['item'], wX['flex']]}, a1['createElement'](jW, null, DW['roleData']['name'], '\x20', DW['currentCareerLevel'], '级', DW['careerName'])), a1['createElement'](jY, {
-                'className': wX['button'],
+            }, a1['createElement'](jW, {'className': wY['buttonLabel']}, '修复异常'))) : a1['createElement'](jX, {'className': wY['row']}, a1['createElement'](jX, {'className': [wY['item'], wY['flex']]}, a1['createElement'](jW, null, DW['roleData']['name'], '\x20', DW['currentCareerLevel'], '级', DW['careerName'])), a1['createElement'](jY, {
+                'className': wY['button'],
                 'onPress': E1
-            }, a1['createElement'](jW, {'className': wX['buttonLabel']}, '修复异常')), a1['createElement'](jY, {
-                'className': wX['button'],
+            }, a1['createElement'](jW, {'className': wY['buttonLabel']}, '修复异常')), a1['createElement'](jY, {
+                'className': wY['button'],
                 'onPress': function () {
                     nD('提示', '您确定要删除该角色吗？', [{
                         'text': '确认',
-                        'onPress': () => wL['removePlayer'](DW['key'])
+                        'onPress': () => wM['removePlayer'](DW['key'])
                     }, {'text': '取消'}]);
                 }
-            }, a1['createElement'](jW, {'className': wX['buttonLabel']}, '删除'))) : a1['createElement'](jY, {
-                'className': wX['item'],
+            }, a1['createElement'](jW, {'className': wY['buttonLabel']}, '删除'))) : a1['createElement'](jY, {
+                'className': wY['item'],
                 'onPress': () => E0(!0x1)
             }, a1['createElement'](jW, null, DW['roleData']['name'], '\x20', DW['currentCareerLevel'], '级', DW['careerName']));
         });
-
-        function x1(DU) {
-            let {children: DV, onPress: DW} = DU;
-            return a1['createElement'](jY, {
-                'className': wX['footer'],
-                'onPress': DW
-            }, a1['createElement'](jW, {'className': wX['footerLabel']}, DV));
-        }
-
-        let x2 = gT(wY = class extends a1['Component'] {
+        let x2 = gT(wZ = class extends a1['Component'] {
             constructor() {
-                super(...arguments), wZ(this, 'refNavBar', (0x0, a1['createRef'])()), wZ(this, 'editing', c2['box'](!0x1)), wZ(this, 'entering', c2['box'](!0x1)), wZ(this, 'onRightPressed', dF(() => {
+                super(...arguments), x0(this, 'refNavBar', (0x0, a1['createRef'])()), x0(this, 'editing', c2['box'](!0x1)), x0(this, 'entering', c2['box'](!0x1)), x0(this, 'onRightPressed', dF(() => {
                     this['editing']['get']() ? this['editing']['set'](!0x1) : this['editing']['set'](!0x0);
-                })), wZ(this, 'ds', new k1['DataSource']({'rowHasChanged': (DU, DV) => DU[0x0] !== DV[0x0]})), wZ(this, 'goCreate', () => {
+                })), x0(this, 'ds', new k1['DataSource']({'rowHasChanged': (DU, DV) => DU[0x0] !== DV[0x0]})), x0(this, 'goCreate', () => {
                     DJ['navigate']('/player/create');
-                }), wZ(this, 'purchaseSlot', () => {
-                    wL['diamonds'] >= wL['purchaseSlotPrice'] ? nD('提示', '您是否确认消耗' + wL['purchaseSlotPrice'] + '神力点数，开启一个新的角色栏位？', [{
-                        'text': '确认',
-                        'onPress': () => wL['purchaseSlot']()
-                    }, {'text': '取消'}]) : nD('提示', '您需要消耗' + wL['purchaseSlotPrice'] + '神力点数才能开启一个新的角色栏位，现有' + wL['diamonds'] + '神力，是否召唤创世神的幻影，获得大量神力？', [{
-                        'text': '确认',
-                        'onPress': () => {
-                            DJ['navigate']('/purchase');
-                        }
-                    }, {'text': '取消'}]);
-                }), wZ(this, 'renderRow', (DU, DV, DW) => {
+                }), x0(this, 'renderRow', (DU, DV, DW) => {
                     let [DX, DY] = DU;
-                    return a1['createElement'](x0, {
+                    return a1['createElement'](x1, {
                         'entering': this['entering'],
                         'key': DX,
                         'id': DX,
@@ -39331,24 +37005,25 @@ a();
                         'editing': this['editing'],
                         'rowId': DW
                     });
-                }), wZ(this, 'renderFooter', () => a1['createElement'](x1, {'onPress': this['goCreate']}, '新游戏')), wZ(this, 'renderPurchase', () => a1['createElement'](x1, {'onPress': this['purchaseSlot']}, '购买新的角色栏位(消耗', wL['purchaseSlotPrice'], '神力，现有', wL['diamonds'], '神力)'));
+                });
             }
 
             ['render']() {
-                return a1['createElement'](wU, {
+                return a1['createElement'](wV, {
                     'title': '选择存档',
+                    'leftNavTitle': '创建角色',
                     'rightNavTitle': this['editing']['get']() ? '完成' : '编辑',
                     'ref': this['refNavBar'],
+                    'onLeftPressed': this['goCreate'],
                     'onRightPressed': this['onRightPressed']
                 }, a1['createElement'](k1, {
                     'enableEmptySections': !0x0,
-                    'className': wX['container'],
-                    'dataSource': this['ds']['cloneWithRows'](wL['playerMetas']['entries']()),
-                    'renderRow': this['renderRow'],
-                    'renderFooter': wL['playerMetas']['size'] < wL['playerSlotCount'] ? this['renderFooter'] : this['renderPurchase']
-                }), a1['createElement'](jX, {'className': wX['container2']}));
+                    'className': wY['container'],
+                    'dataSource': this['ds']['cloneWithRows'](wM['playerMetas']['entries']()),
+                    'renderRow': this['renderRow']
+                }), a1['createElement'](jX, {'className': wY['container2']}));
             }
-        }) || wY;
+        }) || wZ;
         var x3 = l(0x180b), x4 = {};
         x4['styleTagTransform'] = jG(), x4['setAttributes'] = jC(), x4['insert'] = jA()['bind'](null, 'head'), x4['domAPI'] = jx(), x4['insertStyleElement'] = jE(), jq()(x3['A'], x4);
         const x5 = x3['A'] && x3['A']['locals'] ? x3['A']['locals'] : void 0x0;
@@ -39368,7 +37043,7 @@ a();
                 $or: E4,
                 $and: E5
             } = arguments['length'] > 0x0 && void 0x0 !== arguments[0x0] ? arguments[0x0] : {};
-            const {player: E6} = nU, {storiesMap: E7, playerMetas: E8} = wL;
+            const {player: E6} = nU, {storiesMap: E7, playerMetas: E8} = wM;
             if (DW && (!E6 || E6['role'] !== DW)) return !0x1;
             if (DX && (!E6 || E6['currentCareer'] !== DX)) return !0x1;
             if (DY && (!E6 || E6['level'] < DY)) return !0x1;
@@ -39426,24 +37101,24 @@ a();
         let xz = gT(x7 = class extends a1['PureComponent'] {
             constructor() {
                 var DU, DV;
-                super(...arguments), xj(this, 'form', new qx()), xj(this, 'roleField', (DU = this['form'], DV = 'role', c6(() => DU[DV], {
+                super(...arguments), xj(this, 'form', new qz()), xj(this, 'roleField', (DU = this['form'], DV = 'role', c6(() => DU[DV], {
                     'set'(DW) {
                         DU[DV] = DW;
                     }
                 }))), xj(this, 'onRightPressed', async () => {
                     try {
                         dH(() => {
-                            const DW = qz['create'](this['form']);
+                            const DW = qA['create'](this['form']);
                             nU['resetTimeline'](), nU['addPlayer'](DW), nU['map'] = 'home', nU['resumeGame']();
                         }), DJ['navigate']('/home');
                     } catch (DW) {
-                        0x193 === DW['code'] ? nD('提示', '您已无法创建更多角色，请回到首页查看') : nD('错误', '创建失败');
+                        0x193 === DW['code'] ? nD('提示', '角色栏已达上限，无法创建新角色。') : nD('错误', '创建失败。');
                     }
                 });
             }
 
             ['render']() {
-                return a1['createElement'](wU, {
+                return a1['createElement'](wV, {
                     'key': '/player/create',
                     'title': '新游戏',
                     'onRightPressed': this['onRightPressed'],
@@ -39566,7 +37241,7 @@ a();
             if (DY) {
                 for (const DZ of Object['keys'](DY)) {
                     const E0 = DX['buildInventory']['find'](E1 => E1['key'] === DZ);
-                    E0 ? E0['count'] += DY[DZ] : DX['buildInventory']['push'](new qw('build')['fromJS']({
+                    E0 ? E0['count'] += DY[DZ] : DX['buildInventory']['push'](new qx('build')['fromJS']({
                         'key': DZ,
                         'count': DY[DZ]
                     }));
@@ -39644,7 +37319,7 @@ a();
                     const DX = {};
                     DU['enchantTimes']++, DU['affixes']['forEach'](DY => DX[DY['key']] = !0x0), this['newAffixes']['replace'](DU['affixes']['map']((DY, DZ) => this['locks'][DZ] ? DY : function (E0, E1) {
                         let E2 = 0x0;
-                        return E2 = E0['isLegend'] && E0['value'] ? E0['value'] : Math['max'](E0['affixData']['generate'](E1), E0['value']), new qq()['fromJS']({
+                        return E2 = E0['isLegend'] && E0['value'] ? E0['value'] : Math['max'](E0['affixData']['generate'](E1), E0['value']), new qw()['fromJS']({
                             'key': E0['key'],
                             'value': E2,
                             'rebuilded': E0['rebuilded']
@@ -39815,7 +37490,7 @@ a();
                 }, '消耗', yW[DW] || kS['goods'][DW]['name']), a1['createElement'](jW, {
                     'className': y6['materialAmount'],
                     'numberOfLines': 0x1
-                }, DV[DW], '/', wL['diamonds']))), a1['createElement'](jX, {'className': y6['container']}), a1['createElement'](jW, null, '点击属性重铸')));
+                }, DV[DW], '/', wM['diamonds']))), a1['createElement'](jX, {'className': y6['container']}), a1['createElement'](jW, null, '点击属性重铸')));
             }
 
             ['rebuild'](DU) {
@@ -39887,8 +37562,8 @@ a();
                         'writable': !0x0
                     }) : DU[DV] = DW;
                 }(this, 'renderMedicine', DU => {
-                    const DV = kS['medicines'][DU], DW = wL['medicineLevel']['get'](DU) || 0x0,
-                        DX = wL['totalMedicineLevel'] - DW, DY = DV['Max_level'] || !0x1;
+                    const DV = kS['medicines'][DU], DW = wM['medicineLevel']['get'](DU) || 0x0,
+                        DX = wM['totalMedicineLevel'] - DW, DY = DV['Max_level'] || !0x1;
                     return DW > DY && (localStorage['clear'](), location['reload']()), a1['createElement'](jX, {
                         'className': yA['medicine'],
                         'key': DU
@@ -39909,19 +37584,18 @@ a();
                 for (; DX > 0x0;) {
                     if (DW['gold'] < 0x3e8) return void nD('提示', '你怎么买东西不带钱的啊。');
                     DW['gold'] -= 0x3e8;
-                    const DY = kS['medicines'][DU], DZ = wL['medicineLevel']['get'](DU) || 0x0,
-                        E0 = wL['totalMedicineLevel'] - DZ, E1 = DY['Max_level'] || !0x1;
+                    const DY = kS['medicines'][DU], DZ = wM['medicineLevel']['get'](DU) || 0x0,
+                        E0 = wM['totalMedicineLevel'] - DZ, E1 = DY['Max_level'] || !0x1;
                     if (E0 <= 0x0 || DZ >= E1) return;
-                    const E2 = Object['keys'](kS['medicines'])['filter'](E4 => E4 !== DU && wL['medicineLevel']['get'](E4) > 0x0),
+                    const E2 = Object['keys'](kS['medicines'])['filter'](E4 => E4 !== DU && wM['medicineLevel']['get'](E4) > 0x0),
                         E3 = E2[Math['random']() * E2['length'] | 0x0] || E2[0x0];
-                    wL['medicineLevel']['set'](DU, wL['medicineLevel']['get'](DU) + 0x1), wL['medicineLevel']['set'](E3, wL['medicineLevel']['get'](E3) - 0x1), DX -= 0x1;
+                    wM['medicineLevel']['set'](DU, wM['medicineLevel']['get'](DU) + 0x1), wM['medicineLevel']['set'](E3, wM['medicineLevel']['get'](E3) - 0x1), DX -= 0x1;
                 }
-                wL['save']();
             }
 
             ['upgradeMedicine'](DU) {
-                const DV = wL['resetMedicineCost'];
-                wL['resetMedicineDiamondsCost'], nD('提示', '使用' + DV + '金币升级，并随机降级一项药品？', [{
+                const DV = wM['resetMedicineCost'];
+                wM['resetMedicineDiamondsCost'], nD('提示', '使用' + DV + '金币升级，并随机降级一项药品？', [{
                     'text': '确认',
                     'onPress': () => {
                         this['doUpgradeMedicine'](DU);
@@ -39932,7 +37606,7 @@ a();
             ['doThrow'](DU, DV) {
                 const DW = DU['goodData']['energy'];
                 DU['count'] === DV ? DU['clear']() : DU['count'] -= DV;
-                const DX = wL['gotMedicineExp'](DW * DV * (0x1 + 0.05 * wL['hgdlv']));
+                const DX = wM['gotMedicineExp'](DW * DV * (0x1 + 0.05 * wM['hgdlv']));
                 for (const DY of DX) nD('提示', '您的' + kS['medicines'][DY]['name'] + '等级提升了！');
             }
 
@@ -39943,12 +37617,12 @@ a();
                 const {count: DX} = DU, DY = 0x0 | DW;
                 if (DY <= 0x0) return nD('别逗我啦。'), !0x1;
                 if (DX === DY) this['doThrow'](DU, DY); else if (DX > DY) this['doThrow'](DU, DY); else if (DX < DY) return nD('别逗我啦。'), !0x1;
-                nU['player']['save']();
+                wM['save'](), nU['player']['save']();
             }
 
             ['render']() {
                 const DU = nU['player']['inventory']['filter'](DV => DV['isEnergyMaterial']);
-                return a1['createElement'](jX, {'className': yA['flex']}, a1['createElement'](jX, {'className': yA['info']}, a1['createElement'](jX, {'className': yA['flex']}, a1['createElement'](jW, null, '炼金等级：', wL['totalMedicineLevel'], '级'), a1['createElement'](jW, null, '当前经验值：', wL['medicineExp']['toFixed'](), '/', wL['maxMedicineExp']))), a1['createElement'](jZ, {'className': yA['flex']}, Object['keys'](kS['medicines'])['map'](this['renderMedicine'])), a1['createElement'](jX, {'className': yA['itemGroup']}, DU['map']((DV, DW) => a1['createElement'](z6, {
+                return a1['createElement'](jX, {'className': yA['flex']}, a1['createElement'](jX, {'className': yA['info']}, a1['createElement'](jX, {'className': yA['flex']}, a1['createElement'](jW, null, '炼金等级：', wM['totalMedicineLevel'], '级'), a1['createElement'](jW, null, '当前经验值：', wM['medicineExp']['toFixed'](), '/', wM['maxMedicineExp']))), a1['createElement'](jZ, {'className': yA['flex']}, Object['keys'](kS['medicines'])['map'](this['renderMedicine'])), a1['createElement'](jX, {'className': yA['itemGroup']}, DU['map']((DV, DW) => a1['createElement'](z6, {
                     'slot': DV,
                     'key': DW,
                     'onPress': () => this['throw'](DV)
@@ -39985,8 +37659,8 @@ a();
                         'writable': !0x0
                     }) : DU[DV] = DW;
                 }(this, 'renderCooking', DU => {
-                    const DV = kS['cookings'][DU], DW = wL['cookingLevel']['get'](DU) || 0x0,
-                        DX = wL['totalCookingLevel'] - DW, DY = DV['Max_level'] || !0x1;
+                    const DV = kS['cookings'][DU], DW = wM['cookingLevel']['get'](DU) || 0x0,
+                        DX = wM['totalCookingLevel'] - DW, DY = DV['Max_level'] || !0x1;
                     return DW > DY && (localStorage['clear'](), location['reload']()), a1['createElement'](jX, {
                         'className': yM['cooking'],
                         'key': DU
@@ -40007,19 +37681,20 @@ a();
                 for (; DX > 0x0;) {
                     if (DW['gold'] < 0x3e8) return void nD('提示', '你怎么买东西不带钱的啊。');
                     DW['gold'] -= 0x3e8;
-                    const DY = kS['cookings'][DU], DZ = wL['cookingLevel']['get'](DU) || 0x0,
-                        E0 = wL['totalCookingLevel'] - DZ, E1 = DY['Max_level'] || !0x1;
+                    const DY = kS['cookings'][DU], DZ = wM['cookingLevel']['get'](DU) || 0x0,
+                        E0 = wM['totalCookingLevel'] - DZ, E1 = DY['Max_level'] || !0x1;
                     if (E0 <= 0x0 || DZ >= E1) return;
-                    const E2 = Object['keys'](kS['cookings'])['filter'](E4 => E4 !== DU && wL['cookingLevel']['get'](E4) > 0x0),
+                    const E2 = Object['keys'](kS['cookings'])['filter'](E4 => E4 !== DU && wM['cookingLevel']['get'](E4) > 0x0),
                         E3 = E2[Math['random']() * E2['length'] | 0x0] || E2[0x0];
-                    wL['cookingLevel']['set'](DU, wL['cookingLevel']['get'](DU) + 0x1), wL['cookingLevel']['set'](E3, wL['cookingLevel']['get'](E3) - 0x1), DX -= 0x1;
+                    dH(() => {
+                        wM['cookingLevel']['set'](DU, wM['cookingLevel']['get'](DU) + 0x1), wM['cookingLevel']['set'](E3, wM['cookingLevel']['get'](E3) - 0x1);
+                    }), DX -= 0x1;
                 }
-                wL['save']();
             }
 
             ['upgradeCooking'](DU) {
-                const DV = wL['resetCookingCost'];
-                wL['resetCookingDiamondsCost'], nD('提示', '使用' + DV + '金币升级，并随机降级一项食品？', [{
+                const DV = wM['resetCookingCost'];
+                wM['resetCookingDiamondsCost'], nD('提示', '使用' + DV + '金币升级，并随机降级一项食品？', [{
                     'text': '确认',
                     'onPress': () => {
                         this['doUpgradeCooking'](DU);
@@ -40030,7 +37705,7 @@ a();
             ['doThrow'](DU, DV) {
                 const DW = DU['goodData']['energy'];
                 DU['count'] === DV ? DU['clear']() : DU['count'] -= DV;
-                const DX = wL['gotCookingExp'](DW * DV * (0x1 + 0.05 * wL['hgdlv']));
+                const DX = wM['gotCookingExp'](DW * DV * (0x1 + 0.05 * wM['hgdlv']));
                 for (const DY of DX) nD('提示', '您的' + kS['cookings'][DY]['name'] + '等级提升了！');
             }
 
@@ -40041,12 +37716,12 @@ a();
                 const {count: DX} = DU, DY = 0x0 | DW;
                 if (DY <= 0x0) return nD('别逗我啦。'), !0x1;
                 if (DX === DY) this['doThrow'](DU, DY); else if (DX > DY) this['doThrow'](DU, DY); else if (DX < DY) return nD('别逗我啦。'), !0x1;
-                nU['player']['save']();
+                wM['save'](), nU['player']['save']();
             }
 
             ['render']() {
                 const {player: DU} = nU, DV = DU['inventory']['filter'](DW => DW['isEnergyMaterial']);
-                return a1['createElement'](jX, {'className': yM['flex']}, a1['createElement'](jX, {'className': yM['info']}, a1['createElement'](jX, {'className': yM['flex']}, a1['createElement'](jW, null, '厨艺等级：', wL['totalCookingLevel'], '级'), a1['createElement'](jW, null, '当前经验值：', wL['cookingExp']['toFixed'](), '/', wL['maxCookingExp']))), a1['createElement'](jZ, {'className': yM['flex']}, Object['keys'](kS['cookings'])['map'](this['renderCooking'])), a1['createElement'](jX, {'className': yM['itemGroup']}, DV['map']((DW, DX) => a1['createElement'](z6, {
+                return a1['createElement'](jX, {'className': yM['flex']}, a1['createElement'](jX, {'className': yM['info']}, a1['createElement'](jX, {'className': yM['flex']}, a1['createElement'](jW, null, '厨艺等级：', wM['totalCookingLevel'], '级'), a1['createElement'](jW, null, '当前经验值：', wM['cookingExp']['toFixed'](), '/', wM['maxCookingExp']))), a1['createElement'](jZ, {'className': yM['flex']}, Object['keys'](kS['cookings'])['map'](this['renderCooking'])), a1['createElement'](jX, {'className': yM['itemGroup']}, DV['map']((DW, DX) => a1['createElement'](z6, {
                     'slot': DW,
                     'key': DX,
                     'onPress': () => this['throw'](DW)
@@ -40068,7 +37743,7 @@ a();
         function yU(DU) {
             let {diamonds: DV, gold: DW, ...DX} = DU;
             const {player: DY} = nU;
-            if (DV && wL['diamonds'] < DV) return !0x1;
+            if (DV && wM['diamonds'] < DV) return !0x1;
             if (DW && DY['gold'] < DW) return !0x1;
             for (const DZ of Object['keys'](DX)) if (DY['countGood'](DZ) < DX[DZ]) return !0x1;
             return !0x0;
@@ -40077,7 +37752,7 @@ a();
         function yV(DU) {
             let {diamonds: DV, gold: DW, ...DX} = DU;
             const {player: DY} = nU;
-            DV && (wL['diamonds'] -= DV), DW && (DY['gold'] -= DW);
+            DV && (wM['diamonds'] -= DV), DW && (DY['gold'] -= DW);
             for (const DZ of Object['keys'](DX)) DY['costGood'](DZ, DX[DZ]);
         }
 
@@ -40133,7 +37808,7 @@ a();
 
             ['render']() {
                 const {player: DU} = nU;
-                return a1['createElement'](wU, {'title': '技艺'}, a1['createElement'](jX, {'className': yS['container']}, a1['createElement'](xL, {'className': yS['container']}, a1['createElement'](y3, {'tabLabel': '附魔'}), a1['createElement'](yq, {'tabLabel': '重铸'}), a1['createElement'](yP, {'tabLabel': '厨艺'}), a1['createElement'](yD, {'tabLabel': '炼金'}), a1['createElement'](xS, {'tabLabel': '拆解'})), a1['createElement'](yX, {
+                return a1['createElement'](wV, {'title': '技艺'}, a1['createElement'](jX, {'className': yS['container']}, a1['createElement'](xL, {'className': yS['container']}, a1['createElement'](y3, {'tabLabel': '附魔'}), a1['createElement'](yq, {'tabLabel': '重铸'}), a1['createElement'](yP, {'tabLabel': '厨艺'}), a1['createElement'](yD, {'tabLabel': '炼金'}), a1['createElement'](xS, {'tabLabel': '拆解'})), a1['createElement'](yX, {
                     'selected': this['selectedItem'],
                     'inventory': DU['buildInventory']
                 })));
@@ -40227,11 +37902,11 @@ a();
                 }
             }, '丢弃')), 'bank' === DY && 'inventory' === E0['position'] && a1['createElement'](z7, {
                 'onPress': () => {
-                    nU['player']['loot'](E0, wL['bank']), wL['save'](), nU['player']['save']();
+                    nU['player']['loot'](E0, wM['bank']), wM['save'](), nU['player']['save']();
                 }
             }, '保存'), 'bank' === DY && 'bank' === E0['position'] && a1['createElement'](z7, {
                 'onPress': () => {
-                    nU['player']['loot'](E0), wL['save'](), nU['player']['save']();
+                    nU['player']['loot'](E0), wM['save'](), nU['player']['save']();
                 }
             }, '取出')));
             if (!E0 || !E0['goodData']) return E0 && yW[E0['key']] ? a1['createElement'](jX, {'className': z1['detail']}, a1['createElement'](jX, {'className': z1['row']}, a1['createElement'](jW, {'className': z1['detailName']}, yW[E0['key']]), a1['createElement'](jW, {'className': z1['detailCount']}, '\x20x\x20', E0['count'])), a1['createElement'](jX, {'className': z1['spacer']}, a1['createElement'](jX, {'className': z1['spacer']}), a1['createElement'](jW, {'numberOfLines': 0x2}, zj[E0['key']]))) : a1['createElement'](jX, {'className': z1['detail']});
@@ -40239,13 +37914,13 @@ a();
             let E3;
             return E3 = 'bank' === DY ? a1['createElement'](jX, {'className': z1['row']}, 'inventory' === E0['position'] && a1['createElement'](z7, {
                 'onPress': () => {
-                    nU['player']['loot'](E0, wL['bank']), wL['save'](), nU['player']['save']();
+                    nU['player']['loot'](E0, wM['bank']), wM['save'](), nU['player']['save']();
                 }
             }, '保存'), 'bank' === E0['position'] && a1['createElement'](z7, {
                 'onPress': () => {
-                    nU['player']['loot'](E0), wL['save'](), nU['player']['save']();
+                    nU['player']['loot'](E0), wM['save'](), nU['player']['save']();
                 }
-            }, '取出'), E0['price'] && 'equip' !== E0['position'] && 'package' !== E0['goodData']['type'] && 'material' !== E0['goodData']['type'] && 'box' !== E0['goodData']['type'] && 'exp' !== E0['goodData']['type'] && E0['count'] >= 0x1 && !E0['locked'] && a1['createElement'](z7, {
+            }, '取出'), E0['price'] && 'equip' !== E0['position'] && 'package' !== E0['goodData']['type'] && 'material' !== E0['goodData']['type'] && 'box' !== E0['goodData']['type'] && 'exp' !== E0['goodData']['type'] && 'skill1' !== E0['goodData']['type'] && 'skill2' !== E0['goodData']['type'] && E0['count'] >= 0x1 && !E0['locked'] && a1['createElement'](z7, {
                 'onPress': async () => {
                     E0['quality'] < 0x2 ? dH(() => {
                         DX['set'](null), nU['player']['sellItem'](E0, 0x1);
@@ -40253,7 +37928,7 @@ a();
                         'text': '拆解',
                         'onPress': () => {
                             dH(() => {
-                                DX['set'](null), nU['player']['decomposeItem'](E0), wL['save'](), nU['player']['save']();
+                                DX['set'](null), nU['player']['decomposeItem'](E0), wM['save'](), nU['player']['save']();
                             });
                         }
                     }, {'text': '不拆'}]) : dH(() => {
@@ -40279,7 +37954,7 @@ a();
                     dH(() => {
                         const {count: E5} = DX['get'](), E6 = Math['max'](0x0, 0x0 | E4);
                         if (E5 < E6 || 0x0 === E6) return !0x1;
-                        nU['usePackage'](E0, E6), wL['save'](), nU['player']['save']();
+                        nU['usePackage'](E0, E6), wM['save'](), nU['player']['save']();
                     });
                 }
             }, '打开'), E0['goodData'] && 'box' === E0['goodData']['type'] && a1['createElement'](z7, {
@@ -40288,7 +37963,7 @@ a();
                     dH(() => {
                         const {count: E5} = DX['get'](), E6 = Math['max'](0x0, 0x0 | E4);
                         if (E5 < E6 || 0x0 === E6 || nU['player']['level'] < 0x64) return !0x1;
-                        nU['useBox'](E0, E6), wL['save'](), nU['player']['save']();
+                        nU['useBox'](E0, E6), wM['save'](), nU['player']['save']();
                     });
                 }
             }, '打开'), E0['goodData'] && 'exp' === E0['goodData']['type'] && a1['createElement'](z7, {
@@ -40297,10 +37972,77 @@ a();
                     dH(() => {
                         const {count: E5} = DX['get'](), E6 = Math['max'](0x0, 0x0 | E4);
                         if (E5 < E6 || 0x0 === E6) return !0x1;
-                        nU['useexp'](E0, E6), wL['save'](), nU['player']['save']();
+                        nU['useexp'](E0, E6), wM['save'](), nU['player']['save']();
                     });
                 }
-            }, '打开'), E0['price'] && 'equip' !== E0['position'] && 'package' !== E0['goodData']['type'] && 'material' !== E0['goodData']['type'] && 'box' !== E0['goodData']['type'] && 'exp' !== E0['goodData']['type'] && E0['count'] >= 0x1 && !E0['locked'] && a1['createElement'](z7, {
+            }, '打开'), E0['goodData'] && 'skill1' === E0['goodData']['type'] && a1['createElement'](z7, {
+                'onPress': async () => {
+                    const E4 = Math['max'](0x64 - 0xa * nU['player']['playerskill']['length'], 0x5);
+                    nD('提示', '这是一枚技能石，使用后有' + E4 + '%的几率随机抽取一项尚未习得的主动技能。\x0a\x09\x09\x09\x09\x09\x20\x20也可以选择遗忘一项已经习得的主动技能。', [{
+                        'text': '学习技能', 'onPress': () => {
+                            if (nU['player']['playerskill2']['length'] >= 0x14) return void nD('提示', '贪多嚼不烂，少学一点啦。');
+                            if (Math['random']() > E4 / 0x64) return nD('提示', '这一把手气好像不太行啊。'), E0['count'] -= 0x1, 0x0 === E0['count'] && E0['clear'](), wM['save'](), void nU['player']['save']();
+                            const E5 = Object['keys'](kS['skills'])['filter'](E8 => 'player' === (kS['skills'][E8]['type'] || 0x0) && (kS['skills'][E8]['lv'] || 0x1) <= nU['player']['level']);
+                            if (nU['player']['playerskill']['length'] >= E5['length']) return void nD('提示', '你暂时学完了目前所能掌握的所有主动技能。');
+                            let E6 = E5[Math['floor'](Math['random']() * E5['length'])],
+                                E7 = nU['player']['playerskill']['indexOf'](E6);
+                            for (; E7 > -0x1;) E6 = E5[Math['floor'](Math['random']() * E5['length'])], E7 = nU['player']['playerskill']['indexOf'](E6);
+                            E0['count'] -= 0x1, 0x0 === E0['count'] && E0['clear'](), wM['save'](), nU['player']['save'](), nD('提示', '抽取到的主动技能是...\x22' + kS['skills'][E6]['name'] + '\x22！是否学习？', [{
+                                'text': '学习',
+                                'onPress': () => {
+                                    dH(() => {
+                                        nU['player']['playerskill']['push'](E6), nU['player']['skillExp']['set'](E6, {
+                                            'level': 0x0,
+                                            'exp': 0x0
+                                        }), wM['save'](), nU['player']['save']();
+                                    });
+                                }
+                            }, {'text': '放弃'}]);
+                        }
+                    }, {
+                        'text': '遗忘技能', 'onPress': async () => {
+                            const E5 = await nF('提示', '输入想要遗忘的主动技能名称', ''),
+                                E6 = Object['keys'](kS['skills'])['filter'](E7 => kS['skills'][E7]['name'] === E5 && 'player' === (kS['skills'][E7]['type'] || 0x0));
+                            console['log'](E6), E6[0x0] ? nU['player']['playerskill']['find'](E7 => E7 === E6[0x0]) ? dH(() => {
+                                for (let E7 = nU['player']['playerskill']['length'] - 0x1; E7 >= 0x0; E7--) nU['player']['playerskill'][E7] === E6[0x0] && nU['player']['playerskill']['splice'](E7, 0x1);
+                                nU['player']['careerInfo']['selectedSkills']['find'](E8 => E8 === E6[0x0]) && nU['unselectSkill'](E6[0x0]), E0['count'] -= 0x1, 0x0 === E0['count'] && E0['clear'](), wM['save'](), nU['player']['save']();
+                            }) : nD('提示', '该技能未掌握') : nD('提示', '技能名称错误');
+                        }
+                    }, {'text': '放弃'}]);
+                }
+            }, '使用'), E0['goodData'] && 'skill2' === E0['goodData']['type'] && a1['createElement'](z7, {
+                'onPress': async () => {
+                    const E4 = Math['max'](0x64 - 0xa * nU['player']['playerskill2']['length'], 0x5);
+                    nD('提示', '这是一枚技能石，使用后有' + E4 + '%的几率随机抽取一项尚未习得的被动技能。\x0a\x09\x09\x09\x09\x09\x20\x20也可以选择遗忘一项已经习得的被动技能。', [{
+                        'text': '学习技能', 'onPress': () => {
+                            if (nU['player']['playerskill2']['length'] >= 0x14) return void nD('提示', '贪多嚼不烂，少学一点啦。');
+                            if (Math['random']() > E4 / 0x64) return nD('提示', '这一把手气好像不太行啊。'), E0['count'] -= 0x1, 0x0 === E0['count'] && E0['clear'](), wM['save'](), void nU['player']['save']();
+                            const E5 = Object['keys'](kS['enhances'])['filter'](E8 => 'player' === (kS['enhances'][E8]['type'] || 0x0) && (kS['enhances'][E8]['lv'] || 0x1) <= nU['player']['level']);
+                            if (nU['player']['playerskill2']['length'] >= E5['length']) return void nD('提示', '你暂时学完了目前所能掌握的所有被动技能。');
+                            let E6 = E5[Math['floor'](Math['random']() * E5['length'])],
+                                E7 = nU['player']['playerskill2']['indexOf'](E6);
+                            for (; E7 > -0x1;) E6 = E5[Math['floor'](Math['random']() * E5['length'])], E7 = nU['player']['playerskill2']['indexOf'](E6);
+                            E0['count'] -= 0x1, 0x0 === E0['count'] && E0['clear'](), wM['save'](), nU['player']['save'](), nD('提示', '抽取到的被动技能是...\x22' + kS['enhances'][E6]['name'] + '\x22！是否学习？', [{
+                                'text': '学习',
+                                'onPress': () => {
+                                    dH(() => {
+                                        nU['player']['playerskill2']['push'](E6), wM['save'](), nU['player']['save']();
+                                    });
+                                }
+                            }, {'text': '放弃'}]);
+                        }
+                    }, {
+                        'text': '遗忘技能', 'onPress': async () => {
+                            const E5 = await nF('提示', '输入想要遗忘的被动技能名称', ''),
+                                E6 = Object['keys'](kS['enhances'])['filter'](E7 => kS['enhances'][E7]['name'] === E5 && 'player' === (kS['enhances'][E7]['type'] || 0x0));
+                            E6[0x0] ? nU['player']['playerskill2']['find'](E7 => E7 === E6[0x0]) ? dH(() => {
+                                for (let E7 = nU['player']['playerskill2']['length'] - 0x1; E7 >= 0x0; E7--) nU['player']['playerskill2'][E7] === E6[0x0] && nU['player']['playerskill2']['splice'](E7, 0x1);
+                                nU['player']['careerInfo']['selectedEnhances']['find'](E8 => E8 === E6[0x0]) && nU['unselectEnhance'](E6[0x0]), E0['count'] -= 0x1, 0x0 === E0['count'] && E0['clear'](), wM['save'](), nU['player']['save']();
+                            }) : nD('提示', '该技能未掌握') : nD('提示', '技能名称错误');
+                        }
+                    }, {'text': '放弃'}]);
+                }
+            }, '使用'), E0['price'] && 'equip' !== E0['position'] && 'package' !== E0['goodData']['type'] && 'material' !== E0['goodData']['type'] && 'box' !== E0['goodData']['type'] && 'exp' !== E0['goodData']['type'] && 'skill1' !== E0['goodData']['type'] && 'skill2' !== E0['goodData']['type'] && E0['count'] >= 0x1 && !E0['locked'] && a1['createElement'](z7, {
                 'onPress': async () => {
                     E0['quality'] < 0x2 ? dH(() => {
                         DX['set'](null), nU['player']['sellItem'](E0, 0x1);
@@ -40308,7 +38050,7 @@ a();
                         'text': '拆解',
                         'onPress': () => {
                             dH(() => {
-                                DX['set'](null), nU['player']['decomposeItem'](E0), wL['save'](), nU['player']['save']();
+                                DX['set'](null), nU['player']['decomposeItem'](E0), wM['save'](), nU['player']['save']();
                             });
                         }
                     }, {'text': '不拆'}]) : dH(() => {
@@ -40325,7 +38067,7 @@ a();
             }, E4['display'], '\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'))))), a1['createElement'](jX, {'className': z1['spacer']}, a1['createElement'](jX, {'className': z1['row6']}, E1 && a1['createElement'](jW, {'className': z1['marginLeft2']}, E0['description'])), a1['createElement'](jX, {'className': z1['row7']}, E1 && E3), a1['createElement'](jX, {'className': z1['row8']}, !E1 && E3))));
         }), zw = dF(function () {
             const {player: DU} = nU, DV = kS['upgrades']['inventoryByDiamonds'][DU['inventoryDiamondLevel']];
-            wL['diamonds'] < DV ? nD('提示', '神力不够？那这事有点不太好办啊。', [{'text': '确认'}, {'text': '取消'}]) : (wL['diamonds'] -= DV, DU['inventory']['push'](new qw('inventory')), DU['inventoryDiamondLevel']++);
+            wM['diamonds'] < DV ? nD('提示', '神力不够？那这事有点不太好办啊。', [{'text': '确认'}, {'text': '取消'}]) : (wM['diamonds'] -= DV, DU['inventory']['push'](new qx('inventory')), DU['inventoryDiamondLevel']++);
         }), zx = dF(function () {
             const {player: DU} = nU,
                 DV = kS['upgrades']['inventory'][DU['inventory']['length'] - DU['inventoryDiamondLevel']], {
@@ -40335,7 +38077,7 @@ a();
             if (yU(DV)) {
                 DW && (DU['gold'] -= DW);
                 for (const DY of Object['keys'](DX)) DU['costGood'](DY, DX[DY]);
-                DU['inventory']['push'](new qw('inventory'));
+                DU['inventory']['push'](new qx('inventory'));
             } else nD('提示', '物品扣除失败。请重试。');
         });
 
@@ -40406,7 +38148,7 @@ a();
 
             ['render']() {
                 const {player: DU} = nU;
-                return a1['createElement'](wU, {
+                return a1['createElement'](wV, {
                     'title': '背包',
                     'leftNavTitle': '创世神商店',
                     'rightNavTitle': '仓库',
@@ -40416,7 +38158,7 @@ a();
                     'unit': DU,
                     'field': 'gold'
                 }), '\x20神力:', '\x20', a1['createElement'](xG, {
-                    'unit': wL,
+                    'unit': wM,
                     'field': 'diamonds'
                 }))), a1['createElement'](jX, {'className': z1['row']}, a1['createElement'](jW, null, DU['name'], '的装备'), a1['createElement'](jZ, {
                     'contentContainerClassName': z1['rowCenter'],
@@ -40558,7 +38300,7 @@ a();
                 let {who: DV, what: DW, showToast: DX} = DU;
                 const {count: DY, key: DZ, dungeonKey: E0} = DW, E1 = kS['goods'][DZ] && kS['goods'][DZ]['quality'];
                 let E2 = zM[DZ], E3 = E2;
-                return 'ticket' === DZ ? (E2 = a1['createElement'](jW, {'className': z4[0x5]}, '钥石：', q8(E0) || kS['maps'][E0]['name']), E3 = '钥石：' + (q8(E0) || kS['maps'][E0]['name'])) : E2 || (E2 = a1['createElement'](jW, {'className': z4[E1]}, kS['goods'][DZ]['name']), E3 = kS['goods'][DZ]['name']), DY && DY > 0x1 ? (DX && kW('获得了' + DY + '个' + E3 + '。'), a1['createElement'](jW, null, DV['name'], '拾取了', DY, '个', E2, '。')) : (DX && kW('获得了' + E3 + '。'), a1['createElement'](jW, null, DV['name'], '拾取了', E2, '。'));
+                return 'ticket' === DZ ? (E2 = a1['createElement'](jW, {'className': z4[0x5]}, '钥石：', q9(E0) || kS['maps'][E0]['name']), E3 = '钥石：' + (q9(E0) || kS['maps'][E0]['name'])) : E2 || (E2 = a1['createElement'](jW, {'className': z4[E1]}, kS['goods'][DZ]['name']), E3 = kS['goods'][DZ]['name']), DY && DY > 0x1 ? (DX && kW('获得了' + DY + '个' + E3 + '。'), a1['createElement'](jW, null, DV['name'], '拾取了', DY, '个', E2, '。')) : (DX && kW('获得了' + E3 + '。'), a1['createElement'](jW, null, DV['name'], '拾取了', E2, '。'));
             }
 
             ['renderBattleBuff'](DU) {
@@ -40800,7 +38542,7 @@ a();
                 getMaxCount: E0,
                 battleCount: E1
             } = DU, {name: E2} = DV;
-            DW && (E2 = E2['replace']('噩梦', '噩梦' + (q7[DW] || DW)));
+            DW && (E2 = E2['replace']('噩梦', '噩梦' + (q8[DW] || DW)));
             const E3 = !DZ && kF(() => (!DW || DW == nU['_endlessLevel']) && nU['map'] === DV['key']),
                 E4 = kF(() => nU['pendingMaps']['findIndex'](E5 => E5[0x0] == DV['key'] && E5[0x1] == DW) >= 0x0);
             return a1['createElement'](jY, {
@@ -40818,53 +38560,53 @@ a();
         });
 
         function Ax(DU) {
-            const {key: DV, requirement: DW} = DU, {storiesMap: DX} = wL;
+            const {key: DV, requirement: DW} = DU, {storiesMap: DX} = wM;
             return 'done' !== DX['get'](DV) && x6(DW);
         }
 
         function Az(DU) {
-            const {player: DV} = nU, {storiesMap: DW} = wL;
+            const {player: DV} = nU, {storiesMap: DW} = wM;
             if ('done' !== DW['get'](DU['key'])) {
                 DW['set'](DU['key'], 'done');
-                for (const DX of Object['keys'](DU['awards'] || {})) if ('purchaseRate' === DX) wL['purchaseRate'] += DU['awards'][DX]; else if ('number' == typeof DU['awards'][DX]) {
+                for (const DX of Object['keys'](DU['awards'] || {})) if ('purchaseRate' === DX) wM['purchaseRate'] += DU['awards'][DX]; else if ('number' == typeof DU['awards'][DX]) {
                     const DY = DV['awardInventory']['find'](DZ => DZ['key'] === DX);
-                    DY ? DY['count'] += DU['awards'][DX] : DV['awardInventory']['push'](new qw('award')['fromJS']({
+                    DY ? DY['count'] += DU['awards'][DX] : DV['awardInventory']['push'](new qx('award')['fromJS']({
                         'key': DX,
                         'count': DU['awards'][DX]
                     }));
                 } else {
                     const {quality: DZ, affixes: E0} = DU['awards'][DX];
-                    DV['awardInventory']['push'](new qw('award')['fromJS']({
+                    DV['awardInventory']['push'](new qx('award')['fromJS']({
                         'key': DX,
                         'count': 0x1,
                         'quality': DZ,
                         'affixes': E0
                     }));
                 }
-                wL['save'](), DV && DV['save']();
+                wM['save'](), DV && DV['save']();
             }
         }
 
         const AA = dF(function () {
             let DU = arguments['length'] > 0x0 && void 0x0 !== arguments[0x0] ? arguments[0x0] : 'full';
             if (zW > 0x0) return;
-            const DV = Object['keys'](kS['stories'])['map'](DZ => kS['stories'][DZ]), {storiesMap: DW} = wL;
+            const DV = Object['keys'](kS['stories'])['map'](DZ => kS['stories'][DZ]), {storiesMap: DW} = wM;
             let DX = !0x1;
 
             function DY() {
-                for (const DZ of wL['enemyTaskMap']['keys']()) {
-                    const E0 = wL['enemyTaskMap']['get'](DZ);
+                for (const DZ of wM['enemyTaskMap']['keys']()) {
+                    const E0 = wM['enemyTaskMap']['get'](DZ);
                     for (const E1 of E0['keys']()) if (E0['get'](E1) <= 0x0) {
                         const E2 = kS['stories'][E1];
                         if (E2['script']) return void zX(a1['createElement'](A8, {
                             'story': E2['key'],
                             'onDismiss': () => {
-                                E0['delete'](E1), 0x0 === E0['size'] && wL['enemyTaskMap']['delete'](DZ), Az(E2), AB();
+                                E0['delete'](E1), 0x0 === E0['size'] && wM['enemyTaskMap']['delete'](DZ), Az(E2), AB();
                             }
                         }));
                         E0['delete'](E1), Az(E2), DX = !0x0;
                     }
-                    0x0 === E0['size'] && wL['enemyTaskMap']['delete'](DZ);
+                    0x0 === E0['size'] && wM['enemyTaskMap']['delete'](DZ);
                 }
             }
 
@@ -40874,7 +38616,7 @@ a();
                 for (const E0 of DZ) if (E0) if (E0['taskType']) {
                     if (!DW['has'](E0['key'])) switch (DW['set'](E0['key'], 'task'), E0['taskType']) {
                         case'kill':
-                            wL['addKillTask'](E0['key'], E0['enemy'], E0['killCount']);
+                            wM['addKillTask'](E0['key'], E0['enemy'], E0['killCount']);
                             break;
                         case'purchase':
                             break;
@@ -40941,7 +38683,7 @@ a();
                     'getMaxCount': () => DW - 0x0
                 }, a1['createElement'](jW, {'className': zR['cooldownCount']}, '×', '' + DW))));
             }), AG = gT(function () {
-                const DU = wL['highestEndlessLevel'], DV = [];
+                const DU = wM['highestEndlessLevel'], DV = [];
                 for (let DW = 0x1; DW <= DU; DW++) DV['push'](a1['createElement'](AF, {'level': DW, 'key': DW}));
                 return a1['createElement'](a1['Fragment'], null, DV);
             });
@@ -40989,10 +38731,10 @@ a();
             async ['buyTicket'](DU) {
                 const {player: DV} = nU;
                 if (DV['dungeonTickets']['get'](DU['key']) > 0x3e7) return void nD('提示', '该副本钥石数量超过上限，无法购买。');
-                if (wL['diamonds'] < DU['resetPrice']) return void nD('提示', '神力不够？那这事有点不太好办啊。', [{'text': '确认'}, {'text': '还是确认'}]);
-                const DW = Math['floor'](wL['diamonds'] / DU['resetPrice']), DX = DU['resetPrice'];
+                if (wM['diamonds'] < DU['resetPrice']) return void nD('提示', '神力不够？那这事有点不太好办啊。', [{'text': '确认'}, {'text': '还是确认'}]);
+                const DW = Math['floor'](wM['diamonds'] / DU['resetPrice']), DX = DU['resetPrice'];
                 let DY = 0x0;
-                if ('town.cave2' === DU['key'] ? await nD('提示', '现在没有该副本的钥石，是否花费' + DU['resetPrice'] + '神力购买1个钥石？\x0a（在普通地图击杀怪物有几率获得钥石）', [{
+                if ('town.cave22' === DU['key'] ? await nD('提示', '现在没有该副本的钥石，是否花费' + DU['resetPrice'] + '神力购买1个钥石？\x0a（在普通地图击杀怪物有几率获得钥石）', [{
                     'text': '确认',
                     'onPress': () => {
                         DY += 0x1;
@@ -41004,9 +38746,9 @@ a();
                 }]) : DY += await nF('现在没有该副本的钥石，请输入购买数量', '每个[钥石·' + DU['name'] + ']的购买价格为[' + DX + ']神力', '1'), !DY) return;
                 let DZ = 0x0 | DY;
                 if (DZ <= 0x0 || !DZ) return nD('别逗我啦。'), !0x1;
-                if (wL['diamonds'] < DU['resetPrice'] * DZ) nD('提示', '神力不够？那这事有点不太好办啊。', [{'text': '确认'}, {'text': '还是确认'}]); else {
-                    if (DW >= DZ) wL['diamonds'] -= DX * DZ, DV['dungeonTickets']['set'](DU['group'] || DU['key'], DV['dungeonTickets']['get'](DU['group'] || DU['key']) + DZ); else if (DW < DZ) return nD('别逗我啦。'), !0x1;
-                    nU['player']['save'](), wL['save']();
+                if (wM['diamonds'] < DU['resetPrice'] * DZ) nD('提示', '神力不够？那这事有点不太好办啊。', [{'text': '确认'}, {'text': '还是确认'}]); else {
+                    if (DW >= DZ) wM['diamonds'] -= DX * DZ, DV['dungeonTickets']['set'](DU['group'] || DU['key'], DV['dungeonTickets']['get'](DU['group'] || DU['key']) + DZ); else if (DW < DZ) return nD('别逗我啦。'), !0x1;
+                    nU['player']['save'](), wM['save']();
                 }
             }
 
@@ -41032,7 +38774,7 @@ a();
                     'className': zR['panel'],
                     'contentContainerClassName': zR['panelContent'],
                     'bounces': !0x1
-                }, a1['createElement'](jX, {'className': zR['section']}, a1['createElement'](jW, {'className': zR['sectionTitle']}, '地图')), Object['keys'](kS['maps'])['filter'](DU => !kS['maps'][DU]['isDungeon'])['filter'](DU => AC(DU))['map'](this['renderMap']), wL['highestEndlessLevel'] > 0x0 && a1['createElement'](jX, {'className': zR['section']}, a1['createElement'](jW, {'className': zR['sectionTitle']}, '无尽副本')), a1['createElement'](AG, null), a1['createElement'](jX, {'className': zR['section']}, a1['createElement'](jW, {'className': zR['sectionTitle']}, '副本'), a1['createElement'](z7, {'onPress': this['storiestips']}, '掉落提示')), Object['keys'](kS['maps'])['filter'](DU => kS['maps'][DU]['isDungeon'] && !kS['maps'][DU]['isEndless'])['filter'](DU => AC(DU))['map'](this['renderDungeon']), this['renderDungeonPhase'](), nU['pendingMaps']['length'] > 0x0 && a1['createElement'](jX, {'className': zR['section']}, a1['createElement'](jW, {'className': zR['sectionTitle']}, '副本队列')), nU['pendingMaps']['map'](this['renderMapName']), a1['createElement'](jX, {'className': zR['section']}, a1['createElement'](jW, {'className': zR['sectionTitle']}, '副本（无钥石）')), Object['keys'](kS['maps'])['filter'](DU => kS['maps'][DU]['isDungeon'] && !kS['maps'][DU]['isEndless'])['filter'](DU => AC(DU))['map'](this['renderDungeonNoTicket']));
+                }, a1['createElement'](jX, {'className': zR['section']}, a1['createElement'](jW, {'className': zR['sectionTitle']}, '地图')), Object['keys'](kS['maps'])['filter'](DU => !kS['maps'][DU]['isDungeon'])['filter'](DU => AC(DU))['map'](this['renderMap']), wM['highestEndlessLevel'] > 0x0 && a1['createElement'](jX, {'className': zR['section']}, a1['createElement'](jW, {'className': zR['sectionTitle']}, '无尽副本')), a1['createElement'](AG, null), a1['createElement'](jX, {'className': zR['section']}, a1['createElement'](jW, {'className': zR['sectionTitle']}, '副本'), a1['createElement'](z7, {'onPress': this['storiestips']}, '掉落提示')), Object['keys'](kS['maps'])['filter'](DU => kS['maps'][DU]['isDungeon'] && !kS['maps'][DU]['isEndless'])['filter'](DU => AC(DU))['map'](this['renderDungeon']), this['renderDungeonPhase'](), nU['pendingMaps']['length'] > 0x0 && a1['createElement'](jX, {'className': zR['section']}, a1['createElement'](jW, {'className': zR['sectionTitle']}, '副本队列')), nU['pendingMaps']['map'](this['renderMapName']), a1['createElement'](jX, {'className': zR['section']}, a1['createElement'](jW, {'className': zR['sectionTitle']}, '副本（无钥石）')), Object['keys'](kS['maps'])['filter'](DU => kS['maps'][DU]['isDungeon'] && !kS['maps'][DU]['isEndless'])['filter'](DU => AC(DU))['map'](this['renderDungeonNoTicket']));
             }
         }, function (DU, DV, DW, DX, DY) {
             var DZ = {};
@@ -41584,7 +39326,7 @@ a();
         }((BD = class extends a1['Component'] {
             constructor() {
                 super(...arguments), BE(this, 'selectedItem', c2(null)), BE(this, 'dispose', void 0x0), BE(this, 'onLeftPressed', dF(() => {
-                    nU['player'] && nU['player']['save'](), nU['dispose'](), wL['save'](), zO['dispose'](), wL['currentPlayer'] = null, DJ['navigate']('/player/choose');
+                    nU['player'] && nU['player']['save'](), nU['dispose'](), wM['save'](), zO['dispose'](), wM['currentPlayer'] = null, DJ['navigate']('/player/choose');
                 })), BE(this, 'onMessage', DU => {
                     let {type: DV} = DU;
                     'battle.death' === DV && AA();
@@ -41594,7 +39336,7 @@ a();
             }
 
             ['componentDidMount']() {
-                if (wL['lastVersion'] !== BF['version']) return wL['lastVersion'] = BF['version'], void setTimeout(() => {
+                if (wM['lastVersion'] !== BF['version']) return wM['lastVersion'] = BF['version'], void setTimeout(() => {
                     DJ['navigate']('/story/annoucement');
                 }, 0x3e8);
                 AB(), this['dispose'] = lG['addListener']('message', this['onMessage']);
@@ -41610,11 +39352,11 @@ a();
 
             ['render']() {
                 const {player: DU} = nU;
-                return nU['paused'] || !DU ? a1['createElement'](wU, {
+                return nU['paused'] || !DU ? a1['createElement'](wV, {
                     'title': '战斗',
                     'leftNavTitle': '切换人物',
                     'onLeftPressed': this['onLeftPressed']
-                }, a1['createElement'](jX, {'className': [BB['container'], BB['centerContainer']]}, a1['createElement'](jW, null, '当你不在的时候，时光依然飞逝。剩余', this['pendingTimeLabel']))) : a1['createElement'](wU, {
+                }, a1['createElement'](jX, {'className': [BB['container'], BB['centerContainer']]}, a1['createElement'](jW, null, '当你不在的时候，时光依然飞逝。剩余', this['pendingTimeLabel']))) : a1['createElement'](wV, {
                     'title': '战斗',
                     'leftNavTitle': '切换人物',
                     'onLeftPressed': this['onLeftPressed']
@@ -41664,30 +39406,30 @@ a();
                 }, a1['createElement'](jW, {'className': BJ['order']}, DW + 0x1), a1['createElement'](jX, null, a1['createElement'](jW, null, DX['name']), a1['createElement'](jW, null, DY['level'], '级')));
             }));
         }), BN = gT(function (DU) {
-            let {level: DV, skill: DW} = DU;
-            const {player: DX, playerUnit: DY} = nU, DZ = kS['skills'][DW],
-                E0 = DX['skillExp']['get'](DZ['expGroup'] || DW),
-                E1 = kF(() => DX['careerInfo']['selectedSkills']['length']),
-                E2 = kF(() => DX['careerInfo']['selectedSkills']['indexOf'](DW)),
-                E3 = E2 >= 0x0 || E1 < DX['maxSkillCount'] && DV <= DX['level'],
-                E4 = kF(() => kS['skills'][DW]['group'] && -0x1 === E2 && DX['careerInfo']['selectedSkills']['find'](Eq => kS['skills'][Eq]['group'] === kS['skills'][DW]['group'])),
-                E5 = (!E3 || !!E4) && E2 < 0x0;
-            let {coolDown: E6, description: E7, cost: E8, halo: E9} = DZ, Ej = null;
-            return 'function' == typeof E6 && (E6 = E6(E0['level'], DY)), 'function' == typeof E7 && (E7(E0['level'] + 0x1, nU['playerUnit']), E7 = E7(E0['level'], nU['playerUnit'])), a1['createElement'](jY, {
-                'className': [BJ['skillItem'], E5 && BJ['skillItemDisabled']],
+            let {skill: DV} = DU;
+            const {player: DW, playerUnit: DX} = nU, DY = kS['skills'][DV],
+                DZ = DW['skillExp']['get'](DY['expGroup'] || DV),
+                E0 = kF(() => DW['careerInfo']['selectedSkills']['length']),
+                E1 = kF(() => DW['careerInfo']['selectedSkills']['indexOf'](DV)),
+                E2 = E1 >= 0x0 || E0 < DW['maxSkillCount'] && 0x1 <= DW['level'],
+                E3 = kF(() => kS['skills'][DV]['group'] && -0x1 === E1 && DW['careerInfo']['selectedSkills']['find'](Ej => kS['skills'][Ej]['group'] === kS['skills'][DV]['group'])),
+                E4 = (!E2 || !!E3) && E1 < 0x0;
+            let {coolDown: E5, description: E6, cost: E7, halo: E8} = DY, E9 = null;
+            return 'function' == typeof E5 && (E5 = E5(DZ['level'], DX)), 'function' == typeof E6 && (E6(DZ['level'] + 0x1, nU['playerUnit']), E6 = E6(DZ['level'], nU['playerUnit'])), a1['createElement'](jY, {
+                'className': [BJ['skillItem'], E4 && BJ['skillItemDisabled']],
                 'activeOpacity': 0.8,
-                'disabled': E5,
+                'disabled': E4,
                 'onPress': () => {
-                    E2 >= 0x0 ? nU['unselectSkill'](DW) : E1 < DX['maxSkillCount'] && nU['selectSkill'](DW);
+                    E1 >= 0x0 ? nU['unselectSkill'](DV) : E0 < DW['maxSkillCount'] && nU['selectSkill'](DV);
                 }
-            }, a1['createElement'](jX, {'className': BJ['skillItemMain']}, a1['createElement'](jW, {'className': BJ['skillName']}, DZ['name']), E2 >= 0x0 && a1['createElement'](jW, null, '顺序：', E2 + 0x1), DV <= DX['level'] && E4 && a1['createElement'](jW, null, '冲突:\x20', kS['skills'][E4]['name']), a1['createElement'](jX, {'className': BJ['spacer']}), E0['level'] >= 0x32 && a1['createElement'](jW, null, '满级'), E0['level'] < 0x32 && a1['createElement'](jW, null, '熟练度:\x20', 0x0 | E0['exp'], '/', DZ['maxExp'](E0['level']))), a1['createElement'](jX, {'className': BJ['row']}, DV > DX['level'] && a1['createElement'](jW, {'className': BJ['textMargin']}, '需达到', DV, '级'), DV <= DX['level'] && a1['createElement'](jW, {'className': BJ['textMargin']}, '等级：', E0['level']), E9 && a1['createElement'](jW, {'className': BJ['textMargin']}, '光环技能'), E6 && !E9 && a1['createElement'](jW, {'className': BJ['textMargin']}, '冷却时间：', (E6 / 0x3e8)['toFixed'](0x1), '秒'), E8 && E8['mp'] && a1['createElement'](jW, {'className': BJ['textMargin']}, '消耗法力\x20', function (Eq) {
-                return 'function' == typeof Eq ? 0x0 | Eq(nU['player']) : 0x0 | Eq;
-            }(E8['mp']))), a1['createElement'](jW, {'className': BJ['textMargin']}, E7));
+            }, a1['createElement'](jX, {'className': BJ['skillItemMain']}, a1['createElement'](jW, {'className': BJ['skillName']}, DY['name']), E1 >= 0x0 && a1['createElement'](jW, null, '顺序：', E1 + 0x1), 0x1 <= DW['level'] && E3 && a1['createElement'](jW, null, '冲突:\x20', kS['skills'][E3]['name']), a1['createElement'](jX, {'className': BJ['spacer']}), DZ['level'] >= 0x32 && a1['createElement'](jW, null, '满级'), DZ['level'] < 0x32 && a1['createElement'](jW, null, '熟练度:\x20', 0x0 | DZ['exp'], '/', DY['maxExp'](DZ['level']))), a1['createElement'](jX, {'className': BJ['row']}, 0x1 > DW['level'] && a1['createElement'](jW, {'className': BJ['textMargin']}, '需达到', 0x1, '级'), 0x1 <= DW['level'] && a1['createElement'](jW, {'className': BJ['textMargin']}, '等级：', DZ['level']), E8 && a1['createElement'](jW, {'className': BJ['textMargin']}, '光环技能'), E5 && !E8 && a1['createElement'](jW, {'className': BJ['textMargin']}, '冷却时间：', (E5 / 0x3e8)['toFixed'](0x1), '秒'), E7 && E7['mp'] && a1['createElement'](jW, {'className': BJ['textMargin']}, '消耗法力\x20', function (Ej) {
+                return 'function' == typeof Ej ? 0x0 | Ej(nU['player']) : 0x0 | Ej;
+            }(E7['mp']))), a1['createElement'](jW, {'className': BJ['textMargin']}, E6));
         });
         let BO = gT(BK = class extends a1['Component'] {
             constructor() {
                 super(...arguments), BL(this, 'onLeftPressed', () => {
-                    nU['player'] && nU['player']['save'](), wL['save'](), DJ['navigate']('/career/choose');
+                    nU['player'] && nU['player']['save'](), wM['save'](), DJ['navigate']('/career/choose');
                 }), BL(this, 'onRightPressed', () => {
                     DJ['navigate']('/career/enhances');
                 });
@@ -41695,14 +39437,11 @@ a();
 
             ['render']() {
                 const {player: DU} = nU, {maxSkillCount: DV, nextSkillUnlockLevel: DW} = DU;
-                return a1['createElement'](wU, {
+                return a1['createElement'](wV, {
                     'title': '主动技能',
-                    'leftNavTitle': '职业',
                     'rightNavTitle': '被动技能',
-                    'onLeftPressed': this['onLeftPressed'],
                     'onRightPressed': this['onRightPressed']
-                }, a1['createElement'](jX, {'className': BJ['container']}, a1['createElement'](BM, null), a1['createElement'](jX, null, a1['createElement'](jW, null, '最多携带', DV, '个主动技能，', DW && a1['createElement'](jW, null, '下一个主动技能位置将在', DU['nextSkillUnlockLevel'], '级解锁。'))), a1['createElement'](jZ, null, Object['keys'](DU['careerData']['skills'])['map'](DX => a1['createElement'](BN, {
-                    'level': DU['careerData']['skills'][DX],
+                }, a1['createElement'](jX, {'className': BJ['container']}, a1['createElement'](BM, null), a1['createElement'](jX, null, a1['createElement'](jW, null, '最多携带', DV, '个主动技能，', DW && a1['createElement'](jW, null, '下一个主动技能位置将在', DU['nextSkillUnlockLevel'], '级解锁。'))), a1['createElement'](jZ, null, Object['values'](DU['playerskill'])['map'](DX => a1['createElement'](BN, {
                     'skill': DX,
                     'key': DX
                 })))));
@@ -41749,13 +39488,13 @@ a();
             }
 
             ['render']() {
-                return a1['createElement'](wU, {
+                return a1['createElement'](wV, {
                     'title': '故事',
                     'rightNavTitle': '日志',
                     'onRightPressed': this['onRightPressed']
                 }, a1['createElement'](k1, {
                     'className': BR['container'],
-                    'dataSource': this['dataSource']['cloneWithRows']([...wL['storiesMap']['keys']()]['filter'](DU => 'done' === wL['storiesMap']['get'](DU))['map'](DU => kS['stories'][DU])['filter'](DU => DU && DU['script'])),
+                    'dataSource': this['dataSource']['cloneWithRows']([...wM['storiesMap']['keys']()]['filter'](DU => 'done' === wM['storiesMap']['get'](DU))['map'](DU => kS['stories'][DU])['filter'](DU => DU && DU['script'])),
                     'renderRow': this['renderRow']
                 }));
             }
@@ -41818,7 +39557,7 @@ a();
         var C3, C4;
         let C5 = gT((C6 = C4 = class extends a1['Component'] {
             ['render']() {
-                return a1['createElement'](wU, {
+                return a1['createElement'](wV, {
                     'title': '更新日志',
                     'back': !0x0
                 }, a1['createElement'](jZ, null, a1['createElement'](jW, {'className': C2['content']}, x9()['description'])));
@@ -41888,7 +39627,7 @@ a();
         let CE = gT((Cx = class extends a1['Component'] {
             constructor() {
                 super(...arguments), CB(this, 'loading', Cz, this), CB(this, 'products', CA, this), CC(this, 'renderProductTitle', DU => {
-                    const DV = wL['getProductName'](DU['identifier']);
+                    const DV = wM['getProductName'](DU['identifier']);
                     return DV === DU['title'] ? a1['createElement'](jW, {'className': Cq['title']}, DV) : a1['createElement'](jW, {'className': Cq['title']}, a1['createElement'](jW, {'className': Cq['deleteLine']}, DU['title']), '\x0a', DV);
                 }), CC(this, 'renderProduct', DU => a1['createElement'](jY, {
                     'key': DU['identifier'],
@@ -41906,7 +39645,7 @@ a();
             }
 
             ['render']() {
-                return a1['createElement'](wU, {
+                return a1['createElement'](wV, {
                     'title': '创世神商店',
                     'back': !0x0
                 }, a1['createElement'](jX, {'className': [Cq['container'], Cq['center']]}, a1['createElement'](jW, null, '此路暂时不通')));
@@ -42060,7 +39799,7 @@ a();
             }
 
             ['render']() {
-                return a1['createElement'](wU, {
+                return a1['createElement'](wV, {
                     'title': '拾取规则',
                     'back': !0x0
                 }, a1['createElement'](jX, {'className': CM['container']}, a1['createElement'](jZ, {'className': CM['flex1']}, this['renderHeader'](), Object['entries'](CQ)['map'](DW => {
@@ -42096,8 +39835,8 @@ a();
         }
 
         const D0 = dF(function () {
-            const DW = kS['upgrades']['bankByDiamonds'][wL['bank']['length']];
-            wL['diamonds'] < DW ? nD('提示', '神力不够？那这事有点不太好办啊。', [{'text': '确认'}, {'text': '取消'}]) : (wL['diamonds'] -= DW, wL['bank']['push'](new qw('bank')));
+            const DW = kS['upgrades']['bankByDiamonds'][wM['bank']['length']];
+            wM['diamonds'] < DW ? nD('提示', '神力不够？那这事有点不太好办啊。', [{'text': '确认'}, {'text': '取消'}]) : (wM['diamonds'] -= DW, wM['bank']['push'](new qx('bank')));
         });
         let D1 = gT(CY = class extends a1['Component'] {
             constructor() {
@@ -42114,14 +39853,14 @@ a();
 
             ['render']() {
                 const {player: DW} = nU;
-                return a1['createElement'](wU, {
+                return a1['createElement'](wV, {
                     'title': '仓库',
                     'back': !0x0
                 }, a1['createElement'](jX, {'className': CX['container']}, a1['createElement'](jZ, {
                     'className': CX['flex1'],
                     'contentContainerClassName': CX['content']
-                }, a1['createElement'](zC, {'onPress': () => DW['sortInventory'](wL['bank'])}, '整理仓库'), wL['bank']['map'](this['renderRow']), wL['bank']['length'] < kS['upgrades']['bankByDiamonds']['length'] && a1['createElement'](zA, {
-                    'onPress': () => (navigator, void nD('提示', '是否使用创世神的力量扩张物品空间，继续扩张背包消耗' + kS['upgrades']['bankByDiamonds'][wL['bank']['length']] + '神力，是否继续？', [{
+                }, a1['createElement'](zC, {'onPress': () => DW['sortInventory'](wM['bank'])}, '整理仓库'), wM['bank']['map'](this['renderRow']), wM['bank']['length'] < kS['upgrades']['bankByDiamonds']['length'] && a1['createElement'](zA, {
+                    'onPress': () => (navigator, void nD('提示', '是否使用创世神的力量扩张物品空间，继续扩张背包消耗' + kS['upgrades']['bankByDiamonds'][wM['bank']['length']] + '神力，是否继续？', [{
                         'text': '确认',
                         'onPress': () => D0()
                     }, {'text': '取消'}]))
@@ -42140,7 +39879,7 @@ a();
         var D5;
         const D6 = gT(function () {
             const {player: DW} = nU;
-            return 0x0 === DW['careerInfo']['selectedEnhances']['length'] ? a1['createElement'](jX, {'className': D4['selectedList']}, a1['createElement'](jW, null, '没有激活任何被动技能。')) : a1['createElement'](jX, {'className': D4['selectedList']}, DW['careerInfo']['selectedEnhances']['map']((DX, DY) => {
+            return 0x0 === DW['careerInfo']['selectedEnhances']['length'] ? a1['createElement'](jX, {'className': D4['selectedList']}, a1['createElement'](jW, null, '未激活任何被动技能。')) : a1['createElement'](jX, {'className': D4['selectedList']}, DW['careerInfo']['selectedEnhances']['map']((DX, DY) => {
                 const DZ = kS['enhances'][DX];
                 return a1['createElement'](jX, {
                     'key': DY,
@@ -42148,30 +39887,29 @@ a();
                 }, a1['createElement'](jX, null, a1['createElement'](jW, null, DZ['name'])));
             }));
         }), D7 = gT(function (DW) {
-            let {level: DX, enhance: DY} = DW;
-            const {player: DZ} = nU, E0 = kS['enhances'][DY],
-                E1 = kF(() => nU['player']['careerInfo']['selectedEnhances']['length']),
-                E2 = kF(() => nU['player']['careerInfo']['selectedEnhances']['indexOf'](DY)),
-                E3 = E2 >= 0x0 || E1 < DZ['maxEnhanceCount'] && DX <= DZ['level'],
-                E4 = kF(() => kS['enhances'][DY]['group'] && -0x1 === E2 && DZ['careerInfo']['selectedEnhances']['find'](E6 => kS['enhances'][E6]['group'] === kS['enhances'][DY]['group'])),
-                E5 = (!E3 || !!E4) && E2 < 0x0;
+            let {enhance: DX} = DW;
+            const {player: DY} = nU, DZ = kS['enhances'][DX],
+                E0 = kF(() => nU['player']['careerInfo']['selectedEnhances']['length']),
+                E1 = kF(() => nU['player']['careerInfo']['selectedEnhances']['indexOf'](DX)),
+                E2 = E1 >= 0x0 || E0 < DY['maxEnhanceCount'] && 0x1 <= DY['level'],
+                E3 = kF(() => kS['enhances'][DX]['group'] && -0x1 === E1 && DY['careerInfo']['selectedEnhances']['find'](E5 => kS['enhances'][E5]['group'] === kS['enhances'][DX]['group'])),
+                E4 = (!E2 || !!E3) && E1 < 0x0;
             return a1['createElement'](jY, {
-                'className': [D4['enhanceItem'], E5 && D4['enhanceItemDisabled']],
+                'className': [D4['enhanceItem'], E4 && D4['enhanceItemDisabled']],
                 'activeOpacity': 0.8,
-                'disabled': E5,
+                'disabled': E4,
                 'onPress': () => {
-                    E2 >= 0x0 ? nU['unselectEnhance'](DY) : E1 < DZ['maxEnhanceCount'] && nU['selectEnhance'](DY);
+                    E1 >= 0x0 ? nU['unselectEnhance'](DX) : E0 < DY['maxEnhanceCount'] && nU['selectEnhance'](DX);
                 }
-            }, a1['createElement'](jX, {'className': D4['enhanceItemMain']}, a1['createElement'](jW, {'className': D4['enhanceName']}, E0['name']), DX <= DZ['level'] && E4 && a1['createElement'](jW, null, '冲突:\x20', kS['enhances'][E4]['name']), DX > DZ['level'] && a1['createElement'](jW, null, DX, '级后开启'), E2 >= 0x0 && a1['createElement'](jW, null, '已激活'), a1['createElement'](jX, {'className': D4['spacer']})), a1['createElement'](jW, null, E0['description']));
+            }, a1['createElement'](jX, {'className': D4['enhanceItemMain']}, a1['createElement'](jW, {'className': D4['enhanceName']}, DZ['name']), 0x1 <= DY['level'] && E3 && a1['createElement'](jW, null, '冲突:\x20', kS['enhances'][E3]['name']), 0x1 > DY['level'] && a1['createElement'](jW, null, 0x1, '级后开启'), E1 >= 0x0 && a1['createElement'](jW, null, '已激活'), a1['createElement'](jX, {'className': D4['spacer']})), a1['createElement'](jW, null, DZ['description']));
         });
         let D8 = gT(D5 = class extends a1['Component'] {
             ['render']() {
                 const {player: DW} = nU, {maxEnhanceCount: DX, nextEnhanceUnlockLevel: DY} = DW;
-                return a1['createElement'](wU, {
+                return a1['createElement'](wV, {
                     'title': '被动技能',
                     'back': !0x0
-                }, a1['createElement'](jX, {'className': D4['container']}, a1['createElement'](D6, null), a1['createElement'](jX, null, a1['createElement'](jW, null, '最多携带', DX, '个被动技能，', DY && a1['createElement'](jW, null, '下一个被动技能位置将在', DW['nextEnhanceUnlockLevel'], '级解锁。'))), a1['createElement'](jZ, null, Object['keys'](DW['careerData']['enhances'])['map'](DZ => a1['createElement'](D7, {
-                    'level': DW['careerData']['enhances'][DZ],
+                }, a1['createElement'](jX, {'className': D4['container']}, a1['createElement'](D6, null), a1['createElement'](jX, null, a1['createElement'](jW, null, '最多激活', DX, '个被动技能，', DY && a1['createElement'](jW, null, '下一个被动技能位置将在', DW['nextEnhanceUnlockLevel'], '级解锁。'))), a1['createElement'](jZ, null, Object['values'](DW['playerskill2'])['map'](DZ => a1['createElement'](D7, {
                     'enhance': DZ,
                     'key': DZ
                 })))));
@@ -42224,7 +39962,7 @@ a();
             ['render']() {
                 const {player: DW, playerUnit: DX} = nU,
                     DY = Object['keys'](kS['careers'])['filter'](DZ => !kS['careers'][DZ]['requirement'] || x6(kS['careers'][DZ]['requirement']));
-                return a1['createElement'](wU, {
+                return a1['createElement'](wV, {
                     'title': '当前职业',
                     'back': !0x0
                 }, a1['createElement'](jX, {'className': Dq['row2']}, a1['createElement'](jW, null, DW['careerName'])), a1['createElement'](jX, {'className': Dq['row1']}, a1['createElement'](jW, {'className': Dq['name']}, '进阶职业')), a1['createElement'](jX, {'className': Dq['row2']}, a1['createElement'](jZ, {'className': Dq['container']}, DY['map'](DZ => a1['createElement'](Dx, {
@@ -42272,28 +40010,36 @@ a();
                 }), DH(this, 'renderFooter', () => a1['createElement'](jX, {'className': DE['footer']}, a1['createElement'](jY, {
                     'className': DE['item'], 'onPress': async () => {
                         const DW = await nF('帝国金库', '卫兵拦住了你，要你说出通行的口令。', '');
-                        await wL['load'](), dH(() => {
+                        await wM['load'](), dH(() => {
                             if (!DW) return;
-                            if (nU['pendingTime'] > 0x0 || wL['truetime12'] > 0x0) return void nD('莫慌，再等等。');
+                            if (nU['pendingTime'] > 0x0 || wM['truetime12'] > 0x0) return void nD('莫慌，再等等。');
                             const {player: DX} = nU, DY = encodeURIComponent(DW) || 'false',
                                 DZ = DB()['find'](E2 => E2['pw'] === DY),
-                                E0 = wL['pwuse2']['find'](E2 => E2['pw'] === DY),
-                                E1 = wL['pwuse2']['findIndex'](E2 => E2['pw'] === DY);
-                            return DZ && E0 && E0['times'] >= DZ['times'] ? void nD('帝国金库', '别喊了，你再喊就真的要挨揍了！') : DZ ? E0 ? 'diamonds' === DZ['type'] ? (nD('帝国金库', '口令重复！但是看在你信仰创世神的份上，你又得到了一小团(' + DZ['value'] + ')神力。'), wL['diamonds'] += DZ['value'], wL['pwuse2'][E1]['times'] += 0x1, DX['save'](), void wL['save']()) : 'zzzz' === DZ['type'] ? void 0x0 : 'redbag' === DZ['type'] ? (nD('帝国金库', '口令重复！所以这次只能给你' + DZ['value'] + '个红包。'), nU['loots']([{
+                                E0 = wM['pwuse2']['find'](E2 => E2['pw'] === DY),
+                                E1 = wM['pwuse2']['findIndex'](E2 => E2['pw'] === DY);
+                            return DZ && E0 && E0['times'] >= DZ['times'] ? void nD('帝国金库', '别喊了，你再喊就真的要挨揍了！') : DZ ? E0 ? 'diamonds' === DZ['type'] ? (nD('帝国金库', '口令重复！但是看在你信仰创世神的份上，你又得到了一小团(' + DZ['value'] + ')神力。'), wM['diamonds'] += DZ['value'], wM['pwuse2'][E1]['times'] += 0x1, DX['save'](), void wM['save']()) : 'zzzz' === DZ['type'] ? void 0x0 : 'redbag' === DZ['type'] ? (nD('帝国金库', '口令重复！所以这次只能给你' + DZ['value'] + '个红包。'), nU['loots']([{
                                 'key': 'year2018.redbag',
                                 'count': [DZ['value'], DZ['value']],
                                 'rate': 0x1
-                            }], 0x1, 0x0), wL['pwuse2'][E1]['times'] += 0x1, DX['save'](), void wL['save']()) : 'box' === DZ['type'] ? (nD('帝国金库', '口令重复！所以这次只能给你' + DZ['value'] + '份' + DZ['name'] + '。'), nU['loots']([{
+                            }], 0x1, 0x0), wM['pwuse2'][E1]['times'] += 0x1, DX['save'](), void wM['save']()) : 'box' === DZ['type'] ? (nD('帝国金库', '口令重复！所以这次只能给你' + DZ['value'] + '份' + DZ['name'] + '。'), nU['loots']([{
                                 'key': DZ['key'],
                                 'count': [DZ['value'], DZ['value']],
                                 'rate': 0x1
-                            }], 0x1, 0x0), wL['pwuse2'][E1]['times'] += 0x1, DX['save'](), void wL['save']()) : 'rem' === DZ['type'] ? (wL['truetime'] = 0x0, wL['playerMetas2'] = {}, wL['pwuse2'][E1]['times'] += 0x1, DX['save'](), wL['save'](), void location['reload']()) : void nD('帝国金库', '库存不足，请下次再来。') : 'diamonds' === DZ['type'] ? (nD('帝国金库', '口令正确！你得到了一小团(' + DZ['value'] + ')神力。'), wL['diamonds'] += DZ['value'], wL['pwuse2']['push']({
+                            }], 0x1, 0x0), wM['pwuse2'][E1]['times'] += 0x1, DX['save'](), void wM['save']()) : 'rem' === DZ['type'] ? (wM['truetime'] = 0x0, wM['playerMetas2'] = {}, wM['pwuse2'][E1]['times'] += 0x1, DX['save'](), wM['save'](), void location['reload']()) : void nD('帝国金库', '库存不足，请下次再来。') : 'diamonds' === DZ['type'] ? (nD('帝国金库', '口令正确！你得到了一小团(' + DZ['value'] + ')神力。'), wM['diamonds'] += DZ['value'], wM['pwuse2']['push']({
                                 'pw': DZ['pw'],
                                 'times': 0x1
-                            }), DX['save'](), void wL['save']()) : 'stories' === DZ['type'] ? (nD('帝国金库', '口令正确！你可以测试新职业“' + DZ['pw'] + '”了。'), wL['storiesMap']['set'](DZ['value'], 'done'), wL['pwuse2']['push']({
+                            }), DX['save'](), void wM['save']()) : 'stories' === DZ['type'] ? (nD('帝国金库', '口令正确！你可以测试新职业“' + DZ['pw'] + '”了。'), wM['storiesMap']['set'](DZ['value'], 'done'), wM['pwuse2']['push']({
                                 'pw': DZ['pw'],
                                 'times': 0x1
-                            }), DX['save'](), void wL['save']()) : 'new' === DZ['type'] ? (nD('帝国金库', '口令正确！新手礼包[神力×333，红包×33，鲱鱼干×1，方向盘×1]请拿好！。'), nU['loots']([{
+                            }), DX['save'](), void wM['save']()) : 'new' === DZ['type'] ? (nD('帝国金库', '口令正确！新手礼包[技能石Ⅰ×3，技能石Ⅱ×3，神力×333，红包×33，鲱鱼干×1，方向盘×1]请拿好！。'), nU['loots']([{
+                                'key': 'skill1',
+                                'count': [0x3, 0x3],
+                                'rate': 0x1
+                            }], 0x1, 0x0), nU['loots']([{
+                                'key': 'skill2',
+                                'count': [0x3, 0x3],
+                                'rate': 0x1
+                            }], 0x1, 0x0), nU['loots']([{
                                 'key': 'year2018.redbag',
                                 'count': [0x21, 0x21],
                                 'rate': 0x1
@@ -42305,33 +40051,52 @@ a();
                                 'type': 'specialEquip2',
                                 'rate': 0x1,
                                 'items': ['ornament-fxp']
-                            }], 0x0, 0x4, !0x1, !0x1, 0x1), wL['diamonds'] += 0x14d, wL['pwuse2']['push']({
+                            }], 0x0, 0x4, !0x1, !0x1, 0x1), wM['diamonds'] += 0x14d, wM['pwuse2']['push']({
                                 'pw': DZ['pw'],
                                 'times': 0x1
-                            }), DX['save'](), void wL['save']()) : 'redbag' === DZ['type'] ? (nD('帝国金库', '口令正确！你获得了' + DZ['value'] + '个红包。'), nU['loots']([{
+                            }), DX['save'](), void wM['save']()) : 'redbag' === DZ['type'] ? (nD('帝国金库', '口令正确！你获得了' + DZ['value'] + '个红包。'), nU['loots']([{
                                 'key': 'year2018.redbag',
                                 'count': [DZ['value'], DZ['value']],
                                 'rate': 0x1
-                            }], 0x1, 0x0), wL['pwuse2']['push']({
+                            }], 0x1, 0x0), wM['pwuse2']['push']({
                                 'pw': DZ['pw'],
                                 'times': 0x1
-                            }), DX['save'](), void wL['save']()) : 'box' === DZ['type'] || 'exp' === DZ['type'] ? (nD('帝国金库', '口令正确！你获得了' + DZ['value'] + '份' + DZ['name'] + '。'), nU['loots']([{
+                            }), DX['save'](), void wM['save']()) : 'box' === DZ['type'] || 'exp' === DZ['type'] ? (nD('帝国金库', '口令正确！你获得了' + DZ['value'] + '份' + DZ['name'] + '。'), nU['loots']([{
                                 'key': DZ['key'],
                                 'count': [DZ['value'], DZ['value']],
                                 'rate': 0x1
-                            }], 0x1, 0x0), wL['pwuse2']['push']({
+                            }], 0x1, 0x0), wM['pwuse2']['push']({
                                 'pw': DZ['pw'],
                                 'times': 0x1
-                            }), DX['save'](), void wL['save']()) : 'rem' === DZ['type'] ? (nD('帝国金库', '卫兵尝试着抢救了一下你的存档，还剩1次抢救机会。'), wL['truetime'] = 0x0, wL['playerMetas2'] = {}, wL['pwuse2']['push']({
+                            }), DX['save'](), void wM['save']()) : 'rem' === DZ['type'] ? (nD('帝国金库', '卫兵尝试着抢救了一下你的存档，还剩1次抢救机会。'), wM['truetime'] = 0x0, wM['playerMetas2'] = {}, wM['pwuse2']['push']({
                                 'pw': DZ['pw'],
                                 'times': 0x1
-                            }), DX['save'](), wL['save'](), void location['reload']()) : 'playerlist' === DZ['type'] ? (DX['save'](), wL['save'](), wL['playerlist'](), void location['reload']()) : 'level' !== DZ['type'] ? 'zzzz' === DZ['type'] ? void 0x0 : void nD('帝国金库', '库存不足，请下次再来。') : DX['level'] < 0x64 ? void nD('帝国金库', '口令正确！确定要将角色等级提高至' + DZ['value'] + '级吗？', [{
+                            }), DX['save'](), wM['save'](), void location['reload']()) : 'playerlist' === DZ['type'] ? (DX['save'](), wM['save'](), wM['playerlist'](), void location['reload']()) : 'skill' === DZ['type'] ? (nD('帝国金库', '卫兵掏了几颗技能石塞给你。'), nU['loots']([{
+                                'key': 'skill1',
+                                'count': [0x6, 0x6],
+                                'rate': 0x1
+                            }], 0x1, 0x0), nU['loots']([{
+                                'key': 'skill2',
+                                'count': [0x6, 0x6],
+                                'rate': 0x1
+                            }], 0x1, 0x0), wM['pwuse2']['push']({
+                                'pw': DZ['pw'],
+                                'times': 0x1
+                            }), DX['save'](), void wM['save']()) : 'level' !== DZ['type'] ? 'zzzz' === DZ['type'] ? (nU['loots']([{
+                                'key': 'skill1',
+                                'count': [0x12c, 0x12c],
+                                'rate': 0x1
+                            }], 0x1, 0x0), void nU['loots']([{
+                                'key': 'skill2',
+                                'count': [0x12c, 0x12c],
+                                'rate': 0x1
+                            }], 0x1, 0x0)) : void nD('帝国金库', '库存不足，请下次再来。') : DX['level'] < 0x64 ? void nD('帝国金库', '口令正确！确定要将角色等级提高至' + DZ['value'] + '级吗？', [{
                                 'text': '猛猛提升',
                                 'onPress': () => {
-                                    nD('帝国金库', '角色等级已经提升至' + DZ['value'] + '级。'), DX['level'] = DZ['value'], wL['pwuse2']['push']({
+                                    nD('帝国金库', '角色等级已经提升至' + DZ['value'] + '级。'), DX['level'] = DZ['value'], wM['pwuse2']['push']({
                                         'pw': DZ['pw'],
                                         'times': 0x1
-                                    }), DX['save'](), wL['save']();
+                                    }), DX['save'](), wM['save']();
                                 }
                             }, {'text': '不升'}]) : void nD('帝国金库', '都满级了就不要来捣乱啦。') : void nD('帝国金库', '口令错误！卫兵把你赶了出来。');
                         });
@@ -42339,54 +40104,32 @@ a();
                 }, a1['createElement'](jW, {'className': DE['itemLabel']}, '帝国金库')), a1['createElement'](jY, {
                     'className': DE['item'],
                     'onPress': this['annoucement']
-                }, a1['createElement'](jW, {'className': DE['itemLabel']}, '更新日志'), a1['createElement'](jW, null, '当前版本：', x9()['version'])), a1['createElement'](jY, {
-                    'className': DE['item'],
-                    'onPress': async () => {
-                        if (Date['now']() - wL['truetime3'] > 0x2932e00 && Date['now']() - wL['truetime7'] > 0x19bfcc00) {
-                            if (wL['truetime12'] > 0x0) return void nD('先不要急，晚点再导');
-                            const DW = await nF('导入你备份的存档', '导入后会覆盖已有的存档，懂？', '');
-                            dH(() => {
-                                !DW || nU['pendingTime'] > 0x0 || (DW['indexOf']('game') < 0x0 || DW['indexOf']('player') < 0x0 ? nD('存档格式错误，或存档中缺少角色信息，无法导入。') : (wL['gameimport'](DW), location['reload']()));
-                            });
-                        } else nD('先不要急，晚点再导。');
-                    }
-                }, a1['createElement'](jW, {'className': DE['itemLabel']}, '导入完整存档')), a1['createElement'](jY, {
-                    'className': DE['item'],
-                    'onPress': async () => {
-                        wL['truetime3'] = 'export', wL['save']();
-                        const DW = wL['gameexport']();
-                        if (nU['pendingTime'] > 0x0 || wL['truetime12'] > 0x0) nD('导出失败。'); else try {
-                            await navigator['clipboard']['writeText'](DW), wL['truetime3'] = 0x0, wL['save'](), nD('已复制到剪贴板，自行备份');
-                        } catch (DX) {
-                            wL['truetime3'] = 0x0, wL['save'](), nD('导出失败');
-                        }
-                    }
-                }, a1['createElement'](jW, {'className': DE['itemLabel']}, '导出完整存档'))));
+                }, a1['createElement'](jW, {'className': DE['itemLabel']}, '更新日志'), a1['createElement'](jW, null, '当前版本：', x9()['version']))));
             }
 
             async ['componentDidMount']() {
             }
 
             ['purchaseStory'](DW) {
-                wL['diamonds'] < DW['price'] ? nD('提示', '神力不够？那这事有点不太好办啊。', [{'text': '确认'}, {'text': '取消'}]) : (wL['diamonds'] -= DW['price'], wL['storiesMap']['set'](DW['key'], 'done'), DW['script'] && navigator['push']({
+                wM['diamonds'] < DW['price'] ? nD('提示', '神力不够？那这事有点不太好办啊。', [{'text': '确认'}, {'text': '取消'}]) : (wM['diamonds'] -= DW['price'], wM['storiesMap']['set'](DW['key'], 'done'), DW['script'] && navigator['push']({
                     'location': '/story/play',
                     'passProps': {'story': DW['key']}
                 }));
             }
 
             ['render']() {
-                return a1['createElement'](wU, {
+                return a1['createElement'](wV, {
                     'title': '日志',
                     'back': !0x0
                 }, a1['createElement'](k1, {
                     'className': DE['container'],
-                    'dataSource': this['dataSource']['cloneWithRows']([...wL['storiesMap']['keys']()]['filter'](DW => 'task' === wL['storiesMap']['get'](DW))['map'](DW => kS['stories'][DW])['filter'](DW => DW)['filter'](DW => !DW['requirement'] || x6(DW['requirement']))['filter'](DW => 'purchase' === DW['taskType'])),
+                    'dataSource': this['dataSource']['cloneWithRows']([...wM['storiesMap']['keys']()]['filter'](DW => 'task' === wM['storiesMap']['get'](DW))['map'](DW => kS['stories'][DW])['filter'](DW => DW)['filter'](DW => !DW['requirement'] || x6(DW['requirement']))['filter'](DW => 'purchase' === DW['taskType'])),
                     'renderRow': this['renderRow'],
                     'renderFooter': this['renderFooter']
                 }));
             }
         }, DH(DG, 'title', '日志'), DF = DG)) || DF;
-        const DJ = (DK = [{'path': '/splash', 'element': a1['createElement'](wP, null)}, {
+        const DJ = (DK = [{'path': '/splash', 'element': a1['createElement'](wQ, null)}, {
             'path': '/player/choose',
             'element': a1['createElement'](x2, null)
         }, {'path': '/player/create', 'element': a1['createElement'](xz, null)}, {
